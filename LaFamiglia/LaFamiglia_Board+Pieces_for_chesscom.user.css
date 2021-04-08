@@ -88,6 +88,7 @@ text.coordinate-dark {
 /*Highlight*/
 div [style^="background-color"]
 {
-    background-color: rgb(26, 23, 3)!important; opacity: 0.5!important;
+    background-color: rgb(33, 81, 117)!important; opacity: 0.5!important;
+}
 }
 }
