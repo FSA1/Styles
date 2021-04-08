@@ -1,0 +1,1 @@
+La Famiglia is a chess set (pieces+chessboard) for chess.com featuring mafia theme. It can be installed using "Stylus" browser extension.
