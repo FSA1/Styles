@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           Chess.com La Famiglia Chess Set: Gray
+@name           Chess.com ChessSet: La Famiglia
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `La Famiglia chess set for chess.com by agiota_do_artenio`
@@ -89,6 +89,5 @@ text.coordinate-dark {
 div [style^="background-color"]
 {
     background-color: rgb(33, 81, 117)!important; opacity: 0.5!important;
-}
 }
 }
