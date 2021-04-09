@@ -1,0 +1,80 @@
+/* ==UserStyle==
+@name           Chess.com La Famiglia Chess Set: Brown
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `La Famiglia chess set for chess.com by agiota_do_artenio`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+/*Chessboard*/    
+.board,
+div[class^="daily-puzzle-board"],
+div[class^="board chessboard-component"],
+div[class^="board v-board chessboard-component"],
+div[class^="board rounded"],
+div[class^="board rounded fippled"],
+div[class^="board fippled rounded"],
+div[class^="board v-board rounded"],
+div[class^="board v-board fippled rounded"],
+div[class^="board disabled rounded"],
+div[id$="_ChessBoard_boardarea"],
+div[id^="chess_com_openingboard_1"],
+div[id^="board_training"],
+div[id^="divBoard_boardarea"],
+div[id^="chess_com_tactics_board"],
+div[id^="chessboard_"],
+div[id*="chessboard_"],
+div[id^="chess_com_chessmentorboard_"],
+div[id*="chess_com_chessmentorboard_"],
+div[id*="chess_com_chessmentor_board_1_boardarea"],
+div[id^="chess_com_emailboard_"],
+div[id^="board-blank"],
+chess-board[class^="board"],
+chess-board[class^="board flipped"],
+chess-board[id^="board-blank"],
+chess-board[id^="board-vs-personalities"],
+div[id*="chess_com_emailboard_"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/mafiacb.png")!important;
+}
+/*Pieces*/
+div [style*="bp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bp.png")!important;}
+div [style*="br.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-br.png")!important;}
+div [style*="bn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bn.png")!important;}
+div [style*="bb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bb.png")!important;}
+div [style*="bq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bq.png")!important;}
+div [style*="bk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bk.png")!important;}
+div [style*="wp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wp.png")!important;}
+div [style*="wr.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wr.png")!important;}
+div [style*="wn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wn.png")!important;}
+div [style*="wb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wb.png")!important;}
+div [style*="wq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wq.png")!important;}
+div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wk.png")!important;}
+ /*vs personality pieces*/   
+.piece.bp, .promotion-piece.bp {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bp.png")!important;}
+.piece.br, .promotion-piece.br {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-br.png")!important;}
+.piece.bn, .promotion-piece.bn {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bn.png")!important;}
+.piece.bb, .promotion-piece.bb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bb.png")!important;}
+.piece.bq, .promotion-piece.bq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bq.png")!important;}
+.piece.bk, .promotion-piece.bk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-bk.png")!important;}
+.piece.wp, .promotion-piece.wp {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wp.png")!important;}
+.piece.wr, .promotion-piece.wr {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wr.png")!important;}
+.piece.wn, .promotion-piece.wn {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wn.png")!important;}
+.piece.wb, .promotion-piece.wb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wb.png")!important;}
+.piece.wq, .promotion-piece.wq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wq.png")!important;}
+.piece.wk, .promotion-piece.wk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wk.png")!important;}
+/*Coordinates for live game*/
+/*opacity property can be set to maximum 1 and minimum 0 eg: 1, 0.8, 0.92, .7*/
+div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark  {
+    opacity: .9!important;}
+div.number.coords-light, div.letter.coords-light {color: #645e49 !important;}
+div.number.coords-dark, div.letter.coords-dark {color: #b1b1b1 !important;}
+/*Coordinates in vs computer and some other pages. I found that the correct propert here is "fill" instead of "color" Now it works!*/
+text.coordinate-light, text.coordinate-dark {opacity: .9;}
+text.coordinate-light {fill: #645e49 !important;}
+text.coordinate-dark {fill: #b1b1b1 !important;
+}   
+/*Highlight*/
+div [style^="background-color"]{background-color: rgb(26, 23, 3)!important; opacity: 0.6!important;}
+/*======================End of the code========================*/
+}
