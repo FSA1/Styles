@@ -65,11 +65,11 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 .piece.wk, .promotion-piece.wk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wk.png")!important;}
 /*Coordinates for live game page*/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {
-    opacity: .9;/*opacity can be set 1 to 0 eg: 1, 0.8, 0.92, .7*/
+    opacity: .9!important;/*opacity can be set 1 to 0 eg: 1, 0.8, 0.92, .7*/
 }
 div.number.coords-light, div.letter.coords-light {color: #645e49 !important;}
 div.number.coords-dark, div.letter.coords-dark {color: #b1b1b1 !important;}
- /*Coordinates in vs computer and some other pages. I found that the correct propert here is "fill" instead of "color" Now it works!*/
+/*Coordinates in vs computer and some other pages. I found that the correct propert here is "fill" instead of "color" Now it works!*/
 text.coordinate-light, text.coordinate-dark {opacity: .9;}
 text.coordinate-light {fill: #645e49 !important;}
 text.coordinate-dark {fill: #b1b1b1 !important;
