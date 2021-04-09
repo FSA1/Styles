@@ -67,9 +67,9 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 .piece.wb, .promotion-piece.wb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wb.png")!important;}
 .piece.wq, .promotion-piece.wq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wq.png")!important;}
 .piece.wk, .promotion-piece.wr {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wk.png")!important;}
-/*Coordinates*/
+/*Coordinates for live game page*/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {
-    opacity: .9;
+    opacity: .9;/*opacity can be set 1 to 0 eg: 1, 0.8, 0.92, .7*/
 }
 div.number.coords-light, div.letter.coords-light {
     color: #645e49 !important;
@@ -77,6 +77,7 @@ div.number.coords-light, div.letter.coords-light {
 div.number.coords-dark, div.letter.coords-dark {
     color: #b1b1b1 !important;
 }
+ /*Coordinates in vs computer and some other pages. It seens not work so I set opacity to a lower number */
 text.coordinate-light, text.coordinate-dark {
     opacity: .6;
 }
