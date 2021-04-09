@@ -67,26 +67,14 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {
     opacity: .9;/*opacity can be set 1 to 0 eg: 1, 0.8, 0.92, .7*/
 }
-div.number.coords-light, div.letter.coords-light {
-    color: #645e49 !important;
-}
-div.number.coords-dark, div.letter.coords-dark {
-    color: #b1b1b1 !important;
-}
- /*Coordinates in vs computer and some other pages. It seens not work so I set opacity to a lower number */
-text.coordinate-light, text.coordinate-dark {
-    opacity: .6;
-}
-text.coordinate-light {
-    color: #645e49 !important;
-}
-    
-text.coordinate-dark {
-    color: #b1b1b1 !important;
+div.number.coords-light, div.letter.coords-light {color: #645e49 !important;}
+div.number.coords-dark, div.letter.coords-dark {color: #b1b1b1 !important;}
+ /*Coordinates in vs computer and some other pages. I found that the correct propert here is "fill" instead of "color" Now it works!*/
+text.coordinate-light, text.coordinate-dark {opacity: .9;}
+text.coordinate-light {fill: #645e49 !important;}
+text.coordinate-dark {fill: #b1b1b1 !important;
 }   
 /*Highlight*/
-div [style^="background-color"]
-{
-    background-color: rgb(26, 23, 3)!important; opacity: 0.5!important;
-}
+.highlight{background-color: rgb(26, 23, 3)!important; opacity: 0.6!important;}
+/*======================End of the code========================*/
 }
