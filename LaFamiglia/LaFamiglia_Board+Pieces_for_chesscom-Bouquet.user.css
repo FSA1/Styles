@@ -64,28 +64,13 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 .piece.wq, .promotion-piece.wq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wq.png")!important;}
 .piece.wk, .promotion-piece.wk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wk.png")!important;}
 /*Coordinates*/
-div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {
-    opacity: .9;
-}
-div.number.coords-light, div.letter.coords-light {
-    color: #645e49 !important;
-}
-div.number.coords-dark, div.letter.coords-dark {
-    color: #b1b1b1 !important;
-}
-text.coordinate-light, text.coordinate-dark {
-    opacity: .6;
-}
-text.coordinate-light {
-    color: #645e49 !important;
-}
-    
-text.coordinate-dark {
-    color: #b1b1b1 !important;
-}   
+div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {opacity: .9;}
+div.number.coords-light, div.letter.coords-light {color: #756b74 !important;}
+div.number.coords-dark, div.letter.coords-dark {color: #dad2d9 !important;}
+text.coordinate-light, text.coordinate-dark {opacity: .9;}
+text.coordinate-light {fill: #756b74 !important;}    
+text.coordinate-dark {fill: #dad2d9 !important;}   
 /*Highlight*/
-div [style^="background-color"]
-{
-    background-color: rgb(33, 81, 117)!important; opacity: 0.5!important;
-}
+div [style^="background-color"]{background-color: rgb(88, 64, 83)!important; opacity: 0.7!important;}
+/*End of the code*/
 }
