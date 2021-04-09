@@ -11,7 +11,10 @@
 /*Chessboard*/    
 .board,
 div[class^="daily-puzzle-board"],
-/*div[class^="game-preview"],*/
+/*div[class^="game-preview"],<----essa linha mostra o tabuleiro no
+ menu de configurações de temas do chess.com
+ desativei porque impede a pre-visualização dos tabuleiros do site
+ naquele menu.*/
 div[class^="board chessboard-component"],
 div[class^="board v-board chessboard-component"],
 div[class^="board rounded"],
