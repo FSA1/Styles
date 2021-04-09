@@ -11,7 +11,7 @@
 /*Chessboard*/    
 .board,
 div[class^="daily-puzzle-board"],
-div[class^="game-preview"],
+/*div[class^="game-preview"],*/
 div[class^="board chessboard-component"],
 div[class^="board v-board chessboard-component"],
 div[class^="board rounded"],
