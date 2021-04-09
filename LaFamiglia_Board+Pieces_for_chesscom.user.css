@@ -75,6 +75,6 @@ text.coordinate-light {fill: #645e49 !important;}
 text.coordinate-dark {fill: #b1b1b1 !important;
 }   
 /*Highlight*/
-.highlight{background-color: rgb(26, 23, 3)!important; opacity: 0.6!important;}
+div [style^="background-color"]{background-color: rgb(26, 23, 3)!important; opacity: 0.6!important;}
 /*======================End of the code========================*/
 }
