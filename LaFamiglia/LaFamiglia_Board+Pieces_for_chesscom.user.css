@@ -64,7 +64,6 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 .piece.wb, .promotion-piece.wb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wb.png")!important;}
 .piece.wq, .promotion-piece.wq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wq.png")!important;}
 .piece.wk, .promotion-piece.wr {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wk.png")!important;}
-.piece.wr, .promotion-piece.wr {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wr.png")!important;}
 /*Coordinates*/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {
     opacity: .9;
