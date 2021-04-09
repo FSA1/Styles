@@ -62,7 +62,7 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 .piece.wn, .promotion-piece.wn {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wn.png")!important;}
 .piece.wb, .promotion-piece.wb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wb.png")!important;}
 .piece.wq, .promotion-piece.wq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wq.png")!important;}
-.piece.wk, .promotion-piece.wr {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wk.png")!important;}
+.piece.wk, .promotion-piece.wk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/MafiaChar-wk.png")!important;}
 /*Coordinates for live game page*/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {
     opacity: .9;/*opacity can be set 1 to 0 eg: 1, 0.8, 0.92, .7*/
