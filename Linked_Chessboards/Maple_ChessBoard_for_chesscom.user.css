@@ -39,7 +39,7 @@ div[id*="chess_com_emailboard_"] {background-image: url("https://i.imgur.com/sUD
 }
 /*Coordinates*/
 div.number.coords-light, div.letter.coords-light {
-    color: rgb(194, 107, 56); !important;
+    color: rgb(194, 107, 56) !important;
 }
 div.number.coords-dark, div.letter.coords-dark {
     color: rgb(239, 204, 161) !important;
