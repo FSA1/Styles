@@ -52,8 +52,5 @@ text.coordinate-dark {
     color: rgb(239, 204, 161) !important;
 }   
 /*Highlight*/
-div [style^="background-color"]
-{
-    div [style^="background-color"]{background-color: #f7ca41!important;
-}
+div [style^="background-color"]{background-color: #f7ca41!important;}
 }
