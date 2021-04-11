@@ -1,0 +1,30 @@
+/* ==UserStyle==
+@name           Chess.com Pieces: Furia Classic Knight
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `Replaces Knights for Furia logo with Classic pieces shape style.`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+/*Pieces*/
+div [style*="wn.png"] {
+	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+   -webkit-filter: invert(1);
+   filter: invert(1);
+}
+div [style*="bn.png"] {
+	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+	}
+.piece.bn, .promotion-piece.bn {
+	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+	}
+.piece.wn, .promotion-piece.wn {
+	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+	-webkit-filter: invert(1);
+    filter: invert(1);
+	}
+/*Recomended chess board: Furia by agiota_do_artenio from chess.com blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
+/*End of the code*/
+}
