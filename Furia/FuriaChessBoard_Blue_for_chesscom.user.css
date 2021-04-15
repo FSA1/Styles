@@ -39,7 +39,7 @@ div[id*="chess_com_emailboard_"] {background-image: url("https://raw.githubuserc
 }
 /*Coordinates*/
 div.number.coords-light, div.letter.coords-light {
-    fill: rgb(122, 157, 178)!important;
+    color: rgb(122, 157, 178)!important;
 }
 div.number.coords-dark, div.letter.coords-dark {
     color: rgb(197, 213, 220) !important;
@@ -48,10 +48,10 @@ text.coordinate-light {
     fill: rgb(122, 157, 178)!important;
 }    
 text.coordinate-dark {
-    color: rgb(197, 213, 220) !important;
+    fill: rgb(197, 213, 220) !important;
 }   
 /*Highlight*/
-div [style^="background-color"]{
+.move-square{
 	background-color: ##10d5ff!important;
 }
 /*End of the code*/
