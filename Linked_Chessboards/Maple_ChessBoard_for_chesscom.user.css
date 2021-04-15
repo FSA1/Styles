@@ -54,3 +54,6 @@ text.coordinate-dark {
 /*Highlight*/
 .move-square{background-color: #f7ca41!important;}
 }
+.selection-square{
+    background-color: #ffb300 !important;
+}
