@@ -54,5 +54,8 @@ text.coordinate-dark {
 .move-square{
 	background-color:#10d5ff!important;
 }
+.selection-square{
+    background-color: #0d9acf !important;
+}
 /*End of the code*/
 }
