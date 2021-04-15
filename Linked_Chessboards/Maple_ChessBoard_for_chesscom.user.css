@@ -49,8 +49,8 @@ text.coordinate-light {
 }
     
 text.coordinate-dark {
-    color: rgb(239, 204, 161) !important;
+    fill: rgb(239, 204, 161) !important;
 }   
 /*Highlight*/
-div [style^="background-color"]{background-color: #f7ca41!important;}
+.move-square{background-color: #f7ca41!important;}
 }
