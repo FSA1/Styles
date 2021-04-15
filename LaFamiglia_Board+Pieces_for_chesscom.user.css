@@ -67,14 +67,15 @@ div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/
 /*opacity property can be set to maximum 1 and minimum 0 eg: 1, 0.8, 0.92, .7*/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark  {
     opacity: .9!important;}
-div.number.coords-light, div.letter.coords-light {color: #645e49 !important;}
-div.number.coords-dark, div.letter.coords-dark {color: #b1b1b1 !important;}
+div.number.coords-light, div.letter.coords-light {color: #776f56 !important;}
+div.number.coords-dark, div.letter.coords-dark {color: #b1a98c !important;}
 /*Coordinates in vs computer and some other pages. I found that the correct propert here is "fill" instead of "color" Now it works!*/
 text.coordinate-light, text.coordinate-dark {opacity: .9;}
-text.coordinate-light {fill: #645e49 !important;}
-text.coordinate-dark {fill: #b1b1b1 !important;
+text.coordinate-light {fill: #776f56 !important;}
+text.coordinate-dark {fill: #b1a98c !important;
 }   
 /*Highlight*/
-.move-square{background-color: rgb(26, 23, 3)!important; opacity: 0.6!important;}
+.move-square{background-color: rgb(26, 23, 3)!important; opacity: 0.6!important;}    
+.selection-square{background-color: #d6cf82 !important;}
 /*======================End of the code========================*/
 }
