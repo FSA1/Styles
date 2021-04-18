@@ -113,3 +113,44 @@ div[id*="chess_com_emailboard_"] {background-image: url("https://arena.myfide.ne
 }
 /*End of the code*/
 }
+@-moz-document url-prefix("https://www.chess.com/games/") {
+    
+    /*Pieces*/
+    div [class$="bk"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bK.svg")!important;
+    }
+    div [class$="bq"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bQ.svg")!important;
+    }
+    div [class$="bb"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bB.svg")!important;
+    }
+    div [class$="bn"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bN.svg")!important;
+    }
+    div [class$="br"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bR.svg")!important;
+    }
+    div [class$="bp"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bP.svg")!important;
+    }
+    div [class$="wk"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wK.svg")!important;
+    }
+    div [class$="wq"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wQ.svg")!important;
+    }
+    div [class$="wb"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wB.svg")!important;
+    }
+    div [class$="wn"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wN.svg")!important;
+    }
+    div [class$="wr"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wR.svg")!important;
+    }
+    div [class$="wp"] {
+        background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wP.svg")!important;
+    }
+    
+}
