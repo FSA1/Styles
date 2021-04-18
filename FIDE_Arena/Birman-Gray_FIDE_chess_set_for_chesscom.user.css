@@ -109,11 +109,9 @@ div[id*="chess_com_emailboard_"] {background-image: url("https://arena.myfide.ne
     right: 0;
     z-index: -1;    
     _filter: blur(8px);
-    _-webkit-filter: blur(8px);
+    _-webkit-filter: blur(8px);}
 }
-/*End of the code*/
-}
-@-moz-document url-prefix("https://www.chess.com/games/") {
+@-moz-document url-prefix("https://www.chess.com/games/"), url-prefix("https://www.chess.com/play/computer") {
     
     /*Pieces*/
     div [class$="bk"] {
