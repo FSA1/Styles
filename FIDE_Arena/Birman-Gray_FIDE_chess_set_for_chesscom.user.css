@@ -1,0 +1,117 @@
+/* ==UserStyle==
+@name           Chess.com Chess Set FIDE: Birman-Gray
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `Birman-Gray (FIDE Arena Complete Chess Set).`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+/*Chessboard*/    
+.board,
+div[class^="daily-puzzle-board"],
+div[class^="board chessboard-component"],
+div[class^="board v-board chessboard-component"],
+div[class^="board rounded"],
+div[class^="board rounded fippled"],
+div[class^="board fippled rounded"],
+div[class^="board v-board rounded"],
+div[class^="board v-board fippled rounded"],
+div[class^="board disabled rounded"],
+div[id$="_ChessBoard_boardarea"],
+div[id^="chess_com_openingboard_1"],
+div[id^="board_training"],
+div[id^="divBoard_boardarea"],
+div[id^="chess_com_tactics_board"],
+div[id^="chessboard_"],
+div[id*="chessboard_"],
+div[id^="chess_com_chessmentorboard_"],
+div[id*="chess_com_chessmentorboard_"],
+div[id*="chess_com_chessmentor_board_1_boardarea"],
+div[id^="chess_com_emailboard_"],
+div[id^="board-blank"],
+chess-board[class^="board"],
+chess-board[class^="board flipped"],
+chess-board[id^="board-blank"],
+chess-board[id^="board-vs-personalities"],
+div[id*="chess_com_emailboard_"] {background-image: url("https://arena.myfide.net/birman-gray.c336a76039b62027e3df.svg")!important;
+}
+/*Coordinates*/
+	div.number.coords-light, div.letter.coords-light {
+    color: #5a5956 !important;
+}
+	div.number.coords-dark, div.letter.coords-dark {
+    color: #5a5956 !important;
+}
+	text.coordinate-light {
+    fill: #5a5956 !important;
+}    
+	text.coordinate-dark {
+    fill: #5a5956 !important;
+} 
+/*Highlight*/
+    .move-square{
+    background-color: #8E9293 !important;
+    opacity: 0.8!important;
+}	
+	.selection-square{
+    background-color: #FD9E5C !important;
+	opacity:0.8 !important;
+}
+/*Evaluation Bar*/
+    .evaluation-bar-white {
+        background-color: #dbcfc0 !important;
+    }
+    .evaluation-bar-black {
+        background-color: #514c46 !important;
+    }
+    .evaluation-bar-bar{
+        opacity: 0.7;
+    }
+
+}
+/*Pieces*/
+    div [style*="bk.png"],
+    div [class^="piece bk"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bK.svg")!important;}
+    div [style*="bq.png"],
+    div [class^="piece bq"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bQ.svg")!important;}
+    div [style*="bb.png"],
+    div [class^="piece bb"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bB.svg")!important;}
+    div [style*="bn.png"],
+    div [class^="piece bn"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bN.svg")!important;}
+    div [style*="br.png"],
+    div [class^="piece br"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bR.svg")!important;}
+    div [style*="bp.png"],
+    div [class^="piece bp"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bP.svg")!important;}
+    div [style*="wk.png"],
+    div [class^="piece wk"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wK.svg")!important;}
+    div [style*="wq.png"],
+    div [class^="piece wq"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wQ.svg")!important;}
+    div [style*="wb.png"],
+    div [class^="piece wb"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wB.svg")!important;}
+    div [style*="wn.png"],
+    div [class^="piece wn"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wN.svg")!important;}
+    div [style*="wr.png"],
+    div [class^="piece wr"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wR.svg")!important;}
+    div [style*="wp.png"],
+    div [class^="piece wp"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wP.svg")!important;}
+/*Wallpaper*/
+    body:after {
+    content: '';
+    position: fixed;
+    background: url(https://github.com/FSA1/Styles/raw/main/FIDE_Arena/FIDE_background1.jpg) center center !important;
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;    
+    _filter: blur(8px);
+    _-webkit-filter: blur(8px);
+}
+/*End of the code*/
+}
