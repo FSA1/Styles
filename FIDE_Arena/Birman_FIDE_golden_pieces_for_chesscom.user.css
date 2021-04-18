@@ -35,5 +35,23 @@
     div [style*="wp.png"],
     div [class^="piece wp"] {background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/golden/white-pawn.svg")!important;}
 /*Recomended chess board: birman-gray from FIDE ported for chess.com by agiota_do_artenio in blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
-/*End of the code*/
+/*End of the section*/
+}
+@-moz-document url-prefix("https://www.chess.com/member/agiota_do_artenio") {
+/*Home page*/
+a.link.main-link.sprite.profile::before{
+    
+    background-image: url(https://www.chess.com/bundles/web/images/flair/flair.26eb35e0@2x.png)!important;
+    background-position: 66.6666666667% 85.7142857143% !important;    
+    background-size: 34rem 98.6rem;
+    height: 3.4rem;
+    width: 3.4rem;
+}
+.flair-nothing {
+    background-position: 66.6666666667% 85.7142857143% !important;
+}
+.stat-text-data-aside-link, div[class*="stat-section-chart"], div[class*="games-component"]{
+        display: none !important;        
+    }
+/*End of the section*/
 }
