@@ -1,0 +1,39 @@
+/* ==UserStyle==
+@name           Chess.com Pieces FIDE: Birman Golden
+@author         agiota_do_artenio
+@namespace      USO Archive
+@description    `Birman (FIDE Arena Chess Pieces).`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+
+/*Pieces*/
+    div [style*="bk.png"],
+    div [class^="piece bk"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bK.svg")!important;}
+    div [style*="bq.png"],
+    div [class^="piece bq"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bQ.svg")!important;}
+    div [style*="bb.png"],
+    div [class^="piece bb"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bB.svg")!important;}
+    div [style*="bn.png"],
+    div [class^="piece bn"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bN.svg")!important;}
+    div [style*="br.png"],
+    div [class^="piece br"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bR.svg")!important;}
+    div [style*="bp.png"],
+    div [class^="piece bp"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/bP.svg")!important;}
+    div [style*="wk.png"],
+    div [class^="piece wk"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/golden/white-king.svg")!important;}
+    div [style*="wq.png"],
+    div [class^="piece wq"] {background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/golden/white-queen.svg")!important;}
+    div [style*="wb.png"],
+    div [class^="piece wb"] {background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/golden/white-bishop.svg")!important;}
+    div [style*="wn.png"],
+    div [class^="piece wn"] {background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/golden/white-knight.svg")!important;}
+    div [style*="wr.png"],
+    div [class^="piece wr"] {background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/golden/white-rook.svg")!important;}
+    div [style*="wp.png"],
+    div [class^="piece wp"] {background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/golden/white-pawn.svg")!important;}
+/*Recomended chess board: birman-gray from FIDE ported for chess.com by agiota_do_artenio in blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
+/*End of the code*/
+}
