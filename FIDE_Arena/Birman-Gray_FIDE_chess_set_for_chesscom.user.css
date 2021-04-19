@@ -111,7 +111,7 @@ div[id*="chess_com_emailboard_"] {background-image: url("https://arena.myfide.ne
     _filter: blur(8px);
     _-webkit-filter: blur(8px);}
 }
-@-moz-document url-prefix("https://www.chess.com/drills"),url-prefix("https://www.chess.com/solo-chess"),url-prefix("https://www.chess.com/puzzles"),url-prefix("https://www.chess.com/games"),url-prefix("https://www.chess.com/play/computer"),
+@-moz-document url-prefix("https://www.chess.com/openings"),url-prefix("https://www.chess.com/drills"),url-prefix("https://www.chess.com/solo-chess"),url-prefix("https://www.chess.com/puzzles"),url-prefix("https://www.chess.com/games"),url-prefix("https://www.chess.com/play/computer"),
 url-prefix("https://www.chess.com/analysis") {
     
     /*Pieces*/
