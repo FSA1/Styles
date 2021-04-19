@@ -36,7 +36,8 @@
     div [class^="piece wp"] {background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wP.svg")!important;}
 /*Recomended chess board: birman-gray from FIDE ported for chess.com by agiota_do_artenio in blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
 }
-@-moz-document url-prefix("https://www.chess.com/games/"), url-prefix("https://www.chess.com/play/computer") {
+@-moz-document url-prefix("https://www.chess.com/openings"),url-prefix("https://www.chess.com/drills"),url-prefix("https://www.chess.com/solo-chess"),url-prefix("https://www.chess.com/puzzles"),url-prefix("https://www.chess.com/game"),url-prefix("https://www.chess.com/play/computer"),
+url-prefix("https://www.chess.com/analysis") {
     
     /*Pieces*/
     div [class$="bk"] {
@@ -75,5 +76,5 @@
     div [class$="wp"] {
         background-image: url("https://arena.myfide.net/assets/images/chess/birman-chesspieces/wP.svg")!important;
     }
-    /*Recomended chess board: birman-gray from FIDE ported for chess.com by agiota_do_artenio in blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
+    
 }
