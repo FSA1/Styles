@@ -1,3 +1,12 @@
+/* ==UserStyle==
+@name           Chess.com Chess Set FIDE: Birman-Gray
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `Birman-Gray (FIDE Arena Complete Chess Set).`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
     .board,
