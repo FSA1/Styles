@@ -26,5 +26,20 @@ div [style*="bn.png"] {
     filter: invert(1);
 	}
 /*Recomended chess board: Furia by agiota_do_artenio from chess.com blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
-/*End of the code*/
+/*End of the section*/
+}
+@-moz-document url-prefix("https://www.chess.com/openings"),url-prefix("https://www.chess.com/drills"),url-prefix("https://www.chess.com/solo-chess"),url-prefix("https://www.chess.com/puzzles"),url-prefix("https://www.chess.com/game"),url-prefix("https://www.chess.com/play/computer"),
+url-prefix("https://www.chess.com/analysis") {
+    
+    /*Pieces*/
+
+    div [class$="bn"] {
+	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+	}
+    div [class$="wn"] {
+	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+	-webkit-filter: invert(1);
+    filter: invert(1);
+	}
+/*End of the section*/  
 }
