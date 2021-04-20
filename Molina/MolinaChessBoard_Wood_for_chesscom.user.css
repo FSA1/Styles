@@ -35,7 +35,7 @@ chess-board[class^="board"],
 chess-board[class^="board flipped"],
 chess-board[id^="board-blank"],
 chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url(https://raw.githubusercontent.com/FSA1/Styles/main/RMcb_Wood.png)!important;
+div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png)!important;
 }
 /*Coordinates*/
 	div.number.coords-light, div.letter.coords-light {
