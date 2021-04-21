@@ -35,7 +35,8 @@ chess-board[class^="board"],
 chess-board[class^="board flipped"],
 chess-board[id^="board-blank"],
 chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url("https://i.imgur.com/sUD4GYw.png")!important;
+div[id*="chess_com_emailboard_"] {
+    background-image: url("https://i.imgur.com/sUD4GYw.png")!important;
 }
 /*Coordinates*/
 div.number.coords-light, div.letter.coords-light {
@@ -51,9 +52,13 @@ text.coordinate-light {
 text.coordinate-dark {
     fill: rgb(239, 204, 161) !important;
 }   
-/*Highlight*/
-.move-square{background-color: #f7ca41!important;}
+/*Highlights - works for live games only*/
+.move-square{
+    background-color: #f7ca41!important;
 }
+
 .selection-square{
     background-color: #ffb300 !important;
+}
+ /*end of the code*/
 }
