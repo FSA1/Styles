@@ -35,7 +35,7 @@ chess-board[class^="board"],
 chess-board[class^="board flipped"],
 chess-board[id^="board-blank"],
 chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url(https://raw.githubusercontent.com/FSA1/Styles/main/RMcb_Wood.png)!important;
+div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb.png)!important;
 }
 /*Coordinates*/
 	div.number.coords-light, div.letter.coords-light {
@@ -51,7 +51,7 @@ div[id*="chess_com_emailboard_"] {background-image: url(https://raw.githubuserco
     fill: rgb(236, 236, 215) !important;
 } 
 /*Highlight*/
-    .move-square{background: url(https://thumbs.gfycat.com/LikelyAgreeableGreyhounddog-size_restricted.gif) 0% 0% / 100% 100% no-repeat !important;
+    .move-square{background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight.gif) 0% 0% / 100% 100% no-repeat !important;
     opacity: 0.4!important;
 
 }	
