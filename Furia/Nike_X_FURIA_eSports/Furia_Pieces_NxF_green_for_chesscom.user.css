@@ -1,0 +1,26 @@
+/* ==UserStyle==
+@name           Chess.com Pieces: Pantera (Nike x Furia 2021)
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `Replaces Knights for the panther from "Nike x Furia" 2021 collection release.`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+/*Pieces*/
+div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
+    background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+}
+div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
+    background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+}  
+div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
+        content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+}
+div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
+        content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+}
+/*Recomended chess board: Furia by agiota_do_artenio from chess.com blog link: https://www.chess.com/blog/Agiota_do_Artenio*/
+/*End of the code*/
+}
