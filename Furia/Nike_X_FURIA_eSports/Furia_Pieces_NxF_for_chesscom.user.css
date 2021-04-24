@@ -9,10 +9,10 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*Pieces*/
-div [style$="bn.png"], .piece.bn, .promotion-piece.bn {
+div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
     background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
 }
-div [style$="wn.png"],.piece.wn, .promotion-piece.wn {
+div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
     background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
 }  
 div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
