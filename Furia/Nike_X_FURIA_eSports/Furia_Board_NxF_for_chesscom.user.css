@@ -1,0 +1,61 @@
+/* ==UserStyle==
+@name           Chess.com Board: Nike x Furia 2021
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `Chess board inspired on "Nike x Furia" 2021 collection release.`
+@version        20200831.22.25
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+/*Chessboard*/    
+.board,
+div[class^="daily-puzzle-board"],
+div[class^="board chessboard-component"],
+div[class^="board v-board chessboard-component"],
+div[class^="board rounded"],
+div[class^="board rounded fippled"],
+div[class^="board fippled rounded"],
+div[class^="board v-board rounded"],
+div[class^="board v-board fippled rounded"],
+div[class^="board disabled rounded"],
+div[id$="_ChessBoard_boardarea"],
+div[id^="chess_com_openingboard_1"],
+div[id^="board_training"],
+div[id^="divBoard_boardarea"],
+div[id^="chess_com_tactics_board"],
+div[id^="chessboard_"],
+div[id*="chessboard_"],
+div[id^="chess_com_chessmentorboard_"],
+div[id*="chess_com_chessmentorboard_"],
+div[id*="chess_com_chessmentor_board_1_boardarea"],
+div[id^="chess_com_emailboard_"],
+div[id^="board-blank"],
+chess-board[class^="board"],
+chess-board[class^="board flipped"],
+chess-board[id^="board-blank"],
+chess-board[id^="board-vs-personalities"],
+div[id*="chess_com_emailboard_"] {background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
+}
+/*Coordinates*/
+div.number.coords-light, div.letter.coords-light {
+    color: rgb(136, 164, 181)!important;
+}
+div.number.coords-dark, div.letter.coords-dark {
+    color: rgb(208, 215, 218) !important;
+}
+text.coordinate-light {
+    fill: rgb(136, 164, 181)!important;
+}    
+text.coordinate-dark {
+    fill: rgb(208, 215, 218) !important;
+}   
+/*Highlight*/
+.move-square{
+	background-color: #38abd9!important;
+}    
+.selection-square{
+    background-color: #0058cc !important;
+}
+/*End of the code*/
+}
