@@ -39,23 +39,23 @@ div[id*="chess_com_emailboard_"] {background-image: url("https://github.com/FSA1
 }
 /*Coordinates*/
 div.number.coords-light, div.letter.coords-light {
-    color: rgb(136, 164, 181)!important;
+    color: rgb(198, 115, 120)!important;
 }
 div.number.coords-dark, div.letter.coords-dark {
-    color: rgb(208, 215, 218) !important;
+    color: rgb(235, 234, 220) !important;
 }
 text.coordinate-light {
-    fill: rgb(136, 164, 181)!important;
+    fill: rgb(198, 115, 120)!important;
 }    
 text.coordinate-dark {
-    fill: rgb(208, 215, 218) !important;
+    fill: rgb(235, 234, 220) !important;
 }   
 /*Highlight*/
 .move-square{
-	background-color: #38abd9!important;
+	background-color: #fcca00!important;
 }    
 .selection-square{
-    background-color: #0058cc !important;
+    background-color: #ff4d00 !important;
 }
 /*End of the code*/
 }
