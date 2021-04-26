@@ -1,0 +1,605 @@
+/* ==UserStyle==
+@name           Chess.com Chess Set: Nike x FURIA 2021 (Pack)
+@namespace      ChessSkins
+@author         agiota_do_artenio
+@description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
+@version        2.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+
+@var    select      myBoard    "Escolher Tabuleiro" {
+            "Cinza 1": "op1",
+            "Cinza 2": "op2",
+            "Azul 1": "op3",
+            "Azul 2": "op4",
+            "Azul 3": "op5",
+            "Verde*": "op6",
+            "Marrom": "op7",
+            "FURIA 1ª Ed.": "op8",
+            "Desativado": "op9"
+			
+        }
+@var    select      myPieces    "Escolher Peças"{
+            "Nike X FURIA (Alpha)*": "op1",
+            "Nike X FURIA (Clássico)": "op2",
+            "FURIA (Estilizado)": "op3",
+            "FURIA (Logo)": "op4",
+            "FURIA (Neo)": "op5"
+            "Desativado": "op6"
+        }
+}
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*Chessboard*/
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if myBoard=="op1" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op2" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_gray.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op3" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op4" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue2.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op5" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue3.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op6" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_green.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(32, 164, 111)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(237, 236, 210) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(32, 164, 111)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(237, 236, 210) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: rgb(0, 209, 43)!important;
+            }
+            .selection-square {
+                background-color: #00e1f6 !important;
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #F0EDD6 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5AA174 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
+        }
+        if myBoard=="op7" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(198, 115, 120)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(235, 234, 220) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(198, 115, 120)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(235, 234, 220) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #fcca00!important;
+            }
+            .selection-square {
+                background-color: #ff4d00 !important;
+            }
+        }
+        if myBoard=="op8" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia-cb-blue.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+    }
+
+        /*Pieces*/
+        if myPieces=="op1" {
+            div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+            }
+            div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+            }  
+            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+            }
+            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+                }
+            }
+        if myPieces=="op2" {
+            div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+            }
+            div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+            }  
+            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+            }
+            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+                }
+            }
+        if myPieces=="op3" {
+            div [style*="wn.png"], .piece.wn, .promotion-piece.wn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+            }
+            div [style*="bn.png"], .piece.bn, .promotion-piece.bn{
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+            }
+            /*child 31 is white-knight*/
+            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+            }
+            /*child 7 is black-knight*/
+            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+            }
+        }
+        if myPieces=="op4" {
+            div [style*="wn.png"], .piece.wn, .promotion-piece.wn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+            }
+            div [style*="bn.png"], .piece.bn, .promotion-piece.bn{
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+            }
+            /*child 31 is white-knight*/
+            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+                -webkit-filter: invert(1);
+                filter: invert(1);
+            }
+            /*child 7 is black-knight*/
+            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+            }
+        }
+        if myPieces=="op5" {
+            div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
+            }
+            div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
+                background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
+            }
+            /*child 7 is black-knight*/
+            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
+                content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
+            }
+            /*child 31 is white-knight*/
+            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
+                content: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
+                }
+            }
+/*End of the code*/
+}
+    /*Chessboard*/
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if myBoard=="op1" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op2" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_gray.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op3" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op4" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue2.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op5" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue3.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op6" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_green.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(32, 164, 111)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(237, 236, 210) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(32, 164, 111)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(237, 236, 210) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: rgb(0, 209, 43)!important;
+            }
+            .selection-square {
+                background-color: #00e1f6 !important;
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #F0EDD6 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5AA174 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
+        }
+        if myBoard=="op7" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(198, 115, 120)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(235, 234, 220) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(198, 115, 120)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(235, 234, 220) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #fcca00!important;
+            }
+            .selection-square {
+                background-color: #ff4d00 !important;
+            }
+        }
+        if myBoard=="op8" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia-cb-blue.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+    }
+
+    /*End of the code*/
+}
