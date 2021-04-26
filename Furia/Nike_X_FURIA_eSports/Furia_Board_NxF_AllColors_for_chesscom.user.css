@@ -14,211 +14,225 @@
     "Azul 2": "op4",
     "Azul 3": "op5",
     "Verde": "op6",
-    "Marrom": "op7",
+    "Marrom": "op7"
 }
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-/*Chessboard*/ 
-.board,
-div[class^="daily-puzzle-board"],
-div[class^="board chessboard-component"],
-div[class^="board v-board chessboard-component"],
-div[class^="board rounded"],
-div[class^="board rounded fippled"],
-div[class^="board fippled rounded"],
-div[class^="board v-board rounded"],
-div[class^="board v-board fippled rounded"],
-div[class^="board disabled rounded"],
-div[id$="_ChessBoard_boardarea"],
-div[id^="chess_com_openingboard_1"],
-div[id^="board_training"],
-div[id^="divBoard_boardarea"],
-div[id^="chess_com_tactics_board"],
-div[id^="chessboard_"],
-div[id*="chessboard_"],
-div[id^="chess_com_chessmentorboard_"],
-div[id*="chess_com_chessmentorboard_"],
-div[id*="chess_com_chessmentor_board_1_boardarea"],
-div[id^="chess_com_emailboard_"],
-div[id^="board-blank"],
-chess-board[class^="board"],
-chess-board[class^="board flipped"],
-chess-board[id^="board-blank"],
-chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {
-    if myBoard == "op1"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
+    /*Chessboard*/
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if myBoard=="op1" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
 
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(136, 164, 181)!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
         }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(208, 215, 218) !important;
+        if myBoard=="op2" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_gray.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
         }
-        text.coordinate-light {
-            fill: rgb(136, 164, 181)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(208, 215, 218) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: #38abd9!important;
-        }    
-        .selection-square{
-            background-color: #0058cc !important;
+        if myBoard=="op3" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
         }
-    }
-    if myBoard == "op2"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_gray.png")!important;
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(136, 164, 181)!important;
+        if myBoard=="op4" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue2.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
         }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(208, 215, 218) !important;
+        if myBoard=="op5" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue3.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
         }
-        text.coordinate-light {
-            fill: rgb(136, 164, 181)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(208, 215, 218) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: #38abd9!important;
-        }    
-        .selection-square{
-            background-color: #0058cc !important;
+        if myBoard=="op6" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_green.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(32, 164, 111)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(237, 236, 210) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(32, 164, 111)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(237, 236, 210) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: rgb(0, 209, 43)!important;
+            }
+            .selection-square {
+                background-color: #00e1f6 !important;
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #F0EDD6 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5AA174 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
         }
-    }
-    if myBoard == "op3"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue.png")!important;
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(136, 164, 181)!important;
-        }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(208, 215, 218) !important;
-        }
-        text.coordinate-light {
-            fill: rgb(136, 164, 181)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(208, 215, 218) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: #38abd9!important;
-        }    
-        .selection-square{
-            background-color: #0058cc !important;
-        }
-    }
-    if myBoard == "op4"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue2.png")!important;
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(136, 164, 181)!important;
-        }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(208, 215, 218) !important;
-        }
-        text.coordinate-light {
-            fill: rgb(136, 164, 181)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(208, 215, 218) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: #38abd9!important;
-        }    
-        .selection-square{
-            background-color: #0058cc !important;
-        }
-    }
-    if myBoard == "op5"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue3.png")!important;
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(136, 164, 181)!important;
-        }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(208, 215, 218) !important;
-        }
-        text.coordinate-light {
-            fill: rgb(136, 164, 181)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(208, 215, 218) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: #38abd9!important;
-        }    
-        .selection-square{
-            background-color: #0058cc !important;
-        }
-    }
-    if myBoard == "op6"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_green.png")!important;
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(32, 164, 111)!important;
-        }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(237, 236, 210) !important;
-        }
-        text.coordinate-light {
-            fill: rgb(32, 164, 111)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(237, 236, 210) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: rgb(0, 209, 43)!important;
-        }    
-        .selection-square{
-            background-color: #00e1f6 !important;
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #F0EDD6 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #5AA174 !important;
-        }
-        .evaluation-bar-bar{
-            opacity: 0.7;
-        }
-    }
-    if myBoard == "op7"{     
-        background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
-        /*Coordinates*/
-        div.number.coords-light, div.letter.coords-light {
-            color: rgb(198, 115, 120)!important;
-        }
-        div.number.coords-dark, div.letter.coords-dark {
-            color: rgb(235, 234, 220) !important;
-        }
-        text.coordinate-light {
-            fill: rgb(198, 115, 120)!important;
-        }    
-        text.coordinate-dark {
-            fill: rgb(235, 234, 220) !important;
-        }   
-        /*Highlight*/
-        .move-square{
-            background-color: #fcca00!important;
-        }    
-        .selection-square{
-            background-color: #ff4d00 !important;
+        if myBoard=="op7" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(198, 115, 120)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(235, 234, 220) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(198, 115, 120)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(235, 234, 220) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #fcca00!important;
+            }
+            .selection-square {
+                background-color: #ff4d00 !important;
+            }
         }
     }
 
-/*End of the code*/
+    /*End of the code*/
 }
-
