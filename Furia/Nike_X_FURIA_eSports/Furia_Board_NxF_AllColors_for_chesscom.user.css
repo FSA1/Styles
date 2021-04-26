@@ -14,7 +14,8 @@
     "Azul 2": "op4",
     "Azul 3": "op5",
     "Verde*": "op6",
-    "Marrom": "op7"
+    "Marrom": "op7",
+	"FURIA 1ª Ed.": "op8",
 }
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
@@ -230,6 +231,32 @@
             }
             .selection-square {
                 background-color: #ff4d00 !important;
+            }
+        }
+        if myBoard=="op8" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia-cb-blue.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(136, 164, 181)!important;
+            }
+            text.coordinate-dark {
+                fill: rgb(208, 215, 218) !important;
+            }
+            /*Highlight*/
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
             }
         }
     }
