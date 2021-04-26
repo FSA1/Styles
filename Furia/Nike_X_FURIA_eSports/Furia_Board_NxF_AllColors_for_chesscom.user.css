@@ -8,12 +8,12 @@
 @preprocessor   stylus
 
 @var          select   myBoard    "Escolher Tabuleiro" {
-    "Cinza 1": "op1*",
+    "Cinza 1": "op1",
     "Cinza 2": "op2",
     "Azul 1": "op3",
     "Azul 2": "op4",
     "Azul 3": "op5",
-    "Verde": "op6",
+    "Verde*": "op6",
     "Marrom": "op7"
 }
 ==/UserStyle== */
