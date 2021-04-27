@@ -68,5 +68,9 @@ div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/
     .evaluation-bar-bar{
         opacity: 0.7;
     }
+/*BabiChess User Pic*/
+div [src*="34162322.a52ae0af.78x78o.62c78c7941b0.jpeg"]{
+    content: url("https://github.com/FSA1/Styles/raw/main/babichess/babichess.jpeg");
+}
 /*End of the code*/
 }
