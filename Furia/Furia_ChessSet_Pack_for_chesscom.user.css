@@ -16,7 +16,7 @@
             "Verde*": "op6",
             "Marrom": "op7",
             "FURIA 1ª Ed.": "op8",
-            "Desativado": "op9",
+            "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
             "Nike X FURIA (Alpha)*": "op1",
@@ -24,7 +24,7 @@
             "FURIA (Estilizado)": "op3",
             "FURIA (Logo)": "op4",
             "FURIA (Neo)": "op5",
-            "Desativado": "op6",
+            "Desativado": "op0",
         }
 }
 ==/UserStyle== */
@@ -207,16 +207,6 @@
             .selection-square {
                 background-color: #00e1f6 !important;
             }
-            /*Evaluation Bar*/
-            .evaluation-bar-white {
-                background-color: #F0EDD6 !important;
-            }
-            .evaluation-bar-black {
-                background-color: #5AA174 !important;
-            }
-            .evaluation-bar-bar {
-                opacity: 0.7;
-            }
         }
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
@@ -271,90 +261,184 @@
         }
     }
 
+    /*Pieces*/
+    if myPieces=="op1" {
+        div [style*="bn.png"],
+        .piece.bn,
+        .promotion-piece.bn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+        }
+        div [style*="wn.png"],
+        .piece.wn,
+        .promotion-piece.wn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+        }
+        div.game-preview-component > img:nth-child(2),
+        div.game-preview-component > img:nth-child(7) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+        }
+        div.game-preview-component > img:nth-child(26),
+        div.game-preview-component > img:nth-child(31) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+        }
+    }
+    if myPieces=="op2" {
+        div [style*="bn.png"],
+        .piece.bn,
+        .promotion-piece.bn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+        }
+        div [style*="wn.png"],
+        .piece.wn,
+        .promotion-piece.wn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+        }
+        div.game-preview-component > img:nth-child(2),
+        div.game-preview-component > img:nth-child(7) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+        }
+        div.game-preview-component > img:nth-child(26),
+        div.game-preview-component > img:nth-child(31) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+        }
+    }
+    if myPieces=="op3" {
+        div [style*="wn.png"],
+        .piece.wn,
+        .promotion-piece.wn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
+        div [style*="bn.png"],
+        .piece.bn,
+        .promotion-piece.bn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+        }
+        /*child 31 is white-knight*/
+        div.game-preview-component > img:nth-child(26),
+        div.game-preview-component > img:nth-child(31) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
+        /*child 7 is black-knight*/
+        div.game-preview-component > img:nth-child(2),
+        div.game-preview-component > img:nth-child(7) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
+        }
+    }
+    if myPieces=="op4" {
+        div [style*="wn.png"],
+        .piece.wn,
+        .promotion-piece.wn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
+        div [style*="bn.png"],
+        .piece.bn,
+        .promotion-piece.bn {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+        }
+        /*child 31 is white-knight*/
+        div.game-preview-component > img:nth-child(26),
+        div.game-preview-component > img:nth-child(31) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
+        /*child 7 is black-knight*/
+        div.game-preview-component > img:nth-child(2),
+        div.game-preview-component > img:nth-child(7) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
+        }
+    }
+    if myPieces=="op5" {
         /*Pieces*/
-        if myPieces=="op1" {
-            div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
-            }
-            div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
-            }  
-            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
-            }
-            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
-                }
-            }
-        if myPieces=="op2" {
-            div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
-            }
-            div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
-            }  
-            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
-            }
-            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
-                }
-            }
-        if myPieces=="op3" {
-            div [style*="wn.png"], .piece.wn, .promotion-piece.wn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
-                -webkit-filter: invert(1);
-                filter: invert(1);
-            }
-            div [style*="bn.png"], .piece.bn, .promotion-piece.bn{
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
-            }
-            /*child 31 is white-knight*/
-            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
-                -webkit-filter: invert(1);
-                filter: invert(1);
-            }
-            /*child 7 is black-knight*/
-            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
-            }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png")!important;
         }
-        if myPieces=="op4" {
-            div [style*="wn.png"], .piece.wn, .promotion-piece.wn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
-                -webkit-filter: invert(1);
-                filter: invert(1);
-            }
-            div [style*="bn.png"], .piece.bn, .promotion-piece.bn{
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
-            }
-            /*child 31 is white-knight*/
-            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
-                -webkit-filter: invert(1);
-                filter: invert(1);
-            }
-            /*child 7 is black-knight*/
-            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
-            }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/br.png")!important;
         }
-        if myPieces=="op5" {
-            div [style*="bn.png"], .piece.bn, .promotion-piece.bn {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png")!important;
+        }
+        /*child 7 is black-knight*/
+        div.game-preview-component > img:nth-child(2),
+        div.game-preview-component > img:nth-child(7) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
+        }
+        /*child 31 is white-knight*/
+        div.game-preview-component > img:nth-child(26),
+        div.game-preview-component > img:nth-child(31) {
+            content: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
+        }
+    }
+    /*Evaluation Bar*/    
+        if myBoard=="op6" {
+
+            .evaluation-bar-white {
+                background-color: #F0EDD6 !important;
             }
-            div [style*="wn.png"],.piece.wn, .promotion-piece.wn {
-                background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
+            .evaluation-bar-black {
+                background-color: #5AA174 !important;
             }
-            /*child 7 is black-knight*/
-            div.game-preview-component > img:nth-child(2), div.game-preview-component > img:nth-child(7){
-                content: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
-            }
-            /*child 31 is white-knight*/
-            div.game-preview-component > img:nth-child(26), div.game-preview-component > img:nth-child(31){
-                content: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
-                }
-            }
-/*End of the code*/
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }            
+        }
+    /*End of the code*/
 }
