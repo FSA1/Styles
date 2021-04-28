@@ -227,7 +227,7 @@
             }
             /*Highlight*/
             .move-square {
-                background-color: #fcca00!important;
+                background-color: rgb(251, 209, 61)!important;
             }
             .selection-square {
                 background-color: #ff4d00 !important;
@@ -427,18 +427,74 @@
             content: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
         }
     }
-    /*Evaluation Bar*/    
-        if myBoard=="op6" {
-
-            .evaluation-bar-white {
-                background-color: #F0EDD6 !important;
-            }
-            .evaluation-bar-black {
-                background-color: #5AA174 !important;
-            }
-            .evaluation-bar-bar {
-                opacity: 0.7;
-            }            
+    /*extra rules*/
+    if myBoard=="op1" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
         }
+    }
+    if myBoard=="op2" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    }
+    if myBoard=="op3" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    }
+    if myBoard=="op4" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    }
+    if myBoard=="op5" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    }
+    if myBoard=="op6" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #F0EDD6 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #5AA174 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.7;
+        }
+    }
+    if myBoard=="op7" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #f3f1de !important;
+        }
+        .evaluation-bar-black {
+            background-color: #b1776f!important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.7;
+        }
+    }
+    if myBoard=="op8" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    }
     /*End of the code*/
 }
