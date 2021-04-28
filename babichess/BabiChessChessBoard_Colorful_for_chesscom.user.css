@@ -68,5 +68,9 @@ div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/
     .evaluation-bar-bar{
         opacity: 0.7;
     }
+/*Small board for game preview*/
+    div [style*="40.png"][class="game-preview-component"] {
+        background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
+    }
 /*End of the code*/
 }
