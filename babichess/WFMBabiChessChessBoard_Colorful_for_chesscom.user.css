@@ -8,65 +8,106 @@
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-/*Chessboard*/    
-.board,
-div[class^="daily-puzzle-board"],
-div[class^="board chessboard-component"],
-div[class^="board v-board chessboard-component"],
-div[class^="board rounded"],
-div[class^="board rounded fippled"],
-div[class^="board fippled rounded"],
-div[class^="board v-board rounded"],
-div[class^="board v-board fippled rounded"],
-div[class^="board disabled rounded"],
-div[id$="_ChessBoard_boardarea"],
-div[id^="chess_com_openingboard_1"],
-div[id^="board_training"],
-div[id^="divBoard_boardarea"],
-div[id^="chess_com_tactics_board"],
-div[id^="chessboard_"],
-div[id*="chessboard_"],
-div[id^="chess_com_chessmentorboard_"],
-div[id*="chess_com_chessmentorboard_"],
-div[id*="chess_com_chessmentor_board_1_boardarea"],
-div[id^="chess_com_emailboard_"],
-div[id^="board-blank"],
-chess-board[class^="board"],
-chess-board[class^="board flipped"],
-chess-board[id^="board-blank"],
-chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb.png)!important;
-}
-/*Coordinates*/
-	div.number.coords-light, div.letter.coords-light {
-    color: rgb(77, 109, 146) !important;
-}
-	div.number.coords-dark, div.letter.coords-dark {
-    color: rgb(236, 236, 215) !important;
-}
-	text.coordinate-light {
-    fill: rgb(77, 109, 146) !important;
-}    
-	text.coordinate-dark {
-    fill: rgb(236, 236, 215) !important;
-} 
-/*Highlight*/
-    .move-square{background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight.gif) 0% 0% / 100% 100% no-repeat !important;
-    opacity: 0.4!important;
-
-}	
-	.selection-square{
-    background-color: rgb(0, 165, 255) !important;
-}
-/*Evaluation Bar*/
+    /*Chessboard*/
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb.png)!important;
+    }
+    /*Coordinates*/
+    div.number.coords-light,
+    div.letter.coords-light {
+        color: rgb(77, 109, 146) !important;
+    }
+    div.number.coords-dark,
+    div.letter.coords-dark {
+        color: rgb(236, 236, 215) !important;
+    }
+    text.coordinate-light {
+        fill: rgb(77, 109, 146) !important;
+    }
+    text.coordinate-dark {
+        fill: rgb(236, 236, 215) !important;
+    }
+    /*Highlight*/
+    .move-square {
+        background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight.gif) 0% 0% / 100% 100% no-repeat !important;
+        opacity: 0.4!important;
+    }
+    .selection-square {
+        background-color: rgb(0, 165, 255) !important;
+    }
+    /*Evaluation Bar*/
     .evaluation-bar-white {
         background-color: #fdffe8 !important;
     }
     .evaluation-bar-black {
         background-color: #4b4eaa !important;
     }
-    .evaluation-bar-bar{
+    .evaluation-bar-bar {
         opacity: 0.7;
     }
-/*End of the code*/
+    /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    /*End of the section*/
+}
+@-moz-document url-prefix("https://www.chess.com/live"),
+url-prefix("https://www.chess.com/game/live") {
+    /*BabiChess Uninverted User Pic*/
+    div [src*="34162322.a52ae0af.78x78o.62c78c7941b0.jpeg"] {
+        content: url("https://github.com/FSA1/Styles/raw/main/babichess/babichess.jpeg")!important;
+    }
+    /*Name Styles*/
+    div [data-username*="babi3105"] {
+        visibility: hidden;
+        margin-left: -55px;
+    }
+    /*Fake Title*/
+    div [data-username*="babi3105"]:before {
+        content: "wfm"!important;
+        background-color: #b33430 !important;
+        border-radius: .3rem;
+        color: #fff !important;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: .1rem .2rem !important;
+        visibility: visible;
+        margin-right: -52px;
+        margin-left: 54px;
+    }
+    div [data-username*="babi3105"]:after {
+        content: "BabiChess"!important;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8rem;
+        color: #c697ff !important;
+        visibility: visible;
+    }
 }
