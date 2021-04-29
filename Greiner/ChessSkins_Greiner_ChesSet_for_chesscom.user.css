@@ -139,14 +139,6 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Greiner/wk.svg")!important;
         }
     }
-
-    /*extra rules*/
-    if myBoard=="op1" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Greiner/board-gray.svg") 0% 0% / 100% 100% no-repeat !important;
-        }
-    }
     /*Evaluation Bar*/
     .evaluation-bar-white {
         background-color: #ABABAB !important;
