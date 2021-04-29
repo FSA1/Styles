@@ -12,7 +12,7 @@
         }
 @var    select      myPieces    "Pieces options"{
             "Greiner (beige & red Alpha)*": "op1",
-            "Desativado": "op0",
+            "Disabled": "op0",
         }
 }
 ==/UserStyle== */
