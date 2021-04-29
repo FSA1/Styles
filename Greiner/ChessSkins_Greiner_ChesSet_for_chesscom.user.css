@@ -6,7 +6,6 @@
 @version        2.0.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
-
 @var    select      myBoard    "Board options" {
             "Greiner*": "op1",
             "Disabled": "op0",
@@ -18,6 +17,7 @@
 }
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
+
     /*Chessboard*/
     .board,
     div[class^="daily-puzzle-board"],
@@ -52,28 +52,29 @@
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
-                color: rgb(136, 164, 181)!important;
+                color: #f7bc44!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: rgb(208, 215, 218) !important;
+                color: #f7bc44 !important;
             }
             text.coordinate-light {
-                fill: rgb(136, 164, 181)!important;
+                fill: #f7bc44!important;
             }
             text.coordinate-dark {
-                fill: rgb(208, 215, 218) !important;
+                fill: #f7bc44 !important;
             }
             /*Highlight*/
             .move-square {
-                background-color: #38abd9!important;
+                background-color: #64AFD2!important;
+                opacity:0.9!important;
             }
             .selection-square {
-                background-color: #0058cc !important;
+                background-color: #ffab00 !important;
+                opacity:0.9!important;
             }
         }
     }
-
     /*Pieces*/
     if myPieces=="op1" {
         /*Pieces*/
@@ -138,6 +139,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Greiner/wk.svg")!important;
         }
     }
+
     /*extra rules*/
     if myBoard=="op1" {
         /*Small board for game preview*/
@@ -145,15 +147,15 @@
             background: url("https://github.com/FSA1/Styles/raw/main/Greiner/board-gray.svg") 0% 0% / 100% 100% no-repeat !important;
         }
     }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #F0EDD6 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #5AA174 !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.7;
-        }
-    /*End of the code*/
+    /*Evaluation Bar*/
+    .evaluation-bar-white {
+        background-color: #ABABAB !important;
+    }
+    .evaluation-bar-black {
+        background-color: #404040 !important;
+    }
+    .evaluation-bar-bar {
+        opacity: 0.9;
+    }
+    /*end*/
 }
