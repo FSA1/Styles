@@ -72,29 +72,6 @@
                 background-color: #0058cc !important;
             }
         }
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: rgb(136, 164, 181)!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: rgb(208, 215, 218) !important;
-            }
-            text.coordinate-light {
-                fill: rgb(136, 164, 181)!important;
-            }
-            text.coordinate-dark {
-                fill: rgb(208, 215, 218) !important;
-            }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
-            }
-        }
     }
 
     /*Pieces*/
