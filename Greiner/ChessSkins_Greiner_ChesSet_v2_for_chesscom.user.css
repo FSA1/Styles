@@ -18,6 +18,8 @@
 @var color    selSqCol  "Selection square color"   #ffab00
 @var color    lCoordCol  "Light coordinates color"   #f7bc44
 @var color    dCoordCol  "Dark coordinates color"   #f7bc44
+@var color    lEvalCol  "Light evaluation bar"   #ABABAB
+@var color    dEvalCol  "Dark evaluation bar"   #404040
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 
@@ -144,16 +146,13 @@
     }
     /*Evaluation Bar*/
     .evaluation-bar-white {
-        background-color: #ABABAB !important;
+        background-color: lEvalCol !important;
     }
     .evaluation-bar-black {
-        background-color: fontColorb !important;
+        background-color: dEvalCol !important;
     }
     .evaluation-bar-bar {
         opacity: 0.9;
-    }
-    .blackp path {
-        fill: fontColorb !important;
     }
     /*end*/
 }
