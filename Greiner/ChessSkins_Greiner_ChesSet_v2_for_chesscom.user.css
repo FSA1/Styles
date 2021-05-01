@@ -14,7 +14,6 @@
             "Greiner (beige & red Alpha)*": "op1",
             "Disabled": "op0",
         }
-}
 @var color    moveSqCol  "Move square color"   #64AFD2
 @var color    selSqCol  "Selection square color"   #ffab00
 @var color    lCoordCol  "Light coordinates color"   #f7bc44
