@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap')
+@-moz-document url-prefix("https://www.chess.com/live"),
+url-prefix("https://www.chess.com/game/live") {
+    /*User Pic*/
+    div [src*="129302428.d4060db8"] {
+        content: url("https://media.istockphoto.com/photos/gangster-incognito-picture-id108220143?k=6&m=108220143&s=612x612&w=0&h=ocOVHgKcasCq9SH5Z0CCzv3GI9SJbge3bl11Ds62-Bc=")!important;
+    }
+    /*Name Styles*/
+    div [data-username*="Agiota_do_Artenio"] {
+        visibility: hidden;
+        margin-left: -100px;
+    }
+    /*Fake Title*/
+    div [data-username="Agiota_do_Artenio"]:before {
+        content: "SM"!important;
+        background-color: #306db3 !important;
+        border-radius: .3rem;
+        color: #fff !important;
+        font-size: 1rem;
+        font-weight: 600;
+        _text-transform: uppercase;
+        line-height: 1;
+        padding: .1rem .2rem !important;
+        visibility: visible;
+        margin-right: -112px;
+        margin-left: 100px;
+    }
+    div [data-username*="Agiota_do_Artenio"]:after {
+        content: "ChessSkins"!important;
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.8rem;
+        color: #ff1616 !important;
+        visibility: visible;
+    }
+}
