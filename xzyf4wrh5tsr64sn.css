@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap')
-@-moz-document url-prefix("https://www.chess.com/live"),
-url-prefix("https://www.chess.com/game/live") {
+
     /*User Pic*/
     div [src*="129302428.d4060db8"] {
         content: url("https://media.istockphoto.com/photos/gangster-incognito-picture-id108220143?k=6&m=108220143&s=612x612&w=0&h=ocOVHgKcasCq9SH5Z0CCzv3GI9SJbge3bl11Ds62-Bc=")!important;
@@ -32,4 +31,3 @@ url-prefix("https://www.chess.com/game/live") {
         color: #ff1616 !important;
         visibility: visible;
     }
-}
