@@ -2,15 +2,139 @@
 @name           chess.com/live cores
 @namespace      ChessSkins
 @version        1.0.0
-@description    cores para os textos na página de jogo ao vivo
+@description    cores para os textos na pï¿½gina de jogo ao vivo
 @author         agiota_doartenio
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.chess.com/live"), url-prefix("https://www.chess.com/play/online") {
+@-moz-document url-prefix("https://www.chess.com/live"),
+url-prefix("https://www.chess.com/play/online") {
+    /*Cor de fundo do painel direito inteiro*/
+    #board-layout-sidebar {
+        background-color: #76a9b300!important;
+    }
+    /*icones nas guias*/
+    .tabset-nav-tabIcon,
+    .tabset-nav-title {
+        color: #fff!important;
+    }
+    .icon-font-chess.colored-icon.icon-font-chess.proleague,
+    .icon-font-chess.colored-icon.icon-font-chess.shield {
+        color: #4a58a5!important;
+    }
+    .sidebar-tabsetBottom.sidebar-darkMode div,
+    .sidebar-tabsetBottom.sidebar-darkMode label,
+    .sidebar-tabsetBottom.sidebar-darkMode p,
+    .sidebar-tabsetBottom.sidebar-darkMode select,
+    .sidebar-tabsetBottom.sidebar-darkMode span,
+    .sidebar-tabsetBottom.sidebar-darkMode textarea {
+        color: #ffffff;
+    }
+    .competitions-list-item-component.competitions-list-item-darkMode .competitions-list-item-count,
+    .competitions-list-item-component.competitions-list-item-darkMode .competitions-list-item-iconUser,
+    .competitions-list-item-component.competitions-list-item-darkMode .competitions-list-item-name,
+    .competitions-list-item-component.competitions-list-item-darkMode .competitions-list-item-status,
+    .competitions-list-item-component.competitions-list-item-darkMode:hover .competitions-list-item-count,
+    .competitions-list-item-component.competitions-list-item-darkMode:hover .competitions-list-item-iconUser,
+    .competitions-list-item-component.competitions-list-item-darkMode:hover .competitions-list-item-name,
+    .competitions-list-item-component.competitions-list-item-darkMode:hover .competitions-list-item-status {
+        color: #fff!important;
+    }
+    .events-list-component .events-list-row .events-list-time {
+        color: #3f51b5;
+        margin-right: 15px;
+        padding-top: 8px;
+    }
+    .sidebar-tabsetBottom.sidebar-darkMode a {
+        color: #0292d5;
+    }
+    .chat-message-content-component.chat-message-content-darkMode,
+    .chat-message-content-component.chat-message-content-darkMode.chat-message-content-basic .chat-message-content-username,
+    .chat-message-content-component.chat-message-content-darkMode.chat-message-content-premium .chat-message-content-username {
+        color: #fff!important;
+    }
+    .chat-message-content-component,
+    .chat-message-content-username {
+        color: #3581c0;
+    }
+    .chat-input-component.chat-input-darkMode input[type=text] {
+        color: #fff!important;
+    }
+    .tournament-standings-component .tournament-standings-row .tournament-standings-tiebreak {
+        color: hsl(207, 57%, 48%)!important;
+    }
+    /*Nome dos jogadores no tabuleiro*/
+    .user-tagline-component.user-tagline-mainBoard .user-tagline-username {
+        padding-left: 2px!important;
+        padding-right: 2px!important;
+        color: #ffffff;
+        text-shadow: -1px 1px 2px #0000009c,
+        1px 1px 2px #0000009c,
+        1px -1px 0 #0000009c,
+        -1px -1px 0 #0000009c;
+    }
+    .user-connection-component .user-connection-icon {
+        text-shadow: 1px 1px 2px #000!important;
+    }
+    .events-list-row .events-list-black .username,
+    .events-list-row .events-list-white .username {
+        color: #fff!important;
+    }
     .username {
-    color: #e91e63!important;
-}
-    .arena-tab-component.arena-tab-darkMode a,
-    .arena-tab-component.arena-tab-lightMode a{
-    color: #e91e63;
-}
+        color: #fff!important;
+    }
+    .arena-tab-component.arena-tab-darkMode a {
+        color: #fff!important;
+    }
+    .user-tagline-rating {
+        color: hsl(289, 100%, 36%)!important;
+    }
+    .tournament-tab-component.tournament-tab-darkMode a {
+        color: #fff!important;
+    }
+    .tabset-nav-component .tabset-nav-item.tabset-nav-iconized .tabset-nav-tabIcon {
+        color: #f0f0f0!important;
+    }
+    .arena-header-info,
+    .arena-header-info h4 {
+        color: #fff!important;
+    }
+    .user-rating {
+        color: #fff!important;
+    }
+    .rated-selector-component.rated-selector-darkMode .rated-selector-button {
+        color: #fff!important;
+    }
+    .rating-selector-component.rating-selector-darkMode .rating-selector-button {
+        color: #fff!important;
+    }
+    .challenge-section-component.challenge-section-darkMode div,
+    .challenge-section-component.challenge-section-darkMode label,
+    .challenge-section-component.challenge-section-darkMode p,
+    .challenge-section-component.challenge-section-darkMode select,
+    .challenge-section-component.challenge-section-darkMode span,
+    .challenge-section-component.challenge-section-darkMode textarea {
+        color: #fff!important;
+    }
+    .challenge-menu-component.challenge-menu-darkMode .challenge-menu-item {
+        color: #fff!important;
+    }
+    .time-selector-button,
+    .time-selector-button:after,
+    .time-selector-button:hover {
+        color: #fff!important;
+    }
+    .time-selector-option,
+    .time-selector-option:after,
+    .time-selector-option:hover {
+        color: #fff!important;
+    }
+    .format-selector-button,
+    .format-selector-button:after,
+    .format-selector-button:hover {
+        color: #fff!important;
+    }
+    .arena-standings-row,
+    .arena-standings-score,
+    .arena-standings-streak {
+        color: #fff!important;
+    }
 }
