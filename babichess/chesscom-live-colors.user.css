@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name           chess.com/live cores
+@namespace      ChessSkins
+@version        1.0.0
+@description    cores para os textos na página de jogo ao vivo
+@author         agiota_doartenio
+==/UserStyle== */
+@-moz-document url-prefix("https://www.chess.com/live"), url-prefix("https://www.chess.com/play/online") {
+    .username {
+    color: #e91e63!important;
+}
+    .arena-tab-component.arena-tab-darkMode a,
+    .arena-tab-component.arena-tab-lightMode a{
+    color: #e91e63;
+}
+}
