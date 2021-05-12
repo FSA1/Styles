@@ -8,7 +8,6 @@
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("lichess.org"), domain("chess.com") {
-@namespace url(http://www.w3.org/1999/xhtml);
 .is2d .pawn.white,
 .piece.wp,
 .promotion-piece.wp,
