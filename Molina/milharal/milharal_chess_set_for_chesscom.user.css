@@ -25,17 +25,23 @@
             "suas imagens": "bwCustom",
             "Desativado": "op0"
         }
+@var    select      myHighlight    "Opçoes de Destaque" {
+            "Padrão*": "op1",
+            "Personalizado": "op2"
+        }
+@var color    moveSqCol  "Cor do destaque do movimento"   #ff8b33a8
+@var color    selSqCol  "Cor do estaque da seleção"   #ffea00ab
 @var checkbox enableShadow "Habilitar sombras" 1
 @var checkbox enableInvertB "Inverter cores das pretas" 0
 @var checkbox enableInvertW "Inverter cores das brancas" 0
 @var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
-@var text     wkImage    "Rei branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wk.png'"
-@var text     wqImage    "Rainha branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wq.png'"
-@var text     wbImage    "Bispo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wb.png'"
-@var text     wnImage    "Cavalo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wn.png'"
-@var text     wrImage    "Torre branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png'"
-@var text     wpImage    "Peão branco"   "'https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png'"
+@var text     wkImage    "Rei branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk-inv.png'"
+@var text     wqImage    "Rainha branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq-inv.png'"
+@var text     wbImage    "Bispo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb-inv.png'"
+@var text     wnImage    "Cavalo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn-inv.png'"
+@var text     wrImage    "Torre branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2-inv.png'"
+@var text     wpImage    "Peão branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png'"
 @var text     bkImage    "Rei preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk.png'"
 @var text     bqImage    "Rainha preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq.png'"
 @var text     bbImage    "Bispo preto"   "'https://image.flaticon.com/icons/png/128/3453/3453347.png'"
@@ -84,6 +90,74 @@
         if myBoard=="op4" {
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
+        if myBoard=="op1" || myBoard=="op2"{
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #447e1b!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #4e6c39 !important;
+            }
+            text.coordinate-light {
+                fill: #447e1b!important;
+            }
+            text.coordinate-dark {
+                fill: #4e6c39 !important;
+            }
+        }
+        if myBoard=="op3" || myBoard=="op4"{
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7e5d1b!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e2ba80 !important;
+            }
+            text.coordinate-light {
+                fill: #7e5d1b!important;
+            }
+            text.coordinate-dark {
+                fill: #e2ba80 !important;
+            }
+        }
+            /*Highlight*/
+        if myHighlight=="op1"{
+                if myBoard=="op1" || myBoard=="op2"{
+                .move-square {
+                    background-color: #d0ff01bd!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #f2ff00de !important;
+                    opacity: 0.9!important;
+                }
+            }
+                if myBoard=="op3" || myBoard=="op4"{
+                .move-square {
+                    background-color: #ffd500c2!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffea00cc !important;
+                    opacity: 0.9!important;
+                }
+            }
+        }
+        if myHighlight=="op2"{
+                .move-square {
+                    background-color: moveSqCol!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: selSqCol !important;
+                    opacity: 0.9!important;
+                }
+            }
+            
     }
     /*white pieces option 1 'Milharal'*/
     if myPiecesW=="wCornfield" {
