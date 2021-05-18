@@ -2,7 +2,7 @@
 @name           Chess.com Chess Set Milharal
 @author         agiota_do_artenio
 @namespace      USO Archive
-@description    `Molina invadindo o milharal! Conjunto de peças e tabuleiro.`
+@description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
 @version        20200831.22.25
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
@@ -16,28 +16,32 @@
 @var    select      myPiecesB    "Peças pretas" {
             "Milharal": "bCornfield",
             "P&B*": "bwCornfield",
-            "P&B (suas imagens)": "bwCustom",
+            "suas imagens": "bwCustom",
             "Desativado": "op0"
         }
 @var    select      myPiecesW    "Peças brancas" {
             "Milharal": "wCornfield",
             "P&B*": "bwCornfield",
-            "P&B (suas imagens)": "bwCustom",
+            "suas imagens": "bwCustom",
             "Desativado": "op0"
         }
 @var checkbox enableShadow "Habilitar sombra" 1
+@var checkbox enableInvertB "Inverter cores das pretas" 0
+@var checkbox enableInvertW "Inverter cores das brancas" 0
+@var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var text     wkImage    "Rei branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wk.png'"
 @var text     wqImage    "Rainha branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wq.png'"
-@var text     wbImage    "bispo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wb.png'"
-@var text     wnImage    "cavalo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wn.png'"
-@var text     wrImage    "torre branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png'"
-@var text     wpImage    "peão branco"   "'https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png'"
-@var text     bkImage    "Rei preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bk.png'"
-@var text     bqImage    "Rainha preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bq.png'"
-@var text     bbImage    "bispo preto"   "'https://image.flaticon.com/icons/png/128/3453/3453347.png'"
-@var text     bnImage    "cavalo preto"   "'https://cdn2.iconfinder.com/data/icons/halloween-creeps-silhouettes/100/raven-512.png'"
-@var text     brImage    "torre preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br.png'"
-@var text     bpImage    "peão preto"   "'https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bp.png'"
+@var text     wbImage    "Bispo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wb.png'"
+@var text     wnImage    "Cavalo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wn.png'"
+@var text     wrImage    "Torre branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png'"
+@var text     wpImage    "Peão branco"   "'https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png'"
+@var text     bkImage    "Rei preto"   "'https://cdn2.iconfinder.com/data/icons/people-2-2/128/Farmer-Labourer-Farming-Garden-Worker-512.png'"
+@var text     bqImage    "Rainha preta"   "'https://cdn2.iconfinder.com/data/icons/people-2-2/128/Female-Avatar-User-Woman-Customer-512.png'"
+@var text     bbImage    "Bispo preto"   "'https://image.flaticon.com/icons/png/128/3453/3453347.png'"
+@var text     bnImage    "Cavalo preto"   "'https://www.freeiconspng.com/uploads/raven-icon-17.png'"
+@var text     brImage    "Torre preta"   "'https://cdn0.iconfinder.com/data/icons/farming-2/467/farm_barn_storage_agriculture-512.png'"
+@var text     bpImage    "peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
@@ -321,5 +325,91 @@
         }
         
     }
+    if enableInvertB {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"], 
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"]
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"]
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"]
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"]
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"]{
+            filter: invert(1);
+        }
+        
+    }
+    if enableInvertW {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"], 
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"]
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"]
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"]
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"]
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"]{
+            filter: invert(1);
+        }
+        
+    }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"], 
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"]
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"]
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"]
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"]
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"]{
+            mix-blend-mode:enableBlendB;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"], 
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"]
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"]
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"]
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"]
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"]{
+            mix-blend-mode:enableBlendW;
+        }
     /*end section*/
 }
