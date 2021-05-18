@@ -25,7 +25,7 @@
             "suas imagens": "bwCustom",
             "Desativado": "op0"
         }
-@var checkbox enableShadow "Habilitar sombra" 1
+@var checkbox enableShadow "Habilitar sombras" 1
 @var checkbox enableInvertB "Inverter cores das pretas" 0
 @var checkbox enableInvertW "Inverter cores das brancas" 0
 @var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
@@ -36,11 +36,11 @@
 @var text     wnImage    "Cavalo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wn.png'"
 @var text     wrImage    "Torre branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png'"
 @var text     wpImage    "Peão branco"   "'https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png'"
-@var text     bkImage    "Rei preto"   "'https://cdn2.iconfinder.com/data/icons/people-2-2/128/Farmer-Labourer-Farming-Garden-Worker-512.png'"
-@var text     bqImage    "Rainha preta"   "'https://cdn2.iconfinder.com/data/icons/people-2-2/128/Female-Avatar-User-Woman-Customer-512.png'"
+@var text     bkImage    "Rei preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk.png'"
+@var text     bqImage    "Rainha preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq.png'"
 @var text     bbImage    "Bispo preto"   "'https://image.flaticon.com/icons/png/128/3453/3453347.png'"
-@var text     bnImage    "Cavalo preto"   "'https://www.freeiconspng.com/uploads/raven-icon-17.png'"
-@var text     brImage    "Torre preta"   "'https://cdn0.iconfinder.com/data/icons/farming-2/467/farm_barn_storage_agriculture-512.png'"
+@var text     bnImage    "Cavalo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png'"
+@var text     brImage    "Torre preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png'"
 @var text     bpImage    "peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
