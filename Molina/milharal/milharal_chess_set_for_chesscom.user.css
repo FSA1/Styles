@@ -14,15 +14,19 @@
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
-            "Milharal": "bCornfield",
-            "P&B*": "bwCornfield",
-            "suas imagens": "bwCustom",
+            "Cartoon": "bCornfield",
+            "P&B 1*": "bwCornfield",
+            "P&B 2": "bwCornfield2",
+            "Colorido": "colorCornfield",
+            "Suas imagens": "bwCustom",
             "Desativado": "op0"
         }
 @var    select      myPiecesW    "Peças brancas" {
-            "Milharal": "wCornfield",
-            "P&B*": "bwCornfield",
-            "suas imagens": "bwCustom",
+            "Cartoon": "wCornfield",
+            "P&B 1*": "bwCornfield",
+            "P&B 2": "bwCornfield2",
+            "Colorido": "colorCornfield",
+            "Suas imagens": "bwCustom",
             "Desativado": "op0"
         }
 @var    select      myHighlight    "Opçoes de Destaque" {
@@ -46,10 +50,10 @@
 @var text     wpImage    "Peão branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png'"
 @var text     bkImage    "Rei preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk.png'"
 @var text     bqImage    "Rainha preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq.png'"
-@var text     bbImage    "Bispo preto"   "'https://image.flaticon.com/icons/png/128/3453/3453347.png'"
+@var text     bbImage    "Bispo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb.png'"
 @var text     bnImage    "Cavalo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png'"
 @var text     brImage    "Torre preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png'"
-@var text     bpImage    "peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
+@var text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
@@ -92,8 +96,8 @@
         if myBoard=="op4" {
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
-        if myBoard=="op1" || myBoard=="op2"{
-            /*Coordinates*/
+        /*Coordinates*/
+        if myBoard=="op1" || myBoard=="op2" {
             div.number.coords-light,
             div.letter.coords-light {
                 color: #447e1b!important;
@@ -109,7 +113,7 @@
                 fill: #4e6c39 !important;
             }
         }
-        if myBoard=="op3" || myBoard=="op4"{
+        if myBoard=="op3" || myBoard=="op4" {
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -126,9 +130,9 @@
                 fill: #e2ba80 !important;
             }
         }
-            /*Highlight*/
-        if myHighlight=="op1"{
-                if myBoard=="op1" || myBoard=="op2"{
+        /*Highlight*/
+        if myHighlight=="op1" {
+            if myBoard=="op1" || myBoard=="op2" {
                 .move-square {
                     background-color: #d0ff01bd!important;
                     opacity: 0.9!important;
@@ -138,7 +142,7 @@
                     opacity: 0.9!important;
                 }
             }
-                if myBoard=="op3" || myBoard=="op4"{
+            if myBoard=="op3" || myBoard=="op4" {
                 .move-square {
                     background-color: #ffd500c2!important;
                     opacity: 0.9!important;
@@ -149,17 +153,16 @@
                 }
             }
         }
-        if myHighlight=="op2"{
-                .move-square {
-                    background-color: moveSqCol!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: selSqCol !important;
-                    opacity: 0.9!important;
-                }
+        if myHighlight=="op2" {
+            .move-square {
+                background-color: moveSqCol!important;
+                opacity: 0.9!important;
             }
-            
+            .selection-square {
+                background-color: selSqCol !important;
+                opacity: 0.9!important;
+            }
+        }
     }
     /*white pieces option 1 'Milharal'*/
     if myPiecesW=="wCornfield" {
@@ -293,7 +296,139 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/bp_cl.svg")!important;
         }
     }
-    /*black pieces option 3 'B&P Custom'*/
+    /*black pieces option 3 'P&B 3'*/
+    if myPiecesB=="bwCornfield2" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
+        }
+    }
+    /*white pieces option 3 'P&B 3'*/
+    if myPiecesW=="bwCornfield2" {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk-inv.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq-inv.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb-inv.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn-inv.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2-inv.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
+        }
+    }
+    /*black pieces option 3 'P&B 3'*/
+    if myPiecesB=="colorCornfield" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/br.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
+        }
+    }
+    /*white pieces option 3 'P&B 3'*/
+    if myPiecesW=="colorCornfield" {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wk.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wq.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wb.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wn.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wr.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wp.png")!important;
+        }
+    }
+    /*black pieces option 4 'B&P Custom'*/
     if myPiecesB=="bwCustom" {
         .piece.bk,
         .promotion-piece.bk,
@@ -326,7 +461,7 @@
             background-image: url(bpImage)!important;
         }
     }
-    /*white pieces option 3 'B&P Custom'*/
+    /*white pieces option 4 'B&P Custom'*/
     if myPiecesW=="bwCustom" {
         .piece.wk,
         .promotion-piece.wk,
@@ -363,134 +498,131 @@
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"], 
+        div [style*="wk.png"],
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"]
+        div [style*="wq.png"],
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"]
+        div [style*="wb.png"],
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"]
+        div [style*="wn.png"],
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"]
+        div [style*="wr.png"],
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"],
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"], 
+        div [style*="bk.png"],
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"]
+        div [style*="bq.png"],
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"]
+        div [style*="bb.png"],
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"]
+        div [style*="bn.png"],
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"]
+        div [style*="br.png"],
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"]{
+        div [style*="bp.png"] {
             filter: drop-shadow(0 0 0.2rem #000)!important;
         }
-        
     }
-    /*Blend and invert black pieces color*/
+    /*Invert black pieces color*/
     if enableInvertB {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"], 
+        div [style*="bk.png"],
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"]
+        div [style*="bq.png"],
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"]
+        div [style*="bb.png"],
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"]
+        div [style*="bn.png"],
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"]
+        div [style*="br.png"],
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"]{
+        div [style*="bp.png"] {
             filter: invert(1)!important;
         }
-        
     }
-    /*Blend and invert white pieces color*/
+    /*Invert white pieces color*/
     if enableInvertW {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"], 
+        div [style*="wk.png"],
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"]
+        div [style*="wq.png"],
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"]
+        div [style*="wb.png"],
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"]
+        div [style*="wn.png"],
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"]
+        div [style*="wr.png"],
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"]{
+        div [style*="wp.png"] {
             filter: invert(1)!important;
         }
-        
     }
-        /*mesclagem dde cores*/
-        .piece.bk,
-        .promotion-piece.bk,
-        div [style*="bk.png"], 
-        .piece.bq,
-        .promotion-piece.bq,
-        div [style*="bq.png"]
-        .piece.bb,
-        .promotion-piece.bb,
-        div [style*="bb.png"]
-        .piece.bn,
-        .promotion-piece.bn,
-        div [style*="bn.png"]
-        .piece.br,
-        .promotion-piece.br,
-        div [style*="br.png"]
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"]{
-            mix-blend-mode:enableBlendB;
-            filter: hue-rotate(hueRotationB);
-        }
-        .piece.wk,
-        .promotion-piece.wk,
-        div [style*="wk.png"], 
-        .piece.wq,
-        .promotion-piece.wq,
-        div [style*="wq.png"]
-        .piece.wb,
-        .promotion-piece.wb,
-        div [style*="wb.png"]
-        .piece.wn,
-        .promotion-piece.wn,
-        div [style*="wn.png"]
-        .piece.wr,
-        .promotion-piece.wr,
-        div [style*="wr.png"]
-        .piece.wp,
-        .promotion-piece.wp,
-        div [style*="wp.png"]{
-            mix-blend-mode:enableBlendW;
-            filter: hue-rotate(hueRotationW);
-        }
+    /*Blend and hue variation*/
+    .piece.bk,
+    .promotion-piece.bk,
+    div [style*="bk.png"],
+    .piece.bq,
+    .promotion-piece.bq,
+    div [style*="bq.png"],
+    .piece.bb,
+    .promotion-piece.bb,
+    div [style*="bb.png"],
+    .piece.bn,
+    .promotion-piece.bn,
+    div [style*="bn.png"],
+    .piece.br,
+    .promotion-piece.br,
+    div [style*="br.png"],
+    .piece.bp,
+    .promotion-piece.bp,
+    div [style*="bp.png"] {
+        mix-blend-mode: enableBlendB;
+        filter: hue-rotate(hueRotationB);
+    }
+    .piece.wk,
+    .promotion-piece.wk,
+    div [style*="wk.png"],
+    .piece.wq,
+    .promotion-piece.wq,
+    div [style*="wq.png"],
+    .piece.wb,
+    .promotion-piece.wb,
+    div [style*="wb.png"],
+    .piece.wn,
+    .promotion-piece.wn,
+    div [style*="wn.png"],
+    .piece.wr,
+    .promotion-piece.wr,
+    div [style*="wr.png"],
+    .piece.wp,
+    .promotion-piece.wp,
+    div [style*="wp.png"] {
+        mix-blend-mode: enableBlendW;
+        filter: hue-rotate(hueRotationW);
+    }
     /*end section*/
 }
