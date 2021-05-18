@@ -157,7 +157,7 @@
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/expert/wq.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wq.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -190,7 +190,7 @@
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/expert/bq.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bq.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
