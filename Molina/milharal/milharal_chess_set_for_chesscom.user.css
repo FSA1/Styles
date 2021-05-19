@@ -36,8 +36,8 @@
 @var color    moveSqCol  "Cor do destaque do movimento"   #ff8b33a8
 @var color    selSqCol  "Cor do estaque da seleção"   #ffea00ab
 @var checkbox enableShadow "Habilitar sombras" 1
-@var    range    hueRotationB  "Variar cor" [0, 0, 355, 5, "deg"]
-@var    range    hueRotationW  "Variar cor" [0, 0, 355, 5, "deg"]
+@var    range    hueRotationB  "Variar cor das pretas" [0, 0, 355, 5, "deg"]
+@var    range    hueRotationW  "Variar cor das brancas" [0, 0, 355, 5, "deg"]
 @var checkbox enableInvertB "Inverter cores das pretas" 0
 @var checkbox enableInvertW "Inverter cores das brancas" 0
 @var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
