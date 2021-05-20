@@ -14,19 +14,21 @@
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
-            "Cartoon": "bCornfield",
-            "P&B 1*": "bwCornfield",
-            "P&B 2": "bwCornfield2",
-            "Colorido": "colorCornfield",
-            "Suas imagens": "bwCustom",
+            "Cartoon": "setCartoon",
+            "Figuras 1 P&B*": "setFigures1",
+            "Figuras 2 P&B": "setFigures2",
+            "Figuras 2 Azul": "setFigures2Blue",
+            "Figuras 2 Amarelo": "setFigures2Yellow",
+            "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
 @var    select      myPiecesW    "Peças brancas" {
-            "Cartoon": "wCornfield",
-            "P&B 1*": "bwCornfield",
-            "P&B 2": "bwCornfield2",
-            "Colorido": "colorCornfield",
-            "Suas imagens": "bwCustom",
+            "Cartoon": "setCartoon",
+            "Figuras 1 P&B*": "setFigures1",
+            "Figuras 2 P&B": "setFigures2",
+            "Figuras 2 Laranja": "setFigures2Orange",
+            "Figuras 2 Amarelo": "setFigures2Yellow",
+            "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
 @var    select      myHighlight    "Opçoes de Destaque" {
@@ -35,9 +37,18 @@
         }
 @var color    moveSqCol  "Cor do destaque do movimento"   #ff8b33a8
 @var color    selSqCol  "Cor do estaque da seleção"   #ffea00ab
-@var checkbox enableShadow "Habilitar sombras" 1
-@var    range    hueRotationB  "Variar cor das pretas" [0, 0, 355, 5, "deg"]
-@var    range    hueRotationW  "Variar cor das brancas" [0, 0, 355, 5, "deg"]
+@var checkbox enableShadow "Habilitar sombras" 0
+@var    range    brightnessB  "Brilho das pretas" [90, 0, 300, 5, "%"]
+@var    range    brightnessW  "Brilho das brancas" [100, 0, 300, 5, "%"]
+@var    range    saturateB  "Saturação das pretas" [100, 0, 300, 5, "%"]
+@var    range    saturateW  "Saturação das brancas" [100, 0, 300, 5, "%"]
+@var    range    hueRotationB  "Tonalidade das pretas" [0, 0, 355, 5, "deg"]
+@var    range    hueRotationW  "Tonalidade das brancas" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade das pretas" [100, 50, 100, 5, "%"]
+@var    range    opacityW  "Opacidade das brancas" [100, 50, 100, 5, "%"]
+@var    range    contrastB  "Contraste das pretas" [100, 5, 300, 5, "%"]
+@var    range    contrastW  "Contraste das brancas" [100, 5, 300, 5, "%"]
+@var checkbox enableInvertB "Inverter cores das pretas" 0
 @var checkbox enableInvertB "Inverter cores das pretas" 0
 @var checkbox enableInvertW "Inverter cores das brancas" 0
 @var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
@@ -56,7 +67,7 @@
 @var text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-    /*Chessboard*/
+    /*------Chessboard------*/
     .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
@@ -96,7 +107,7 @@
         if myBoard=="op4" {
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
-        /*Coordinates*/
+        /*------Coordinates------*/
         if myBoard=="op1" || myBoard=="op2" {
             div.number.coords-light,
             div.letter.coords-light {
@@ -114,7 +125,6 @@
             }
         }
         if myBoard=="op3" || myBoard=="op4" {
-            /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
                 color: #7e5d1b!important;
@@ -130,7 +140,7 @@
                 fill: #e2ba80 !important;
             }
         }
-        /*Highlight*/
+        /*------Highlight------*/
         if myHighlight=="op1" {
             if myBoard=="op1" || myBoard=="op2" {
                 .move-square {
@@ -164,8 +174,8 @@
             }
         }
     }
-    /*white pieces option 1 'Milharal'*/
-    if myPiecesW=="wCornfield" {
+    /*------white pieces option 1 'Cartoon'------*/
+    if myPiecesW=="setCartoon" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -197,8 +207,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho_wp.png")!important;
         }
     }
-    /*black pieces option 1 'Milharal'*/
-    if myPiecesB=="bCornfield" {
+    /*------black pieces option 1 'Cartoon'------*/
+    if myPiecesB=="setCartoon" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -230,8 +240,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho2_bp.png")!important;
         }
     }
-    /*white pieces option 2 'B&P'*/
-    if myPiecesW=="bwCornfield" {
+    /*------white pieces option 2 'B&P'------*/
+    if myPiecesW=="setFigures1" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -263,8 +273,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/wp_cl.svg")!important;
         }
     }
-    /*black pieces option 2 'B&P'*/
-    if myPiecesB=="bwCornfield" {
+    /*------black pieces option 2 'B&P'------*/
+    if myPiecesB=="setFigures1" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -296,8 +306,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/bp_cl.svg")!important;
         }
     }
-    /*black pieces option 3 'P&B 3'*/
-    if myPiecesB=="bwCornfield2" {
+    /*------black pieces option 3 'P&B 2'------*/
+    if myPiecesB=="setFigures2" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -329,8 +339,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
         }
     }
-    /*white pieces option 3 'P&B 3'*/
-    if myPiecesW=="bwCornfield2" {
+    /*------white pieces option 3 'P&B 2'------*/
+    if myPiecesW=="setFigures2" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -362,8 +372,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
         }
     }
-    /*black pieces option 3 'P&B 3'*/
-    if myPiecesB=="colorCornfield" {
+    /*------black pieces option 4 'Azul'------*/
+    if myPiecesB=="setFigures2Blue" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -395,8 +405,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
         }
     }
-    /*white pieces option 3 'P&B 3'*/
-    if myPiecesW=="colorCornfield" {
+    /*------white pieces option 4 'Laranja'------*/
+    if myPiecesW=="setFigures2Orange" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -428,8 +438,74 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wp.png")!important;
         }
     }
-    /*black pieces option 4 'B&P Custom'*/
-    if myPiecesB=="bwCustom" {
+    /*------black pieces option 5 'Amarelo' (same pieces used for white. User should customize settings to create new colors)------*/
+    if myPiecesB=="setFigures2Yellow" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wr.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
+        }
+    }
+    /*------white pieces option 5 'Amarelo'------*/
+    if myPiecesW=="setFigures2Yellow" {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wk.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wq.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wb.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wn.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wr.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
+        }
+    }
+    /*------black pieces option 'Suas imagens'------*/
+    if myPiecesB=="userPieces" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -461,8 +537,8 @@
             background-image: url(bpImage)!important;
         }
     }
-    /*white pieces option 4 'B&P Custom'*/
-    if myPiecesW=="bwCustom" {
+    /*------white pieces option 'Suas imagens'------*/
+    if myPiecesW=="userPieces" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -476,8 +552,7 @@
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(wbImage)!important;
-        }
+            background-image: url(wbImage)!important;        }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
@@ -494,7 +569,7 @@
             background-image: url(wpImage)!important;
         }
     }
-    /*--------Drop-shadow for the pieces--------*/
+    /*------Drop-shadow for the pieces------*/
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
@@ -533,10 +608,61 @@
         .promotion-piece.bp,
         div [style*="bp.png"] {
             filter: drop-shadow(0 0 0.2rem #000)!important;
+            -webkit-filter: drop-shadow(0 0 0.2rem #000)!important;
         }
     }
-    /*Invert black pieces color*/
-    if enableInvertB {
+    /*------Invert colors------*/
+    if myPiecesB!="setCartoon" || myPiecesW!="setCartoon" {
+
+        /*------Invert black pieces color------*/
+        if enableInvertB {
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"],
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"],
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"],
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"],
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"],
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert white pieces color------*/
+        if enableInvertW {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"],
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"],
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"],
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"],
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"],
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Blend and hue variation------*/
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"],
@@ -555,11 +681,11 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            filter: invert(1)!important;
+            mix-blend-mode: enableBlendB;
+            filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+            -webkit-filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+            opacity: opacityB!important;
         }
-    }
-    /*Invert white pieces color*/
-    if enableInvertW {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"],
@@ -578,51 +704,11 @@
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            filter: invert(1)!important;
+            mix-blend-mode: enableBlendW;
+            filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+            -webkit-filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+            opacity: opacityW!important;
         }
     }
-    /*Blend and hue variation*/
-    .piece.bk,
-    .promotion-piece.bk,
-    div [style*="bk.png"],
-    .piece.bq,
-    .promotion-piece.bq,
-    div [style*="bq.png"],
-    .piece.bb,
-    .promotion-piece.bb,
-    div [style*="bb.png"],
-    .piece.bn,
-    .promotion-piece.bn,
-    div [style*="bn.png"],
-    .piece.br,
-    .promotion-piece.br,
-    div [style*="br.png"],
-    .piece.bp,
-    .promotion-piece.bp,
-    div [style*="bp.png"] {
-        mix-blend-mode: enableBlendB;
-        filter: hue-rotate(hueRotationB);
-    }
-    .piece.wk,
-    .promotion-piece.wk,
-    div [style*="wk.png"],
-    .piece.wq,
-    .promotion-piece.wq,
-    div [style*="wq.png"],
-    .piece.wb,
-    .promotion-piece.wb,
-    div [style*="wb.png"],
-    .piece.wn,
-    .promotion-piece.wn,
-    div [style*="wn.png"],
-    .piece.wr,
-    .promotion-piece.wr,
-    div [style*="wr.png"],
-    .piece.wp,
-    .promotion-piece.wp,
-    div [style*="wp.png"] {
-        mix-blend-mode: enableBlendW;
-        filter: hue-rotate(hueRotationW);
-    }
-    /*end section*/
+    /*------end section------*/
 }
