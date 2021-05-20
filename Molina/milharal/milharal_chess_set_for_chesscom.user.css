@@ -3,7 +3,7 @@
 @author         agiota_do_artenio
 @namespace      USO Archive
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        20200831.22.25
+@version        1.0.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
