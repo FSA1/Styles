@@ -240,7 +240,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho2_bp.png")!important;
         }
     }
-    /*------white pieces option 2 'B&P'------*/
+    /*------white pieces option 2 'Figuras 1 B&P'------*/
     if myPiecesW=="setFigures1" {
         .piece.wk,
         .promotion-piece.wk,
@@ -273,7 +273,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/wp_cl.svg")!important;
         }
     }
-    /*------black pieces option 2 'B&P'------*/
+    /*------black pieces option 2 'Figuras 1 B&P'------*/
     if myPiecesB=="setFigures1" {
         .piece.bk,
         .promotion-piece.bk,
@@ -306,7 +306,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/bp_cl.svg")!important;
         }
     }
-    /*------black pieces option 3 'P&B 2'------*/
+    /*------black pieces option 3 'Figuras 2 B&P'------*/
     if myPiecesB=="setFigures2" {
         .piece.bk,
         .promotion-piece.bk,
@@ -339,7 +339,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
         }
     }
-    /*------white pieces option 3 'P&B 2'------*/
+    /*------white pieces option 3 'Figuras 2 B&P'------*/
     if myPiecesW=="setFigures2" {
         .piece.wk,
         .promotion-piece.wk,
@@ -372,7 +372,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
         }
     }
-    /*------black pieces option 4 'Azul'------*/
+    /*------black pieces option 4 'Figuras 2 Azul'------*/
     if myPiecesB=="setFigures2Blue" {
         .piece.bk,
         .promotion-piece.bk,
@@ -405,7 +405,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
         }
     }
-    /*------white pieces option 4 'Laranja'------*/
+    /*------white pieces option 4 'Figuras 2 Laranja'------*/
     if myPiecesW=="setFigures2Orange" {
         .piece.wk,
         .promotion-piece.wk,
@@ -438,7 +438,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wp.png")!important;
         }
     }
-    /*------black pieces option 5 'Amarelo' (same pieces used for white. User should customize settings to create new colors)------*/
+    /*------black pieces option 5 'Figuras 2 Amarelo' (same pieces used for white. User should customize settings to create new colors)------*/
     if myPiecesB=="setFigures2Yellow" {
         .piece.bk,
         .promotion-piece.bk,
@@ -471,7 +471,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
-    /*------white pieces option 5 'Amarelo'------*/
+    /*------white pieces option 5 'Figuras 2 Amarelo'------*/
     if myPiecesW=="setFigures2Yellow" {
         .piece.wk,
         .promotion-piece.wk,
