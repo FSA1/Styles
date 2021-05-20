@@ -10,7 +10,8 @@
             "Verde vibrante": "op1",
             "Verde suave": "op2",
             "Marrom claro": "op3",
-            "Marrom escuro*": "op4",				
+            "Marrom escuro*": "op4",
+            "Seu tabuleiro": "op5",			
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -35,22 +36,21 @@
             "Padrão*": "op1",
             "Personalizado": "op2"
         }
-@var color    moveSqCol  "Cor do destaque do movimento"   #ff8b33a8
-@var color    selSqCol  "Cor do estaque da seleção"   #ffea00ab
+@var color    moveSqCol  "Destaque do movimento"   #ff8b33a8
+@var color    selSqCol  "Destaque da seleção"   #ffea00ab
 @var checkbox enableShadow "Habilitar sombras" 0
-@var    range    brightnessB  "Brilho das pretas" [90, 0, 300, 5, "%"]
-@var    range    brightnessW  "Brilho das brancas" [100, 0, 300, 5, "%"]
-@var    range    saturateB  "Saturação das pretas" [100, 0, 300, 5, "%"]
-@var    range    saturateW  "Saturação das brancas" [100, 0, 300, 5, "%"]
-@var    range    hueRotationB  "Tonalidade das pretas" [0, 0, 355, 5, "deg"]
-@var    range    hueRotationW  "Tonalidade das brancas" [0, 0, 355, 5, "deg"]
-@var    range    opacityB  "Opacidade das pretas" [100, 50, 100, 5, "%"]
-@var    range    opacityW  "Opacidade das brancas" [100, 50, 100, 5, "%"]
-@var    range    contrastB  "Contraste das pretas" [100, 5, 300, 5, "%"]
-@var    range    contrastW  "Contraste das brancas" [100, 5, 300, 5, "%"]
-@var checkbox enableInvertB "Inverter cores das pretas" 0
-@var checkbox enableInvertB "Inverter cores das pretas" 0
-@var checkbox enableInvertW "Inverter cores das brancas" 0
+@var    range    brightnessB  "Brilho (pretas)" [90, 0, 300, 5, "%"]
+@var    range    brightnessW  "Brilho (brancas)" [100, 0, 300, 5, "%"]
+@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
+@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
+@var    range    opacityW  "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
+@var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
+@var checkbox enableInvertB "Inverter cores (pretas)" 0
+@var checkbox enableInvertW "Inverter cores (brancas)" 0
 @var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var text     wkImage    "Rei branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk-inv.png'"
@@ -65,6 +65,7 @@
 @var text     bnImage    "Cavalo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png'"
 @var text     brImage    "Torre preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png'"
 @var text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
+@var text     userBoard    "Tabuleiro"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
@@ -106,6 +107,9 @@
         }
         if myBoard=="op4" {
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op5" {
+            background: url(userBoard) 0% 0% / 100% 100% no-repeat !important;
         }
         /*------Coordinates------*/
         if myBoard=="op1" || myBoard=="op2" {
