@@ -11,7 +11,9 @@
             "Verde suave": "op2",
             "Marrom claro": "op3",
             "Marrom escuro*": "op4",
-            "Seu tabuleiro": "op5",			
+            "Seu tabuleiro": "op5",	
+            "Seu tabuleiro 2": "op6",	
+            "Seu tabuleiro 3": "op7",			
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -67,7 +69,9 @@
 @var text     bnImage    "Cavalo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png'"
 @var text     brImage    "Torre preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png'"
 @var text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
-@var text     userBoard    "Tabuleiro"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png'"
+@var text     userBoard1    "Seu Tabuleiro 1"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png'"
+@var text     userBoard2    "Seu Tabuleiro 2"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Blue.png'"
+@var text     userBoard3    "Seu Tabuleiro 3"   "'https://i.imgur.com/sUD4GYw.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
@@ -111,7 +115,13 @@
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op5" {
-            background: url(userBoard) 0% 0% / 100% 100% no-repeat !important;
+            background: url(userBoard1) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op6" {
+            background: url(userBoard2) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op7" {
+            background: url(userBoard3) 0% 0% / 100% 100% no-repeat !important;
         }
         /*------Coordinates------*/
         if myBoard=="op1" || myBoard=="op2" {
