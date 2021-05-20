@@ -18,6 +18,7 @@
             "Cartoon": "setCartoon",
             "Figuras 1 P&B*": "setFigures1",
             "Figuras 2 P&B": "setFigures2",
+            "Figuras 2 Preto": "setFigures2Preto",
             "Figuras 2 Azul": "setFigures2Blue",
             "Figuras 2 Amarelo": "setFigures2Yellow",
             "Suas imagens": "userPieces",
@@ -27,6 +28,7 @@
             "Cartoon": "setCartoon",
             "Figuras 1 P&B*": "setFigures1",
             "Figuras 2 P&B": "setFigures2",
+            "Figuras 2 Branco": "setFigures2Branco",
             "Figuras 2 Laranja": "setFigures2Orange",
             "Figuras 2 Amarelo": "setFigures2Yellow",
             "Suas imagens": "userPieces",
@@ -39,7 +41,7 @@
 @var color    moveSqCol  "Destaque do movimento"   #ff8b33a8
 @var color    selSqCol  "Destaque da seleção"   #ffea00ab
 @var checkbox enableShadow "Habilitar sombras" 0
-@var    range    brightnessB  "Brilho (pretas)" [90, 0, 300, 5, "%"]
+@var    range    brightnessB  "Brilho (pretas)" [100, 0, 300, 5, "%"]
 @var    range    brightnessW  "Brilho (brancas)" [100, 0, 300, 5, "%"]
 @var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
 @var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
@@ -178,7 +180,7 @@
             }
         }
     }
-    /*------white pieces option 1 'Cartoon'------*/
+    /*------white pieces 'Cartoon'------*/
     if myPiecesW=="setCartoon" {
         .piece.wk,
         .promotion-piece.wk,
@@ -211,7 +213,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho_wp.png")!important;
         }
     }
-    /*------black pieces option 1 'Cartoon'------*/
+    /*------black pieces 'Cartoon'------*/
     if myPiecesB=="setCartoon" {
         .piece.bk,
         .promotion-piece.bk,
@@ -244,7 +246,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho2_bp.png")!important;
         }
     }
-    /*------white pieces option 2 'Figuras 1 B&P'------*/
+    /*------white pieces 'Figuras 1 B&P'------*/
     if myPiecesW=="setFigures1" {
         .piece.wk,
         .promotion-piece.wk,
@@ -277,7 +279,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/wp_cl.svg")!important;
         }
     }
-    /*------black pieces option 2 'Figuras 1 B&P'------*/
+    /*------black pieces 'Figuras 1 B&P'------*/
     if myPiecesB=="setFigures1" {
         .piece.bk,
         .promotion-piece.bk,
@@ -310,8 +312,74 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/expert/bp_cl.svg")!important;
         }
     }
-    /*------black pieces option 3 'Figuras 2 B&P'------*/
+    /*------black pieces 'Figuras 2 B&P'------*/
     if myPiecesB=="setFigures2" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/br.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
+        }
+    }
+    /*------white pieces 'Figuras 2 B&P'------*/
+    if myPiecesW=="setFigures2" {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wk.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wq.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wb.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wn.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wr.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
+        }
+    }
+    /*------black pieces 'Figuras 2 Preto'------*/
+    if myPiecesB=="setFigures2Preto" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -343,8 +411,8 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
         }
     }
-    /*------white pieces option 3 'Figuras 2 B&P'------*/
-    if myPiecesW=="setFigures2" {
+    /*------white pieces 'Figuras 2 Branco'------*/
+    if myPiecesW=="setFigures2Branco" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -376,7 +444,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
         }
     }
-    /*------black pieces option 4 'Figuras 2 Azul'------*/
+    /*------black pieces 'Figuras 2 Azul'------*/
     if myPiecesB=="setFigures2Blue" {
         .piece.bk,
         .promotion-piece.bk,
@@ -409,7 +477,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
         }
     }
-    /*------white pieces option 4 'Figuras 2 Laranja'------*/
+    /*------white pieces 'Figuras 2 Laranja'------*/
     if myPiecesW=="setFigures2Orange" {
         .piece.wk,
         .promotion-piece.wk,
@@ -442,7 +510,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wp.png")!important;
         }
     }
-    /*------black pieces option 5 'Figuras 2 Amarelo' (same pieces used for white. User should customize settings to create new colors)------*/
+    /*------black pieces 'Figuras 2 Amarelo' (same pieces used for white. User should customize settings to create new colors)------*/
     if myPiecesB=="setFigures2Yellow" {
         .piece.bk,
         .promotion-piece.bk,
@@ -475,7 +543,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
-    /*------white pieces option 5 'Figuras 2 Amarelo'------*/
+    /*------white pieces 'Figuras 2 Amarelo'------*/
     if myPiecesW=="setFigures2Yellow" {
         .piece.wk,
         .promotion-piece.wk,
@@ -508,7 +576,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
-    /*------black pieces option 'Suas imagens'------*/
+    /*------black pieces 'Suas imagens'------*/
     if myPiecesB=="userPieces" {
         .piece.bk,
         .promotion-piece.bk,
@@ -541,7 +609,7 @@
             background-image: url(bpImage)!important;
         }
     }
-    /*------white pieces option 'Suas imagens'------*/
+    /*------white pieces 'Suas imagens'------*/
     if myPiecesW=="userPieces" {
         .piece.wk,
         .promotion-piece.wk,
