@@ -1,0 +1,528 @@
+/* ==UserStyle==
+@name           Chess.com Chess Set: EvilChess (Pack)
+@namespace      ChessSkins
+@author         agiota_do_artenio
+@description    `Chess Set (Pack) inspired on "Assassins" pieces from chess.com achievements.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "Board Options:" {
+            "Stone": "op1",
+            "Texturized R&B": "op2",
+            "Flat*": "op3",
+            "Lava R&B": "op4",
+            "Disabled": "op0",
+        }
+@var    select      myPieces    "Pieces Options:"{
+            "Flame vs Lava": "op1",
+            "FvsL+dropshadow": "op2",
+            "Light vs Darkness": "op3",
+            "Flat*": "op4",
+            "Disabled": "op0",
+        }
+}
+@var    select      forcedHL    "Forced global highlight" {
+            "custom color*": "op1",
+            "Animated": "op2",	
+            "Disabled": "op0",
+        }
+@var color    customHL  "Global highlight color"   #F26655
+@var    select      coloredBar    "Evaluation bar" {
+            "Board theme*": "op1",
+            "Custom": "op2",	
+            "Default": "op0",
+        }
+@var color    dEvalCol  "Black evaluation bar"   #403D39
+@var color    lEvalCol  "White evaluation bar"   #E0E0E0
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*Board options*/
+    canvas[style],
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if myBoard=="op1" {
+            background: url(https://github.com/FSA1/Styles/raw/main/evil_chess/evilboard-stone.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op2" {
+            background: url(https://github.com/FSA1/Styles/raw/main/evil_chess/evilchessboard.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op3" {
+            background: url(https://github.com/FSA1/Styles/raw/main/evil_chess/evilboard_flat.svg) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op4" {
+            background: url(https://github.com/FSA1/Styles/raw/main/evil_chess/hellevilboard2.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*end board options*/
+    }
+    /*Pieces options*/
+    if myPieces=="op1" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        div [class^="piece bk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        div [class^="piece bq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        div [class^="piece bb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        div [class^="piece bn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        div [class^="piece br"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/br.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"],
+        div [class^="piece bp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bp.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        div [class^="piece wk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/wk.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        div [class^="piece wq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/wq.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        div [class^="piece wb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/wb.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        div [class^="piece wn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/wn.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        div [class^="piece wr"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/wr.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        div [class^="piece wp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/wp.png")!important;
+        }
+        /*end pieces options*/
+    }
+    if myPieces=="op2" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        div [class^="piece bk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/bk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        div [class^="piece bq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/bq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        div [class^="piece bb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/bb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        div [class^="piece bn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/bn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        div [class^="piece br"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/br.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"],
+        div [class^="piece bp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/bp.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        div [class^="piece wk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/wk.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        div [class^="piece wq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/wq.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        div [class^="piece wb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/wb.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        div [class^="piece wn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/wn.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        div [class^="piece wr"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/wr.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        div [class^="piece wp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/shadow/wp.png")!important;
+        }
+        /*end pieces options*/
+    }
+    if myPieces=="op3" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        div [class^="piece bk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/black/bk.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        div [class^="piece bq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/black/bq.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        div [class^="piece bb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/black/bb.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        div [class^="piece bn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/black/bn.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        div [class^="piece br"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/black/br.png")!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"],
+        div [class^="piece bp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/black/bp.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        div [class^="piece wk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/white/wk.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        div [class^="piece wq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/white/wq.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        div [class^="piece wb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/white/wb.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        div [class^="piece wn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/white/wn.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        div [class^="piece wr"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/white/wr.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        div [class^="piece wp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/white/wp.png")!important;
+        }
+        /*end pieces options*/
+    }
+    if myPieces=="op4" {
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        div [class^="piece bk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/bk.png")!important;opacity:.95!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        div [class^="piece bq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/bq.png")!important;opacity:.95!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        div [class^="piece bb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/bb.png")!important;opacity:.95!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        div [class^="piece bn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/bn.png")!important;opacity:.95!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        div [class^="piece br"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/br.png")!important;opacity:.95!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"],
+        div [class^="piece bp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/bp.png")!important;opacity:.95!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        div [class^="piece wk"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/wk.png")!important;opacity:.9!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        div [class^="piece wq"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/wq.png")!important;opacity:.9!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        div [class^="piece wb"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/wb.png")!important;opacity:.9!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        div [class^="piece wn"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/wn.png")!important;opacity:.9!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        div [class^="piece wr"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/wr.png")!important;opacity:.9!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        div [class^="piece wp"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/flat/wp.png")!important;opacity:.9!important;
+        }
+        /*end pieces options*/
+    }
+    /*Highlight*/
+    .move-square {
+        /*background-color: rgb(255, 0, 0)!important;*/
+        background: url(https://media2.giphy.com/media/lTkOQ1aacqClLCcBZq/200w.gif?cid=82a1493baiznc7m43sv8m4awdppzwhr3ax828y152eymqv3a&rid=200w.gif&ct=g) 60% 100% / 120% 140% no-repeat !important;
+        opacity: 0.5!important;
+    }
+
+    .selection-square {
+        background-color: #ff8b00 !important;
+        opacity: 0.5;
+    }
+    /*Special highlights*/
+    _div:hover [style*="bk.png"],
+    _div:hover [class^="piece bk"] {
+        background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bk.png");
+    }
+    /*Forced Highlight*/
+    if forcedHL=="op1" {
+        .highlight {
+            background-color: customHL!important;
+        }
+    }
+    if forcedHL=="op2" {
+        .highlight {
+            /*background-color: rgb(255, 0, 0)!important;*/
+            background: url(https://media2.giphy.com/media/lTkOQ1aacqClLCcBZq/200w.gif?cid=82a1493baiznc7m43sv8m4awdppzwhr3ax828y152eymqv3a&rid=200w.gif&ct=g) 60% 100% / 120% 140% no-repeat !important;
+            opacity: 0.5!important;
+        }
+    }
+    /*Highlight Correction*/
+    .v-board .square {
+        bottom: 0;
+        height: 12.5%!important;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        width: 12.51%!important;
+    }
+    /*Coordinates*/
+    if myBoard=="op1" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: rgb(182, 127, 103)!important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: rgb(177, 161, 140) !important;
+        }
+        text.coordinate-light {
+            fill: rgb(182, 127, 103)!important;
+        }
+        text.coordinate-dark {
+            fill: rgb(177, 161, 140) !important;
+        }
+    }
+    if myBoard=="op2" || myBoard=="op3" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #312E2B!important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #F26655 !important;
+        }
+        text.coordinate-light {
+            fill: #312E2B!important;
+        }
+        text.coordinate-dark {
+            fill: #F26655 !important;
+        }
+    }
+    if myBoard=="op4" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #0f0f0f!important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #d8520c !important;
+        }
+        text.coordinate-light {
+            fill: #000!important;
+        }
+        text.coordinate-dark {
+            fill: #d8520c !important;
+        }
+    }
+
+    /*Evaluation Bar*/
+    if coloredBar=="op1" {
+        if myBoard=="op1" {
+            .evaluation-bar-white {
+                background-color: rgb(135, 91, 82)!important;
+            }
+            .evaluation-bar-black {
+                background-color: rgb(109, 100, 89) !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op2" || myBoard=="op3" {
+            .evaluation-bar-white {
+                background-color: #F26655 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #312E2B !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op4" {
+            .evaluation-bar-white {
+                background: url(https://media2.giphy.com/media/lTkOQ1aacqClLCcBZq/200w.gif?cid=82a1493baiznc7m43sv8m4awdppzwhr3ax828y152eymqv3a&rid=200w.gif&ct=g) -19px 100% / 190% 173% no-repeat !important;
+            }
+            .evaluation-bar-black {
+                background-color: #000 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7!important;
+            }
+            #board-layout-evaluation > div > span {
+                color: #fff!important;
+                text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000;
+            }
+        }
+    }
+    if coloredBar=="op2" {
+        .evaluation-bar-white {
+            background-color: lEvalCol !important;
+        }
+        .evaluation-bar-black {
+            background-color: dEvalCol !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
+    }
+    /*Cursor styles*/
+    .piece:active {
+        cursor: url('data:image/x-icon;base64,AAACAAEAICAQAAkACgDoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AABq/wAA//cAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAREREAAAAAAAAAAAAAAREQiIiJEAAAAAAAAAAAABEQiIwAyIgAAAAAAAAAAAEQiIzARAzIkAAAAAAAAAABEIzMwERAzJAAAAAAAAAAAQiMAAAERAyJAAAAAAAAABCIwEREQERAyQAAAAAAAAEQjARERERERAkAAAAAAAABEIBEREREQEQJAAAAAAAAARCAREREREQAyQAAAAAAABEIwARERAREDJERAAAAAAARCMBEREBEBAyRDRAAAAAAEIgEREREQEQMkQzQAAAAABCARERARERAzJAQ0AAAAAAQgERABEBEQMyQENAAABEQEIBEDMAERAzIkBCQAAAQ0BCIAMzMwADMiRAQkAAAEJARCIiIiIzMiJEQEJAAABCQERCRERCIiJERAAEQAAAREAEREREREREQEQABAAAAEQABAQEQEREREBAAAAAAABEAAQEAEAERERAQAREAAAABAAEAABABAREQAAEI0AAAAQABAAAAAQEREAABCRAAAAAAAAAAAAEBAQAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD/////////////////////////////gf//8AD//+AA///AAD//wAA//8AAH/+AAB//AAAf/wAAH/8AAB/+AAAH/gAAA/4AAAP+AAAj/gAAI+IAACPiAAAj4gAAI+IAAHPjAAJ351IC/+dbAsf3e0PD939Dw///V+/////v/////w=='), auto!important;
+    }
+}
