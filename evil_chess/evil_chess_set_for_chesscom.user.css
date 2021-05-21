@@ -391,11 +391,6 @@
         background-color: #ff8b00 !important;
         opacity: 0.5;
     }
-    /*Special highlights*/
-    _div:hover [style*="bk.png"],
-    _div:hover [class^="piece bk"] {
-        background-image: url("https://github.com/FSA1/Styles/raw/main/evil_chess/bk.png");
-    }
     /*Forced Highlight*/
     if forcedHL=="op1" {
         .highlight {
