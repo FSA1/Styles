@@ -606,7 +606,7 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
-    /*------black pieces 'Suas imagens'------*/
+    /*------Black pieces 'Suas imagens'------*/
     if myPiecesB=="userPieces" {
         .piece.bk,
         .promotion-piece.bk,
@@ -639,7 +639,7 @@
             background-image: url(bpImage)!important;
         }
     }
-    /*------white pieces 'Suas imagens'------*/
+    /*------White pieces 'Suas imagens'------*/
     if myPiecesW=="userPieces" {
         .piece.wk,
         .promotion-piece.wk,
@@ -669,6 +669,48 @@
         .promotion-piece.wp,
         div [style*="wp.png"] {
             background-image: url(wpImage)!important;
+        }
+    }
+    /*------Drop-shadow for the pieces------*/
+    if enableShadow {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            filter: drop-shadow(0 0 0.2rem #000)!important;
+            -webkit-filter: drop-shadow(0 0 0.2rem #000)!important;
         }
     }
     /*------Invert colors------*/
@@ -788,8 +830,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }/*------------------------------------------------*/
-
+        }
         /*------Invert custom black king color------*/
         if myPiecesB=="userPieces" {
             if enableInvertBK {
