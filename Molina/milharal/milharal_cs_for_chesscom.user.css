@@ -654,7 +654,8 @@
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(wbImage)!important;        }
+            background-image: url(wbImage)!important;
+        }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
