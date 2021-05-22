@@ -13,8 +13,8 @@
             "Marrom claro": "op3",
             "Marrom escuro*": "op4",
             "Seu tabuleiro": "op5",	
-            "Seu tabuleiro 2": "op6",	
-            "Seu tabuleiro 3": "op7",			
+            "Seu tabuleiro 2": "op6",
+            "Seu tabuleiro 3": "op7",
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -66,7 +66,7 @@
 @var text     wkImage    "Seu rei branco"   "'https://static.thenounproject.com/png/2631826-200.png'"
 @var checkbox enableInvertWK "Inverter cor do rei branco" 0
 @var text     wqImage    "Sua rainha branca"   "'https://static.thenounproject.com/png/2631871-200.png'"
-@var checkbox enableInvertWQ "Inverter cor do rainha branco" 0
+@var checkbox enableInvertWQ "Inverter cor do rainha branca" 0
 @var text     wbImage    "Seu bispo branco"   "'https://static.thenounproject.com/png/2253350-200.png'"
 @var checkbox enableInvertWB "inverter cor do bispo branco" 0
 @var text     wnImage    "Seu Cavalo branco"   "'https://static.thenounproject.com/png/3277775-200.png'"
@@ -78,7 +78,7 @@
 @var text     bkImage    "Rei preto"   "'https://static.thenounproject.com/png/2643357-200.png'"
 @var checkbox enableInvertBK "Inverter cor do rei preto" 0
 @var text     bqImage    "Rainha preta"   "'https://static.thenounproject.com/png/2643393-200.png'"
-@var checkbox enableInvertBQ "Inverter cor da rainha preto" 0
+@var checkbox enableInvertBQ "Inverter cor da rainha preta" 0
 @var text     bbImage    "Bispo preto"   "'https://static.thenounproject.com/png/2253385-200.png'"
 @var checkbox enableInvertBB "Inverter cor do bispo preto" 0
 @var text     bnImage    "Cavalo preto"   "'https://static.thenounproject.com/png/200301-200.png'"
@@ -120,7 +120,7 @@
     chess-board[id^="board-blank"],
     chess-board[id^="board-vs-personalities"],
     div[id*="chess_com_emailboard_"] {
-            if enableBoardSettings {
+        if enableBoardSettings {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
         }
         if myBoard=="op1" {
@@ -716,7 +716,7 @@
         }
     }
     /*------Invert colors------*/
-    if myPiecesB!="setCartoon"{
+    if myPiecesB!="setCartoon" {
         /*------Invert all black pieces color------*/
         if enableInvertB {
             .piece.bk,
