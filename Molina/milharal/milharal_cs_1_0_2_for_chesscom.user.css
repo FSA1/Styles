@@ -39,13 +39,14 @@
             "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
+@var    checkbox    enableByPieceSwap "Habilitar peças individuais" 1
 @var    select      myHighlight    "Opçoes de Destaque" {
             "Padrão*": "op1",
             "Personalizado": "op2"
         }
-@var    checkbox    enableCustomCoor "Habilitar coordenadas personalizadas" 0
-@var color    lCoordCol  "Light coordinates color"   #f7bc44
-@var color    dCoordCol  "Dark coordinates color"   #f7bc44
+@var    checkbox    enableCustomCoor "Habilitar coord. personalizadas" 0
+@var color    lCoordCol  "Coordenadas claras"   #f7bc44
+@var color    dCoordCol  "Coordenadas escuras"   #f7bc44
 @var    color    moveSqCol  "Destaque do movimento"   #ff8b33a8
 @var    color    selSqCol  "Destaque da seleção"   #ffea00ab
 @var    checkbox    enableShadow    "Habilitar sombras" 0
