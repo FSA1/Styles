@@ -8,10 +8,10 @@
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
-            "Verde vibrante": "op1",
-            "Verde suave": "op2",
-            "Marrom claro": "op3",
-            "Marrom escuro*": "op4",
+            "Cartoon verde vibrante": "op1",
+            "Cartoon verde suave": "op2",
+            "Cartoon Marrom claro": "op3",
+            "Cartoon Marrom escuro*": "op4",
             "Molina Madeira": "op5",
             "Molina marrom": "op6",
             "Molina verde": "op7",
@@ -26,7 +26,6 @@
             "Figuras 2 Preto": "setFigures2Preto",
             "Figuras 2 Azul": "setFigures2Blue",
             "Figuras 2 Amarelo": "setFigures2Yellow",
-            "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
 @var    select      myPiecesW    "Peças brancas" {
@@ -36,31 +35,27 @@
             "Figuras 2 Branco": "setFigures2Branco",
             "Figuras 2 Laranja": "setFigures2Orange",
             "Figuras 2 Amarelo": "setFigures2Yellow",
-            "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
-@var    select      myHighlight    "Opçoes de Destaque" {
-            "Padrão*": "op1",
-            "Personalizado": "op2"
-        }
+@var    checkbox      myHighlight    "Habilitar destaque personaliado" 0
+@var    color    moveSqCol  "Destaque do movimento"   #ebff33c7
+@var    color    selSqCol  "Destaque da seleção"   #ffea00ab
 @var    checkbox    enableCustomCoor "Habilitar coord. personalizadas" 0
 @var color    lCoordCol  "Coordenadas claras"   #f7bc44
 @var color    dCoordCol  "Coordenadas escuras"   #f7bc44
-@var    color    moveSqCol  "Destaque do movimento"   #ff8b33a8
-@var    color    selSqCol  "Destaque da seleção"   #ffea00ab
 @var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
 @var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
 @var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
 @var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
-@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
 @var    checkbox    enableInvertB   "Inverter cores (pretas)" 0
 @var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
 @var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
 @var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
 @var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
-@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
 @var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
 @var    checkbox    enableInvertW   "Inverter cores (brancas)" 0
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
@@ -68,41 +63,43 @@
 @var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
 @var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
 @var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+@var    checkbox    enableByPieceSwapB "Suas imagens para as pretas" 0
+@var    checkbox    enableByPieceSwapW "Suas imagens para as brancas" 0
 @var    text     wkImage    "Seu rei branco"   "'https://static.thenounproject.com/png/2631826-200.png'"
-@var    checkbox    enableCustomWK "Habilitar rei branco" 1
+@var    checkbox    enableCustomWK "Habilitar rei branco" 0
 @var    checkbox    enableInvertWK  "Inverter cor do rei branco" 0
 @var    text     wqImage    "Sua rainha branca"   "'https://static.thenounproject.com/png/2631871-200.png'"
-@var    checkbox    enableCustomWQ "Habilitar rainha branca" 1
+@var    checkbox    enableCustomWQ "Habilitar rainha branca" 0
 @var    checkbox    enableInvertWQ "Inverter cor do rainha branca" 0
 @var    text     wbImage    "Seu bispo branco" "'https://static.thenounproject.com/png/2253350-200.png'"
-@var    checkbox    enableCustomWB "Habilitar bispo branco" 1
+@var    checkbox    enableCustomWB "Habilitar bispo branco" 0
 @var    checkbox    enableInvertWB "Inverter cor do bispo branco" 0
 @var    text     wnImage    "Seu cavalo branco"   "'https://static.thenounproject.com/png/3277775-200.png'"
-@var    checkbox    enableCustomWN "Habilitar cavalo branco" 1
+@var    checkbox    enableCustomWN "Habilitar cavalo branco" 0
 @var    checkbox    enableInvertWN "Inverter cor do cavalo branco" 0
 @var    text     wrImage    "Sua torre branca"   "'https://static.thenounproject.com/png/3046851-200.png'"
-@var    checkbox    enableCustomWR "Habilitar torre branca" 1
+@var    checkbox    enableCustomWR "Habilitar torre branca" 0
 @var    checkbox    enableInvertWR "Inverter cor do torre branca" 0
 @var    text     wpImage    "Seu peão branco"   "'https://static.thenounproject.com/png/97864-200.png'"
-@var    checkbox    enableCustomWP "Habilitar peão branco" 1
+@var    checkbox    enableCustomWP "Habilitar peão branco" 0
 @var    checkbox    enableInvertWP "Inverter cor do peão branco" 0
 @var    text     bkImage    "Seu rei preto"   "'https://static.thenounproject.com/png/2643357-200.png'"
-@var    checkbox    enableCustomBK "Habilitar rei preto" 1
+@var    checkbox    enableCustomBK "Habilitar rei preto" 0
 @var    checkbox    enableInvertBK "Inverter cor do rei preto" 0
 @var    text     bqImage    "Sua rainha preta"   "'https://static.thenounproject.com/png/2643393-200.png'"
-@var    checkbox    enableCustomBQ "Habilitar rainha preta" 1
+@var    checkbox    enableCustomBQ "Habilitar rainha preta" 0
 @var    checkbox    enableInvertBQ "Inverter cor da rainha preta" 0
 @var    text     bbImage    "Seu bispo preto"   "'https://static.thenounproject.com/png/2253385-200.png'"
-@var    checkbox    enableCustomBB "Habilitar bisbo preto" 1
+@var    checkbox    enableCustomBB "Habilitar bisbo preto" 0
 @var    checkbox    enableInvertBB "Inverter cor do bispo preto" 0
 @var    text     bnImage    "Seu cavalo preto"   "'https://static.thenounproject.com/png/200301-200.png'"
-@var    checkbox    enableCustomBN "Habilitar cavalo preto" 1
+@var    checkbox    enableCustomBN "Habilitar cavalo preto" 0
 @var    checkbox    enableInvertBN "Inverter cor do cavalo preto" 0
 @var    text     brImage    "Sua torre preta"   "'https://static.thenounproject.com/png/3046793-200.png'"
-@var    checkbox    enableCustomBR "Habilitar torre preta" 1
+@var    checkbox    enableCustomBR "Habilitar torre preta" 0
 @var    checkbox    enableInvertBR "Inverter cor da torre preta" 0
 @var    text     bpImage    "Seu peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
-@var    checkbox    enableCustomBP "Habilitar peão preto" 1
+@var    checkbox    enableCustomBP "Habilitar peão preto" 0
 @var    checkbox    enableInvertBP "Inverter cor do peão preto" 0
 @var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/sUD4GYw.png'"
 ==/UserStyle== */
@@ -151,7 +148,7 @@
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op5" {
-            background: url(https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_wood.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op6" {
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_brown.png) 0% 0% / 100% 100% no-repeat !important;
@@ -299,7 +296,7 @@
 
 
         /*------Highlight------*/
-        if myHighlight=="op1" {
+        if myHighlight==0 {
             if myBoard=="op1" || myBoard=="op2" {
                 .move-square {
                     background-color: #d0ff01bd!important;
@@ -310,7 +307,47 @@
                     opacity: 0.9!important;
                 }
             }
-            if myBoard=="op3" || myBoard=="op4" {
+            if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
+                .move-square {
+                    background-color: #ffd500bf!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffa200d4 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op6" {
+                .move-square {
+                    background-color: #ffd500c2!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffea00cc !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op7" {
+                .move-square {
+                    background-color: #ebff33c7!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #84ff00c9 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op8" {
+                .move-square {
+                    background-color: #00ddffed!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #00e1ffcc !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op9" {
                 .move-square {
                     background-color: #ffd500c2!important;
                     opacity: 0.9!important;
@@ -321,7 +358,7 @@
                 }
             }
         }
-        if myHighlight=="op2" {
+        if myHighlight {
             .move-square {
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
@@ -729,7 +766,7 @@
         }
     }
     /*------Black pieces 'Suas imagens'------*/
-    if myPiecesB=="userPieces" {
+    if enableByPieceSwapB {
         if enableCustomBK {
             .piece.bk,
             .promotion-piece.bk,
@@ -774,7 +811,7 @@
         }
     }
     /*------White pieces 'Suas imagens'------*/
-    if myPiecesW=="userPieces" {
+    if enableByPieceSwapW {
         if enableCustomWK {
             .piece.wk,
             .promotion-piece.wk,
@@ -913,7 +950,7 @@
             }
         }
         /*------Invert custom white king color------*/
-        if myPiecesW=="userPieces" {
+        if enableByPieceSwapW {
             if enableInvertWK {
                 .piece.wk,
                 .promotion-piece.wk,
@@ -922,9 +959,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white queen color------*/
-        if myPiecesW=="userPieces" {
             if enableInvertWQ {
                 .piece.wq,
                 .promotion-piece.wq,
@@ -933,9 +968,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white bishop color------*/
-        if myPiecesW=="userPieces" {
             if enableInvertWB {
                 .piece.wb,
                 .promotion-piece.wb,
@@ -944,9 +977,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white knight color------*/
-        if myPiecesW=="userPieces" {
             if enableInvertWN {
                 .piece.wn,
                 .promotion-piece.wn,
@@ -955,9 +986,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white rook color------*/
-        if myPiecesW=="userPieces" {
             if enableInvertWR {
                 .piece.wr,
                 .promotion-piece.wr,
@@ -966,9 +995,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white pawn color------*/
-        if myPiecesW=="userPieces" {
             if enableInvertWP {
                 .piece.wp,
                 .promotion-piece.wp,
@@ -977,9 +1004,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom black king color------*/
-        if myPiecesB=="userPieces" {
             if enableInvertBK {
                 .piece.bk,
                 .promotion-piece.bk,
@@ -988,9 +1013,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white queen color------*/
-        if myPiecesB=="userPieces" {
             if enableInvertBQ {
                 .piece.bq,
                 .promotion-piece.bq,
@@ -999,9 +1022,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white bishop color------*/
-        if myPiecesB=="userPieces" {
             if enableInvertBB {
                 .piece.wb,
                 .promotion-piece.wb,
@@ -1010,9 +1031,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white knight color------*/
-        if myPiecesB=="userPieces" {
             if enableInvertBN {
                 .piece.bn,
                 .promotion-piece.bn,
@@ -1021,9 +1040,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white rook color------*/
-        if myPiecesB=="userPieces" {
             if enableInvertBR {
                 .piece.br,
                 .promotion-piece.br,
@@ -1032,9 +1049,7 @@
                     -webkit-filter: invert(1)!important;
                 }
             }
-        }
         /*------Invert custom white pawn color------*/
-        if myPiecesB=="userPieces" {
             if enableInvertBP {
                 .piece.bp,
                 .promotion-piece.bp,
