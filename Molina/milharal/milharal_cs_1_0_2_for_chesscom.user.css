@@ -80,28 +80,28 @@
 @var    text     wnImage    "Seu cavalo branco"   "'https://static.thenounproject.com/png/3277775-200.png'"
 @var    checkbox    enableCustomWN "Habilitar cavalo branco" 1
 @var    checkbox    enableInvertWN "Inverter cor do cavalo branco" 0
-@var    text     wrImage    "Seu torre branca"   "'https://static.thenounproject.com/png/3046851-200.png'"
+@var    text     wrImage    "Sua torre branca"   "'https://static.thenounproject.com/png/3046851-200.png'"
 @var    checkbox    enableCustomWR "Habilitar torre branca" 1
 @var    checkbox    enableInvertWR "Inverter cor do torre branca" 0
 @var    text     wpImage    "Seu peão branco"   "'https://static.thenounproject.com/png/97864-200.png'"
 @var    checkbox    enableCustomWP "Habilitar peão branco" 1
 @var    checkbox    enableInvertWP "Inverter cor do peão branco" 0
-@var    text     bkImage    "Rei preto"   "'https://static.thenounproject.com/png/2643357-200.png'"
+@var    text     bkImage    "Seu rei preto"   "'https://static.thenounproject.com/png/2643357-200.png'"
 @var    checkbox    enableCustomBK "Habilitar rei preto" 1
 @var    checkbox    enableInvertBK "Inverter cor do rei preto" 0
-@var    text     bqImage    "Rainha preta"   "'https://static.thenounproject.com/png/2643393-200.png'"
+@var    text     bqImage    "Sua rainha preta"   "'https://static.thenounproject.com/png/2643393-200.png'"
 @var    checkbox    enableCustomBQ "Habilitar rainha preta" 1
 @var    checkbox    enableInvertBQ "Inverter cor da rainha preta" 0
-@var    text     bbImage    "Bispo preto"   "'https://static.thenounproject.com/png/2253385-200.png'"
+@var    text     bbImage    "Seu bispo preto"   "'https://static.thenounproject.com/png/2253385-200.png'"
 @var    checkbox    enableCustomBB "Habilitar bisbo preto" 1
 @var    checkbox    enableInvertBB "Inverter cor do bispo preto" 0
-@var    text     bnImage    "Cavalo preto"   "'https://static.thenounproject.com/png/200301-200.png'"
+@var    text     bnImage    "Seu cavalo preto"   "'https://static.thenounproject.com/png/200301-200.png'"
 @var    checkbox    enableCustomBN "Habilitar cavalo preto" 1
 @var    checkbox    enableInvertBN "Inverter cor do cavalo preto" 0
-@var    text     brImage    "Torre preta"   "'https://static.thenounproject.com/png/3046793-200.png'"
+@var    text     brImage    "Sua torre preta"   "'https://static.thenounproject.com/png/3046793-200.png'"
 @var    checkbox    enableCustomBR "Habilitar torre preta" 1
 @var    checkbox    enableInvertBR "Inverter cor da torre preta" 0
-@var    text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
+@var    text     bpImage    "Seu peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
 @var    checkbox    enableCustomBP "Habilitar peão preto" 1
 @var    checkbox    enableInvertBP "Inverter cor do peão preto" 0
 @var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/sUD4GYw.png'"
@@ -772,7 +772,7 @@
         }
     }
     /*------White pieces 'Suas imagens'------*/
-    if myPiecesW=="userPieces" {
+    /*if myPiecesW=="userPieces" {*/
         if enableCustomWK {
             .piece.wk,
             .promotion-piece.wk,
@@ -801,10 +801,12 @@
                 background-image: url(wnImage)!important;
             }
         }
-        .piece.wr,
-        .promotion-piece.wr,
-        div [style*="wr.png"] {
-            background-image: url(wrImage)!important;
+        if enableCustomWP {
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url(wrImage)!important;
+            }
         }
         if enableCustomWP {
             .piece.wp,
@@ -813,8 +815,8 @@
                 background-image: url(wpImage)!important;
             }
         }
-    }
-    /*------Drop-shadow for the pieces------*/
+    /*------}------*/
+       /*------ Drop-shadow for the pieces------*/
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
