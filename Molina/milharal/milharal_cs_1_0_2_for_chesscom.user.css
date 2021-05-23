@@ -12,9 +12,11 @@
             "Verde suave": "op2",
             "Marrom claro": "op3",
             "Marrom escuro*": "op4",
-            "Seu tabuleiro": "op5",
-            "Seu tabuleiro 2": "op6",
-            "Seu tabuleiro 3": "op7",
+            "Molina Madeira": "op5",
+            "Molina marrom": "op6",
+            "Molina verde": "op7",
+            "Molina azul": "op8",
+            "Seu tabuleiro": "op9",
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -41,6 +43,9 @@
             "Padrão*": "op1",
             "Personalizado": "op2"
         }
+@var    checkbox    enableCustomCoor "Habilitar coordenadas personalizadas" 0
+@var color    lCoordCol  "Light coordinates color"   #f7bc44
+@var color    dCoordCol  "Dark coordinates color"   #f7bc44
 @var    color    moveSqCol  "Destaque do movimento"   #ff8b33a8
 @var    color    selSqCol  "Destaque da seleção"   #ffea00ab
 @var    checkbox    enableShadow    "Habilitar sombras" 0
@@ -99,9 +104,7 @@
 @var    text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
 @var    checkbox    enableCustomBP "Habilitar peão preto" 1
 @var    checkbox    enableInvertBP "Inverter cor do peão preto" 0
-@var    text     userBoard1    "Seu Tabuleiro 1"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png'"
-@var    text     userBoard2    "Seu Tabuleiro 2"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Blue.png'"
-@var    text     userBoard3    "Seu Tabuleiro 3"   "'https://i.imgur.com/sUD4GYw.png'"
+@var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/sUD4GYw.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
@@ -148,13 +151,19 @@
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op5" {
-            background: url(userBoard1) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op6" {
-            background: url(userBoard2) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_brown.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op7" {
-            background: url(userBoard3) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_green.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op8" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_blue.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op9" {
+            background: url(userBoard) 0% 0% / 100% 100% no-repeat !important;
         }
         /*------Coordinates------*/
         if myBoard=="op1" || myBoard=="op2" {
@@ -189,6 +198,104 @@
                 fill: #e2ba80 !important;
             }
         }
+        if myBoard=="op5" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7e5d1b!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e2ba80 !important;
+            }
+            text.coordinate-light {
+                fill: #7e5d1b!important;
+            }
+            text.coordinate-dark {
+                fill: #e2ba80 !important;
+            }
+        }
+        if myBoard=="op6" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #af5e2c!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e3ceb9 !important;
+            }
+            text.coordinate-light {
+                fill: #af5e2c!important;
+            }
+            text.coordinate-dark {
+                fill: #e3ceb9 !important;
+            }
+        }
+        if myBoard=="op7" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #75b900!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #d7dfca !important;
+            }
+            text.coordinate-light {
+                fill: #75b900!important;
+            }
+            text.coordinate-dark {
+                fill: #d7dfca !important;
+            }
+        }
+        if myBoard=="op8" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #3e7fc6!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #adcbda !important;
+            }
+            text.coordinate-light {
+                fill: #3e7fc6!important;
+            }
+            text.coordinate-dark {
+                fill: #adcbda !important;
+            }
+        }
+        if myBoard=="op9" {
+            div.number.coords-light, div.letter.coords-light {
+                color: rgb(194, 107, 56) !important;
+            }
+            div.number.coords-dark, div.letter.coords-dark {
+                color: rgb(239, 204, 161) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(194, 107, 56)!important;
+            }
+
+            text.coordinate-dark {
+                fill: rgb(239, 204, 161) !important;
+            }  
+        }
+        /*User choosen coordenates colors*/
+        if enableCustomCoor {
+                div.number.coords-light,
+                div.letter.coords-light {
+                    color: lCoordCol!important;
+                }
+                div.number.coords-dark,
+                div.letter.coords-dark {
+                    color: dCoordCol !important;
+                }
+                text.coordinate-light {
+                    fill: lCoordCol!important;
+                }
+                text.coordinate-dark {
+                    fill: dCoordCol !important;
+                }
+            }
+        
+        
         /*------Highlight------*/
         if myHighlight=="op1" {
             if myBoard=="op1" || myBoard=="op2" {
