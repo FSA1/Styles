@@ -39,7 +39,6 @@
             "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
-@var    checkbox    enableByPieceSwap "Habilitar peças individuais" 1
 @var    select      myHighlight    "Opçoes de Destaque" {
             "Padrão*": "op1",
             "Personalizado": "op2"
