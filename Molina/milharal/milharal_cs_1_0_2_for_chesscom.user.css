@@ -263,10 +263,12 @@
             }
         }
         if myBoard=="op9" {
-            div.number.coords-light, div.letter.coords-light {
+            div.number.coords-light,
+            div.letter.coords-light {
                 color: rgb(194, 107, 56) !important;
             }
-            div.number.coords-dark, div.letter.coords-dark {
+            div.number.coords-dark,
+            div.letter.coords-dark {
                 color: rgb(239, 204, 161) !important;
             }
             text.coordinate-light {
@@ -275,27 +277,27 @@
 
             text.coordinate-dark {
                 fill: rgb(239, 204, 161) !important;
-            }  
+            }
         }
         /*User choosen coordenates colors*/
         if enableCustomCoor {
-                div.number.coords-light,
-                div.letter.coords-light {
-                    color: lCoordCol!important;
-                }
-                div.number.coords-dark,
-                div.letter.coords-dark {
-                    color: dCoordCol !important;
-                }
-                text.coordinate-light {
-                    fill: lCoordCol!important;
-                }
-                text.coordinate-dark {
-                    fill: dCoordCol !important;
-                }
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: lCoordCol!important;
             }
-        
-        
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: dCoordCol !important;
+            }
+            text.coordinate-light {
+                fill: lCoordCol!important;
+            }
+            text.coordinate-dark {
+                fill: dCoordCol !important;
+            }
+        }
+
+
         /*------Highlight------*/
         if myHighlight=="op1" {
             if myBoard=="op1" || myBoard=="op2" {
@@ -801,7 +803,7 @@
                 background-image: url(wnImage)!important;
             }
         }
-        if enableCustomWP {
+        if enableCustomWR {
             .piece.wr,
             .promotion-piece.wr,
             div [style*="wr.png"] {
@@ -816,7 +818,7 @@
             }
         }
     }
-       /*------ Drop-shadow for the pieces------*/
+    /*------ Drop-shadow for the pieces------*/
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
