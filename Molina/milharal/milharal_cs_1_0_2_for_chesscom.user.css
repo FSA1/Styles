@@ -202,13 +202,13 @@
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #e2ba80 !important;
+                color: #c4ab87 !important;
             }
             text.coordinate-light {
                 fill: #7e5d1b!important;
             }
             text.coordinate-dark {
-                fill: #e2ba80 !important;
+                fill: #c4ab87 !important;
             }
         }
         if myBoard=="op6" {
@@ -319,7 +319,7 @@
             }
             if myBoard=="op6" {
                 .move-square {
-                    background-color: #ffd500c2!important;
+                    background-color: rgba(252, 128, 56, .9)!important;
                     opacity: 0.9!important;
                 }
                 .selection-square {
