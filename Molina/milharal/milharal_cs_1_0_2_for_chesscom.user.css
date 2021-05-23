@@ -772,7 +772,7 @@
         }
     }
     /*------White pieces 'Suas imagens'------*/
-    /*if myPiecesW=="userPieces" {*/
+    if myPiecesW=="userPieces" {
         if enableCustomWK {
             .piece.wk,
             .promotion-piece.wk,
@@ -815,7 +815,7 @@
                 background-image: url(wpImage)!important;
             }
         }
-    /*------}------*/
+    }
        /*------ Drop-shadow for the pieces------*/
     if enableShadow {
         .piece.wk,
