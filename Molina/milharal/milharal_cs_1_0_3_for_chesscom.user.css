@@ -294,33 +294,33 @@
         if myBoard=="the_crow_blue" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #567f95!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #d8dbd3 !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #567f95!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #d8dbd3 !important;
             }
         }
         if myBoard=="the_crow_brown" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #a67056!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #dfd6d1 !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #a67056!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #dfd6d1 !important;
             }
         }
         if myBoard=="the_crow_gray" {
@@ -342,81 +342,81 @@
         if myBoard=="the_crow_grayedblue" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #768a95!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #b9d1dd !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #768a95!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #b9d1dd !important;
             }
         }
         if myBoard=="the_crow_green" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #597942!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #c6c8c2 !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #597942!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #c6c8c2 !important;
             }
         }
         if myBoard=="the_crow_purple" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #80405b!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #cac0c5 !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #80405b!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #cac0c5 !important;
             }
         }
         if myBoard=="the_crow_sepia" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #9b9183!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #e6e1d9 !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #9b9183!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #e6e1d9 !important;
             }
         }
         if myBoard=="the_crow_viridian" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #5b5b5b!important;
+                color: #7aaba2!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #bababa !important;
+                color: #cbdadb !important;
             }
             text.coordinate-light {
-                fill: #5b5b5b!important;
+                fill: #7aaba2!important;
             }
             text.coordinate-dark {
-                fill: #bababa !important;
+                fill: #cbdadb !important;
             }
         }
         if myBoard=="opUser" {
