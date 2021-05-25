@@ -11,20 +11,20 @@
             "A&R 1*": "op1",
             "A&R 2": "op2",
             "A&R 3": "op3",
-            "Roxo 1": "op7",
-            "Roxo 2": "op8",
-            "Roxo 3": "op9",
-            "Roxo 4": "op10",
+            "A&R 4": "op7",
+            "A&R 5": "op8",
+            "A&R 6": "op9",
+            "A&R 7": "op10",
+            "A&R 8": "op16",
+            "A&R 9": "op17",
+            "A&R 10": "op13",
+            "A&R 11": "op14",
+            "A&R 12": "op15",
             "Roxo 5": "op4",
             "Roxo 6": "op5",
             "Roxo 7": "op6",
             "Roxo 8": "op11",
             "Roxo 9": "op12",
-            "Roxo 10": "op13",
-            "Roxo 11": "op14",
-            "Roxo 12": "op15",
-            "Roxo 13": "op16",
-            "Roxo 14": "op17",
             "Seu tabuleiro": "opUser",
             "Desativado": "op0",
         }
@@ -130,10 +130,10 @@
             background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_09.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op2" {
-            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_1.png) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/AR_EX_SE_1200px.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op3" {
-            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_2.png) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/AR_darktex1200px.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op4" {
             background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_3.png) 0% 0% / 100% 100% no-repeat !important;
@@ -145,10 +145,10 @@
             background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_4b.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op7" {
-            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_5.png) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/AR_lighttex1200px.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op8" {
-            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_5b.png) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/AR_1200px.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op9" {
             background: url(https://github.com/FSA1/Styles/raw/main/atletica_c7/board_5c.png) 0% 0% / 100% 100% no-repeat !important;
