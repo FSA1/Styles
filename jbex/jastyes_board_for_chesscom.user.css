@@ -1,0 +1,709 @@
+/* ==UserStyle==
+@name           Chess.com board Jastyes
+@author         agiota_do_artenio
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `chessboard para Atlética C7 UFPR.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "Escolher tabuleiro" {
+            "opção 1*": "op1",
+            "opção 2": "op2",
+            "opção 3": "op3",
+            "opção 4": "op4",
+            "Seu tabuleiro": "opUser",
+            "Desativado": "op0",
+        }
+@var    checkbox      myHighlight    "Habilitar destaque personaliado" 0
+@var    color    moveSqCol  "Destaque do movimento"   #7a18d6c7
+@var    color    selSqCol  "Destaque da seleção"   #af1c89ab
+@var    checkbox    enableCustomCoor "Habilitar coord. personalizadas" 0
+@var color    lCoordCol  "Coordenadas claras"   #644c78
+@var color    dCoordCol  "Coordenadas escuras"   #e2ca46
+@var    select      coloredBar    "Barra de Avaliação" {
+            "Tema do tabuleiro*": "op1",
+            "Personalizado": "op2",	
+            "Padrão": "op0",
+        }
+@var color    lEvalCol  "Avaliação das Brancas"   #E0E0E0
+@var color    dEvalCol  "Avaliação das Pretas"   #403D39
+@var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
+@var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
+@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableInvertB   "Inverter cores (pretas)" 0
+@var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
+@var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
+@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableInvertW   "Inverter cores (brancas)" 0
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
+@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+@var    checkbox    enableByPieceSwapB "Suas imagens para as pretas" 0
+@var    checkbox    enableByPieceSwapW "Suas imagens para as brancas" 0
+@var    text     wkImage    "Seu rei branco"   "'https://static.thenounproject.com/png/2631826-200.png'"
+@var    checkbox    enableCustomWK "Habilitar rei branco" 0
+@var    checkbox    enableInvertWK  "Inverter cor do rei branco" 0
+@var    text     wqImage    "Sua rainha branca"   "'https://static.thenounproject.com/png/2631871-200.png'"
+@var    checkbox    enableCustomWQ "Habilitar rainha branca" 0
+@var    checkbox    enableInvertWQ "Inverter cor do rainha branca" 0
+@var    text     wbImage    "Seu bispo branco" "'https://static.thenounproject.com/png/3460786-200.png'"
+@var    checkbox    enableCustomWB "Habilitar bispo branco" 0
+@var    checkbox    enableInvertWB "Inverter cor do bispo branco" 0
+@var    text     wnImage    "Seu cavalo branco"   "'https://static.thenounproject.com/png/3277775-200.png'"
+@var    checkbox    enableCustomWN "Habilitar cavalo branco" 0
+@var    checkbox    enableInvertWN "Inverter cor do cavalo branco" 0
+@var    text     wrImage    "Sua torre branca"   "'https://static.thenounproject.com/png/1911403-200.png'"
+@var    checkbox    enableCustomWR "Habilitar torre branca" 0
+@var    checkbox    enableInvertWR "Inverter cor do torre branca" 0
+@var    text     wpImage    "Seu peão branco"   "'https://static.thenounproject.com/png/97864-200.png'"
+@var    checkbox    enableCustomWP "Habilitar peão branco" 0
+@var    checkbox    enableInvertWP "Inverter cor do peão branco" 0
+@var    text     bkImage    "Seu rei preto"   "'https://static.thenounproject.com/png/2643357-200.png'"
+@var    checkbox    enableCustomBK "Habilitar rei preto" 0
+@var    checkbox    enableInvertBK "Inverter cor do rei preto" 0
+@var    text     bqImage    "Sua rainha preta"   "'https://static.thenounproject.com/png/2643393-200.png'"
+@var    checkbox    enableCustomBQ "Habilitar rainha preta" 0
+@var    checkbox    enableInvertBQ "Inverter cor da rainha preta" 0
+@var    text     bbImage    "Seu bispo preto"   "'https://static.thenounproject.com/png/3460698-200.png'"
+@var    checkbox    enableCustomBB "Habilitar bisbo preto" 0
+@var    checkbox    enableInvertBB "Inverter cor do bispo preto" 0
+@var    text     bnImage    "Seu cavalo preto"   "'https://static.thenounproject.com/png/200301-200.png'"
+@var    checkbox    enableCustomBN "Habilitar cavalo preto" 0
+@var    checkbox    enableInvertBN "Inverter cor do cavalo preto" 0
+@var    text     brImage    "Sua torre preta"   "'https://static.thenounproject.com/png/3046793-200.png'"
+@var    checkbox    enableCustomBR "Habilitar torre preta" 0
+@var    checkbox    enableInvertBR "Inverter cor da torre preta" 0
+@var    text     bpImage    "Seu peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
+@var    checkbox    enableCustomBP "Habilitar peão preto" 0
+@var    checkbox    enableInvertBP "Inverter cor do peão preto" 0
+@var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/sUD4GYw.png'"
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*------Chessboard------*/
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+        }
+        if myBoard=="op1" {
+            background: url(https://github.com/FSA1/Styles/raw/main/jbex/Jastyes.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op2" {
+            background: url(https://github.com/FSA1/Styles/raw/main/jbex/Jastyes1.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op3" {
+            background: url(https://github.com/FSA1/Styles/raw/main/jbex/Jastyes2.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op4" {
+            background: url(https://github.com/FSA1/Styles/raw/main/jbex/Jastyes3.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="opUser" {
+            background: url(userBoard) 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*------Coordinates------*/
+        if myBoard=="op1"{
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #c48450!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e6d8c2 !important;
+            }
+            text.coordinate-light {
+                fill: #c48450!important;
+            }
+            text.coordinate-dark {
+                fill: #e6d8c2 !important;
+            }
+        }
+        if myBoard=="op2"{
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #ac6d3b!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e6d8c2 !important;
+            }
+            text.coordinate-light {
+                fill: #ac6d3b!important;
+            }
+            text.coordinate-dark {
+                fill: #e6d8c2 !important;
+            }
+        }
+        if myBoard=="op3"{
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #3e7736!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e6d8c2 !important;
+            }
+            text.coordinate-light {
+                fill: #3e7736!important;
+            }
+            text.coordinate-dark {
+                fill: #e6d8c2 !important;
+            }
+        }
+        if myBoard=="op4"{
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #1580a3!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e6d8c2 !important;
+            }
+            text.coordinate-light {
+                fill: #1580a3!important;
+            }
+            text.coordinate-dark {
+                fill: #e6d8c2 !important;
+            }
+        }
+        if myBoard=="opUser" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(141, 141, 141) !important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(172, 172, 172) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(141, 141, 141) !important;
+            }
+
+            text.coordinate-dark {
+                fill: rgb(172, 172, 172) !important;
+            }
+        }
+        /*User choosen coordenates colors*/
+        if enableCustomCoor {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: lCoordCol!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: dCoordCol !important;
+            }
+            text.coordinate-light {
+                fill: lCoordCol!important;
+            }
+            text.coordinate-dark {
+                fill: dCoordCol !important;
+            }
+        }
+
+
+        /*------Highlight------*/
+        if myHighlight==0 {
+            if myBoard=="op1"{
+                .move-square {
+                    background-color: #ffd500bf!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffa200d4 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op2"{
+                .move-square {
+                    background-color: #ffd500bd!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffa200d4 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op3"{
+                .move-square {
+                    background-color: #d4ff00ad!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #00ff66a8 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="op4"{
+                .move-square {
+                    background-color: #00d5ffbf!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #2b00ffc9 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="opUser" {
+                .move-square {
+                    background-color: #ffd500c2!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffea00cc !important;
+                    opacity: 0.9!important;
+                }
+            }
+        }
+        if myHighlight {
+            .move-square {
+                background-color: moveSqCol!important;
+                opacity: 0.9!important;
+            }
+            .selection-square {
+                background-color: selSqCol !important;
+                opacity: 0.9!important;
+            }
+        }
+    }
+    /*------Black pieces 'Suas imagens'------*/
+    if enableByPieceSwapB {
+        if enableCustomBK {
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url(bkImage)!important;
+            }
+        }
+        if enableCustomBQ {
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url(bqImage)!important;
+            }
+        }
+        if enableCustomBB {
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url(bbImage)!important;
+            }
+        }
+        if enableCustomBN {
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url(bnImage)!important;
+            }
+        }
+        if enableCustomBR {
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url(brImage)!important;
+            }
+        }
+        if enableCustomBP {
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url(bpImage)!important;
+            }
+        }
+    }
+    /*------White pieces 'Suas imagens'------*/
+    if enableByPieceSwapW {
+        if enableCustomWK {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url(wkImage)!important;
+            }
+        }
+        if enableCustomWQ {
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url(wqImage)!important;
+            }
+        }
+        if enableCustomWB {
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url(wbImage)!important;
+            }
+        }
+        if enableCustomWN {
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url(wnImage)!important;
+            }
+        }
+        if enableCustomWR {
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url(wrImage)!important;
+            }
+        }
+        if enableCustomWP {
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url(wpImage)!important;
+            }
+        }
+    }
+    /*------ Drop-shadow for the pieces------*/
+    if enableShadow {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            filter: drop-shadow(0 0 0.2rem #000)!important;
+            -webkit-filter: drop-shadow(0 0 0.2rem #000)!important;
+        }
+    }
+    /*------Invert colors------*/
+        /*------Invert all black pieces color------*/
+        if enableInvertB {
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"],
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"],
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"],
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"],
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"],
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert all white pieces color------*/
+        if enableInvertW {
+                .piece.wk,
+                .promotion-piece.wk,
+                div [style*="wk.png"],
+                .piece.wq,
+                .promotion-piece.wq,
+                div [style*="wq.png"],
+                .piece.wb,
+                .promotion-piece.wb,
+                div [style*="wb.png"],
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"],
+                .piece.wr,
+                .promotion-piece.wr,
+                div [style*="wr.png"],
+                .piece.wp,
+                .promotion-piece.wp,
+                div [style*="wp.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+        }
+        /*------Blend and hue variation------*/
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            mix-blend-mode: enableBlendB;
+            filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+            -webkit-filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+            opacity: opacityB!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            mix-blend-mode: enableBlendW;
+            filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+            -webkit-filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+            opacity: opacityW!important;
+        }
+        /*single piece invert*/
+        if enableByPieceSwapW {
+        /*------Invert custom white king color------*/
+            if enableInvertWK {
+                .piece.wk,
+                .promotion-piece.wk,
+                div [style*="wk.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white queen color------*/
+            if enableInvertWQ {
+                .piece.wq,
+                .promotion-piece.wq,
+                div [style*="wq.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white bishop color------*/
+            if enableInvertWB {
+                .piece.wb,
+                .promotion-piece.wb,
+                div [style*="wb.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white knight color------*/
+            if enableInvertWN {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white rook color------*/
+            if enableInvertWR {
+                .piece.wr,
+                .promotion-piece.wr,
+                div [style*="wr.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white pawn color------*/
+            if enableInvertWP {
+                .piece.wp,
+                .promotion-piece.wp,
+                div [style*="wp.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom black king color------*/
+            if enableInvertBK {
+                .piece.bk,
+                .promotion-piece.bk,
+                div [style*="bk.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white queen color------*/
+            if enableInvertBQ {
+                .piece.bq,
+                .promotion-piece.bq,
+                div [style*="bq.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white bishop color------*/
+            if enableInvertBB {
+                .piece.wb,
+                .promotion-piece.wb,
+                div [style*="bb.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white knight color------*/
+            if enableInvertBN {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white rook color------*/
+            if enableInvertBR {
+                .piece.br,
+                .promotion-piece.br,
+                div [style*="br.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        /*------Invert custom white pawn color------*/
+            if enableInvertBP {
+                .piece.bp,
+                .promotion-piece.bp,
+                div [style*="bp.png"] {
+                    filter: invert(1)!important;
+                    -webkit-filter: invert(1)!important;
+                }
+            }
+        }
+    /*Evaluation Bar*/
+    if coloredBar=="op1" {
+        if myBoard=="op1" {
+            .evaluation-bar-white {
+                background-color: #E8DAC3 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #B87345 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op2" {
+            .evaluation-bar-white {
+                background-color: #E8DAC3 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #9B6039 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op3" {
+            .evaluation-bar-white {
+                background-color: #E8DAC3 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #129556 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op4" {
+            .evaluation-bar-white {
+                background-color: #E8DAC3 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #126F95 !important;
+            filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+    }
+    if coloredBar=="op2" {
+        .evaluation-bar-white {
+            background-color: lEvalCol !important;
+        }
+        .evaluation-bar-black {
+            background-color: dEvalCol !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
+    }
+    /*------end section------*/
+}
