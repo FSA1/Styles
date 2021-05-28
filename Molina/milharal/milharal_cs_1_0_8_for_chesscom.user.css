@@ -353,13 +353,13 @@
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #e3ceb9 !important;
+                color: #e4c8c1 !important;
             }
             text.coordinate-light {
                 fill: #af5e2c!important;
             }
             text.coordinate-dark {
-                fill: #e3ceb9 !important;
+                fill: #D8C5C0 !important;
             }
         }
         if myBoard=="the_crow_rose" {
@@ -1363,7 +1363,7 @@
 
     /*Evaluation Bar*/
     if coloredBar=="op1" {
-        if myBoard=="op1" {
+        if myBoard=="op1" || myBoard=="op2"{
             .evaluation-bar-white {
                 background-color: #90C63D !important;
                 filter: hue-rotate(hueRotationBoard)!important;
@@ -1373,10 +1373,10 @@
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-bar {
-                opacity: 0.9;
+                opacity: 0.7;
             }
         }
-        if myBoard=="op3" {
+        if myBoard=="op3" || myBoard=="op4" {
             .evaluation-bar-white {
                 background-color: #C6A161 !important;
                 filter: hue-rotate(hueRotationBoard)!important;
@@ -1386,20 +1386,7 @@
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-bar {
-                opacity: 0.9;
-            }
-        }
-        if myBoard=="op4" {
-            .evaluation-bar-white {
-                background-color: #C6A161 !important;
-                filter: hue-rotate(hueRotationBoard)!important;
-            }
-            .evaluation-bar-black {
-                background-color: #AB7B44 !important;
-                filter: hue-rotate(hueRotationBoard)!important;
-            }
-            .evaluation-bar-bar {
-                opacity: 0.9;
+                opacity: 0.8;
             }
         }
         if myBoard=="the_crow_gray" {
