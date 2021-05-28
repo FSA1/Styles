@@ -1300,11 +1300,11 @@
         }
         if myBoard=="op3" {
             .evaluation-bar-white {
-                background-color: #E8DAC3 !important;
+                background-color: #C6A161 !important;
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-black {
-                background-color: #129556 !important;
+                background-color: #AB7B44 !important;
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-bar {
