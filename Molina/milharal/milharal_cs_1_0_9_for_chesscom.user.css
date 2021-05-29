@@ -213,10 +213,10 @@
                 color: #99d53d !important;
             }
             text.coordinate-light {
-                fill: #447e1b!important;
+                fill: #4f9721!important;
             }
             text.coordinate-dark {
-                fill: #4e6c39 !important;
+                fill: #99d53d !important;
             }
         }
         if myBoard=="op3" || myBoard=="op4" {
