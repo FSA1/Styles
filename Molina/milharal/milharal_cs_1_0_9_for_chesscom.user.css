@@ -4,7 +4,7 @@
 @namespace      USO Archive
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.9
+@version        1.0.8
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -651,7 +651,7 @@
         .promotion-piece.wp,
         div [style*="wp.png"] {
             if bpImage=="classic" || wpImage=="classic" {
-                background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-wp.svg")!important;
+                background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-wp.png")!important;
             }
             else {
                 if enableWPawns {
@@ -696,7 +696,7 @@
         .promotion-piece.bp,
         div [style*="bp.png"] {
             if bpImage=="classic" || wpImage=="classic" {
-                background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-bp.svg")!important;
+                background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-bp.png")!important;
             }
             else {
                 if enableBPawns {
