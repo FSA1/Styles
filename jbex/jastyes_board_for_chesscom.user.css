@@ -3,8 +3,8 @@
 @author         agiota_do_artenio
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
-@description    `chessboard para Atlética C7 UFPR.`
-@version        1.0.0
+@description    `chessboard para Jastyes.`
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
