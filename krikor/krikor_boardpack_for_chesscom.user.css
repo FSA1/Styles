@@ -1,4 +1,4 @@
-/* ==UserStyle==
+﻿/* ==UserStyle==
 @name           Chess.com board GM Krikor
 @author         agiota_do_artenio
 @namespace      ChessSkins
@@ -350,11 +350,11 @@ domain("lichess.org") {
             if myBoard=="op2" {
                 square.last-move,
                 .move-square {
-                    background-color: #ffd500bd!important;
+                    background-color: #00d5ffbf!important;
                     opacity: 0.9!important;
                 }
                 .selection-square {
-                    background-color: #ffa200d4 !important;
+                    background-color: #256cffdb !important;
                     opacity: 0.9!important;
                 }
             }
@@ -376,7 +376,7 @@ domain("lichess.org") {
                     opacity: 0.9!important;
                 }
                 .selection-square {
-                    background-color: #2b00ffc9 !important;
+                    background-color: #0099ffc9 !important;
                     opacity: 0.9!important;
                 }
             }
