@@ -645,7 +645,7 @@
             if myPiecesW=="setFigures1" {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-wr.png")!important;
             }
-            if myPiecesW=="setFigures1b" ||myPiecesW=="setFigures1c" {
+            if myPiecesW=="setFigures1b" || myPiecesW=="setFigures1c" {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png")!important;
             }
         }
