@@ -1369,7 +1369,7 @@
         if myBoard=="op5" {
             .evaluation-bar-white {
                 background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/light-wood-bar.png)!important;
-                background-color: #E3BF88 !important;
+                background-color: #d3b07b !important;
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-black {
