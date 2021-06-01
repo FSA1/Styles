@@ -31,7 +31,9 @@
             "Figuras 1 P&B*": "setFigures1",
             "Figuras 1 P&B alt1": "setFigures1b",
             "Figuras 1 P&B alt2": "setFigures1c",
+            "Figuras 1 P&B alt3": "setFigures1d",
             "Figuras 2 P&B": "setFigures2",
+            "Figuras 2 P&B alt": "setFigures2b",
             "Figuras 2 Preto": "setFigures2Black",
             "Figuras 2 Azul": "setFigures2Blue",
             "Figuras 2 Amarelo": "setFigures2Yellow",
@@ -42,7 +44,9 @@
             "Figuras 1 P&B*": "setFigures1",
             "Figuras 1 P&B alt1": "setFigures1b",
             "Figuras 1 P&B alt2": "setFigures1c",
+            "Figuras 1 P&B alt3": "setFigures1d",
             "Figuras 2 P&B": "setFigures2",
+            "Figuras 2 P&B alt": "setFigures2b",
             "Figuras 2 Branco": "setFigures2White",
             "Figuras 2 Laranja": "setFigures2Orange",
             "Figuras 2 Amarelo": "setFigures2Yellow",
@@ -618,7 +622,7 @@
         }
     }
     /*------white pieces 'Figuras 1 B&P'------*/
-    if myPiecesW=="setFigures1" || myPiecesW=="setFigures1b" || myPiecesW=="setFigures1c" {
+    if myPiecesW=="setFigures1" || myPiecesW=="setFigures1b" || myPiecesW=="setFigures1c" || myPiecesW=="setFigures1d" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -642,10 +646,10 @@
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            if myPiecesW=="setFigures1" {
+            if myPiecesW=="setFigures1" || myPiecesW=="setFigures1c" {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-wr.png")!important;
             }
-            if myPiecesW=="setFigures1b" || myPiecesW=="setFigures1c" {
+            if myPiecesW=="setFigures1b" || myPiecesW=="setFigures1d" {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png")!important;
             }
         }
@@ -654,7 +658,7 @@
         div [style*="wp.png"] {
 
             if enableWPawns {
-                if myPiecesW=="setFigures1c" {
+                if myPiecesW=="setFigures1c" || myPiecesW=="setFigures1d" {
                     background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-wp.png")!important;
                 }
                 else {
@@ -664,7 +668,7 @@
         }
     }
     /*------black pieces 'Figuras 1 B&P'------*/
-    if myPiecesB=="setFigures1" || myPiecesB=="setFigures1b" || myPiecesB=="setFigures1c" {
+    if myPiecesB=="setFigures1" || myPiecesB=="setFigures1b" || myPiecesB=="setFigures1c" || myPiecesB=="setFigures1d" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -688,10 +692,10 @@
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            if myPiecesB=="setFigures1" {
+            if myPiecesB=="setFigures1" || myPiecesB=="setFigures1c" {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-br.png")!important;
             }
-            if myPiecesB=="setFigures1b" || myPiecesB=="setFigures1c" {
+            if myPiecesB=="setFigures1b" || myPiecesB=="setFigures1d" {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br-inv.png")!important;
             }
         }
@@ -699,7 +703,7 @@
         .promotion-piece.bp,
         div [style*="bp.png"] {
             if enableBPawns {
-                if myPiecesB=="setFigures1c" {
+                if myPiecesB=="setFigures1c" || myPiecesB=="setFigures1d" {
                     background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-bp.png")!important;
                 }
                 else {
@@ -709,7 +713,7 @@
         }
     }
     /*------black pieces 'Figuras 2 B&P'------*/
-    if myPiecesB=="setFigures2" {
+    if myPiecesB=="setFigures2" || myPiecesB=="setFigures2b" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -739,12 +743,17 @@
             .piece.bp,
             .promotion-piece.bp,
             div [style*="bp.png"] {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
+                if myPiecesB=="setFigures2b" {
+                    background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-bp.png")!important;
+                }
+                else {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
+                }
             }
         }
     }
     /*------white pieces 'Figuras 2 B&P'------*/
-    if myPiecesW=="setFigures2" {
+    if myPiecesW=="setFigures2" || myPiecesW=="setFigures2b" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -774,7 +783,12 @@
             .piece.wp,
             .promotion-piece.wp,
             div [style*="wp.png"] {
-                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
+                if myPiecesW=="setFigures2b" {
+                    background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-wp.png")!important;
+                }
+                else {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
+                }
             }
         }
     }
