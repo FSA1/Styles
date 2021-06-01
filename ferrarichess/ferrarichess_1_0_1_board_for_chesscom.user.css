@@ -13,9 +13,9 @@
             "Desativado": "op0",
         }
 @var    select      sethighlight    "Escolher destaque" {
-            "Pre-configurado*": "op1",
+            "Pre-configurado": "op1",
             "Suas cores": "opUser",
-            "Desativado": "op0",
+            "Desativado*": "op0",
         }
 @var    color    moveSqCol  "Destaque do movimento"   #00b7ffd4
 @var    color    selSqCol  "Destaque da seleção"   #0400ff5c
