@@ -1,0 +1,452 @@
+/* ==UserStyle==
+@name           Chess.com board Ferrari Chess
+@author         agiota_do_artenio
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `chessboard para Ferrari Chess.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "Escolher tabuleiro" {
+            "Cinza*": "op1",
+            "Seu tabuleiro": "opUser",
+            "Desativado": "op0",
+        }
+@var    checkbox      myHighlight    "Habilitar destaque personaliado" 0
+@var    color    moveSqCol  "Destaque do movimento"   #0095ffd4
+@var    color    selSqCol  "Destaque da seleção"   #0400ff5c
+@var    checkbox    enableCustomCoor "Habilitar coord. personalizadas" 0
+@var color    lCoordCol  "Coordenadas claras"   #8d8d8d
+@var color    dCoordCol  "Coordenadas escuras"   #acacac
+@var    select      coloredBar    "Barra de Avaliação" {
+            "Tema do tabuleiro*": "op1",
+            "Personalizado": "op2",	
+            "Padrão": "op0",
+        }
+@var color    lEvalCol  "Avaliação das Brancas"   #E0E0E0
+@var color    dEvalCol  "Avaliação das Pretas"   #403D39
+@var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
+@var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
+@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
+@var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
+@var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
+@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
+@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+@var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/sUD4GYw.png'"
+==/UserStyle== */
+@-moz-document domain("chess.com"),
+domain("lichess.org") {
+    /*------Chessboard------*/
+    .is2d cg-board,
+    .board,
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+        }
+        if myBoard=="op1" {
+            background:url(https://github.com/FSA1/Styles/raw/main/ferrarichess/Ferrari_board.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="opUser" {
+            background: url(userBoard) 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*------Coordinates------*/
+        if myBoard=="op1" {
+            .orientation-white .files coord:nth-child(2n),
+            .orientation-white .ranks coord:nth-child(2n + 1),
+            .orientation-black .files coord:nth-child(2n + 1),
+            .orientation-black .ranks coord:nth-child(2n),
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #617282!important;
+            }
+            .orientation-white .files coord:nth-child(2n + 1),
+            .orientation-white .ranks coord:nth-child(2n),
+            .orientation-black .files coord:nth-child(2n),
+            .orientation-black .ranks coord:nth-child(2n + 1),
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #E3E3D9 !important;
+            }
+            .orientation-white .files coord:nth-child(2n),
+            .orientation-white .ranks coord:nth-child(2n + 1),
+            .orientation-black .files coord:nth-child(2n + 1),
+            .orientation-black .ranks coord:nth-child(2n),
+            text.coordinate-light {
+                fill: #617282!important;
+            }
+            .orientation-white .files coord:nth-child(2n + 1),
+            .orientation-white .ranks coord:nth-child(2n),
+            .orientation-black .files coord:nth-child(2n),
+            .orientation-black .ranks coord:nth-child(2n + 1),
+            text.coordinate-dark {
+                fill: #E3E3D9 !important;
+            }
+        }
+        if myBoard=="opUser" {
+            .orientation-white .files coord:nth-child(2n),
+            .orientation-white .ranks coord:nth-child(2n + 1),
+            .orientation-black .files coord:nth-child(2n + 1),
+            .orientation-black .ranks coord:nth-child(2n),
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #8d8d8d !important;
+            }
+            .orientation-white .files coord:nth-child(2n + 1),
+            .orientation-white .ranks coord:nth-child(2n),
+            .orientation-black .files coord:nth-child(2n),
+            .orientation-black .ranks coord:nth-child(2n + 1),
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #acacac !important;
+            }
+            .orientation-white .files coord:nth-child(2n),
+            .orientation-white .ranks coord:nth-child(2n + 1),
+            .orientation-black .files coord:nth-child(2n + 1),
+            .orientation-black .ranks coord:nth-child(2n),
+            text.coordinate-light {
+                fill: #8d8d8d !important;
+            }
+            .orientation-white .files coord:nth-child(2n + 1),
+            .orientation-white .ranks coord:nth-child(2n),
+            .orientation-black .files coord:nth-child(2n),
+            .orientation-black .ranks coord:nth-child(2n + 1),
+            text.coordinate-dark {
+                fill: #acacac !important;
+            }
+        }
+        /*User choosen coordenates colors*/
+        if enableCustomCoor {
+            .orientation-white .files coord:nth-child(2n),
+            .orientation-white .ranks coord:nth-child(2n + 1),
+            .orientation-black .files coord:nth-child(2n + 1),
+            .orientation-black .ranks coord:nth-child(2n),
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: lCoordCol!important;
+            }
+            .orientation-white .files coord:nth-child(2n + 1),
+            .orientation-white .ranks coord:nth-child(2n),
+            .orientation-black .files coord:nth-child(2n),
+            .orientation-black .ranks coord:nth-child(2n + 1),
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: dCoordCol !important;
+            }
+            .orientation-white .files coord:nth-child(2n),
+            .orientation-white .ranks coord:nth-child(2n + 1),
+            .orientation-black .files coord:nth-child(2n + 1),
+            .orientation-black .ranks coord:nth-child(2n),
+            text.coordinate-light {
+                fill: lCoordCol!important;
+            }
+            .orientation-white .files coord:nth-child(2n + 1),
+            .orientation-white .ranks coord:nth-child(2n),
+            .orientation-black .files coord:nth-child(2n),
+            .orientation-black .ranks coord:nth-child(2n + 1),
+            text.coordinate-dark {
+                fill: dCoordCol !important;
+            }
+        }
+
+
+        /*------Highlight------*/
+        if myHighlight==0 {
+            if myBoard=="op1" {
+                square.last-move,
+                .move-square {
+                    background-color: #0095ffd4!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #0400ff5c !important;
+                    opacity: 0.9!important;
+                }
+            }
+            if myBoard=="opUser" {
+                square.last-move,
+                .move-square {
+                    background-color: #ffd500c2!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #ffea00cc !important;
+                    opacity: 0.9!important;
+                }
+            }
+        }
+        if myHighlight {
+            square.last-move,
+            .move-square {
+                background-color: moveSqCol!important;
+                opacity: 0.9!important;
+            }
+            .selection-square {
+                background-color: selSqCol !important;
+                opacity: 0.9!important;
+            }
+        }
+    }
+    /*------ Drop-shadow for the pieces------*/
+    if enableShadow {
+        .is2d .king.white,
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        .is2d .queen.white,
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        .is2d .bishop.white,
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        .is2d .knight.white,
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        .is2d .rook.white,
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        .is2d .pawn.white,
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"],
+        .is2d .king.black,
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        .is2d .queen.black,
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        .is2d .bishop.black,
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        .is2d .knight.black,
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        .is2d .rook.black,
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        .is2d .pawn.black,
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            filter: drop-shadow(0 0 0.2rem #000)!important;
+            -webkit-filter: drop-shadow(0 0 0.2rem #000)!important;
+        }
+    }
+    /*------Blend and hue variation------*/
+    .is2d .king.black,
+    .piece.bk,
+    .promotion-piece.bk,
+    div [style*="bk.png"],
+    .is2d .queen.black,
+    .piece.bq,
+    .promotion-piece.bq,
+    div [style*="bq.png"],
+    .is2d .bishop.black,
+    .piece.bb,
+    .promotion-piece.bb,
+    div [style*="bb.png"],
+    .is2d .knight.black,
+    .piece.bn,
+    .promotion-piece.bn,
+    div [style*="bn.png"],
+    .is2d .rook.black,
+    .piece.br,
+    .promotion-piece.br,
+    div [style*="br.png"],
+    .is2d .pawn.black,
+    .piece.bp,
+    .promotion-piece.bp,
+    div [style*="bp.png"] {
+        mix-blend-mode: enableBlendB;
+        filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+        -webkit-filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+        opacity: opacityB!important;
+    }
+    .is2d .king.white,
+    .piece.wk,
+    .promotion-piece.wk,
+    div [style*="wk.png"],
+    .is2d .queen.white,
+    .piece.wq,
+    .promotion-piece.wq,
+    div [style*="wq.png"],
+    .is2d .bishop.white,
+    .piece.wb,
+    .promotion-piece.wb,
+    div [style*="wb.png"],
+    .is2d .knight.white,
+    .piece.wn,
+    .promotion-piece.wn,
+    div [style*="wn.png"],
+    .is2d .rook.white,
+    .piece.wr,
+    .promotion-piece.wr,
+    div [style*="wr.png"],
+    .is2d .pawn.white,
+    .piece.wp,
+    .promotion-piece.wp,
+    div [style*="wp.png"] {
+        mix-blend-mode: enableBlendW;
+        filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+        -webkit-filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+        opacity: opacityW!important;
+    }
+
+    /*------Coordinates for Lichess------*/
+    if myBoard=="op1" {
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n) {
+            color: #617282!important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1) {
+            color: #E3E3D9 !important;
+        }
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n) {
+            fill: #617282!important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1) {
+            fill: #E3E3D9 !important;
+        }
+    }
+    if myBoard=="opUser" {
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n) {
+            color: #8d8d8d !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1) {
+            color: #acacac !important;
+        }
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n) {
+            fill: #8d8d8d !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1) {
+            fill: #acacac !important;
+        }
+    }
+    /*User choosen coordenates colors*/
+    if enableCustomCoor {
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n) {
+            color: lCoordCol!important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1) {
+            color: dCoordCol !important;
+        }
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n) {
+            fill: lCoordCol!important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1) {
+            fill: dCoordCol !important;
+        }
+    }
+
+    /*Evaluation Bar*/
+    if coloredBar=="op1" {
+        if myBoard=="op1" {
+            .evaluation-bar-white {
+                background-color: #E3E3D9 !important;
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard)!important;
+        }
+            }
+            .evaluation-bar-black {
+                background-color: #617282 !important;
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard)!important;
+        }
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+    }
+    if coloredBar=="op2" {
+        .evaluation-bar-white {
+            background-color: lEvalCol !important;
+        }
+        .evaluation-bar-black {
+            background-color: dEvalCol !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
+    }
+    /*------end section------*/
+}
