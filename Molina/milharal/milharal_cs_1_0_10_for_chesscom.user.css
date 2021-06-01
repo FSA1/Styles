@@ -1366,6 +1366,21 @@
                 opacity: 0.8;
             }
         }
+        if myBoard=="op5" {
+            .evaluation-bar-white {
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/light-wood-bar.png)!important;
+                background-color: #E3BF88 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/dark-wood-bar.png);
+                background-color: #7D5B3D !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
+        }
         if myBoard=="the_crow_gray" {
             .evaluation-bar-white {
                 background-color: #BBC9CC !important;
