@@ -1282,6 +1282,8 @@
                 -webkit-filter: invert(1)!important;
             }
         }
+    }
+    if enableByPieceSwapB {
         /*------Invert custom black king color------*/
         if enableInvertBK {
             .piece.bk,
@@ -1337,6 +1339,7 @@
             }
         }
     }
+
 
     /*Evaluation Bar*/
     if coloredBar=="op1" {
