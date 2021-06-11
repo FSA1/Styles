@@ -244,17 +244,17 @@
         if myBoard=="op5" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #7e5d1b!important;
+                color: #845b2c!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #c4ab87 !important;
+                color: #d9c1a0 !important;
             }
             text.coordinate-light {
-                fill: #7e5d1b!important;
+                fill: #845b2c!important;
             }
             text.coordinate-dark {
-                fill: #c4ab87 !important;
+                fill: #d9c1a0 !important;
             }
         }
         if myBoard=="op6" {
