@@ -56,10 +56,10 @@
 @var    checkbox    enableWPawns "Peões brancos temáticos (P&B)" 1
 @var    checkbox    enableShadow    "Habilitar sombras" 0
 @var    checkbox    enableHighlight    "Habilitar Destaque" 1
+@var    checkbox    forcedHL    "Forçar destaque em todo o site (não recomendao)" 0
 @var    checkbox      myHighlight    "Mudar cor de Destaque (ao vivo)" 0
 @var    color    moveSqCol  "cor do movim.  (ao vivo)"   #ffb833eb
 @var    color    selSqCol  "cor da sel. (ao vivo)"   #ffea00ab
-@var    checkbox    forcedHL    "Forçar destaque em todo o site (não recomendao)" 0
 @var    select      coloredBar    "Barra de Avaliação" {
             "Tema do tabuleiro*": "op1",
             "Personalizado": "op2",	
