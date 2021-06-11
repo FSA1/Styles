@@ -1291,7 +1291,7 @@
                 -webkit-filter: invert(1)!important;
             }
         }
-        /*------Invert custom white queen color------*/
+        /*------Invert custom black queen color------*/
         if enableInvertBQ {
             .piece.bq,
             .promotion-piece.bq,
@@ -1300,16 +1300,16 @@
                 -webkit-filter: invert(1)!important;
             }
         }
-        /*------Invert custom white bishop color------*/
+        /*------Invert custom black bishop color------*/
         if enableInvertBB {
-            .piece.wb,
-            .promotion-piece.wb,
+            .piece.bb,
+            .promotion-piece.bb,
             div [style*="bb.png"] {
                 filter: invert(1)!important;
                 -webkit-filter: invert(1)!important;
             }
         }
-        /*------Invert custom white knight color------*/
+        /*------Invert custom black knight color------*/
         if enableInvertBN {
             .piece.bn,
             .promotion-piece.bn,
@@ -1318,7 +1318,7 @@
                 -webkit-filter: invert(1)!important;
             }
         }
-        /*------Invert custom white rook color------*/
+        /*------Invert custom black rook color------*/
         if enableInvertBR {
             .piece.br,
             .promotion-piece.br,
@@ -1327,7 +1327,7 @@
                 -webkit-filter: invert(1)!important;
             }
         }
-        /*------Invert custom white pawn color------*/
+        /*------Invert custom black pawn color------*/
         if enableInvertBP {
             .piece.bp,
             .promotion-piece.bp,
