@@ -55,6 +55,7 @@
 @var    checkbox    enableBPawns "Peões pretos temáticos (P&B)" 1
 @var    checkbox    enableWPawns "Peões brancos temáticos (P&B)" 1
 @var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    checkbox    enableHighlight    "Habilitar Destaque" 1
 @var    checkbox      myHighlight    "Mudar cor de Destaque (ao vivo)" 0
 @var    color    moveSqCol  "cor do movim.  (ao vivo)"   #ffb833eb
 @var    color    selSqCol  "cor da sel. (ao vivo)"   #ffea00ab
@@ -455,116 +456,118 @@
 
 
         /*------Highlight------*/
-        if myHighlight==0 {
-            if myBoard=="op1" || myBoard=="op2" {
-                .move-square {
-                    background-color: #d0ff01bd!important;
-                    opacity: 0.9!important;
+        if enableHighlight {
+            if myHighlight==0 {
+                if myBoard=="op1" || myBoard=="op2" {
+                    .move-square {
+                        background-color: #d0ff01bd!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #f2ff00de !important;
+                        opacity: 0.9!important;
+                    }
                 }
-                .selection-square {
-                    background-color: #f2ff00de !important;
-                    opacity: 0.9!important;
+                if myBoard=="op3" || myBoard=="op4" {
+                    .move-square {
+                        background-color: #ffd500bf!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ffa200d4 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+
+                if myBoard=="op5" {
+                    .move-square {
+                        background-color: #f7c415bd!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #faa302d9 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+
+                if myBoard=="op6" {
+                    .move-square {
+                        background-color: rgba(252, 128, 56, .9)!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ff9d00bf !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="op7" {
+                    .move-square {
+                        background-color: #ebff33c7!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #84ff00c9 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="op8" {
+                    .move-square {
+                        background-color: #00ddffed!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #00e1ffcc !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_wood" {
+                    .move-square {
+                        background-color: #ffc124b8!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ec9026e0 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="opUser" {
+                    .move-square {
+                        background-color: #ffd500c2!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ffea00cc !important;
+                        opacity: 0.9!important;
+                    }
                 }
             }
-            if myBoard=="op3" || myBoard=="op4" {
+            if myHighlight {
                 .move-square {
-                    background-color: #ffd500bf!important;
+                    background-color: moveSqCol!important;
                     opacity: 0.9!important;
                 }
                 .selection-square {
-                    background-color: #ffa200d4 !important;
-                    opacity: 0.9!important;
-                }
-            }
-            
-            if myBoard=="op5" {
-                .move-square {
-                    background-color: #ffdb25d4!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: #faa302d9 !important;
-                    opacity: 0.9!important;
-                }
-            }
-            
-            if myBoard=="op6" {
-                .move-square {
-                    background-color: rgba(252, 128, 56, .9)!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: #ff9d00bf !important;
-                    opacity: 0.9!important;
-                }
-            }
-            if myBoard=="op7" {
-                .move-square {
-                    background-color: #ebff33c7!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: #84ff00c9 !important;
-                    opacity: 0.9!important;
-                }
-            }
-            if myBoard=="op8" {
-                .move-square {
-                    background-color: #00ddffed!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: #00e1ffcc !important;
-                    opacity: 0.9!important;
-                }
-            }
-            if myBoard=="the_crow_wood" {
-                .move-square {
-                    background-color: #ffc124b8!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: #ec9026e0 !important;
-                    opacity: 0.9!important;
-                }
-            }
-            if myBoard=="opUser" {
-                .move-square {
-                    background-color: #ffd500c2!important;
-                    opacity: 0.9!important;
-                }
-                .selection-square {
-                    background-color: #ffea00cc !important;
+                    background-color: selSqCol !important;
                     opacity: 0.9!important;
                 }
             }
         }
-        if myHighlight {
-            .move-square {
+        /*Forced Highlight*/
+        if forcedHL {
+            .highlight {
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
             }
-            .selection-square {
-                background-color: selSqCol !important;
-                opacity: 0.9!important;
-            }
         }
-    }
-    /*Forced Highlight*/
-    if forcedHL {
-        .highlight {
-            background-color: moveSqCol!important;
-            opacity: 0.9!important;
+        /*Highlight Correction*/
+        .v-board .square {
+            bottom: 0;
+            height: 12.5%!important;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 12.51%!important;
         }
-    }
-    /*Highlight Correction*/
-    .v-board .square {
-        bottom: 0;
-        height: 12.5%!important;
-        left: 0;
-        pointer-events: none;
-        position: absolute;
-        width: 12.51%!important;
     }
     /*-----------------Pieces--------------------*/
     /*------white pieces 'Cartoon'------*/
