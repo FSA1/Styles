@@ -4,7 +4,7 @@
 @namespace      USO Archive
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.11
+@version        1.0.10
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -1371,17 +1371,17 @@
         }
         if myBoard=="op5" {
             .evaluation-bar-white {
-                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/light-wood-bar.png)!important;
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/MolasWood2Wbar.png)!important;
                 background-color: #d3b07b !important;
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-black {
-                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/dark-wood-bar.png);
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/MolasWood2Bbar.png);
                 background-color: #7D5B3D !important;
                 filter: hue-rotate(hueRotationBoard)!important;
             }
             .evaluation-bar-bar {
-                opacity: 0.7;
+                opacity: 0.9;
             }
         }
         if myBoard=="the_crow_gray" {
