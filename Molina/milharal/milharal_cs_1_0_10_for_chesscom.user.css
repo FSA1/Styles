@@ -466,7 +466,7 @@
                     opacity: 0.9!important;
                 }
             }
-            if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
+            if myBoard=="op3" || myBoard=="op4" {
                 .move-square {
                     background-color: #ffd500bf!important;
                     opacity: 0.9!important;
@@ -476,6 +476,18 @@
                     opacity: 0.9!important;
                 }
             }
+            
+            if myBoard=="op5" {
+                .move-square {
+                    background-color: #ffdb25d4!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #faa302d9 !important;
+                    opacity: 0.9!important;
+                }
+            }
+            
             if myBoard=="op6" {
                 .move-square {
                     background-color: rgba(252, 128, 56, .9)!important;
