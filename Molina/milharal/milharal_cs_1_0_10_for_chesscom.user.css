@@ -458,6 +458,14 @@
         /*------Highlight------*/
         if enableHighlight {
             if myHighlight==0 {
+                .move-square {
+                    background-color: #f2ff0091!important;
+                    opacity: 0.9!important;
+                }
+                .selection-square {
+                    background-color: #d0ff01a1 !important;
+                    opacity: 0.9!important;
+                }
                 if myBoard=="op1" || myBoard=="op2" {
                     .move-square {
                         background-color: #d0ff01bd!important;
@@ -527,6 +535,56 @@
                     }
                     .selection-square {
                         background-color: #ec9026e0 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_blue" {
+                    .move-square {
+                        background-color: #00ddffed!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #592ef7c9 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_lightblue" {
+                    .move-square {
+                        background-color: #00bbffdb!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #2356ffb8 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_rose" {
+                    .move-square {
+                        background-color: #fbef119e!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: rgba(255, 41, 106, .89) !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_brick" {
+                    .move-square {
+                        background-color: #ffb300bf!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ff7200b5 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_gray" {
+                    .move-square {
+                        background-color: #4a809bbf!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #3b4e58 !important;
                         opacity: 0.9!important;
                     }
                 }
