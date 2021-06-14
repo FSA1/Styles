@@ -23,6 +23,11 @@
             "Opção 6": "op6",
             "Opção 7": "op7",
             "Opção 8": "op8",
+            "Opção 9": "op9",
+            "Opção 10": "op10",
+            "Opção 11": "op11",
+            "Opção 12": "op12",
+            "Opção 14": "op14",
             "Desativado": "op0",
         }
 @var    checkbox    forcedHighlight "impor destaque para todo o site (sem cores dinamicas)" 0
@@ -211,6 +216,66 @@
         }
     }
     if myHighlight=="op8" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl8.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl8.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op9" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl9.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl9.gif)) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op10" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl10.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl10.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op11" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl11.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl11.gif)) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op12" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl12.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl12.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op14" {
         .move-square {
             background: url(https://i.gifer.com/9FVd.gif) 0% 0% / 100% 100% no-repeat !important;
             opacity: 0.4!important;
