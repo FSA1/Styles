@@ -341,8 +341,10 @@
         opacity: 0.8;
     }
     /*Small board for game preview*/
-    div [style*="40.png"][class="game-preview-component"] {
-        background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
-    }
+        if myBoard=="op1"{
+                div [style*="40.png"][class="game-preview-component"] {
+                    background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
+                    }
+            }
     /*End of the code*/
 }
