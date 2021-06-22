@@ -234,7 +234,7 @@
         }
         if forcedHighlight {
             .highlight {
-                background: url(url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl9.gif)) 0% 0% / 100% 100% no-repeat !important;
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl9.gif) 0% 0% / 100% 100% no-repeat !important;
                 opacity: 0.4!important;
             }
         }
@@ -258,7 +258,7 @@
         }
         if forcedHighlight {
             .highlight {
-                background: url(url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl11.gif)) 0% 0% / 100% 100% no-repeat !important;
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl11.gif) 0% 0% / 100% 100% no-repeat !important;
                 opacity: 0.4!important;
             }
         }
