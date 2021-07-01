@@ -20,6 +20,7 @@
             "Capivaras (Neo)": "op3",
             "Desativado": "op0",
         }
+@var    checkbox    enableHighlight    "Habilitar Destaque" 1
 @var    select      coloredBar    "Barra de Avaliação" {
             "Tema do tabuleiro*": "op1",
             "Padrão": "op0",
@@ -80,11 +81,13 @@
                 fill: #e4e9ec !important;
             }
             /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
+            if enableHighlight {
+                .move-square {
+                    background-color: #38abd9!important;
+                }
+                .selection-square {
+                    background-color: #0058cc !important;
+                }
             }
         }
         if myBoard=="op2" {
@@ -105,11 +108,13 @@
                 fill: #EFF0D2 !important;
             }
             /*Highlight*/
-            .move-square {
-                background-color: rgb(0, 209, 43)!important;
-            }
-            .selection-square {
-                background-color: #00e1f6 !important;
+            if enableHighlight {
+                .move-square {
+                    background-color: rgb(0, 209, 43)!important;
+                }
+                .selection-square {
+                    background-color: #00e1f6 !important;
+                }
             }
         }
         if myBoard=="op3" {
@@ -130,11 +135,13 @@
                 fill: #8dcb72 !important;
             }
             /*Highlight*/
-            .move-square {
-                background-color: rgb(0, 209, 43)!important;
-            }
-            .selection-square {
-                background-color: #00e1f6 !important;
+            if enableHighlight {
+                .move-square {
+                    background-color: rgb(0, 209, 43)!important;
+                }
+                .selection-square {
+                    background-color: #00e1f6 !important;
+                }
             }
         }
     }
@@ -257,10 +264,10 @@
     if coloredBar=="op1" {
         if myBoard=="op1" {
             .evaluation-bar-white {
-                background-color: #fcfcf1 !important;
+                background-color: #F0F0E8 !important;
             }
             .evaluation-bar-black {
-                background-color: #657fa0 !important;
+                background-color: #708BA3 !important;
             }
             .evaluation-bar-bar {
                 opacity: 0.9;
@@ -268,21 +275,21 @@
         }
         if myBoard=="op2" {
             .evaluation-bar-white {
-                background-color: #fcfcd8 !important;
+                background-color: #EFF0D2 !important;
             }
             .evaluation-bar-black {
-                background-color: #638e27 !important;
+                background-color: #759B51 !important;
             }
             .evaluation-bar-bar {
                 opacity: 0.9;
             }
         }
-        if  myBoard=="op3" {
+        if myBoard=="op3" {
             .evaluation-bar-white {
-                background-color: #c5e270 !important;
+                background-color: #CAE77D !important;
             }
             .evaluation-bar-black {
-                background-color: #60961e !important;
+                background-color: #6EA245 !important;
             }
             .evaluation-bar-bar {
                 opacity: 0.9;
@@ -295,7 +302,6 @@
             .evaluation-bar-white {
                 filter: hue-rotate(hueRotationBoard)!important;
             }
-            
         }
     }
     /*End of the code*/
