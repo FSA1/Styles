@@ -22,11 +22,8 @@
         }
 @var    select      coloredBar    "Barra de Avaliação" {
             "Tema do tabuleiro*": "op1",
-            "Personalizado": "op2",	
             "Padrão": "op0",
         }
-@var color    lEvalCol  "Avaliação das Brancas"   #E0E0E0
-@var color    dEvalCol  "Avaliação das Pretas"   #403D39
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
 @var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
 @var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
