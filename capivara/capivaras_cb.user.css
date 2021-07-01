@@ -9,9 +9,9 @@
 @preprocessor   stylus
 
 @var    select      myBoard    "Escolher Tabuleiro" {
-            "Capivara 1": "op1",
-            "Capivara 2*": "op2",
-            "Capivara 3": "op3",
+            "Capivaras 1": "op1",
+            "Capivaras 2*": "op2",
+            "Capivaras 3": "op3",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
