@@ -17,7 +17,7 @@
 @var    select      myPieces    "Escolher Peças"{
             "Capivaras (Mar Gelado)": "op1",
             "Capivaras (Alpha)": "op2",
-            "Capivaras (Neo)": "op3",
+            "Capivaras (Neo)*": "op3",
             "Desativado": "op0",
         }
 @var    checkbox    enableHighlight    "Habilitar Destaque" 1
