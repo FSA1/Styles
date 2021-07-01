@@ -10,7 +10,7 @@
 
 @var    select      myBoard    "Escolher Tabuleiro" {
             "Capivara 1": "op1",
-            "Capivara 2": "op2",
+            "Capivara 2*": "op2",
             "Capivara 3": "op3",
             "Desativado": "op0",
         }
