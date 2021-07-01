@@ -9,9 +9,9 @@
 @preprocessor   stylus
 
 @var    select      myBoard    "Escolher Tabuleiro" {
-            "Jessica": "jess",
+            "Jessica*": "jess",
             "Capivaras 1": "op1",
-            "Capivaras 2*": "op2",
+            "Capivaras 2": "op2",
             "Capivaras 3": "op3",
             "Desativado": "op0",
         }
@@ -359,7 +359,7 @@
                 opacity: 0.9;
             }
         }
-        if myBoard=="op2" {
+        if myBoard=="op2" || myBoard=="jess" {
             .evaluation-bar-white {
                 background-color: #EFF0D2 !important;
             }
