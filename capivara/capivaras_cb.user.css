@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set Capivaras.`
-@version        1.0.0
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -20,7 +20,9 @@
             "Capivaras (Neo)*": "op3",
             "Desativado": "op0",
         }
+@var    checkbox    enableHorizInvert    "Cavalo p/ esquerda" 0
 @var    checkbox    enableHighlight    "Habilitar Destaque" 1
+@var    checkbox    forcedHighlight "impor destaque para todo o site (sem cores dinamicas)" 0
 @var    select      coloredBar    "Barra de Avaliação" {
             "Tema do tabuleiro*": "op1",
             "Padrão": "op0",
@@ -88,6 +90,11 @@
                 .selection-square {
                     background-color: #0058cc !important;
                 }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #38abd9!important;
+                    }
+                }
             }
         }
         if myBoard=="op2" {
@@ -115,6 +122,11 @@
                 .selection-square {
                     background-color: #00f6bd !important;
                 }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #00d12b!important;
+                    }
+                }
             }
         }
         if myBoard=="op3" {
@@ -137,10 +149,15 @@
             /*Highlight*/
             if enableHighlight {
                 .move-square {
-                    background-color: rgb(0, 209, 43)!important;
+                    background-color: #00d12b!important;
                 }
                 .selection-square {
                     background-color: #0fc !important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #00d12b!important;
+                    }
                 }
             }
         }
@@ -152,19 +169,31 @@
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivar-bn.png")!important;
+            if enableHorizInvert {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-bn.png")!important;
+            }
         }
         div [style*="wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivar-wn.png")!important;
+            if enableHorizInvert {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-wn.png")!important;
+            }
         }
         div.game-preview-component > img:nth-child(2),
         div.game-preview-component > img:nth-child(7) {
             content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivara-bn.png")!important;
+            if enableHorizInvert {
+                content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-bn.png")!important;
+            }
         }
         div.game-preview-component > img:nth-child(26),
         div.game-preview-component > img:nth-child(31) {
             content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivara-wn.png")!important;
+            if enableHorizInvert {
+                content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-wn.png")!important;
+            }
         }
     }
     if myPieces=="op2" {
@@ -172,19 +201,31 @@
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-bn.png")!important;
+            if enableHorizInvert {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-bn.png")!important;
+            }
         }
         div [style*="wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
+            if enableHorizInvert {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-wn.png")!important;
+            }
         }
         div.game-preview-component > img:nth-child(2),
         div.game-preview-component > img:nth-child(7) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivara-bn.png")!important;
+            content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
+            if enableHorizInvert {
+                content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-wn.png")!important;
+            }
         }
         div.game-preview-component > img:nth-child(26),
         div.game-preview-component > img:nth-child(31) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivara-wn.png")!important;
+            content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
+            if enableHorizInvert {
+                content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-wn.png")!important;
+            }
         }
     }
     if myPieces=="op3" {
@@ -202,7 +243,10 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/cap_neo-bn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/cap_neo-bn.png")!important;
+            if enableHorizInvert {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/flip-cap_neo-bn.png")!important;
+            }
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -232,7 +276,10 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/cap_neo-wn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/cap_neo-wn.png")!important;
+            if enableHorizInvert {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/flip-cap_neo-wn.png")!important;
+            }
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -252,12 +299,18 @@
         /*child 7 is black-knight*/
         div.game-preview-component > img:nth-child(2),
         div.game-preview-component > img:nth-child(7) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/cap_neo-bn.png")!important;
+            content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/cap_neo-bn.png")!important;
+            if enableHorizInvert {
+                content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/flip-cap_neo-bn.png")!important;
+            }
         }
         /*child 31 is white-knight*/
         div.game-preview-component > img:nth-child(26),
         div.game-preview-component > img:nth-child(31) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/cap_neo-wn.png")!important;
+            content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/cap_neo-wn.png")!important;
+            if enableHorizInvert {
+                content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/flip-cap_neo-wn.png")!important;
+            }
         }
     }
     /*Evaluation Bar*/
