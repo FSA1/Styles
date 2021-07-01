@@ -9,9 +9,9 @@
 @preprocessor   stylus
 
 @var    select      myBoard    "Escolher Tabuleiro" {
-            "Jessica*": "jess",
+            "Jessica": "jess",
             "Capivaras 1": "op1",
-            "Capivaras 2": "op2",
+            "Capivaras 2*": "op2",
             "Capivaras 3": "op3",
             "Desativado": "op0",
         }
