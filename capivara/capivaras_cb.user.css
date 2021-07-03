@@ -3,8 +3,8 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
-@description    `Chess Set Capivaras.`
-@version        1.0.3
+@description    `Conjunto de xadrez - Capivaras.`
+@version        1.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -13,6 +13,7 @@
             "Capivaras 2*": "op2",
             "Capivaras 3": "op3",
             "Capivaras 4": "op4",
+            "Capivaras 5": "op5",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -21,11 +22,15 @@
             "Capivaras (Neo)*": "op3",
             "Desativado": "op0",
         }
+@var    select      myHighlight    "Escolher destaque" {
+            "Temático*": "op1",
+            "Cores": "op2",
+            "Desativado": "op0",
+        }
 @var    checkbox    enableHorizInvert    "Cavalo p/ esquerda" 0
-@var    checkbox    enableHighlight    "Habilitar Destaque" 1
 @var    checkbox    forcedHighlight "impor destaque para todo o site (sem cores dinamicas)" 0
 @var    select      coloredBar    "Barra de Avaliação" {
-            "Tema do tabuleiro*": "op1",
+            "Temática*": "op1",
             "Padrão": "op0",
         }
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
@@ -84,7 +89,7 @@
                 fill: #e4e9ec !important;
             }
             /*Highlight*/
-            if enableHighlight {
+            if myHighlight=="op1" || myHighlight=="op2" {
                 .move-square {
                     background-color: #38abd9!important;
                 }
@@ -116,17 +121,36 @@
                 fill: #EFF0D2 !important;
             }
             /*Highlight*/
-            if enableHighlight {
+            if myHighlight=="op1" {
                 .move-square {
-                    background-color: #00d12b!important;
+                    background: url(https://github.com/FSA1/Styles/raw/main/capivara/hl/grass-hl.gif) 0% 0% / 100% 100% no-repeat !important;
+                    background-color: #91ff00!important;
+                    opacity: 0.5!important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                        background: url(https://github.com/FSA1/Styles/raw/main/capivara/hl/grass-hl.gif) 0% 0% / 100% 100% no-repeat !important;
+                        background-color: #91ff00!important;
+                        opacity: 0.5!important;
+                    }
                 }
                 .selection-square {
                     background-color: #00f6bd !important;
                 }
+            }
+            if myHighlight=="op2" {
+                .move-square {
+                    background-color: #91ff00!important;
+                    opacity: 0.5!important;
+                }
                 if forcedHighlight {
                     .highlight {
-                        background-color: #00d12b!important;
+                        background-color: #91ff00!important;
+                        opacity: 0.5!important;
                     }
+                }
+                .selection-square {
+                    background-color: #00f6bd !important;
                 }
             }
         }
@@ -148,22 +172,73 @@
                 fill: #8dcb72 !important;
             }
             /*Highlight*/
-            if enableHighlight {
+            if myHighlight=="op1" {
                 .move-square {
-                    background-color: #00d12b!important;
-                }
-                .selection-square {
-                    background-color: #0fc !important;
+                    background: url(https://github.com/FSA1/Styles/raw/main/capivara/hl/grass-hl.gif) 0% 0% / 100% 100% no-repeat !important;
+                    background-color: #6fff00!important;
+                    opacity: 0.5!important;
                 }
                 if forcedHighlight {
                     .highlight {
-                        background-color: #00d12b!important;
+                        background: url(https://github.com/FSA1/Styles/raw/main/capivara/hl/grass-hl.gif) 0% 0% / 100% 100% no-repeat !important;
+                        background-color: #91ff00!important;
+                        opacity: 0.5!important;
                     }
+                }
+                .selection-square {
+                    background-color: #00f6bd !important;
+                }
+            }
+            if myHighlight=="op2" {
+                .move-square {
+                    background-color: #91ff00!important;
+                    opacity: 0.5!important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #91ff00!important;
+                        opacity: 0.5!important;
+                    }
+                }
+                .selection-square {
+                    background-color: #00f6bd !important;
                 }
             }
         }
         if myBoard=="op4" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/capivaraV7c-cb.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #CD8939!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #FAE4AA !important;
+            }
+            text.coordinate-light {
+                fill: #CD8939!important;
+            }
+            text.coordinate-dark {
+                fill: #FAE4AA !important;
+            }
+            /*Highlight*/
+            if enableHighlight {
+                .move-square {
+                    background-color: #fbde00!important;
+                }
+                .selection-square {
+                    background-color: #ffc400 !important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #fbde00!important;
+                    }
+                }
+            }
+        }
+        if myBoard=="op5" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/capivaraV6_cb.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -302,6 +377,22 @@
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png")!important;
         }
     }
+    if myPieces=="op3" {
+        .piece.bp,
+        .piece.br,
+        .piece.bn,
+        .piece.bb,
+        .piece.bq,
+        .piece.bk,
+        div [style*="bp.png"],
+        div [style*="br.png"],
+        div [style*="bn.png"],
+        div [style*="bb.png"],
+        div [style*="bq.png"],
+        div [style*="bk.png"]{
+            filter: brightness(110%) contrast(110%)!important;
+        }
+    }
     /*Evaluation Bar*/
     if coloredBar=="op1" {
         if myBoard=="op1" {
@@ -337,7 +428,7 @@
                 opacity: 0.9;
             }
         }
-        if myBoard=="op4" {
+        if myBoard=="op4" || myBoard=="op5" {
             .evaluation-bar-white {
                 background-color: #FAE4AA !important;
             }
