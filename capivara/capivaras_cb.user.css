@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set Capivaras.`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -12,6 +12,7 @@
             "Capivaras 1": "op1",
             "Capivaras 2*": "op2",
             "Capivaras 3": "op3",
+            "Capivaras 4": "op4",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -161,6 +162,38 @@
                 }
             }
         }
+        if myBoard=="op4" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/capivaraV7c-cb.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #CD8939!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #FAE4AA !important;
+            }
+            text.coordinate-light {
+                fill: #CD8939!important;
+            }
+            text.coordinate-dark {
+                fill: #FAE4AA !important;
+            }
+            /*Highlight*/
+            if enableHighlight {
+                .move-square {
+                    background-color: #fbde00!important;
+                }
+                .selection-square {
+                    background-color: #ffc400 !important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #fbde00!important;
+                    }
+                }
+            }
+        }
     }
 
     /*Pieces*/
@@ -181,20 +214,6 @@
                 background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-wn.png")!important;
             }
         }
-        div.game-preview-component > img:nth-child(2),
-        div.game-preview-component > img:nth-child(7) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivara-bn.png")!important;
-            if enableHorizInvert {
-                content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-bn.png")!important;
-            }
-        }
-        div.game-preview-component > img:nth-child(26),
-        div.game-preview-component > img:nth-child(31) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivara-wn.png")!important;
-            if enableHorizInvert {
-                content: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/flip-capivar-wn.png")!important;
-            }
-        }
     }
     if myPieces=="op2" {
         div [style*="bn.png"],
@@ -211,20 +230,6 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
             if enableHorizInvert {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-wn.png")!important;
-            }
-        }
-        div.game-preview-component > img:nth-child(2),
-        div.game-preview-component > img:nth-child(7) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
-            if enableHorizInvert {
-                content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-wn.png")!important;
-            }
-        }
-        div.game-preview-component > img:nth-child(26),
-        div.game-preview-component > img:nth-child(31) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
-            if enableHorizInvert {
-                content: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/flip-capivara-wn.png")!important;
             }
         }
     }
@@ -296,22 +301,6 @@
         div [style*="wk.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png")!important;
         }
-        /*child 7 is black-knight*/
-        div.game-preview-component > img:nth-child(2),
-        div.game-preview-component > img:nth-child(7) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/cap_neo-bn.png")!important;
-            if enableHorizInvert {
-                content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/flip-cap_neo-bn.png")!important;
-            }
-        }
-        /*child 31 is white-knight*/
-        div.game-preview-component > img:nth-child(26),
-        div.game-preview-component > img:nth-child(31) {
-            content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/cap_neo-wn.png")!important;
-            if enableHorizInvert {
-                content: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/flip-cap_neo-wn.png")!important;
-            }
-        }
     }
     /*Evaluation Bar*/
     if coloredBar=="op1" {
@@ -343,6 +332,17 @@
             }
             .evaluation-bar-black {
                 background-color: #6EA245 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op4" {
+            .evaluation-bar-white {
+                background-color: #FAE4AA !important;
+            }
+            .evaluation-bar-black {
+                background-color: #CD8939 !important;
             }
             .evaluation-bar-bar {
                 opacity: 0.9;
