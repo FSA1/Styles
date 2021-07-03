@@ -3,13 +3,12 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
-@description    `Conjunto de xadrez - Capivaras - Edição Especial Jéssica.`
-@version        1.0.6
+@description    `Conjunto de xadrez - Capivaras.`
+@version        1.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
 @var    select      myBoard    "Escolher Tabuleiro" {
-            "Jessica": "jess",
             "Capivaras 1": "op1",
             "Capivaras 2*": "op2",
             "Capivaras 3": "op3",
@@ -152,38 +151,6 @@
                 }
                 .selection-square {
                     background-color: #00f6bd !important;
-                }
-            }
-        }
-        if myBoard=="jess" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/jppeixoto/jessica_cb.png")!important;
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #759B51!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #EFF0D2 !important;
-            }
-            text.coordinate-light {
-                fill: #759B51!important;
-            }
-            text.coordinate-dark {
-                fill: #EFF0D2 !important;
-            }
-            /*Highlight*/
-            if myHighlight=="op1" || myHighlight=="op2" {
-                .move-square {
-                    background-color: #00d12b!important;
-                }
-                .selection-square {
-                    background-color: #00f6bd !important;
-                }
-                if forcedHighlight {
-                    .highlight {
-                        background-color: #00d12b!important;
-                    }
                 }
             }
         }
@@ -439,7 +406,7 @@
                 opacity: 0.9;
             }
         }
-        if myBoard=="op2" || myBoard=="jess" {
+        if myBoard=="op2" {
             .evaluation-bar-white {
                 background-color: #EFF0D2 !important;
             }
