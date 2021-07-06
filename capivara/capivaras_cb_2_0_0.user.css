@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        2.0.0
+@version        2.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -49,6 +49,8 @@
             "Amarelo (Neo)": "op9",
             "Desativado": "op0"
         }
+@var    checkbox    enableCapivaras "Capivaras como Cavalos (Neo)" 1
+@var    checkbox    enableHorizInvert    "Cavalo p/ esquerda (Mar Gelado ou Alpha)" 0
 @var    select      myHighlight    "Escolher destaque" {
             "Temático*": "op1",
             "Cores": "op2",
@@ -343,7 +345,6 @@
         }
     }
 
-/*esta opção poderá ser usada no futuro --> @var    checkbox    enableHorizInvert    "Cavalo p/ esquerda (Mar Gelado ou Alpha)" 0*/
     /*Pieces*/
     if myPiecesB=="mar" {
         div [style*="bn.png"],
