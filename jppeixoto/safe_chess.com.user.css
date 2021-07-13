@@ -10,7 +10,7 @@
 @-moz-document domain("chess.com") {
 /*-----------Escondendo ou desfocando avatares do chesscom-----------*/
 /*neste exemplo as regras atingem a classe ".board-player-default-userAvatar" excetuando uma lista de nomes*/
-.board-player-default-userAvatar:not([alt="jppeixoto29"]):not([alt="babi3105"]):not([alt="JEHUBNER"]):not([alt="RobertoJBM"]):not([alt="th3d4rkness"]):not([alt="GMRafaelLeitao"]):not([alt="QuintilianoR"]):not([alt="wevertonrs"]):not([alt="Guizer_X"]):not([alt="Fortitudine"]):not([alt="LeonardoCesarini27"]):not([alt="Raffael_Chess"]):not([alt="allvim"]):not([alt="GMKrikor"]):not([alt="LPSupi"]) {
+.board-player-default-userAvatar:not([alt="jppeixoto29"]):not([alt="babi3105"]):not([alt="Xadrez_de_Quinta"]):not([alt="JEHUBNER"]):not([alt="RobertoJBM"]):not([alt="th3d4rkness"]):not([alt="GMRafaelLeitao"]):not([alt="QuintilianoR"]):not([alt="wevertonrs"]):not([alt="Guizer_X"]):not([alt="Fortitudine"]):not([alt="LeonardoCesarini27"]):not([alt="Raffael_Chess"]):not([alt="allvim"]):not([alt="GMKrikor"]):not([alt="LPSupi"]) {
     /*content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;*/
     filter: blur(2px)!important;
     -webkit-filter: blur(2px)!important;
