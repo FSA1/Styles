@@ -23,7 +23,7 @@
         if hidePic=="op1" {
             filter: blur(blurAmount)!important;
             -webkit-filter: blur(blurAmount)!important;
-            opacity: 50%!important;
+            opacity: 70%!important;
         }
         if hidePic=="op2" {
             content: url(userPic)!important;
