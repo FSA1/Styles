@@ -1,5 +1,16 @@
-
+/* ==UserStyle==
+@name           Safe_Chess.com
+@namespace      ChessSkins
+@author         agiota_do_artenio
+@description    `configurações para o chess.com.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("chess.com") {
 /*-----------Esconder avatar do chesscom-----------*/
 .board-player-default-component .board-player-default-userAvatar {
     content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
+}
+/*--end section--*/
 }
