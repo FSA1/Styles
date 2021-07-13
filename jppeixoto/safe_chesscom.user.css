@@ -13,22 +13,10 @@
             "Desativado": "op0",
         }
 @var    range    blurAmount  "Quantidade do desfoque" [8, 2, 8, 1, "px"]
-@var    text     userPic    "Avatar padrão"   "'https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png'"
+@var    text     userPic    "Imagem padrão"   "'https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png'"
+@var    text     winnerPic    "Imagem do vencedor"   "'https://static.abcteach.com/free_preview/c/championrgb_p.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-    /*-----------Escondendo ou desfocando avatares do chesscom-----------*/
-    /*neste exemplo as regras atingem a classe ".board-player-default-userAvatar" excetuando uma lista de nomes
-    Exemlo com duas exceções: 
-    .board-player-default-userAvatar:not([alt="jppeixoto29"]):not([alt="babi3105"]){
-    filter: blur(2px)!important;
-    -webkit-filter: blur(2px)!important;
-    opacity: 70%!important;
-}
-    Exemplo de substituição das imagens dos avatares por uma padrão excetuando uma pessoa:
-    .board-player-default-userAvatar:not([alt="jppeixoto29"]) {
-    content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
-}
-*/
     .game-over-player-picture:not([alt="jppeixoto29"]),
     .player-image.avatar-component:not([alt="jppeixoto29"]),
     .board-player-default-userAvatar:not([alt="jppeixoto29"]) {
@@ -46,8 +34,8 @@
     }
     /*imagem para o vencedor da partida*/
     #board-layout-chessboard > div:nth-child(4) > div.board-dialog-component > div > div.game-over-player-component > div.game-over-player-player.undefined.game-over-player-win > div:not([alt="jppeixoto29"]) {
-        if hidePic=="op2" {
-            content: url(https://static.abcteach.com/free_preview/c/championrgb_p.png)!important;
+        if hidePic=="op1" || hidePic=="op2" || hidePic=="op3" {
+            content: url(winnerPic)!important;
         }
     }
     /*--end section--*/
