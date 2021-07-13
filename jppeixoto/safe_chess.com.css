@@ -1,0 +1,5 @@
+
+/*-----------Esconder avatar do chesscom-----------*/
+.board-player-default-component .board-player-default-userAvatar {
+    content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
+}
