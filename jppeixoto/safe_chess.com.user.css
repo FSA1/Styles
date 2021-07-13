@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `configurações para o chess.com.`
-@version        1.0.5
+@version        1.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -21,10 +21,10 @@
     content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
 }
 */
-.player-avatar:not([alt="jppeixoto29"]), .board-player-default-userAvatar:not([alt="jppeixoto29"]) {
+.player-image.avatar-component:not([alt="jppeixoto29"]), .board-player-default-userAvatar:not([alt="jppeixoto29"]) {
     /*content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;*/
     filter: blur(3px)!important;
-    -webkit-filter: blur(2px)!important;
+    -webkit-filter: blur(3px)!important;
     opacity: 70%!important;
 }
 /*Regra separada para a tela que aparece ao final das partidas mostrando o resultado. Como as imagens
