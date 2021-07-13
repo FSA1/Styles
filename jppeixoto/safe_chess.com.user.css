@@ -3,14 +3,18 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `configurações para o chess.com.`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-/*-----------Esconder avatar do chesscom-----------*/
-.board-player-default-userAvatar:not([alt="jppeixoto29"]):not([alt="babi3105"]) {
-    content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
+/*-----------Escondendo ou desfocando avatares do chesscom-----------*/
+/*neste exemplo as regras atingem a classe ".board-player-default-userAvatar" excetuando uma lista de nomes*/
+.board-player-default-userAvatar:not([alt="jppeixoto29"]):not([alt="babi3105"]):not([alt="Agiota_do_Artenio"]) {
+    /*content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;*/
+    filter: blur(2px)!important;
+    -webkit-filter: blur(2px)!important;
+    opacity: 70%!important;
 }
 /*--end section--*/
 }
