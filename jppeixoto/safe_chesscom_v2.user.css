@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `configurações para o chess.com.`
-@version        2.0.2
+@version        2.0.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      hidePic    "Imagem segura" {
@@ -33,13 +33,23 @@
         }
     }
     /*imagem para o vencedor da partida*/
-   #board-layout-chessboard > div.board-modal-component > div > div.game-over-player-component.game-over-modal-player > div.game-over-player-player.game-over-player-win > div > img:not([alt="jppeixoto29"]),
+   #board-layout-chessboard > div.board-modal-component > div > div.game-over-player-component.game-over-modal-player > div.game-over-player-player.game-over-player-win > div > img:not([alt="jppeixoto29"]){
+        if hidePic=="op1" || hidePic=="op2" || hidePic=="op3" {
+            content: url(winnerPic)!important;            
+            filter: blur(0)!important;
+            -webkit-filter: blur(0)!important;
+            opacity: 100%!important;
+        }
+    }
+    /*imagem para o vencedor da partida*/
     #board-layout-chessboard > div:nth-child(4) > div.board-dialog-component > div > div.game-over-player-component > div.game-over-player-player.undefined.game-over-player-win:not([alt="jppeixoto29"]) {
         if hidePic=="op1" || hidePic=="op2" || hidePic=="op3" {
             content: url(winnerPic)!important;            
             filter: blur(0)!important;
             -webkit-filter: blur(0)!important;
             opacity: 100%!important;
+            height:25%!important;
+            width:25%!important;
         }
     }
     /*--end section--*/
