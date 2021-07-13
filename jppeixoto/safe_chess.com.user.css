@@ -9,7 +9,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*-----------Esconder avatar do chesscom-----------*/
-.board-player-default-component .board-player-default-userAvatar {
+.board-player-default-userAvatar:not([alt="jppeixoto29"]) {
     content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
 }
 /*--end section--*/
