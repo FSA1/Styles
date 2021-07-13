@@ -21,7 +21,7 @@
     content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;
 }
 */
-.player-avatar, .board-player-default-userAvatar:not([alt="jppeixoto29"]) {
+.player-avatar:not([alt="jppeixoto29"]), .board-player-default-userAvatar:not([alt="jppeixoto29"]) {
     /*content: url("https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png")!important;*/
     filter: blur(3px)!important;
     -webkit-filter: blur(2px)!important;
