@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `configurações para o chess.com.`
-@version        2.0.3
+@version        2.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      hidePic    "Imagem segura" {
@@ -14,7 +14,7 @@
         }
 @var    range    blurAmount  "Quantidade do desfoque" [8, 2, 8, 1, "px"]
 @var    text     userPic    "Imagem padrão"   "'https://betacssjs.chesscomfiles.com/bundles/web/images/black_400.918cdaa6.png'"
-@var    text     winnerPic    "Imagem do vencedor"   "'https://static.abcteach.com/free_preview/c/championrgb_p.png'"
+@var    text     winnerPic    "Imagem do vencedor"   "'https://github.com/FSA1/Styles/raw/main/jppeixoto/winner.jpg'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     .game-over-player-picture:not([alt="jppeixoto29"]),
