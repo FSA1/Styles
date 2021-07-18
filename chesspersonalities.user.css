@@ -315,16 +315,20 @@ url-prefix("https://www.chess.com/game/live"), url-prefix("https://www.chess.com
     _div [style*="40.png"] {
         background: url("https://github.com/FSA1/Styles/raw/main/jppeixoto/jess.png") 0% 0% / 100% 100% no-repeat !important;
     }
+    /*aqui a imagem do avatar - pra ativar, remova as barras e asteriscos que envolvem o trecho de código logo abaixo*/
+    /*
     div [src*="132489152.0ed3b0fc"] {
         content: url("https://github.com/FSA1/Styles/raw/main/jppeixoto/jess.png")!important;
         border: 2px solid #90a350!important;
         border-radius: .3rem;
     }
-
+    */
+    /*aqui esconde o nick para substituir o texto*/
     div [data-username="jppeixoto29"] {
         visibility: hidden;
         margin-left: -55px;
     }
+    /*aqui insere um conteudo antes do nome, neste caso uma imagem*/
     div [data-username="jppeixoto29"]:before {
         content: ""!important;
         /*background: url(https://media.tenor.com/images/94834e637baaf6a39661fd5ee4a7e2a8/tenor.gif) 0 0 / 100% 100% no-repeat;*/
@@ -339,11 +343,8 @@ url-prefix("https://www.chess.com/game/live"), url-prefix("https://www.chess.com
         width: 40px!important;
         height: 40px!important;
         display: inline-block!important;
-
-        /*
-    https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap
-    */
     }
+    /*Aqui colocamos o texto substituto para o nome*/
     div [data-username="jppeixoto29"]:after {
         content: "Jéssica Peixoto"!important;
         font-family: 'Dancing Script', cursive;
