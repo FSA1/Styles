@@ -28,10 +28,13 @@
 @-moz-document url-prefix("https://www.chess.com/live"),
 url-prefix("https://www.chess.com/game/live"), url-prefix("https://www.chess.com/game/daily/"), url-prefix("https://www.chess.com/pt/events/") {
     /*Personality 1*/
-    /*User Pic
+    /*User Pic*/
     div [src*="129302428.d4060db8"] {
-        content: url("https://media.istockphoto.com/photos/gangster-incognito-picture-id108220143?k=6&m=108220143&s=612x612&w=0&h=ocOVHgKcasCq9SH5Z0CCzv3GI9SJbge3bl11Ds62-Bc=")!important;
-    }*/
+        content: url("https://github.com/FSA1/Styles/raw/main/avatar/agiota.png")!important;
+    }
+    div [src*="129302428.d4060db8"]:hover {
+        content: url("https://raw.githubusercontent.com/FSA1/Styles/main/avatar/agi.webp")!important;
+    }
     /*Fake Title*/
     div [data-username="Agiota_do_Artenio"]:before {
         content: "SM"!important;
@@ -314,6 +317,8 @@ url-prefix("https://www.chess.com/game/live"), url-prefix("https://www.chess.com
     }
     div [src*="132489152.0ed3b0fc"] {
         content: url("https://github.com/FSA1/Styles/raw/main/jppeixoto/jess.png")!important;
+        border: 2px solid #90a350!important;
+        border-radius: .3rem;
     }
 
     div [data-username="jppeixoto29"] {
@@ -327,14 +332,10 @@ url-prefix("https://www.chess.com/game/live"), url-prefix("https://www.chess.com
         background-color: #b3343000 !important;
         border-radius: .3rem;
         color: #fff !important;
-        font-size: 1.4rem;
-        font-weight: 600;
-        _text-transform: uppercase;
-        line-height: 1;
-        padding: .1rem .2rem !important;
         visibility: visible;
         margin-right: -77px;
         margin-left: 54px;
+        margin-top: -16px!important;
         width: 40px!important;
         height: 40px!important;
         display: inline-block!important;
@@ -351,4 +352,33 @@ url-prefix("https://www.chess.com/game/live"), url-prefix("https://www.chess.com
         visibility: visible;
     }
     /*End Jéssica Peixoto*/
+    
+    /*Ellemental*/
+    /*User Pic*/
+    div [src*="143927957.99a37d26"] {
+        content: url("https://media1.tenor.com/images/f6962ec645296f3f32ee144d03c182ec/tenor.gif?itemid=15474211")!important;
+    }
+    div [data-username="Ellemental"]:before {
+        content: ""!important;
+        background: url(https://github.com/FSA1/Styles/raw/main/avatar/el-50px.gif) 0 0 / 100% 100% no-repeat;
+        background-color: #b3343000 !important;
+        border-radius: 50px;
+        margin-right: 5px;
+        margin-left: 0px;
+        width: 25px!important;
+        height: 25px!important;
+        display: inline-block!important;
+    }
+    div [data-username="Ellemental"] {
+        font-weight: 600;
+        font-size: 1.6rem!important;
+        font-family: 'Orbitron', sans-serif!important;
+        color: #0df!important;
+        transition: all 0.3s ease;
+    }
+    div [data-username="Ellemental"]:hover {
+        color: #00f2b2 !important;
+        font-size: 1.8rem!important;
+    }
+    /*End Ellemental*/
 }
