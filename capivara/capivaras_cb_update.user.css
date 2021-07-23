@@ -15,6 +15,7 @@
             "Capivaras 4": "op4",
             "Capivaras 5": "op5",
             "Capivaras 6": "op6",
+            "Capivaras 7": "op7",
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -25,6 +26,7 @@
             "Cinza (Neo)": "op001",
             "Mostarda (Neo)": "op1",
             "Vermelho (Neo)": "op2",
+            "Vermelho2 (Neo)": "op2b",
             "Verde (Neo)": "op3",
             "Azul (Neo)": "op4",
             "Rosa (Neo)": "op5",
@@ -37,9 +39,11 @@
             "Combine (Mar Gelado)": "mar",
             "Combine (Alpha/Clássico)": "alp",
             "Branco (Neo)*": "op000",
+            "Bege (Neo)": "op000b",
             "Cinza (Neo)": "op001",
             "Mostarda (Neo)": "op1",
             "Vermelho (Neo)": "op2",
+            "Vermelho2 (Neo)": "op2b",
             "Verde (Neo)": "op3",
             "Azul (Neo)": "op4",
             "Rosa (Neo)": "op5",
@@ -343,6 +347,58 @@
                 }
             }
         }
+        if myBoard=="op7" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/capivaraV4blueSp-cb.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #2B799F!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #EEEACF !important;
+            }
+            text.coordinate-light {
+                fill: #2B799F!important;
+            }
+            text.coordinate-dark {
+                fill: #EEEACF !important;
+            }
+            /*Highlight*/
+            if myHighlight=="op1" {
+                .move-square {
+                    filter: hue-rotate(130deg)!important;
+                    background: url(https://github.com/FSA1/Styles/raw/main/capivara/hl/grass-hl.gif) 0% 0% / 100% 100% no-repeat !important;
+                    background-color: #51ff00!important;
+                    opacity: 0.7!important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                    filter: hue-rotate(130deg)!important;
+                    background: url(https://github.com/FSA1/Styles/raw/main/capivara/hl/grass-hl.gif) 0% 0% / 100% 100% no-repeat !important;
+                    background-color: #51ff00!important;
+                    opacity: 0.7!important;
+                    }
+                }
+                .selection-square {
+                    background-color: #0058cc !important;
+                }
+            }
+            if myHighlight=="op2" {
+                .move-square {
+                    background-color: #00b6ff!important;
+                }
+                .selection-square {
+                    background-color: #0058cc !important;
+                }
+                if forcedHighlight {
+                    .highlight {
+                        background-color: #00b6ff!important;
+                    }
+                }
+            }
+        }
     }
 
     /*Pieces*/
@@ -607,6 +663,51 @@
             .promotion-piece.bp,
             div [style*="bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-p.svg")!important;
+            }
+        }
+    }
+    if myPiecesB=="op2b" {
+        if myPiecesW!="op2b" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-k.svg")!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-q.svg")!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-b.svg")!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-n.svg")!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red2-n.svg")!important;
+                    if enableHorizInvert {
+                        background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-red2-n.svg")!important;
+                    }
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-r.svg")!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-p.svg")!important;
             }
         }
     }
@@ -923,6 +1024,48 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-p.svg")!important;
         }
     }
+    if myPiecesW=="op000b" {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-k.svg")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-q.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-b.svg")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-n.svg")!important;
+        }
+        if enableCapivaras {
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-beige-n.svg")!important;
+                    if enableHorizInvert {
+                        background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-beige-n.svg")!important;
+                    }
+            }
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-r.svg")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-p.svg")!important;
+        }
+    }
     if myPiecesW=="op001" {
         if myPiecesB!="op001" {
             .piece.wk,
@@ -1052,6 +1195,50 @@
             .promotion-piece.wp,
             div [style*="wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-p.svg")!important;
+            }
+        }
+    }
+    if myPiecesW=="op2b" {
+        if myPiecesB!="op2b" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-k.svg")!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-q.svg")!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-b.svg")!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-n.svg")!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red2-n.svg")!important;
+                    if enableHorizInvert {
+                        background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-red2-n.svg")!important;
+                    }
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-r.svg")!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-p.svg")!important;
             }
         }
     }
@@ -1417,6 +1604,17 @@
             .evaluation-bar-black {
                 background: url(https://github.com/FSA1/Styles/raw/main/capivara/wood-black-bar.png)!important;
                 background-color: #BA7541 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op7" {
+            .evaluation-bar-white {
+                background-color: #EEEACF !important;
+            }
+            .evaluation-bar-black {
+                background-color: #2B799F !important;
             }
             .evaluation-bar-bar {
                 opacity: 0.9;
