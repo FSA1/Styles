@@ -10,9 +10,9 @@
   </rdf:RDF>
  </metadata>
  <defs>
-  <linearGradient id="linearGradient1112" x1="17.675" x2="-112.86" y1="39.582" y2="39.582" gradientTransform="translate(27.252 -.051379)" gradientUnits="userSpaceOnUse">
+  <linearGradient id="linearGradient1112" x1="18.734" x2="-112.86" y1="39.582" y2="39.582" gradientTransform="translate(27.252 -.051379)" gradientUnits="userSpaceOnUse">
    <stop stop-color="#fff" offset="0"/>
-   <stop stop-color="#737373" offset="1"/>
+   <stop stop-color="#b5b5b5" offset="1"/>
   </linearGradient>
  </defs>
  <g transform="matrix(-1 0 0 1 50 0)">
