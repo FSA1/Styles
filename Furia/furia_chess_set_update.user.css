@@ -2,9 +2,8 @@
 @name           Chess.com Chess Set: FURIA (Pack)
 @namespace      ChessSkins
 @author         agiota_do_artenio
-@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.0.1
+@version        2.1.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -16,8 +15,8 @@
             "Azul 3": "op5",
             "Verde": "op6",
             "Marrom": "op7",
-            "FURIA 1ª Ed.*": "op8",
-            "FURIA Madeira": "op9",
+            "FURIA 1ª Ed.": "op8",
+            "FURIA Madeira*": "op9",
             "Birman Azul": "op10",
             "Birman Cinza": "op11",
             "Desativado": "op0",
@@ -25,11 +24,11 @@
 @var    select      myPieces    "Escolher Peças"{
             "Nike X FURIA (Alpha)": "op1",
             "Nike X FURIA (Clássico)": "op2",
-            "FURIA (Estilizado)*": "op3",
+            "FURIA (Estilizado)": "op3",
             "FURIA (Logo)": "op4",
             "FURIA (Neo)": "op5",
             "Bases (Sombreado)": "op6",
-            "Bases (Plano)": "op7",
+            "Bases (Plano)*": "op7",
             "Bases (Plano, Sem Borda, Bege)": "op8",
             "Bases (Plano, Sem Borda, Branco)": "op8b",
             "Merida (Sombreado)": "op9",
@@ -37,6 +36,10 @@
             "Desativado": "op0",
         }
 }
+@var    checkbox    enableHL   "Habilitar Destaque" 1
+@var    checkbox    forcedHighlight "impor destaque para todo o site (sem cores dinamicas)" 0
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
+@var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    select      myWallpaper    "Escolher Wallpaper" {
             "Temático*": "op1",
             "Seu link": "op2",		
@@ -62,6 +65,7 @@
 @var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
 @var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
 @var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    sepiaBoard  "Sepia (tabuleiro)" [0, 0, 100, 5, "%"]
 @var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
@@ -93,7 +97,7 @@
     chess-board[id^="board-vs-personalities"],
     div[id*="chess_com_emailboard_"] {
         if enableBoardSettings {
-            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
         }
         if myBoard=="op1" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
@@ -113,13 +117,6 @@
             text.coordinate-dark {
                 fill: rgb(208, 215, 218) !important;
             }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
-            }
         }
         if myBoard=="op2" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_gray.png")!important;
@@ -137,13 +134,6 @@
             }
             text.coordinate-dark {
                 fill: rgb(208, 215, 218) !important;
-            }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
             }
         }
         if myBoard=="op3" {
@@ -163,13 +153,6 @@
             text.coordinate-dark {
                 fill: rgb(208, 215, 218) !important;
             }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
-            }
         }
         if myBoard=="op4" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue2.png")!important;
@@ -187,13 +170,6 @@
             }
             text.coordinate-dark {
                 fill: rgb(208, 215, 218) !important;
-            }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
             }
         }
         if myBoard=="op5" {
@@ -213,13 +189,6 @@
             text.coordinate-dark {
                 fill: rgb(208, 215, 218) !important;
             }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
-            }
         }
         if myBoard=="op6" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_green.png")!important;
@@ -238,13 +207,6 @@
             text.coordinate-dark {
                 fill: rgb(237, 236, 210) !important;
             }
-            /*Highlight*/
-            .move-square {
-                background-color: rgb(0, 209, 43)!important;
-            }
-            .selection-square {
-                background-color: #00e1f6 !important;
-            }
         }
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
@@ -262,13 +224,6 @@
             }
             text.coordinate-dark {
                 fill: rgb(235, 234, 220) !important;
-            }
-            /*Highlight*/
-            .move-square {
-                background-color: rgb(251, 209, 61)!important;
-            }
-            .selection-square {
-                background-color: #ff4d00 !important;
             }
         }
         if myBoard=="op8" {
@@ -289,13 +244,6 @@
             text.coordinate-dark {
                 fill: rgb(208, 215, 218) !important;
             }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
-            }
         }
         if myBoard=="op9" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood.jpg")!important;
@@ -313,15 +261,6 @@
             }
             text.coordinate-dark {
                 fill: #F5CEA2 !important;
-            }
-            /*Highlight*/
-            .move-square {
-                background: url("https://github.com/FSA1/Styles/raw/main/Furia/claw-scratches.png") 0% 0% / 100% 100% no-repeat !important;
-                background-color: #ffd900!important;
-                mix-blend-mode: enableBlendB!important;
-            }
-            .selection-square {
-                background-color: #ff4d00 !important;
             }
         }
         if myBoard=="op10" {
@@ -342,13 +281,6 @@
             text.coordinate-dark {
                 fill: #b8b8b8 !important;
             }
-            /*Highlight*/
-            .move-square {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
-            }
         }
         if myBoard=="op11" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_birman-gray.svg")!important;
@@ -367,14 +299,6 @@
             }
             text.coordinate-dark {
                 fill: #b8b8b8 !important;
-            }
-            /*Highlight*/
-            .move-square,
-            .highlight {
-                background-color: #38abd9!important;
-            }
-            .selection-square {
-                background-color: #0058cc !important;
             }
         }
     }
@@ -981,17 +905,17 @@
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background-color: #a2adbd !important;
+            background-color: #969696 !important;
         }
         .evaluation-bar-black {
-            background-color: #7b8894 !important;
+            background-color: #7a7a7a !important;
         }
         .evaluation-bar-bar {
             opacity: 0.9;
         }
     }
     /*wallpaper*/
-    body {     
+    body {
         --op10wall: url(https://www.desktopbackground.org/p/2011/05/24/208048_black-jaguar-vs-black-leopard-wallpaper_1920x1200_h.jpg);
         --op11wall: url(https://img.huffingtonpost.com/asset/5f9b2b472400009b2761eb57.jpeg?cache=lareej97gc&ops=1778_1000);
     }
@@ -1002,7 +926,7 @@
             }
             if myBoard=="op11" {
                 background: var(--op11wall) center center!important;
-                filter:brightness(50%)!important;
+                filter: brightness(50%)!important;
             }
             -webkit-background-size: cover!important;
             -moz-background-size: cover!important;
@@ -1168,6 +1092,67 @@
         filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
         -webkit-filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
         opacity: opacityW!important;
+    }
+    /*Highlight*/
+    if enableHL {
+        if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op8" || myBoard=="op10" || myBoard=="op11" {
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #38abd9!important;
+                }
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        /*Highlight*/
+        if myBoard=="op6" {
+            .move-square {
+                background-color: #00d12b!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #00d12b!important;
+                }
+            }
+            .selection-square {
+                background-color: #00e1f6 !important;
+            }
+        }
+        if myBoard=="op7"|| myBoard=="op9" {
+            .move-square {
+                background-color: #fbd13d!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #fbd13d!important;
+                }
+            }
+            .selection-square {
+                background-color: #ff4d00 !important;
+            }
+        }
+    }
+    /*Highlight opacity*/
+    .move-square,
+    .highlight {
+        opacity: highlightOpacity!important;
+    }
+    /*Highlight hue variation*/
+    if setHLhueRotation {
+        .move-square,
+        .highlight {
+            filter: hue-rotate(highlightHueRotation) !important;
+        }
+    }
+    /*Evaluation-bar hue variation*/
+    .evaluation-bar-white,
+    .evaluation-bar-black {
+        filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
+        -webkit-filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
     }
     /*End of the code*/
 }
