@@ -19,7 +19,8 @@
             "FURIA 1ª Ed.": "op8",
             "FURIA Madeira*": "op9",
             "Birman Azul": "op10",
-            "Birman Cinza": "op11",
+            "Birman Verde": "op11",
+            "Birman Cinza": "op12",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -33,20 +34,19 @@
             "Bases (Plano, Sem Borda, Bege)": "op8",
             "Bases (Plano, Sem Borda, Branco)": "op8b",
             "Merida (Sombreado)": "op9",
-            "Merida (Plano)": "op10",
             "Desativado": "op0",
         }
 }
-@var    checkbox    enableHL   "Habilitar Destaque" 1
-@var    checkbox    forcedHighlight "impor destaque para todo o site (sem cores dinamicas)" 0
+@var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
+@var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
 @var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
-@var    select      myWallpaper    "Escolher Wallpaper" {
+@var    select      myWallpaper    "Aplicar Wallpaper" {
             "Temático*": "op1",
             "Seu link": "op2",		
             "Desativado": "op0",
         }
-@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://www.santabanta.com/images/wallpapers/nature/black-panther-mostly-applied-to-black-coated-leopards-of-africa-and-asia_1024-768.jpg'"
+@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://raw.githubusercontent.com/FSA1/Styles/main/Furia/wallpaper/black-leopard2_1920px.jpg'"
 @var    checkbox    enableShadow    "Habilitar sombras" 0
 @var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
 @var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
@@ -265,26 +265,45 @@
             }
         }
         if myBoard=="op10" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_classic-logo-blue_birman-gray.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_classic-logo_birman-blue.svg")!important;
 
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
-                color: #6b6b6b!important;
+                color: #6f82a6!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #b8b8b8 !important;
+                color: #9fbaec !important;
             }
             text.coordinate-light {
-                fill: #6b6b6b!important;
+                fill: #6f82a6!important;
             }
             text.coordinate-dark {
-                fill: #b8b8b8 !important;
+                fill: #9fbaec !important;
             }
         }
         if myBoard=="op11" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_birman-gray.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_classic-logo_birman-green.svg")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #607144!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #9bb66f !important;
+            }
+            text.coordinate-light {
+                fill: #607144!important;
+            }
+            text.coordinate-dark {
+                fill: #9bb66f !important;
+            }
+        }
+        if myBoard=="op12" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_birman-gray2.svg")!important;
 
             /*Coordinates*/
             div.number.coords-light,
@@ -345,9 +364,7 @@
         div [style*="wn.png"],
         .piece.wn,
         .promotion-piece.wn {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
-            -webkit-filter: invert(1);
-            filter: invert(1);
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-wn.png")!important;
         }
         div [style*="bn.png"],
         .piece.bn,
@@ -733,69 +750,6 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/merida/wk.svg")!important;
         }
     }
-    if myPieces=="op10" {
-        /*Pieces*/
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/bp.svg")!important;
-        }
-        .piece.br,
-        .promotion-piece.br,
-        div [style*="br.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/br.svg")!important;
-        }
-        .piece.bn,
-        .promotion-piece.bn,
-        div [style*="bn.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/meridaFuria-bn.svg")!important;
-        }
-        .piece.bb,
-        .promotion-piece.bb,
-        div [style*="bb.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/bb.svg")!important;
-        }
-        .piece.bq,
-        .promotion-piece.bq,
-        div [style*="bq.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/bq.svg")!important;
-        }
-        .piece.bk,
-        .promotion-piece.bk,
-        div [style*="bk.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/bk.svg")!important;
-        }
-        .piece.wp,
-        .promotion-piece.wp,
-        div [style*="wp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/wp.svg")!important;
-        }
-        .piece.wr,
-        .promotion-piece.wr,
-        div [style*="wr.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/wr.svg")!important;
-        }
-        .piece.wn,
-        .promotion-piece.wn,
-        div [style*="wn.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/meridaFuria-wn.svg")!important;
-        }
-        .piece.wb,
-        .promotion-piece.wb,
-        div [style*="wb.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/wb.svg")!important;
-        }
-        .piece.wq,
-        .promotion-piece.wq,
-        div [style*="wq.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/wq.svg")!important;
-        }
-        .piece.wk,
-        .promotion-piece.wk,
-        div [style*="wk.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/flat/wk.svg")!important;
-        }
-    }
     /*extra rules*/
     if myBoard=="op1" {
         /*Small board for game preview*/
@@ -890,13 +844,13 @@
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background-color: #a2adbd !important;
+            background-color: #9fbaec !important;
         }
         .evaluation-bar-black {
-            background-color: #7b8894 !important;
+            background-color: #768ab1 !important;
         }
         .evaluation-bar-bar {
-            opacity: 0.9;
+            opacity: 0.8;
         }
     }
     if myBoard=="op11" {
@@ -906,19 +860,36 @@
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background-color: #969696 !important;
+            background-color: #9bb66f !important;
         }
         .evaluation-bar-black {
-            background-color: #7a7a7a !important;
+            background-color: #607144 !important;
         }
         .evaluation-bar-bar {
-            opacity: 0.9;
+            opacity: 0.8!important;
+        }
+    }
+    if myBoard=="op12" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #a9a9a9 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #676767 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
         }
     }
     /*wallpaper*/
     body {
-        --op10wall: url(https://www.desktopbackground.org/p/2011/05/24/208048_black-jaguar-vs-black-leopard-wallpaper_1920x1200_h.jpg);
-        --op11wall: url(https://img.huffingtonpost.com/asset/5f9b2b472400009b2761eb57.jpeg?cache=lareej97gc&ops=1778_1000);
+        --op10wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard_1920px.jpg);
+        --op11wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard3_1920px.jpg);
+        --op12wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard4_1920px.jpg);
     }
     if myWallpaper=="op1" {
         body:after {
@@ -927,7 +898,10 @@
             }
             if myBoard=="op11" {
                 background: var(--op11wall) center center!important;
-                filter: brightness(50%)!important;
+            }
+            if myBoard=="op12" {
+                background: var(--op12wall) center center!important;
+                filter: brightness(100%)!important;
             }
             -webkit-background-size: cover!important;
             -moz-background-size: cover!important;
@@ -946,6 +920,9 @@
             }
             if myBoard=="op11" {
                 background: var(--op11wall) !important;
+            }
+            if myBoard=="op12" {
+                background: var(--op12wall) !important;
             }
         }
         @media (max-width: 959px) {
@@ -1096,7 +1073,7 @@
     }
     /*Highlight*/
     if enableHL {
-        if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op8" || myBoard=="op10" || myBoard=="op11" {
+        if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op8" || myBoard=="op10" {
             .move-square {
                 background-color: #38abd9!important;
             }
@@ -1109,7 +1086,19 @@
                 background-color: #0058cc !important;
             }
         }
-        /*Highlight*/
+        if myBoard=="op12" {
+            .move-square {
+                background-color: #faff26!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #faff26!important;
+                }
+            }
+            .selection-square {
+                background-color: #00679a !important;
+            }
+        }
         if myBoard=="op6" {
             .move-square {
                 background-color: #00d12b!important;
@@ -1121,6 +1110,19 @@
             }
             .selection-square {
                 background-color: #00e1f6 !important;
+            }
+        }
+        if myBoard=="op11" {
+            .move-square {
+                background-color: #aef920!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #aef920!important;
+                }
+            }
+            .selection-square {
+                background-color: #00fff3 !important;
             }
         }
         if myBoard=="op7"|| myBoard=="op9" {
