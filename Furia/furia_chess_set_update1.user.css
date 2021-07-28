@@ -101,7 +101,7 @@
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
         }
         if myBoard=="op1" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png")!important;
 
             /*Coordinates*/
             div.number.coords-light,
@@ -120,7 +120,7 @@
             }
         }
         if myBoard=="op2" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_gray.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -138,7 +138,7 @@
             }
         }
         if myBoard=="op3" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -156,7 +156,7 @@
             }
         }
         if myBoard=="op4" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue2.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -174,7 +174,7 @@
             }
         }
         if myBoard=="op5" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_blue3.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -192,7 +192,7 @@
             }
         }
         if myBoard=="op6" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_green.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -210,7 +210,7 @@
             }
         }
         if myBoard=="op7" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_cb_brown.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
