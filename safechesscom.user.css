@@ -27,7 +27,7 @@
 @-moz-document domain("chess.com") {
 
     /*image for the game winner (live)*/
-    #board-layout-chessboard > div:nth-child(4) > div.board-dialog-component > div > div.game-over-player-component > div.game-over-player-player.undefined.game-over-player-win > div > img:not([alt=\"{user}\"]) {
+    div.board-modal-component div.game-over-player-component  div.game-over-player-player.game-over-player-win  img:not([alt=\"{user}\"]) {
  if hidePic=="op2" {
         content: url(winnerPic)!important;
         filter: blur(0)!important;
