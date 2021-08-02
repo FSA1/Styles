@@ -28,9 +28,9 @@
 ==/UserStyle== */
 
 @-moz-document domain("chess.com") {
-    
-    body:after {
-        if enableSecBack == 1 {
+    /*background*/
+    body:after, .theme-bg {
+        if enableSecBack==1 {
             background: url(back) center center !important;
             -webkit-background-size: cover !important;
             -moz-background-size: cover !important;
@@ -38,7 +38,11 @@
             background-size: cover !important;
         }
     }
-    
+    /*.theme-bg {
+        if enableSecBack==1 {
+            background: url(back) !important
+        }
+    }*/
     /*image for the game winner (live)*/
     div.board-modal-component div.game-over-player-component div.game-over-player-player.game-over-player-win img:not([alt=\"{user}\"]) {
  if hidePic=="op2" {
@@ -115,18 +119,13 @@ if hidePic=="op3" {
 /* notas */
 
 div.note-component a:not([href=\"/member/{userLower}\"]) .user-avatar-image:not([alt=\"{user}\"]), 
-.user-avatar-img:not([alt=\"{user}\"]), 
-img.avatar-component.player-image:not([alt=\"{user}\"]),
-.accuracies-row-component img,
-#board-layout-main .player-row-wrapper img.avatar-component:not([url=\"/member/{userLower}\"]),
-div.arena-standings-tab-component.tab-content-component div.scrollable-pages-component.arena-standings-tab-pages div.arena-standings-row-component img.avatar-component:not([alt=\"{user}\"]),
-div.sidebar-users-grid-component img:not([alt=\"{user}\"]),
-div.profile-header-info div.profile-header-avatar div.post-view-meta-avatar img:not([alt=\"{user}\"]),
-div.versus-avatars div.versus-user:not(.versus-authuser) img.versus-avatar,
-div.nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content a.connect-tab-friends-link img,
-div.nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content span.private-chat-avatar-component img,
-div[data-nav-panel="today"].nav-panel-component div.nav-section-component a.nav-result-item img.avatar-component,
-div.section-content-component div.friends-list-component div.friends-list-item div.friends-list-avatar-wrapper img:not([alt=\"{user}\"]){
+ .user-avatar-img:not([alt=\"{user}\"]), 
+ img.avatar-component.player-image:not([alt=\"{user}\"]),
+ .accuracies-row-component img, #board-layout-main .player-row-wrapper img.avatar-component:not([url=\"/member/{userLower}\"]),
+ div.arena-standings-tab-component.tab-content-component div.scrollable-pages-component.arena-standings-tab-pages div.arena-standings-row-component img.avatar-component:not([alt=\"{user}\"]),
+ div.sidebar-users-grid-component img:not([alt=\"{user}\"]),
+ div.profile-header-info div.profile-header-avatar div.post-view-meta-avatar img:not([alt=\"{user}\"]),
+ div.versus-avatars div.versus-user:not(.versus-authuser) img.versus-avatar, div.nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content a.connect-tab-friends-link img, div.nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content span.private-chat-avatar-component img, div[data-nav-panel="today"].nav-panel-component div.nav-section-component a.nav-result-item img.avatar-component, div.section-content-component div.friends-list-component div.friends-list-item div.friends-list-avatar-wrapper img:not([alt=\"{user}\"]){
  if hidePic=="op1" {
     filter: blur(blurAmount)!important;
     -webkit-filter: blur(blurAmount)!important;
@@ -143,6 +142,7 @@ if hidePic=="op2" {
 if hidePic=="op3" {
     opacity: 0%!important;
 }
+
 }
 
 /*replace image for the game looser*/
