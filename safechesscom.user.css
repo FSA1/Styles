@@ -99,6 +99,29 @@ if hidePic=="op3" {
 
 }
 
+/*list tournament*/
+
+div.arena-standings-tab-component.tab-content-component div.scrollable-pages-component.arena-standings-tab-pages div.arena-standings-row-component img.avatar-component:not([alt=\"{user}\"]) {
+ if hidePic=="op1" {
+    filter: blur(blurAmount)!important;
+    -webkit-filter: blur(blurAmount)!important;
+    opacity: 70%!important;
+}
+
+if hidePic=="op2" {
+    content: url(userPic)!important;
+    object-position: 0px 0%;
+    max-height: 70px!important;
+    width: auto!important;
+    margin-left: 0!important;
+}
+
+if hidePic=="op3" {
+    opacity: 0%!important;
+}
+
+}
+
 /*User pic for black side*/
 
 /*
