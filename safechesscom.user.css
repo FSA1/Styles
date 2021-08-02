@@ -142,10 +142,9 @@ if hidePic=="op2" {
 if hidePic=="op3" {
     opacity: 0%!important;
 }
-*/
 
 }
-
+*/
 /*User pic for white side*/
 
 /*
@@ -166,10 +165,10 @@ if hidePic=="op2" {
 if hidePic=="op3" {
     opacity: 0%!important;
 }
-*/
+
 
 }
-
+*/
 /* notas */
 
 div.note-component a:not([href=\"/member/{userlower}\"]) .user-avatar-image:not([alt=\"{user}\"]), .user-avatar-img:not([alt=\"{user}\"]), img.avatar-component.player-image:not([alt=\"{user}\"]){
