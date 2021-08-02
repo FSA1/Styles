@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio, sergioglorias
 @description    `configurações para o chess.com.`
-@version        2.0.4-dev
+@version        2.5.0-dev
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    text       user     "Usuario do Chess.com"  "jppeixoto29"
@@ -38,11 +38,6 @@
             background-size: cover !important;
         }
     }
-    /*.theme-bg {
-        if enableSecBack==1 {
-            background: url(back) !important
-        }
-    }*/
     /*image for the game winner (live)*/
     div.board-modal-component div.game-over-player-component div.game-over-player-player.game-over-player-win img:not([alt=\"{user}\"]) {
  if hidePic=="op2" {
@@ -121,11 +116,18 @@ if hidePic=="op3" {
 div.note-component a:not([href=\"/member/{userLower}\"]) .user-avatar-image:not([alt=\"{user}\"]), 
  .user-avatar-img:not([alt=\"{user}\"]), 
  img.avatar-component.player-image:not([alt=\"{user}\"]),
- .accuracies-row-component img, #board-layout-main .player-row-wrapper img.avatar-component:not([url=\"/member/{userLower}\"]),
+ .accuracies-row-component img, 
+ div.player-row-wrapper img.avatar-component:not([url=\"/member/{userLower}\"]),
  div.arena-standings-tab-component.tab-content-component div.scrollable-pages-component.arena-standings-tab-pages div.arena-standings-row-component img.avatar-component:not([alt=\"{user}\"]),
  div.sidebar-users-grid-component img:not([alt=\"{user}\"]),
  div.profile-header-info div.profile-header-avatar div.post-view-meta-avatar img:not([alt=\"{user}\"]),
- div.versus-avatars div.versus-user:not(.versus-authuser) img.versus-avatar, div.nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content a.connect-tab-friends-link img, div.nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content span.private-chat-avatar-component img, div[data-nav-panel="today"].nav-panel-component div.nav-section-component a.nav-result-item img.avatar-component, div.section-content-component div.friends-list-component div.friends-list-item div.friends-list-avatar-wrapper img:not([alt=\"{user}\"]){
+ div.versus-avatars div.versus-user:not(.versus-authuser) img.versus-avatar, 
+ div[data-nav-panel="connect"].nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content a.connect-tab-friends-link img, 
+ div[data-nav-panel="connect"].nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content span.private-chat-avatar-component img, 
+ div[data-nav-panel="today"].nav-panel-component div.nav-section-component a.nav-result-item img.avatar-component, 
+ div.section-content-component div.friends-list-component div.friends-list-item div.friends-list-avatar-wrapper img:not([alt=\"{user}\"]),
+ div.friends-profile-header-component a.friends-profile-header-avatar img,
+ div.v5-section ul.list-players-section li.list-players-item img.list-players-avatar-img:not([alt=\"{user}\"]){
  if hidePic=="op1" {
     filter: blur(blurAmount)!important;
     -webkit-filter: blur(blurAmount)!important;
