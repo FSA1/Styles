@@ -144,7 +144,7 @@ if hidePic=="op3" {
 
 
 }
-.user-avatar-image:not([alt=\"{user}\"]), .user-avatar-img:not([alt=\"{user}\"]), img.avatar-component.player-image:not([alt=\"{user}\"]) {
+div.note-component a:not([href=\"/member/{userlower}\"]) .user-avatar-image:not([alt=\"{user}\"]), .user-avatar-img:not([alt=\"{user}\"]), img.avatar-component.player-image:not([alt=\"{user}\"]){
  if hidePic=="op1" {
     filter: blur(blurAmount)!important;
     -webkit-filter: blur(blurAmount)!important;
