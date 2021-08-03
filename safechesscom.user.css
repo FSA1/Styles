@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio, sergioglorias
 @description    `configurações para o chess.com.`
-@version        2.5.0-dev
+@version        2.5.1-dev
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    text       user     "Usuario do Chess.com"  "jppeixoto29"
@@ -31,7 +31,7 @@
     /*background*/
     body:after, .theme-bg {
         if enableSecBack==1 {
-            background: url(back) center center !important;
+            background: url(back) !important;
             -webkit-background-size: cover !important;
             -moz-background-size: cover !important;
             -o-background-size: cover !important;
@@ -127,7 +127,9 @@ div.note-component a:not([href=\"/member/{userLower}\"]) .user-avatar-image:not(
  div[data-nav-panel="today"].nav-panel-component div.nav-section-component a.nav-result-item img.avatar-component, 
  div.section-content-component div.friends-list-component div.friends-list-item div.friends-list-avatar-wrapper img:not([alt=\"{user}\"]),
  div.friends-profile-header-component a.friends-profile-header-avatar img,
- div.v5-section ul.list-players-section li.list-players-item img.list-players-avatar-img:not([alt=\"{user}\"]){
+ div.v5-section ul.list-players-section li.list-players-item img.list-players-avatar-img:not([alt=\"{user}\"]),
+ div.message-list-item-component img.message-list-item-avatar,
+ div.message-conversation-container-list a.message-conversation-item-avatar:not([href=\"/member/{userLower}\"]) img.user-avatar-image{
  if hidePic=="op1" {
     filter: blur(blurAmount)!important;
     -webkit-filter: blur(blurAmount)!important;
