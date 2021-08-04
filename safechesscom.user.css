@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio, sergioglorias
 @description    `configurações para o chess.com.`
-@version        2.5.1-dev
+@version        2.5.2-dev
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    text       user     "Usuario do Chess.com"  "jppeixoto29"
@@ -129,7 +129,8 @@ div.note-component a:not([href=\"/member/{userLower}\"]) .user-avatar-image:not(
  div.friends-profile-header-component a.friends-profile-header-avatar img,
  div.v5-section ul.list-players-section li.list-players-item img.list-players-avatar-img:not([alt=\"{user}\"]),
  div.message-list-item-component img.message-list-item-avatar,
- div.message-conversation-container-list a.message-conversation-item-avatar:not([href=\"/member/{userLower}\"]) img.user-avatar-image{
+ div.message-conversation-container-list a.message-conversation-item-avatar:not([href=\"/member/{userLower}\"]) img.user-avatar-image,
+ div.v5-section.v5-overflow-hidden div.sidebar-users-grid-component-v5 div.sidebar-users-grid-item a.post-view-meta-avatar img.post-view-meta-image:not([alt=\"{user}\"]){
  if hidePic=="op1" {
     filter: blur(blurAmount)!important;
     -webkit-filter: blur(blurAmount)!important;
