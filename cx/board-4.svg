@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1200" shape-rendering="crispEdges" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <rect width="1200" height="1200" fill="#eae9d2" stop-color="#000000" style="paint-order:stroke markers fill"/>
+  <g transform="scale(150)" fill="#805280">
+   <rect y="1" width="1" height="1"/>
+   <use x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="1" width="1" height="1"/>
+   <use transform="translate(2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="1" width="1" height="1"/>
+   <use transform="translate(4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="1" width="1" height="1"/>
+   <use transform="translate(6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect y="3" width="1" height="1"/>
+   <use transform="translate(0,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="3" width="1" height="1"/>
+   <use transform="translate(2,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="3" width="1" height="1"/>
+   <use transform="translate(4,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="3" width="1" height="1"/>
+   <use transform="translate(6,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect y="5" width="1" height="1"/>
+   <use transform="translate(0,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="5" width="1" height="1"/>
+   <use transform="translate(2,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="5" width="1" height="1"/>
+   <use transform="translate(4,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="5" width="1" height="1"/>
+   <use transform="translate(6,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect y="7" width="1" height="1"/>
+   <use transform="translate(0,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="7" width="1" height="1"/>
+   <use transform="translate(2,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="7" width="1" height="1"/>
+   <use transform="translate(4,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="7" width="1" height="1"/>
+   <use transform="translate(6,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+  </g>
+  <path d="m927.98 1155.6c-3.4579-1.8763-4.8556-6.1243-3.1137-9.4641 2.7666-5.3044 6.0066-10.181 9.8174-14.778 22.811-27.513 80.242-111.76 83.449-122.41 1.1777-3.9093 0.3288-10.812-4.1065-33.388-0.6141-3.126-1.4781-3.4506-12.37-4.6462l-5.997-0.65826-7.099 9.5054c-10.036 13.439-25.515 29.446-36.309 37.546-11.737 8.8084-29.071 17.822-43.671 22.707-10.538 3.5263-12.408 3.8193-24.248 3.802-15.392-0.023-25.19-1.9249-35.754-6.9422-10.425-4.9511-16.612-9.3174-24.451-17.257-31.508-31.914-46.197-82.241-41.82-143.27 2.0705-28.868 6.2212-49.566 15.927-79.421 7.1492-21.992 12.38-34.671 21.902-53.087 13.531-26.17 26.205-43.937 42.301-59.298 15.795-15.075 30.127-22.75 49.949-26.751 9.6245-1.9426 11.907-2.0591 18.443-0.94139 14.268 2.44 25.42 10.824 32.79 24.654 10.134 19.012 18.251 51.198 18.793 74.515l0.22959 9.8774 6.412 0.72545c21.097 2.3869 39.958 14.772 53.634 35.218 13.215 19.756 21.277 50.799 25.527 98.296 0.9835 10.988 1.9958 20.196 2.2497 20.459 1.3866 1.4432 9.4518-12.186 67.982-114.89 9.7963-17.189 10.957-18.473 15.862-17.553 8.648 1.6224 8.7193 7.1481 0.2988 23.059-7.559 14.282-34.277 60.41-65.89 113.76-7.2195 12.183-13.521 23.124-14.003 24.313-2.2973 5.6606-2.5245 11.827-1.055 28.635 0.8573 9.8061 2.5176 30.888 3.6891 46.85 2.5205 34.337 3.8006 45.624 6.0833 53.642 4.819 16.927 13.102 31.055 20.215 34.481 15.249 7.3442 35.655 4.5615 51.845-7.0697 2.9929-2.1502 6.6031-3.9094 8.0226-3.9094 3.8012 0 8.9243 5.3656 8.9243 9.3466 0 7.2041-21.63 21.851-37.82 25.61-21.752 5.0505-48.175-2.7294-64.231-18.912-16.631-16.762-31.076-41.601-40.126-68.993-2.8958-8.7664-5.65-15.938-6.1204-15.938-0.4705 0-11.232 15.682-23.913 34.848-26.291 39.733-60.977 86.812-65.118 88.393-3.3941 1.2904-3.5585 1.2751-7.1356-0.6657zm-30.54-129.46c20.067-5.1914 37.177-14.592 52.947-29.088 8.126-7.4698 27.014-29.184 27.014-31.056 0-0.62476-3.9026-2.7335-8.6724-4.6859-36.419-14.908-65.323-46.879-72.422-80.108-2.6957-12.618-2.7302-36.431-0.0685-47.004 5.1188-20.331 18.388-39.531 33.004-47.754 3.3097-1.8623 9.4211-5.4175 13.582-7.9005 4.1601-2.483 10.724-5.7764 14.588-7.3188l7.0237-2.8042 0.31595-10.604c0.52665-17.678-5.0153-45.608-11.127-56.078-1.4169-2.427-4.5494-6.1954-6.9612-8.3741-9.9771-9.0135-19.363-4.0654-40.634 21.423-33.629 40.295-59.625 107.75-69.55 180.46-7.4088 54.28-5.453 83.716 7.1618 107.79 7.0751 13.501 15.293 20.69 27.353 23.931 8.4341 2.2665 15.322 2.0512 26.447-0.8269zm115.05-76.052c-0.033-4.843-0.1285-5.0107-1.7032-2.9716-0.9179 1.1886-2.3736 3.4984-3.235 5.1327-1.5454 2.932-1.5228 2.9716 1.7031 2.9716 3.1849 0 3.2687-0.13283 3.2351-5.1326zm-15.292-13.511c12.497-20.989 13.165-22.497 13.159-29.669-0.01-7.8236-2.8556-41.349-4.4327-52.18-1.9579-13.447-7.4494-33.65-10.939-40.243-3.4844-6.583-13.657-17.662-14.917-16.247-0.41207 0.4627-1.3446 4.0019-2.0721 7.865-4.384 23.278-27.433 74.08-35.22 77.628-10.642 4.8488-17.901-4.4124-10.271-13.103 10.32-11.754 25.519-47.645 29.499-69.657l1.6116-8.9146h-2.9038c-1.597 0-5.5448 0.77576-8.7728 1.7239-23.877 7.0132-38.123 26.8-40.891 56.793-3.9737 43.064 23.454 81.18 70.68 98.215 2.9715 1.0723 5.7495 1.985 6.1733 2.0285 0.42378 0.0438 4.6073-6.3654 9.2971-14.242z" fill="#c255ae" opacity=".40332" stroke-width="1.0805"/>
+  <g transform="matrix(150.25,0,0,150.25,-1,-1)" fill="#785278" opacity=".7">
+   <rect id="f" y="1" width="1" height="1" fill="#785278"/>
+   <use x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="1" width="1" height="1"/>
+   <use transform="translate(2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="1" width="1" height="1"/>
+   <use transform="translate(4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="1" width="1" height="1"/>
+   <use transform="translate(6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect y="3" width="1" height="1"/>
+   <use transform="translate(0,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="3" width="1" height="1"/>
+   <use transform="translate(2,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="3" width="1" height="1"/>
+   <use transform="translate(4,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="3" width="1" height="1"/>
+   <use transform="translate(6,2)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect y="5" width="1" height="1"/>
+   <use transform="translate(0,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="5" width="1" height="1"/>
+   <use transform="translate(2,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="5" width="1" height="1"/>
+   <use transform="translate(4,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="5" width="1" height="1"/>
+   <use transform="translate(6,4)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect y="7" width="1" height="1"/>
+   <use transform="translate(0,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="2" y="7" width="1" height="1"/>
+   <use transform="translate(2,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="4" y="7" width="1" height="1"/>
+   <use transform="translate(4,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+   <rect x="6" y="7" width="1" height="1"/>
+   <use transform="translate(6,6)" x="1" y="-1" width="100%" height="100%" href="#f" xlink:href="#f"/>
+  </g>
+ </g>
+</svg>
