@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Estilização para os nomes dos jogadores na tela de xadrez ao vivo do chess.com.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -399,7 +399,8 @@ url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/ana
     /*End Jéssica Peixoto*/
     /*Ellemental*/
     /*User Pic*/
-    div [src*="143927957.99a37d26"] {
+    div [alt="Ellemental"], div [src*="143927957.6d680f38"],
+    [href*="Ellemental"][class*="avatar"] {
         content: url("https://media1.tenor.com/images/f6962ec645296f3f32ee144d03c182ec/tenor.gif?itemid=15474211")!important;
     }
     div [data-username="Ellemental"]:before {
@@ -465,7 +466,7 @@ url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/ana
 }
 @-moz-document url-prefix("https://www.chess.com/member/ellemental") {
     /*Ellemental*/
-    div [alt*="Ellemental"] {
+    div [alt*="Ellemental"], div [src*="143927957.6d680f38"] {
         content: url("https://media1.tenor.com/images/f6962ec645296f3f32ee144d03c182ec/tenor.gif?itemid=15474211")!important;
     }
     .profile-card-username:before {
