@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.1.1
+@version        2.1.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -36,10 +36,9 @@
             "Merida (Sombreado)": "op9",
             "Desativado": "op0",
         }
-}
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
 @var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
-@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.3, 1, 0.1, ""]
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    select      myWallpaper    "Aplicar Wallpaper" {
             "Temático*": "op1",
