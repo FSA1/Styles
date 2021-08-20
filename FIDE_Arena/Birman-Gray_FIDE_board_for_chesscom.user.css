@@ -3,13 +3,12 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Birman-Gray (FIDE Arena Chess Board).`
-@version        20200831.22.25
+@version        20200831.22.26
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-/*Chessboard*/    
-.board,
+/*Chessboard*/
 div[class^="daily-puzzle-board"],
 div[class^="board chessboard-component"],
 div[class^="board v-board chessboard-component"],
@@ -35,7 +34,8 @@ chess-board[class^="board"],
 chess-board[class^="board flipped"],
 chess-board[id^="board-blank"],
 chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url("https://arena.myfide.net/birman-gray.c336a76039b62027e3df.svg")!important;
+div[id*="chess_com_emailboard_"] {
+        background-image: url("https://github.com/FSA1/Styles/raw/main/FIDE_Arena/birman-gray.c336a76039b62027e3df.svg")!important;
 }
 /*Coordinates*/
 	div.number.coords-light, div.letter.coords-light {
