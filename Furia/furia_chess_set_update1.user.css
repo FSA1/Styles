@@ -26,7 +26,8 @@
 @var    select      myPieces    "Escolher Peças"{
             "Nike X FURIA (Alpha)": "op1",
             "Nike X FURIA (Clássico)": "op2",
-            "FURIA (Estilizado)": "op3",
+            "Nike X FURIA (Mar Gelado)": "op2b",
+            "FURIA (Estilizado, Mar Gelado)": "op3",
             "FURIA (Logo)": "op4",
             "FURIA (Neo)": "op5",
             "Bases (Sombreado)": "op6",
@@ -36,6 +37,7 @@
             "Merida (Sombreado)": "op9",
             "Desativado": "op0",
         }
+}
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
 @var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
 @var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.3, 1, 0.1, ""]
@@ -288,17 +290,17 @@
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
-                color: #607144!important;
+                color: #7c9357!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #9bb66f !important;
+                color: #a8c180 !important;
             }
             text.coordinate-light {
-                fill: #607144!important;
+                fill: #7c9357!important;
             }
             text.coordinate-dark {
-                fill: #9bb66f !important;
+                fill: #a8c180 !important;
             }
         }
         if myBoard=="op12" {
@@ -323,40 +325,260 @@
     }
 
     /*Pieces*/
+    /*Nike X FURIA (Alpha)*/
     if myPieces=="op1" {
-        div [style*="bn.png"],
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/br.png")!important;
+        }
         .piece.bn,
-        .promotion-piece.bn {
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
         }
-        div [style*="wn.png"],
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wr.png")!important;
+        }
         .piece.wn,
-        .promotion-piece.wn {
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
         }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wk.png")!important;
+        }
     }
+    /*Nike X FURIA (Classic)*/
     if myPieces=="op2" {
-        div [style*="bn.png"],
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png")!important;
+        }
         .piece.bn,
-        .promotion-piece.bn {
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wk.png")!important;
+        }
+    }
+    /*Nike X FURIA (Mar Gelado)*/
+    if myPieces=="op2b" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
         }
-        div [style*="wn.png"],
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wr.png")!important;
+        }
         .piece.wn,
-        .promotion-piece.wn {
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
         }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wk.png")!important;
+        }
     }
+    /*FURIA Stylized (Icy Sea)*/
     if myPieces=="op3" {
-        div [style*="wn.png"],
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_black_knight.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wr.png")!important;
+        }
         .piece.wn,
-        .promotion-piece.wn {
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_white_knight.png")!important;
         }
-        div [style*="bn.png"],
-        .piece.bn,
-        .promotion-piece.bn {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_black_knight.png")!important;
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wk.png")!important;
         }
     }
     if myPieces=="op4" {
