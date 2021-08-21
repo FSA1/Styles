@@ -28,7 +28,7 @@
             "cobrir*": "op1",		
             "repetir": "op2",
         }
-@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://live.staticflickr.com/8724/16971122569_9f69853f14_k.jpg'"
+@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://github.com/FSA1/Styles/raw/main/fexpar/wall-XL-pattern.png'"
 
 
 @var    range    brightnessWall  "Brilho (Wallpaper)" [100, 0, 300, 5, "%"]
