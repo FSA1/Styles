@@ -4,19 +4,19 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para FEXPAR.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
             "Cinza": "op1",
-            "Azul": "op11",
+            "Azul*": "op11",
             "Azul 2": "op3",
             "Azul 3": "op4",
             "Madeira Azul": "op5",
             "Verde": "op6",
             "Madeira": "op7",
             "Madeira Escura 1": "op8",
-            "Madeira Escura 2*": "op9",
+            "Madeira Escura 2": "op9",
             "Desativado": "op0",
         }
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
