@@ -1,0 +1,548 @@
+/* ==UserStyle==
+@name           Chess.com: FEXPAR (tabuleiros)
+@namespace      ChessSkins
+@author         agiota_do_artenio
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `Tabuleiros para FEXPAR.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "Escolher Tabuleiro" {
+            "Cinza": "op1",
+            "Azul": "op3",
+            "Azul 2": "op4",
+            "Madeira Azul": "op5",
+            "Verde": "op6",
+            "Madeira": "op7",
+            "Madeira Escura 1": "op8",
+            "Madeira Escura 2*": "op9",
+            "Azul 5": "op10",
+            "Azul 6": "op11",
+            "Desativado": "op0",
+        }
+@var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
+@var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
+@var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
+@var    checkbox    myWallpaper "Aplicar Wallpaper" 0
+@var    select      setWallpaper    "Modo do Wallpaper" {
+            "cobrir*": "op1",		
+            "repetir": "op2",
+        }
+@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://live.staticflickr.com/8724/16971122569_9f69853f14_k.jpg'"
+
+
+@var    range    brightnessWall  "Brilho (Wallpaper)" [100, 0, 300, 5, "%"]
+@var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
+@var    range    saturateWall  "Saturação (Wallpaper)" [100, 0, 300, 5, "%"]
+@var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationWall  "Tonalidade (Wallpaper)" [0, 0, 355, 5, "deg"]
+@var    color    backgroundCol  "Cor de Fundo"   #4d927b
+
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
+@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    sepiaBoard  "Sepia (tabuleiro)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+@var    checkbox    hueWallpaper "incluir Wallpaper" 0
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*colors*/
+    body {
+        --darkwood-color: #705D49;
+        --lightwood-color: #D4BA9D;
+    }
+    /*Chessboard*/
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
+        }
+        if myBoard=="op1" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-gray.png")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7d8798 !important;
+                fill: #7d8798 !important;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #ebebe0 !important;
+                fill: #ebebe0 !important;
+            }
+        }
+        if myBoard=="op3" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-blue1.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #417891!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #ebebe0 !important;
+            }
+            text.coordinate-light {
+                fill: #417891!important;
+            }
+            text.coordinate-dark {
+                fill: #ebebe0 !important;
+            }
+        }
+        if myBoard=="op4" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-blue2.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #416d91!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e0e8eb !important;
+            }
+            text.coordinate-light {
+                fill: #416d91!important;
+            }
+            text.coordinate-dark {
+                fill: #e0e8eb !important;
+            }
+        }
+        if myBoard=="op5" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-bluewood2.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #3C82C8!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #C1DEF9 !important;
+            }
+            text.coordinate-light {
+                fill: #3C82C8!important;
+            }
+            text.coordinate-dark {
+                fill: #C1DEF9 !important;
+            }
+        }
+        if myBoard=="op6" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar3.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #499957!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D1EDC5 !important;
+            }
+            text.coordinate-light {
+                fill: #499957!important;
+            }
+            text.coordinate-dark {
+                fill: #D1EDC5 !important;
+            }
+        }
+        if myBoard=="op7" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-orange-wood.png")!important;
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #bb651e!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #ffd9ad !important;
+            }
+            text.coordinate-light {
+                fill: #bb651e!important;
+            }
+            text.coordinate-dark {
+                fill: #ffd9ad !important;
+            }
+        }
+        if myBoard=="op8" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-wood.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: var(--darkwood-color) !important;
+                fill: var(--darkwood-color) !important;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: var(--lightwood-color) !important;
+                fill: var(--lightwood-color) !important;
+            }
+        }
+        if myBoard=="op9" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-wood-style2.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: var(--darkwood-color) !important;
+                fill: var(--darkwood-color) !important;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: var(--lightwood-color) !important;
+                fill: var(--lightwood-color) !important;
+            }
+        }
+        if myBoard=="op10" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar2.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6f82a6!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #9fbaec !important;
+            }
+            text.coordinate-light {
+                fill: #6f82a6!important;
+            }
+            text.coordinate-dark {
+                fill: #9fbaec !important;
+            }
+        }
+        if myBoard=="op11" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar1.png")!important;
+
+            /*Coordinates*/
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6CB3BA!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #FCF4D6 !important;
+            }
+            text.coordinate-light {
+                fill: #6CB3BA!important;
+            }
+            text.coordinate-dark {
+                fill: #FCF4D6 !important;
+            }
+        }
+    }
+    /*extra rules*/
+    if myBoard=="op1" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #EBEBE0 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #7D8798 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
+        }
+    }
+    if myBoard=="op3" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #EBEBE0 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #417891 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
+        }
+    }
+    if myBoard=="op4" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #E0E8EB !important;
+        }
+        .evaluation-bar-black {
+            background-color: #416D91 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
+        }
+    }
+    if myBoard=="op5" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #C1DEF9 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #3C82C8 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
+        }
+    }
+    if myBoard=="op6" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #D1EDC5 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #499957 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
+        }
+    }
+    if myBoard=="op7" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #ffd1a7 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #bb651e!important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
+    }
+    if myBoard=="op8" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: var(--lightwood-color) !important;
+        }
+        .evaluation-bar-black {
+            background-color: var(--darkwood-color) !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
+    }
+    if myBoard=="op9" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: var(--lightwood-color) !important;
+        }
+        .evaluation-bar-black {
+            background-color: var(--darkwood-color) !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
+    }
+    if myBoard=="op10" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #9fbaec !important;
+        }
+        .evaluation-bar-black {
+            background-color: #768ab1 !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8;
+        }
+    }
+    if myBoard=="op11" {
+        /*Small board for game preview*/
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*Evaluation Bar*/
+        .evaluation-bar-white {
+            background-color: #FCF4D6 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #6CB3BA !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.8!important;
+        }
+    }
+    /*wallpaper*/
+    if myWallpaper {
+        body:after,
+        .theme-bg {
+            background: url(userWallpaper) center center!important;
+            if setWallpaper=="op1" {
+                -webkit-background-size: cover!important;
+                -moz-background-size: cover!important;
+                -o-background-size: cover!important;
+                background-size: cover!important;
+                background-color: backgroundCol!important;
+            }
+            if setWallpaper=="op2" {
+                -webkit-background-size: contain!important;
+                -moz-background-size: contain!important;
+                -o-background-size: contain!important;
+                background-size: contain!important;
+                background-color: backgroundCol!important;
+            }
+            height: 100vh;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
+            if hueWallpaper && enableBoardSettings {
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+        }
+    }
+    /*sombreamento para as miniaturas dos tabuleiros*/
+    div [style*="40.png"][class="game-preview-component"] {
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+    /*Highlight*/
+    if enableHL {
+        if myBoard=="op1" || myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op10" {
+            .move-square {
+                background-color: #38abd9!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #38abd9!important;
+                }
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op6" {
+            .move-square {
+                background-color: #00d12b!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #00d12b!important;
+                }
+            }
+            .selection-square {
+                background-color: #00e1f6 !important;
+            }
+        }
+        if myBoard=="op7" {
+            .move-square {
+                background-color: #fbd13d!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #fbd13d!important;
+                }
+            }
+            .selection-square {
+                background-color: #ff4d00 !important;
+            }
+        }
+        if myBoard=="op8"|| myBoard=="op9" {
+            .move-square {
+                background-color: #d6b153!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #ffd364!important;
+                }
+            }
+            .selection-square {
+                background-color: rgb(184, 129, 40) !important;
+            }
+        }
+        if myBoard=="op11" {
+            .move-square {
+                background-color: #f0d700!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #00f1fe!important;
+                }
+            }
+            .selection-square {
+                background-color: #003ab8 !important;
+            }
+        }
+    }
+    /*Highlight opacity*/
+    .move-square,
+    .highlight {
+        opacity: highlightOpacity!important;
+    }
+    /*Highlight hue variation*/
+    if setHLhueRotation {
+        .move-square,
+        .highlight {
+            filter: hue-rotate(highlightHueRotation) !important;
+        }
+    }
+    /*Evaluation-bar hue variation*/
+    if enableBoardSettings {
+        .evaluation-bar-white,
+        .evaluation-bar-black {
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
+            -webkit-filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
+        }
+    }
+    /*End of the code*/
+}
