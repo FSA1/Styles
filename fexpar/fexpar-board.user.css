@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para FEXPAR.`
-@version        1.0.2
+@version        1.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -15,8 +15,7 @@
             "Madeira Azul": "op5",
             "Verde": "op6",
             "Madeira": "op7",
-            "Madeira Escura 1": "op8",
-            "Madeira Escura 2": "op9",
+            "Madeira Escura": "op8",
             "Desativado": "op0",
         }
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
@@ -205,22 +204,6 @@
                 fill: var(--lightwood-color) !important;
             }
         }
-        if myBoard=="op9" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-wood-style2.png")!important;
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: var(--darkwood-color) !important;
-                fill: var(--darkwood-color) !important;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: var(--lightwood-color) !important;
-                fill: var(--lightwood-color) !important;
-            }
-        }
         if myBoard=="op10" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar2.png")!important;
 
@@ -264,7 +247,7 @@
     if myBoard=="op1" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board001.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -280,7 +263,7 @@
     if myBoard=="op3" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board003.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -296,7 +279,7 @@
     if myBoard=="op4" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board003.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -312,7 +295,7 @@
     if myBoard=="op5" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board003.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -344,7 +327,7 @@
     if myBoard=="op7" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board005.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -360,23 +343,7 @@
     if myBoard=="op8" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: var(--lightwood-color) !important;
-        }
-        .evaluation-bar-black {
-            background-color: var(--darkwood-color) !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.9;
-        }
-    }
-    if myBoard=="op9" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board006.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -392,7 +359,7 @@
     if myBoard=="op10" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board003.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -408,7 +375,7 @@
     if myBoard=="op11" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board002.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -457,13 +424,26 @@
     }
     /*Highlight*/
     if enableHL {
-        if myBoard=="op1" || myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op10" {
+        if myBoard=="op1" {
             .move-square {
-                background-color: #38abd9!important;
+                background-color: #009eff!important;
             }
             if forcedHighlight {
                 .highlight {
-                    background-color: #38abd9!important;
+                    background-color: #009eff!important;
+                }
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+        if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op10" {
+            .move-square {
+                background-color: #00b6ff!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #00b6ff!important;
                 }
             }
             .selection-square {
@@ -496,7 +476,7 @@
                 background-color: #ff4d00 !important;
             }
         }
-        if myBoard=="op8"|| myBoard=="op9" {
+        if myBoard=="op8" {
             .move-square {
                 background-color: #d6b153!important;
             }
