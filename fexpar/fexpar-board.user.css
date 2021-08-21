@@ -204,25 +204,6 @@
                 fill: var(--lightwood-color) !important;
             }
         }
-        if myBoard=="op10" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar2.png")!important;
-
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #6f82a6!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #9fbaec !important;
-            }
-            text.coordinate-light {
-                fill: #6f82a6!important;
-            }
-            text.coordinate-dark {
-                fill: #9fbaec !important;
-            }
-        }
         if myBoard=="op11" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar1.png")!important;
 
@@ -356,22 +337,6 @@
             opacity: 0.9;
         }
     }
-    if myBoard=="op10" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/fexpar/mini/mini-board003.png") 0% 0% / 100% 100% no-repeat !important;
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #9fbaec !important;
-        }
-        .evaluation-bar-black {
-            background-color: #768ab1 !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
     if myBoard=="op11" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
@@ -437,7 +402,7 @@
                 background-color: #0058cc !important;
             }
         }
-        if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op10" {
+        if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
             .move-square {
                 background-color: #00b6ff!important;
             }
