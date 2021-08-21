@@ -9,6 +9,7 @@
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
             "Cinza": "op1",
+            "Azul 6": "op11",
             "Azul": "op3",
             "Azul 2": "op4",
             "Madeira Azul": "op5",
@@ -16,8 +17,6 @@
             "Madeira": "op7",
             "Madeira Escura 1": "op8",
             "Madeira Escura 2*": "op9",
-            "Azul 5": "op10",
-            "Azul 6": "op11",
             "Desativado": "op0",
         }
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
