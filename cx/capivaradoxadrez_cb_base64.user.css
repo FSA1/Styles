@@ -24,9 +24,10 @@
             "Seu tabuleiro": "opUser",
             "Desativado": "op0",
         }
+@var    text     userBoard    "Seu Tabuleiro (entre aspas simples)"   "'https://github.com/FSA1/Styles/raw/main/cx/boards/capy-wood-blue2.jpg'"
 
 @var    range    CircleHL  "Realce dos círculos (lichess)" [150, 100, 200, 5, "%"]
-@var    select      setHighlight    "Destaque de movimento (ao vivo)" {
+@var    select      setHighlight    "Destaque de movimento (somente ao vivo no chess.com)" {
             "Tema do tabuleiro*": "op1",
             "Personalizado": "op2",	
             "Desativado": "op0",
@@ -75,7 +76,6 @@
 @var    range    hueRotationWall  "Tonalidade (Wallpaper)" [0, 0, 355, 5, "deg"]
 
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
-@var    text     userBoard    "Seu Tabuleiro (entre aspas simples)"   "'https://github.com/FSA1/Styles/raw/main/cx/boards/capy-wood-blue2.jpg'"
 @var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
 @var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
 @var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
