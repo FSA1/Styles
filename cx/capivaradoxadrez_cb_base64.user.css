@@ -891,6 +891,7 @@ domain("lichess.org") {
                 background-color: #5a6aa7 !important;
             }
         }
+    }
         /*custom color by user*/
         if coloredBar=="op2" {
             .evaluation-bar-white {
@@ -900,14 +901,13 @@ domain("lichess.org") {
                 background-color: dEvalCol !important;
             }
         }
-    }
     /*evaluation bar color variation and opacity*/
     .evaluation-bar-bar {
         opacity: 0.9;
     }
     if enableBoardSettings {
         .evaluation-bar-bar {
-            filter: hue-rotate(hueRotationBoard)!important;
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
         }
     }
     /*====== End Evaluation Bar ======*/
