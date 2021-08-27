@@ -610,7 +610,15 @@ domain("lichess.org") {
                 }
             }
             square.move-dest {
-                background: radial-gradient(#fbff004f 20%, #0000 20%);
+                background: radial-gradient(#0000003b 20%, #0000 20%);
+            }
+            square.oc.move-dest/*Lichess*/
+            {
+                background: radial-gradient(transparent 0%, transparent 79%, #0000004d 80%);
+            }
+            square.move-dest:hover/*Lichess*/
+            {
+                background: #00000036 !important;
             }
             .selection-square,
             square.selected {
