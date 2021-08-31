@@ -9,6 +9,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*Chessboard*/
+div[class^="board v-board disabled rounded"],
 div[class^="daily-puzzle-board"],
 div[class^="board chessboard-component"],
 div[class^="board v-board chessboard-component"],
