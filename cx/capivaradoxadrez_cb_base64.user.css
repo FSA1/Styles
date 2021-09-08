@@ -280,7 +280,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-purple3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-purple2) !important;
@@ -311,7 +311,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-blue3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-blue2) !important;
@@ -342,7 +342,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-green3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-green2) !important;
@@ -373,7 +373,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-gray3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-gray2) !important;
@@ -404,7 +404,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-yellow3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-yellow2) !important;
@@ -435,7 +435,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-yellow6) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-yellow5) !important;
@@ -466,7 +466,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-pink3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-pink2) !important;
@@ -497,7 +497,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-grape3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-grape2) !important;
@@ -528,7 +528,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-gray3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-gray2) !important;
@@ -559,7 +559,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-blue3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-blue2) !important;
@@ -590,7 +590,7 @@ domain("lichess.org") {
             {
                 background: radial-gradient(transparent 0%, transparent 79%, var(--color-yellow3) 80%);
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected/*Lichess*/
             {
                 background-color: var(--color-yellow2) !important;
@@ -621,7 +621,7 @@ domain("lichess.org") {
             {
                 background: #00000036 !important;
             }
-            .selection-square,
+            .selection-square, .marked-square,
             square.selected {
                 background-color: selSqCol !important;
             }
@@ -638,7 +638,7 @@ domain("lichess.org") {
             border-color: hlBorderCol!important;
         }
     }
-    .selection-square,
+    .selection-square, .marked-square,
     square.selected {
         filter: hue-rotate(highlightHueRotation)!important;
         opacity: selectionOpacity!important;
