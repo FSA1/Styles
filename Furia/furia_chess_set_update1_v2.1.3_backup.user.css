@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.1.4
+@version        2.1.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -1304,7 +1304,7 @@
                     background-color: #38abd9!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #0058cc !important;
             }
         }
@@ -1317,7 +1317,7 @@
                     background-color: #faff26!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #00679a !important;
             }
         }
@@ -1330,7 +1330,7 @@
                     background-color: #00d12b!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #00e1f6 !important;
             }
         }
@@ -1343,7 +1343,7 @@
                     background-color: #aef920!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #00fff3 !important;
             }
         }
@@ -1356,7 +1356,7 @@
                     background-color: #fbd13d!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #ff4d00 !important;
             }
         }
@@ -1365,10 +1365,13 @@
     .move-square,
     .highlight {
         opacity: highlightOpacity!important;
+    }
     /*Highlight hue variation*/
     if setHLhueRotation {
+        .move-square,
+        .highlight {
             filter: hue-rotate(highlightHueRotation) !important;
-    }
+        }
     }
     /*Evaluation-bar hue variation*/
     .evaluation-bar-white,
