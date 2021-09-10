@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para o canal Jastyes.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -304,7 +304,7 @@ domain("lichess.org") {
                     background-color: #ffd500bf!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #ffa200d4 !important;
                     opacity: 0.9!important;
                 }
@@ -315,7 +315,7 @@ domain("lichess.org") {
                     background-color: #ffd500bd!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #ffa200d4 !important;
                     opacity: 0.9!important;
                 }
@@ -326,7 +326,7 @@ domain("lichess.org") {
                     background-color: #d4ff00ad!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #00ff66a8 !important;
                     opacity: 0.9!important;
                 }
@@ -337,7 +337,7 @@ domain("lichess.org") {
                     background-color: #00d5ffbf!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #2b00ffc9 !important;
                     opacity: 0.9!important;
                 }
@@ -348,7 +348,7 @@ domain("lichess.org") {
                     background-color: #ffd500c2!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #ffea00cc !important;
                     opacity: 0.9!important;
                 }
@@ -360,7 +360,7 @@ domain("lichess.org") {
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
             }
-            .selection-square {
+            .selection-square, .marked-square {
                 background-color: selSqCol !important;
                 opacity: 0.9!important;
             }

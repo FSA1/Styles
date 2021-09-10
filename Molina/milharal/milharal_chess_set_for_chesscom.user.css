@@ -3,7 +3,7 @@
 @author         agiota_do_artenio
 @namespace      USO Archive
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -163,7 +163,7 @@
                     background-color: #d0ff01bd!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #f2ff00de !important;
                     opacity: 0.9!important;
                 }
@@ -173,7 +173,7 @@
                     background-color: #ffd500c2!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #ffea00cc !important;
                     opacity: 0.9!important;
                 }
@@ -184,7 +184,7 @@
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
             }
-            .selection-square {
+            .selection-square, .marked-square {
                 background-color: selSqCol !important;
                 opacity: 0.9!important;
             }

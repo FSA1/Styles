@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Assassins" pieces from chess.com achievements.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Board Options:" {
@@ -460,7 +460,7 @@ domain("lichess.org") {
         }
     }
 
-    .selection-square {
+    .selection-square, .marked-square {
         background-color: #ff8b00 !important;
         opacity: 0.5;
     }

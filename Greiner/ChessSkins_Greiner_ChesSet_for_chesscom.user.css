@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `Chess Set inspired on a picture from "KingsBishop's Blog".`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Board options" {
@@ -68,7 +68,7 @@
                 background-color: #64AFD2!important;
                 opacity:0.9!important;
             }
-            .selection-square {
+            .selection-square, .marked-square {
                 background-color: #ffab00 !important;
                 opacity:0.9!important;
             }

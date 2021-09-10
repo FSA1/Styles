@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiro para Ferrari Chess.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -197,7 +197,7 @@ domain("lichess.org") {
                     background-color: #0095ffd4!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #0400ff5c !important;
                     opacity: 0.9!important;
                 }
@@ -208,7 +208,7 @@ domain("lichess.org") {
                     background-color: #ffd500c2!important;
                     opacity: 0.9!important;
                 }
-                .selection-square {
+                .selection-square, .marked-square {
                     background-color: #ffea00cc !important;
                     opacity: 0.9!important;
                 }
@@ -220,7 +220,7 @@ domain("lichess.org") {
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
             }
-            .selection-square {
+            .selection-square, .marked-square {
                 background-color: selSqCol !important;
                 opacity: 0.9!important;
             }

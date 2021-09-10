@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `Chess Set (Pack) inspired on "Assassins" pieces from chess.com achievements.`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Board Options:" {
@@ -457,7 +457,7 @@ domain("lichess.org") {
         }
     }
 
-    .selection-square {
+    .selection-square, .marked-square {
         background-color: #ff8b00 !important;
         opacity: 0.5;
     }

@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Maple Chess Board (182718)by Mad_Amateur (919224)(UserStyles.org) port by agiota_do_artenio`
-@version        20200831.22.25
+@version        20200831.22.26
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -57,7 +57,7 @@ text.coordinate-dark {
     background-color: #f7ca41!important;
 }
 
-.selection-square{
+.selection-square, .marked-square{
     background-color: #ffb300 !important;
 }
  /*end of the code*/
