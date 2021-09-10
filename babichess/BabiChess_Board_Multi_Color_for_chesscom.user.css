@@ -55,7 +55,7 @@ div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/
     opacity: 0.4!important;
 
 }	
-	.selection-square{
+	.selection-square, .marked-square {
     background-color: rgb(0, 165, 255) !important;
 }
 /*Evaluation Bar*/
