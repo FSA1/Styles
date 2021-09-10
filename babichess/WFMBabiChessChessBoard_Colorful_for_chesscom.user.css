@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.26
+@version        20200831.22.27
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -59,7 +59,7 @@
         background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight.gif) 0% 0% / 100% 100% no-repeat !important;
         opacity: 0.4!important;
     }
-    .selection-square {
+    .selection-square, .marked-square {
         background-color: rgb(0, 165, 255) !important;
     }
     /*Evaluation Bar*/
