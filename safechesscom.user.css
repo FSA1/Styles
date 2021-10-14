@@ -1,11 +1,13 @@
 /* ==UserStyle==
 @name           1-Safe_Chess.com
 @namespace      ChessSkins
-@author         agiota_do_artenio
+@author         agiota_do_artenio, sergioglorias
 @description    `configurações para o chess.com.`
-@version        2.0.4
+@version        2.5.2-dev
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
+@var    text       user     "Usuario do Chess.com"  "jppeixoto29"
+@var    text       userLower     "Usuario em minusculo"  "jppeixoto29"
 @var    select      hidePic    "Imagem segura" {
             "Desfocado": "op1",
             "Img Padrão": "op2",
@@ -21,135 +23,153 @@
 @var    text     firstPic    "1º lugar"   "'https://i.giphy.com/media/JjoAvdQePKeLhocnqK/giphy.webp'"
 @var    text     secondPic    "2º lugar"   "'https://media.tenor.com/images/1307893822230c8871c9e616e44090d0/tenor.gif'"
 @var    text     thirdPic    "3º lugar"   "'https://i.giphy.com/media/RKLvNCafB1Zkf5JfZW/giphy.webp'"
+@var    checkbox enableSecBack   "Ativar o Background de Segurança" 1
+@var    text     back        "Backgound fo chess.com"    "'https://github.com/SergioGlorias/Styles/raw/patch-2/def-back.jpeg'"
 ==/UserStyle== */
+
 @-moz-document domain("chess.com") {
-
+    /*background*/
+    body:after, .theme-bg {
+        if enableSecBack==1 {
+            background: url(back) !important;
+            -webkit-background-size: cover !important;
+            -moz-background-size: cover !important;
+            -o-background-size: cover !important;
+            background-size: cover !important;
+        }
+    }
     /*image for the game winner (live)*/
-    #board-layout-chessboard > div:nth-child(4) > div.board-dialog-component > div > div.game-over-player-component > div.game-over-player-player.undefined.game-over-player-win > div > img:not([alt="jppeixoto29"]) {
-        if hidePic=="op2" {
-            content: url(winnerPic)!important;
-            filter: blur(0)!important;
-            -webkit-filter: blur(0)!important;
-            opacity: 100%!important;
-            object-position: 0px 0%;
-            height: 90%!important;
-            width: auto!important;
-            margin-left: auto!important;
-            margin-right: auto!important;
-        }
+    div.board-modal-component div.game-over-player-component div.game-over-player-player.game-over-player-win img:not([alt=\"{user}\"]) {
+ if hidePic=="op2" {
+        content: url(winnerPic)!important;
+        filter: blur(0)!important;
+        -webkit-filter: blur(0)!important;
+        opacity: 100%!important;
+        object-position: 0px 0%;
+        height: 90%!important;
+        width: auto!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
     }
-    /*1st place tournament winner*/
-    #board-layout-chessboard > div:nth-child(7) > div > div > div:nth-child(2) > img.avatar-component.user-avatar-img:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(firstPic)!important;
-            object-position: 0px 2%;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }
-    /*2nd place tournament winner*/
-    #board-layout-chessboard > div:nth-child(7) > div > div > div:nth-child(3) > img.avatar-component.user-avatar-img:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(secondPic)!important;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }
-    /*3nd place tournament winner*/
-    #board-layout-chessboard > div:nth-child(7) > div > div > div:nth-child(4) > img.avatar-component.user-avatar-img:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(thirdPic)!important;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }
+}
 
+/*1st place tournament winner*/
 
-    /*User pic for black side*/
-    .board-player-default-black img:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(userPicB)!important;
-            object-position: 0px 0%;
-            max-height: 70px!important;
-            width: auto!important;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }
-    /*User pic for white side*/
-    .board-player-default-white img:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(userPicW)!important;
-            object-position: 0px 0%;
-            max-height: 70px!important;
-            width: auto!important;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }/*div [class="player-avatar"]:not([alt="jppeixoto29"]) {
-.avatar-component.player-image
-    replaces general user image (need remain in the end of the code but before game looser)*/
-    .user-avatar-image:not([alt="jppeixoto29"]), .user-avatar-img:not([alt="jppeixoto29"]), img.avatar-component.player-image:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(userPic)!important;
-            object-position: 0px 0%;
-            max-height: 70px!important;
-            width: auto!important;
-            margin-left: 0!important;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }
-    /*replace image for the game looser*/
-    .game-over-player-picture:not([alt="jppeixoto29"]) {
-        if hidePic=="op1" {
-            filter: blur(blurAmount)!important;
-            -webkit-filter: blur(blurAmount)!important;
-            opacity: 70%!important;
-        }
-        if hidePic=="op2" {
-            content: url(looserPic)!important;
-            object-position: 0px 2%;
-        }
-        if hidePic=="op3" {
-            opacity: 0%!important;
-        }
-    }
-    /*--end section--*/
+div.board-modal-component div.arena-over-modal-content div.arena-over-modal-standings div.tournament-over-standing-component:nth-child(1) img.avatar-component:not([alt=\"{user}\"]) {
+ if hidePic=="op1" {
+    filter: blur(blurAmount)!important;
+    -webkit-filter: blur(blurAmount)!important;
+    opacity: 70%!important;
+}
+
+if hidePic=="op2" {
+    content: url(firstPic)!important;
+    object-position: 0px 2%;
+}
+
+if hidePic=="op3" {
+    opacity: 0%!important;
+}
+
+}
+
+/*2nd place tournament winner*/
+
+div.board-modal-component div.arena-over-modal-content div.arena-over-modal-standings div.tournament-over-standing-component:nth-child(2) img.avatar-component:not([alt=\"{user}\"]) {
+ if hidePic=="op1" {
+    filter: blur(blurAmount)!important;
+    -webkit-filter: blur(blurAmount)!important;
+    opacity: 70%!important;
+}
+
+if hidePic=="op2" {
+    content: url(secondPic)!important;
+}
+
+if hidePic=="op3" {
+    opacity: 0%!important;
+}
+
+}
+
+/*3nd place tournament winner*/
+
+div.board-modal-component div.arena-over-modal-content div.arena-over-modal-standings div.tournament-over-standing-component:nth-child(3) img.avatar-component:not([alt=\"{user}\"]) {
+ if hidePic=="op1" {
+    filter: blur(blurAmount)!important;
+    -webkit-filter: blur(blurAmount)!important;
+    opacity: 70%!important;
+}
+
+if hidePic=="op2" {
+    content: url(thirdPic)!important;
+}
+
+if hidePic=="op3" {
+    opacity: 0%!important;
+}
+
+}
+
+/* notas */
+
+div.note-component a:not([href=\"/member/{userLower}\"]) .user-avatar-image:not([alt=\"{user}\"]), 
+ .user-avatar-img:not([alt=\"{user}\"]), 
+ img.avatar-component.player-image:not([alt=\"{user}\"]),
+ .accuracies-row-component img, 
+ div.player-row-wrapper img.avatar-component:not([url=\"/member/{userLower}\"]),
+ div.arena-standings-tab-component.tab-content-component div.scrollable-pages-component.arena-standings-tab-pages div.arena-standings-row-component img.avatar-component:not([alt=\"{user}\"]),
+ div.sidebar-users-grid-component img:not([alt=\"{user}\"]),
+ div.profile-header-info div.profile-header-avatar div.post-view-meta-avatar img:not([alt=\"{user}\"]),
+ div.versus-avatars div.versus-user:not(.versus-authuser) img.versus-avatar, 
+ div[data-nav-panel="connect"].nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content a.connect-tab-friends-link img, 
+ div[data-nav-panel="connect"].nav-panel-component div.connect-tabs-tabs-container div.connect-tabs-tab-content span.private-chat-avatar-component img, 
+ div[data-nav-panel="today"].nav-panel-component div.nav-section-component a.nav-result-item img.avatar-component, 
+ div.section-content-component div.friends-list-component div.friends-list-item div.friends-list-avatar-wrapper img:not([alt=\"{user}\"]),
+ div.friends-profile-header-component a.friends-profile-header-avatar img,
+ div.v5-section ul.list-players-section li.list-players-item img.list-players-avatar-img:not([alt=\"{user}\"]),
+ div.message-list-item-component img.message-list-item-avatar,
+ div.message-conversation-container-list a.message-conversation-item-avatar:not([href=\"/member/{userLower}\"]) img.user-avatar-image,
+ div.v5-section.v5-overflow-hidden div.sidebar-users-grid-component-v5 div.sidebar-users-grid-item a.post-view-meta-avatar img.post-view-meta-image:not([alt=\"{user}\"]){
+ if hidePic=="op1" {
+    filter: blur(blurAmount)!important;
+    -webkit-filter: blur(blurAmount)!important;
+    opacity: 70%!important;
+}
+
+if hidePic=="op2" {
+    content: url(userPic)!important;
+    object-position: 0px 0%;
+    width: auto!important;
+    margin-left: 0!important;
+}
+
+if hidePic=="op3" {
+    opacity: 0%!important;
+}
+
+}
+
+/*replace image for the game looser*/
+
+.game-over-player-picture:not([alt=\"{user}\"]) {
+ if hidePic=="op1" {
+    filter: blur(blurAmount)!important;
+    -webkit-filter: blur(blurAmount)!important;
+    opacity: 70%!important;
+}
+
+if hidePic=="op2" {
+    content: url(looserPic)!important;
+    object-position: 0px 2%;
+}
+
+if hidePic=="op3" {
+    opacity: 0%!important;
+}
+
+}
+
+/*--end section--*/
+
 }
