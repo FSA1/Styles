@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.34
+@version        20200831.22.35
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -299,9 +299,10 @@
             filter: hue-rotate(highlightHueRotation) !important;
         }
     }
+    if myHighlight!="op0" {
     .selection-square, .marked-square {
         background-color: rgb(0, 165, 255) !important;
-    }
+    }}
     /*Evaluation Bar*/
     .evaluation-bar-white {
         if enableBoardSettings {
