@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Gazit`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -83,14 +83,20 @@
         }
     }
     /*Evaluation bar*/
+    if setEvaluationBar {
+        .evaluation-bar-white {
+            background-color: #D2DDF9 !important;
+        }
+        .evaluation-bar-black {
+            background-color: #6784D3 !important;
+        }
 
-        if setEvaluationBar {
-            .evaluation-bar-white {
-                background-color: #D2DDF9 !important;
-            }
+        if enableBoardSettings {
+            .evaluation-bar-white,
             .evaluation-bar-black {
-                background-color: #6784D3 !important;
+                filter: hue-rotate(hueRotationBoard);
             }
         }
+    }
     /*End of the code*/
 }
