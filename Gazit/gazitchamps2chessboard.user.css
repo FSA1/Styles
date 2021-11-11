@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Gazit`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -17,6 +17,7 @@
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
 @var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
+@var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard.board,*/
@@ -81,5 +82,15 @@
             filter: hue-rotate(highlightHueRotation) !important;
         }
     }
+    /*Evaluation bar*/
+
+        if setEvaluationBar {
+            .evaluation-bar-white {
+                background-color: #D2DDF9 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #6784D3 !important;
+            }
+        }
     /*End of the code*/
 }
