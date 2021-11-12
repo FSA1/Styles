@@ -22,7 +22,8 @@
 @var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
 ==/UserStyle== */
-    @-moz-document domain("chess.com") {
+@-moz-document domain("chess.com") {
+    if myBoard!="op0" {
         /*Chessboard.board,*/
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
@@ -138,5 +139,6 @@
                 }
             }
         }
-        /*End of the code*/
     }
+    /*End of the code*/
+}
