@@ -52,7 +52,7 @@
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/Gazit/Gazit2ChessBoard2.png)!important;
+                background-image: url(https://github.com/FSA1/Styles/raw/main/TwitchRivals/rivalsboard.png)!important;
             }
         }
         /*Coordinates*/
