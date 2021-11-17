@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Title Tuesday`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -60,7 +60,7 @@
             }
         }
         /*Coordinates*/
-        if myBoard=="op1" {
+        if myBoard=="op1" || myBoard=="op2" {
             div.number.coords-light,
             div.letter.coords-light {
                 color: #B44237 !important;
@@ -91,7 +91,7 @@
         }
         /*Evaluation bar*/
         if setEvaluationBar {
-            if myBoard=="op1" {
+            if myBoard=="op1" || myBoard=="op2" {
                 .evaluation-bar-white {
                     background-color: #C0BCA5 !important;
                 }
