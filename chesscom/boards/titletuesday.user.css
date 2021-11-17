@@ -4,12 +4,13 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Title Tuesday`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "T. Tuesday": "op1",
             "T. Tuesday Alt": "op2",
+            "T. Tuesday Clean": "op3",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
@@ -58,9 +59,12 @@
             if myBoard=="op2" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard_alt.png)!important;
             }
+            if myBoard=="op3" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard_clean.png)!important;
+            }
         }
         /*Coordinates*/
-        if myBoard=="op1" || myBoard=="op2" {
+        if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" {
             div.number.coords-light,
             div.letter.coords-light {
                 color: #B44237 !important;
@@ -91,7 +95,7 @@
         }
         /*Evaluation bar*/
         if setEvaluationBar {
-            if myBoard=="op1" || myBoard=="op2" {
+            if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" {
                 .evaluation-bar-white {
                     background-color: #C0BCA5 !important;
                 }
