@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Title Tuesday`
-@version        1.0.3
+@version        1.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -14,6 +14,9 @@
             "TT Blue": "op4",
             "TT Blue Alt": "op5",
             "TT Blue Clean": "op6",
+            "TT Lite Blue": "op7",
+            "TT Lite Blue Alt": "op8",
+            "TT Lite Blue Clean": "op9",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
@@ -74,6 +77,15 @@
             if myBoard=="op6" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue_clean.png)!important;
             }
+            if myBoard=="op7" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_liteblue.png)!important;
+            }
+            if myBoard=="op8" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_liteblue_alt.png)!important;
+            }
+            if myBoard=="op9" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_liteblue_clean.png)!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" {
@@ -108,6 +120,22 @@
                 fill: #cee2ea !important;
             }
         }
+        if myBoard=="op7" || myBoard=="op8" || myBoard=="op9" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #609bb3 !important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #cee2ea !important;
+            }
+            text.coordinate-light {
+                fill: #609bb3 !important;
+            }
+            text.coordinate-dark {
+                fill: #cee2ea !important;
+            }
+        }
         /*Highlight*/
         if setHLopacity {
             .move-square,
@@ -137,6 +165,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #377cb4 !important;
+                }
+            }
+            if myBoard=="op7" || myBoard=="op8" || myBoard=="op9" {
+                .evaluation-bar-white {
+                    background-color: #cee2ea !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #609bb3 !important;
                 }
             }
 
