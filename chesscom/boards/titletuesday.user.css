@@ -4,13 +4,16 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Title Tuesday`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "T. Tuesday": "op1",
-            "T. Tuesday Alt": "op2",
-            "T. Tuesday Clean": "op3",
+            "TT Alt": "op2",
+            "TT Clean": "op3",
+            "TT Blue": "op4",
+            "TT Blue Alt": "op5",
+            "TT Blue Clean": "op6",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
@@ -62,6 +65,15 @@
             if myBoard=="op3" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard_clean.png)!important;
             }
+            if myBoard=="op4" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue.png)!important;
+            }
+            if myBoard=="op5" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue_alt.png)!important;
+            }
+            if myBoard=="op6" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue_clean.png)!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" {
@@ -78,6 +90,22 @@
             }
             text.coordinate-dark {
                 fill: #C0BCA5 !important;
+            }
+        }
+        if myBoard=="op4" || myBoard=="op5" || myBoard=="op6" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #377cb4 !important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #cee2ea !important;
+            }
+            text.coordinate-light {
+                fill: #377cb4 !important;
+            }
+            text.coordinate-dark {
+                fill: #cee2ea !important;
             }
         }
         /*Highlight*/
@@ -101,6 +129,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #B44237 !important;
+                }
+            }
+            if myBoard=="op4" || myBoard=="op5" || myBoard=="op6" {
+                .evaluation-bar-white {
+                    background-color: #cee2ea !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #377cb4 !important;
                 }
             }
 
