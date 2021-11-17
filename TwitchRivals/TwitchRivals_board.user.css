@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for TwitchRivals`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -59,33 +59,17 @@
         if myBoard=="op1" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #8c70d9 !important;
+                color: #7260A4 !important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #e1dffd !important;
+                color: #DCD7F2 !important;
             }
             text.coordinate-light {
-                fill: #8c70d9 !important;
+                fill: #7260A4 !important;
             }
             text.coordinate-dark {
-                fill: #e1dffd !important;
-            }
-        }
-        else {
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #4A6BDE !important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #C2D1FF !important;
-            }
-            text.coordinate-light {
-                fill: #4A6BDE !important;
-            }
-            text.coordinate-dark {
-                fill: #C2D1FF !important;
+                fill: #DCD7F2 !important;
             }
         }
         /*Highlight*/
@@ -105,18 +89,10 @@
         if setEvaluationBar {
             if myBoard=="op1" {
                 .evaluation-bar-white {
-                    background-color: #e1dffd !important;
+                    background-color: #DCD7F2 !important;
                 }
                 .evaluation-bar-black {
-                    background-color: #8c70d9 !important;
-                }
-            }
-            else {
-                .evaluation-bar-white {
-                    background-color: #C2D1FF !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #4A6BDE !important;
+                    background-color: #7260A4 !important;
                 }
             }
 
