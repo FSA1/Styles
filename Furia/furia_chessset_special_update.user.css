@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.2
+@version        2.2.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -45,7 +45,7 @@
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
 @var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
-@var    range    arrowOpacity  "Opacidade das setas" [1, 0.3, 1, 0.1, ""]
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
 @var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
 @var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
 @var    select      myWallpaper    "Aplicar Wallpaper" {
@@ -255,7 +255,7 @@
             }
         }
         if myBoard=="op9" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood.jpg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood_sp.jpg")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -1072,11 +1072,11 @@
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-white-bar.png)!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-white-bar_sp.png)!important;
             background-color: #F5CEA2 !important;
         }
         .evaluation-bar-black {
-            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-black-bar.png)!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-black-bar_sp.png)!important;
             background-color: #BA7541 !important;
         }
         .evaluation-bar-bar {
@@ -1086,7 +1086,7 @@
     if myBoard=="op9b" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood3.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
