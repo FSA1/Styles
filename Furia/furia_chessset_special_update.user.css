@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.0
+@version        2.2.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -273,7 +273,7 @@
             }
         }
         if myBoard=="op9b" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood2.jpg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood3.jpg")!important;
             /*Coordinates*/
             div.number.coords-light,
             div.letter.coords-light {
@@ -1086,15 +1086,15 @@
     if myBoard=="op9b" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood2.png") 0% 0% / 100% 100% no-repeat !important;
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood3.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-white-bar2.png)!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-white-bar3.png)!important;
             background-color: #F5CEA2 !important;
         }
         .evaluation-bar-black {
-            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-black-bar2.png)!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-black-bar3.png)!important;
             background-color: #BA7541 !important;
         }
         .evaluation-bar-bar {
@@ -1405,6 +1405,20 @@
             .selection-square,
             .marked-square {
                 background-color: #ff4d00 !important;
+            }
+        }
+        if myBoard=="op9b" {
+            .move-square {
+                background-color: #e8a841!important;
+            }
+            if forcedHighlight {
+                .highlight {
+                    background-color: #e8a841!important;
+                }
+            }
+            .selection-square,
+            .marked-square {
+                background-color: #c96d45 !important;
             }
         }
     }
