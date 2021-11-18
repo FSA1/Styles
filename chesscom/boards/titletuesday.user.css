@@ -4,17 +4,17 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Title Tuesday`
-@version        1.0.5
+@version        1.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "T. Tuesday": "op1",
             "TT Alt": "op2",
             "TT Clean": "op3",
-            "TT Blue": "op4",
+            "TT Blue*": "op4",
             "TT Blue Alt": "op5",
             "TT Blue Clean": "op6",
-            "TT Lite Blue*": "op7",
+            "TT Lite Blue": "op7",
             "TT Lite Blue Alt": "op8",
             "TT Lite Blue Clean": "op9",
             "Desativado": "op0",
