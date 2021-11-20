@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        2.0.9
+@version        2.0.10
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -422,17 +422,17 @@
             /*Highlight*/
             if myHighlight=="op1" {
                 .move-square {
-                    filter: hue-rotate(130deg)!important;
+                    filter: hue-rotate(90deg) brightness(95%)!important;
                     background: url(https://github.com/FSA1/Styles/raw/main/jppeixoto/compatibility.gif) 0% 0% / 100% 100% no-repeat !important;
-                    background-color: #51ff00!important;
-                    opacity: 0.7!important;
+                    background-color: #3ec200!important;
+                    opacity: 0.5!important;
                 }
                 if forcedHighlight {
                     .highlight {
-                    filter: hue-rotate(130deg)!important;
+                    filter: hue-rotate(90deg) brightness(95%)!important;
                     background: url(https://github.com/FSA1/Styles/raw/main/jppeixoto/compatibility.gif) 0% 0% / 100% 100% no-repeat !important;
-                    background-color: #51ff00!important;
-                    opacity: 0.7!important;
+                    background-color: #3ec200!important;
+                    opacity: 0.5!important;
                     }
                 }
                 .selection-square, .marked-square {
