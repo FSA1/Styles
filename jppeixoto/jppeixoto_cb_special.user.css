@@ -425,14 +425,14 @@
                     filter: hue-rotate(90deg) brightness(95%)!important;
                     background: url(https://github.com/FSA1/Styles/raw/main/jppeixoto/compatibility.gif) 0% 0% / 100% 100% no-repeat !important;
                     background-color: #3ec200!important;
-                    opacity: 0.7!important;
+                    opacity: 0.6 !important;
                 }
                 if forcedHighlight {
                     .highlight {
                     filter: hue-rotate(90deg) brightness(95%)!important;
                     background: url(https://github.com/FSA1/Styles/raw/main/jppeixoto/compatibility.gif) 0% 0% / 100% 100% no-repeat !important;
                     background-color: #3ec200!important;
-                    opacity: 0.7!important;
+                    opacity: 0.6 !important;
                     }
                 }
                 .selection-square, .marked-square {
