@@ -1,0 +1,389 @@
+/* ==UserStyle==
+@name           Chess.com Board BabiChess: Colorful
+@namespace      USO Archive
+@author         agiota_do_artenio
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `Chess board for BabiChess`
+@version        20200831.22.40
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "Escolher tabuleiro" {
+            "Clássico (Roxo)": "op1",
+            "A Dama*": "op2",
+            "Inicial": "op3b",
+            "Doodles": "op3",
+            "Bolinhas (Azul)": "op4",
+            "Desativado": "op0",
+        }
+@var    select      myHighlight    "Escolher destaque" {
+            "Opção 1": "op1",
+            "Opção 2*": "op2",
+            "Opção 3": "op3",
+            "Opção 4": "op4",
+            "Opção 5": "op5",
+            "Opção 6": "op6",
+            "Opção 7": "op7",
+            "Opção 8": "op8",
+            "Opção 9": "op9",
+            "Opção 10": "op10",
+            "Opção 11": "op11",
+            "Opção 12": "op12",
+            "Opção 14": "op14",
+            "Desativado": "op0",
+        }
+@var    checkbox    forcedHighlight "impor destaque para todo o site (sem cores dinamicas)" 0
+@var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
+@var    checkbox    setHLhueRotation "Modificar tonalidade do destaque" 0
+@var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*Chessboard.board,*/
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard);
+        }
+        if myBoard=="op1" {
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb.png)!important;
+        }
+        if myBoard=="op2" {
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/BabiQueen_cb.png)!important;
+        }
+        if myBoard=="op3" {
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/nb.png)!important;
+        }
+        if myBoard=="op3b" {
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/nbc.png)!important;
+        }
+        if myBoard=="op4" {
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb-8.png)!important;
+        }
+    }
+    /*Coordinates*/
+    div.number.coords-light,
+    div.letter.coords-light {
+        color: rgb(77, 109, 146) !important;
+    }
+    div.number.coords-dark,
+    div.letter.coords-dark {
+        color: rgb(236, 236, 215) !important;
+    }
+    text.coordinate-light {
+        fill: rgb(77, 109, 146) !important;
+    }
+    text.coordinate-dark {
+        fill: rgb(236, 236, 215) !important;
+    }
+    if myBoard=="op2" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #7D5ADB !important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #D4CBFF !important;
+        }
+        text.coordinate-light {
+            fill: #7D5ADB !important;
+        }
+        text.coordinate-dark {
+            fill: #D4CBFF !important;
+        }
+    }
+    if myBoard=="op3" || myBoard=="op3b" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #8371C1 !important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #DEDEFD !important;
+        }
+        text.coordinate-light {
+            fill: #8371C1 !important;
+        }
+        text.coordinate-dark {
+            fill: #DEDEFD !important;
+        }
+    }
+    if myBoard=="op4" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #6783be !important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #aebed1 !important;
+        }
+        text.coordinate-light {
+            fill: #6783be !important;
+        }
+        text.coordinate-dark {
+            fill: #aebed1 !important;
+        }
+    }
+    /*Highlight*/
+    if myHighlight=="op1" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl1.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+            filter: hue-rotate(highlightRotation)!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl1.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op2" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl3.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.5!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl3.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.5!important;
+            }
+        }
+    }
+    if myHighlight=="op3" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl2.webp) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl2.webp) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op3b" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl2.webp) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl2.webp) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op4" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl4.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl4.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op5" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl5.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl5.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op6" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl6.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl6.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op7" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl7.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl7.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op8" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl8.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl8.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op9" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl9.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl9.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op10" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl10.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl10.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op11" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl11.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl11.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op12" {
+        .move-square {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl12.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl12.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if myHighlight=="op14" {
+        .move-square {
+            background: url(https://i.gifer.com/9FVd.gif) 0% 0% / 100% 100% no-repeat !important;
+            opacity: 0.4!important;
+        }
+        if forcedHighlight {
+            .highlight {
+                background: url(https://i.gifer.com/J3u0.gif) 0% 0% / 100% 100% no-repeat !important;
+                opacity: 0.4!important;
+            }
+        }
+    }
+    if setHLopacity {
+        .move-square,
+        .highlight {
+            opacity: highlightOpacity!important;
+        }
+    }
+    if setHLhueRotation {
+        .move-square,
+        .highlight {
+            filter: hue-rotate(highlightHueRotation) !important;
+        }
+    }
+    if myHighlight!="op0" {
+    .selection-square, .marked-square {
+        background-color: rgb(0, 165, 255) !important;
+    }}
+    /*Evaluation Bar*/
+    .evaluation-bar-white {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard);
+        }
+        if myBoard=="op1" {
+            background-color: #fdffe8 !important;
+        }
+        if myBoard=="op2" {
+            background: #D4CBFF !important;
+        }
+        if myBoard=="op3" {
+            background: #DEDEFD !important;
+        }
+        if myBoard=="op3b" {
+            background: #DEDEFD !important;
+        }
+        if myBoard=="op4" {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb-8Wbar.png) !important;
+        }
+    }
+    .evaluation-bar-black {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard);
+        }
+        if myBoard=="op1" {
+            background-color: #4b4eaa !important;
+        }
+        if myBoard=="op2" {
+            background: #7D5ADB !important;
+        }
+        if myBoard=="op3" {
+            background: #8371C1 !important;
+        }
+        if myBoard=="op3b" {
+            background: #8371C1 !important;
+        }
+        if myBoard=="op4" {
+            background: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb-8Bbar.png) !important;
+        }
+    }
+    .evaluation-bar-bar {
+        opacity: 1;
+    }
+    /*Small board for game preview*/
+        if myBoard=="op1"{
+                div [style*="40.png"][class="game-preview-component"] {
+                    background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
+                    }
+            }
+    /*End of the code*/
+}
