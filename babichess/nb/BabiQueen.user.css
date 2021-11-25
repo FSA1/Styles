@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.40
+@version        20200831.22.45
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -16,8 +16,8 @@
             "Desativado": "op0",
         }
 @var    select      myHighlight    "Escolher destaque" {
-            "Opção 1*": "op1",
-            "Opção 2": "op2",
+            "Opção 1": "op1",
+            "Opção 2*": "op2",
             "Opção 3": "op3",
             "Opção 4": "op4",
             "Opção 5": "op5",
@@ -74,7 +74,7 @@
             background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/babicb.png)!important;
         }
         if myBoard=="op2" {
-            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/BabiQueen_cb.png)!important;
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/BabiQueen_cb_emboss3d.png)!important;
         }
         if myBoard=="op3" {
             background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/nb.png)!important;
@@ -104,14 +104,14 @@
     if myBoard=="op2" {
         div.number.coords-light,
         div.letter.coords-light {
-            color: #7D5ADB !important;
+            color: #865DD5 !important;
         }
         div.number.coords-dark,
         div.letter.coords-dark {
-            color: #D4CBFF !important;
+            color: #D2C9FD !important;
         }
         text.coordinate-light {
-            fill: #7D5ADB !important;
+            fill: #865DD5 !important;
         }
         text.coordinate-dark {
             fill: #D4CBFF !important;
@@ -344,7 +344,7 @@
             background-color: #fdffe8 !important;
         }
         if myBoard=="op2" {
-            background: #D4CBFF !important;
+            background: #D2C9FD !important;
         }
         if myBoard=="op3" {
             background: #DEDEFD !important;
@@ -364,7 +364,7 @@
             background-color: #4b4eaa !important;
         }
         if myBoard=="op2" {
-            background: #7D5ADB !important;
+            background: #865DD5 !important;
         }
         if myBoard=="op3" {
             background: #8371C1 !important;
