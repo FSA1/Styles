@@ -16,8 +16,8 @@
             "Desativado": "op0",
         }
 @var    select      myHighlight    "Escolher destaque" {
-            "Opção 1": "op1",
-            "Opção 2*": "op2",
+            "Opção 1*": "op1",
+            "Opção 2": "op2",
             "Opção 3": "op3",
             "Opção 4": "op4",
             "Opção 5": "op5",
