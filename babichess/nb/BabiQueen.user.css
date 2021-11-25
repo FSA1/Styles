@@ -4,13 +4,14 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.50
+@version        20200831.22.55
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Clássico (Roxo)": "op1",
             "Dama*": "op2",
             "Dama (alt)": "op2b",
+            "Gelo": "op2f",
             "Inicial": "op3b",
             "Doodles": "op3",
             "Bolinhas (Azul)": "op4",
@@ -80,6 +81,9 @@
         if myBoard=="op2b" {
             background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/BabiQueen_cb_enboss3dwn.png)!important;
         }
+        if myBoard=="op2f" {
+            background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/fr/BabiQueenFrz_cb.png)!important;
+        }
         if myBoard=="op3" {
             background-image: url(https://github.com/FSA1/Styles/raw/main/babichess/nb/nb.png)!important;
         }
@@ -135,6 +139,22 @@
         }
         text.coordinate-dark {
             fill: #E1CBFA !important;
+        }
+    }
+    if myBoard=="op2f" {
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: rgb(52, 171, 236) !important;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #ccf4ff !important;
+        }
+        text.coordinate-light {
+            fill: rgb(0, 165, 255) !important;
+        }
+        text.coordinate-dark {
+            fill: #ccf4ff !important;
         }
     }
     if myBoard=="op3" || myBoard=="op3b" {
@@ -340,9 +360,11 @@
         }
     }
     if myHighlight!="op0" {
-    .selection-square, .marked-square {
-        background-color: rgb(0, 165, 255) !important;
-    }}
+        .selection-square,
+        .marked-square {
+            background-color: rgb(0, 165, 255) !important;
+        }
+    }
     /*Evaluation Bar*/
     .evaluation-bar-white {
         if enableBoardSettings {
@@ -356,6 +378,9 @@
         }
         if myBoard=="op2b" {
             background: #E1CBFA !important;
+        }
+        if myBoard=="op2f" {
+            background: #97cae1 !important;
         }
         if myBoard=="op3" {
             background: #DEDEFD !important;
@@ -380,6 +405,9 @@
         if myBoard=="op2b" {
             background: #7B4DB3 !important;
         }
+        if myBoard=="op2f" {
+            background: rgb(21, 154, 226) !important;
+        }
         if myBoard=="op3" {
             background: #8371C1 !important;
         }
@@ -394,10 +422,34 @@
         opacity: 1;
     }
     /*Small board for game preview*/
-        if myBoard=="op1"{
-                div [style*="40.png"][class="game-preview-component"] {
-                    background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
-                    }
+    if myBoard=="op1" {
+        div [style*="40.png"][class="game-preview-component"] {
+            background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
+        }
+    }
+    /*special set*/
+    if myBoard=="op2f" {
+
+        if myHighlight!="op0" {
+            .move-square {
+
+                background: url(https://github.com/FSA1/Styles/raw/main/babichess/fr/hl/hl1.png) 0% 0% / 100% 100% no-repeat !important;
+                background-color: #1100ff6b !important;
+                opacity: 0.4!important;
             }
+            if forcedHighlight {
+                .highlight {
+                    background: url(https://github.com/FSA1/Styles/raw/main/babichess/fr/hl/hl1.png) 0% 0% / 100% 100% no-repeat !important;
+                    background-color: #1100ff6b !important;
+                    opacity: 0.4!important;
+                }
+            }
+
+            .move-square,
+            .highlight {
+                opacity: 0.9!important;
+            }
+        }
+    }
     /*End of the code*/
 }
