@@ -4,19 +4,19 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        2.0.10
+@version        2.0.11
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
 @var    select      myBoard    "Escolher Tabuleiro" {
-            "Capivaras 1": "op1",
-            "Capivaras 2*": "op2",
-            "Capivaras 3": "op3",
-            "Capivaras 4": "op4",
-            "Capivaras 5": "op5",
-            "Capivaras 6": "op6",
-            "Capivaras 7": "op7",
-            "Bonus-jppuzzles": "op8",
+            "Capi ❤ madeira*": "op6",
+            "Capi ❤ verde": "op2",
+            "Capi ❤ azul": "op7",
+            "Capi cinza": "op1",
+            "Capi verde": "op3",
+            "Capi marrom": "op4",
+            "Capi marrom 2": "op5",
+            "Bonus ❤ jppuzzles": "op8",
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -141,7 +141,7 @@
                 .move-square {
                     background-color: #38abd9!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #0058cc !important;
                 }
                 if forcedHighlight {
@@ -182,7 +182,7 @@
                         opacity: 0.5!important;
                     }
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #00f6bd !important;
                 }
             }
@@ -197,7 +197,7 @@
                         opacity: 0.5!important;
                     }
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #00f6bd !important;
                 }
             }
@@ -233,7 +233,7 @@
                         opacity: 0.5!important;
                     }
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #00f6bd !important;
                 }
             }
@@ -248,7 +248,7 @@
                         opacity: 0.5!important;
                     }
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #00f6bd !important;
                 }
             }
@@ -275,7 +275,7 @@
                 .move-square {
                     background-color: #fbde00!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #ffc400 !important;
                 }
                 if forcedHighlight {
@@ -307,7 +307,7 @@
                 .move-square {
                     background-color: #fbde00!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #ffc400 !important;
                 }
                 if forcedHighlight {
@@ -339,7 +339,7 @@
                 .move-square {
                     background-color: #fbde00!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #ffc400 !important;
                 }
                 if forcedHighlight {
@@ -383,7 +383,7 @@
                     opacity: 0.7!important;
                     }
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #0058cc !important;
                 }
             }
@@ -391,7 +391,7 @@
                 .move-square {
                     background-color: #00b6ff!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #0058cc !important;
                 }
                 if forcedHighlight {
@@ -435,7 +435,7 @@
                     opacity: 0.6 !important;
                     }
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #0058cc !important;
                 }
             }
@@ -443,7 +443,7 @@
                 .move-square {
                     background-color: #00d9ff!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #0058cc !important;
                 }
                 if forcedHighlight {
@@ -1807,5 +1807,6 @@
         -webkit-filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
         opacity: opacityW!important;
     }
+    .marked-square{opacity:0.8!important}
     /*End of the code*/
 }
