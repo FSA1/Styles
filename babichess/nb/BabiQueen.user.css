@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.56
+@version        20200831.22.57
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -144,11 +144,11 @@
     if myBoard=="op2f" {
         div.number.coords-light,
         div.letter.coords-light {
-            color: #27b2ff !important;
+            color: #1da9ee !important;
         }
         div.number.coords-dark,
         div.letter.coords-dark {
-            color: #bce6ff !important;
+            color: #b6e1fc !important;
         }
         text.coordinate-light {
             fill: #27b2ff !important;
