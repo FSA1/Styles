@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para Atlética C7 UFPR.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -256,7 +256,7 @@
                     background-color: #8243d5bd!important;
                     opacity: 0.9!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #9d2e84de !important;
                     opacity: 0.9!important;
                 }
@@ -266,7 +266,7 @@
                     background-color: #ffd500bf!important;
                     opacity: 0.9!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #ffa200d4 !important;
                     opacity: 0.9!important;
                 }
@@ -276,7 +276,7 @@
                     background-color: #ffd500c2!important;
                     opacity: 0.9!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #ffea00cc !important;
                     opacity: 0.9!important;
                 }
@@ -287,7 +287,7 @@
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: selSqCol !important;
                 opacity: 0.9!important;
             }

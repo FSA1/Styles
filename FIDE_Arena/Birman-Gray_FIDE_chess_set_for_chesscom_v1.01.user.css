@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Birman-Gray (FIDE Arena Complete Chess Set).`
-@version        20200831.22.27
+@version        20200831.22.28
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -58,7 +58,7 @@
         background-color: #8E9293 !important;
         opacity: 0.8!important;
     }
-    .selection-square, .marked-square {
+    .selection-square {
         background-color: #FD9E5C !important;
         opacity: 0.8 !important;
     }

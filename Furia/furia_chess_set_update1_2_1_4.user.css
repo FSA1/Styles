@@ -1304,7 +1304,7 @@
                     background-color: #38abd9!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #0058cc !important;
             }
         }
@@ -1317,7 +1317,7 @@
                     background-color: #faff26!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #00679a !important;
             }
         }
@@ -1330,7 +1330,7 @@
                     background-color: #00d12b!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #00e1f6 !important;
             }
         }
@@ -1343,7 +1343,7 @@
                     background-color: #aef920!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #00fff3 !important;
             }
         }
@@ -1356,7 +1356,7 @@
                     background-color: #fbd13d!important;
                 }
             }
-            .selection-square, .marked-square {
+            .selection-square {
                 background-color: #ff4d00 !important;
             }
         }

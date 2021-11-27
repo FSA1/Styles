@@ -4,7 +4,7 @@
 @namespace      USO Archive
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.12
+@version        1.0.13
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -462,7 +462,7 @@
                     background-color: #f2ff0091!important;
                     opacity: 0.9!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: #d0ff01a1 !important;
                     opacity: 0.9!important;
                 }
@@ -471,7 +471,7 @@
                         background-color: #d0ff01bd!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #f2ff00de !important;
                         opacity: 0.9!important;
                     }
@@ -481,7 +481,7 @@
                         background-color: #ffd500bf!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #ffa200d4 !important;
                         opacity: 0.9!important;
                     }
@@ -492,7 +492,7 @@
                         background-color: #f7c415bd!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #faa302d9 !important;
                         opacity: 0.9!important;
                     }
@@ -503,7 +503,7 @@
                         background-color: rgba(252, 128, 56, .9)!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #ff9d00bf !important;
                         opacity: 0.9!important;
                     }
@@ -513,7 +513,7 @@
                         background-color: #ebff33c7!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #84ff00c9 !important;
                         opacity: 0.9!important;
                     }
@@ -523,7 +523,7 @@
                         background-color: #00ddffed!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #00e1ffcc !important;
                         opacity: 0.9!important;
                     }
@@ -533,7 +533,7 @@
                         background-color: #ffc124b8!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #ec9026e0 !important;
                         opacity: 0.9!important;
                     }
@@ -543,7 +543,7 @@
                         background-color: #00ddffed!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #592ef7c9 !important;
                         opacity: 0.9!important;
                     }
@@ -553,7 +553,7 @@
                         background-color: #00bbffdb!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #2356ffb8 !important;
                         opacity: 0.9!important;
                     }
@@ -563,7 +563,7 @@
                         background-color: #fbef119e!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: rgba(255, 41, 106, .89) !important;
                         opacity: 0.9!important;
                     }
@@ -573,7 +573,7 @@
                         background-color: #ffb300bf!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #ff7200b5 !important;
                         opacity: 0.9!important;
                     }
@@ -583,7 +583,7 @@
                         background-color: #4a809bbf!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #3b4e58 !important;
                         opacity: 0.9!important;
                     }
@@ -593,7 +593,7 @@
                         background-color: #ffd500c2!important;
                         opacity: 0.9!important;
                     }
-                    .selection-square, .marked-square {
+                    .selection-square {
                         background-color: #ffea00cc !important;
                         opacity: 0.9!important;
                     }
@@ -604,7 +604,7 @@
                     background-color: moveSqCol!important;
                     opacity: 0.9!important;
                 }
-                .selection-square, .marked-square {
+                .selection-square {
                     background-color: selSqCol !important;
                     opacity: 0.9!important;
                 }

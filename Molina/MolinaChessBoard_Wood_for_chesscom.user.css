@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Chess board for MI Roberto Molina`
-@version        20200831.22.26
+@version        20200831.22.27
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -55,7 +55,7 @@ div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/
     background-color: #8E9293 !important;
     opacity: 0.8!important;
 }	
-	.selection-square, .marked-square{
+	.selection-square{
     background-color: #FD9E5C !important;
 	opacity:0.8 !important;
 }
