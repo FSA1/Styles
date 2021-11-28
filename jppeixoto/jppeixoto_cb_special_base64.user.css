@@ -431,14 +431,14 @@ body {
                     filter: hue-rotate(90deg) brightness(95%)!important;
                     background: var(--jppuzzles)  0% 0% / 100% 100% no-repeat !important;
                     background-color: #3ec200!important;
-                    opacity: 0.6 !important;
+                    opacity: 0.7 !important;
                 }
                 if forcedHighlight {
                     .highlight {
                     filter: hue-rotate(90deg) brightness(95%)!important;
-                    background: var(--jppuzzles);
+                    background: var(--jppuzzles)  0% 0% / 100% 100% no-repeat !important;
                     background-color: #3ec200!important;
-                    opacity: 0.6 !important;
+                    opacity: 0.7 !important;
                     }
                 }
                 .selection-square {
