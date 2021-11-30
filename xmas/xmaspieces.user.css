@@ -1,0 +1,83 @@
+/* ==UserStyle==
+@name           Chess.com: Natal (peças)
+@namespace      USO Archive
+@author         agiota_do_artenio
+@description    `peças de natal`
+@version        1.0.0
+@license        CC BY-SA - Creative Commons Attribution-ShareAlike
+@preprocessor   uso
+==/UserStyle== */
+@-moz-document domain("lichess.org"), domain("chess.com") {
+.is2d .pawn.white,
+.piece.wp,
+.promotion-piece.wp,
+div [style*="wp.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wp.png')!important;
+}
+.is2d .knight.white,
+.piece.wn,
+.promotion-piece.wn,
+div [style*="wn.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wn.png')!important;
+}
+.is2d .bishop.white,
+.piece.wb,
+.promotion-piece.wb,
+div [style*="wb.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wb.png')!important;
+}
+.is2d .rook.white,
+.piece.wr,
+.promotion-piece.wr,
+div [style*="wr.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wr.png')!important;
+}
+.is2d .queen.white,
+.piece.wq,
+.promotion-piece.wq,
+div [style*="wq.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wq.png')!important;
+}
+.is2d .king.white,
+.piece.wk,
+.promotion-piece.wk,
+div [style*="wk.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wk.png')!important;
+}
+.is2d .pawn.black,
+.piece.bp,
+.promotion-piece.bp,
+div [style*="bp.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bp.png')!important;
+}
+.is2d .knight.black,
+.piece.bn,
+.promotion-piece.bn,
+div [style*="bn.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bn.png')!important;
+}
+.is2d .bishop.black,
+.piece.bb,
+.promotion-piece.bb,
+div [style*="bb.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bb.png')!important;
+}
+.is2d .rook.black,
+.piece.br,
+.promotion-piece.br,
+div [style*="br.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/br.png')!important;
+}
+.is2d .queen.black,
+.piece.bq,
+.promotion-piece.bq,
+div [style*="bq.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bq.png')!important;
+}
+.is2d .king.black,
+.piece.bk,
+.promotion-piece.bk,
+div [style*="bk.png"] {
+    background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bk.png')!important;
+}
+}
