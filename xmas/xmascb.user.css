@@ -434,10 +434,5 @@
     .marked-square {
         opacity: 0.8!important;
     }
-    /*
-.board-layout-player.board-layout-top, .board-layout-player.board-layout-bottom {
-    opacity:0.9!important;
-    background-color:#5443356b!important;
-}*/
     /*End of the code*/
 }
