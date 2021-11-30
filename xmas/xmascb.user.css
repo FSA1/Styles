@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -37,7 +37,7 @@
         }
 @var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://www.pixelstalk.net/wp-content/uploads/2016/08/1920x1080-Christmas-HD-Image.jpeg'"
 
-@var    checkbox    enableBoardShadow "Sombra do tabuleiro" 1
+@var    checkbox    enableBoardShadow "Sombra do tabuleiro" 0
 
 @var    range    brightnessWall  "Brilho (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
@@ -419,7 +419,7 @@
             -webkit-filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
         }
     }
-    if enableBoardshadow {
+    if enableBoardShadow {
         .evaluation-bar-bar {
             filter: drop-shadow(0 0 0.7rem #000)!important;
             -webkit-filter: drop-shadow(0 0 0.7em #000)!important;
