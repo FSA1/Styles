@@ -1,0 +1,319 @@
+/* ==UserStyle==
+@name           Titled Tuesday: chessboard
+@namespace      USO Archive
+@author         agiota_do_artenio
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `Chess board for chess.com Titled Tuesday`
+@version        1.0.9
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "Escolher tabuleiro" {
+            "TT Vermelho (texturizado)": "op1g",
+            "TT Azul (texturizado)": "op4g",
+            "TT Marrom (texturizado)": "op12g",
+            "TT Azul Claro (texturizado)": "op7g",
+            "TT Mar Gelado": "op10",
+            "TT Mar Gelado (escuro)*": "op11",
+            "TT Vermelho": "op1",
+            "TT Azul": "op4",
+            "TT Marrom": "op12",
+            "TT Azul Claro": "op7",
+            "Vermelho (limpo)": "op3",
+            "Azul (limpo)": "op6",
+            "Marrom (limpo)": "op12c",
+            "Azul Claro (limpo)": "op9",
+            "Mar Gelado (escuro)": "op11d",
+            "Desativado": "op0",
+        }
+@var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
+@var    checkbox    setHLhueRotation "Modificar tonalidade do destaque" 0
+@var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
+@var    checkbox    enableArrowSettings   "Modificar Setas" 0
+@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
+@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
+@var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    if myBoard!="op0" {
+        /*Chessboard.board,*/
+        div[class^="daily-puzzle-board"],
+        div[class^="board chessboard-component"],
+        div[class^="board v-board chessboard-component"],
+        div[class^="board rounded"],
+        div[class^="board rounded fippled"],
+        div[class^="board fippled rounded"],
+        div[class^="board v-board rounded"],
+        div[class^="board v-board fippled rounded"],
+        div[class^="board disabled rounded"],
+        div[id$="_ChessBoard_boardarea"],
+        div[id^="chess_com_openingboard_1"],
+        div[id^="board_training"],
+        div[id^="divBoard_boardarea"],
+        div[id^="chess_com_tactics_board"],
+        div[id^="chessboard_"],
+        div[id*="chessboard_"],
+        div[id^="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentor_board_1_boardarea"],
+        div[id^="chess_com_emailboard_"],
+        div[id^="board-blank"],
+        chess-board[class^="board"],
+        chess-board[class^="board flipped"],
+        chess-board[id^="board-blank"],
+        chess-board[id^="board-vs-personalities"],
+        div[id*="chess_com_emailboard_"] {
+            if enableBoardSettings {
+                filter: hue-rotate(hueRotationBoard);
+            }
+            if myBoard=="op1g" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_red2.jpg)!important;
+            }
+            if myBoard=="op1" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard.png)!important;
+            }
+            if myBoard=="op3" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard_clean.png)!important;
+            }
+            if myBoard=="op4g" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_blue2.jpg)!important;
+            }
+            if myBoard=="op4" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue.png)!important;
+            }
+            if myBoard=="op6" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue_clean2.png)!important;
+            }
+            if myBoard=="op7g" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_liteblue.jpg)!important;
+            }
+            if myBoard=="op7" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_liteblue2.png)!important;
+            }
+            if myBoard=="op9" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_liteblue_clean.png)!important;
+            }
+            if myBoard=="op10" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_icysea.png)!important;
+            }
+            if myBoard=="op11" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_icysea_alt.png)!important;
+            }
+            if myBoard=="op11d" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/icysea_clean_darker.png)!important;
+            }
+            if myBoard=="op12" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_brown.png)!important;
+            }
+            if myBoard=="op12c" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_brown_clean.png)!important;
+            }
+            if myBoard=="op12g" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_grunge_brown.png)!important;
+            }
+        }
+        /*Coordinates*/
+        if myBoard=="op1" || myBoard=="op1g" || myBoard=="op2" || myBoard=="op3" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #B44237 !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #C0BCA5 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op4" || myBoard=="op4g" || myBoard=="op5" || myBoard=="op6" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #316CA4 !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D1DBDE !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op7" || myBoard=="op7g" || myBoard=="op8" || myBoard=="op9" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6491AB !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #DBE0E1 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op10" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7a9db2 !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #c5d5dc !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op11" || myBoard=="op11d" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #5c829a !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #cad8de !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6B615D !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D7C9B3 !important;
+                fill: @color;
+            }
+        }
+        /*Highlight*/
+        if setHLopacity {
+            .move-square,
+            .highlight {
+                opacity: highlightOpacity!important;
+            }
+        }
+        if setHLhueRotation {
+            .move-square,
+            .highlight {
+                filter: hue-rotate(highlightHueRotation) !important;
+            }
+        }
+        /*Evaluation bar*/
+        if setEvaluationBar {
+            if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" {
+                .evaluation-bar-white {
+                    background-color: #C0BCA5 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #B44237 !important;
+                }
+            }
+            if myBoard=="op1g" {
+                .evaluation-bar-white {
+                    background-color: #D8C4AD !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #b2453a !important;
+                }
+            }
+            if myBoard=="op4" || myBoard=="op5" {
+                .evaluation-bar-white {
+                    background-color: #D1DBDE !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #316CA4 !important;
+                }
+            }
+            if myBoard=="op4g" {
+                .evaluation-bar-white {
+                    background-color: #B8C2CC !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #29709D !important;
+                }
+            }
+            if myBoard=="op6" {
+                .evaluation-bar-white {
+                    background-color: #C7CBD1 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #447BB3 !important;
+                }
+            }
+            if myBoard=="op7" || myBoard=="op8" || myBoard=="op9" {
+                .evaluation-bar-white {
+                    background-color: #DBE0E1 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #6491AB !important;
+                }
+            }
+            if myBoard=="op7g" {
+                .evaluation-bar-white {
+                    background-color: #c6d7e2 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #6491AB !important;
+                }
+            }
+            if myBoard=="op10" {
+                .evaluation-bar-white {
+                    background-color: #d3dfe3 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #6f90a4 !important;
+                }
+            }
+            if myBoard=="op11" || myBoard=="op11d" {
+                .evaluation-bar-white {
+                    background-color: #cad8de !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #5c829a !important;
+                }
+            }
+        if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+                .evaluation-bar-white {
+                    background-color: #bfb3a0 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #5d5552 !important;
+                }
+            }
+
+            if enableBoardSettings {
+                .evaluation-bar-white,
+                .evaluation-bar-black {
+                    filter: hue-rotate(hueRotationBoard);
+                }
+                /*evaluation bar opacity*/
+                .evaluation-bar-bar {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+    if enableArrowSettings {
+        .arrow {
+            filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
+            opacity: arrowOpacity !important;
+        }
+    }
+    /*End of the code*/
+}
