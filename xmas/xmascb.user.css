@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -433,13 +433,6 @@
     }
     .marked-square {
         opacity: 0.8!important;
-    }
-    /*live game clock*/
-    .clock-black {
-        background-color: #000!important;
-    }
-    .clock-white {
-        background-color: #fff!important;
     }
     /*
 .board-layout-player.board-layout-top, .board-layout-player.board-layout-bottom {
