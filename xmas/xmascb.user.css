@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -17,9 +17,10 @@
             "Vermelho e Verde": "op7",
             "Desativado": "op0",
         }
+@var    checkbox    enablePieces   "Peças de Natal 🌲🎅" 0
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
 @var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
-@var    range    highlightOpacity  "Opacidade do destaque" [0.6, 0.4, 1, 0.1, ""]
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
 @var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
@@ -297,7 +298,7 @@
                     background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/1466957.jpg), url(https://wallpaperaccess.com/full/1466957.jpg) center center!important;
                 }
                 if myBoard=="op5" {
-                    background: url(https://wallpapercave.com/wp/wp3351412.jpg), url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/wp3351412.jpg) center center!important;
+                    background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/wp3351412.jpg), url(https://wallpapercave.com/wp/wp3351412.jpg) center center!important;
                 }
                 if myBoard=="op6" {
                     background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/natal.jpg) center center!important;
@@ -398,11 +399,12 @@
                 background-color: #ffe600 !important;
             }
         }
-    }
-    /*Highlight opacity*/
-    .move-square,
-    .highlight {
-        opacity: highlightOpacity!important;
+
+        /*Highlight opacity*/
+        .move-square,
+        .highlight {
+            opacity: highlightOpacity!important;
+        }
     }
     /*Highlight hue variation*/
     if setHLhueRotation {
@@ -433,6 +435,81 @@
     }
     .marked-square {
         opacity: 0.8!important;
+    }
+    if enablePieces {
+
+        .is2d .pawn.white,
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wp.png')!important;
+        }
+        .is2d .knight.white,
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wn.png')!important;
+        }
+        .is2d .bishop.white,
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wb.png')!important;
+        }
+        .is2d .rook.white,
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wr.png')!important;
+        }
+        .is2d .queen.white,
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wq.png')!important;
+        }
+        .is2d .king.white,
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/wk.png')!important;
+        }
+        .is2d .pawn.black,
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bp.png')!important;
+        }
+        .is2d .knight.black,
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bn.png')!important;
+        }
+        .is2d .bishop.black,
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bb.png')!important;
+        }
+        .is2d .rook.black,
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/br.png')!important;
+        }
+        .is2d .queen.black,
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bq.png')!important;
+        }
+        .is2d .king.black,
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url('https://github.com/FSA1/Styles/raw/main/xmas/pieces/bk.png')!important;
+        }
     }
     /*End of the code*/
 }
