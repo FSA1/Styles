@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.4
+@version        2.2.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -44,10 +44,10 @@
 @var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.3, 1, 0.1, ""]
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
-@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
-@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
-@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+@var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [130, 5, 300, 5, "%"]
 @var    select      myWallpaper    "Aplicar Wallpaper" {
             "Temático*": "op1",
             "Seu link": "op2",		
