@@ -8,11 +8,11 @@
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
+            "Arena K. Mármore": "op13m",
             "TT Vermelho (texturizado)": "op1g",
             "TT Azul (texturizado)": "op4g",
             "TT Marrom (texturizado)": "op12g",
             "TT Azul Claro (texturizado)": "op7g",
-            "AK Mármore": "op12m",            
             "TT Mar Gelado": "op10",
             "TT Mar Gelado (escuro)*": "op11",
             "TT Vermelho": "op1",
@@ -23,6 +23,7 @@
             "Azul (limpo)": "op6",
             "Marrom (limpo)": "op12c",
             "Azul Claro (limpo)": "op9",
+            "Mármore (limpo)": "op13mc",
             "Mar Gelado (escuro)": "op11d",
             "Desativado": "op0",
         }
@@ -31,10 +32,10 @@
 @var    checkbox    setHLhueRotation "Modificar tonalidade do destaque" 0
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
-@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
-@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
-@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+@var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [130, 5, 300, 5, "%"]
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
 @var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
@@ -116,8 +117,11 @@
             if myBoard=="op12g" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_grunge_brown.jpg)!important;
             }
-            if myBoard=="op12m" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/arenakingscb_marble.jpg)!important;
+            if myBoard=="op13m" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/arenakingscb_marble_darker.jpg)!important;
+            }
+            if myBoard=="op13mc" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/arenakingscb_marble_clean_darker.jpg)!important;
             }
         }
         /*Coordinates*/
@@ -205,17 +209,17 @@
                 fill: @color;
             }
         }
-        if myBoard=="op12m" {
+        if myBoard=="op13m" || myBoard=="op13mc" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
-                color: #7a9db2 !important;
+                color: #7189A5 !important;
                 fill: @color;
             }
             text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #c5d5dc !important;
+                color: #CEDDF0 !important;
                 fill: @color;
             }
         }
@@ -306,7 +310,7 @@
                     background-color: #5c829a !important;
                 }
             }
-        if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+            if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
                 .evaluation-bar-white {
                     background-color: #bfb3a0 !important;
                 }
@@ -314,12 +318,12 @@
                     background-color: #5d5552 !important;
                 }
             }
-            if myBoard=="op12m" {
+            if myBoard=="op13m" || myBoard=="op13mc" {
                 .evaluation-bar-white {
-                    background-color: #d3dfe3 !important;
+                    background-color: #CEDDF0 !important;
                 }
                 .evaluation-bar-black {
-                    background-color: #6f90a4 !important;
+                    background-color: #7189A5 !important;
                 }
             }
 
