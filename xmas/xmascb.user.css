@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.3
+@version        1.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -18,15 +18,21 @@
             "Desativado": "op0",
         }
 @var    checkbox    enablePieces   "Peças de Natal 🌲🎅" 0
+
 @var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
 @var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
 @var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
+
+@var    checkbox    editSidePanel "Modificar Painel Lateral" 1
+@var    color    sidePanelColor  "Cor do painel"   #2d2825a8
+
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
 @var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
 @var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
 @var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+
 @var    select      wallpaperSource    "Fonte do Wallpaper" {
             "Pré-configurado*": "op1",		
             "Seu link": "op2",
@@ -273,13 +279,15 @@
             border-radius: 0 0 1px 1px;
         }
     }
-    /*wallpaper*/
-    if wallpaperSource!="op0" {
+    if editSidePanel {
         /*dark background color for side panel in live game page*/
         .board-layout-sidebar,
         .layout-sidebar {
-            background-color: #2d2825a8;
+            background-color: sidePanelColor !important;
         }
+    }
+    /*wallpaper*/
+    if wallpaperSource!="op0" {
 
         body:after,
         .theme-bg {
