@@ -1798,8 +1798,8 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            filter: drop-shadow(0 0 0.1rem #000)!important;
-            -webkit-filter: drop-shadow(0 0 0.1rem #000)!important;
+            filter: drop-shadow(0.1rem 0.2rem 0.1rem #000000ab)!important;
+            -webkit-filter: drop-shadow(0.1rem 0.2rem 0.1rem #000000ab)!important;
         }
     }
     /*------Blend and hue variation------*/
