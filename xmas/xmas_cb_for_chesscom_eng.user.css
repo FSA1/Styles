@@ -25,7 +25,8 @@
 @var    range    highlightHueRotation  "highlight hue" [0, 0, 355, 5, "deg"]
 
 @var    checkbox    editSidePanel "customize side panel" 1
-@var    color    sidePanelColor  "panel color and opacity"   #2d2825a8
+@var    color    sidePanelColor  "panel color and opacity"   #d5c6b457
+@var    range    sidePanelBlur  "panel blur" [10, 0, 20, 1, "px"]
 
 @var    checkbox    enableArrowSettings   "customize arrows" 0
 @var    range    hueRotationArrow  "arrows hue" [20, 0, 355, 5, "deg"]
@@ -43,7 +44,7 @@
             "repeat": "op2",
         }
 @var    text     userWallpaper    "Your wallpaper (in single quotes)"   "'https://www.pixelstalk.net/wp-content/uploads/2016/08/1920x1080-Christmas-HD-Image.jpeg'"
-@var    range    brightnessWall  "Brightness (Wallpaper)" [100, 0, 300, 5, "%"]
+@var    range    brightnessWall  "Brightness (Wallpaper)" [80, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contrast (Wallpaper)" [100, 5, 300, 5, "%"]
 @var    range    saturateWall  "Saturation (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
@@ -105,7 +106,7 @@
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_e_verde.jpg")!important;
         }
-        border-radius: 12px;
+        border-radius: 12px !important;
     }
 
     /*Coordinates*/
@@ -259,7 +260,7 @@
         .evaluation-bar-bar .evaluation-bar-scoreAbbreviated.evaluation-bar-dark {
             color: #fff;
             background-color: #c12214bf!important;
-            border-radius: 0 0 1px 1px;
+            border-radius: 0 0 1px 1px!important;
         }
     }
     .evaluation-bar-fill {
@@ -270,7 +271,25 @@
         .board-layout-sidebar,
         .layout-sidebar {
             background-color: sidePanelColor !important;
-            border-radius: 12px;
+            border-radius: 12px!important;
+            backdrop-filter: blur(sidePanelBlur)!important;
+        }
+        .tabset-nav-component.tabset-nav-roundedTop .tabset-nav-item:first-child {
+            border-radius: 12px 0 0!important;
+        }
+        .tabset-nav-component.tabset-nav-roundedTop .tabset-nav-item:last-child {
+            border-radius: 0 12px 0 0!important;
+        }
+        .chat-room-component {
+            border-radius: 0 0 12px 12px!important;
+        }
+        .sidebar-header-component {
+            border-radius: 12px 12px 0 0!important;
+        }
+        .home-sidebar-component,
+        .dark-mode .section-container-component:not(.light-mode),
+        .section-container-component.dark-mode {
+            border-radius: 12px!important;
         }
     }
     /*wallpaper*/
@@ -326,9 +345,6 @@
             right: 0;
             z-index: -1;
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
-            if hueWallpaper && enableBoardSettings {
-                filter: hue-rotate(hueRotationBoard)!important;
-            }
         }
     }
     /*Highlight*/
