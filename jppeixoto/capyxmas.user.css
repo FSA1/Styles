@@ -60,7 +60,7 @@
             "Desativado": "op0"
         }
 @var    checkbox    enableCapivaras "Capivaras como Cavalos (Neo)" 1
-@var    checkbox    enableHorizInvert    "Capivaras p/ esquerda" 0
+@var    checkbox    enableHorizInvert    "Capivaras p/ esquerda" 1
 @var    select      myHighlight    "Escolher destaque" {
             "Temático*": "op1",
             "Cores": "op2",
