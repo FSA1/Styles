@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras (versão base64).`
-@version        2.0.15
+@version        2.0.16
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -71,7 +71,27 @@
 @var    select      coloredBar    "Barra de Avaliação" {
             "Temática*": "op1",
             "Padrão": "op0",
-        }@var    checkbox    enableShadow    "Habilitar sombras" 0
+        }
+
+@var    select      wallpaperSource    "Fonte do Wallpaper" {
+            "Pré-configurado*": "op1",		
+            "Seu link": "op2",
+            "Desativado": "op0",
+        }
+@var    select      setWallpaper    "Modo do Wallpaper" {
+            "cobrir*": "op1",		
+            "repetir": "op2",
+        }
+@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'www.linkEntreAspasSimplesAqui.com'"
+
+@var    range    brightnessWall  "Brilho (Wallpaper)" [100, 0, 300, 5, "%"]
+@var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
+@var    range    saturateWall  "Saturação (Wallpaper)" [100, 0, 300, 5, "%"]
+@var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationWall  "Tonalidade (Wallpaper)" [0, 0, 355, 5, "deg"]
+@var    color    backgroundCol  "Cor de Fundo"   #52b19b
+
+@var    checkbox    enableShadow    "Habilitar sombras" 0
 @var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
 @var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
 @var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
@@ -550,7 +570,7 @@
                 }
                 if forcedHighlight {
                     .highlight {
-                    /*filter: hue-rotate(90deg) brightness(95%)!important;*/
+                        /*filter: hue-rotate(90deg) brightness(95%)!important;*/
                         background: var(--jppuzzles2) 0% 0% / 100% 100% no-repeat !important;
                         background-color: #19dee6!important;
                         opacity: 0.6 !important;
@@ -574,9 +594,47 @@
                 }
             }
         }
-        
     }
+    /*wallpaper*/
+    if wallpaperSource!="op0" {
 
+        body:after,
+        .theme-bg {
+
+            if wallpaperSource=="op1" {
+                if myBoard=="op9" {
+                    background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/aqua_xmas.jpg) center center!important;
+                }
+            }
+            if wallpaperSource=="op2" {
+                background: url(userWallpaper) center center!important;
+            }
+
+            if setWallpaper=="op1" {
+                -webkit-background-size: cover!important;
+                -moz-background-size: cover!important;
+                -o-background-size: cover!important;
+                background-size: cover!important;
+                background-color: backgroundCol!important;
+            }
+            if setWallpaper=="op2" {
+                -webkit-background-size: contain!important;
+                -moz-background-size: contain!important;
+                -o-background-size: contain!important;
+                background-size: contain!important;
+                background-color: backgroundCol!important;
+            }
+            height: 100vh;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
+            if hueWallpaper && enableBoardSettings {
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+        }
+    }
     /*Pieces*/
     if myPiecesB=="mar" {
         div [style*="bn.png"],
@@ -1933,15 +1991,15 @@
                 background-color: #35A376 !important;
             }
         }
-        
-    /*------ Evaluation bar opacity------*/
-            .evaluation-bar-bar {
-                opacity: 0.9;
-            }
+
+        /*------ Evaluation bar opacity------*/
+        .evaluation-bar-bar {
+            opacity: 0.9;
+        }
         if enableBoardSettings {
             .evaluation-bar-bar {
-            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
-        }
+                filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+            }
         }
     }
     /*------ Drop-shadow for the pieces------*/
