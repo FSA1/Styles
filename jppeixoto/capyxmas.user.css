@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras (versão base64).`
-@version        2.0.16
+@version        2.0.17
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -19,7 +19,7 @@
             "Bonus ❤ jp1 azul": "op8",
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
-            "Bonus ❤ jp3 verde (Natal)": "op9",
+            "Bonus ❤ jp3 verde": "op9",
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
@@ -84,7 +84,7 @@
         }
 @var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'www.linkEntreAspasSimplesAqui.com'"
 
-@var    range    brightnessWall  "Brilho (Wallpaper)" [100, 0, 300, 5, "%"]
+@var    range    brightnessWall  "Brilho (Wallpaper)" [80, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
 @var    range    saturateWall  "Saturação (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
@@ -597,7 +597,6 @@
     }
     /*wallpaper*/
     if wallpaperSource!="op0" {
-
         body:after,
         .theme-bg {
 
@@ -616,6 +615,8 @@
                 -o-background-size: cover!important;
                 background-size: cover!important;
                 background-color: backgroundCol!important;
+                background-repeat: no-repeat!important;
+                background-attachment: fixed!important;
             }
             if setWallpaper=="op2" {
                 -webkit-background-size: contain!important;
@@ -624,11 +625,13 @@
                 background-size: contain!important;
                 background-color: backgroundCol!important;
             }
+            content: '';
+            position: fixed;
             height: 100vh;
             top: 0;
             left: 0;
             right: 0;
-            z-index: -1;
+            z-index: -1; 
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
             if hueWallpaper && enableBoardSettings {
                 filter: hue-rotate(hueRotationBoard)!important;
@@ -684,7 +687,6 @@
         .promotion-piece.bk,
         div [style*="bk.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png")!important;
-            filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
@@ -728,7 +730,6 @@
         .promotion-piece.bk,
         div [style*="bk.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png")!important;
-            filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
@@ -772,7 +773,6 @@
         .promotion-piece.bk,
         div [style*="bk.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png")!important;
-            filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
@@ -816,7 +816,6 @@
         .promotion-piece.bk,
         div [style*="bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-k.svg")!important;
-            filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
