@@ -503,7 +503,6 @@
         .promotion-piece.bk,
         div [style*="bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-k.svg")!important;
-            filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
@@ -547,7 +546,6 @@
         .promotion-piece.bk,
         div [style*="bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-k.svg")!important;
-            filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
