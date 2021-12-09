@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Titled Tuesday`
-@version        1.0.9
+@version        1.0.10
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -30,10 +30,10 @@
 @var    checkbox    setHLhueRotation "Modificar tonalidade do destaque" 0
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
-@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
-@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
-@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+@var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [130, 5, 300, 5, "%"]
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
 @var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
@@ -187,7 +187,7 @@
                 fill: @color;
             }
         }
-        if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+        if myBoard=="op12" || myBoard=="op12c" || myBoard=="op12g" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -288,7 +288,7 @@
                     background-color: #5c829a !important;
                 }
             }
-        if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+        if myBoard=="op12" || myBoard=="op12c" || myBoard=="op12g" {
                 .evaluation-bar-white {
                     background-color: #bfb3a0 !important;
                 }

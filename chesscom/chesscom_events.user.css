@@ -195,7 +195,7 @@
                 fill: @color;
             }
         }
-        if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+        if myBoard=="op12" || myBoard=="op12c" || myBoard=="op12g" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -310,7 +310,7 @@
                     background-color: #5c829a !important;
                 }
             }
-            if myBoard=="op12g" || myBoard=="op12c" || myBoard=="op12g" {
+            if myBoard=="op12" || myBoard=="op12c" || myBoard=="op12g" {
                 .evaluation-bar-white {
                     background-color: #bfb3a0 !important;
                 }
