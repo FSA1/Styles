@@ -1,0 +1,144 @@
+/* ==UserStyle==
+@name           Lichess+Chess: configurações
+@namespace      ChessSkins
+@author         agiota_do_artenio
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `Conjunto de xadrez - Capivaras II.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+
+        }
+@var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    checkbox    invertBlackPieces    "Inverter cor das pretas" 0
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
+@var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
+@var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
+@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    sepiaB  "Sepia (pretas)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
+@var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
+@var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
+@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    sepiaW  "Sepia (brancas)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
+@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+==/UserStyle== */
+@-moz-document domain("chess.com"),
+domain("lichess.org") {
+    /*====== Board options =======*/
+    .is2d cg-board/*lichess*/
+    ,
+    div[class^="board v-board disabled rounded"],
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+        }
+    }
+    /*------Blend and hue variation------*/
+    .is2d .king.black,
+    .piece.bk,
+    .promotion-piece.bk,
+    div [style*="bk.png"],
+    .is2d .queen.black,
+    .piece.bq,
+    .promotion-piece.bq,
+    div [style*="bq.png"],
+    .is2d .bishop.black,
+    .piece.bb,
+    .promotion-piece.bb,
+    div [style*="bb.png"],
+    .is2d .knight.black,
+    .piece.bn,
+    .promotion-piece.bn,
+    div [style*="bn.png"],
+    .is2d .rook.black,
+    .piece.br,
+    .promotion-piece.br,
+    div [style*="br.png"],
+    .is2d .pawn.black,
+    .piece.bp,
+    .promotion-piece.bp,
+    div [style*="bp.png"] {
+        mix-blend-mode: enableBlendB;
+        if enableShadow {
+
+            filter: invert(invertBlackPieces) sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB) drop-shadow(0.1rem 0.1rem 0.1rem #000000ab);
+            -webkit-filter: invert(invertBlackPieces) sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB) drop-shadow(0.1rem 0.1rem 0.1rem #000000ab);
+        }
+        else {
+            filter: invert(invertBlackPieces) sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+            -webkit-filter: invert(invertBlackPieces) sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+        }
+        opacity: opacityB!important;
+    }
+    .is2d .king.white,
+    .piece.wk,
+    .promotion-piece.wk,
+    div [style*="wk.png"],
+    .is2d .queen.white,
+    .piece.wq,
+    .promotion-piece.wq,
+    div [style*="wq.png"],
+    .is2d .bishop.white,
+    .piece.wb,
+    .promotion-piece.wb,
+    div [style*="wb.png"],
+    .is2d .knight.white,
+    .piece.wn,
+    .promotion-piece.wn,
+    div [style*="wn.png"],
+    .is2d .rook.white,
+    .piece.wr,
+    .promotion-piece.wr,
+    div [style*="wr.png"],
+    .is2d .pawn.white,
+    .piece.wp,
+    .promotion-piece.wp,
+    div [style*="wp.png"] {
+        mix-blend-mode: enableBlendW;
+        if enableShadow {
+            filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW) drop-shadow(0.1rem 0.1rem 0.1rem #000000ab);
+            -webkit-filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW) drop-shadow(0.1rem 0.1rem 0.1rem #000000ab);
+        }
+        else {
+            filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+            -webkit-filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+        }
+        opacity: opacityW!important;
+    }
+    /*End of the code*/
+}
