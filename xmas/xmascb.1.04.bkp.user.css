@@ -4,18 +4,17 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.6
+@version        1.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
-            "Madeira 1": "op1",
-            "Madeira 2*": "op2",
+            "Madeira 1.": "op1",
+            "Madeira 2.": "op2",
             "Madeira Verm.": "op3",
             "Madeira Verde": "op4",
             "Dourado": "op5",
             "Vermelho": "op6",
             "Vermelho e Verde": "op7",
-            "Vermelho e Verde (limpo)": "op7b",
             "Desativado": "op0",
         }
 @var    checkbox    enablePieces   "Peças de Natal 🌲🎅" 0
@@ -124,10 +123,6 @@
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_e_verde.jpg")!important;
         }
-        if myBoard=="op7b" {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_e_verde2.jpg")!important;
-        }
-        border-radius: 12px;
     }
 
     /*Coordinates*/
@@ -256,7 +251,7 @@
             color: #e6c062;
         }
     }
-    if myBoard=="op7" || myBoard=="op7b" {
+    if myBoard=="op7" {
         /*Coordinates*/
         text.coordinate-light,
         div.number.coords-light,
@@ -284,15 +279,11 @@
             border-radius: 0 0 1px 1px;
         }
     }
-    .evaluation-bar-fill {
-        border-radius: 0.8rem!important;
-    }
-    /*background color for the side panels in game areas*/
     if editSidePanel {
+        /*dark background color for side panel in live game page*/
         .board-layout-sidebar,
         .layout-sidebar {
             background-color: sidePanelColor !important;
-            border-radius: 12px;
         }
     }
     /*wallpaper*/
@@ -323,9 +314,6 @@
                 if myBoard=="op7" {
                     background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/natal2.jpg) center center!important;
                 }
-                if myBoard=="op7b" {
-                    background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/natal2.jpg) center center!important;
-                }
             }
             if wallpaperSource=="op2" {
                 background: url(userWallpaper) center center!important;
@@ -345,8 +333,6 @@
                 background-size: contain!important;
                 background-color: backgroundCol!important;
             }
-            content: '';
-            position: fixed;
             height: 100vh;
             top: 0;
             left: 0;
@@ -408,7 +394,7 @@
                 background-color: #ffd800 !important;
             }
         }
-        if myBoard=="op7" || myBoard=="op7b" {
+        if myBoard=="op7" {
             .move-square {
                 background-color: #b7d91bc9!important;
             }
