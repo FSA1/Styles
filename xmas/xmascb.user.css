@@ -265,13 +265,13 @@
         text.coordinate-light,
         div.number.coords-light,
         div.letter.coords-light {
-            color: #53ac62!important;
+            color: #4db85f!important;
             fill: @color;
         }
         text.coordinate-dark,
         div.number.coords-dark,
         div.letter.coords-dark {
-            color: #f42b19 !important;
+            color: #ec2917 !important;
             fill: @color;
         }
         .evaluation-bar-white {
