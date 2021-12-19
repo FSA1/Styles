@@ -92,7 +92,7 @@
             "cobrir*": "op1",		
             "repetir": "op2",
         }
-@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'www.linkEntreAspasSimplesAqui.com'"
+@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://github.com/FSA1/Styles/raw/main/capivara/wall/naturebg.jpg'"
 
 @var    range    brightnessWall  "Brilho (Wallpaper)" [80, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
