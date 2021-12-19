@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.6
+@version        1.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -366,7 +366,7 @@
             background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
         }
         if forcedHighlight {
-            .highlight {
+            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
             }
         }
@@ -375,7 +375,7 @@
                 background-color: #b7d91b70!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #b7d91b70!important;
                 }
             }
@@ -388,7 +388,7 @@
                 background-color: #b9de0fc9!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #b7d91bc9!important;
                 }
             }
@@ -401,7 +401,7 @@
                 background-color: #b7d91bc9!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #b7d91bc9!important;
                 }
             }
@@ -414,7 +414,7 @@
                 background-color: #b7d91bc9!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #b7d91bc9!important;
                 }
             }
@@ -425,14 +425,14 @@
 
         /*Highlight opacity*/
         .move-square,
-        .highlight {
+        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             opacity: highlightOpacity!important;
         }
     }
     /*Highlight hue variation*/
     if setHLhueRotation {
         .move-square,
-        .highlight {
+        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             filter: hue-rotate(highlightHueRotation) !important;
         }
     }
