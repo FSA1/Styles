@@ -24,7 +24,7 @@
 @var    range    highlightOpacity  "highlight opacity" [0.5, 0.4, 1, 0.1, ""]
 @var    range    highlightHueRotation  "highlight hue" [0, 0, 355, 5, "deg"]
 
-@var    checkbox    editSidePanel "customize side panel" 1
+@var    checkbox    editSidePanel "allow modifications to panels" 1
 @var    color    sidePanelColor  "panel color and opacity"   #d5c6b457
 @var    range    sidePanelBlur  "panel blur" [10, 0, 20, 1, "px"]
 
@@ -85,6 +85,9 @@
     chess-board[id^="board-blank"],
     chess-board[id^="board-vs-personalities"],
     div[id*="chess_com_emailboard_"] {
+        if myBoard!="op0" {
+            border-radius: 12px !important;
+        }
         if myBoard=="op1" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_mar.jpg")!important;
         }
@@ -106,7 +109,6 @@
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_e_verde.jpg")!important;
         }
-        border-radius: 12px !important;
     }
 
     /*Coordinates*/
@@ -268,6 +270,9 @@
     }
     /*background color for the side panels in game areas*/
     if editSidePanel {
+        body.nav-collapsed .event-page-layout-component.event-page-layout-sidebar-visible,
+        .layout-column-two,
+        .layout-column-one,
         .board-layout-sidebar,
         .layout-sidebar {
             background-color: sidePanelColor !important;
@@ -339,6 +344,8 @@
                 background-size: contain!important;
                 background-color: backgroundCol!important;
             }
+            content: '';
+            position: fixed;
             height: 100vh;
             top: 0;
             left: 0;
