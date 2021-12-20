@@ -1418,7 +1418,7 @@
     }
     /*Highlight opacity*/
     .move-square,
-    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+    .highlight {
         opacity: highlightOpacity!important;
         /*Highlight hue variation*/
         if setHLhueRotation {
