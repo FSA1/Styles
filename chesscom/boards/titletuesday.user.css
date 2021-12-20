@@ -4,33 +4,36 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com Titled Tuesday`
-@version        1.0.8
+@version        1.0.9
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "TT Red (grunge)": "op1g",
             "TT Blue (grunge)": "op4g",
+            "TT Brown (grunge)": "op12g",											   
             "TT Lite Blue (grunge)": "op7g",
             "TT Icy Sea": "op10",
             "TT Icy Sea (darker)*": "op11",
             "TT Red": "op1",
             "TT Blue": "op4",
+            "TT Brown": "op12",								
             "TT Lite Blue": "op7",
             "Red (clean)": "op3",
             "Blue (clean)": "op6",
+            "Brown (clean)": "op12c",									  
             "Lite Blue (clean)": "op9",
             "Icy Sea (darker)": "op11d",
-            "Desativado": "op0",
+            "Disabled": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
 @var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
 @var    checkbox    setHLhueRotation "Modificar tonalidade do destaque" 0
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableArrowSettings   "Modificar Setas" 0
-@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
-@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
-@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+@var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [130, 5, 300, 5, "%"]
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
 @var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
@@ -68,7 +71,7 @@
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1g" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_red2.png)!important;
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_red2.jpg)!important;
             }
             if myBoard=="op1" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard.png)!important;
@@ -77,7 +80,7 @@
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/TitleTuesdayBoard_clean.png)!important;
             }
             if myBoard=="op4g" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_blue2.png)!important;
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_blue2.jpg)!important;
             }
             if myBoard=="op4" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue.png)!important;
@@ -103,86 +106,124 @@
             if myBoard=="op11d" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/icysea_clean_darker.png)!important;
             }
+            if myBoard=="op12" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_brown.png)!important;
+            }
+            if myBoard=="op12c" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_brown_clean.png)!important;
+            }
+            if myBoard=="op12g" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_grunge_brown.jpg)!important;
+            }								
         }
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op1g" || myBoard=="op2" || myBoard=="op3" {
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #B44237 !important;
+                fill: @color;
             }
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #C0BCA5 !important;
-            }
-            text.coordinate-light {
-                fill: #B44237 !important;
-            }
-            text.coordinate-dark {
-                fill: #C0BCA5 !important;
+			 
+								   
+                fill: @color;
+			 
+								  
+										 
             }
         }
         if myBoard=="op4" || myBoard=="op4g" || myBoard=="op5" || myBoard=="op6" {
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #316CA4 !important;
+                fill: @color;
             }
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #D1DBDE !important;
-            }
-            text.coordinate-light {
-                fill: #316CA4 !important;
-            }
-            text.coordinate-dark {
-                fill: #D1DBDE !important;
+			 
+								   
+                fill: @color;
+			 
+								  
+										 
             }
         }
         if myBoard=="op7" || myBoard=="op7g" || myBoard=="op8" || myBoard=="op9" {
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #6491AB !important;
+                fill: @color;
             }
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #DBE0E1 !important;
-            }
-            text.coordinate-light {
-                fill: #6491AB !important;
-            }
-            text.coordinate-dark {
-                fill: #DBE0E1 !important;
+			 
+								   
+                fill: @color;
+			 
+								  
+										 
             }
         }
         if myBoard=="op10" {
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #7a9db2 !important;
+                fill: @color;
             }
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #c5d5dc !important;
-            }
-            text.coordinate-light {
-                fill: #7a9db2 !important;
-            }
-            text.coordinate-dark {
-                fill: #c5d5dc !important;
+			 
+								   
+                fill: @color;
+			 
+								  
+										 
             }
         }
         if myBoard=="op11" || myBoard=="op11d" {
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #5c829a !important;
+                fill: @color;
             }
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #cad8de !important;
+			 
+								   
+                fill: @color;
+			 
+								  
+										 
             }
-            text.coordinate-light {
-                fill: #5c829a !important;
+        }
+        if myBoard=="op12" || myBoard=="op12c" || myBoard=="op12g" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6B615D !important;
+                fill: @color;
             }
-            text.coordinate-dark {
-                fill: #cad8de !important;
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D7C9B3 !important;
+                fill: @color;
             }
         }
         /*Highlight*/
@@ -270,6 +311,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #5c829a !important;
+                }
+            }
+            if myBoard=="op12" || myBoard=="op12c" || myBoard=="op12g" {
+                .evaluation-bar-white {
+                    background-color: #bfb3a0 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #5d5552 !important;
                 }
             }
 
