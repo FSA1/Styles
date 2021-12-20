@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.6
+@version        2.2.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -1342,7 +1342,7 @@
                 background-color: #38abd9!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight {
                     background-color: #38abd9!important;
                 }
             }
@@ -1355,7 +1355,7 @@
                 background-color: #faff26!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight {
                     background-color: #faff26!important;
                 }
             }
@@ -1368,7 +1368,7 @@
                 background-color: #00d12b!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight {
                     background-color: #00d12b!important;
                 }
             }
@@ -1381,7 +1381,7 @@
                 background-color: #aef920!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight {
                     background-color: #aef920!important;
                 }
             }
@@ -1394,7 +1394,7 @@
                 background-color: #fbd13d!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight {
                     background-color: #fbd13d!important;
                 }
             }
@@ -1407,7 +1407,7 @@
                 background-color: #e8a841!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight {
                     background-color: #e8a841!important;
                 }
             }
@@ -1418,7 +1418,7 @@
     }
     /*Highlight opacity*/
     .move-square,
-    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+    .highlight {
         opacity: highlightOpacity!important;
         /*Highlight hue variation*/
         if setHLhueRotation {
@@ -1440,8 +1440,5 @@
     .marked-square{
         opacity: 0.8!important;
     }
-    .promotion-window {
-    background-color: #72777d!important;
-}
     /*End of the code*/
 }
