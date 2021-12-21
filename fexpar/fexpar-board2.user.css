@@ -446,6 +446,7 @@ domain("lichess.org") {
     /*Highlight*/
     if enableHL {
         if myBoard=="op1" {
+            square.last-move,
             .move-square {
                 background-color: #009eff!important;
             }
@@ -459,6 +460,7 @@ domain("lichess.org") {
             }
         }
         if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
+            square.last-move,
             .move-square {
                 background-color: #00b6ff!important;
             }
@@ -472,6 +474,7 @@ domain("lichess.org") {
             }
         }
         if myBoard=="op6" {
+            square.last-move,
             .move-square {
                 background-color: #00d12b!important;
             }
@@ -485,6 +488,7 @@ domain("lichess.org") {
             }
         }
         if myBoard=="op7" {
+            square.last-move,
             .move-square {
                 background-color: #fbd13d!important;
             }
@@ -498,6 +502,7 @@ domain("lichess.org") {
             }
         }
         if myBoard=="op8" {
+            square.last-move,
             .move-square {
                 background-color: #d6b153!important;
             }
@@ -511,6 +516,7 @@ domain("lichess.org") {
             }
         }
         if myBoard=="op11" {
+            square.last-move,
             .move-square {
                 background-color: #f0d700!important;
             }
@@ -525,12 +531,14 @@ domain("lichess.org") {
         }
     }
     /*Highlight opacity*/
+    square.last-move,
     .move-square,
     .highlight {
         opacity: highlightOpacity!important;
     }
     /*Highlight hue variation*/
     if setHLhueRotation {
+        square.last-move,
         .move-square,
         .highlight {
             filter: hue-rotate(highlightHueRotation) !important;
@@ -544,6 +552,16 @@ domain("lichess.org") {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
             -webkit-filter: @filter !important;
         }
+    }
+    /*====== Coordenates font size for lichess ======*/
+    @media (min-width: 1200px) {
+        coords {
+            font-size: 1rem !important;
+        }
+    }
+    /*rounded corners for lichess.org*/
+    .is2d cg-board{
+        border-radius: .2rem;
     }
     /*End of the code*/
 }
