@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivarinhas.`
-@version        3.0.2
+@version        3.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -841,7 +841,7 @@ domain("lichess.org") {
                 background-color: #0058cc !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #38abd9!important;
                 }
             }
@@ -880,7 +880,7 @@ domain("lichess.org") {
                 opacity: 0.5!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background: url(gitHub + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
                     background-color: #91ff00!important;
                     opacity: 0.5!important;
@@ -897,7 +897,7 @@ domain("lichess.org") {
                 opacity: 0.5!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #91ff00!important;
                     opacity: 0.5!important;
                 }
@@ -940,7 +940,7 @@ domain("lichess.org") {
                 opacity: 0.5!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background: url(gitHub + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
                     background-color: #91ff00!important;
                     opacity: 0.5!important;
@@ -957,7 +957,7 @@ domain("lichess.org") {
                 opacity: 0.5!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #91ff00!important;
                     opacity: 0.5!important;
                 }
@@ -1001,7 +1001,7 @@ domain("lichess.org") {
                 background-color: #ffc400 !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #fbde00!important;
                 }
             }
@@ -1041,7 +1041,7 @@ domain("lichess.org") {
                 background-color: #ffc400 !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #fbde00!important;
                 }
             }
@@ -1081,7 +1081,7 @@ domain("lichess.org") {
                 background-color: #ffc400 !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #fbde00!important;
                 }
             }
@@ -1120,7 +1120,7 @@ domain("lichess.org") {
                 opacity: 0.5!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background: url(gitHub + '/capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat !important;
                     background-color: #00e1ff!important;
                     opacity: 0.5!important;
@@ -1139,7 +1139,7 @@ domain("lichess.org") {
                 background-color: #0058cc !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #00b6ff!important;
                 }
             }
@@ -1178,7 +1178,7 @@ domain("lichess.org") {
                 opacity: 0.6 !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background: url(gitHub + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
                     background-color: #00d3f7f0 !important;
                     opacity: 0.6 !important;
@@ -1191,7 +1191,7 @@ domain("lichess.org") {
                 background-color: #00d9ff!important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #00d9ff!important;
                 }
             }
@@ -1233,7 +1233,7 @@ domain("lichess.org") {
                 opacity: 0.6 !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background: url(gitHub + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
                     background-color: #00d3f7f0!important;
                     opacity: 0.6 !important;
@@ -1252,7 +1252,7 @@ domain("lichess.org") {
                 background-color: #0058cc !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #00d9ff!important;
                 }
             }
@@ -1291,7 +1291,7 @@ domain("lichess.org") {
                 opacity: 0.6 !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background: url(gitHub + '/jppeixoto/anihlpuzzle.png') 0% 0% / 100% 100% no-repeat, url(gitLab + '/jppeixoto/anihlpuzzle.png') 0% 0% / 100% 100% no-repeat !important;
                     background-color: #19dee6!important;
                     opacity: 0.6 !important;
@@ -1310,7 +1310,7 @@ domain("lichess.org") {
                 background-color: #00c9cc !important;
             }
             if forcedHighlight {
-                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not(body.base.highlight):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #3ec200!important;
                 }
             }
