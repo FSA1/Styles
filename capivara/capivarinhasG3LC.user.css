@@ -1263,6 +1263,13 @@
             }
         }
     }
+    /*====== Coordenates font size for lichess ======*/
+    @media (min-width: 1200px) {
+        coords {
+            font-size: 1rem !important;
+        }
+    }
+    /*====== End Coordenates font size for lichess ======*/
     /*End coordenates and highlights*/
     /*End of the code*/
 
