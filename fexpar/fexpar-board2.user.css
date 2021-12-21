@@ -451,7 +451,7 @@ domain("lichess.org") {
                 background-color: #009eff!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
                     background-color: #009eff!important;
                 }
             }
@@ -465,7 +465,7 @@ domain("lichess.org") {
                 background-color: #00b6ff!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
                     background-color: #00b6ff!important;
                 }
             }
@@ -479,7 +479,7 @@ domain("lichess.org") {
                 background-color: #00d12b!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
                     background-color: #00d12b!important;
                 }
             }
@@ -493,7 +493,7 @@ domain("lichess.org") {
                 background-color: #fbd13d!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
                     background-color: #fbd13d!important;
                 }
             }
@@ -507,7 +507,7 @@ domain("lichess.org") {
                 background-color: #d6b153!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
                     background-color: #ffd364!important;
                 }
             }
@@ -521,7 +521,7 @@ domain("lichess.org") {
                 background-color: #f0d700!important;
             }
             if forcedHighlight {
-                .highlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
                     background-color: #00f1fe!important;
                 }
             }
@@ -533,14 +533,14 @@ domain("lichess.org") {
     /*Highlight opacity*/
     square.last-move,
     .move-square,
-    .highlight {
+    .highlight:not(body.base.highlight) {
         opacity: highlightOpacity!important;
     }
     /*Highlight hue variation*/
     if setHLhueRotation {
         square.last-move,
         .move-square,
-        .highlight {
+        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
             filter: hue-rotate(highlightHueRotation) !important;
             -webkit-filter: @filter !important;
         }
