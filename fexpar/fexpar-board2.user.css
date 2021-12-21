@@ -82,6 +82,7 @@ domain("lichess.org") {
     div[id*="chess_com_emailboard_"] {
         if enableBoardSettings {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
+            -webkit-filter: @filter;
         }
         if myBoard=="op1" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-gray.png")!important;
@@ -431,8 +432,10 @@ domain("lichess.org") {
             right: 0;
             z-index: -1;
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
+            -webkit-filter: @filter !important;
             if hueWallpaper && enableBoardSettings {
                 filter: hue-rotate(hueRotationBoard)!important;
+                -webkit-filter: @filter !important;
             }
         }
     }
@@ -531,6 +534,7 @@ domain("lichess.org") {
         .move-square,
         .highlight {
             filter: hue-rotate(highlightHueRotation) !important;
+            -webkit-filter: @filter !important;
         }
     }
     /*Evaluation-bar hue variation*/
@@ -538,7 +542,7 @@ domain("lichess.org") {
         .evaluation-bar-white,
         .evaluation-bar-black {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
-            -webkit-filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
+            -webkit-filter: @filter !important;
         }
     }
     /*End of the code*/

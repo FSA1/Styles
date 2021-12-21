@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para FEXPAR.`
-@version        1.0.6
+@version        2.0.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -45,13 +45,15 @@
 @var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
 @var    checkbox    hueWallpaper "incluir Wallpaper" 0
 ==/UserStyle== */
-@-moz-document domain("chess.com") {
+@-moz-document domain("chess.com"),
+domain("lichess.org") {
     /*colors*/
     body {
         --darkwood-color: #705D49;
         --lightwood-color: #D4BA9D;
     }
     /*Chessboard*/
+    .is2d cg-board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],
@@ -80,148 +82,31 @@
     div[id*="chess_com_emailboard_"] {
         if enableBoardSettings {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
+            -webkit-filter: @filter;
         }
         if myBoard=="op1" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-gray.png")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #7d8798 !important;
-                fill: #7d8798 !important;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #ebebe0 !important;
-                fill: #ebebe0 !important;
-            }
         }
         if myBoard=="op3" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-blue1.png")!important;
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #417891!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #ebebe0 !important;
-            }
-            text.coordinate-light {
-                fill: #417891!important;
-            }
-            text.coordinate-dark {
-                fill: #ebebe0 !important;
-            }
         }
         if myBoard=="op4" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-blue2.png")!important;
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #416d91!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #e0e8eb !important;
-            }
-            text.coordinate-light {
-                fill: #416d91!important;
-            }
-            text.coordinate-dark {
-                fill: #e0e8eb !important;
-            }
         }
         if myBoard=="op5" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-bluewood2.png")!important;
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #3C82C8!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #C1DEF9 !important;
-            }
-            text.coordinate-light {
-                fill: #3C82C8!important;
-            }
-            text.coordinate-dark {
-                fill: #C1DEF9 !important;
-            }
         }
         if myBoard=="op6" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar3.png")!important;
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #499957!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #D1EDC5 !important;
-            }
-            text.coordinate-light {
-                fill: #499957!important;
-            }
-            text.coordinate-dark {
-                fill: #D1EDC5 !important;
-            }
         }
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-orange-wood.png")!important;
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #bb651e!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #ffd9ad !important;
-            }
-            text.coordinate-light {
-                fill: #bb651e!important;
-            }
-            text.coordinate-dark {
-                fill: #ffd9ad !important;
-            }
         }
         if myBoard=="op8" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar-wood.png")!important;
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: var(--darkwood-color) !important;
-                fill: var(--darkwood-color) !important;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: var(--lightwood-color) !important;
-                fill: var(--lightwood-color) !important;
-            }
         }
         if myBoard=="op11" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/fexpar/fexpar1.png")!important;
-
-            /*Coordinates*/
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #6CB3BA!important;
-            }
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #FCF4D6 !important;
-            }
-            text.coordinate-light {
-                fill: #6CB3BA!important;
-            }
-            text.coordinate-dark {
-                fill: #FCF4D6 !important;
-            }
         }
     }
     /*extra rules*/
@@ -240,6 +125,28 @@
         .evaluation-bar-bar {
             opacity: 0.8;
         }
+
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #7d8798 !important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #ebebe0 !important;
+            fill: @color !important;
+        }
     }
     if myBoard=="op3" {
         /*Small board for game preview*/
@@ -255,6 +162,27 @@
         }
         .evaluation-bar-bar {
             opacity: 0.8;
+        }
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #417891!important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #ebebe0 !important;
+            fill: @color !important;
         }
     }
     if myBoard=="op4" {
@@ -272,6 +200,27 @@
         .evaluation-bar-bar {
             opacity: 0.8;
         }
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #416d91!important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #e0e8eb !important;
+            fill: @color !important;
+        }
     }
     if myBoard=="op5" {
         /*Small board for game preview*/
@@ -287,6 +236,27 @@
         }
         .evaluation-bar-bar {
             opacity: 0.8;
+        }
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #3C82C8!important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #C1DEF9 !important;
+            fill: @color !important;
         }
     }
     if myBoard=="op6" {
@@ -304,6 +274,27 @@
         .evaluation-bar-bar {
             opacity: 0.8;
         }
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #499957!important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #D1EDC5 !important;
+            fill: @color !important;
+        }
     }
     if myBoard=="op7" {
         /*Small board for game preview*/
@@ -319,6 +310,27 @@
         }
         .evaluation-bar-bar {
             opacity: 0.9;
+        }
+        /*Coordinates*/
+        text.coordinate-light,
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #bb651e!important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #ffd9ad !important;
+            fill: @color !important;
         }
     }
     if myBoard=="op8" {
@@ -336,6 +348,27 @@
         .evaluation-bar-bar {
             opacity: 0.9;
         }
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: var(--darkwood-color) !important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: var(--lightwood-color) !important;
+            fill: @color !important;
+        }
     }
     if myBoard=="op11" {
         /*Small board for game preview*/
@@ -351,6 +384,27 @@
         }
         .evaluation-bar-bar {
             opacity: 0.8!important;
+        }
+        /*Coordinates*/
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #6CB3BA!important;
+            fill: @color !important;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #FCF4D6 !important;
+            fill: @color !important;
         }
     }
     /*wallpaper*/
@@ -378,8 +432,10 @@
             right: 0;
             z-index: -1;
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
+            -webkit-filter: @filter !important;
             if hueWallpaper && enableBoardSettings {
                 filter: hue-rotate(hueRotationBoard)!important;
+                -webkit-filter: @filter !important;
             }
         }
     }
@@ -478,6 +534,7 @@
         .move-square,
         .highlight {
             filter: hue-rotate(highlightHueRotation) !important;
+            -webkit-filter: @filter !important;
         }
     }
     /*Evaluation-bar hue variation*/
@@ -485,7 +542,7 @@
         .evaluation-bar-white,
         .evaluation-bar-black {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
-            -webkit-filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
+            -webkit-filter: @filter !important;
         }
     }
     /*End of the code*/
