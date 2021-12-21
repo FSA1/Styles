@@ -135,7 +135,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #7d8798 !important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -145,7 +145,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #ebebe0 !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op3" {
@@ -172,7 +172,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #417891!important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -182,7 +182,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #ebebe0 !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op4" {
@@ -209,7 +209,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #416d91!important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -219,7 +219,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #e0e8eb !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op5" {
@@ -246,7 +246,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #3C82C8!important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -256,7 +256,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #C1DEF9 !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op6" {
@@ -283,7 +283,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #499957!important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -293,7 +293,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #D1EDC5 !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op7" {
@@ -320,7 +320,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #bb651e!important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -330,7 +330,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #ffd9ad !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op8" {
@@ -357,7 +357,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: var(--darkwood-color) !important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -367,7 +367,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: var(--lightwood-color) !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     if myBoard=="op11" {
@@ -394,7 +394,7 @@ domain("lichess.org") {
         div.number.coords-light,
         div.letter.coords-light {
             color: #6CB3BA!important;
-            fill: @color !important;
+            fill: @color;
         }
         .orientation-white .files coord:nth-child(2n + 1),
         .orientation-white .ranks coord:nth-child(2n),
@@ -404,7 +404,7 @@ domain("lichess.org") {
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #FCF4D6 !important;
-            fill: @color !important;
+            fill: @color;
         }
     }
     /*wallpaper*/
@@ -432,10 +432,10 @@ domain("lichess.org") {
             right: 0;
             z-index: -1;
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
-            -webkit-filter: @filter !important;
+            -webkit-filter: @filter;
             if hueWallpaper && enableBoardSettings {
                 filter: hue-rotate(hueRotationBoard)!important;
-                -webkit-filter: @filter !important;
+                -webkit-filter: @filter;
             }
         }
     }
@@ -542,7 +542,7 @@ domain("lichess.org") {
         .move-square,
         .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]):not(body.base.highlight) {
             filter: hue-rotate(highlightHueRotation) !important;
-            -webkit-filter: @filter !important;
+            -webkit-filter: @filter;
         }
     }
     /*Evaluation-bar hue variation*/
@@ -550,7 +550,7 @@ domain("lichess.org") {
         .evaluation-bar-white,
         .evaluation-bar-black {
             filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
-            -webkit-filter: @filter !important;
+            -webkit-filter: @filter;
         }
     }
     /*====== Coordenates font size for lichess ======*/

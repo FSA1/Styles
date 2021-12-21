@@ -65,7 +65,8 @@
 @var    select      coloredBar    "Barra de Avaliação" {
             "Temática*": "op1",
             "Padrão": "op0",
-        }@var    checkbox    enableShadow    "Habilitar sombras" 0
+        }
+@var    checkbox    enableShadow    "Habilitar sombras" 0
 @var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
 @var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
 @var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
