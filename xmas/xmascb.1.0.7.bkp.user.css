@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.8
+@version        1.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -21,7 +21,8 @@
         }
 @var    checkbox    enablePieces   "Peças de Natal 🌲🎅" 0
 
-@var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
+@var    checkbox    enableHL   "Habilitar Destaque (ao vivo)" 1
+@var    checkbox    forcedHighlight "Forçar destaque para todo o site (sem cores dinamicas)" 0
 @var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.4, 1, 0.1, ""]
 @var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
 
@@ -47,7 +48,7 @@
 
 @var    checkbox    enableBoardShadow "Sombra do tabuleiro" 0
 
-@var    range    brightnessWall  "Brilho (Wallpaper)" [80, 0, 300, 5, "%"]
+@var    range    brightnessWall  "Brilho (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
 @var    range    saturateWall  "Saturação (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
@@ -361,41 +362,61 @@
     /*Highlight*/
     if enableHL {
 
-        .move-square,
-        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+        .move-square {
             background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
         }
-        if myBoard=="op1" || myBoard=="op2" {
-            .move-square,
+        if forcedHighlight {
             .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
+            }
+        }
+        if myBoard=="op1" || myBoard=="op2" {
+            .move-square {
                 background-color: #b7d91b70!important;
+            }
+            if forcedHighlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #b7d91b70!important;
+                }
             }
             .selection-square {
                 background-color: #ff6319 !important;
             }
         }
         if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #b7d91bc9!important;
+            .move-square {
+                background-color: #b9de0fc9!important;
+            }
+            if forcedHighlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #b7d91bc9!important;
+                }
             }
             .selection-square {
                 background-color: #ff8000 !important;
             }
         }
         if myBoard=="op6" || myBoard=="op6b" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+            .move-square {
                 background-color: #b7d91bc9!important;
+            }
+            if forcedHighlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #b7d91bc9!important;
+                }
             }
             .selection-square {
                 background-color: #ffd800 !important;
             }
         }
         if myBoard=="op7" || myBoard=="op7b" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+            .move-square {
                 background-color: #b7d91bc9!important;
+            }
+            if forcedHighlight {
+                .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #b7d91bc9!important;
+                }
             }
             .selection-square {
                 background-color: #ffe600 !important;
