@@ -25,8 +25,8 @@
 @var    range    highlightHueRotation  "highlight hue" [0, 0, 355, 5, "deg"]
 
 @var    checkbox    editSidePanel "allow modifications to panels" 1
-@var    color    sidePanelColor  "panel color and opacity"   #d5c6b457
-@var    range    sidePanelBlur  "panel blur" [10, 0, 20, 1, "px"]
+@var    color    sidePanelColor  "panel color and opacity"   #3d33285c
+@var    range    sidePanelBlur  "panel blur (not working at the moment)" [10, 0, 20, 1, "px"]
 
 @var    checkbox    enableArrowSettings   "customize arrows" 0
 @var    range    hueRotationArrow  "arrows hue" [20, 0, 355, 5, "deg"]
@@ -273,11 +273,12 @@
         body.nav-collapsed .event-page-layout-component.event-page-layout-sidebar-visible,
         .layout-column-two,
         .layout-column-one,
+        /*.board-layout-sidebar, <-causing conflicts*/
         .board-layout-sidebar,
         .layout-sidebar {
             background-color: sidePanelColor !important;
             border-radius: 12px!important;
-            backdrop-filter: blur(sidePanelBlur)!important;
+            /*backdrop-filter: blur(sidePanelBlur)!important; <-causing conflicts*/
         }
         .tabset-nav-component.tabset-nav-roundedTop .tabset-nav-item:first-child {
             border-radius: 12px 0 0!important;
@@ -344,13 +345,6 @@
                 background-size: contain!important;
                 background-color: backgroundCol!important;
             }
-            content: '';
-            position: fixed;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
         }
     }
