@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Christmas chess boards for chess.com.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "choose board" {
@@ -19,14 +19,12 @@
         }
 @var    checkbox    enablePieces   "Christmas pieces 🌲🎅" 0
 
-@var    checkbox    enableHL   "custom highlight (live game)" 1
-@var    checkbox    forcedHighlight "Force highlight to all pages (single color)" 0
+@var    checkbox    enableHL   "custom highlight" 1
 @var    range    highlightOpacity  "highlight opacity" [0.5, 0.4, 1, 0.1, ""]
 @var    range    highlightHueRotation  "highlight hue" [0, 0, 355, 5, "deg"]
 
 @var    checkbox    editSidePanel "allow modifications to panels" 1
 @var    color    sidePanelColor  "panel color and opacity"   #3d33285c
-@var    range    sidePanelBlur  "panel blur (not working at the moment)" [10, 0, 20, 1, "px"]
 
 @var    checkbox    enableArrowSettings   "customize arrows" 0
 @var    range    hueRotationArrow  "arrows hue" [20, 0, 355, 5, "deg"]
@@ -273,7 +271,6 @@
         body.nav-collapsed .event-page-layout-component.event-page-layout-sidebar-visible,
         .layout-column-two,
         .layout-column-one,
-        /*.board-layout-sidebar, <-causing conflicts*/
         .board-layout-sidebar,
         .layout-sidebar {
             background-color: sidePanelColor !important;
@@ -351,61 +348,41 @@
     /*Highlight*/
     if enableHL {
 
-        .move-square {
+        .move-square,
+        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
         }
-        if forcedHighlight {
-            .highlight {
-                background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
-            }
-        }
         if myBoard=="op1" || myBoard=="op2" {
-            .move-square {
+            .move-square,
+            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91b70!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: #b7d91b70!important;
-                }
             }
             .selection-square {
                 background-color: #ff6319 !important;
             }
         }
         if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
-            .move-square {
-                background-color: #b9de0fc9!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: #b7d91bc9!important;
-                }
+            .move-square,
+            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                background-color: #b7d91bc9!important;
             }
             .selection-square {
                 background-color: #ff8000 !important;
             }
         }
         if myBoard=="op6" {
-            .move-square {
+            .move-square,
+            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91bc9!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: #b7d91bc9!important;
-                }
             }
             .selection-square {
                 background-color: #ffd800 !important;
             }
         }
         if myBoard=="op7" {
-            .move-square {
+            .move-square,
+            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91bc9!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: #b7d91bc9!important;
-                }
             }
             .selection-square {
                 background-color: #ffe600 !important;
@@ -414,14 +391,14 @@
 
         /*Highlight opacity*/
         .move-square,
-        .highlight {
+        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             opacity: highlightOpacity!important;
         }
     }
     /*Highlight hue variation*/
     if setHLhueRotation {
         .move-square,
-        .highlight {
+        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             filter: hue-rotate(highlightHueRotation) !important;
         }
     }
