@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para o natal.`
-@version        1.0.10
+@version        1.0.9
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -332,28 +332,22 @@
             }
 
             if setWallpaper=="op1" {
+                -webkit-background-size: cover!important;
+                -moz-background-size: cover!important;
+                -o-background-size: cover!important;
                 background-size: cover!important;
-                -webkit-background-size: @background-size;
-                -moz-background-size: @background-size;
-                -o-background-size: @background-size;
                 background-color: backgroundCol!important;
             }
             if setWallpaper=="op2" {
+                -webkit-background-size: contain!important;
+                -moz-background-size: contain!important;
+                -o-background-size: contain!important;
                 background-size: contain!important;
-                -webkit-background-size: @background-size;
-                -moz-background-size: @background-size;
-                -o-background-size: @background-size;
                 background-color: backgroundCol!important;
             }
-            filter: sepia(sepiaWall) hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall);
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o--filter: @filter;
+            filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
             if hueWallpaper && enableBoardSettings {
                 filter: hue-rotate(hueRotationBoard)!important;
-                -webkit-filter: @filter;
-                -moz-filter: @filter;
-                -o--filter: @filter;
             }
         }
     }
@@ -431,35 +425,25 @@
         .move-square,
         .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             filter: hue-rotate(highlightHueRotation) !important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o--filter: @filter;
         }
     }
     /*Evaluation-bar hue variation*/
     if enableBoardSettings {
         .evaluation-bar-white,
         .evaluation-bar-black {
-            filter: sepia(sepiaBoard) hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard)!important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o--filter: @filter;
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
+            -webkit-filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard)!important;
         }
     }
     if enableBoardShadow {
         .evaluation-bar-bar {
             filter: drop-shadow(0 0 0.7rem #000)!important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o--filter: @filter;
+            -webkit-filter: drop-shadow(0 0 0.7em #000)!important;
         }
     }
     if enableArrowSettings {
         .arrow {
             filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o--filter: @filter;
             opacity: arrowOpacity !important;
         }
     }
