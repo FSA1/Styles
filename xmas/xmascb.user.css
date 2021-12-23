@@ -383,6 +383,12 @@
                 background-color: #ff8000 !important;
             }
         }
+        if myBoard=="op5" {
+            /*default orange highlight*/
+            div [style*="255\, 170\, 0"] {
+                background-color: #ff9100!important;
+            }
+        }
         if myBoard=="op6" || myBoard=="op6b" {
             .move-square,
             .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
@@ -390,6 +396,10 @@
             }
             .selection-square {
                 background-color: #ffd800 !important;
+            }
+            /*default red highlight*/
+            div [style*="235\, 97\, 80"] {
+                background-color: #ff651d!important;
             }
         }
         if myBoard=="op7" || myBoard=="op7b" {
@@ -399,6 +409,15 @@
             }
             .selection-square {
                 background-color: #ffe600 !important;
+            }
+            /*change red and green default highlight colors*/
+            /*default red highlight*/
+            div [style*="235\, 97\, 80"] {
+                background-color: #ff7635!important;
+            }
+            /*default green highlight*/
+            div [style*="172\, 206\, 89"] {
+                background-color: #a5dd45!important;
             }
         }
 
