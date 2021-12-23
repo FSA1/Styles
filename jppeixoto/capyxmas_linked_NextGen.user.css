@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.2
+@version        3.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -186,7 +186,7 @@
                     background-color: #0058cc !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #38abd9!important;
                     }
                 }
@@ -217,7 +217,7 @@
                     opacity: 0.5!important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background: url(gitHub + 'capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + 'capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
                         background-color: #91ff00!important;
                         opacity: 0.5!important;
@@ -233,7 +233,7 @@
                     opacity: 0.5!important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #91ff00!important;
                         opacity: 0.5!important;
                     }
@@ -268,7 +268,7 @@
                     opacity: 0.5!important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background: url(gitHub + 'capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + 'capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
                         background-color: #91ff00!important;
                         opacity: 0.5!important;
@@ -284,7 +284,7 @@
                     opacity: 0.5!important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #91ff00!important;
                         opacity: 0.5!important;
                     }
@@ -320,7 +320,7 @@
                     background-color: #ffc400 !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #fbde00!important;
                     }
                 }
@@ -352,7 +352,7 @@
                     background-color: #ffc400 !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #fbde00!important;
                     }
                 }
@@ -384,7 +384,7 @@
                     background-color: #ffc400 !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #fbde00!important;
                     }
                 }
@@ -416,7 +416,7 @@
                     opacity: 0.5!important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background: url(gitHub + 'capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + 'capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat !important;
                         background-color: #00e1ff!important;
                         opacity: 0.5!important;
@@ -434,7 +434,7 @@
                     background-color: #0058cc !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #00b6ff!important;
                     }
                 }
@@ -466,7 +466,7 @@
                     opacity: 0.6 !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background: url(gitHub + 'jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + 'jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
                         background-color: #00d3f7f0 !important;
                         opacity: 0.6 !important;
@@ -478,7 +478,7 @@
                     background-color: #00d9ff!important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #00d9ff!important;
                     }
                 }
@@ -517,7 +517,7 @@
                     opacity: 0.6 !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background: url(gitHub + 'jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + 'jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
                         background-color: #00d3f7f0!important;
                         opacity: 0.6 !important;
@@ -535,7 +535,7 @@
                     background-color: #0058cc !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #00d9ff!important;
                     }
                 }
@@ -567,7 +567,7 @@
                     opacity: 0.6 !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background: url(gitHub + 'jppeixoto/anihlpuzzle.png') 0% 0% / 100% 100% no-repeat, url(gitLab + 'jppeixoto/anihlpuzzle.png') 0% 0% / 100% 100% no-repeat !important;
                         background-color: #19dee6!important;
                         opacity: 0.6 !important;
@@ -585,7 +585,7 @@
                     background-color: #00c9cc !important;
                 }
                 if forcedHighlight {
-                    .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                         background-color: #3ec200!important;
                     }
                 }
@@ -622,6 +622,13 @@
                 background-size: contain!important;
                 background-color: backgroundCol!important;
             }
+            content: '';
+            position: fixed;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
             filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
             if hueWallpaper && enableBoardSettings {
                 filter: hue-rotate(hueRotationBoard)!important;
