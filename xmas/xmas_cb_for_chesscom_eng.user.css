@@ -14,7 +14,9 @@
             "Wood green": "op4",
             "Golden": "op5",
             "red": "op6",
+            "red (clean)": "op6b",
             "red and green": "op7",
+            "red and green (clean)": "op7b",
             "Disabled": "op0",
         }
 @var    checkbox    enablePieces   "Christmas pieces 🌲🎅" 0
@@ -104,8 +106,14 @@
         if myBoard=="op6" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_pres.jpg")!important;
         }
+        if myBoard=="op6b" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_pres2.jpg")!important;
+        }
         if myBoard=="op7" {
             background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_e_verde.jpg")!important;
+        }
+        if myBoard=="op7b" {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/xmas/christmas_cb_verm_e_verde2.jpg")!important;
         }
     }
 
@@ -210,7 +218,7 @@
             color: #e2a200;
         }
     }
-    if myBoard=="op6" {
+    if myBoard=="op6" || myBoard=="op6b" {
         /*Coordinates*/
         text.coordinate-light,
         div.number.coords-light,
@@ -235,18 +243,18 @@
             color: #e6c062;
         }
     }
-    if myBoard=="op7" {
+    if myBoard=="op7" || myBoard=="op7b" {
         /*Coordinates*/
         text.coordinate-light,
         div.number.coords-light,
         div.letter.coords-light {
-            color: #53ac62!important;
+            color: #4db85f!important;
             fill: @color;
         }
         text.coordinate-dark,
         div.number.coords-dark,
         div.letter.coords-dark {
-            color: #f42b19 !important;
+            color: #ec2917 !important;
             fill: @color;
         }
         .evaluation-bar-white {
@@ -317,10 +325,10 @@
                 if myBoard=="op5" {
                     background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/wp3351412.jpg), url(https://wallpapercave.com/wp/wp3351412.jpg) center center!important;
                 }
-                if myBoard=="op6" {
+                if myBoard=="op6" || myBoard=="op6b" {
                     background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/natal.jpg) center center!important;
                 }
-                if myBoard=="op7" {
+                if myBoard=="op7" || myBoard=="op7b" {
                     background: url(https://github.com/FSA1/Styles/raw/main/xmas/Wallpaper/natal2.jpg) center center!important;
                 }
             }
@@ -329,32 +337,39 @@
             }
 
             if setWallpaper=="op1" {
-                -webkit-background-size: cover!important;
-                -moz-background-size: cover!important;
-                -o-background-size: cover!important;
+														 
+													  
+													
                 background-size: cover!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
                 background-color: backgroundCol!important;
             }
             if setWallpaper=="op2" {
-                -webkit-background-size: contain!important;
-                -moz-background-size: contain!important;
-                -o-background-size: contain!important;
+														   
+														
+													  
                 background-size: contain!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
                 background-color: backgroundCol!important;
             }
-            filter: hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall) sepia(sepiaWall);
+            filter: sepia(sepiaWall) hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall);
+            -webkit-filter: @filter;
+            -moz-filter: @filter;
+            -o--filter: @filter;
         }
     }
     /*Highlight*/
     if enableHL {
 
-        .move-square,
-        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+        .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             background: var(--hl-guir) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op1" || myBoard=="op2" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+            .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91b70!important;
             }
             .selection-square {
@@ -362,44 +377,62 @@
             }
         }
         if myBoard=="op3" || myBoard=="op4" || myBoard=="op5" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+            .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91bc9!important;
             }
             .selection-square {
                 background-color: #ff8000 !important;
             }
         }
-        if myBoard=="op6" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+        if myBoard=="op5" {
+            /*default orange highlight*/
+            div [style*="255\, 170\, 0"] {
+                background-color: #ff9100!important;
+            }
+        }
+        if myBoard=="op6" || myBoard=="op6b" {
+            .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91bc9!important;
             }
             .selection-square {
                 background-color: #ffd800 !important;
             }
+            /*default red highlight*/
+            div [style*="235\, 97\, 80"] {
+                background-color: #ff651d!important;
+            }
         }
-        if myBoard=="op7" {
-            .move-square,
-            .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+        if myBoard=="op7" || myBoard=="op7b" {
+            .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                 background-color: #b7d91bc9!important;
             }
             .selection-square {
                 background-color: #ffe600 !important;
             }
+            /*change red and green default highlight colors*/
+            /*default red highlight*/
+            div [style*="235\, 97\, 80"] {
+                background-color: #ff7635!important;
+            }
+            /*default green highlight*/
+            div [style*="172\, 206\, 89"] {
+                background-color: #a5dd45!important;
+            }
         }
 
         /*Highlight opacity*/
         .move-square,
-        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+        .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             opacity: highlightOpacity!important;
         }
     }
     /*Highlight hue variation*/
     if setHLhueRotation {
-        .move-square,
-        .highlight:not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="255\, 170\, 0"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+        .move-square, .highlight:not([style*="#1baca6]):not([style*="#5c8bb0]):not([style*="#96bc4b]):not([style*="#96bc4b]):not([style*="#96af8b]):not([style*="#a88865]):not([style*="#f0c15c]):not([style*="#e58f2a]):not([style*="#ca3431]):not([style*="#dbac16]):not([style*="27\, 172\, 166]):not([style*="92\, 139\, 176]):not([style*="150\, 188\, 75]):not([style*="150\, 188\, 75]):not([style*="150\, 175\, 139]):not([style*="168\, 136\, 101]):not([style*="240\, 193\, 92]):not([style*="229\, 143\, 42]):not([style*="202\, 52\, 49]):not([style*="219\, 172\, 22]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
             filter: hue-rotate(highlightHueRotation) !important;
+            -webkit-filter: @filter;
+            -moz-filter: @filter;
+            -o--filter: @filter;
         }
     }
     if enableArrowSettings {
