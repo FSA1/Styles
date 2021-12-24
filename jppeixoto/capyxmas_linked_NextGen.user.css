@@ -537,9 +537,9 @@
         div [style*="bn.png"],
         .piece.bn,
         .promotion-piece.bn {
-            background-image: url(gitHub + 'capivara/mg/capivar-bn.png'), url(gitLab + 'capivara/mg/capivar-bn.png')!important;
-            if enableHorizInvert {
                 background-image: url(gitHub + 'capivara/mg/flip-capivar-bn.png'), url(gitLab + 'capivara/mg/flip-capivar-bn.png')!important;
+            if enableHorizInvert {
+                background-image: url(gitHub + 'capivara/mg/capivar-bn.png'), url(gitLab + 'capivara/mg/capivar-bn.png')!important;
             }
         }
         .piece.bb,
@@ -572,9 +572,9 @@
         div [style*="wn.png"],
         .piece.wn,
         .promotion-piece.wn {
-            background-image: url(gitHub + 'capivara/mg/capivar-wn.png'), url(gitLab + 'capivara/mg/capivar-wn.png')!important;
-            if enableHorizInvert {
                 background-image: url(gitHub + 'capivara/mg/flip-capivar-wn.png'), url(gitLab + 'capivara/mg/flip-capivar-wn.png')!important;
+            if enableHorizInvert {
+                background-image: url(gitHub + 'capivara/mg/capivar-wn.png'), url(gitLab + 'capivara/mg/capivar-wn.png')!important;
             }
         }
         .piece.wb,
@@ -610,10 +610,10 @@
         .promotion-piece.bn,
         div [style*="bn.png"] {
             if enableHorizInvert {
-                background-image: url(gitHub + 'capivara/alpha/flip-capivara-bn.png'), url(gitLab + 'capivara/alpha/flip-capivara-bn.png')!important;
+                background-image: url(gitHub + 'capivara/alpha/capivara-bn.png'), url(gitLab + 'capivara/alpha/capivara-bn.png')!important;
             }
             else {
-                background-image: url(gitHub + 'capivara/alpha/capivara-bn.png'), url(gitLab + 'capivara/alpha/capivara-bn.png')!important;
+                background-image: url(gitHub + 'capivara/alpha/flip-capivara-bn.png'), url(gitLab + 'capivara/alpha/flip-capivara-bn.png')!important;
             }
         }
         .piece.bb,
@@ -647,10 +647,10 @@
         .promotion-piece.wn,
         div [style*="wn.png"] {
             if enableHorizInvert {
-                background-image: url(gitHub + 'capivara/alpha/flip-capivara-wn.png'), url(gitLab + 'capivara/alpha/flip-capivara-wn.png')!important;
+                background-image: url(gitHub + 'capivara/alpha/capivara-wn.png'), url(gitLab + 'capivara/alpha/capivara-wn.png')!important;
             }
             else {
-                background-image: url(gitHub + 'capivara/alpha/capivara-wn.png'), url(gitLab + 'capivara/alpha/capivara-wn.png')!important;
+                background-image: url(gitHub + 'capivara/alpha/flip-capivara-wn.png'), url(gitLab + 'capivara/alpha/flip-capivara-wn.png')!important;
             }
         }
         .piece.wb,
