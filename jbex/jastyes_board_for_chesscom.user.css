@@ -35,10 +35,12 @@
 @var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
 @var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
 @var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    sepiaB  "Sepia (pretas)" [0, 0, 100, 5, "%"]
 @var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
 @var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
 @var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
 @var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    sepiaW  "Sepia (brancas)" [0, 0, 100, 5, "%"]
 @var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
 @var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
@@ -357,7 +359,7 @@ domain("lichess.org") {
         .promotion-piece.bp,
         div [style*="bp.png"] {
             mix-blend-mode: enableBlendB;
-            filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB) drop-shadow(0 0 0.2rem #000)!important;
+            filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB) drop-shadow(0 0 0.2rem #000)!important;
             -webkit-filter: @filter;
             -moz-filter: @filter;
             -o-filter: @filter;
@@ -387,7 +389,7 @@ domain("lichess.org") {
         .promotion-piece.wp,
         div [style*="wp.png"] {
             mix-blend-mode: enableBlendW;
-            filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW) drop-shadow(0 0 0.2rem #000)!important;
+            filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW) drop-shadow(0 0 0.2rem #000)!important;
             -webkit-filter: @filter;
             -moz-filter: @filter;
             -o-filter: @filter;
@@ -420,7 +422,7 @@ domain("lichess.org") {
         .promotion-piece.bp,
         div [style*="bp.png"] {
             mix-blend-mode: enableBlendB;
-            filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
+            filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
             -webkit-filter: @filter;
             -moz-filter: @filter;
             -o-filter: @filter;
@@ -450,7 +452,7 @@ domain("lichess.org") {
         .promotion-piece.wp,
         div [style*="wp.png"] {
             mix-blend-mode: enableBlendW;
-            filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
+            filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
             -webkit-filter: @filter;
             -moz-filter: @filter;
             -o-filter: @filter;
