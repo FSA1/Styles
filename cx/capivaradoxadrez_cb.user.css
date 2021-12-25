@@ -561,7 +561,7 @@ domain("lichess.org") {
     /*====== Coordenates font size for lichess ======*/
     @media (min-width: 1200px) {
         coords {
-            font-size: 1.2rem !important;
+            font-size: 1rem !important;
         }
     }
     /*====== End Coordenates font size for lichess ======*/
