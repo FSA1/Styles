@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para o canal Jastyes.`
-@version        1.0.4
+@version        1.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -16,7 +16,7 @@
             "Seu tabuleiro": "opUser",
             "Desativado": "op0",
         }
-@var    checkbox      myHighlight    "Habilitar destaque personaliado" 0
+@var    checkbox      myHighlight    "Habilitar destaque personaliado" 1
 @var    color    moveSqCol  "Destaque do movimento"   #ffd500bf
 @var    color    selSqCol  "Destaque da seleção"   #ffa200d4
 @var    checkbox    enableCustomCoor "Habilitar coord. personalizadas" 0
