@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para o canal Jastyes.`
-@version        1.0.7
+@version        1.0.8
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -175,16 +175,17 @@ domain("lichess.org") {
             background-color: selSqCol !important;
             opacity: 0.7!important;
         }
-    }/*Lichess (dot marks shows legal moves)*/
-            square.move-dest {
-                background: radial-gradient(#6a5b3b3d 20%, #0000 20%)!important;
-            }
-            square.move-dest:hover {
-                background: #dbff0045!important;
-            }
-            square.oc.move-dest {
-                background: radial-gradient(transparent 0%, transparent 79%, #6a5b3b80 80%)!important;
-            }
+    }
+    /*Lichess (dot marks shows legal moves)*/
+        square.move-dest {
+            background: radial-gradient(#6a5b3b3d 20%, #0000 20%);
+        }
+        square.move-dest:hover {
+            background: #dbff0045!important;
+        }
+        square.oc.move-dest {
+            background: radial-gradient(transparent 0%, transparent 79%, #6a5b3b80 80%)!important;
+        }
     /*------Coordinates------*/
     if myBoard=="op1" || myBoard=="op1b" {
         .orientation-white .files coord:nth-child(2n),
