@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.7
+@version        3.0.8
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -20,6 +20,7 @@
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
             "Bonus ❤ jp3 verde": "op9",
+            "Bonus ❤ jp3 aqua": "op9a",
             "Bonus ❤ jp3 verde (Natal)": "op10",
             "Desativado": "op0",
         }
@@ -197,6 +198,9 @@
         }
         if myBoard=="op9" {
             background-image: url(gitHub + '/jppeixoto/jpanimegirlcb20-green.webp'), url(gitLab + '/jppeixoto/jpanimegirlcb20-green.webp')!important;
+        }
+        if myBoard=="op9a" {
+            background-image: url(gitHub + '/jppeixoto/jpanimegirlcb20-aqua.webp'), url(gitLab + '/jppeixoto/jpanimegirlcb20-aqua.webp')!important;
         }
         if myBoard=="op10" {
             background-image: url(gitHub + '/jppeixoto/jplovepuzzles_Natal_over.png'), url(gitLab + '/jppeixoto/jplovepuzzles_Natal_over.png')!important;
@@ -475,7 +479,7 @@
             }
         }
     }
-    if myBoard=="op9" || myBoard=="op10" {
+    if myBoard=="op9" || myBoard=="op9a" || myBoard=="op10" {
         if myBoard=="op9" {
             /*Coordinates*/
             text.coordinate-light,
@@ -491,7 +495,22 @@
                 fill: @color;
             }            
         }
-        else {
+        if myBoard=="op9a" {
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #42A693!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #C5E5E5 !important;
+                fill: @color;
+            }            
+        }
+        if myBoard=="op10" {
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -599,7 +618,7 @@
                 background-color: #358CD7 !important;
             }
         }
-    if myBoard=="op9" || myBoard=="op10" {
+    if myBoard=="op9" || myBoard=="op9a" || myBoard=="op10" {
         if myBoard=="op9"{
             .evaluation-bar-white {
                 background-color: #AAE3D2 !important;
@@ -608,7 +627,15 @@
                 background-color: #35A376 !important;
             }
         }
-        else{
+        if myBoard=="op9a"{
+            .evaluation-bar-white {
+                background-color: #C5E5E5 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #42A693 !important;
+            }
+        }
+        if myBoard=="op10"{
             .evaluation-bar-white {
                     background-color: #C3E4E4 !important;
                 }
