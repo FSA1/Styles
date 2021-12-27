@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.6
+@version        3.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -1125,12 +1125,6 @@
             z-index: -1;
             if enableBGfilters {
                 filter: sepia(sepiaWall) hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall);
-                -webkit-filter: @filter;
-                -moz-filter: @filter;
-                -o-filter: @filter;
-            }
-            if hueWallpaper && enableBoardSettings {
-                filter: hue-rotate(hueRotationBoard)!important;
                 -webkit-filter: @filter;
                 -moz-filter: @filter;
                 -o-filter: @filter;
