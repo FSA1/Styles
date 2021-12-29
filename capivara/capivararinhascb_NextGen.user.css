@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.11
+@version        3.0.12
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -16,8 +16,9 @@
             "Capi verde": "op3",
             "Capi marrom": "op4",
             "Capi marrom 2": "op5",
-            "SR verde cinzento": "op1SR",
+            "SR verde cinz. (animado)": "op1SR",
             "SR verde cinz. (estático)": "op1SRE",
+            "SR azul madeira (estático)": "op1SREW",
             "Bonus ❤ jp1 azul": "op8",
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
@@ -172,6 +173,9 @@
         if myBoard=="op1SR" {
             background-image: url(gitHub + '/krikor/speedruim/speedruimcb.webp'), url(gitLab + '/krikor/speedruim/speedruimcb.webp')!important;
         }
+        if myBoard=="op1SREW" {
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb-wood-blue.jpg'), url(gitLab + '/krikor/speedruim/speedruimcb-wood-blue.jpg')!important;
+        }
         if myBoard=="op1SRE" {
             background-image: url(gitHub + '/krikor/speedruim/speedruimcb.png'), url(gitLab + '/krikor/speedruim/speedruimcb.png')!important;
         }
@@ -256,6 +260,32 @@
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #D2DAE1 !important;
+            fill: @color;
+        }
+        /*Highlight*/
+        if myHighlight=="op1" || myHighlight=="op2" {
+            .move-square,
+            .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+    }
+    if myBoard=="op1SREW" {
+
+        /*Coordinates*/
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #4C8FAA!important;
+            fill: @color;
+        }
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #AEDDF1 !important;
             fill: @color;
         }
         /*Highlight*/
@@ -596,10 +626,21 @@
         }
     if myBoard=="op1SR" || myBoard=="op1SRE" {
             .evaluation-bar-white {
+                
                 background-color: #D2DAE1 !important;
             }
             .evaluation-bar-black {
                 background-color: #5C8899 !important;
+            }
+        }
+    if  myBoard=="op1SREW" {
+            .evaluation-bar-white {
+                background: url(gitHub + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat, url(gitLab + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat !important;
+                background-color: #AEDDF1 !important;
+            }
+            .evaluation-bar-black {
+                background: url(gitHub + '/krikor/speedruim/eval-white.png') 0% 0% / 100% 100% no-repeat, url(gitHub + '/krikor/speedruim/eval-white.png') 0% 0% / 100% 100% no-repeat !important;
+                background-color: #4C8FAA !important;
             }
         }
         if myBoard=="op2" {
