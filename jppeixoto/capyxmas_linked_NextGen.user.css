@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.9
+@version        3.0.11
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -16,6 +16,7 @@
             "Capi verde": "op3",
             "Capi marrom": "op4",
             "Capi marrom 2": "op5",
+            "SR verde cinzento": "op1SR",
             "Bonus ❤ jp1 azul": "op8",
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
@@ -40,8 +41,8 @@
             "Abóbora (Neo)": "abobora",
             "personalizado (Neo)": "personalizadoNeo",
             "personalizado Natal (Neo)": "personalizadoNatalNeo",
-            "Combine (Mar Gelado)": "marGelado",
-            "Combine (Alpha/Clássico)": "alp",
+            "Preto (Mar Gelado)": "marGelado",
+            "Preto (Alpha/Clássico)": "alp",
             "Desativado": "op0"
         }
 @var    select      myPiecesW    "Peças brancas" {
@@ -61,8 +62,8 @@
             "Abóbora (Neo)": "abobora",
             "personalizado (Neo)": "personalizadoNeo",
             "personalizado Natal (Neo)": "personalizadoNatalNeo",
-            "Combine (Mar Gelado)": "marGelado",
-            "Combine (Alpha/Clássico)": "alp",
+            "Branco (Mar Gelado)": "marGelado",
+            "Branco (Alpha/Clássico)": "alp",
             "Desativado": "op0"
         }
 
@@ -167,6 +168,9 @@
         if myBoard=="op1" {
             background-image: url(gitHub + '/capivara/capivara-cb2.png'), url(gitLab + '/capivara/capivara-cb2.png')!important;
         }
+        if myBoard=="op1SR" {
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb.webp'), url(gitLab + '/krikor/speedruim/speedruimcb.webp')!important;
+        }
         if myBoard=="op2" {
             background-image: url(gitHub + '/capivara/capivaraV4-cb.png'), url(gitLab + '/capivara/capivaraV4-cb.png')!important;
         }
@@ -222,6 +226,32 @@
         div.number.coords-dark,
         div.letter.coords-dark {
             color: #e4e9ec !important;
+            fill: @color;
+        }
+        /*Highlight*/
+        if myHighlight=="op1" || myHighlight=="op2" {
+            .move-square,
+            .highlight:not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                background-color: #38abd9!important;
+            }
+            .selection-square {
+                background-color: #0058cc !important;
+            }
+        }
+    }
+    if myBoard=="op1SR" {
+
+        /*Coordinates*/
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #5C8899!important;
+            fill: @color;
+        }
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #D2DAE1 !important;
             fill: @color;
         }
         /*Highlight*/
@@ -558,6 +588,14 @@
             }
             .evaluation-bar-black {
                 background-color: #708BA3 !important;
+            }
+        }
+        if myBoard=="op1SR" {
+            .evaluation-bar-white {
+                background-color: #D2DAE1 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5C8899 !important;
             }
         }
         if myBoard=="op2" {
