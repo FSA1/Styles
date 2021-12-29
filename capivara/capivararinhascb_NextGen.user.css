@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.12
+@version        3.0.14
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -89,14 +89,14 @@
 
 @var    select      wallpaperSource    "Fonte do Wallpaper" {
             "Pré-configurado*": "op1",		
-            "Seu link": "op2",
+            "Seu link (ou cor)": "op2",
             "Desativado": "op0",
         }
 @var    select      setWallpaper    "Modo do Wallpaper" {
             "cobrir*": "op1",		
             "repetir": "op2",
         }
-@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://github.com/FSA1/Styles/raw/main/capivara/wall/naturebg.jpg'"
+@var    text     userWallpaper    "link da imagem de fundo (entre aspas simples). Use aspas vazias para somente cor"   "'https://github.com/FSA1/Styles/raw/main/capivara/wall/naturebg.jpg'"
 
 @var    checkbox    enableBGfilters "Filtros do Wallpaper (desabilite se o PC for lento)" 1
 @var    range    brightnessWall  "Brilho (Wallpaper)" [80, 0, 300, 5, "%"]
@@ -1210,7 +1210,8 @@
                 }
             }
             if wallpaperSource=="op2" {
-                background: url(userWallpaper) center center!important;
+                background: url(userWallpaper) center center!important;                
+                background-color: backgroundCol!important;
             }
 
             if setWallpaper=="op1" {
@@ -1218,7 +1219,6 @@
                 -webkit-background-size: @background-size;
                 -moz-background-size: @background-size;
                 -o-background-size: @background-size;
-                background-color: backgroundCol!important;
                 background-repeat: no-repeat!important;
                 background-attachment: fixed!important;
             }
@@ -1227,7 +1227,6 @@
                 -webkit-background-size: @background-size;
                 -moz-background-size: @background-size;
                 -o-background-size: @background-size;
-                background-color: backgroundCol!important;
             }
             content: '';
             position: fixed;
