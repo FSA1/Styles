@@ -17,6 +17,7 @@
             "Capi marrom": "op4",
             "Capi marrom 2": "op5",
             "SR verde cinzento": "op1SR",
+            "SR verde cinz. (estático)": "op1SRE",
             "Bonus ❤ jp1 azul": "op8",
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
@@ -171,6 +172,9 @@
         if myBoard=="op1SR" {
             background-image: url(gitHub + '/krikor/speedruim/speedruimcb.webp'), url(gitLab + '/krikor/speedruim/speedruimcb.webp')!important;
         }
+        if myBoard=="op1SRE" {
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb.png'), url(gitLab + '/krikor/speedruim/speedruimcb.png')!important;
+        }
         if myBoard=="op2" {
             background-image: url(gitHub + '/capivara/capivaraV4-cb.png'), url(gitLab + '/capivara/capivaraV4-cb.png')!important;
         }
@@ -239,7 +243,7 @@
             }
         }
     }
-    if myBoard=="op1SR" {
+    if myBoard=="op1SR" || myBoard=="op1SRE" {
 
         /*Coordinates*/
         text.coordinate-light,
@@ -590,7 +594,7 @@
                 background-color: #708BA3 !important;
             }
         }
-        if myBoard=="op1SR" {
+    if myBoard=="op1SR" || myBoard=="op1SRE" {
             .evaluation-bar-white {
                 background-color: #D2DAE1 !important;
             }
