@@ -99,12 +99,12 @@
 @var    text     userWallpaper    "link da imagem de fundo (entre aspas simples). Use aspas vazias para somente cor"   "'https://github.com/FSA1/Styles/raw/main/capivara/wall/naturebg.jpg'"
 
 @var    checkbox    enableBGfilters "Filtros do Wallpaper (desabilite se o PC for lento)" 1
+@var    color    backgroundCol  "Cor de Fundo"   #52b19b
 @var    range    brightnessWall  "Brilho (Wallpaper)" [80, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
 @var    range    saturateWall  "Saturação (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
 @var    range    hueRotationWall  "Tonalidade (Wallpaper)" [0, 0, 355, 5, "deg"]
-@var    color    backgroundCol  "Cor de Fundo"   #52b19b
 
 @var    checkbox    enableShadow    "Habilitar sombras" 0
 @var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
