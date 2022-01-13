@@ -22,23 +22,15 @@
             "Birman Azul": "op10",
             "Birman Verde": "op11",
             "Birman Cinza": "op12",
-            "Poster Azul": "postA",
-            "Poster Cinza": "postB",
-            "Poster Roxo": "postC",
-            "Poster Vinho": "postD",
-            "Poster Oliva": "postE",
-            "Poster Verde": "postF",
-            "Poster Petroleo": "postG",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
-            "Alpha (Nike X FURIA)": "op1",
-            "Clássico (Nike X FURIA)": "op2",
-            "Mar Gelado (Nike X FURIA )": "op2b",
-            "Mar Gelado (Estilizado)": "op3",
-            "Alpha (Estilizado)": "op3A",
-            "Logo FURIA": "op4",
-            "Neo (FURIA)": "op5",
+            "Nike X FURIA (Alpha)": "op1",
+            "Nike X FURIA (Clássico)": "op2",
+            "Nike X FURIA (Mar Gelado)": "op2b",
+            "FURIA (Estilizado, Mar Gelado)": "op3",
+            "FURIA (Logo)": "op4",
+            "FURIA (Neo)": "op5",
             "Bases (Sombreado)": "op6",
             "Bases (Plano)*": "op7",
             "Bases (Plano, Sem Borda, Bege)": "op8",
@@ -84,16 +76,6 @@
 @var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-
-    /*The beautify function may cause an error by joining the following variables into a single line.
-    Just revert the changes to make it work again.*/
-    
-    gitHub='https://github.com/FSA1/Styles/raw/main'
-    
-    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main'
-    
-    chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
-    
     /*Chessboard*/
     div[class^="board v-board disabled rounded"],
     div[class^="daily-puzzle-board"],
@@ -123,13 +105,13 @@
     chess-board[id^="board-vs-personalities"],
     div[id*="chess_com_emailboard_"] {
         if enableBoardSettings {
-            filter: sepia(sepiaBoard) hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard) sepia(sepiaBoard);
             -webkit-filter: @filter;
             -moz-filter: @filter;
             -o--filter: @filter;
         }
         if myBoard=="op1" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -146,7 +128,7 @@
             }
         }
         if myBoard=="op2" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -162,7 +144,7 @@
             }
         }
         if myBoard=="op3" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -178,7 +160,7 @@
             }
         }
         if myBoard=="op4" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -194,7 +176,7 @@
             }
         }
         if myBoard=="op5" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -210,7 +192,7 @@
             }
         }
         if myBoard=="op6" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -226,7 +208,7 @@
             }
         }
         if myBoard=="op7" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -242,7 +224,7 @@
             }
         }
         if myBoard=="op8" {
-            background-image: url(gitHub + "/Furia/furia-cb-blue.png"), url(gitLab + "/Furia/furia-cb-blue.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia-cb-blue.png")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -259,7 +241,7 @@
             }
         }
         if myBoard=="op9" {
-            background-image: url(gitHub + "/Furia/furia_cb-wood_sp.jpg"), url(gitLab + "/Furia/furia_cb-wood_sp.jpg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood_sp.jpg")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -275,7 +257,7 @@
             }
         }
         if myBoard=="op9b" {
-            background-image: url(gitHub + "/Furia/furia_cb-wood3.jpg"), url(gitLab + "/Furia/furia_cb-wood3.jpg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furia_cb-wood3.jpg")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -289,9 +271,9 @@
                 color: #e4c9ab !important;
                 fill: @color;
             }
-        }/*For options 10, 11 , 12 I could not use double server for images because this method sets two imaages at the same time, ruining transparent effect*/
+        }
         if myBoard=="op10" {
-            background-image: url(gitHub + "/Furia/fide/furia_classic-logo_birman-blue.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_classic-logo_birman-blue.svg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -308,7 +290,7 @@
             }
         }
         if myBoard=="op11" {
-            background-image: url(gitHub + "/Furia/fide/furia_classic-logo_birman-green.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_classic-logo_birman-green.svg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -325,7 +307,7 @@
             }
         }
         if myBoard=="op12" {
-            background-image: url(gitHub + "/Furia/fide/furia_birman-gray2.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/fide/furia_birman-gray2.svg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -341,125 +323,6 @@
                 fill: @color;
             }
         }
-        if myBoard=="postA" {
-            background-image: url(gitHub + "/Furia/postercb/blue.jpg"), url(gitLab + "/Furia/postercb/blue.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #375472!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #B3BAC2 !important;
-                fill: @color;
-            }
-        }
-        if myBoard=="postB" {
-            background-image: url(gitHub + "/Furia/postercb/gray.jpg"), url(gitLab + "/Furia/postercb/gray.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #596B6F!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #B0B5B8 !important;
-                fill: @color;
-            }
-        }
-        if myBoard=="postC" {
-            background-image: url(gitHub + "/Furia/postercb/grape.jpg"), url(gitLab + "/Furia/postercb/grape.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #57536E!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #C9C3CF !important;
-                fill: @color;
-            }
-        }
-        if myBoard=="postD" {
-            background-image: url(gitHub + "/Furia/postercb/vine.jpg"), url(gitLab + "/Furia/postercb/vine.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #6F566B!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #D4CAD2 !important;
-                fill: @color;
-            }
-        }
-        if myBoard=="postE" {
-            background-image: url(gitHub + "/Furia/postercb/olive.jpg"), url(gitLab + "/Furia/postercb/olive.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #706756!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #D2CDC7 !important;
-                fill: @color;
-            }
-        }
-        if myBoard=="postF" {
-            background-image: url(gitHub + "/Furia/postercb/green.jpg"), url(gitLab + "/Furia/postercb/green.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #5B7353!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #D0D2C7 !important;
-                fill: @color;
-            }
-        }
-        if myBoard=="postG" {
-            background-image: url(gitHub + "/Furia/postercb/petrol.jpg"), url(gitLab + "/Furia/postercb/petrol.jpg")!important;
-
-            /*Coordinates*/
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #4C6B70!important;
-                fill: @color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #C4D2D3 !important;
-                fill: @color;
-            }
-        }
     }
 
     /*Pieces*/
@@ -469,126 +332,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(chesscom + "/alpha/150/bp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(chesscom + "/alpha/150/br.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(chesscom + "/alpha/150/bb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(chesscom + "/alpha/150/bq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + "/alpha/150/bk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(chesscom + "/alpha/150/wp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(chesscom + "/alpha/150/wr.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(chesscom + "/alpha/150/wb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(chesscom + "/alpha/150/wq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + "/alpha/150/wk.png")!important;
-        }
-    }
-    /*FURIA Stylized (Alpha)*/
-    if myPieces=="op3A" {
-        /*Pieces*/
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"] {
-            background-image: url(chesscom + "/alpha/150/bp.png")!important;
-        }
-        .piece.br,
-        .promotion-piece.br,
-        div [style*="br.png"] {
-            background-image: url(chesscom + "/alpha/150/br.png")!important;
-        }
-        .piece.bn,
-        .promotion-piece.bn,
-        div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/FURIA_black_knight.png"), url(gitLab + "/Furia/FURIA_black_knight.png")!important;
-        }
-        .piece.bb,
-        .promotion-piece.bb,
-        div [style*="bb.png"] {
-            background-image: url(chesscom + "/alpha/150/bb.png")!important;
-        }
-        .piece.bq,
-        .promotion-piece.bq,
-        div [style*="bq.png"] {
-            background-image: url(chesscom + "/alpha/150/bq.png")!important;
-        }
-        .piece.bk,
-        .promotion-piece.bk,
-        div [style*="bk.png"] {
-            background-image: url(chesscom + "/alpha/150/bk.png")!important;
-        }
-        .piece.wp,
-        .promotion-piece.wp,
-        div [style*="wp.png"] {
-            background-image: url(chesscom + "/alpha/150/wp.png")!important;
-        }
-        .piece.wr,
-        .promotion-piece.wr,
-        div [style*="wr.png"] {
-            background-image: url(chesscom + "/alpha/150/wr.png")!important;
-        }
-        .piece.wn,
-        .promotion-piece.wn,
-        div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/FURIA_white_knight.png"), url(gitLab + "/Furia/FURIA_white_knight.png")!important;
-        }
-        .piece.wb,
-        .promotion-piece.wb,
-        div [style*="wb.png"] {
-            background-image: url(chesscom + "/alpha/150/wb.png")!important;
-        }
-        .piece.wq,
-        .promotion-piece.wq,
-        div [style*="wq.png"] {
-            background-image: url(chesscom + "/alpha/150/wq.png")!important;
-        }
-        .piece.wk,
-        .promotion-piece.wk,
-        div [style*="wk.png"] {
-            background-image: url(chesscom + "/alpha/150/wk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/alpha/150/wk.png")!important;
         }
     }
     /*Nike X FURIA (Classic)*/
@@ -597,62 +396,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(chesscom + "/classic/150/bp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(chesscom + "/classic/150/br.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(chesscom + "/classic/150/bb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(chesscom + "/classic/150/bq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + "/classic/150/bk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(chesscom + "/classic/150/wp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(chesscom + "/classic/150/wr.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(chesscom + "/classic/150/wb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(chesscom + "/classic/150/wq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + "/classic/150/wk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wk.png")!important;
         }
     }
     /*Nike X FURIA (Mar Gelado)*/
@@ -661,62 +460,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(chesscom + "/icy_sea/150/br.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wr.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wk.png")!important;
         }
     }
     /*FURIA Stylized (Icy Sea)*/
@@ -725,74 +524,74 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(chesscom + "/icy_sea/150/br.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_icysea-bn.svg"), url(gitLab + "/Furia/svg/furia_icysea-bn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_black_knight.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + "/icy_sea/150/bk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wr.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_icysea-wn.svg"), url(gitLab + "/Furia/svg/furia_icysea-wn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_white_knight.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + "/icy_sea/150/wk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/icy_sea/150/wk.png")!important;
         }
     }
     if myPieces=="op4" {
         div [style*="wn.png"],
         .piece.wn,
         .promotion-piece.wn {
-            background-image: url(gitHub + "/Furia/furiaClassicRighRes-wn.png"), url(gitLab + "/Furia/furiaClassicRighRes-wn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-wn.png")!important;
         }
         div [style*="bn.png"],
         .piece.bn,
         .promotion-piece.bn {
-            background-image: url(gitHub + "/Furia/furiaClassicRighRes-bn.png"), url(gitLab + "/Furia/furiaClassicRighRes-bn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
         }
     }
     if myPieces=="op5" {
@@ -800,62 +599,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(chesscom + "/neo/150/bp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(chesscom + "/neo/150/br.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/furiaNeo_High-Res-bn.png"), url(gitLab + "/Furia/furiaNeo_High-Res-bn.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(chesscom + "/neo/150/bb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(chesscom + "/neo/150/bq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + "/neo/150/bk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(chesscom + "/neo/150/wp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(chesscom + "/neo/150/wr.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/furiaNeoHigh-Res1-wn.png"), url(gitLab + "/Furia/furiaNeoHigh-Res1-wn.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(chesscom + "/neo/150/wb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(chesscom + "/neo/150/wq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + "/neo/150/wk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png")!important;
         }
     }
     if myPieces=="op6" {
@@ -863,62 +662,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(chesscom + "/bases/150/bp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(chesscom + "/bases/150/br.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-bases-bn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-bases-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(chesscom + "/bases/150/bb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(chesscom + "/bases/150/bq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + "/bases/150/bk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(chesscom + "/bases/150/wp.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(chesscom + "/bases/150/wr.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-bases-wn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-bases-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(chesscom + "/bases/150/wb.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(chesscom + "/bases/150/wq.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + "/bases/150/wk.png")!important;
+            background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wk.png")!important;
         }
     }
     if myPieces=="op7" {
@@ -926,62 +725,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/Furia/beige/bp.png"), url(gitLab + "/Furia/beige/bp.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/Furia/beige/br.png"), url(gitLab + "/Furia/beige/br.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-path-border-beige-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/Furia/beige/bb.png"), url(gitLab + "/Furia/beige/bb.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/Furia/beige/bq.png"), url(gitLab + "/Furia/beige/bq.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/Furia/beige/bk.png"), url(gitLab + "/Furia/beige/bk.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/Furia/beige/wp.png"), url(gitLab + "/Furia/beige/wp.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/Furia/beige/wr.png"), url(gitLab + "/Furia/beige/wr.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-path-border-beige-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/Furia/beige/wb.png"), url(gitLab + "/Furia/beige/wb.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/Furia/beige/wq.png"), url(gitLab + "/Furia/beige/wq.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/Furia/beige/wk.png"), url(gitLab + "/Furia/beige/wk.png")!important;
+            background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/beige/wk.png")!important;
         }
     }
     if myPieces=="op8" {
@@ -989,62 +788,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bp.png"), url(gitLab + "/Furia/noborder/bp.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/Furia/noborder/br.png"), url(gitLab + "/Furia/noborder/br.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bb.png"), url(gitLab + "/Furia/noborder/bb.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bq.png"), url(gitLab + "/Furia/noborder/bq.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bk.png"), url(gitLab + "/Furia/noborder/bk.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wp.png"), url(gitLab + "/Furia/noborder/wp.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wr.png"), url(gitLab + "/Furia/noborder/wr.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-pure-beige-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wb.png"), url(gitLab + "/Furia/noborder/wb.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wq.png"), url(gitLab + "/Furia/noborder/wq.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wk.png"), url(gitLab + "/Furia/noborder/wk.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/wk.png")!important;
         }
     }
     if myPieces=="op8b" {
@@ -1052,62 +851,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bp.png"), url(gitLab + "/Furia/noborder/bp.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/Furia/noborder/br.png"), url(gitLab + "/Furia/noborder/br.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bb.png"), url(gitLab + "/Furia/noborder/bb.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bq.png"), url(gitLab + "/Furia/noborder/bq.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bk.png"), url(gitLab + "/Furia/noborder/bk.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wp.png"), url(gitLab + "/Furia/noborder/white/wp.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/white/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wr.png"), url(gitLab + "/Furia/noborder/white/wr.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/white/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-white-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-white-wn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/furia_NewStylized-pure-white-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wb.png"), url(gitLab + "/Furia/noborder/white/wb.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/white/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wq.png"), url(gitLab + "/Furia/noborder/white/wq.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/white/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wk.png"), url(gitLab + "/Furia/noborder/white/wk.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/noborder/white/wk.png")!important;
         }
     }
     if myPieces=="op9" {
@@ -1115,99 +914,99 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/merida/bp.svg"), url(gitLab + "/merida/bp.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/bp.svg")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/merida/br.svg"), url(gitLab + "/merida/br.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/br.svg")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-bn.svg"), url(gitLab + "/Furia/svg/meridaFuriaGrad-bn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/meridaFuriaGrad-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/merida/bb.svg"), url(gitLab + "/merida/bb.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/bb.svg")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/merida/bq.svg"), url(gitLab + "/merida/bq.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/bq.svg")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/merida/bk.svg"), url(gitLab + "/merida/bk.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/bk.svg")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/merida/wp.svg"), url(gitLab + "/merida/wp.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/wp.svg")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/merida/wr.svg"), url(gitLab + "/merida/wr.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/wr.svg")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-wn.svg"), url(gitLab + "/Furia/svg/meridaFuriaGrad-wn.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/svg/meridaFuriaGrad-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/merida/wb.svg"), url(gitLab + "/merida/wb.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/wb.svg")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/merida/wq.svg"), url(gitLab + "/merida/wq.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/wq.svg")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/merida/wk.svg"), url(gitLab + "/merida/wk.svg")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/merida/wk.svg")!important;
         }
     }
     /*extra rules*/
     if myBoard=="op1" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
         }
     }
     if myBoard=="op2" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important;
         }
     }
     if myBoard=="op3" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
         }
     }
     if myBoard=="op4" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important;
         }
     }
     if myBoard=="op5" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important;
         }
     }
     if myBoard=="op6" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -1223,7 +1022,7 @@
     if myBoard=="op7" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -1239,21 +1038,21 @@
     if myBoard=="op8" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important;
         }
     }
     if myBoard=="op9" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background: url(gitHub + "/Furia/wood-white-bar_sp.png"), url(gitLab + "/Furia/wood-white-bar_sp.png")!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-white-bar_sp.png)!important;
             background-color: #F5CEA2 !important;
         }
         .evaluation-bar-black {
-            background: url(gitHub + "/Furia/wood-black-bar_sp.png"), url(gitLab + "/Furia/wood-black-bar_sp.png")!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-black-bar_sp.png)!important;
             background-color: #BA7541 !important;
         }
         .evaluation-bar-bar {
@@ -1263,15 +1062,15 @@
     if myBoard=="op9b" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
-            background: url(gitHub + "/Furia/wood-white-bar3.png"), url(gitLab + "/Furia/wood-white-bar3.png")!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-white-bar3.png)!important;
             background-color: #F5CEA2 !important;
         }
         .evaluation-bar-black {
-            background: url(gitHub + "/Furia/wood-black-bar3.png"), url(gitLab + "/Furia/wood-black-bar3.png")!important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Furia/wood-black-bar3.png)!important;
             background-color: #BA7541 !important;
         }
         .evaluation-bar-bar {
@@ -1281,7 +1080,7 @@
     if myBoard=="op10" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -1297,7 +1096,7 @@
     if myBoard=="op11" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -1313,7 +1112,7 @@
     if myBoard=="op12" {
         /*Small board for game preview*/
         div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+            background: url("https://github.com/FSA1/Styles/raw/main/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important;
         }
         /*Evaluation Bar*/
         .evaluation-bar-white {
@@ -1326,124 +1125,11 @@
             opacity: 0.8;
         }
     }
-    if myBoard=="postA" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #BCC3CB !important;
-        }
-        .evaluation-bar-black {
-            background-color: #3F5C7A !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    if myBoard=="postB" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #C7D1D2 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #5C6D74 !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    if myBoard=="postC" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #D1C9D6 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #57536E !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    if myBoard=="postD" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #DAD1D6 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #71586B !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    if myBoard=="postE" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #CEC9C3 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #726958 !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    if myBoard=="postF" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #D2D4C9 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #5D7555 !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    if myBoard=="postG" {
-        /*Small board for game preview*/
-        div [style*="40.png"][class="game-preview-component"] {
-            background: url(gitHub + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat , url(gitLab + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat !important
-        }
-        /*Evaluation Bar*/
-        .evaluation-bar-white {
-            background-color: #C4D2D3 !important;
-        }
-        .evaluation-bar-black {
-            background-color: #4C6B70 !important;
-        }
-        .evaluation-bar-bar {
-            opacity: 0.8;
-        }
-    }
-    /*wallpaper (secondary server not defined here to save memory but gitLab links are available)*/
+    /*wallpaper*/
     body {
         --op10wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard_1920px.jpg);
         --op11wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard3_1920px.jpg);
         --op12wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard4_1920px.jpg);
-        --postwall: url(https://github.com/FSA1/Styles/raw/main/wallpaper/concrete/3590067.jpg);
     }
     if myWallpaper=="op1" {
         body:after {
@@ -1455,10 +1141,7 @@
             }
             if myBoard=="op12" {
                 background: var(--op12wall) center center!important;
-                /*filter: brightness(100%)!important;*/
-            }
-            if myBoard=="postA" || myBoard=="postB" || myBoard=="postC" || myBoard=="postD" || myBoard=="postE" || myBoard=="postF" || myBoard=="postG" {
-                background: var(--postwall) center center!important;
+                filter: brightness(100%)!important;
             }
             background-size: cover!important;
             -webkit-background-size: @background-size;
@@ -1475,9 +1158,6 @@
             }
             if myBoard=="op12" {
                 background: var(--op12wall) !important;
-            }
-            if myBoard=="postA" || myBoard=="postB" || myBoard=="postC" || myBoard=="postD" || myBoard=="postE" || myBoard=="postF" || myBoard=="postG" {
-                background: var(--postwall) !important;
             }
         }
         @media (max-width: 959px) {
@@ -1668,6 +1348,15 @@
                 background-color: #00e1f6 !important;
             }
         }
+        if myBoard=="op11" {
+            .move-square,
+            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                background-color: #aef920!important;
+            }
+            .selection-square {
+                background-color: #00fff3 !important;
+            }
+        }
         if myBoard=="op7"|| myBoard=="op9" {
             .move-square,
             .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
@@ -1684,78 +1373,6 @@
             }
             .selection-square {
                 background-color: #c96d45 !important;
-            }
-        }
-        if myBoard=="op11" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #aef920!important;
-            }
-            .selection-square {
-                background-color: #00fff3 !important;
-            }
-        }
-        if myBoard=="postA" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #00c3ff!important;
-            }
-            .selection-square {
-                background-color: #275edf !important;
-            }
-        }
-        if myBoard=="postB" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #1fb7ce!important;
-            }
-            .selection-square {
-                background-color: #005393 !important;
-            }
-        }
-        if myBoard=="postC" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #6d7df6!important;
-            }
-            .selection-square {
-                background-color: #7d27a5 !important;
-            }
-        }
-        if myBoard=="postD" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #d93e9d!important;
-            }
-            .selection-square {
-                background-color: #a054c4 !important;
-            }
-        }
-        if myBoard=="postE" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #e8c741!important;
-            }
-            .selection-square {
-                background-color: #a8c180 !important;
-            }
-        }
-        if myBoard=="postF" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #e8e041!important;
-            }
-            .selection-square {
-                background-color: rgb(32, 164, 111) !important;
-            }
-        }
-        if myBoard=="postG" {
-            .move-square,
-            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background-color: #41cfe8!important;
-            }
-            .selection-square {
-                background-color: rgb(0, 155, 159) !important;
             }
         }
     }
