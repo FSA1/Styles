@@ -46,7 +46,7 @@
             "Merida (Sombreado)": "op9",
             "Desativado": "op0",
         }
-		
+
 @var    checkbox    enableExtraSettings   "Configurações (chave geral)" 1
 
 @var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
@@ -89,13 +89,10 @@
 
     /*The beautify function may cause an error by joining the following variables into a single line.
     Just revert the changes to make it work again.*/
-    
     gitHub='https://github.com/FSA1/Styles/raw/main'
-    
-    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main'
-    
+
     chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
-    
+
     /*Chessboard*/
     div[class^="board v-board disabled rounded"],
     div[class^="daily-puzzle-board"],
@@ -124,14 +121,16 @@
     chess-board[id^="board-blank"],
     chess-board[id^="board-vs-personalities"],
     div[id*="chess_com_emailboard_"] {
-        if enableBoardSettings {
-            filter: sepia(sepiaBoard) hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o--filter: @filter;
+        if enableExtraSettings=="1" {
+            if enableBoardSettings {
+                filter: sepia(sepiaBoard) hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+            }
         }
         if myBoard=="op1" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -148,7 +147,7 @@
             }
         }
         if myBoard=="op2" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -164,7 +163,7 @@
             }
         }
         if myBoard=="op3" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -180,7 +179,7 @@
             }
         }
         if myBoard=="op4" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -196,7 +195,7 @@
             }
         }
         if myBoard=="op5" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -212,7 +211,7 @@
             }
         }
         if myBoard=="op6" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -228,7 +227,7 @@
             }
         }
         if myBoard=="op7" {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -244,7 +243,7 @@
             }
         }
         if myBoard=="op8" {
-            background-image: url(gitHub + "/Furia/furia-cb-blue.png"), url(gitLab + "/Furia/furia-cb-blue.png")!important;
+            background-image: url(gitHub + "/Furia/furia-cb-blue.png")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -261,7 +260,7 @@
             }
         }
         if myBoard=="op9" {
-            background-image: url(gitHub + "/Furia/furia_cb-wood_sp.jpg"), url(gitLab + "/Furia/furia_cb-wood_sp.jpg")!important;
+            background-image: url(gitHub + "/Furia/furia_cb-wood_sp.jpg")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -277,7 +276,7 @@
             }
         }
         if myBoard=="op9b" {
-            background-image: url(gitHub + "/Furia/furia_cb-wood3.jpg"), url(gitLab + "/Furia/furia_cb-wood3.jpg")!important;
+            background-image: url(gitHub + "/Furia/furia_cb-wood3.jpg")!important;
             /*Coordinates*/
             text.coordinate-light,
             div.number.coords-light,
@@ -292,7 +291,6 @@
                 fill: @color;
             }
         }
-        /*For options 10, 11 , 12 I could not use double server for images because this method sets two imaages at the same time, ruining transparent effect*/
         if myBoard=="op10" {
             background-image: url(gitHub + "/Furia/fide/furia_classic-logo_birman-blue.svg")!important;
 
@@ -345,7 +343,7 @@
             }
         }
         if myBoard=="postA" {
-            background-image: url(gitHub + "/Furia/postercb/blue.jpg"), url(gitLab + "/Furia/postercb/blue.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/blue.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -362,7 +360,7 @@
             }
         }
         if myBoard=="postB" {
-            background-image: url(gitHub + "/Furia/postercb/gray.jpg"), url(gitLab + "/Furia/postercb/gray.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/gray.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -379,7 +377,7 @@
             }
         }
         if myBoard=="postC" {
-            background-image: url(gitHub + "/Furia/postercb/grape.jpg"), url(gitLab + "/Furia/postercb/grape.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/grape.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -396,7 +394,7 @@
             }
         }
         if myBoard=="postD" {
-            background-image: url(gitHub + "/Furia/postercb/vine.jpg"), url(gitLab + "/Furia/postercb/vine.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/vine.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -413,7 +411,7 @@
             }
         }
         if myBoard=="postE" {
-            background-image: url(gitHub + "/Furia/postercb/olive.jpg"), url(gitLab + "/Furia/postercb/olive.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/olive.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -430,7 +428,7 @@
             }
         }
         if myBoard=="postF" {
-            background-image: url(gitHub + "/Furia/postercb/green.jpg"), url(gitLab + "/Furia/postercb/green.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/green.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -447,7 +445,7 @@
             }
         }
         if myBoard=="postG" {
-            background-image: url(gitHub + "/Furia/postercb/petrol.jpg"), url(gitLab + "/Furia/postercb/petrol.jpg")!important;
+            background-image: url(gitHub + "/Furia/postercb/petrol.jpg")!important;
 
             /*Coordinates*/
             text.coordinate-light,
@@ -482,7 +480,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -512,7 +510,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -546,7 +544,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/FURIA_black_knight.png"), url(gitLab + "/Furia/FURIA_black_knight.png")!important;
+            background-image: url(gitHub + "/Furia/FURIA_black_knight.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -576,7 +574,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/FURIA_white_knight.png"), url(gitLab + "/Furia/FURIA_white_knight.png")!important;
+            background-image: url(gitHub + "/Furia/FURIA_white_knight.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -610,7 +608,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -640,7 +638,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -674,7 +672,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -704,7 +702,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -738,7 +736,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_icysea-bn.svg"), url(gitLab + "/Furia/svg/furia_icysea-bn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_icysea-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -768,7 +766,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_icysea-wn.svg"), url(gitLab + "/Furia/svg/furia_icysea-wn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_icysea-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -790,12 +788,12 @@
         div [style*="wn.png"],
         .piece.wn,
         .promotion-piece.wn {
-            background-image: url(gitHub + "/Furia/furiaClassicRighRes-wn.png"), url(gitLab + "/Furia/furiaClassicRighRes-wn.png")!important;
+            background-image: url(gitHub + "/Furia/furiaClassicRighRes-wn.png")!important;
         }
         div [style*="bn.png"],
         .piece.bn,
         .promotion-piece.bn {
-            background-image: url(gitHub + "/Furia/furiaClassicRighRes-bn.png"), url(gitLab + "/Furia/furiaClassicRighRes-bn.png")!important;
+            background-image: url(gitHub + "/Furia/furiaClassicRighRes-bn.png")!important;
         }
     }
     if myPieces=="op5" {
@@ -813,7 +811,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/furiaNeo_High-Res-bn.png"), url(gitLab + "/Furia/furiaNeo_High-Res-bn.png")!important;
+            background-image: url(gitHub + "/Furia/furiaNeo_High-Res-bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -843,7 +841,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/furiaNeoHigh-Res1-wn.png"), url(gitLab + "/Furia/furiaNeoHigh-Res1-wn.png")!important;
+            background-image: url(gitHub + "/Furia/furiaNeoHigh-Res1-wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -876,7 +874,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-bases-bn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -906,7 +904,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-bases-wn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -929,62 +927,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/Furia/beige/bp.png"), url(gitLab + "/Furia/beige/bp.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/Furia/beige/br.png"), url(gitLab + "/Furia/beige/br.png")!important;
+            background-image: url(gitHub + "/Furia/beige/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/Furia/beige/bb.png"), url(gitLab + "/Furia/beige/bb.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/Furia/beige/bq.png"), url(gitLab + "/Furia/beige/bq.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/Furia/beige/bk.png"), url(gitLab + "/Furia/beige/bk.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/Furia/beige/wp.png"), url(gitLab + "/Furia/beige/wp.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/Furia/beige/wr.png"), url(gitLab + "/Furia/beige/wr.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/Furia/beige/wb.png"), url(gitLab + "/Furia/beige/wb.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/Furia/beige/wq.png"), url(gitLab + "/Furia/beige/wq.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/Furia/beige/wk.png"), url(gitLab + "/Furia/beige/wk.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wk.png")!important;
         }
     }
     if myPieces=="op8" {
@@ -992,62 +990,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bp.png"), url(gitLab + "/Furia/noborder/bp.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/Furia/noborder/br.png"), url(gitLab + "/Furia/noborder/br.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bb.png"), url(gitLab + "/Furia/noborder/bb.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bq.png"), url(gitLab + "/Furia/noborder/bq.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bk.png"), url(gitLab + "/Furia/noborder/bk.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wp.png"), url(gitLab + "/Furia/noborder/wp.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wr.png"), url(gitLab + "/Furia/noborder/wr.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wb.png"), url(gitLab + "/Furia/noborder/wb.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wq.png"), url(gitLab + "/Furia/noborder/wq.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/wk.png"), url(gitLab + "/Furia/noborder/wk.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/wk.png")!important;
         }
     }
     if myPieces=="op8b" {
@@ -1055,62 +1053,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bp.png"), url(gitLab + "/Furia/noborder/bp.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/Furia/noborder/br.png"), url(gitLab + "/Furia/noborder/br.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bb.png"), url(gitLab + "/Furia/noborder/bb.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bq.png"), url(gitLab + "/Furia/noborder/bq.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/bk.png"), url(gitLab + "/Furia/noborder/bk.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wp.png"), url(gitLab + "/Furia/noborder/white/wp.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/white/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wr.png"), url(gitLab + "/Furia/noborder/white/wr.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/white/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-white-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-white-wn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-white-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wb.png"), url(gitLab + "/Furia/noborder/white/wb.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/white/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wq.png"), url(gitLab + "/Furia/noborder/white/wq.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/white/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/Furia/noborder/white/wk.png"), url(gitLab + "/Furia/noborder/white/wk.png")!important;
+            background-image: url(gitHub + "/Furia/noborder/white/wk.png")!important;
         }
     }
     if myPieces=="op9" {
@@ -1118,100 +1116,101 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(gitHub + "/merida/bp.svg"), url(gitLab + "/merida/bp.svg")!important;
+            background-image: url(gitHub + "/merida/bp.svg")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(gitHub + "/merida/br.svg"), url(gitLab + "/merida/br.svg")!important;
+            background-image: url(gitHub + "/merida/br.svg")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-bn.svg"), url(gitLab + "/Furia/svg/meridaFuriaGrad-bn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-bn.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(gitHub + "/merida/bb.svg"), url(gitLab + "/merida/bb.svg")!important;
+            background-image: url(gitHub + "/merida/bb.svg")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(gitHub + "/merida/bq.svg"), url(gitLab + "/merida/bq.svg")!important;
+            background-image: url(gitHub + "/merida/bq.svg")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(gitHub + "/merida/bk.svg"), url(gitLab + "/merida/bk.svg")!important;
+            background-image: url(gitHub + "/merida/bk.svg")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(gitHub + "/merida/wp.svg"), url(gitLab + "/merida/wp.svg")!important;
+            background-image: url(gitHub + "/merida/wp.svg")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(gitHub + "/merida/wr.svg"), url(gitLab + "/merida/wr.svg")!important;
+            background-image: url(gitHub + "/merida/wr.svg")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-wn.svg"), url(gitLab + "/Furia/svg/meridaFuriaGrad-wn.svg")!important;
+            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-wn.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(gitHub + "/merida/wb.svg"), url(gitLab + "/merida/wb.svg")!important;
+            background-image: url(gitHub + "/merida/wb.svg")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(gitHub + "/merida/wq.svg"), url(gitLab + "/merida/wq.svg")!important;
+            background-image: url(gitHub + "/merida/wq.svg")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(gitHub + "/merida/wk.svg"), url(gitLab + "/merida/wk.svg")!important;
+            background-image: url(gitHub + "/merida/wk.svg")!important;
         }
     }
     /*master switch (to be used in case of performance issues by low-end PCs)*/
     if enableExtraSettings=="1" {
+        /*extra rules*/
         if myBoard=="op1" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op2" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op3" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op4" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op5" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op6" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1227,7 +1226,7 @@
         if myBoard=="op7" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1243,21 +1242,21 @@
         if myBoard=="op8" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op9" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
-                background: url(gitHub + "/Furia/wood-white-bar_sp.png"), url(gitLab + "/Furia/wood-white-bar_sp.png")!important;
+                background: url(gitHub + "/Furia/wood-white-bar_sp.png")!important;
                 background-color: #F5CEA2 !important;
             }
             .evaluation-bar-black {
-                background: url(gitHub + "/Furia/wood-black-bar_sp.png"), url(gitLab + "/Furia/wood-black-bar_sp.png")!important;
+                background: url(gitHub + "/Furia/wood-black-bar_sp.png")!important;
                 background-color: #BA7541 !important;
             }
             .evaluation-bar-bar {
@@ -1267,15 +1266,15 @@
         if myBoard=="op9b" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
-                background: url(gitHub + "/Furia/wood-white-bar3.png"), url(gitLab + "/Furia/wood-white-bar3.png")!important;
+                background: url(gitHub + "/Furia/wood-white-bar3.png")!important;
                 background-color: #F5CEA2 !important;
             }
             .evaluation-bar-black {
-                background: url(gitHub + "/Furia/wood-black-bar3.png"), url(gitLab + "/Furia/wood-black-bar3.png")!important;
+                background: url(gitHub + "/Furia/wood-black-bar3.png")!important;
                 background-color: #BA7541 !important;
             }
             .evaluation-bar-bar {
@@ -1285,7 +1284,7 @@
         if myBoard=="op10" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1301,7 +1300,7 @@
         if myBoard=="op11" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1317,7 +1316,7 @@
         if myBoard=="op12" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1333,7 +1332,7 @@
         if myBoard=="postA" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1349,7 +1348,7 @@
         if myBoard=="postB" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1365,7 +1364,7 @@
         if myBoard=="postC" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1381,7 +1380,7 @@
         if myBoard=="postD" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1397,7 +1396,7 @@
         if myBoard=="postE" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1413,7 +1412,7 @@
         if myBoard=="postF" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1429,7 +1428,7 @@
         if myBoard=="postG" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1442,7 +1441,7 @@
                 opacity: 0.8;
             }
         }
-        /*wallpaper (secondary server not defined here to save memory but gitLab links are available)*/
+        /*wallpaper*/
         body {
             --op10wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard_1920px.jpg);
             --op11wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard3_1920px.jpg);
