@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.18
+@version        3.0.19
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -78,7 +78,7 @@
 @var    color    bExColor  "cor extra pretas"   #0C55A0
 @var    color    wExColor  "cor extra brancas"   #E01010
 
-@var    checkbox    enableCapivaras "Capivaras como Cavalos (Neo)" 1
+@var    checkbox    enableCapivaras "Capivaras como Cavalos" 1
 @var    checkbox    enableHorizInvert    "Capivaras p/ direita" 0
 @var    select      myHighlight    "Escolher destaque" {
             "Temático*": "op1",
@@ -888,12 +888,17 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/mg/capivar-bn.png'), url(gitLab + '/capivara/mg/capivar-bn.png')!important;
+            if enableCapivaras {
+                if enableHorizInvert {
+                    background-image: url(gitHub + '/capivara/mg/capivar-bn.png'), url(gitLab + '/capivara/mg/capivar-bn.png')!important;
+                }
+                else {
+                    background-image: url(gitHub + '/capivara/mg/flip-capivar-bn.png'), url(gitLab + '/capivara/mg/flip-capivar-bn.png')!important;
+                }
             }
             else {
-                background-image: url(gitHub + '/capivara/mg/flip-capivar-bn.png'), url(gitLab + '/capivara/mg/flip-capivar-bn.png')!important;
-            }
+                    background-image: url(chesscom + '/icy_sea/150/bn.png')!important;
+                }
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -931,13 +936,17 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-
-            if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/mg/capivar-wn.png'), url(gitLab + '/capivara/mg/capivar-wn.png')!important;
+            if enableCapivaras {
+                if enableHorizInvert {
+                    background-image: url(gitHub + '/capivara/mg/capivar-wn.png'), url(gitLab + '/capivara/mg/capivar-wn.png')!important;
+                }
+                else {
+                    background-image: url(gitHub + '/capivara/mg/flip-capivar-wn.png'), url(gitLab + '/capivara/mg/flip-capivar-wn.png')!important;
+                }
             }
-            else {
-                background-image: url(gitHub + '/capivara/mg/flip-capivar-wn.png'), url(gitLab + '/capivara/mg/flip-capivar-wn.png')!important;
-            }
+            else{
+                background-image: url(chesscom + '/icy_sea/150/wn.png')!important;
+                }
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -978,12 +987,17 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/alpha/capivara-bn.png'), url(gitLab + '/capivara/alpha/capivara-bn.png')!important;
+            if enableCapivaras {
+                if enableHorizInvert {
+                    background-image: url(gitHub + '/capivara/alpha/capivara-bn.png'), url(gitLab + '/capivara/alpha/capivara-bn.png')!important;
+                }
+                else {
+                    background-image: url(gitHub + '/capivara/alpha/flip-capivara-bn.png'), url(gitLab + '/capivara/alpha/flip-capivara-bn.png')!important;
+                }
             }
-            else {
-                background-image: url(gitHub + '/capivara/alpha/flip-capivara-bn.png'), url(gitLab + '/capivara/alpha/flip-capivara-bn.png')!important;
-            }
+            else{
+                background-image: url(chesscom + '/alpha/150/bn.png')!important;
+                }
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -1015,12 +1029,17 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/alpha/capivara-wn.png'), url(gitLab + '/capivara/alpha/capivara-wn.png')!important;
+            if enableCapivaras {
+                if enableHorizInvert {
+                    background-image: url(gitHub + '/capivara/alpha/capivara-wn.png'), url(gitLab + '/capivara/alpha/capivara-wn.png')!important;
+                }
+                else {
+                    background-image: url(gitHub + '/capivara/alpha/flip-capivara-wn.png'), url(gitLab + '/capivara/alpha/flip-capivara-wn.png')!important;
+                }
             }
-            else {
-                background-image: url(gitHub + '/capivara/alpha/flip-capivara-wn.png'), url(gitLab + '/capivara/alpha/flip-capivara-wn.png')!important;
-            }
+            else{
+                background-image: url(chesscom + '/alpha/150/wn.png')!important;
+                }
         }
         .piece.wb,
         .promotion-piece.wb,
