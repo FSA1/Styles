@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.18
+@version        3.0.17
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -19,7 +19,7 @@
             "SR verde cinz. (animado)": "op1SR",
             "SR verde cinz. (estático)": "op1SRE",
             "SR azul madeira (estático)": "op1SREW",
-            "SR verde-amar. mad. (est.)": "op1SREWby",
+            "SR azul-amar. madeira (est.)": "op1SREWby",
             "Bonus ❤ jp1 azul": "op8",
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
@@ -45,7 +45,6 @@
             "personalizado (Neo)": "personalizadoNeo",
             "personalizado Natal (Neo)": "personalizadoNatalNeo",
             "Preto (Mar Gelado)": "marGelado",
-            "Preto Memes (Mar Gelado)": "marGeladoM",
             "Preto (Alpha/Clássico)": "alp",
             "Desativado": "op0"
         }
@@ -67,7 +66,6 @@
             "personalizado (Neo)": "personalizadoNeo",
             "personalizado Natal (Neo)": "personalizadoNatalNeo",
             "Branco (Mar Gelado)": "marGelado",
-            "Branco Memes (Mar Gelado)": "marGeladoM",
             "Branco (Alpha/Clássico)": "alp",
             "Desativado": "op0"
         }
@@ -80,6 +78,7 @@
 
 @var    checkbox    enableCapivaras "Capivaras como Cavalos (Neo)" 1
 @var    checkbox    enableHorizInvert    "Capivaras p/ direita" 0
+
 @var    select      myHighlight    "Escolher destaque" {
             "Temático*": "op1",
             "Cores": "op2",
@@ -89,6 +88,11 @@
             "Temática*": "op1",
             "Padrão": "op0",
         }
+		
+@var    checkbox    enableExtras   "Configurações Extras (Chave Geral - Desabilite se o PC for lento)" 1"]
+
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
 
 @var    select      wallpaperSource    "Fonte do Wallpaper" {
             "Pré-configurado*": "op1",		
@@ -101,34 +105,13 @@
         }
 @var    text     userWallpaper    "link da imagem de fundo (entre aspas simples). Use aspas vazias para somente cor"   "'https://github.com/FSA1/Styles/raw/main/capivara/wall/naturebg.jpg'"
 
-@var    checkbox    enableBGfilters "Filtros do Wallpaper (desabilite se o PC for lento)" 1
+@var    checkbox    enableBGfilters "Filtros do Wallpaper" 1
 @var    color    backgroundCol  "Cor de Fundo"   #52b19b
 @var    range    brightnessWall  "Brilho (Wallpaper)" [80, 0, 300, 5, "%"]
 @var    range    contrastWall  "Contraste (Wallpaper)" [100, 5, 300, 5, "%"]
 @var    range    saturateWall  "Saturação (Wallpaper)" [100, 0, 300, 5, "%"]
 @var    range    sepiaWall  "Sepia (Wallpaper)" [0, 0, 100, 5, "%"]
 @var    range    hueRotationWall  "Tonalidade (Wallpaper)" [0, 0, 355, 5, "deg"]
-
-@var    checkbox    enableShadow    "Habilitar sombras" 0
-@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
-@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
-@var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
-@var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
-@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
-@var    range    sepiaB  "Sepia (pretas)" [0, 0, 100, 5, "%"]
-@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
-@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
-@var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
-@var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
-@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
-@var    range    sepiaW  "Sepia (brancas)" [0, 0, 100, 5, "%"]
-@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
-@var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
-@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
-@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
-@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
-@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
-@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*The beautify function may cause an error by joining the following variables into a single line.
@@ -164,64 +147,58 @@
     chess-board[id^="board-blank"],
     chess-board[id^="board-vs-personalities"],
     div[id*="chess_com_emailboard_"] {
-        if enableBoardSettings {
-            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o-filter: @filter;
-        }
         if myBoard=="op1" {
-            background-image: url(gitHub + '/capivara/capivara-cb2.png'), url(gitLab + '/capivara/capivara-cb2.png')!important;
+            background-image: url(gitHub + '/capivara/capivara-cb2.png')!important;
         }
         if myBoard=="op1SR" {
-            background-image: url(gitHub + '/krikor/speedruim/speedruimcb.webp'), url(gitLab + '/krikor/speedruim/speedruimcb.webp')!important;
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb.webp')!important;
         }
         if myBoard=="op1SREW" {
-            background-image: url(gitHub + '/krikor/speedruim/speedruimcb-wood-blue.jpg'), url(gitLab + '/krikor/speedruim/speedruimcb-wood-blue.jpg')!important;
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb-wood-blue.jpg')!important;
         }
         if myBoard=="op1SREWby" {
             background-image: url(gitHub + '/krikor/speedruim/speedruimcb-wood-g-y.jpg')!important;
         }
         if myBoard=="op1SRE" {
-            background-image: url(gitHub + '/krikor/speedruim/speedruimcb.png'), url(gitLab + '/krikor/speedruim/speedruimcb.png')!important;
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb.png')!important;
         }
         if myBoard=="op2" {
-            background-image: url(gitHub + '/capivara/capivaraV4-cb.png'), url(gitLab + '/capivara/capivaraV4-cb.png')!important;
+            background-image: url(gitHub + '/capivara/capivaraV4-cb.png')!important;
         }
         if myBoard=="op3" {
-            background-image: url(gitHub + '/capivara/capivara_cb_lg.png'), url(gitLab + '/capivara/capivara_cb_lg.png')!important;
+            background-image: url(gitHub + '/capivara/capivara_cb_lg.png')!important;
         }
         if myBoard=="op4" {
-            background-image: url(gitHub + '/capivara/capivaraV7c-cb.png'), url(gitLab + '/capivara/capivaraV7c-cb.png')!important;
+            background-image: url(gitHub + '/capivara/capivaraV7c-cb.png')!important;
         }
         if myBoard=="op5" {
-            background-image: url(gitHub + '/capivara/capivaraV6_cb.png'), url(gitLab + '/capivara/capivaraV6_cb.png')!important;
+            background-image: url(gitHub + '/capivara/capivaraV6_cb.png')!important;
         }
         if myBoard=="op6" {
-            background-image: url(gitHub + '/capivara/capivara_wood_cb.jpg'), url(gitLab + '/capivara/capivara_wood_cb.jpg')!important;
+            background-image: url(gitHub + '/capivara/capivara_wood_cb.jpg')!important;
         }
         if myBoard=="op7" {
-            background-image: url(gitHub + '/capivara/capivaraV4blueSp-cb.png'), url(gitLab + '/capivara/capivaraV4blueSp-cb.png')!important;
+            background-image: url(gitHub + '/capivara/capivaraV4blueSp-cb.png')!important;
         }
         if myBoard=="op8" {
-            background-image: url(gitHub + '/jppeixoto/jppuzzles_cb1.png'), url(gitLab + '/jppeixoto/jppuzzles_cb1.png')!important;
+            background-image: url(gitHub + '/jppeixoto/jppuzzles_cb1.png')!important;
         }
         if myBoard=="op8b" || myBoard=="op8c" {
             if myBoard=="op8b" {
-                background-image: url(gitHub + '/jppeixoto/lovepuzzles_alt_1.png'), url(gitLab + '/jppeixoto/lovepuzzles_alt_1.png')!important;
+                background-image: url(gitHub + '/jppeixoto/lovepuzzles_alt_1.png')!important;
             }
             else {
-                background-image: url(gitHub + '/jppeixoto/lovepuzzles_clean.png'), url(gitLab + '/jppeixoto/lovepuzzles_clean.png')!important;
+                background-image: url(gitHub + '/jppeixoto/lovepuzzles_clean.png')!important;
             }
         }
         if myBoard=="op9" {
-            background-image: url(gitHub + '/jppeixoto/jpanimegirlcb20-green.webp'), url(gitLab + '/jppeixoto/jpanimegirlcb20-green.webp')!important;
+            background-image: url(gitHub + '/jppeixoto/jpanimegirlcb20-green.webp')!important;
         }
         if myBoard=="op9a" {
-            background-image: url(gitHub + '/jppeixoto/jpanimegirlcb20-aqua.webp'), url(gitLab + '/jppeixoto/jpanimegirlcb20-aqua.webp')!important;
+            background-image: url(gitHub + '/jppeixoto/jpanimegirlcb20-aqua.webp')!important;
         }
         if myBoard=="op10" {
-            background-image: url(gitHub + '/jppeixoto/jplovepuzzles_Natal_over.png'), url(gitLab + '/jppeixoto/jplovepuzzles_Natal_over.png')!important;
+            background-image: url(gitHub + '/jppeixoto/jplovepuzzles_Natal_over.png')!important;
         }
     }
     
@@ -352,7 +329,7 @@
             .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
 
             if myHighlight=="op1" {
-                background: url(gitHub + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
             }
                 background-color: #91ff00!important;
                 opacity: 0.5!important;
@@ -382,7 +359,7 @@
             .move-square,
             .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                if myHighlight=="op1" {
-                    background: url(gitHub + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
+                    background: url(gitHub + '/capivara/hl/grass-hl.gif') 0% 0% / 100% 100% no-repeat !important;
                 }
                 background-color: #91ff00!important;
                 opacity: 0.5!important;
@@ -489,7 +466,7 @@
         if myHighlight=="op1" {
             .move-square,
             .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background: url(gitHub + '/capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + '/capivara/hl/grass-hl-blue.gif') 0% 0% / 100% 100% no-repeat !important;
                 background-color: #00e1ff!important;
                 opacity: 0.5!important;
             }
@@ -528,7 +505,7 @@
             .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
 
             if myHighlight=="op1" {
-                    background: url(gitHub + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
+                    background: url(gitHub + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
                 }
                     background-color: #00d3f7f0 !important;
                     opacity: 0.6 !important;
@@ -557,7 +534,7 @@
         if myHighlight=="op1" {
             .move-square,
             .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
-                background: url(gitHub + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat, url(gitLab + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + '/jppeixoto/hl-1.gif') 0% 0% / 100% 100% no-repeat !important;
                 background-color: #00d3f7f0!important;
                 opacity: 0.6 !important;
             }
@@ -665,29 +642,19 @@
                 background-color: #5C8899 !important;
             }
         }
-        if myBoard=="op1SREW" {
+        if  myBoard=="op1SREW" {
             .evaluation-bar-white {
-                background: url(gitHub + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat, url(gitLab + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat !important;
                 background-color: #AEDDF1 !important;
             }
             .evaluation-bar-black {
-                background: url(gitHub + '/krikor/speedruim/eval-white.png') 0% 0% / 100% 100% no-repeat, url(gitHub + '/krikor/speedruim/eval-white.png') 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + '/krikor/speedruim/eval-white.png') 0% 0% / 100% 100% no-repeat !important;
                 background-color: #4C8FAA !important;
-            }
-        }
-        if myBoard=="op1SREWby" {
-            .evaluation-bar-white {
-                background: url(gitHub + '/krikor/speedruim/eval-woodby-w.jpg') 0% 0% / 100% 100% no-repeat, url(gitLab + '/krikor/speedruim/eval-woodby-b.jpg') 0% 0% / 100% 100% no-repeat !important;
-                background-color: #f1daae !important;
-            }
-            .evaluation-bar-black {
-                background: url(gitHub + '/krikor/speedruim/eval-woodby-b.jpg') 0% 0% / 100% 100% no-repeat, url(gitHub + '/krikor/speedruim/eval-woodby-w.jpg') 0% 0% / 100% 100% no-repeat !important;
-                background-color: #4ba686 !important;
             }
         }
         if myBoard=="op2" {
             .evaluation-bar-white {
-                background-color: #f1daae !important;
+                background-color: #EFF0D2 !important;
             }
             .evaluation-bar-black {
                 background-color: #759B51 !important;
@@ -711,11 +678,11 @@
         }
         if myBoard=="op6" {
             .evaluation-bar-white {
-                background: url(gitHub + '/capivara/wood-white-bar.png'), url(gitLab + '/capivara/wood-white-bar.png')!important;
+                background: url(gitHub + '/capivara/wood-white-bar.png')!important;
                 background-color: #F5CEA2 !important;
             }
             .evaluation-bar-black {
-                background: url(gitHub + '/capivara/wood-black-bar.png'), url(gitLab + '/capivara/wood-black-bar.png')!important;
+                background: url(gitHub + '/capivara/wood-black-bar.png')!important;
                 background-color: #BA7541 !important;
             }
         }
@@ -743,137 +710,43 @@
                 background-color: #358CD7 !important;
             }
         }
-
-
-    if myBoard=="op9" || myBoard=="op9a" || myBoard=="op10" {
-        if myBoard=="op9"{
-            .evaluation-bar-white {
-                background-color: #AAE3D2 !important;
-            }
-            .evaluation-bar-black {
-                background-color: #35A376 !important;
-            }
-        }
-        if myBoard=="op9a"{
-            .evaluation-bar-white {
-                background-color: #C5E5E5 !important;
-            }
-            .evaluation-bar-black {
-                background-color: #42A693 !important;
-            }
-        }
-        if myBoard=="op10"{
-            .evaluation-bar-white {
-                    background-color: #C3E4E4 !important;
+        if myBoard=="op9" || myBoard=="op9a" || myBoard=="op10" {
+            if myBoard=="op9"{
+                .evaluation-bar-white {
+                    background-color: #AAE3D2 !important;
                 }
                 .evaluation-bar-black {
                     background-color: #35A376 !important;
                 }
             }
+            if myBoard=="op9a"{
+                .evaluation-bar-white {
+                    background-color: #C5E5E5 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #42A693 !important;
+                }
+            }
+            if myBoard=="op10"{
+                .evaluation-bar-white {
+                        background-color: #C3E4E4 !important;
+                    }
+                    .evaluation-bar-black {
+                        background-color: #35A376 !important;
+                    }
+                }
         }
 
         /*------ Evaluation bar opacity------*/
         .evaluation-bar-bar {
             opacity: 0.9;
         }
-        if enableBoardSettings {
-            .evaluation-bar-bar {
-                filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
-                -webkit-filter: @filter;
-                -moz-filter: @filter;
-                -o-filter: @filter;
-            }
-        }
-    }
-    
-    /*------Blend, hue and shadow------*/
-    .is2d .king.black,
-    .piece.bk,
-    .promotion-piece.bk,
-    div [style*="bk.png"],
-    .is2d .queen.black,
-    .piece.bq,
-    .promotion-piece.bq,
-    div [style*="bq.png"],
-    .is2d .bishop.black,
-    .piece.bb,
-    .promotion-piece.bb,
-    div [style*="bb.png"],
-    .is2d .knight.black,
-    .piece.bn,
-    .promotion-piece.bn,
-    div [style*="bn.png"],
-    .is2d .rook.black,
-    .piece.br,
-    .promotion-piece.br,
-    div [style*="br.png"],
-    .is2d .pawn.black,
-    .piece.bp,
-    .promotion-piece.bp,
-    div [style*="bp.png"] {
-        mix-blend-mode: enableBlendB;
-        if enableShadow {
-
-            filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB) drop-shadow(0.1rem 0.2rem 0.1rem #000000ab)!important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o-filter: @filter;
-        }
-        else {
-            filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB)!important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o-filter: @filter;
-        }
-        opacity: opacityB!important;
-    }
-    .is2d .king.white,
-    .piece.wk,
-    .promotion-piece.wk,
-    div [style*="wk.png"],
-    .is2d .queen.white,
-    .piece.wq,
-    .promotion-piece.wq,
-    div [style*="wq.png"],
-    .is2d .bishop.white,
-    .piece.wb,
-    .promotion-piece.wb,
-    div [style*="wb.png"],
-    .is2d .knight.white,
-    .piece.wn,
-    .promotion-piece.wn,
-    div [style*="wn.png"],
-    .is2d .rook.white,
-    .piece.wr,
-    .promotion-piece.wr,
-    div [style*="wr.png"],
-    .is2d .pawn.white,
-    .piece.wp,
-    .promotion-piece.wp,
-    div [style*="wp.png"] {
-        mix-blend-mode: enableBlendW;
-        if enableShadow {
-            filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW) drop-shadow(0.1rem 0.2rem 0.1rem #000000ab)!important;
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o-filter: @filter;
-        }
-        else {
-            filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
-            -webkit-filter: @filter;
-            -moz-filter: @filter;
-            -o-filter: @filter;
-        }
-        opacity: opacityW!important;
-    }
-    .marked-square {
-        opacity: 0.8!important
     }
     
     //Pieces
     
     /*Pieces icy_sea */
-    if myPiecesB=="marGelado" || myPiecesB=="marGeladoM"{
+    if myPiecesB=="marGelado" {
         /*Pieces*/
         .piece.bp,
         .promotion-piece.bp,
@@ -885,14 +758,12 @@
         div [style*="br.png"] {
             background-image: url(chesscom + '/icy_sea/150/br.png')!important;
         }
+        div [style*="bn.png"],
         .piece.bn,
-        .promotion-piece.bn,
-        div [style*="bn.png"] {
+        .promotion-piece.bn {
+                background-image: url(gitHub + '/capivara/mg/flip-capivar-bn.png')!important;
             if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/mg/capivar-bn.png'), url(gitLab + '/capivara/mg/capivar-bn.png')!important;
-            }
-            else {
-                background-image: url(gitHub + '/capivara/mg/flip-capivar-bn.png'), url(gitLab + '/capivara/mg/flip-capivar-bn.png')!important;
+                background-image: url(gitHub + '/capivara/mg/capivar-bn.png')!important;
             }
         }
         .piece.bb,
@@ -908,16 +779,10 @@
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            if myPiecesB=="marGeladoM"{
-                
-                background-image: url('https://github.com/FSA1/Styles/raw/main/memes/meme-bk.png')!important;
-            }
-            else{
-                background-image: url(chesscom + '/icy_sea/150/bk.png')!important;
-                }
+            background-image: url(chesscom + '/icy_sea/150/bk.png')!important;
         }
     }
-    if myPiecesW=="marGelado" || myPiecesW=="marGeladoM" {
+    if myPiecesW=="marGelado" {
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
@@ -928,15 +793,12 @@
         div [style*="wr.png"] {
             background-image: url(chesscom + '/icy_sea/150/wr.png')!important;
         }
+        div [style*="wn.png"],
         .piece.wn,
-        .promotion-piece.wn,
-        div [style*="wn.png"] {
-
+        .promotion-piece.wn {
+                background-image: url(gitHub + '/capivara/mg/flip-capivar-wn.png')!important;
             if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/mg/capivar-wn.png'), url(gitLab + '/capivara/mg/capivar-wn.png')!important;
-            }
-            else {
-                background-image: url(gitHub + '/capivara/mg/flip-capivar-wn.png'), url(gitLab + '/capivara/mg/flip-capivar-wn.png')!important;
+                background-image: url(gitHub + '/capivara/mg/capivar-wn.png')!important;
             }
         }
         .piece.wb,
@@ -952,13 +814,7 @@
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            if myPiecesW=="marGeladoM"{
-                
-                background-image: url('https://github.com/FSA1/Styles/raw/main/memes/meme-wk.png')!important;
-            }
-            else{
-                background-image: url(chesscom + '/icy_sea/150/wk.png')!important;
-                }
+            background-image: url(chesscom + '/icy_sea/150/wk.png')!important;
         }
     }
     
@@ -979,10 +835,10 @@
         .promotion-piece.bn,
         div [style*="bn.png"] {
             if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/alpha/capivara-bn.png'), url(gitLab + '/capivara/alpha/capivara-bn.png')!important;
+                background-image: url(gitHub + '/capivara/alpha/capivara-bn.png')!important;
             }
             else {
-                background-image: url(gitHub + '/capivara/alpha/flip-capivara-bn.png'), url(gitLab + '/capivara/alpha/flip-capivara-bn.png')!important;
+                background-image: url(gitHub + '/capivara/alpha/flip-capivara-bn.png')!important;
             }
         }
         .piece.bb,
@@ -1016,10 +872,10 @@
         .promotion-piece.wn,
         div [style*="wn.png"] {
             if enableHorizInvert {
-                background-image: url(gitHub + '/capivara/alpha/capivara-wn.png'), url(gitLab + '/capivara/alpha/capivara-wn.png')!important;
+                background-image: url(gitHub + '/capivara/alpha/capivara-wn.png')!important;
             }
             else {
-                background-image: url(gitHub + '/capivara/alpha/flip-capivara-wn.png'), url(gitLab + '/capivara/alpha/flip-capivara-wn.png')!important;
+                background-image: url(gitHub + '/capivara/alpha/flip-capivara-wn.png')!important;
             }
         }
         .piece.wb,
@@ -1042,7 +898,7 @@
     /*the following code is stylus preprocessor syntax, may cause some warning as it does not fit css syntax */
 
     /*Pieces Neo white*/
-    if myPiecesW!="op0" && myPiecesW!="alp" && myPiecesW!="marGelado" && myPiecesW!="marGeladoM" {
+    if myPiecesW!="op0" && myPiecesW!="alp" && myPiecesW!="marGelado" {
         if myPiecesW=="branco" {
             wColor="#f8f8f8"
         }
@@ -1155,7 +1011,7 @@
     }
     
     /*Pieces Neo black*/
-    if myPiecesB!="op0" && myPiecesB!="alp" && myPiecesB!="marGelado" && myPiecesB!="marGeladoM" {
+    if myPiecesB!="op0" && myPiecesB!="alp" && myPiecesB!="marGelado" {
         if myPiecesB=="preto" || myPiecesB=="pretoNatal" {
             bColor="#575352"
         }
@@ -1255,19 +1111,74 @@
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 180 180' style='enable-background:new 0 0 180 180;' xml:space='preserve'%3e%3cdefs%3e%3cstyle%3e .cls-1%7bfill:none;%7d.cls-2%7bfill:%23" + unquote(bColorHash) + ";%7d.cls-3,.cls-4%7bopacity:0.2;%7d.cls-4%7bfill:%23fff;%7d.cls-5%7bfill:%231a1a1a;%7d%3c/style%3e%3c/defs%3e%3ctitle%3ep%3c/title%3e%3crect class='cls-1' width='180' height='180'/%3e%3cpath class='cls-2' d='M89.94,41.92a23,23,0,0,0-14.24,41L63.79,90.75l-.9.59v1.08a12.17,12.17,0,0,0,2,6.93l.39.72.57,1.05H77.13c-.49,5.61-2,19.66-20,31-8,5-12.66,14.66-12.66,26.36v2h91v-2c0-11.7-4.62-21.31-12.67-26.36-17.94-11.28-19.5-25.36-20-31H114l.57-1.05.39-.72a12.17,12.17,0,0,0,2-6.93V91.34l-.9-.59-11.91-7.86a23,23,0,0,0-14.24-41Z'/%3e%3cpath class='cls-3' d='M115.16,127.11c-10.76-7.52-11.49-22.19-12.18-25.54l10.85,0,3.87-9s-11.41-9.29-17-9.46l2.75,0s8.21-6.84,8.92-12.88C115.25,46.21,96.3,43,96.3,43c8.58,4.29,15.07,18.92,7.34,29.82C98.12,80.61,87.34,83,87.34,83h13.3c.16.14,9.38,10-.1,16.16H65.12l.45,2.5,11.45,0S90.26,115,101.23,125.37c10.53,9.93,26.51,11.31,26.51,11.31S120.63,130.94,115.16,127.11Z'/%3e%3cpath class='cls-4' d='M75,92.42C75.6,88,79.14,83,79.24,83L62.47,92.42Z'/%3e%3cpath class='cls-4' d='M92.05,44c-8,.72-20.82,10.3-22.32,30,0,0-8.08-11.62,3.06-24.45C81.56,39.5,92.05,44,92.05,44Z'/%3e%3cpath class='cls-4' d='M46.45,158.45C50.8,144.15,57,142.3,68.3,134c7.54-5.48,8.55-22,8.55-22,.18-.86-3.84,6.67-8.12,10.4-1.41,1.22-11,7.84-15.07,12.17C46.55,142.07,45.61,161.19,46.45,158.45Z'/%3e%3cpath class='cls-5' d='M89.94,43.92a21,21,0,0,1,11.79,38.29l-1.09.75L115,92.42c0,3.06-.72,4-2.15,6.7h-12.3l.1,1c.49,4.57.8,20.93,21.06,33.66,7.45,4.68,11.73,13.68,11.73,24.67h-87c0-11,4.27-20,11.73-24.67,20.3-12.76,20.58-29.1,21.06-33.66l.1-1H67c-1.42-2.65-2.15-3.64-2.15-6.7L79.24,83l-1.09-.74a21,21,0,0,1,11.79-38.3m0-4A25,25,0,0,0,72.42,82.66l-9.73,6.42-1.8,1.19v2.15a14.13,14.13,0,0,0,2.24,7.89l.39.71,1.13,2.1H74.88c-2.49,17-14.27,24.41-18.83,27.27-8.65,5.43-13.6,15.66-13.6,28.06v4h95v-4c0-12.4-5-22.63-13.6-28.06-15.11-9.49-18-21-18.86-27.27h10.26l1.13-2.1.39-.71A14.13,14.13,0,0,0,119,92.42V90.27l-1.8-1.19-9.73-6.42A25,25,0,0,0,89.94,39.92Z'/%3e%3c/svg%3e")!important;
         }
         /*End Black Neo Pieces*/
+    }  
+    /*------Blend, hue and shadow------*/
+    if enableExtras {
+        .is2d .king.black,
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"],
+        .is2d .queen.black,
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"],
+        .is2d .bishop.black,
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"],
+        .is2d .knight.black,
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"],
+        .is2d .rook.black,
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"],
+        .is2d .pawn.black,
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            mix-blend-mode: enableBlendB;
+        }
+        .is2d .king.white,
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"],
+        .is2d .queen.white,
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"],
+        .is2d .bishop.white,
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"],
+        .is2d .knight.white,
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"],
+        .is2d .rook.white,
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"],
+        .is2d .pawn.white,
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            mix-blend-mode: enableBlendW;
+        }
     }
     
     /*wallpaper*/
-    if wallpaperSource!="op0" {
+    if enableExtras && wallpaperSource!="op0" {
         body:after,
         .theme-bg {
 
             if wallpaperSource=="op1" {
                 if myBoard=="op9" || myBoard=="op9a" {
-                    background: url(gitHub + '/jppeixoto/wallpaper/wallpaper-aqua.jpg') center center, url(gitLab + '/jppeixoto/wallpaper/wallpaper-aqua.jpg') center center!important;
+                    background: url(gitHub + '/jppeixoto/wallpaper/wallpaper-aqua.jpg') center center!important;
                 }
                 if myBoard=="op10" {
-                    background: url(gitHub + '/xmas/Wallpaper/aqua_xmas.jpg') center center, url(gitLab + '/xmas/Wallpaper/aqua_xmas.jpg') center center!important;
+                    background: url(gitHub + '/xmas/Wallpaper/aqua_xmas.jpg') center center!important;
                 }
             }
             if wallpaperSource=="op2" {
@@ -1281,7 +1192,7 @@
                 -moz-background-size: @background-size;
                 -o-background-size: @background-size;
                 background-repeat: no-repeat!important;
-                background-attachment: fixed!important;
+                /*background-attachment: fixed!important;*/
             }
             if setWallpaper=="op2" {
                 background-size: contain!important;
@@ -1289,13 +1200,6 @@
                 -moz-background-size: @background-size;
                 -o-background-size: @background-size;
             }
-            content: '';
-            position: fixed;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
             if enableBGfilters {
                 filter: sepia(sepiaWall) hue-rotate(hueRotationWall) brightness(brightnessWall) saturate(saturateWall) contrast(contrastWall);
                 -webkit-filter: @filter;

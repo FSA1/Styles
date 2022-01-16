@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        3.0.17
+@version        3.0.18
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -19,6 +19,7 @@
             "SR verde cinz. (animado)": "op1SR",
             "SR verde cinz. (estático)": "op1SRE",
             "SR azul madeira (estático)": "op1SREW",
+            "SR verde-amar. mad. (est.)": "op1SREWby",
             "Bonus ❤ jp1 azul": "op8",
             "Bonus ❤ jp2 +azul": "op8b",
             "Bonus ❤ jp2 (limpo)": "op8c",
@@ -44,6 +45,7 @@
             "personalizado (Neo)": "personalizadoNeo",
             "personalizado Natal (Neo)": "personalizadoNatalNeo",
             "Preto (Mar Gelado)": "marGelado",
+            "Preto Memes (Mar Gelado)": "marGeladoM",
             "Preto (Alpha/Clássico)": "alp",
             "Desativado": "op0"
         }
@@ -65,6 +67,7 @@
             "personalizado (Neo)": "personalizadoNeo",
             "personalizado Natal (Neo)": "personalizadoNatalNeo",
             "Branco (Mar Gelado)": "marGelado",
+            "Branco Memes (Mar Gelado)": "marGeladoM",
             "Branco (Alpha/Clássico)": "alp",
             "Desativado": "op0"
         }
@@ -175,6 +178,9 @@
         }
         if myBoard=="op1SREW" {
             background-image: url(gitHub + '/krikor/speedruim/speedruimcb-wood-blue.jpg'), url(gitLab + '/krikor/speedruim/speedruimcb-wood-blue.jpg')!important;
+        }
+        if myBoard=="op1SREWby" {
+            background-image: url(gitHub + '/krikor/speedruim/speedruimcb-wood-g-y.jpg')!important;
         }
         if myBoard=="op1SRE" {
             background-image: url(gitHub + '/krikor/speedruim/speedruimcb.png'), url(gitLab + '/krikor/speedruim/speedruimcb.png')!important;
@@ -296,6 +302,32 @@
             }
             .selection-square {
                 background-color: #0058cc !important;
+            }
+        }
+    }
+    if myBoard=="op1SREWby" {
+
+        /*Coordinates*/
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: #4ba686!important;
+            fill: @color;
+        }
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: #f1daae !important;
+            fill: @color;
+        }
+        /*Highlight*/
+        if myHighlight=="op1" || myHighlight=="op2" {
+            .move-square,
+            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                background-color: #00ffe1!important;
+            }
+            .selection-square {
+                background-color: #00d83d !important;
             }
         }
     }
@@ -624,7 +656,7 @@
                 background-color: #708BA3 !important;
             }
         }
-    if myBoard=="op1SR" || myBoard=="op1SRE" {
+        if myBoard=="op1SR" || myBoard=="op1SRE" {
             .evaluation-bar-white {
                 
                 background-color: #D2DAE1 !important;
@@ -633,7 +665,7 @@
                 background-color: #5C8899 !important;
             }
         }
-    if  myBoard=="op1SREW" {
+        if myBoard=="op1SREW" {
             .evaluation-bar-white {
                 background: url(gitHub + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat, url(gitLab + '/krikor/speedruim/eval-black.png') 0% 0% / 100% 100% no-repeat !important;
                 background-color: #AEDDF1 !important;
@@ -643,9 +675,19 @@
                 background-color: #4C8FAA !important;
             }
         }
+        if myBoard=="op1SREWby" {
+            .evaluation-bar-white {
+                background: url(gitHub + '/krikor/speedruim/eval-woodby-w.jpg') 0% 0% / 100% 100% no-repeat, url(gitLab + '/krikor/speedruim/eval-woodby-b.jpg') 0% 0% / 100% 100% no-repeat !important;
+                background-color: #f1daae !important;
+            }
+            .evaluation-bar-black {
+                background: url(gitHub + '/krikor/speedruim/eval-woodby-b.jpg') 0% 0% / 100% 100% no-repeat, url(gitHub + '/krikor/speedruim/eval-woodby-w.jpg') 0% 0% / 100% 100% no-repeat !important;
+                background-color: #4ba686 !important;
+            }
+        }
         if myBoard=="op2" {
             .evaluation-bar-white {
-                background-color: #EFF0D2 !important;
+                background-color: #f1daae !important;
             }
             .evaluation-bar-black {
                 background-color: #759B51 !important;
@@ -701,6 +743,8 @@
                 background-color: #358CD7 !important;
             }
         }
+
+
     if myBoard=="op9" || myBoard=="op9a" || myBoard=="op10" {
         if myBoard=="op9"{
             .evaluation-bar-white {
@@ -829,7 +873,7 @@
     //Pieces
     
     /*Pieces icy_sea */
-    if myPiecesB=="marGelado" {
+    if myPiecesB=="marGelado" || myPiecesB=="marGeladoM"{
         /*Pieces*/
         .piece.bp,
         .promotion-piece.bp,
@@ -841,12 +885,14 @@
         div [style*="br.png"] {
             background-image: url(chesscom + '/icy_sea/150/br.png')!important;
         }
-        div [style*="bn.png"],
         .piece.bn,
-        .promotion-piece.bn {
-                background-image: url(gitHub + '/capivara/mg/flip-capivar-bn.png'), url(gitLab + '/capivara/mg/flip-capivar-bn.png')!important;
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
             if enableHorizInvert {
                 background-image: url(gitHub + '/capivara/mg/capivar-bn.png'), url(gitLab + '/capivara/mg/capivar-bn.png')!important;
+            }
+            else {
+                background-image: url(gitHub + '/capivara/mg/flip-capivar-bn.png'), url(gitLab + '/capivara/mg/flip-capivar-bn.png')!important;
             }
         }
         .piece.bb,
@@ -862,10 +908,16 @@
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(chesscom + '/icy_sea/150/bk.png')!important;
+            if myPiecesB=="marGeladoM"{
+                
+                background-image: url('https://github.com/FSA1/Styles/raw/main/memes/meme-bk.png')!important;
+            }
+            else{
+                background-image: url(chesscom + '/icy_sea/150/bk.png')!important;
+                }
         }
     }
-    if myPiecesW=="marGelado" {
+    if myPiecesW=="marGelado" || myPiecesW=="marGeladoM" {
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
@@ -876,12 +928,15 @@
         div [style*="wr.png"] {
             background-image: url(chesscom + '/icy_sea/150/wr.png')!important;
         }
-        div [style*="wn.png"],
         .piece.wn,
-        .promotion-piece.wn {
-                background-image: url(gitHub + '/capivara/mg/flip-capivar-wn.png'), url(gitLab + '/capivara/mg/flip-capivar-wn.png')!important;
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+
             if enableHorizInvert {
                 background-image: url(gitHub + '/capivara/mg/capivar-wn.png'), url(gitLab + '/capivara/mg/capivar-wn.png')!important;
+            }
+            else {
+                background-image: url(gitHub + '/capivara/mg/flip-capivar-wn.png'), url(gitLab + '/capivara/mg/flip-capivar-wn.png')!important;
             }
         }
         .piece.wb,
@@ -897,7 +952,13 @@
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(chesscom + '/icy_sea/150/wk.png')!important;
+            if myPiecesW=="marGeladoM"{
+                
+                background-image: url('https://github.com/FSA1/Styles/raw/main/memes/meme-wk.png')!important;
+            }
+            else{
+                background-image: url(chesscom + '/icy_sea/150/wk.png')!important;
+                }
         }
     }
     
@@ -981,7 +1042,7 @@
     /*the following code is stylus preprocessor syntax, may cause some warning as it does not fit css syntax */
 
     /*Pieces Neo white*/
-    if myPiecesW!="op0" && myPiecesW!="alp" && myPiecesW!="marGelado" {
+    if myPiecesW!="op0" && myPiecesW!="alp" && myPiecesW!="marGelado" && myPiecesW!="marGeladoM" {
         if myPiecesW=="branco" {
             wColor="#f8f8f8"
         }
@@ -1094,7 +1155,7 @@
     }
     
     /*Pieces Neo black*/
-    if myPiecesB!="op0" && myPiecesB!="alp" && myPiecesB!="marGelado" {
+    if myPiecesB!="op0" && myPiecesB!="alp" && myPiecesB!="marGelado" && myPiecesB!="marGeladoM" {
         if myPiecesB=="preto" || myPiecesB=="pretoNatal" {
             bColor="#575352"
         }
