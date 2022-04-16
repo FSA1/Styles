@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiro de Páscoa`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -65,7 +65,7 @@ domain("chessclub.com") {
             .cg-wrap.orientation-black .ranks coord:nth-child(2n),
             div.number.coords-light,
             div.letter.coords-light {
-                color: #874d2d !important;
+                color: #76472E !important;
             }
             .cg-wrap.orientation-white .files coord:nth-child(2n+1),
             .cg-wrap.orientation-white .ranks coord:nth-child(2n),
@@ -73,13 +73,13 @@ domain("chessclub.com") {
             .cg-wrap.orientation-black .ranks coord:nth-child(2n+1),
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #f8e3c1 !important;
+                color: #EBD5B0 !important;
             }
             text.coordinate-light {
-                fill: #874d2d !important;
+                fill: #76472E !important;
             }
             text.coordinate-dark {
-                fill: #f8e3c1 !important;
+                fill: #EBD5B0 !important;
             }
         }
         /*Highlight*/
@@ -99,10 +99,10 @@ domain("chessclub.com") {
         if setEvaluationBar {
             if myBoard=="op1" {
                 .evaluation-bar-white {
-                    background-color: #f8e3c1 !important;
+                    background-color: #EBD5B0 !important;
                 }
                 .evaluation-bar-black {
-                    background-color: #874d2d !important;
+                    background-color: #76472E !important;
                 }
             }
 
