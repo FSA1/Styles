@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess boards for chess.com special events`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -15,6 +15,7 @@
             "TT Roxo (texturizado)": "op5g",
             "TT Marrom (texturizado)": "op12g",
             "TT Azul Claro (texturizado)": "op7g",
+            "TT Madeira Escura": "op14w",
             "TT Mar Gelado": "op10",
             "TT Mar Gelado (escuro)*": "op11",
             "TT Vermelho": "op1",
@@ -135,6 +136,9 @@
             if myBoard=="op13mc" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/arenakingscb_marble_clean_darker.jpg)!important;
             }
+            if myBoard=="op14w" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titledtuesday_wood.jpg)!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op1g" || myBoard=="op2" || myBoard=="op3" {
@@ -249,6 +253,20 @@
                 fill: @color;
             }
         }
+        if myBoard=="op14w" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7E5934 !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D4B587 !important;
+                fill: @color;
+            }
+        }
         /*Highlight*/
         if setHLopacity {
             .move-square,
@@ -358,6 +376,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #7189A5 !important;
+                }
+            }
+            if myBoard=="op14w" {
+                .evaluation-bar-white {
+                    background-color: #D4B587 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #7E5934 !important;
                 }
             }
 
