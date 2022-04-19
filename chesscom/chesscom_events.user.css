@@ -4,19 +4,22 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess boards for chess.com special events`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
-            "Arena K. Mármore": "op13m",
+            "AK. Mármore": "op13m",
+            "AK Már roxo": "op5m",
             "TT Vermelho (texturizado)": "op1g",
             "TT Azul (texturizado)": "op4g",
+            "TT Roxo (texturizado)": "op5g",
             "TT Marrom (texturizado)": "op12g",
             "TT Azul Claro (texturizado)": "op7g",
             "TT Mar Gelado": "op10",
             "TT Mar Gelado (escuro)*": "op11",
             "TT Vermelho": "op1",
             "TT Azul": "op4",
+            "TT Roxo": "op5",
             "TT Marrom": "op12",
             "TT Azul Claro": "op7",
             "Vermelho (limpo)": "op3",
@@ -87,6 +90,15 @@
             if myBoard=="op4" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue.png)!important;
             }
+            if myBoard=="op5" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_purple.jpg)!important;
+            }
+            if myBoard=="op5m" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/arenakingscb_marble0_purple.jpg)!important;
+            }
+            if myBoard=="op5g" {
+                background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_grunge_purple.jpg)!important;
+            }
             if myBoard=="op6" {
                 background-image: url(https://github.com/FSA1/Styles/raw/main/chesscom/boards/titletuesday_blue_clean2.png)!important;
             }
@@ -139,7 +151,7 @@
                 fill: @color;
             }
         }
-        if myBoard=="op4" || myBoard=="op4g" || myBoard=="op5" || myBoard=="op6" {
+        if myBoard=="op4" || myBoard=="op4g" || myBoard=="op6" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -150,6 +162,20 @@
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #D1DBDE !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op5" || myBoard=="op5g" || myBoard=="op5m" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #9a7ec6 !important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #d6d1de !important;
                 fill: @color;
             }
         }
@@ -268,6 +294,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #29709D !important;
+                }
+            }
+            if myBoard=="op5" || myBoard=="op5g" || myBoard=="op5m" {
+                .evaluation-bar-white {
+                    background-color: #d6d1de !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #9a7ec6 !important;
                 }
             }
             if myBoard=="op6" {
