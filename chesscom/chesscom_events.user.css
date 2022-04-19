@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess boards for chess.com special events`
-@version        1.0.2
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -263,7 +263,7 @@
             text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #D4B587 !important;
+                color: #CAAC7A !important;
                 fill: @color;
             }
         }
@@ -380,7 +380,7 @@
             }
             if myBoard=="op14w" {
                 .evaluation-bar-white {
-                    background-color: #D4B587 !important;
+                    background-color: #CAAC7A !important;
                 }
                 .evaluation-bar-black {
                     background-color: #7E5934 !important;
