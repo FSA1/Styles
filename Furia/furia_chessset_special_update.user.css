@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/pantera-da-furia-no-lugar-do-cavalo-sim-tabuleiro-e-pecas-da-furia
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.12
+@version        2.2.14
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -1568,7 +1568,7 @@
         if myBoard=="graffitiPurple" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/furia-graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1584,7 +1584,7 @@
         if myBoard=="graffitiGreen" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/furia-graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1600,7 +1600,7 @@
         if myBoard=="graffitiGreen2" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/furia-graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
