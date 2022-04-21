@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/pantera-da-furia-no-lugar-do-cavalo-sim-tabuleiro-e-pecas-da-furia
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.11
+@version        2.2.12
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -30,6 +30,7 @@
             "Poster Oliva": "postE",
             "Poster Verde": "postF",
             "Poster Petroleo": "postG",
+            "Graffiti Azul Concreto": "graffitiConcreteBlue",
             "Graffiti Azul": "graffitiBlue",
             "Graffiti Roxo": "graffitiPurple",
             "Graffiti Verde": "graffitiGreen",
@@ -465,6 +466,23 @@
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #C4D2D3 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="graffitiConcreteBlue" {
+            background-image: url(gitHub + "/Furia/graffiti/FURIA_concrete_graffiti.jpg"), url(gitLab + "/Furia/graffiti/FURIAcb_concrete_graffiti.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #547890!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #DADADA !important;
                 fill: @color;
             }
         }
@@ -1515,10 +1533,26 @@
                 opacity: 0.8;
             }
         }
+        if myBoard=="graffitiConcreteBlue" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #DADADA !important;
+            }
+            .evaluation-bar-black {
+                background-color: #547890 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
         if myBoard=="graffitiBlue" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/furia-graffiti_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia-graffiti_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1534,7 +1568,7 @@
         if myBoard=="graffitiPurple" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1550,7 +1584,7 @@
         if myBoard=="graffitiGreen" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1566,7 +1600,7 @@
         if myBoard=="graffitiGreen2" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
+                background: url(gitHub + "/Furia/mini/graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
@@ -1877,6 +1911,15 @@
                 }
                 .selection-square {
                     background-color: rgb(0, 176, 167) !important;
+                }
+            }
+            if myBoard=="graffitiConcreteBlue" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #00d9ff!important;
+                }
+                .selection-square {
+                    background-color: rgb(74, 145, 215) !important;
                 }
             }
             if myBoard=="graffitiBlue" {
