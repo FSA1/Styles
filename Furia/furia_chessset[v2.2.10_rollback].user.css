@@ -1,0 +1,1806 @@
+/* ==UserStyle==
+@name           Chess.com Chess Set: FURIA (Pack)
+@namespace      ChessSkins
+@author         agiota_do_artenio
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
+@description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
+@version        2.2.10
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+
+@var    select      myBoard    "Escolher Tabuleiro" {
+            "Cinza 1": "op1",
+            "Cinza 2": "op2",
+            "Azul 1": "op3",
+            "Azul 2": "op4",
+            "Azul 3": "op5",
+            "Verde": "op6",
+            "Marrom": "op7",
+            "FURIA 1ª Ed.": "op8",
+            "FURIA Madeira*": "op9",
+            "FURIA Madeira_alt": "op9b",
+            "Birman Azul": "op10",
+            "Birman Verde": "op11",
+            "Birman Cinza": "op12",
+            "Poster Azul": "postA",
+            "Poster Cinza": "postB",
+            "Poster Roxo": "postC",
+            "Poster Vinho": "postD",
+            "Poster Oliva": "postE",
+            "Poster Verde": "postF",
+            "Poster Petroleo": "postG",
+            "Desativado": "op0",
+        }
+@var    select      myPieces    "Escolher Peças"{
+            "Alpha (Nike X FURIA)": "op1",
+            "Clássico (Nike X FURIA)": "op2",
+            "Mar Gelado (Nike X FURIA )": "op2b",
+            "Mar Gelado (Estilizado)": "op3",
+            "Alpha (Estilizado)": "op3A",
+            "Logo FURIA": "op4",
+            "Neo (FURIA)": "op5",
+            "Bases (Sombreado)": "op6",
+            "Bases (Plano)*": "op7",
+            "Bases (Plano, Sem Borda, Bege)": "op8",
+            "Bases (Plano, Sem Borda, Branco)": "op8b",
+            "Merida (Sombreado)": "op9",
+            "Desativado": "op0",
+        }
+		
+@var    checkbox    enableExtraSettings   "Configurações (chave geral)" 1
+
+@var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
+@var    range    highlightOpacity  "Opacidade do destaque" [0.5, 0.3, 1, 0.1, ""]
+@var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
+@var    checkbox    enableArrowSettings   "Modificar Setas" 0
+@var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
+@var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [130, 5, 300, 5, "%"]
+@var    select      myWallpaper    "Aplicar Wallpaper" {
+            "Temático*": "op1",
+            "Seu link": "op2",		
+            "Desativado": "op0",
+        }
+@var    text     userWallpaper    "Seu papel de parede (entre aspas simples)"   "'https://raw.githubusercontent.com/FSA1/Styles/main/Furia/wallpaper/black-leopard2_1920px.jpg'"
+@var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply"]
+@var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
+@var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
+@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    sepiaB  "Sepia (pretas)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
+@var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
+@var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
+@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    sepiaW  "Sepia (brancas)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
+@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    sepiaBoard  "Sepia (tabuleiro)" [0, 0, 100, 5, "%"]
+@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+
+    /*The beautify function may cause an error by joining the following variables into a single line.
+    Just revert the changes to make it work again.*/
+    
+    gitHub='https://github.com/FSA1/Styles/raw/main'
+    
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main'
+    
+    chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
+    
+    /*Chessboard*/
+    div[class^="board v-board disabled rounded"],
+    div[class^="daily-puzzle-board"],
+    div[class^="board chessboard-component"],
+    div[class^="board v-board chessboard-component"],
+    div[class^="board rounded"],
+    div[class^="board rounded fippled"],
+    div[class^="board fippled rounded"],
+    div[class^="board v-board rounded"],
+    div[class^="board v-board fippled rounded"],
+    div[class^="board disabled rounded"],
+    div[id$="_ChessBoard_boardarea"],
+    div[id^="chess_com_openingboard_1"],
+    div[id^="board_training"],
+    div[id^="divBoard_boardarea"],
+    div[id^="chess_com_tactics_board"],
+    div[id^="chessboard_"],
+    div[id*="chessboard_"],
+    div[id^="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentorboard_"],
+    div[id*="chess_com_chessmentor_board_1_boardarea"],
+    div[id^="chess_com_emailboard_"],
+    div[id^="board-blank"],
+    chess-board[class^="board"],
+    chess-board[class^="board flipped"],
+    chess-board[id^="board-blank"],
+    chess-board[id^="board-vs-personalities"],
+    div[id*="chess_com_emailboard_"] {
+        if enableBoardSettings {
+            filter: sepia(sepiaBoard) hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+            -webkit-filter: @filter;
+            -moz-filter: @filter;
+            -o--filter: @filter;
+        }
+        if myBoard=="op1" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb.png")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op2" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_gray.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op3" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op4" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue2.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op5" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_blue3.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op6" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_green.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(32, 164, 111)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(237, 236, 210) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op7" {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/update1/NxF_cb_brown.png")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(198, 115, 120)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(235, 234, 220) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op8" {
+            background-image: url(gitHub + "/Furia/furia-cb-blue.png"), url(gitLab + "/Furia/furia-cb-blue.png")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(136, 164, 181)!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(208, 215, 218) !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op9" {
+            background-image: url(gitHub + "/Furia/furia_cb-wood_sp.jpg"), url(gitLab + "/Furia/furia_cb-wood_sp.jpg")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #BA7541!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #F5CEA2 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op9b" {
+            background-image: url(gitHub + "/Furia/furia_cb-wood3.jpg"), url(gitLab + "/Furia/furia_cb-wood3.jpg")!important;
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #926a4c!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e4c9ab !important;
+                fill: @color;
+            }
+        }
+        /*For options 10, 11 , 12 I could not use double server for images because this method sets two imaages at the same time, ruining transparent effect*/
+        if myBoard=="op10" {
+            background-image: url(gitHub + "/Furia/fide/furia_classic-logo_birman-blue.svg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6f82a6!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #9fbaec !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op11" {
+            background-image: url(gitHub + "/Furia/fide/furia_classic-logo_birman-green.svg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7c9357!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #a8c180 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="op12" {
+            background-image: url(gitHub + "/Furia/fide/furia_birman-gray2.svg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6b6b6b!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #b8b8b8 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postA" {
+            background-image: url(gitHub + "/Furia/postercb/blue.jpg"), url(gitLab + "/Furia/postercb/blue.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #375472!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #B3BAC2 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postB" {
+            background-image: url(gitHub + "/Furia/postercb/gray.jpg"), url(gitLab + "/Furia/postercb/gray.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #596B6F!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #B0B5B8 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postC" {
+            background-image: url(gitHub + "/Furia/postercb/grape.jpg"), url(gitLab + "/Furia/postercb/grape.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #57536E!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #C9C3CF !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postD" {
+            background-image: url(gitHub + "/Furia/postercb/vine.jpg"), url(gitLab + "/Furia/postercb/vine.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6F566B!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D4CAD2 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postE" {
+            background-image: url(gitHub + "/Furia/postercb/olive.jpg"), url(gitLab + "/Furia/postercb/olive.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #706756!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D2CDC7 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postF" {
+            background-image: url(gitHub + "/Furia/postercb/green.jpg"), url(gitLab + "/Furia/postercb/green.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #5B7353!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D0D2C7 !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="postG" {
+            background-image: url(gitHub + "/Furia/postercb/petrol.jpg"), url(gitLab + "/Furia/postercb/petrol.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #4C6B70!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #C4D2D3 !important;
+                fill: @color;
+            }
+        }
+    }
+
+    /*Pieces*/
+    /*Nike X FURIA (Alpha)*/
+    if myPieces=="op1" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/alpha/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/alpha/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/alpha/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/alpha/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/alpha/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/alpha/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/alpha/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/alpha/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/alpha/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/alpha/150/wk.png")!important;
+        }
+    }
+    /*FURIA Stylized (Alpha)*/
+    if myPieces=="op3A" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/alpha/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/alpha/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/FURIA_black_knight.png"), url(gitLab + "/Furia/FURIA_black_knight.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/alpha/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/alpha/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/alpha/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/alpha/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/alpha/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/FURIA_white_knight.png"), url(gitLab + "/Furia/FURIA_white_knight.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/alpha/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/alpha/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/alpha/150/wk.png")!important;
+        }
+    }
+    /*Nike X FURIA (Classic)*/
+    if myPieces=="op2" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/classic/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/classic/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/bn.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/classic/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/classic/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/classic/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/classic/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/classic/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/wn.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/classic/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/classic/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/classic/150/wk.png")!important;
+        }
+    }
+    /*Nike X FURIA (Mar Gelado)*/
+    if myPieces=="op2b" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/icy_sea/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png"), url(gitLab + "/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wk.png")!important;
+        }
+    }
+    /*FURIA Stylized (Icy Sea)*/
+    if myPieces=="op3" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/icy_sea/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_icysea-bn.svg"), url(gitLab + "/Furia/svg/furia_icysea-bn.svg")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_icysea-wn.svg"), url(gitLab + "/Furia/svg/furia_icysea-wn.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wk.png")!important;
+        }
+    }
+    if myPieces=="op4" {
+        div [style*="wn.png"],
+        .piece.wn,
+        .promotion-piece.wn {
+            background-image: url(gitHub + "/Furia/furiaClassicRighRes-wn.png"), url(gitLab + "/Furia/furiaClassicRighRes-wn.png")!important;
+        }
+        div [style*="bn.png"],
+        .piece.bn,
+        .promotion-piece.bn {
+            background-image: url(gitHub + "/Furia/furiaClassicRighRes-bn.png"), url(gitLab + "/Furia/furiaClassicRighRes-bn.png")!important;
+        }
+    }
+    if myPieces=="op5" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/neo/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/neo/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/furiaNeo_High-Res-bn.png"), url(gitLab + "/Furia/furiaNeo_High-Res-bn.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/neo/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/neo/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/neo/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/neo/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/neo/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/furiaNeoHigh-Res1-wn.png"), url(gitLab + "/Furia/furiaNeoHigh-Res1-wn.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/neo/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/neo/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/neo/150/wk.png")!important;
+        }
+    }
+    if myPieces=="op6" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/bases/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/bases/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-bases-bn.svg")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/bases/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/bases/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/bases/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/bases/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/bases/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-bases-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-bases-wn.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/bases/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/bases/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/bases/150/wk.png")!important;
+        }
+    }
+    if myPieces=="op7" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(gitHub + "/Furia/beige/bp.png"), url(gitLab + "/Furia/beige/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(gitHub + "/Furia/beige/br.png"), url(gitLab + "/Furia/beige/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-path-border-beige-bn.svg")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(gitHub + "/Furia/beige/bb.png"), url(gitLab + "/Furia/beige/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(gitHub + "/Furia/beige/bq.png"), url(gitLab + "/Furia/beige/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(gitHub + "/Furia/beige/bk.png"), url(gitLab + "/Furia/beige/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(gitHub + "/Furia/beige/wp.png"), url(gitLab + "/Furia/beige/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(gitHub + "/Furia/beige/wr.png"), url(gitLab + "/Furia/beige/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-path-border-beige-wn.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(gitHub + "/Furia/beige/wb.png"), url(gitLab + "/Furia/beige/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(gitHub + "/Furia/beige/wq.png"), url(gitLab + "/Furia/beige/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(gitHub + "/Furia/beige/wk.png"), url(gitLab + "/Furia/beige/wk.png")!important;
+        }
+    }
+    if myPieces=="op8" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bp.png"), url(gitLab + "/Furia/noborder/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(gitHub + "/Furia/noborder/br.png"), url(gitLab + "/Furia/noborder/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bb.png"), url(gitLab + "/Furia/noborder/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bq.png"), url(gitLab + "/Furia/noborder/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bk.png"), url(gitLab + "/Furia/noborder/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(gitHub + "/Furia/noborder/wp.png"), url(gitLab + "/Furia/noborder/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(gitHub + "/Furia/noborder/wr.png"), url(gitLab + "/Furia/noborder/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-beige-wn.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(gitHub + "/Furia/noborder/wb.png"), url(gitLab + "/Furia/noborder/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(gitHub + "/Furia/noborder/wq.png"), url(gitLab + "/Furia/noborder/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(gitHub + "/Furia/noborder/wk.png"), url(gitLab + "/Furia/noborder/wk.png")!important;
+        }
+    }
+    if myPieces=="op8b" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bp.png"), url(gitLab + "/Furia/noborder/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(gitHub + "/Furia/noborder/br.png"), url(gitLab + "/Furia/noborder/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-black-bn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-black-bn.svg")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bb.png"), url(gitLab + "/Furia/noborder/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bq.png"), url(gitLab + "/Furia/noborder/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(gitHub + "/Furia/noborder/bk.png"), url(gitLab + "/Furia/noborder/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(gitHub + "/Furia/noborder/white/wp.png"), url(gitLab + "/Furia/noborder/white/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(gitHub + "/Furia/noborder/white/wr.png"), url(gitLab + "/Furia/noborder/white/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/svg/furia_NewStylized-pure-white-wn.svg"), url(gitLab + "/Furia/svg/furia_NewStylized-pure-white-wn.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(gitHub + "/Furia/noborder/white/wb.png"), url(gitLab + "/Furia/noborder/white/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(gitHub + "/Furia/noborder/white/wq.png"), url(gitLab + "/Furia/noborder/white/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(gitHub + "/Furia/noborder/white/wk.png"), url(gitLab + "/Furia/noborder/white/wk.png")!important;
+        }
+    }
+    if myPieces=="op9" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(gitHub + "/merida/bp.svg"), url(gitLab + "/merida/bp.svg")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(gitHub + "/merida/br.svg"), url(gitLab + "/merida/br.svg")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-bn.svg"), url(gitLab + "/Furia/svg/meridaFuriaGrad-bn.svg")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(gitHub + "/merida/bb.svg"), url(gitLab + "/merida/bb.svg")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(gitHub + "/merida/bq.svg"), url(gitLab + "/merida/bq.svg")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(gitHub + "/merida/bk.svg"), url(gitLab + "/merida/bk.svg")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(gitHub + "/merida/wp.svg"), url(gitLab + "/merida/wp.svg")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(gitHub + "/merida/wr.svg"), url(gitLab + "/merida/wr.svg")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/Furia/svg/meridaFuriaGrad-wn.svg"), url(gitLab + "/Furia/svg/meridaFuriaGrad-wn.svg")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(gitHub + "/merida/wb.svg"), url(gitLab + "/merida/wb.svg")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(gitHub + "/merida/wq.svg"), url(gitLab + "/merida/wq.svg")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(gitHub + "/merida/wk.svg"), url(gitLab + "/merida/wk.svg")!important;
+        }
+    }
+    /*master switch (to be used in case of performance issues by low-end PCs)*/
+    if enableExtraSettings=="1" {
+        if myBoard=="op1" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+            }
+        }
+        if myBoard=="op2" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important
+            }
+        }
+        if myBoard=="op3" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
+            }
+        }
+        if myBoard=="op4" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important
+            }
+        }
+        if myBoard=="op5" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important
+            }
+        }
+        if myBoard=="op6" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #F0EDD6 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5AA174 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
+        }
+        if myBoard=="op7" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #f3f1de !important;
+            }
+            .evaluation-bar-black {
+                background-color: #b1776f!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
+        }
+        if myBoard=="op8" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
+            }
+        }
+        if myBoard=="op9" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background: url(gitHub + "/Furia/wood-white-bar_sp.png"), url(gitLab + "/Furia/wood-white-bar_sp.png")!important;
+                background-color: #F5CEA2 !important;
+            }
+            .evaluation-bar-black {
+                background: url(gitHub + "/Furia/wood-black-bar_sp.png"), url(gitLab + "/Furia/wood-black-bar_sp.png")!important;
+                background-color: #BA7541 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op9b" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background: url(gitHub + "/Furia/wood-white-bar3.png"), url(gitLab + "/Furia/wood-white-bar3.png")!important;
+                background-color: #F5CEA2 !important;
+            }
+            .evaluation-bar-black {
+                background: url(gitHub + "/Furia/wood-black-bar3.png"), url(gitLab + "/Furia/wood-black-bar3.png")!important;
+                background-color: #BA7541 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="op10" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #9fbaec !important;
+            }
+            .evaluation-bar-black {
+                background-color: #768ab1 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="op11" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #9bb66f !important;
+            }
+            .evaluation-bar-black {
+                background-color: #607144 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8!important;
+            }
+        }
+        if myBoard=="op12" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #a9a9a9 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #676767 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postA" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #BCC3CB !important;
+            }
+            .evaluation-bar-black {
+                background-color: #3F5C7A !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postB" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #C7D1D2 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5C6D74 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postC" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #D1C9D6 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #57536E !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postD" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #DAD1D6 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #71586B !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postE" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #CEC9C3 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #726958 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postF" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #D2D4C9 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #5D7555 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="postG" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #C4D2D3 !important;
+            }
+            .evaluation-bar-black {
+                background-color: #4C6B70 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        /*wallpaper (secondary server not defined here to save memory but gitLab links are available)*/
+        body {
+            --op10wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard_1920px.jpg);
+            --op11wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard3_1920px.jpg);
+            --op12wall: url(https://github.com/FSA1/Styles/raw/main/Furia/wallpaper/black-leopard4_1920px.jpg);
+            --postwall: url(https://github.com/FSA1/Styles/raw/main/wallpaper/concrete/3590067.jpg);
+        }
+        if myWallpaper=="op1" {
+            body:after {
+                if myBoard=="op10" {
+                    background: var(--op10wall) center center!important;
+                }
+                if myBoard=="op11" {
+                    background: var(--op11wall) center center!important;
+                }
+                if myBoard=="op12" {
+                    background: var(--op12wall) center center!important;
+                    /*filter: brightness(100%)!important;*/
+                }
+                if myBoard=="postA" || myBoard=="postB" || myBoard=="postC" || myBoard=="postD" || myBoard=="postE" || myBoard=="postF" || myBoard=="postG" {
+                    background: var(--postwall) center center!important;
+                }
+                background-size: cover!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+            }
+            /*side bar background*/
+            .theme-bg {
+                if myBoard=="op10" {
+                    background: var(--op10wall) !important;
+                }
+                if myBoard=="op11" {
+                    background: var(--op11wall) !important;
+                }
+                if myBoard=="op12" {
+                    background: var(--op12wall) !important;
+                }
+                if myBoard=="postA" || myBoard=="postB" || myBoard=="postC" || myBoard=="postD" || myBoard=="postE" || myBoard=="postF" || myBoard=="postG" {
+                    background: var(--postwall) !important;
+                }
+            }
+            @media (max-width: 959px) {
+                #sb {
+                    background-color: #000000a6;
+                }
+            }
+        }
+        if myWallpaper=="op2" {
+            body:after {
+                background: url(userWallpaper) center center!important;
+                background-size: cover!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+            }
+            /*side bar background*/
+            .theme-bg {
+                background-image: url(userWallpaper) !important;
+            }
+            @media (max-width: 959px) {
+                #sb {
+                    background-color: #000000a6;
+                }
+            }
+        }
+        /*sombreamento para as miniaturas dos tabuleiros*/
+        div [style*="40.png"][class="game-preview-component"] {
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+        /*------ Drop-shadow for the pieces------*/
+        if enableShadow {
+            /*------Blend and hue variation------*/
+            .is2d .king.black,
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"],
+            .is2d .queen.black,
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"],
+            .is2d .bishop.black,
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"],
+            .is2d .knight.black,
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"],
+            .is2d .rook.black,
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"],
+            .is2d .pawn.black,
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                mix-blend-mode: enableBlendB;
+                filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB) drop-shadow(0 0 0.1rem #000);
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+                opacity: opacityB!important;
+            }
+            .is2d .king.white,
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"],
+            .is2d .queen.white,
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"],
+            .is2d .bishop.white,
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"],
+            .is2d .knight.white,
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"],
+            .is2d .rook.white,
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"],
+            .is2d .pawn.white,
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                mix-blend-mode: enableBlendW;
+                filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW) drop-shadow(0 0 0.1rem #000)!important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+                opacity: opacityW!important;
+            }
+        }
+        else {
+            /*------Blend and hue variation------*/
+            .is2d .king.black,
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"],
+            .is2d .queen.black,
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"],
+            .is2d .bishop.black,
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"],
+            .is2d .knight.black,
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"],
+            .is2d .rook.black,
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"],
+            .is2d .pawn.black,
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                mix-blend-mode: enableBlendB;
+                filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB)!important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+                opacity: opacityB!important;
+            }
+            .is2d .king.white,
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"],
+            .is2d .queen.white,
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"],
+            .is2d .bishop.white,
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"],
+            .is2d .knight.white,
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"],
+            .is2d .rook.white,
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"],
+            .is2d .pawn.white,
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                mix-blend-mode: enableBlendW;
+                filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW)!important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+                opacity: opacityW!important;
+            }
+        }
+        /*Highlight*/
+        if enableHL {
+            if myBoard=="op1" || myBoard=="op2" || myBoard=="op3" || myBoard=="op4" || myBoard=="op5" || myBoard=="op8" || myBoard=="op10" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #38abd9!important;
+                }
+                .selection-square {
+                    background-color: #0058cc !important;
+                }
+            }
+            if myBoard=="op12" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #faff26!important;
+                }
+                .selection-square {
+                    background-color: #00679a !important;
+                }
+            }
+            if myBoard=="op6" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #00d12b!important;
+                }
+                .selection-square {
+                    background-color: #00e1f6 !important;
+                }
+            }
+            if myBoard=="op7"|| myBoard=="op9" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #fbd13d!important;
+                }
+                .selection-square {
+                    background-color: #ff4d00 !important;
+                }
+            }
+            if myBoard=="op9b" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #e8a841!important;
+                }
+                .selection-square {
+                    background-color: #c96d45 !important;
+                }
+            }
+            if myBoard=="op11" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #aef920!important;
+                }
+                .selection-square {
+                    background-color: #00fff3 !important;
+                }
+            }
+            if myBoard=="postA" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #00c3ff!important;
+                }
+                .selection-square {
+                    background-color: #275edf !important;
+                }
+            }
+            if myBoard=="postB" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #1fb7ce!important;
+                }
+                .selection-square {
+                    background-color: #005393 !important;
+                }
+            }
+            if myBoard=="postC" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #6d7df6!important;
+                }
+                .selection-square {
+                    background-color: #7d27a5 !important;
+                }
+            }
+            if myBoard=="postD" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #d93e9d!important;
+                }
+                .selection-square {
+                    background-color: #a054c4 !important;
+                }
+            }
+            if myBoard=="postE" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #e8c741!important;
+                }
+                .selection-square {
+                    background-color: #a8c180 !important;
+                }
+            }
+            if myBoard=="postF" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #e8e041!important;
+                }
+                .selection-square {
+                    background-color: rgb(32, 164, 111) !important;
+                }
+            }
+            if myBoard=="postG" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #3be2ff!important;
+                }
+                .selection-square {
+                    background-color: rgb(0, 176, 167) !important;
+                }
+            }
+        }
+        /*Highlight opacity*/
+        .move-square,
+        .highlight {
+            opacity: highlightOpacity!important;
+        }
+        /*Highlight hue variation*/
+        if setHLhueRotation {
+            .move-square,
+            .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                filter: hue-rotate(highlightHueRotation) !important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+            }
+        }
+        /*Evaluation-bar hue variation*/
+        .evaluation-bar-white,
+        .evaluation-bar-black {
+            filter: sepia(sepiaBoard) hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard)!important;
+            -webkit-filter: @filter;
+            -moz-filter: @filter;
+            -o--filter: @filter;
+        }
+        if enableArrowSettings {
+            .arrow {
+                filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+                opacity: arrowOpacity !important;
+            }
+        }
+        .marked-square {
+            opacity: 0.8!important;
+        }
+        .promotion-window {
+            background-color: #72777d!important;
+        }
+    }
+    /*End of the code*/
+}
