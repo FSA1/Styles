@@ -9,7 +9,7 @@
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Azul": "op1",
-            "Azul Escuro": "op2",
+            "Azul Escuro*": "op2",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
