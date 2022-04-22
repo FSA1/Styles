@@ -4,11 +4,12 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
-            "Red Bull": "op1",
+            "Azul": "op1",
+            "Azul Escuro": "op2",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
@@ -55,6 +56,9 @@
             if myBoard=="op1" {
                 background: url(https://github.com/FSA1/Styles/raw/main/redbull/redbull.png) 0% 0% / 100% 100% no-repeat!important;
             }
+            if myBoard=="op2" {
+                background: url(https://github.com/FSA1/Styles/raw/main/redbull/redbull_alt.png) 0% 0% / 100% 100% no-repeat!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" {
@@ -64,7 +68,7 @@
             .cg-wrap.orientation-black .ranks coord:nth-child(2n),
             div.number.coords-light,
             div.letter.coords-light {
-                color: #114AAB !important;
+                color: #0C4AB6 !important;
             }
             .cg-wrap.orientation-white .files coord:nth-child(2n+1),
             .cg-wrap.orientation-white .ranks coord:nth-child(2n),
@@ -75,10 +79,34 @@
                 color: #CDCDCD !important;
             }
             text.coordinate-light {
-                fill: #114AAB !important;
+                fill: #0C4AB6 !important;
             }
             text.coordinate-dark {
                 fill: #CDCDCD !important;
+            }
+        }
+        if myBoard=="op2" {
+            .cg-wrap.orientation-white .files coord:nth-child(2n),
+            .cg-wrap.orientation-white .ranks coord:nth-child(2n+1),
+            .cg-wrap.orientation-black .files coord:nth-child(2n+1),
+            .cg-wrap.orientation-black .ranks coord:nth-child(2n),
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #255094 !important;
+            }
+            .cg-wrap.orientation-white .files coord:nth-child(2n+1),
+            .cg-wrap.orientation-white .ranks coord:nth-child(2n),
+            .cg-wrap.orientation-black .files coord:nth-child(2n),
+            .cg-wrap.orientation-black .ranks coord:nth-child(2n+1),
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D1D1D1 !important;
+            }
+            text.coordinate-light {
+                fill: #255094 !important;
+            }
+            text.coordinate-dark {
+                fill: #D1D1D1 !important;
             }
         }
         /*Highlight*/
@@ -101,7 +129,15 @@
                     background-color: #CDCDCD !important;
                 }
                 .evaluation-bar-black {
-                    background-color: #114AAB !important;
+                    background-color: #0C4AB6 !important;
+                }
+            }
+            if myBoard=="op2" {
+                .evaluation-bar-white {
+                    background-color: #D1D1D1 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #255094 !important;
                 }
             }
 
