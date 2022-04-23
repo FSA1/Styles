@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/pantera-da-furia-no-lugar-do-cavalo-sim-tabuleiro-e-pecas-da-furia
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.15
+@version        2.2.16
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -31,6 +31,7 @@
             "Poster Verde": "postF",
             "Poster Petroleo": "postG",
             "Graffiti Azul Concreto": "graffitiConcreteBlue",
+            "Graffiti Verde Concreto": "graffitiConcreteGreen",
             "Graffiti Azul": "graffitiBlue",
             "Graffiti Roxo": "graffitiPurple",
             "Graffiti Verde": "graffitiGreen",
@@ -483,6 +484,23 @@
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #DADADA !important;
+                fill: @color;
+            }
+        }
+        if myBoard=="graffitiConcreteGreen" {
+            background-image: url(gitHub + "/Furia/graffiti/FURIA_concrete_graffiti_green.jpg"), url(gitLab + "/Furia/graffiti/FURIAcb_concrete_graffiti_green.jpg")!important;
+
+            /*Coordinates*/
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #666759!important;
+                fill: @color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #A2BC9F !important;
                 fill: @color;
             }
         }
@@ -1549,6 +1567,22 @@
                 opacity: 0.8;
             }
         }
+        if myBoard=="graffitiConcreteGreen" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(gitHub + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat !important
+            }
+            /*Evaluation Bar*/
+            .evaluation-bar-white {
+                background-color: #A2BC9F !important;
+            }
+            .evaluation-bar-black {
+                background-color: #666759 !important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
         if myBoard=="graffitiBlue" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
@@ -1920,6 +1954,15 @@
                 }
                 .selection-square {
                     background-color: rgb(74, 145, 215) !important;
+                }
+            }
+            if myBoard=="graffitiConcreteGreen" {
+                .move-square,
+                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                    background-color: #d2f940!important;
+                }
+                .selection-square {
+                    background-color: #00b481 !important;
                 }
             }
             if myBoard=="graffitiBlue" {
