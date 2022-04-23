@@ -579,13 +579,13 @@
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
-                color: #6d8925!important;
+                color: #67824B!important;
                 fill: @color;
             }
             text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #cce0b3 !important;
+                color: #DDE9BB !important;
                 fill: @color;
             }
         }
@@ -1671,10 +1671,10 @@
             }
             /*Evaluation Bar*/
             .evaluation-bar-white {
-                background-color: #D5DDB4 !important;
+                background-color: #DDE9BB !important;
             }
             .evaluation-bar-black {
-                background-color: #6C8750 !important;
+                background-color: #67824B !important;
             }
             .evaluation-bar-bar {
                 opacity: 0.8;
