@@ -4,12 +4,13 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com`
-@version        1.0.1
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Azul": "op1",
-            "Azul Escuro*": "op2",
+            "Azul Medio": "op2",
+            "Azul Escuro": "op3",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
@@ -59,54 +60,51 @@
             if myBoard=="op2" {
                 background: url(https://github.com/FSA1/Styles/raw/main/redbull/redbull_alt.png) 0% 0% / 100% 100% no-repeat!important;
             }
+            if myBoard=="op3" {
+                background: url(https://github.com/FSA1/Styles/raw/main/redbull/redbull_alt2.png) 0% 0% / 100% 100% no-repeat!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" {
-            .cg-wrap.orientation-white .files coord:nth-child(2n),
-            .cg-wrap.orientation-white .ranks coord:nth-child(2n+1),
-            .cg-wrap.orientation-black .files coord:nth-child(2n+1),
-            .cg-wrap.orientation-black .ranks coord:nth-child(2n),
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #0C4AB6 !important;
+                fill:@color;
             }
-            .cg-wrap.orientation-white .files coord:nth-child(2n+1),
-            .cg-wrap.orientation-white .ranks coord:nth-child(2n),
-            .cg-wrap.orientation-black .files coord:nth-child(2n),
-            .cg-wrap.orientation-black .ranks coord:nth-child(2n+1),
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #CDCDCD !important;
-            }
-            text.coordinate-light {
-                fill: #0C4AB6 !important;
-            }
-            text.coordinate-dark {
-                fill: #CDCDCD !important;
+                fill:@color;
             }
         }
         if myBoard=="op2" {
-            .cg-wrap.orientation-white .files coord:nth-child(2n),
-            .cg-wrap.orientation-white .ranks coord:nth-child(2n+1),
-            .cg-wrap.orientation-black .files coord:nth-child(2n+1),
-            .cg-wrap.orientation-black .ranks coord:nth-child(2n),
+            text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
                 color: #255094 !important;
+                fill:@color;
             }
-            .cg-wrap.orientation-white .files coord:nth-child(2n+1),
-            .cg-wrap.orientation-white .ranks coord:nth-child(2n),
-            .cg-wrap.orientation-black .files coord:nth-child(2n),
-            .cg-wrap.orientation-black .ranks coord:nth-child(2n+1),
+            text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #D1D1D1 !important;
+                fill:@color;
             }
-            text.coordinate-light {
-                fill: #255094 !important;
+        }
+        if myBoard=="op3" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #415C84 !important;
+                fill:@color;
             }
-            text.coordinate-dark {
-                fill: #D1D1D1 !important;
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D4D4D4 !important;
+                fill:@color;
             }
         }
         /*Highlight*/
@@ -138,6 +136,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #255094 !important;
+                }
+            }
+            if myBoard=="op3" {
+                .evaluation-bar-white {
+                    background-color: #D4D4D4 !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #415C84 !important;
                 }
             }
 
