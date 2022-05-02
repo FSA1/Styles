@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the XV American Continental Chess Championship 2022`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -64,6 +64,10 @@
         }
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op1Ani" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb4b.png) 0% 0% / 100% 100% no-repeat !important
+            }
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -78,6 +82,10 @@
             }
         }
         if myBoard=="op1Tex" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb_tex2.png) 0% 0% / 100% 100% no-repeat !important
+            }
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -88,20 +96,6 @@
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #D2E4E6 !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="op1Light" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #5C7A82 !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E1DFCC !important;
                 fill:@color;
             }
         }
