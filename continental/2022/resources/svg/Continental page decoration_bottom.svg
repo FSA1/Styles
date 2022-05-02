@@ -1,0 +1,11 @@
+<svg width="481.33" height="370.67" version="1.1" viewBox="0 0 481.33 370.67" xmlns="http://www.w3.org/2000/svg">
+ <title>Continental page decoration</title>
+ <g transform="rotate(135 159 188.58)" stroke-width="0">
+  <rect x="151.83" y="-257.08" width="328.06" height="518.55" fill="#002a43" stop-color="#000000" style="paint-order:stroke markers fill"/>
+  <g fill="#05c3cf">
+   <rect x="97.186" y="-257.08" width="5.0057" height="399.37" stop-color="#000000" style="paint-order:stroke markers fill"/>
+   <rect x="123.2" y="-257.08" width="5.0057" height="619.39" stop-color="#000000" style="paint-order:stroke markers fill"/>
+   <rect x="179.12" y="-257.08" width="56.66" height="675.58" stop-color="#000000" style="paint-order:stroke markers fill"/>
+  </g>
+ </g>
+</svg>
