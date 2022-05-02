@@ -53,13 +53,13 @@
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1" {
-                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb4b.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb4b.jpg) 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Ani" {
                 background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb4b_ani.png) 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Tex" {
-                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb_tex2.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb_tex2.jpg) 0% 0% / 100% 100% no-repeat!important;
             }
         }
         /*Coordinates*/
