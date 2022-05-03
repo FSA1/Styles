@@ -4,13 +4,14 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the XV American Continental Chess Championship 2022`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Azul": "op1",
             "Azul (animado)": "op1Ani",
             "Azul (texturizado)": "op1Tex",
+            "Azul (tex. mapa)": "op1TexMp",
             "Desativado": "op0",
         }
 
@@ -61,6 +62,9 @@
             if myBoard=="op1Tex" {
                 background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb_tex2.jpg) 0% 0% / 100% 100% no-repeat!important;
             }
+            if myBoard=="op1TexMp" {
+                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/continental_cb_mp.jpg) 0% 0% / 100% 100% no-repeat!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op1Ani" {
@@ -99,9 +103,27 @@
                 fill:@color;
             }
         }
+        if myBoard=="op1TexMp" {
+            /*Small board for game preview*/
+            div [style*="40.png"][class="game-preview-component"] {
+                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb_tex2.png) 0% 0% / 100% 100% no-repeat !important
+            }
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #426780 !important;
+                fill:@color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #CFDDDE !important;
+                fill:@color;
+            }
+        }
         /*Highlight+evaluation bar*/
         if enableHL {
-            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Tex" {
+            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Tex" || myBoard=="op1TexMp" {
                 .move-square,
                 .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
                     background-color: #2bd5ff!important;
@@ -127,6 +149,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #41657C !important;
+                }
+            }
+            if myBoard=="op1TexMp" {
+                .evaluation-bar-white {
+                    background-color: #CFDDDE       !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #426780 !important;
                 }
             }
         }
