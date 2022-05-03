@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the XV American Continental Chess Championship 2022`
-@version        1.0.4
+@version        1.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -103,7 +103,7 @@
             text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #D2E4E6 !important;
+                color: #C4D6DA !important;
                 fill:@color;
             }
         }
@@ -149,7 +149,7 @@
             }
             if myBoard=="op1Tex" || myBoard=="op1TexAni" {
                 .evaluation-bar-white {
-                    background-color: #D2E4E6       !important;
+                    background-color: #C4D6DA       !important;
                 }
                 .evaluation-bar-black {
                     background-color: #41657C !important;
