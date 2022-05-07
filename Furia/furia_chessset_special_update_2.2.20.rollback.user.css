@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/pantera-da-furia-no-lugar-do-cavalo-sim-tabuleiro-e-pecas-da-furia
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.21
+@version        2.2.20
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -1306,37 +1306,37 @@
     if enableExtraSettings=="1" {
         if myBoard=="op1" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op2" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_gray.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op3" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op4" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue2.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op5" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue3.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op6" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1352,7 +1352,7 @@
         }
         if myBoard=="op7" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_brown.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1368,13 +1368,13 @@
         }
         if myBoard=="op8" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
             }
         }
         if myBoard=="op9" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia_cb_wood.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1392,7 +1392,7 @@
         }
         if myBoard=="op9b" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia_cb_wood3.jpg") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1410,7 +1410,7 @@
         }
         if myBoard=="op10" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1426,7 +1426,7 @@
         }
         if myBoard=="op11" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1442,7 +1442,7 @@
         }
         if myBoard=="op12" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/NxF_cb.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1458,7 +1458,7 @@
         }
         if myBoard=="postA" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postA.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1474,7 +1474,7 @@
         }
         if myBoard=="postB" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postB.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1490,7 +1490,7 @@
         }
         if myBoard=="postC" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postC.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1506,7 +1506,7 @@
         }
         if myBoard=="postD" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postD.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1522,7 +1522,7 @@
         }
         if myBoard=="postE" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postE.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1538,7 +1538,7 @@
         }
         if myBoard=="postF" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postF.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1554,7 +1554,7 @@
         }
         if myBoard=="postG" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/postG.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1570,7 +1570,7 @@
         }
         if myBoard=="graffitiConcreteBlue" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1586,7 +1586,7 @@
         }
         if myBoard=="graffitiConcreteBlue2" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/FURIA_concrete_graffiti_blue2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1602,7 +1602,7 @@
         }
         if myBoard=="graffitiConcreteGreen" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/FURIA_concrete_graffiti_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/FURIA_concrete_graffiti.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1618,7 +1618,7 @@
         }
         if myBoard=="graffitiBlue" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/furia-graffiti_cb_blue.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/furia-graffiti_cb_blue.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1634,7 +1634,7 @@
         }
         if myBoard=="graffitiPurple" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/furia-graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_purple.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1650,7 +1650,7 @@
         }
         if myBoard=="graffitiGreen" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/furia-graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1666,7 +1666,7 @@
         }
         if myBoard=="graffitiGreen2" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"] {
                 background: url(gitHub + "/Furia/mini/furia-graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat, url(gitLab + "/Furia/mini/graffiti_cb_green2.png") 0% 0% / 100% 100% no-repeat !important
             }
             /*Evaluation Bar*/
@@ -1726,7 +1726,7 @@
             }
         }
         /*sombreamento para as miniaturas dos tabuleiros*/
-        div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
+        div [style*="40.png"][class="game-preview-component"] {
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         }
         /*------ Drop-shadow for the pieces------*/
