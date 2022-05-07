@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           Fier's Wood Chessboard
+@name           Fier's Chessboard
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
@@ -53,14 +53,14 @@ domain("lichess.org") {
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1" {
-                background: url(https://github.com/FSA1/Styles/raw/main/Fier/fier_wood_cb.jpg) 0% 0% / 100% 100% no-repeat!important;
+                background: url(https://github.com/FSA1/Styles/raw/main/Fier/fier_wood_cb2.jpg) 0% 0% / 100% 100% no-repeat!important;
             }
         }
         /*Coordinates*/
         if myBoard=="op1" {
             /*Small board for game preview*/
             div [style*="40.png"][class="game-preview-component"] {
-                background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb4b.png) 0% 0% / 100% 100% no-repeat !important
+                background: url(https://github.com/FSA1/Styles/raw/main/Fier/mini/fier_wood_cb_mini.jpg) 0% 0% / 100% 100% no-repeat !important
             }
             .orientation-white .files coord:nth-child(2n),
             .orientation-white .ranks coord:nth-child(2n + 1),
@@ -69,7 +69,7 @@ domain("lichess.org") {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
-                color: #654f38 !important;
+                color: #644e37 !important;
                 fill: @color;
             }
             .orientation-white .files coord:nth-child(2n + 1),
@@ -79,7 +79,7 @@ domain("lichess.org") {
             text.coordinate-dark,
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #c9b79f !important;
+                color: #D5C5A1 !important;
                 fill: @color;
             }
         }
@@ -101,10 +101,12 @@ domain("lichess.org") {
         if setEvaluationBar {
             if myBoard=="op1" || myBoard=="op1Ani" {
                 .evaluation-bar-white {
-                    background-color: #c9b79f !important;
+                    background: url('https://github.com/FSA1/Styles/raw/main/Fier/mini/bar_wood_w2.jpg');
+                    background-color: #D5C5A1 !important;
                 }
                 .evaluation-bar-black {
-                    background-color: #654f38 !important;
+                    background: url('https://github.com/FSA1/Styles/raw/main/Fier/mini/bar_wood_b.jpg');
+                    background-color: #644e37 !important;
                 }
             }
         }
