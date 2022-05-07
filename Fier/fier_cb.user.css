@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the Picanha  Blitz Championship 2022`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -59,7 +59,7 @@ domain("lichess.org") {
         /*Coordinates*/
         if myBoard=="op1" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
                 background: url(https://github.com/FSA1/Styles/raw/main/Fier/mini/fier_wood_cb2_mini.jpg) 0% 0% / 100% 100% no-repeat !important
             }
             .orientation-white .files coord:nth-child(2n),
