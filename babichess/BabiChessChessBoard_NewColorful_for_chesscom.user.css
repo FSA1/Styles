@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.36
+@version        20200831.22.37
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -343,7 +343,7 @@
     }
     /*Small board for game preview*/
         if myBoard=="op1"{
-                div [style*="40.png"][class="game-preview-component"] {
+                div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
                     background: url("https://github.com/FSA1/Styles/raw/main/babichess/40.png") 0% 0% / 100% 100% no-repeat !important;
                     }
             }

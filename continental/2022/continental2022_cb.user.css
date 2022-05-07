@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the XV American Continental Chess Championship 2022`
-@version        1.0.5
+@version        1.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -73,7 +73,7 @@
         /*Coordinates*/
         if myBoard=="op1" || myBoard=="op1Ani" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
                 background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb4b.png) 0% 0% / 100% 100% no-repeat !important
             }
             text.coordinate-light,
@@ -91,7 +91,7 @@
         }
         if myBoard=="op1Tex" || myBoard=="op1TexAni" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
                 background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb_tex2.png) 0% 0% / 100% 100% no-repeat !important
             }
             text.coordinate-light,
@@ -109,7 +109,7 @@
         }
         if myBoard=="op1TexMp" {
             /*Small board for game preview*/
-            div [style*="40.png"][class="game-preview-component"] {
+            div [style*="40.png"][class="game-preview-component"], div [style*="40.jpg"][class="game-preview-component"] {
                 background: url(https://github.com/FSA1/Styles/raw/main/continental/2022/mini/continental_cb_tex2.png) 0% 0% / 100% 100% no-repeat !important
             }
             text.coordinate-light,
