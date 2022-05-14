@@ -201,10 +201,10 @@
         }
         /*Highlight+evaluation bar*/
         if enableHL {
-            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Cl" || myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
+            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Cl" || myBoard=="op1Alt" || myBoard=="op1AltCl" || myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
                 .move-square,
                 .highlight:not({notThisColors}) {
-                    background-color: #2bd5ff!important;
+                    background-color: #50e2ff!important;
                 }
                 .selection-square {
                     background-color: #02c4c4 !important;
