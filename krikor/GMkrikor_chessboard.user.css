@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           GMKrikor: chessboard
-@namespace      USO Archive
+@namespace      ChessSkins
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com`
@@ -22,6 +22,15 @@
             "verde cl (limpo)": "op2LightCl",
             "Desativado": "op0",
         }
+@var    select      myPieces    "Escolher Peças"{
+            "Alpha": "op1",
+            "Caixas": "op2",
+            "Clássico": "op3",
+            "Mar Gelado*": "op4",
+            "Bases": "op5",
+            "Bases (Plano)": "op6",
+            "Desativado": "op0",
+        }
 
 @var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
 @var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
@@ -29,6 +38,18 @@
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
+
+    /*The beautify function may cause an error by joining the following variables into a single line.
+    Just revert the changes to make it work again.*/
+    
+    gitHub='https://github.com/FSA1/Styles/raw/main'
+    
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main'
+    
+    chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
+    
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+    
     if myBoard!="op0" {
         /*Chessboard.board,*/
         .board-brown .cg-wrap,
@@ -62,40 +83,40 @@
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/blue-Krikor.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/blue-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Ani" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/blue-Krikor_ani.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1cl" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/blue-Krikor_clean.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/blue-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Light" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/light-blue-Krikor.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/light-blue-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1LightAni" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/light-blue-Krikor_ani.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/light-blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1LightCl" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/light-blue-Krikor_clean.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/light-blue-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/jade-Krikor.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/jade-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Ani" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/jade-Krikor_ani.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2cl" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/jade-Krikor_clean.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/jade-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Light" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/light-jade-Krikor.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/light-jade-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2LightAni" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/light-jade-Krikor_ani.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/light-jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2LightCl" {
-                background: url(https://github.com/FSA1/Styles/raw/main/krikor/elegant/light-jade-Krikor_clean.png) 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/elegant/light-jade-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
         }
         /*Coordinates*/
@@ -159,7 +180,7 @@
         if enableHL {
             if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1cl" || myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
                 .move-square,
-                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not({notThisColors}) {
                     background-color: #2bd5ff!important;
                 }
                 .selection-square {
@@ -168,7 +189,7 @@
             }
             if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2cl" || myBoard=="op2Light" || myBoard=="op2LightAni" || myBoard=="op2LightCl" {
                 .move-square,
-                .highlight:not([style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]) {
+                .highlight:not({notThisColors}) {
                     background-color: #fbeb3b!important;
                 }
                 .selection-square {
@@ -217,6 +238,392 @@
                     filter: hue-rotate(hueRotationBoard);
                 }
             }
+        }
+    }
+    /*Pieces*/
+
+    /*Krik Alpha*/
+    if myPieces=="op1" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/alpha/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/alpha/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/bn-alpha-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/alpha/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/alpha/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/alpha/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/alpha/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/alpha/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/wn-alpha-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/alpha/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/alpha/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/alpha/150/wk.png")!important;
+        }
+    }
+    /*Krik Cases*/
+    if myPieces=="op2" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/cases/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/cases/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/bn-alpha-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/cases/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/cases/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/cases/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/cases/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/cases/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/wn-alpha-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/cases/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/cases/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/cases/150/wk.png")!important;
+        }
+    }
+    /*Krik Classic*/
+    if myPieces=="op3" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/classic/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/classic/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/bn-alpha-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/classic/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/classic/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/classic/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/classic/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/classic/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/wn-alpha-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/classic/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/classic/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/classic/150/wk.png")!important;
+        }
+    }
+    /*Krik Ice Sea*/
+    if myPieces=="op4" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/icy_sea/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/bn-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/icy_sea/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/wn-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/icy_sea/150/wk.png")!important;
+        }
+    }
+    /*Krik Bases*/
+    if myPieces=="op5" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(chesscom + "/bases/150/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(chesscom + "/bases/150/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/bn-bases-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(chesscom + "/bases/150/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(chesscom + "/bases/150/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(chesscom + "/bases/150/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(chesscom + "/bases/150/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(chesscom + "/bases/150/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/wn-bases-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(chesscom + "/bases/150/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(chesscom + "/bases/150/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(chesscom + "/bases/150/wk.png")!important;
+        }
+    }
+    /*Krik Bases (flat)*/
+    if myPieces=="op6" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(gitHub + "/Furia/beige/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(gitHub + "/Furia/beige/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/bn-mg-beige-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(gitHub + "/Furia/beige/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(gitHub + "/Furia/beige/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(gitHub + "/Furia/beige/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(gitHub + "/Furia/beige/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(gitHub + "/Furia/beige/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/wn-mg-beige-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(gitHub + "/Furia/beige/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(gitHub + "/Furia/beige/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(gitHub + "/Furia/beige/wk.png")!important;
         }
     }
     /*End of the code*/
