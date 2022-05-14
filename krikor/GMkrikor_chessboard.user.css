@@ -10,13 +10,15 @@
 @var    select      myBoard    "Escolher tabuleiro" {
             "Azul": "op1",
             "Azul animado": "op1Ani",
-            "Azul (limpo)": "op1cl",
+            "Azul (limpo)": "op1Cl",
+            "Azul alt": "op1Alt",
+            "Azul alt (limpo)": "op1AltCl",
             "Azul claro": "op1Light",
             "Azul cl animado": "op1LightAni",
             "Azul cl (limpo)": "op1LightCl",
             "verde": "op2",
             "verde animado": "op2Ani",
-            "verde (limpo)": "op2cl",
+            "verde (limpo)": "op2Cl",
             "verde claro": "op2Light",
             "verde cl animado": "op2LightAni",
             "verde cl (limpo)": "op2LightCl",
@@ -88,7 +90,7 @@
             if myBoard=="op1Ani" {
                 background: url(gitHub + "/krikor/elegant/blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
-            if myBoard=="op1cl" {
+            if myBoard=="op1Cl" {
                 background: url(gitHub + "/krikor/elegant/blue-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Light" {
@@ -100,13 +102,19 @@
             if myBoard=="op1LightCl" {
                 background: url(gitHub + "/krikor/elegant/light-blue-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
+            if myBoard=="op1Alt" {
+                background: url(gitHub + "/krikor/elegant/blue-Krikor_alt3.png") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1AltCl" {
+                background: url(gitHub + "/krikor/elegant/blue-Krikor_alt3_clean.png") 0% 0% / 100% 100% no-repeat!important;
+            }
             if myBoard=="op2" {
                 background: url(gitHub + "/krikor/elegant/jade-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Ani" {
                 background: url(gitHub + "/krikor/elegant/jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
-            if myBoard=="op2cl" {
+            if myBoard=="op2Cl" {
                 background: url(gitHub + "/krikor/elegant/jade-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Light" {
@@ -120,7 +128,7 @@
             }
         }
         /*Coordinates*/
-        if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1cl" {
+        if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Cl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -131,6 +139,21 @@
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #DCDAC0 !important;
+                fill:@color;
+            }
+        }
+        /*Coordinates*/
+        if myBoard=="op1Alt" || myBoard=="op1AltCl" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #6290A3 !important;
+                fill:@color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #D1DBE1 !important;
                 fill:@color;
             }
         }
@@ -148,7 +171,7 @@
                 fill:@color;
             }
         }
-        if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2cl" {
+        if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2Cl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -178,7 +201,7 @@
         }
         /*Highlight+evaluation bar*/
         if enableHL {
-            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1cl" || myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
+            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Cl" || myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
                 .move-square,
                 .highlight:not({notThisColors}) {
                     background-color: #2bd5ff!important;
@@ -187,7 +210,7 @@
                     background-color: #02c4c4 !important;
                 }
             }
-            if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2cl" || myBoard=="op2Light" || myBoard=="op2LightAni" || myBoard=="op2LightCl" {
+            if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2Cl" || myBoard=="op2Light" || myBoard=="op2LightAni" || myBoard=="op2LightCl" {
                 .move-square,
                 .highlight:not({notThisColors}) {
                     background-color: #fbeb3b!important;
@@ -199,12 +222,20 @@
         }
         /*Evaluation bar*/
         if setEvaluationBar {
-            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1cl" {
+            if myBoard=="op1" || myBoard=="op1Ani" || myBoard=="op1Cl" {
                 .evaluation-bar-white {
                     background-color: #DCDAC0       !important;
                 }
                 .evaluation-bar-black {
                     background-color: #476C77 !important;
+                }
+            }
+            if myBoard=="op1Alt" || myBoard=="op1AltCl" {
+                .evaluation-bar-white {
+                    background-color: #D1DBE1       !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #588092 !important;
                 }
             }
         if myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
@@ -215,7 +246,7 @@
                     background-color: #5C7A82 !important;
                 }
             }
-            if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2cl" {
+            if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2Cl" {
                 .evaluation-bar-white {
                     background-color: #DEDBC1 !important;
                 }
