@@ -9,16 +9,16 @@
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Azul*": "op1",
-            "Azul (limpo)": "op1Cl",
-            "Azul alt": "op1Alt",
-            "Azul alt (limpo)": "op1AltCl",
-            "Cinza alt": "op1AltGray",
-            "Cinza alt (limpo)": "op1AltGrayCl",
             "Azul claro": "op1Light",
-            "Azul cl (limpo)": "op1LightCl",
+            "Azul alt": "op1Alt",
+            "Cinza": "op1AltGray",
             "verde": "op2",
-            "verde (limpo)": "op2Cl",
             "verde claro": "op2Light",
+            "Azul (limpo)": "op1Cl",
+            "Azul cl (limpo)": "op1LightCl",
+            "Azul alt (limpo)": "op1AltCl",
+            "Cinza alt (limpo)": "op1AltGrayCl",
+            "verde (limpo)": "op2Cl",
             "verde cl (limpo)": "op2LightCl",
             "Desativado": "op0",
         }
