@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for chess.com`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -239,38 +239,58 @@
         /*Evaluation bar*/
         if setEvaluationBar {
             if myBoard=="op1" || myBoard=="op1Cl" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(gitHub + "/krikor/boards/mini/blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            }
                 .evaluation-bar-white {
-                    background-color: #DCDAC0       !important;
+                    background-color: #DCDAC0 !important;
                 }
                 .evaluation-bar-black {
                     background-color: #476C77 !important;
                 }
             }
             if myBoard=="op1Alt" || myBoard=="op1AltCl" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(gitHub + "/krikor/boards/mini/blue-Krikor_alt3_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            }
                 .evaluation-bar-white {
-                    background-color: #D1DBE1       !important;
+                    background-color: #D1DBE1 !important;
                 }
                 .evaluation-bar-black {
                     background-color: #588092 !important;
                 }
             }
             if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(gitHub + "/krikor/boards/mini/blue-Krikor_alt4_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            }
                 .evaluation-bar-white {
-                    background-color: #CED5D8       !important;
+                    background-color: #CED5D8 !important;
                 }
                 .evaluation-bar-black {
                     background-color: #79909A !important;
                 }
             }
         if myBoard=="op1Light" || myBoard=="op1LightCl" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(gitHub + "/krikor/boards/mini/light-blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            }
                 .evaluation-bar-white {
-                    background-color: #E1DFCC       !important;
+                    background-color: #E1DFCC !important;
                 }
                 .evaluation-bar-black {
                     background-color: #5C7A82 !important;
                 }
             }
             if myBoard=="op2" || myBoard=="op2Cl" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(gitHub + "/krikor/boards/mini/jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            }
                 .evaluation-bar-white {
                     background-color: #DEDBC1 !important;
                 }
@@ -279,6 +299,10 @@
                 }
             }
         if myBoard=="op2Light" || myBoard=="op2LightCl" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(gitHub + "/krikor/boards/mini/light-jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            }
                 .evaluation-bar-white {
                     background-color: #DEDDC7 !important;
                 }
