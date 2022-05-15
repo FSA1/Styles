@@ -8,11 +8,13 @@
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
-            "Azul": "op1",
+            "Azul*": "op1",
             "Azul animado": "op1Ani",
             "Azul (limpo)": "op1Cl",
             "Azul alt": "op1Alt",
             "Azul alt (limpo)": "op1AltCl",
+            "Cinza alt": "op1AltGray",
+            "Cinza alt (limpo)": "op1AltGrayCl",
             "Azul claro": "op1Light",
             "Azul cl animado": "op1LightAni",
             "Azul cl (limpo)": "op1LightCl",
@@ -29,6 +31,7 @@
             "Caixas": "op2",
             "Clássico": "op3",
             "Mar Gelado*": "op4",
+            "Mar G Azul": "op4B",
             "Bases": "op5",
             "Bases (Plano)": "op6",
             "Desativado": "op0",
@@ -85,46 +88,52 @@
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1" {
-                background: url(gitHub + "/krikor/elegant/blue-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Ani" {
-                background: url(gitHub + "/krikor/elegant/blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Cl" {
-                background: url(gitHub + "/krikor/elegant/blue-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Light" {
-                background: url(gitHub + "/krikor/elegant/light-blue-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-blue-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1LightAni" {
-                background: url(gitHub + "/krikor/elegant/light-blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-blue-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1LightCl" {
-                background: url(gitHub + "/krikor/elegant/light-blue-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Alt" {
-                background: url(gitHub + "/krikor/elegant/blue-Krikor_alt3.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt3.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1AltCl" {
-                background: url(gitHub + "/krikor/elegant/blue-Krikor_alt3_clean.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt3_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1AltGray" {
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt4.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1AltGrayCl" {
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt4_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2" {
-                background: url(gitHub + "/krikor/elegant/jade-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/jade-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Ani" {
-                background: url(gitHub + "/krikor/elegant/jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Cl" {
-                background: url(gitHub + "/krikor/elegant/jade-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Light" {
-                background: url(gitHub + "/krikor/elegant/light-jade-Krikor.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-jade-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2LightAni" {
-                background: url(gitHub + "/krikor/elegant/light-jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-jade-Krikor_ani.png") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2LightCl" {
-                background: url(gitHub + "/krikor/elegant/light-jade-Krikor_clean.png") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
         }
         /*Coordinates*/
@@ -142,7 +151,6 @@
                 fill:@color;
             }
         }
-        /*Coordinates*/
         if myBoard=="op1Alt" || myBoard=="op1AltCl" {
             text.coordinate-light,
             div.number.coords-light,
@@ -154,6 +162,20 @@
             div.number.coords-dark,
             div.letter.coords-dark {
                 color: #D1DBE1 !important;
+                fill:@color;
+            }
+        }
+        if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #79909A !important;
+                fill:@color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #CED5D8 !important;
                 fill:@color;
             }
         }
@@ -210,6 +232,15 @@
                     background-color: #02c4c4 !important;
                 }
             }
+            if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl"  {
+                .move-square,
+                .highlight:not({notThisColors}) {
+                    background-color: #66c2ff!important;
+                }
+                .selection-square {
+                    background-color: #008fb7 !important;
+                }
+            }
             if myBoard=="op2" || myBoard=="op2Ani" || myBoard=="op2Cl" || myBoard=="op2Light" || myBoard=="op2LightAni" || myBoard=="op2LightCl" {
                 .move-square,
                 .highlight:not({notThisColors}) {
@@ -236,6 +267,14 @@
                 }
                 .evaluation-bar-black {
                     background-color: #588092 !important;
+                }
+            }
+            if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl" {
+                .evaluation-bar-white {
+                    background-color: #CED5D8       !important;
+                }
+                .evaluation-bar-black {
+                    background-color: #79909A !important;
                 }
             }
         if myBoard=="op1Light" || myBoard=="op1LightAni" || myBoard=="op1LightCl" {
@@ -289,7 +328,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/bn-alpha-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -319,7 +358,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/wn-alpha-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -353,7 +392,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/bn-alpha-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -383,7 +422,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/wn-alpha-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -417,7 +456,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/bn-alpha-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -447,7 +486,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/wn-alpha-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -481,7 +520,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/bn-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/white/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -511,7 +550,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/wn-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/white/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -527,6 +566,70 @@
         .promotion-piece.wk,
         div [style*="wk.png"] {
             background-image: url(chesscom + "/icy_sea/150/wk.png")!important;
+        }
+    }
+    /*Krik Icy Sea Blue*/
+    if myPieces=="op4B" {
+        /*Pieces*/
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bp.png")!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/br.png")!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bn-k-flip.png")!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bb.png")!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bq.png")!important;
+        }
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bk.png")!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wp.png")!important;
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wr.png")!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wn-k-flip.png")!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wb.png")!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wq.png")!important;
+        }
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wk.png")!important;
         }
     }
     /*Krik Bases*/
@@ -545,7 +648,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/bn-bases-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/bases/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -575,7 +678,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/wn-bases-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/bases/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -609,7 +712,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/bn-mg-beige-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/beige/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -639,7 +742,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(gitHub + "/krikor/krikvalo/wn-mg-beige-flip.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/beige/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
