@@ -3,9 +3,8 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
-@supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com`
-@version        2.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -15,6 +14,12 @@
             "Cinza": "op1AltGray",
             "verde": "op2",
             "verde claro": "op2Light",
+            "Azul (limpo)": "op1Cl",
+            "Azul cl (limpo)": "op1LightCl",
+            "Azul alt (limpo)": "op1AltCl",
+            "Cinza alt (limpo)": "op1AltGrayCl",
+            "verde (limpo)": "op2Cl",
+            "verde cl (limpo)": "op2LightCl",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -28,11 +33,10 @@
             "Desativado": "op0",
         }
 
-@var    checkbox    setLogo   "Logo no tabuleiro" 1
-@var    checkbox    n2Left   "Cavalo p/ esquerda" 1
 @var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    hueRotationBoard  "Tonalidade do tabuleiro (melhor com pçs preto e branco)" [0, 0, 355, 5, "deg"]
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
-@var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 
@@ -47,22 +51,7 @@
     chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
     /*selector with exeptions to avoid overrride analisys highlights*/
     notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
-    /*there is no error below*/
-    if setServer {
-        server = gitLab
-    }else{
-        server = gitHub
-    }
-    if n2Left{
-        setKnight='-flip'
-    }else{
-        setKnight=''
-    }
-    if setLogo{
-        myLogo=''
-    }else{
-        myLogo='_clean'
-    }
+    
     if myBoard!="op0" {
         /*Chessboard.board,*/
         .board-brown .cg-wrap,
@@ -92,27 +81,48 @@
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
         div[id*="chess_com_emailboard_"] {
+            if enableBoardSettings {
+                filter: hue-rotate(hueRotationBoard);
+            }
             if myBoard=="op1" {
-                background: url(server + "/krikor/boards/blue-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1Cl" {
+                background: url(gitHub + "/krikor/boards/blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Light" {
-                background: url(server + "/krikor/boards/light-blue-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-blue-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1LightCl" {
+                background: url(gitHub + "/krikor/boards/light-blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1Alt" {
-                background: url(server + "/krikor/boards/blue-Krikor_alt3" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt3.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1AltCl" {
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt3_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op1AltGray" {
-                background: url(server + "/krikor/boards/blue-Krikor_alt4" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt4.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op1AltGrayCl" {
+                background: url(gitHub + "/krikor/boards/blue-Krikor_alt4_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2" {
-                background: url(server + "/krikor/boards/jade-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/jade-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op2Cl" {
+                background: url(gitHub + "/krikor/boards/jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
             if myBoard=="op2Light" {
-                background: url(server + "/krikor/boards/light-jade-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(gitHub + "/krikor/boards/light-jade-Krikor.jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
+            if myBoard=="op2LightCl" {
+                background: url(gitHub + "/krikor/boards/light-jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat!important;
             }
         }
         /*Coordinates*/
-        if myBoard=="op1" {
+        if myBoard=="op1" || myBoard=="op1Cl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -126,7 +136,7 @@
                 fill:@color;
             }
         }
-        if myBoard=="op1Alt" {
+        if myBoard=="op1Alt" || myBoard=="op1AltCl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -140,7 +150,7 @@
                 fill:@color;
             }
         }
-        if myBoard=="op1AltGray" {
+        if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -154,7 +164,7 @@
                 fill:@color;
             }
         }
-        if myBoard=="op1Light" {
+        if myBoard=="op1Light" || myBoard=="op1LightCl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -182,7 +192,7 @@
                 fill:@color;
             }
         }
-        if myBoard=="op2Light" {
+        if myBoard=="op2Light" || myBoard=="op2LightCl" {
             text.coordinate-light,
             div.number.coords-light,
             div.letter.coords-light {
@@ -198,7 +208,7 @@
         }
         /*Highlight+evaluation bar*/
         if enableHL {
-            if myBoard=="op1" || myBoard=="op1Alt" || myBoard=="op1Light" {
+            if myBoard=="op1" || myBoard=="op1Cl" || myBoard=="op1Alt" || myBoard=="op1AltCl" || myBoard=="op1Light" || myBoard=="op1LightCl" {
                 .move-square,
                 .highlight:not({notThisColors}) {
                     background-color: #50e2ff!important;
@@ -207,7 +217,7 @@
                     background-color: #02c4c4 !important;
                 }
             }
-            if myBoard=="op1AltGray"  {
+            if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl"  {
                 .move-square,
                 .highlight:not({notThisColors}) {
                     background-color: #66c2ff!important;
@@ -216,7 +226,7 @@
                     background-color: #008fb7 !important;
                 }
             }
-            if myBoard=="op2" || myBoard=="op2Light" {
+            if myBoard=="op2" || myBoard=="op2Cl" || myBoard=="op2Light" || myBoard=="op2LightCl" {
                 .move-square,
                 .highlight:not({notThisColors}) {
                     background-color: #fbeb3b!important;
@@ -228,10 +238,10 @@
         }
         /*Evaluation bar*/
         if setEvaluationBar {
-            if myBoard=="op1" {
+            if myBoard=="op1" || myBoard=="op1Cl" {
             /*Small board for game preview*/
             div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + "/krikor/boards/mini/blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
             }
                 .evaluation-bar-white {
                     background-color: #DCDAC0 !important;
@@ -240,10 +250,10 @@
                     background-color: #476C77 !important;
                 }
             }
-            if myBoard=="op1Alt"{
+            if myBoard=="op1Alt" || myBoard=="op1AltCl" {
             /*Small board for game preview*/
             div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/blue-Krikor_alt3_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + "/krikor/boards/mini/blue-Krikor_alt3_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
             }
                 .evaluation-bar-white {
                     background-color: #D1DBE1 !important;
@@ -252,10 +262,10 @@
                     background-color: #588092 !important;
                 }
             }
-            if myBoard=="op1AltGray" {
+            if myBoard=="op1AltGray" || myBoard=="op1AltGrayCl" {
             /*Small board for game preview*/
             div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/blue-Krikor_alt4_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + "/krikor/boards/mini/blue-Krikor_alt4_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
             }
                 .evaluation-bar-white {
                     background-color: #CED5D8 !important;
@@ -264,10 +274,10 @@
                     background-color: #79909A !important;
                 }
             }
-        if myBoard=="op1Light" {
+        if myBoard=="op1Light" || myBoard=="op1LightCl" {
             /*Small board for game preview*/
             div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/light-blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + "/krikor/boards/mini/light-blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
             }
                 .evaluation-bar-white {
                     background-color: #E1DFCC !important;
@@ -276,10 +286,10 @@
                     background-color: #5C7A82 !important;
                 }
             }
-            if myBoard=="op2" {
+            if myBoard=="op2" || myBoard=="op2Cl" {
             /*Small board for game preview*/
             div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + "/krikor/boards/mini/jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
             }
                 .evaluation-bar-white {
                     background-color: #DEDBC1 !important;
@@ -288,16 +298,23 @@
                     background-color: #006950 !important;
                 }
             }
-        if myBoard=="op2Light" {
+        if myBoard=="op2Light" || myBoard=="op2LightCl" {
             /*Small board for game preview*/
             div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/light-jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                background: url(gitHub + "/krikor/boards/mini/light-jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
             }
                 .evaluation-bar-white {
                     background-color: #DEDDC7 !important;
                 }
                 .evaluation-bar-black {
                     background-color: #117A67 !important;
+                }
+            }
+
+            if enableBoardSettings {
+                .evaluation-bar-white,
+                .evaluation-bar-black {
+                    filter: hue-rotate(hueRotationBoard);
                 }
             }
         }
@@ -320,7 +337,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/alpha/bn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -350,7 +367,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/alpha/wn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -384,7 +401,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/cases/bn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/cases/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -414,7 +431,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/cases/wn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/cases/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -448,7 +465,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/alpha/bn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -478,7 +495,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/alpha/wn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/alpha/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -512,7 +529,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/white/bn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/white/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -542,7 +559,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/white/wn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/white/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -566,62 +583,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/bp.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/br.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/bn-k" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bn-k-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/bb.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/bq.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/bk.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/wp.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/wr.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/wn-k" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wn-k-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/wb.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/wq.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/blue/wk.png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/blue/wk.png")!important;
         }
     }
     /*Krik Bases*/
@@ -640,7 +657,7 @@
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/bases/bn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/bases/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -670,7 +687,7 @@
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/bases/wn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/bases/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
@@ -694,62 +711,62 @@
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/bp.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/br.png")!important;
+            background-image: url(gitHub + "/Furia/beige/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
         div [style*="bn.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/bn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/beige/bn-flip.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
         div [style*="bb.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/bb.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/bq.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/bk.png")!important;
+            background-image: url(gitHub + "/Furia/beige/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/wp.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/wr.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
         div [style*="wn.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/wn" + setKnight + ".png")!important;
+            background-image: url(gitHub + "/krikor/krikvalo/icy-sea/beige/wn-flip.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
         div [style*="wb.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/wb.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
         div [style*="wq.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/wq.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
-            background-image: url(server + "/krikor/krikvalo/icy-sea/beige/wk.png")!important;
+            background-image: url(gitHub + "/Furia/beige/wk.png")!important;
         }
     }
     /*End of the code*/
