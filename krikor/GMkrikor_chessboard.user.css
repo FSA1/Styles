@@ -15,6 +15,7 @@
             "Cinza": "op1AltGray",
             "verde": "op2",
             "verde claro": "op2Light",
+            "madeira": "w01",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -110,6 +111,9 @@
             if myBoard=="op2Light" {
                 background: url(server + "/krikor/boards/light-jade-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
             }
+            if myBoard=="w01" {
+                background: url(server + "/krikor/boards/MadStyleWoodMaple3" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" {
@@ -196,7 +200,21 @@
                 fill:@color;
             }
         }
-        /*Highlight+evaluation bar*/
+        if myBoard=="w01" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #b1724a !important;
+                fill:@color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #f4d4af !important;
+                fill:@color;
+            }
+        }
+        /*Highlight*/
         if enableHL {
             if myBoard=="op1" || myBoard=="op1Alt" || myBoard=="op1Light" {
                 .move-square,
@@ -223,6 +241,15 @@
                 }
                 .selection-square {
                     background-color: #2fd0d2 !important;
+                }
+            }
+            if myBoard=="w01"  {
+                .move-square,
+                .highlight:not({notThisColors}) {
+                    background-color: #ffcf4d!important;
+                }
+                .selection-square {
+                    background-color: #da6f00 !important;
                 }
             }
         }
@@ -300,10 +327,24 @@
                     background-color: #117A67 !important;
                 }
             }
-        }
-    }
-    /*Pieces*/
+        if myBoard=="w01" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(server + "/krikor/boards/mini/MadStyleWoodMaple3_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                }
+                    .evaluation-bar-white {
+                        background-color: #f4d4af !important;
+                        background: url(server + "/krikor/boards/mini/w1evalW.png") 0% 0% / 100% 100% no-repeat !important;
+                }
+                    .evaluation-bar-black {
+                        background-color: #b1724a !important;
+                        background: url(server + "/krikor/boards/mini/w1evalB.png") 0% 0% / 100% 100% no-repeat !important;
+                }
+            }
+        }/*end set evaluation bar*/
+    }/*end board not zero*/
 
+    /*Pieces*/
     /*Krik Alpha*/
     if myPieces=="op1" {
         /*Pieces*/
