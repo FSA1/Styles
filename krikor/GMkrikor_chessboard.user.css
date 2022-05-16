@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com`
-@version        2.0.0
+@version        2.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -33,6 +33,11 @@
 @var    checkbox    n2Left   "Cavalo p/ esquerda" 1
 @var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
+@var    checkbox    enableArrowSettings   "Modificar Setas" 0
+@var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
+@var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [130, 5, 300, 5, "%"]
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
@@ -342,6 +347,17 @@
                 }
             }
         }/*end set evaluation bar*/
+
+        /*Change Arrows colors*/
+        if enableArrowSettings {
+            .arrow {
+                filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
+                opacity: arrowOpacity !important;
+            }
+        }
     }/*end board not zero*/
 
     /*Pieces*/
