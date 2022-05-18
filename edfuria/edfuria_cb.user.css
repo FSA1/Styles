@@ -8,9 +8,9 @@
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
-            "Logo 1*": "op1",
+            "Logo 1": "op1",
             "Logo 2": "op2",
-            "Logo 2B": "op3",
+            "Logo 2B*": "op3",
             "Logo 2C": "op4",
             "Desativado": "op0",
         }
