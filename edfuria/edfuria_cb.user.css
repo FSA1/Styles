@@ -19,23 +19,33 @@
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
 ==/UserStyle== */
 @-moz-document domain("chess.com"), domain("lichess.org"), domain("chessclub.com") {
-    /*color section*/
-    /*highlight, evaluation bar and coordinates*/
+    /*set variables values*/
+    if myBoard=="op1" {
+        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_clouds1.jpg'
+    }
+    if myBoard=="op2" {
+        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_clouds2.jpg'
+    }
     if myBoard=="op1" || myBoard=="op2" {
-        evlB=#668BA4
-        evlW=#C8D5DD
-        hlcolor1=#73c8e6
-        hlcolor2=#81979b
-        hlcolor3=#79a0a6
-        hlcolor4=#7986a6
+        darksq=#668BA4
+        lightsq=#C8D5DD
+        hlcol=#39bceb
+        selcol=#5680b8
+        /*lichess*/
+        dotcol=#7face7ab
+        hovercol=#6787b1c4
+        destoc=#7face7
     }
     if myBoard=="op3"{
-        evlB=#647478
-        evlW=#E1E2C9
-        hlcolor1=#73c8e6
-        hlcolor2=#81979b
-        hlcolor3=#79a0a6
-        hlcolor4=#7986a6
+        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_wood2-gray.jpg'
+        darksq=#647478
+        lightsq=#E1E2C9
+        hlcol=#39bceb
+        selcol=#7c92af
+        /*lichess*/
+        dotcol=#4c5056c4
+        hovercol=#6f839dc4
+        destoc=#4c5056c4
     }
     if myBoard!="op0" {
         /*lichess.org*/
@@ -69,64 +79,67 @@
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
         div[id*="chess_com_emailboard_"] {
-            if myBoard=="op1" {
-                background: url("https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_clouds1.jpg") 0% 0% / 100% 100% no-repeat!important;
+                background: url(boardlink) 0% 0% / 100% 100% no-repeat!important;
+        }
+
+        /*Evaluation bar*/
+        if setEvaluationBar {
+            .evaluation-bar-black {
+                background-color: darksq !important;
             }
-            if myBoard=="op2" {
-                background: url("https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_clouds2.jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="op3" {
-                background: url("https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_wood2-gray.jpg") 0% 0% / 100% 100% no-repeat!important;
+            .evaluation-bar-white {
+                background-color: lightsq !important;
             }
         }
+    }
         /*------Coordinates------*/
-            .orientation-white .files coord:nth-child(2n),
-            .orientation-white .ranks coord:nth-child(2n + 1),
-            .orientation-black .files coord:nth-child(2n + 1),
-            .orientation-black .ranks coord:nth-child(2n),
-            div.number.coords-light,
-            div.letter.coords-light,
-            text.coordinate-light {
-                color: evlB!important;
-                fill: @color;
-            }
-            .orientation-white .files coord:nth-child(2n + 1),
-            .orientation-white .ranks coord:nth-child(2n),
-            .orientation-black .files coord:nth-child(2n),
-            .orientation-black .ranks coord:nth-child(2n + 1),
-            div.number.coords-dark,
-            div.letter.coords-dark,
-            text.coordinate-dark {
-                color: evlW !important;
-                fill: @color;
-            }
+        .orientation-white .files coord:nth-child(2n),
+        .orientation-white .ranks coord:nth-child(2n + 1),
+        .orientation-black .files coord:nth-child(2n + 1),
+        .orientation-black .ranks coord:nth-child(2n),
+        div.number.coords-light,
+        div.letter.coords-light,
+        text.coordinate-light {
+            color: darksq!important;
+            fill: @color;
+        }
+        .orientation-white .files coord:nth-child(2n + 1),
+        .orientation-white .ranks coord:nth-child(2n),
+        .orientation-black .files coord:nth-child(2n),
+        .orientation-black .ranks coord:nth-child(2n + 1),
+        div.number.coords-dark,
+        div.letter.coords-dark,
+        text.coordinate-dark {
+            color: lightsq !important;
+            fill: @color;
+        }
         
-    /*Highlight*/
-    if setHighlight {
-        /*selector with exceptions to avoid override analysis highlights*/
-        notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+        /*Highlight*/
+        if setHighlight {
+            /*selector with exceptions to avoid override analysis highlights*/
+            notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
 
             square.last-move,
             .move-square, 
             .highlight:not({notThisColors}) {
-                    background-color: hlcolor1 !important;
+                background-color: hlcol !important;
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
-                background: radial-gradient(hlcolor2 20%, #0000 20%);
+                background: radial-gradient(dotcol 20%, #0000 20%);
             }
             square.move-dest:hover/*Lichess*/
             {
-                background: hlcolor2;
+                background: hovercol;
             }
-            square.oc.move-dest/*Lichess*/
+            square.oc.move-dest/*Lichess (on capture?)*/
             {
-                background: radial-gradient(transparent 0%, transparent 79%, hlcolor2 80%);
+                background: radial-gradient(transparent 0%, transparent 79%, destoc 80%);
             }
             .selection-square,
             square.selected/*Lichess*/
             {
-                background-color: hlcolor3 !important;
+                background-color: selcol !important;
             }
         }
         /*Highlight*/
@@ -144,16 +157,5 @@
                 filter: hue-rotate(highlightHueRotation) !important;
             }
         }
-
-        /*Evaluation bar*/
-        if setEvaluationBar {
-            .evaluation-bar-black {
-                background-color: evlB !important;
-            }
-            .evaluation-bar-white {
-                background-color: evlW !important;
-            }
-        }
-    }
     /*End of the code*/
 }
