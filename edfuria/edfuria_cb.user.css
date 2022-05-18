@@ -11,6 +11,7 @@
             "Logo 1*": "op1",
             "Logo 2": "op2",
             "Logo 2B": "op3",
+            "Logo 2C": "op4",
             "Desativado": "op0",
         }
 @var    checkbox    setHighlight   "Habilitar Destaque Personalizado" 1
@@ -30,9 +31,9 @@
         darksq=#668BA4
         lightsq=#C8D5DD
         hlcol=#39bceb
-        selcol=#5680b8
+        selcol=#5780b6
         /*lichess*/
-        dotcol=#7face7ab
+        dotcol=#48505d70
         hovercol=#6787b1c4
         destoc=#7face7
     }
@@ -40,12 +41,23 @@
         boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_wood2-gray.jpg'
         darksq=#647478
         lightsq=#E1E2C9
-        hlcol=#39bceb
+        hlcol=#71dbff
         selcol=#7c92af
         /*lichess*/
         dotcol=#4c505670
         hovercol=#6f839dc4
         destoc=#4c5056c4
+    }
+    if myBoard=="op4" {
+        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_poster-blue.jpg'
+        darksq=#547692
+        lightsq=#D1D6DA
+        hlcol=#39bceb
+        selcol=#5780b6
+        /*lichess*/
+        dotcol=#48505d70
+        hovercol=#6787b1c4
+        destoc=#7face7
     }
     if myBoard!="op0" {
         /*lichess.org*/
