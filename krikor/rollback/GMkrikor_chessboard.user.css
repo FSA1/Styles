@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com`
-@version        2.0.1
+@version        2.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -13,9 +13,10 @@
             "Azul claro": "op1Light",
             "Azul alt": "op1Alt",
             "Cinza": "op1AltGray",
-            "verde": "op2",
-            "verde claro": "op2Light",
-            "madeira": "w01",
+            "Verde": "op2",
+            "Verde claro": "op2Light",
+            "Madeira": "w01",
+            "Madeira azul": "w02",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -119,6 +120,9 @@
             if myBoard=="w01" {
                 background: url(server + "/krikor/boards/MadStyleWoodMaple3" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
             }
+            if myBoard=="w02" {
+                background: url(server + "/krikor/boards/MadStyleWoodMapleBlue" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
+            }
         }
         /*Coordinates*/
         if myBoard=="op1" {
@@ -219,6 +223,20 @@
                 fill:@color;
             }
         }
+        if myBoard=="w02" {
+            text.coordinate-light,
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #3D717F !important;
+                fill:@color;
+            }
+            text.coordinate-dark,
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #d7d6bd !important;
+                fill:@color;
+            }
+        }
         /*Highlight*/
         if enableHL {
             if myBoard=="op1" || myBoard=="op1Alt" || myBoard=="op1Light" {
@@ -255,6 +273,15 @@
                 }
                 .selection-square {
                     background-color: #da6f00 !important;
+                }
+            }
+            if myBoard=="w02"  {
+                .move-square,
+                .highlight:not({notThisColors}) {
+                    background-color: #50e2ff!important;
+                }
+                .selection-square {
+                    background-color: #dbd77c !important;
                 }
             }
         }
@@ -344,6 +371,20 @@
                     .evaluation-bar-black {
                         background-color: #b1724a !important;
                         background: url(server + "/krikor/boards/mini/w1evalB.png") 0% 0% / 100% 100% no-repeat !important;
+                }
+            }
+        if myBoard=="w02" {
+            /*Small board for game preview*/
+            div[class^="game-preview"] {
+                background: url(server + "/krikor/boards/mini/MadStyleWoodMapleBlue_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+                }
+                    .evaluation-bar-white {
+                        background-color: #d7d6bd !important;
+                        background: url(server + "/krikor/boards/mini/w2evalW.png") 0% 0% / 100% 100% no-repeat !important;
+                }
+                    .evaluation-bar-black {
+                        background-color: #3D717F !important;
+                        background: url(server + "/krikor/boards/mini/w2evalB.png") 0% 0% / 100% 100% no-repeat !important;
                 }
             }
         }/*end set evaluation bar*/

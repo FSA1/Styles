@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com`
-@version        2.0.2
+@version        2.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -16,6 +16,7 @@
             "Verde": "op2",
             "Verde claro": "op2Light",
             "Madeira": "w01",
+            "Madeira escura": "w01Dark",
             "Madeira azul": "w02",
             "Desativado": "op0",
         }
@@ -32,9 +33,9 @@
 
 @var    checkbox    setLogo   "Logo no tabuleiro" 1
 @var    checkbox    n2Left   "Cavalo p/ esquerda" 1
-@var    checkbox    enableHL   "Habilitar Destaque Personalizado" 1
+@var    checkbox    setHighLight   "Habilitar Destaque Personalizado" 1
 @var    checkbox    setEvaluationBar "Barra de avaliação personalizada" 1
-@var    checkbox    enableArrowSettings   "Modificar Setas" 0
+@var    checkbox    setArrows   "Modificar Setas" 0
 @var    range    hueRotationArrow  "Tonalidade das setas" [15, 0, 355, 5, "deg"]
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
 @var    range    saturateArrow  "Saturação (setas)" [130, 0, 300, 5, "%"]
@@ -52,8 +53,6 @@
     gitLab='https://gitlab.com/FSA11/Styles/-/raw/main'
     /*chess.com default path to pieces*/
     chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
-    /*selector with exceptions to avoid override analysis highlights*/
-    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
     /*there is no error below*/
     if setServer {
         server = gitLab
@@ -69,6 +68,82 @@
         myLogo=''
     }else{
         myLogo='_clean'
+    }
+    if myBoard=="op1" || myBoard=="op1Light" || myBoard=="op1Alt" {
+        hlcol=#50e2ff
+        selcol=#02c4c4
+    }
+    if myBoard=="op1" {
+        boardlink = server + "/krikor/boards/blue-Krikor" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/blue-Krikor_clean.jpg"
+        darksq=#476C77
+        lightsq=#DCDAC0
+    }
+    if myBoard=="op1Light" {
+        boardlink = server + "/krikor/boards/light-blue-Krikor" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/light-blue-Krikor_clean.jpg"
+        darksq=#5C7A82
+        lightsq=#E1DFCC
+    }
+    if myBoard=="op1Alt" {
+        boardlink = server + "/krikor/boards/blue-Krikor_alt3" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/blue-Krikor_alt3_clean.jpg"
+        darksq=#6290A3
+        lightsq=#D1DBE1
+    }
+    if myBoard=="op1AltGray" {
+        boardlink = server + "/krikor/boards/blue-Krikor_alt4" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/blue-Krikor_alt4_clean.jpg"
+        darksq=#79909A
+        lightsq=#CED5D8
+        hlcol=#66c2ff
+        selcol=#008fb7
+    }
+    if myBoard=="op2" || myBoard=="op2Light" {
+        hlcol=#fbeb3b
+        selcol=#02c4c4
+    }
+    if myBoard=="op2" {
+        boardlink = server + "/krikor/boards/jade-Krikor" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/jade-Krikor_clean.jpg"
+        darksq=#006950
+        lightsq=#DEDBC1
+    }
+    if myBoard=="op2Light" {
+        boardlink = server + "/krikor/boards/light-jade-Krikor" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/light-jade-Krikor_clean.jpg"
+        darksq=#117A67
+        lightsq=#DEDDC7
+    }
+    if myBoard=="w01" || myBoard=="w01Dark"  {
+        hlcol=#ffcf4d
+        selcol=#da6f00
+    }
+    if myBoard=="w01" {
+        boardlink = server + "/krikor/boards/MadStyleWoodMaple" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/MadStyleWoodMaple_clean.jpg"
+        darkSqTex = server + "/krikor/boards/mini/wevalB.png"
+        lightSqTex = server + "/krikor/boards/mini/wevalW.png"
+        darksq=#B07148
+        lightsq=#E9C8A5
+    }
+    if myBoard=="w01Dark" {
+        boardlink = server + "/krikor/boards/MadStyleDarkWoodMaple" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/MadStyleDarkWoodMaple_clean.jpg"
+        darkSqTex = server + "/krikor/boards/mini/dw1evalB.png"
+        lightSqTex = server + "/krikor/boards/mini/dw1evalW.png"
+        darksq=#7D5636
+        lightsq=#E1C3A1
+    }
+    if myBoard=="w02" {
+        boardlink = server + "/krikor/boards/MadStyleWoodMapleBlue" + myLogo + ".jpg"
+        miniBoard = server + "/krikor/boards/mini/MadStyleWoodMapleBlue_clean.jpg"
+        darkSqTex = server + "/krikor/boards/mini/w2evalB.png"
+        lightSqTex = server + "/krikor/boards/mini/w2evalW.png"
+        darksq=#3D717F
+        lightsq=#d7d6bd
+        hlcol=#50e2ff
+        selcol=#dbd77c
     }
     if myBoard!="op0" {
         /*Chessboard.board,*/
@@ -99,298 +174,53 @@
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
         div[id*="chess_com_emailboard_"] {
-            if myBoard=="op1" {
-                background: url(server + "/krikor/boards/blue-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="op1Light" {
-                background: url(server + "/krikor/boards/light-blue-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="op1Alt" {
-                background: url(server + "/krikor/boards/blue-Krikor_alt3" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="op1AltGray" {
-                background: url(server + "/krikor/boards/blue-Krikor_alt4" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="op2" {
-                background: url(server + "/krikor/boards/jade-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="op2Light" {
-                background: url(server + "/krikor/boards/light-jade-Krikor" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="w01" {
-                background: url(server + "/krikor/boards/MadStyleWoodMaple3" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-            if myBoard=="w02" {
-                background: url(server + "/krikor/boards/MadStyleWoodMapleBlue" + myLogo + ".jpg") 0% 0% / 100% 100% no-repeat!important;
-            }
-        }
-        /*Coordinates*/
-        if myBoard=="op1" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #476C77 !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #DCDAC0 !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="op1Alt" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #6290A3 !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #D1DBE1 !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="op1AltGray" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #79909A !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #CED5D8 !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="op1Light" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #5C7A82 !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E1DFCC !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="op2" || myBoard=="op2Cl" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #006950 !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #DEDBC1 !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="op2Light" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #117A67 !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #DEDDC7 !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="w01" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #b1724a !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #f4d4af !important;
-                fill:@color;
-            }
-        }
-        if myBoard=="w02" {
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #3D717F !important;
-                fill:@color;
-            }
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #d7d6bd !important;
-                fill:@color;
-            }
-        }
-        /*Highlight*/
-        if enableHL {
-            if myBoard=="op1" || myBoard=="op1Alt" || myBoard=="op1Light" {
-                .move-square,
-                .highlight:not({notThisColors}) {
-                    background-color: #50e2ff!important;
-                }
-                .selection-square {
-                    background-color: #02c4c4 !important;
-                }
-            }
-            if myBoard=="op1AltGray"  {
-                .move-square,
-                .highlight:not({notThisColors}) {
-                    background-color: #66c2ff!important;
-                }
-                .selection-square {
-                    background-color: #008fb7 !important;
-                }
-            }
-            if myBoard=="op2" || myBoard=="op2Light" {
-                .move-square,
-                .highlight:not({notThisColors}) {
-                    background-color: #fbeb3b!important;
-                }
-                .selection-square {
-                    background-color: #2fd0d2 !important;
-                }
-            }
-            if myBoard=="w01"  {
-                .move-square,
-                .highlight:not({notThisColors}) {
-                    background-color: #ffcf4d!important;
-                }
-                .selection-square {
-                    background-color: #da6f00 !important;
-                }
-            }
-            if myBoard=="w02"  {
-                .move-square,
-                .highlight:not({notThisColors}) {
-                    background-color: #50e2ff!important;
-                }
-                .selection-square {
-                    background-color: #dbd77c !important;
-                }
-            }
+                background: url(boardlink) 0% 0% / 100% 100% no-repeat!important;
         }
         /*Evaluation bar*/
         if setEvaluationBar {
-            if myBoard=="op1" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
+            .evaluation-bar-black {
+                background: url(darkSqTex) 0% 0% / 100% 100% no-repeat !important;
+                background-color: darksq !important;
+                }
+            .evaluation-bar-white {
+                background: url(lightSqTex) 0% 0% / 100% 100% no-repeat !important;
+                background-color: lightsq !important;
+                }
+        }
+        /*Small board for game preview*/
+        div[class^="game-preview"] {
+            background: url(miniBoard) 0% 0% / 100% 100% no-repeat !important;
+        }
+        /*------Coordinates------*/
+        div.number.coords-light,
+        div.letter.coords-light,
+        text.coordinate-light {
+            color: darksq!important;
+            fill: @color;
+        }
+        div.number.coords-dark,
+        div.letter.coords-dark,
+        text.coordinate-dark {
+            color: lightsq !important;
+            fill: @color;
+        }
+        /*Highlight*/
+        if setHighLight {
+            /*selector with exceptions to avoid override analysis highlights*/
+            notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+
+            .move-square, 
+            .highlight:not({notThisColors}) {
+                background-color: hlcol !important;
             }
-                .evaluation-bar-white {
-                    background-color: #DCDAC0 !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #476C77 !important;
-                }
+            .selection-square
+            {
+                background-color: selcol !important;
             }
-            if myBoard=="op1Alt"{
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/blue-Krikor_alt3_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-            }
-                .evaluation-bar-white {
-                    background-color: #D1DBE1 !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #588092 !important;
-                }
-            }
-            if myBoard=="op1AltGray" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/blue-Krikor_alt4_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-            }
-                .evaluation-bar-white {
-                    background-color: #CED5D8 !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #79909A !important;
-                }
-            }
-        if myBoard=="op1Light" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/light-blue-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-            }
-                .evaluation-bar-white {
-                    background-color: #E1DFCC !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #5C7A82 !important;
-                }
-            }
-            if myBoard=="op2" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-            }
-                .evaluation-bar-white {
-                    background-color: #DEDBC1 !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #006950 !important;
-                }
-            }
-        if myBoard=="op2Light" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/light-jade-Krikor_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-            }
-                .evaluation-bar-white {
-                    background-color: #DEDDC7 !important;
-                }
-                .evaluation-bar-black {
-                    background-color: #117A67 !important;
-                }
-            }
-        if myBoard=="w01" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/MadStyleWoodMaple3_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-                }
-                    .evaluation-bar-white {
-                        background-color: #f4d4af !important;
-                        background: url(server + "/krikor/boards/mini/w1evalW.png") 0% 0% / 100% 100% no-repeat !important;
-                }
-                    .evaluation-bar-black {
-                        background-color: #b1724a !important;
-                        background: url(server + "/krikor/boards/mini/w1evalB.png") 0% 0% / 100% 100% no-repeat !important;
-                }
-            }
-        if myBoard=="w02" {
-            /*Small board for game preview*/
-            div[class^="game-preview"] {
-                background: url(server + "/krikor/boards/mini/MadStyleWoodMapleBlue_clean.jpg") 0% 0% / 100% 100% no-repeat !important;
-                }
-                    .evaluation-bar-white {
-                        background-color: #d7d6bd !important;
-                        background: url(server + "/krikor/boards/mini/w2evalW.png") 0% 0% / 100% 100% no-repeat !important;
-                }
-                    .evaluation-bar-black {
-                        background-color: #3D717F !important;
-                        background: url(server + "/krikor/boards/mini/w2evalB.png") 0% 0% / 100% 100% no-repeat !important;
-                }
-            }
-        }/*end set evaluation bar*/
+        }
 
         /*Change Arrows colors*/
-        if enableArrowSettings {
+        if setArrows {
             .arrow {
                 filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
                 -webkit-filter: @filter;
