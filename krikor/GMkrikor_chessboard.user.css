@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com`
-@version        2.0.4
+@version        2.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -28,6 +28,7 @@
             "Mar G Azul": "icy_seaBlue",
             "Bases": "bases",
             "Bases (Plano)": "basesFlat",
+            "Neo": "neo",
             "Desativado": "op0",
         }
 
@@ -262,6 +263,10 @@
         if myPieces=="icy_seaBlue"{
             extraPath = server + 'krikor/krikvalo/icy-sea/blue/'
             myPath = extraPath
+        }
+        if myPieces == "neo"{
+            extraPath = server + 'krikor/krikvalo/neo/'
+            myPath = chesscom + 'neo/150/'
         }
         .piece.bp,
         .promotion-piece.bp,
