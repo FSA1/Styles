@@ -206,7 +206,9 @@
                 }
         }
         /*Small board for game preview*/
-        div[class^="game-preview"] {
+        .game-preview-component.promo-preview,
+        div [style*="40.png"][class="game-preview-component"],
+        div [style*="40.jpg"][class="game-preview-component"] {
             background: url(miniBoard) 0% 0% / 100% 100% no-repeat !important;
         }
         /*------Coordinates------*/
