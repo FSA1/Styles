@@ -104,8 +104,8 @@
         miniBoard = server + "krikor/boards/mini/blue-Krikor_alt4_clean.jpg"
         darksq=#4b8963
         lightsq=#cad7c9
-        hlcol=#66c2ff
-        selcol=#008fb7
+        hlcol=#fff436
+        selcol=#02c4c4
     }
     if myBoard=="op2" || myBoard=="op2Light" {
         hlcol=#fbeb3b
@@ -136,8 +136,8 @@
         lightSqTex = ''
         darksq=#864d5b
         lightsq=#e5cdcf
-        hlcol=#50e2ff
-        selcol=#dbd77c
+        hlcol=#fbeb3b
+        selcol=#f8af49
     }
     /*Boards*/
     if myBoard!="op0" {
