@@ -83,25 +83,25 @@
     }
     if myBoard=="op1" {
         boardlink = server + "cp/boards/blue.png"
-        miniBoard = server + "krikor/boards/mini/blue-Krikor_clean.jpg"
+        miniBoard = boardlink
         darksq=#3d5781
         lightsq=#dce1ed
     }
     if myBoard=="op1Light" {
         boardlink = server + "cp/boards/blue2.png"
-        miniBoard = server + "krikor/boards/mini/light-blue-Krikor_clean.jpg"
+        miniBoard = boardlink
         darksq=#3f7988
         lightsq=#ccdde1
     }
     if myBoard=="op1Alt" {
         boardlink = server + "cp/boards/gray1.png"
-        miniBoard = server + "krikor/boards/mini/blue-Krikor_alt3_clean.jpg"
+        miniBoard = boardlink
         darksq=#586773
         lightsq=#cdd5d9
     }
     if myBoard=="op1AltGray" {
         boardlink = server + "cp/boards/green.png"
-        miniBoard = server + "krikor/boards/mini/blue-Krikor_alt4_clean.jpg"
+        miniBoard = boardlink
         darksq=#4b8963
         lightsq=#cad7c9
         hlcol=#fff436
@@ -113,7 +113,7 @@
     }
     if myBoard=="op2" {
         boardlink = server + "cp/boards/green2.png"
-        miniBoard = server + "krikor/boards/mini/jade-Krikor_clean.jpg"
+        miniBoard = boardlink
         darksq=#4d8286
         lightsq=#c2d6d6
     }
@@ -123,7 +123,7 @@
     }
     if myBoard=="w01" {
         boardlink = server + "cp/boards/wood.png"
-        miniBoard = server + "krikor/boards/mini/MadStyleWoodMaple_clean.jpg"
+        miniBoard = boardlink
         darkSqTex = server + "krikor/boards/mini/wevalB.png"
         lightSqTex = server + "krikor/boards/mini/wevalW.png"
         darksq=#B07148
@@ -131,7 +131,7 @@
     }
     if myBoard=="w02" {
         boardlink = server + "cp/boards/red.png"
-        miniBoard = server + "krikor/boards/mini/MadStyleWoodMapleBlue_clean.jpg"
+        miniBoard = boardlink
         darkSqTex = ''
         lightSqTex = ''
         darksq=#864d5b
