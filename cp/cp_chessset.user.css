@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           Campeonato Paulista
+@name           FPX: chessboard and pieces
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
@@ -18,8 +18,8 @@
             "Roxo": "op5",
             "Marrom": "op6",
             "Madeira": "w01",
-            "Madeira escura": "w02",
-            "Madeira cinza*": "w03",
+            "Madeira escura*": "w02",
+            "Madeira cinza": "w03",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -94,8 +94,8 @@
     if myBoard=="op1" {
         boardlink = myPath + "blue.png"
         miniBoard = boardlink
-        darksq=#607E9D
-        lightsq=#E4E9ED
+        darksq=#547091
+        lightsq=#CFD8DD
     }
     if myBoard=="op1B" {
         boardlink = myPath + "blue2.png"
