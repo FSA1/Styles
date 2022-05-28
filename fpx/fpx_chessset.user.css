@@ -83,9 +83,9 @@
         setKnight=''
     }
     if altBoards {
-        myPath= server + 'cp/boardsV2/light/'
+        myPath= server + 'fpx/boardsV2/light/'
     }else{
-        myPath= server + 'cp/boards/light/'
+        myPath= server + 'fpx/boards/light/'
     }
     if myBoard=="op1" || myBoard=="op1B" || myBoard=="op2" {
         hlcol=#fff436
@@ -160,26 +160,26 @@
         selcol=#da6f00
     }
     if myBoard=="w01" {
-        boardlink = server + "cp/boardsV2/wood.jpg"
+        boardlink = server + "fpx/boardsV2/wood.jpg"
         miniBoard = boardlink
-        darkSqTex = server + "krikor/boards/mini/wevalB.png"
-        lightSqTex = server + "krikor/boards/mini/wevalW.png"
+        darkSqTex = server + "fpx/mini/wevalB.png"
+        lightSqTex = server + "fpx/mini/wevalW.png"
         darksq=#B07148
         lightsq=#E9C8A5
     }
     if myBoard=="w02" {
-        boardlink = server + "cp/boardsV2/wood2.jpg"
+        boardlink = server + "fpx/boardsV2/wood2.jpg"
         miniBoard = boardlink
-        darkSqTex = server + "cp/mini/w2evalB.png"
-        lightSqTex = server + "cp/mini/w2evalW.png"
+        darkSqTex = server + "fpx/mini/w2evalB.png"
+        lightSqTex = server + "fpx/mini/w2evalW.png"
         darksq=#8c695c
         lightsq=#D7C3AA
     }
     if myBoard=="w03" {
-        boardlink = server + "cp/boardsV2/wood3.jpg"
+        boardlink = server + "fpx/boardsV2/wood3.jpg"
         miniBoard = boardlink
-        darkSqTex = server + "cp/mini/w3evalB.png"
-        lightSqTex = server + "cp/mini/w3evalW.png"
+        darkSqTex = server + "fpx/mini/w3evalB.png"
+        lightSqTex = server + "fpx/mini/w3evalW.png"
         darksq=#9d9a98
         lightsq=#d0cecd
         hlcol=#b39850
