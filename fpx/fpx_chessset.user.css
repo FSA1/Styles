@@ -182,8 +182,8 @@
         lightSqTex = server + "fpx/mini/w3evalW.png"
         darksq=#9d9a98
         lightsq=#d0cecd
-        hlcol=#b39850
-        selcol=#da6f00
+        hlcol=#ffeb41
+        selcol=#a07822
     }
     /*Boards*/
     if myBoard!="op0" {
