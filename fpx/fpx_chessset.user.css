@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/
 @description    `Chess pieces for chess.com (pt_BR)`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -150,8 +150,8 @@
         miniBoard = boardlink
         darkSqTex = ''
         lightSqTex = ''
-        darksq=#AD856C
-        lightsq=#dcd7d3
+        darksq=#9F775F
+        lightsq=#DCD2CD
         hlcol=#fbeb3b
         selcol=#f8af49
     }
