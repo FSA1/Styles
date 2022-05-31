@@ -1,67 +1,79 @@
 /* ==UserStyle==
-@name           1950 Latvian Chess Pieces
+@name           1950 Latvian Chess Pieces 2D/3D
 @author         agiota_do_artenio
 @namespace      ChessSkins
 @description    `pieces for chess.com.`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
-@preprocessor   uso
+@preprocessor   stylus
+
+@var    select      myPieces    "Escolher Peças"{
+            "2D": "op1",
+            "3D": "op2",
+            "Desativado": "op0",
+        }
+@var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-
-    /*Pieces*/
-    .piece.bk, .promotion-piece.bk, div [style*="bk.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/bk.png")!important;
-    }
-    .piece.bq, .promotion-piece.bq, div [style*="bq.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/bq.png")!important;
-    }
-    .piece.bb, .promotion-piece.bb, div [style*="bb.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/bb.png")!important;
-    }
-    .piece.bn, .promotion-piece.bn, div [style*="bn.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/bn.png")!important;
-    }
-    .piece.br, .promotion-piece.br, div [style*="br.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/br.png")!important;
-    }
-    .piece.bp, .promotion-piece.bp, div [style*="bp.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/bp.png")!important;
-    }
-    .piece.wk, .promotion-piece.wk, div [style*="wk.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/wk.png")!important;
-    }
-    .piece.wq, .promotion-piece.wq, div [style*="wq.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/wq.png")!important;
-    }
-    .piece.wb, .promotion-piece.wb, div [style*="wb.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/wb.png")!important;
-    }
-    .piece.wn, .promotion-piece.wn, div [style*="wn.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/wn.png")!important;
-    }
-    .piece.wr, .promotion-piece.wr, div [style*="wr.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/wr.png")!important;
-    }
-    .piece.wp, .promotion-piece.wp, div [style*="wp.png"] {
-        background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/latvian/pieces/wp.png")!important;
-    }
-}
-@-moz-document url-prefix("https://www.chess.com/member/agiota_do_artenio") {
-/*Home page*/
-a.link.main-link.sprite.profile::before{
+    /*The beautify function may cause an error by joining the following variables into a single line.
+    Just revert the changes to make it work again.*/
     
-    background-image: url(https://www.chess.com/bundles/web/images/flair/flair.26eb35e0@2x.png)!important;
-    background-position: 66.6666666667% 85.7142857143% !important;    
-    background-size: 34rem 98.6rem;
-    height: 3.4rem;
-    width: 3.4rem;
-}
-.flair-nothing {
-    background-position: 66.6666666667% 85.7142857143% !important;
-}
-.stat-text-data-aside-link, div[class*="stat-section-chart"], div[class*="games-component"]{
-        display: none !important;        
+    /*primary server (GitHub)*/    
+    gitHub = 'https://github.com/FSA1/Styles/raw/main/'
+    
+    /*alternative server (GitLab)*/
+    gitLab = 'https://gitlab.com/FSA11/Styles/-/raw/main/'
+		
+    /*there is no error below*/
+    if setServer {
+        server = gitLab
+    }else{
+        server = gitHub
     }
-/*End of the section*/
+	if myPieces == "op1"{
+	    myPath = "latvian/pieces/short2d/"
+        mySelector = ''
+	}else {
+		myPath = "latvian/pieces/3d/"
+        mySelector = ':after'
+	}
+    if myPieces !="op0" {
+        /*Pieces*/
+        .piece.bk{mySelector}, .promotion-piece.bk{mySelector}, div [style*="bk.png"] {
+            background-image: url(server + myPath + "bk.png")!important;
+        }
+        .piece.bq{mySelector}, .promotion-piece.bq{mySelector}, div [style*="bq.png"] {
+            background-image:url(server + myPath + "bq.png")!important;
+        }
+        .piece.bb{mySelector}, .promotion-piece.bb{mySelector}, div [style*="bb.png"] {
+            background-image: url(server + myPath + "bb.png")!important;
+        }
+        .piece.bn{mySelector}, .promotion-piece.bn{mySelector}, div [style*="bn.png"] {
+            background-image: url(server + myPath + "bn.png")!important;
+        }
+        .piece.br{mySelector}, .promotion-piece.br{mySelector}, div [style*="br.png"] {
+            background-image: url(server + myPath + "br.png")!important;
+        }
+        .piece.bp{mySelector}, .promotion-piece.bp{mySelector}, div [style*="bp.png"] {
+            background-image: url(server + myPath + "bp.png")!important;
+        }
+        .piece.wk{mySelector}, .promotion-piece.wk{mySelector}, div [style*="wk.png"] {
+            background-image: url(server + myPath + "wk.png")!important;
+        }
+        .piece.wq{mySelector}, .promotion-piece.wq{mySelector}, div [style*="wq.png"] {
+            background-image: url(server + myPath + "wq.png")!important;
+        }
+        .piece.wb{mySelector}, .promotion-piece.wb{mySelector}, div [style*="wb.png"] {
+            background-image: url(server + myPath + "wb.png")!important;
+        }
+        .piece.wn{mySelector}, .promotion-piece.wn{mySelector}, div [style*="wn.png"] {
+            background-image: url(server + myPath + "wn.png")!important;
+        }
+        .piece.wr{mySelector}, .promotion-piece.wr{mySelector}, div [style*="wr.png"] {
+            background-image: url(server + myPath + "wr.png")!important;
+        }
+        .piece.wp{mySelector}, .promotion-piece.wp{mySelector}, div [style*="wp.png"] {
+            background-image: url(server + myPath + "wp.png")!important;
+        }
+    }
 }
