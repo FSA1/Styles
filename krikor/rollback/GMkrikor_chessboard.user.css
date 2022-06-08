@@ -4,8 +4,8 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
-@description    `Chess board for chess.com`
-@version        2.0.6
+@description    `Chess board for chess.com (pt_BR)`
+@version        2.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -18,6 +18,8 @@
             "Madeira": "w01",
             "Madeira escura": "w01Dark",
             "Madeira azul": "w02",
+            "Rosa": "spRose",
+            "Rosa alternativo": "spRoseAlt",
             "Desativado": "op0",
         }
 @var    select      myPieces    "Escolher Peças"{
@@ -137,6 +139,18 @@
         miniBoard = server + "krikor/boards/mini/light-jade-Krikor_clean.jpg"
         darksq=#117A67
         lightsq=#DEDDC7
+    }
+    if myBoard=="spRose" {
+        boardlink = server + "krikor/boards/rose-Krikor" + myLogo + ".jpg"
+        miniBoard = server + "krikor/boards/mini/rose-Krikor_clean.jpg"
+        darksq=#CC7F93
+        lightsq=#E9D6C5
+    }
+    if myBoard=="spRoseAlt" {
+        boardlink = server + "krikor/boards/rose-Krikor_alt" + myLogo + ".jpg"
+        miniBoard = server + "krikor/boards/mini/rose-Krikor_alt_clean.jpg"
+        darksq=#D581A2
+        lightsq=#F0D1E3
     }
     if myBoard=="w01" || myBoard=="w01Dark"  {
         hlcol=#ffcf4d
