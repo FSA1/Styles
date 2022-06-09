@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com (pt_BR)`
-@version        2.0.8
+@version        2.0.9
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -388,7 +388,7 @@
             .piece.wb,
             .promotion-piece.wb,
             div [style*="wb.png"] {
-                background-image: url(vWP)!important;
+                background-image: url(vWB)!important;
             }
             .piece.wq,
             .promotion-piece.wq,
