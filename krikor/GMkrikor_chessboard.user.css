@@ -140,6 +140,11 @@
         darksq=#117A67
         lightsq=#DEDDC7
     }
+    if myBoard=="spRose" || myBoard=="spRoseAlt" {
+        hlcol=#ffea00ab
+        selcol=#ffb833eb
+        
+    }
     if myBoard=="spRose" {
         boardlink = server + "krikor/boards/rose-Krikor" + myLogo + ".jpg"
         miniBoard = server + "krikor/boards/mini/rose-Krikor_clean.jpg"
