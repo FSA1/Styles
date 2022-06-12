@@ -44,15 +44,14 @@
 @var    checkbox    setLogo   "Logo no tabuleiro" 1
 @var    checkbox    n2Left   "Cavalo p/ esquerda" 1
 
-@var    select      setDesignB    "Cavalo Preto alternativo"{
+@var    select      setDesignB    "Estilo: Cavalo Preto"{
+            "padrão*": "op0",
             "opção 1": "-alt",
             "opção 2": "-alt2",
-            "opção 3": "-alt3",
-            "Desativado*": "op0",
-}@var    select      setDesignW    "Cavalo Branco alternativo"{
+}@var    select      setDesignW    "Estilo: Cavalo Branco"{
+            "padrão*": "op0",
             "opção 1": "-alt",
             "opção 2": "-alt2",
-            "Desativado*": "op0",
 }
 
 @var    select      setHighLight    "Escolher de destaque"{
