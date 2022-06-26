@@ -3,11 +3,14 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `La Famiglia chess set for chess.com by agiota_do_artenio`
-@version        20200831.22.25
+@version        20200831.22.30
 @license        NO-REDISTRIBUTION
-@preprocessor   uso
+@preprocessor   stylus
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
+
+server='https://github.com/FSA1/Styles/raw/main/'
+
 /*Chessboard*/    
 .board,
 div[class^="daily-puzzle-board"],
@@ -35,34 +38,34 @@ chess-board[class^="board"],
 chess-board[class^="board flipped"],
 chess-board[id^="board-blank"],
 chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/LaFamigliaCB-Bouquet.png")!important;
+div[id*="chess_com_emailboard_"] {background-image: url(server + "LaFamiglia/LaFamigliaCB-Bouquet.png")!important;
 }
 /*Pieces*/
-div [style*="bp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bp.png")!important;}
-div [style*="br.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-br.png")!important;}
-div [style*="bn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bn.png")!important;}
-div [style*="bb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bb.png")!important;}
-div [style*="bq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bq.png")!important;}
-div [style*="bk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bk.png")!important;}
-div [style*="wp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wp.png")!important;}
-div [style*="wr.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wr.png")!important;}
-div [style*="wn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wn.png")!important;}
-div [style*="wb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wb.png")!important;}
-div [style*="wq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wq.png")!important;}
-div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wk.png")!important;}
+div [style*="bp.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bp.png")!important;}
+div [style*="br.png"] {background-image: url(server + "LaFamiglia/MafiaChar-br.png")!important;}
+div [style*="bn.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bn.png")!important;}
+div [style*="bb.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bb.png")!important;}
+div [style*="bq.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bq.png")!important;}
+div [style*="bk.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bk.png")!important;}
+div [style*="wp.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wp.png")!important;}
+div [style*="wr.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wr.png")!important;}
+div [style*="wn.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wn.png")!important;}
+div [style*="wb.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wb.png")!important;}
+div [style*="wq.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wq.png")!important;}
+div [style*="wk.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wk.png")!important;}
  /*vs personality pieces*/   
-.piece.bp, .promotion-piece.bp {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bp.png")!important;}
-.piece.br, .promotion-piece.br {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-br.png")!important;}
-.piece.bn, .promotion-piece.bn {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bn.png")!important;}
-.piece.bb, .promotion-piece.bb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bb.png")!important;}
-.piece.bq, .promotion-piece.bq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bq.png")!important;}
-.piece.bk, .promotion-piece.bk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-bk.png")!important;}
-.piece.wp, .promotion-piece.wp {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wp.png")!important;}
-.piece.wr, .promotion-piece.wr {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wr.png")!important;}
-.piece.wn, .promotion-piece.wn {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wn.png")!important;}
-.piece.wb, .promotion-piece.wb {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wb.png")!important;}
-.piece.wq, .promotion-piece.wq {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wq.png")!important;}
-.piece.wk, .promotion-piece.wk {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/LaFamiglia/MafiaChar-wk.png")!important;}
+.piece.bp, .promotion-piece.bp {background-image: url(server + "LaFamiglia/MafiaChar-bp.png")!important;}
+.piece.br, .promotion-piece.br {background-image: url(server + "LaFamiglia/MafiaChar-br.png")!important;}
+.piece.bn, .promotion-piece.bn {background-image: url(server + "LaFamiglia/MafiaChar-bn.png")!important;}
+.piece.bb, .promotion-piece.bb {background-image: url(server + "LaFamiglia/MafiaChar-bb.png")!important;}
+.piece.bq, .promotion-piece.bq {background-image: url(server + "LaFamiglia/MafiaChar-bq.png")!important;}
+.piece.bk, .promotion-piece.bk {background-image: url(server + "LaFamiglia/MafiaChar-bk.png")!important;}
+.piece.wp, .promotion-piece.wp {background-image: url(server + "LaFamiglia/MafiaChar-wp.png")!important;}
+.piece.wr, .promotion-piece.wr {background-image: url(server + "LaFamiglia/MafiaChar-wr.png")!important;}
+.piece.wn, .promotion-piece.wn {background-image: url(server + "LaFamiglia/MafiaChar-wn.png")!important;}
+.piece.wb, .promotion-piece.wb {background-image: url(server + "LaFamiglia/MafiaChar-wb.png")!important;}
+.piece.wq, .promotion-piece.wq {background-image: url(server + "LaFamiglia/MafiaChar-wq.png")!important;}
+.piece.wk, .promotion-piece.wk {background-image: url(server + "LaFamiglia/MafiaChar-wk.png")!important;}
 /*Coordinates*/
 div.number.coords-light, div.letter.coords-light, div.number.coords-dark, div.letter.coords-dark {opacity: .9;}
 div.number.coords-light, div.letter.coords-light {color: #756b74 !important;}
