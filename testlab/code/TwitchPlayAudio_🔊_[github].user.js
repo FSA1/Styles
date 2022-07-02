@@ -22,7 +22,6 @@ var regexLaughting = new RegExp(/([k])\1+$/gis, 'gi')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
-//https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/acelerameufilho.MP3
 //play audio with out html audio tag.
 var hahaha = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/SitcomLaughter.mp3');
 var kekw = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/KEKWcut-40.m4a');
