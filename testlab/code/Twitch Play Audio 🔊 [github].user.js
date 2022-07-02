@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name Twitch Play Audio 🔊
+// @name Twitch Play Audio 🔊 [github]
 // @icon https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Twitch_Glitch_Logo_Purple.svg/206px-Twitch_Glitch_Logo_Purple.svg.png
 // @namespace    ChessSkins
 // @description    `play audio in Twitch chat`
@@ -22,42 +22,42 @@ var regexLaughting = new RegExp(/([k])\1+$/gis, 'gi')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
-
+//https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/acelerameufilho.MP3
 //play audio with out html audio tag.
-var hahaha = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/SitcomLaughter.mp3');
-var kekw = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/KEKWcut-40.m4a');
-var tchaudaminha = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/RafPig/tchaudaminha.MP3');
-var sadnessandsorrow = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/sadnessandsorrow.mp3');
-var aplausos = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/mixkit-audience-light-applause-354.wav');
+var hahaha = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/SitcomLaughter.mp3');
+var kekw = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/KEKWcut-40.m4a');
+var tchaudaminha = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/RafPig/tchaudaminha.MP3');
+var sadnessandsorrow = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/sadnessandsorrow.mp3');
+var aplausos = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/mixkit-audience-light-applause-354.wav');
 
-var ashamed = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/ashamed.MP3');
-var bamos = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/bamos.MP3');
-var damatelogo = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/damatelogo.MP3');
-var florida = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/florida.MP3');
-var londres = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/londres.MP3');
-var ohcmon = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/ohcmon.MP3');
-var quepeito = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/quepeito.MP3');
-var topior = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/topior.MP3');
-var tomelhor = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/tomelhor.MP3');
-var notazero = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/notazero.MP3');
-var vouprocessarokrikor = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/vouprocessarokrikor.MP3');
-var saudacoesnoturnas = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/saudacoesnoturnas.MP3');
-var claramenteroubando = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/claramenteroubando.MP3');
-var ocarataroubando = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/ocarataroubando.MP3');
-var roubeinessapartida = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/roubeinessapartida.MP3');
-var pinduramds = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/pinduramds.MP3');
-var toficandotenso = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/toficandotenso.MP3');
-var andameufilho = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/andameufilho.MP3');
-var queroquecefacalance = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/queroquecefacalance.MP3');
-var seisklances = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/6klances.MP3');
-var quepremovealoprado = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/quepremovealoprado.MP3');
-var msca = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/msca.MP3');
-var acelerameufilho = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/acelerameufilho.MP3');
-var jogamaisrapido = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/jogamaisrapido.MP3');
-var grobianoraiz = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/grobianoraiz.MP3');
-var mjc = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/mjc.MP3');
-var caracag4 = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/caracag4.MP3');
-var naomagoarpessoas = new Audio('https://gitlab.com/FSA11/testroom/-/raw/main/personalities/audio/GMKrikor/naomagoarpessoas.MP3');
+var ashamed = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/ashamed.MP3');
+var bamos = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/bamos.MP3');
+var damatelogo = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/damatelogo.MP3');
+var florida = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/florida.MP3');
+var londres = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/londres.MP3');
+var ohcmon = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/ohcmon.MP3');
+var quepeito = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/quepeito.MP3');
+var topior = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/topior.MP3');
+var tomelhor = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/tomelhor.MP3');
+var notazero = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/notazero.MP3');
+var vouprocessarokrikor = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/vouprocessarokrikor.MP3');
+var saudacoesnoturnas = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/saudacoesnoturnas.MP3');
+var claramenteroubando = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/claramenteroubando.MP3');
+var ocarataroubando = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/ocarataroubando.MP3');
+var roubeinessapartida = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/roubeinessapartida.MP3');
+var pinduramds = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/pinduramds.MP3');
+var toficandotenso = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/toficandotenso.MP3');
+var andameufilho = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/andameufilho.MP3');
+var queroquecefacalance = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/queroquecefacalance.MP3');
+var seisklances = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/6klances.MP3');
+var quepremovealoprado = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/quepremovealoprado.MP3');
+var msca = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/msca.MP3');
+var acelerameufilho = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/acelerameufilho.MP3');
+var jogamaisrapido = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/jogamaisrapido.MP3');
+var grobianoraiz = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/grobianoraiz.MP3');
+var mjc = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/mjc.MP3');
+var caracag4 = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/caracag4.MP3');
+var naomagoarpessoas = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/naomagoarpessoas.MP3');
 // Global variable to track the RegEx in use
 var selectedRegEx;
 
