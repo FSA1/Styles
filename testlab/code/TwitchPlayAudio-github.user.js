@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.6-dev
+// @version        0.0.7-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
@@ -106,7 +106,7 @@ const spoiler = (message)=> {
     if(message==="bamos"){
         bamos.play();
     }
-    if(message.match(/(damatelogo|da mate logo)/gui)){
+    if(message.match(/(damatelogo|mate logo)/gui)){
         damatelogo.play();
     }
     if(message==="florida"){
