@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.5-dev
+// @version        0.0.6-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
