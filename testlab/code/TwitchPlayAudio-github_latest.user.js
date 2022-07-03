@@ -19,12 +19,12 @@ var regexTerms = new RegExp(/\b((k){2,}|(h[ae]){2,}|(ja){3,}|[l][o]{1,}[l]{1,}[!
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
-//play audio with out html audio tag.
+//play audio with out html audio tag. [IMPORTANT: urls are case sensitive eg: .MP3/.mp3]
 var hahaha = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/SitcomLaughter.mp3');
-var kekw = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/KEKWcut-40.m4a');
+var kekw = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/KEKWcut-40.mp3');
 var tchaudaminha = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/RafPig/tchaudaminha.MP3');
 var sadnessandsorrow = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/sadnessandsorrow.mp3');
-var aplausos = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/mixkit-audience-light-applause-354.wav');
+var aplausos = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/mixkit-audience-light-applause-354.mp3');
 
 var ashamed = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/ashamed.MP3');
 var bamos = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/bamos.MP3');
