@@ -11,7 +11,7 @@
 // @run-at          document-end
 // ==/UserScript==
 
-//set volume globaly (1=100% 0.5=50%)
+//set volume globally (1=100% 0.5=50%)
 var choosenvol = 0.3;
 
 // Get the Twitch chat HTML element
