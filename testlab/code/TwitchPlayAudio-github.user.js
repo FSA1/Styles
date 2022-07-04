@@ -18,7 +18,7 @@ var choosenvol = 0.3;
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b(k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|wh([a]){3,}t[?]{0,}|(Salve( {0,})){1,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|boa tarde|boa noite|bom dia|mds|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|lul|(KEKW( {0,})){1,}|perdemo|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|joga mais rapido|jogamaisrapido|acelera meufilho|acelerameufilho|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|pindura mds|pinduramds|ashamed|bamos|mate logo|damatelogo|florida|londres|ohcmon|que peito|quepeito|topior|ficou pior|to pior|tomelhor|to melhor|nota zero|notazero|processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|ta roubando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
+var regexTerms = new RegExp(/\b(k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|wh([a]){3,}t[?]{0,}|(Salve( {0,})){1,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|lul|(KEKW( {0,})){1,}|perdemo|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|joga mais rapido|jogamaisrapido|acelera meufilho|acelerameufilho|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|pindura mds|pinduramds|ashamed|bamos|mate logo|damatelogo|florida|londres|ohcmon|que peito|quepeito|topior|ficou pior|to pior|tomelhor|to melhor|nota zero|notazero|processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|ta roubando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -137,6 +137,10 @@ const soundmsg = (message)=> {
     if(message.match(/(Salve( {0,})){1,}/gui)){
         saudacoesnoturnas.play();
         return '<a class="funny-sound">[🔊]</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/P-DA6xO99H0AAAAj/unis-flyers.gif"> ' + message
+    }
+    if(message.match(/barrilda/gui)){
+        saudacoesnoturnas.play();
+        return '<a class="funny-sound">[🔊]</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://github.com/FSA1/Styles/raw/main/testlab/personalities/chess-personalities/barrilda.png"> ' + message
     }
     if(message==="ashamed"){
         ashamed.play();
