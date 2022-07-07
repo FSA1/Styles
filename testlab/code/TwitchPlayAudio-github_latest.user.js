@@ -18,7 +18,7 @@ var choosenvol = 0.3;
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b(Raff?a?(el)? ?(Pig)?(Leitão)?|[KG]ri[kg]or?[A-z]{0,}|senna|[éeh ]{0,}tetra|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|wh([a]){3,}t[?]{0,}|(Salve( {0,})){1,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|lul|(KEKW( {0,})){1,}|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|joga mais rapido|jogamaisrapido|acelera meufilho|acelerameufilho|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|pindura mds|pinduramds|ashamed|bamos|mate logo|damatelogo|florida|londres|ohcmon|que peito|quepeito|topior|ficou pior|to pior|tomelhor|to melhor|nota zero|notazero|processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|ta roubando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
+var regexTerms = new RegExp(/\b(playvideo|Raff?a?(el)? ?(Pig)?(Leitão)?|[KG]ri[kg]or?[A-z]{0,}|senna|[éeh ]{0,}tetra|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|wh([a]){3,}t[?]{0,}|(Salve( {0,})){1,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|lul|(KEKW( {0,})){1,}|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|joga mais rapido|jogamaisrapido|acelera meufilho|acelerameufilho|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|pindura mds|pinduramds|ashamed|bamos|mate logo|damatelogo|florida|londres|ohcmon|que peito|quepeito|topior|ficou pior|to pior|tomelhor|to melhor|nota zero|notazero|processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|ta roubando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -60,8 +60,22 @@ var caracag4 = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/person
 var naomagoarpessoas = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/GMKrikor/naomagoarpessoas.MP3');
 var senna = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/senna-short.mp3');
 var tetra = new Audio('https://github.com/FSA1/Styles/raw/main/testlab/personalities/audio/tetra.mp3');
+
 // Global variable to track the RegEx in use
 var selectedRegEx;
+
+// play random sounds
+function playRandomSound(){
+
+      //An array to house all of the URLs of your sounds
+      var sounds = [acelerameufilho.src,jogamaisrapido.src,andameufilho.src,queroquecefacalance.src];
+
+      //This line will select a random sound to play out of your provided URLS
+      //var soundFile = sounds[Math.floor(Math.random()*sounds.length)];
+
+      var rSound = new Audio(sounds[Math.floor(Math.random()*sounds.length)]);
+      rSound.play();
+}
 
 // Recursive function to check if the Twitch chat contains messages
 function addObserverIfDesiredNodeAvailable() {
@@ -96,6 +110,16 @@ const observer = new MutationObserver(callback);
 
 // The sound and text message that will replace the term matched
 const soundmsg = (message)=> {
+    if(message.match(/playvideo/gui)){
+        kekw.volume = choosenvol;
+        kekw.play();
+        return '<a class="funny-sound">[🔊]</a><iframe width="300" height="200" src="https://www.youtube.com/embed/469oNbcsF6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> '+ message
+    }/*
+    if(message.match(/julea__/gui)){
+        kekw.volume = choosenvol;
+        kekw.play();
+        return '<a class="funny-sound">[🔊]</a> <a class="ScHalo-sc-1l14b0i-0 jTdUEU tw-halo" size="72" status="offline" data-a-target="watch-mode-to-home" href="/juliannaws"><div class="ScAspectRatio-sc-1sw3lwy-1 kPofwJ tw-aspect"><div class="ScAspectSpacer-sc-1sw3lwy-0 dsswUS"></div><figure aria-label="juliannaws" class="ScAvatar-sc-12nlgut-0 jVjKzH tw-avatar"><img class="InjectLayout-sc-588ddc-0 iDjrEF tw-image tw-image-avatar" alt="juliannaws" src="https://static-cdn.jtvnw.net/jtv_user_pictures/ea40b24e-4ddf-4a06-ac33-2f59012ef591-profile_image-70x70.png"></figure></div></a> '+ message
+    }*/
     if(message.match(/(KEKW( {0,})){1,}/gui)){
         kekw.volume = choosenvol;
         kekw.play();
@@ -158,9 +182,13 @@ const soundmsg = (message)=> {
     if(message.match(/(Hikaru )?Naka(mura)?/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="https://github.com/FSA1/Styles/raw/main/testlab/personalities/chess-personalities/Nakamura.png"> ' + message
     }
+    if(message.match(/Ding( Liren)?/gui)){
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="https://github.com/FSA1/Styles/raw/main/testlab/personalities/chess-personalities/ding.png"> ' + message
+    }
     if(message.match(/[éeh ]{0,}tetra/gui)){
-        tetra.play();
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="https://c.tenor.com/kurkWs72xQkAAAAC/peepo-brazil.gif"> ' + message
+        //tetra.play();
+        playRandomSound()
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="https://c.tenor.com/kurkWs72xQkAAAAC/peepo-brazil.gif"> <div class="c-aUMP"><audio controls=""><source src="https://d3dabxdkbtmy0c.cloudfront.net/E%CC%81+tetra.mp3"><p>Seu navegador não suporta o elemento audio.</p></audio></div> ' + message
     }
     if(message.match(/senna/gui)){
         senna.play();
@@ -304,4 +332,4 @@ function checkSettings(){
 }
 //myAudio.Stop();
 var forceStyle = document.querySelector('head');
-forceStyle.insertAdjacentHTML('afterend', '<style type="text/css">.funny-sound { position: relative; display: inline-block; }  .funny-sound .funny-sound-text { visibility: hidden; width: 60px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0;  /* Position the tooltip */ position: absolute; z-index: 1; bottom: 100%; left: 100%; margin-left: -60px; } .funny-sound:hover .funny-sound-text { visibility: visible; }</style>');
+forceStyle.insertAdjacentHTML('afterend', '.funny-sound { position: relative; display: inline-block; }  .funny-sound .funny-sound-text { visibility: hidden; width: 60px; background-color: black; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0;  /* Position the tooltip */ position: absolute; z-index: 1; bottom: 100%; left: 100%; margin-left: -60px; } .funny-sound:hover .funny-sound-text { visibility: visible; }</style>');
