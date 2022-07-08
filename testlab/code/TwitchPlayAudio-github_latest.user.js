@@ -25,7 +25,7 @@ var choosenvol = 0.3;
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|aya[ya]{1,}|MLADY|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|testevideo|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?(Pig)?(Leitão)?|Salve([! ]?Salve){0,}^[@]|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|lance|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|p[ei]ndura[A-z]{0,}|bamos|mate logo|damatelogo|florida|londres|ohcmon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])|nota( ?zero)?|(eu ?)?([vou ]{0,4})?processar?[o ]{1,2}Krikor|ovoprocessarokrikor|[KG]ri[kg]or?[A-z]{0,}|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|t[aá] ro(u)?bando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
+var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|aya[ya]{1,}|MLADY|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|testevideo|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?(Pig)?(Leitão)?|Salve([! ]?Salve){0,}^[@]|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|lance|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|p[ei]ndura[A-z]{0,}|bamos|mate logo|damatelogo|florida|londres|ohcmon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])|nota( ?zero)?|(eu )?[vou]{0,3} processar|[KG]ri[kg]or?[A-z]{0,}|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|t[aá] ro(u)?bando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -200,9 +200,6 @@ const soundmsg = (message)=> {
     if(message.match(/Raff?a?(el)? ?(Pig)?(Leitão)?/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/RafPig.png"> ' + message
     }
-    if(message.match(/([KG]ri[kg]or?[A-z]{0,}|Pringles)/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"> ' + message
-    }
     if(message.match(/((Ian )?Nepo([A-z]{0,}))/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
     }
@@ -256,10 +253,13 @@ const soundmsg = (message)=> {
     if(message==="notazero" || message==="nota zero"){
         notazero.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }//(eu ?)?[vou ]{0,4}processar?[o ]{1,2}Krikor
-    if(message.match(/(eu ?)?([vou ]{0,4})?processar?[o ]{1,2}Krikor/gui)){
+    }
+    if(message.match(/(eu )?[vou]{0,3} processar/gui)){
         vouprocessarokrikor.play();
         return '<a class="funny-sound">🔊</a> '+ message
+    }
+    if(message.match(/([KG]ri[kg]or?[A-z]{0,}|Pringles)/gui)){
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"> ' + message
     }
     if(message==="tchaudaminha" || message==="tchau daminha"){
         tchaudaminha.play();
@@ -324,10 +324,6 @@ const soundmsg = (message)=> {
     }
     if(message==="andameufilho" || message==="anda meu filho"){
         andameufilho.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="toficandotenso" || message==="to ficando tenso"){
-        toficandotenso.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }//lance - frases randomicas
     if(message.match(/l([a]?)nce([!]?)/gui)){
