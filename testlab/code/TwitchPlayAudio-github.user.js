@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.10-dev
+// @version        0.0.11-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
@@ -25,7 +25,7 @@ var choosenvol = 0.3;
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b(playvideo|Raff?a?(el)? ?(Pig)?(Leitão)?|[KG]ri[kg]or?[A-z]{0,}|senna|[éeh ]{0,}tetra|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|wh([a]){3,}t[?]{0,}|(Salve( {0,})){1,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|lul|(KEKW( {0,})){1,}|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|lance|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|p[ei]ndura[A-z]{0,}|ashamed|bamos|mate logo|damatelogo|florida|londres|ohcmon|que peito|quepeito|topior|ficou pior|to pior|tomelhor|to melhor|nota zero|notazero|processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|ta roubando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
+var regexTerms = new RegExp(/\b(Raff?a?(el)? ?(Pig)?(Leitão)?|[KG]ri[kg]or?[A-z]{0,}|senna|[éeh ]{0,}tetra|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|k{3,}|([hk][khae] {0,1}){2,}|((ja)( ){0,1}){3,}|[l][ou]{1,}[l]{1,}[!]{0,}|wh([a]){3,}t[?]{0,}|(Salve( {0,})){1,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|boa tarde|boa noite|bom dia|mds|palmas|aplausos|applauses|[A-z]{0,}(Clap( {0,})){1,}|lul|(KEKW( {0,})){1,}|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|lance|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|to ficando tenso|toficandotenso|p[ei]ndura[A-z]{0,}|ashamed|bamos|mate logo|damatelogo|florida|londres|ohcmon|que peito|quepeito|topior|ficou pior|to pior|tomelhor|to melhor|nota zero|notazero|processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|ta roubando|claramenteroubando|cheating|claramente roubando)\b/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -123,11 +123,6 @@ const observer = new MutationObserver(callback);
 
 // The sound and text message that will replace the term matched
 const soundmsg = (message)=> {
-    if(message.match(/playvideo/gui)){
-        kekw.volume = choosenvol;
-        kekw.play();
-        return '<a class="funny-sound">[🔊]</a><iframe width="300" height="200" src="https://www.youtube.com/embed/469oNbcsF6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> '+ message
-    }
     if(message.match(/(KEKW( {0,})){1,}/gui)){
         kekw.volume = choosenvol;
         kekw.play();
