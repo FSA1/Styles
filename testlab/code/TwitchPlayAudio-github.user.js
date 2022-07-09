@@ -188,7 +188,12 @@ const soundmsg = (message)=> {
     }
     if(message.match(/boa noite/gui)){
         saudacoesnoturnas.play();
-        return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/k1qPg8hPeVUAAAAd/boa-noite-good-night.gif"> ' + message
+        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady.gif"';
+        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady2.gif"';
+        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady3.gif"';
+        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady4.gif"';
+
+        return '<a class="funny-sound"></a> '+randomLink([gif1,gif2,gif3,gif4])+'"> ' + message
     }
     if(message.match(/(Salve( {0,})){1,}/gui)){
         //som em breve
