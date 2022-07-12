@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.11-dev
+// @version        0.0.13-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
@@ -16,16 +16,23 @@
   Além dos audio estou adicionando alguns emotes e fotos de pessoas famosas, quando são citadas.
   A fase do projeto é de desenvolvimento, ou seja, esta é uma versão de testes, estará em constantes mudanças
   pelos próximos dias.
+  
+  *Resolvido o problema em que não pegava sinais de exclamação.
+  *os Regex continuam sendo revisados e substituidos para corresponderem melhor as expressões procuradas, com
+  possíveis erros ou variações de escrita dos usuários.
+  *Alguns audios foram removidos outros adicionados, infelizmente o número de audios deve ter um limite para
+  não causar lentidão na página. Isso está sendo testado também.
+  *Se os audios não estiverem funcionando em algum momento, tente recarregar a página, isto deve bastar.
   ===========================================================================================================*/
 
 //set volume globally (1=100% 0.5=50%)
-var choosenvol = 0.3;
+var choosenvol = 0.4;
 
 // Get the Twitch chat HTML element
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?(Pig)?(Leitão)?|Salve.{0,2}|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?(Chess)?|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(boa tarde)|^(boa noite)|^(bom dia)|mds|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|jogar? francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|lance!|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|p[ei]ndura[A-z]{0,}|bamos|mate logo|damatelogo|florida|londres|ohcmon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota( ?zero)?|(eu )?[vou]{0,3} processar|[KG]ri[kg]or?[A-z]{0,}|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|t[aá] ro(u)?bando|claramenteroubando|cheating|claramente roubando)/g, 'gui')
+var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(boa tarde)|^(boa noite)|^(bom dia)|mds|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|jogar? francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|p[ei]ndura[A-z]{0,}|bamos|mate logo|damatelogo|florida|londres|ohcmon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota( ?zero)?|(eu )?[voôu]{2,3} processar|[KG]ri[kg]or?[A-z]{0,}|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|t[aá] ro(u)?bando|claramenteroubando|cheating|claramente roubando)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|lance!/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -72,7 +79,6 @@ var tetra = new Audio(selectedServer + 'personalities/audio/tetra.mp3');
 var bomdia1 = new Audio(selectedServer + 'personalities/audio/GMKrikor/krikor-bom-dia-pessoal01.MP3');
 var bomdia2 = new Audio(selectedServer + 'personalities/audio/GMKrikor/krikor-bom-dia-pessoal02.MP3');
 var bomdia3 = new Audio(selectedServer + 'personalities/audio/GMKrikor/krikor-bom-dia-pessoal03.MP3');
-var eaiagiota = new Audio(selectedServer + 'personalities/audio/GMKrikor/krikor-eai-agiota.MP3');
 
 // Global variable to track the RegEx in use
 var selectedRegEx;
@@ -203,8 +209,11 @@ const soundmsg = (message)=> {
     if(message.match(/barrilda/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'emotes/barrilda.gif"> ' + message
     }
-    if(message.match(/Raff?a?(el)? ?(Pig)?(Leitão)?/gui)){
+    if(message.match(/Raff?a?(el)? ?Pig|Raff?ael Leitão/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/RafPig.png"> ' + message
+    }
+    if(message.match(/Raff?a?(el)? ?Chess/gui)){
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/RaffaelChess.png"> ' + message
     }
     if(message.match(/((Ian )?Nepo([A-z]{0,}))/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
