@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.13-dev
+// @version        0.0.14-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
@@ -26,13 +26,13 @@
   ===========================================================================================================*/
 
 //set volume globally (1=100% 0.5=50%)
-var choosenvol = 0.4;
+var choosenvol = 0.3;
 
 // Get the Twitch chat HTML element
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(boa tarde)|^(boa noite)|^(bom dia)|mds|perdemo|(final)( ){0,}triste|o que foi que eu fiz|(sadness)( ){0,}and( ){0,}sorrow|jogar? francesa|([kc]aro)( ){0,}[kc]a[n]{1,}|naomagoarpessoas|caraca g4|caracag4|mjc|g4 grobiano|grobiano raiz|grobianoraiz|msca|premove aloprado|premovealoprado|seismillances|6000 lances|seis mil lances|6klances|quero que ce faça lance|queroquecefacalance|andameufilho|anda meu filho|p[ei]ndura[A-z]{0,}|bamos|mate logo|damatelogo|florida|londres|ohcmon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota( ?zero)?|(eu )?[voôu]{2,3} processar|[KG]ri[kg]or?[A-z]{0,}|tchau daminha|tchaudaminha|saudacoesnoturnas|saudações noturnas|roubeinessapartida|roubei nessa|ocarataroubando|t[aá] ro(u)?bando|claramenteroubando|cheating|claramente roubando)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|lance!/g, 'gui')
+var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(bo[ma] (dia|tarde|noite))|mds|mjc|msca|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa|caraca ?g4|g4 ?grobiano|grobiano ?raiz|premove ?aloprado|(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?|p[ei]ndura[A-z]{0,}|da ?mate ?logo|florida|londres|oh ?c'?mon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota( ?zero)?|[KG]ri[kg]or?[A-z]{0,}|tchau ?daminha|roubei ?nessa ?(partida)?|(o ?cara ?)?t[aá] ?ro(u)?bando|claramente ?roubando|cheating)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|saudaç[õo]es ?noturnas?!?|\bbamos\b!?|\bperdemo\b!?|lance!|(eu )?[voôu]{2,3} ?processar ?[oa]?/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -69,9 +69,9 @@ var acelerameufilho = new Audio(selectedServer + 'personalities/audio/GMKrikor/a
 var jogamaisrapido = new Audio(selectedServer + 'personalities/audio/GMKrikor/jogamaisrapido.MP3');
 var seisklances = new Audio(selectedServer + 'personalities/audio/GMKrikor/6klances.MP3');
 var quepremovealoprado = new Audio(selectedServer + 'personalities/audio/GMKrikor/quepremovealoprado.MP3');
+var mjc = new Audio(selectedServer + 'personalities/audio/GMKrikor/mjc.MP3');
 var msca = new Audio(selectedServer + 'personalities/audio/GMKrikor/msca.MP3');
 var grobianoraiz = new Audio(selectedServer + 'personalities/audio/GMKrikor/grobianoraiz.MP3');
-var mjc = new Audio(selectedServer + 'personalities/audio/GMKrikor/mjc.MP3');
 var caracag4 = new Audio(selectedServer + 'personalities/audio/GMKrikor/caracag4.MP3');
 var naomagoarpessoas = new Audio(selectedServer + 'personalities/audio/GMKrikor/naomagoarpessoas.MP3');
 var senna = new Audio(selectedServer + 'personalities/audio/senna-short.mp3');
@@ -161,8 +161,6 @@ const soundmsg = (message)=> {
         return '<a class="funny-sound">🔊</a> <img src="https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/1x" srcset="https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/2x 2x, https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/3x 4x" alt="KEKW" class="chat-line__message--emote bttv-emote-image">  &nbsp' + message
     }
     if(message.match(/mlady/gui)){
-        aplausos.volume = choosenvol;
-        aplausos.play();
         const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady.gif"';
         const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady2.gif"';
         const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady3.gif"';
@@ -181,19 +179,19 @@ const soundmsg = (message)=> {
         //sem audio por enquanto
         return '<a class="funny-sound">🔊</a> <img alt="SabaPing" class="chat-image chat-line__message--emote" src="https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/1.0 1x,https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/2.0 2x,https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/3.0 4x"> ' + message
     }
-    if(message.match(/mds/gui)){
-        msca.play();
+    if(message.match(/mds|mjc|msca/gui)){
+        playRandomSound([mjc.src,msca.src])
         return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 50%" src="https://c.tenor.com/AbXV2FwLRNgAAAAd/goodstory-legendary.gif"> ' + message
     }
-    if(message.match(/bom dia/gui)){
+    if(message.match(/\bbom dia\b!?/gui)){
         playRandomSound([bomdia1.src,bomdia2.src,bomdia3.src])
         return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/jdBU6FP2oi8AAAAi/catala-bon-dia.gif"> ' + message
     }
-    if(message.match(/boa tarde/gui)){
+    if(message.match(/\bboa tarde\b!?/gui)){
         //som em breve
         return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/mlmBfvRo0FsAAAAd/salve-rapaziada-ninjas-in-pyjamas.gif"> ' + message
     }
-    if(message.match(/boa noite/gui)){
+    if(message.match(/\bboa noite\b!?/gui)){
         saudacoesnoturnas.play();
         const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady.gif"';
         const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady2.gif"';
@@ -241,11 +239,11 @@ const soundmsg = (message)=> {
         senna.play();
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="https://c.tenor.com/1J-n2oBWMa8AAAAi/peepo-brazil.gif"> &nbsp' + message
     }
-    if(message==="bamos"){
+    if(message.match(/\bbamos\b!?/gui)){
         bamos.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message.match(/(damatelogo|mate logo)/gui)){
+    if(message.match(/(da ?mate ?logo)/gui)){
         damatelogo.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
@@ -257,11 +255,11 @@ const soundmsg = (message)=> {
         londres.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message==="ohcmon"){
+    if(message.match(/oh ?c'?mon/gui)){
         ohcmon.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message.match(/(topior|to pior|ficou pior)/gui)){
+    if(message.match(/(eu ?)?to ?pior( ?j[aá])?/gui)){
         topior.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
@@ -269,7 +267,7 @@ const soundmsg = (message)=> {
         notazero.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message.match(/(eu )?[vou]{0,3} processar/gui)){
+    if(message.match(/(eu )?[voôu]{2,3} ?processar ?[oa]?/gui)){
         vouprocessarokrikor.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
@@ -287,19 +285,19 @@ const soundmsg = (message)=> {
         tomelhor.play();
         return '<a class="funny-sound">🔊</a><img alt="krikNotBad" class="chat-image chat-line__message--emote" src="https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/1.0 1x,https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/2.0 2x,https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/3.0 4x">&nbsp' +message
     }
-    if(message==="saudacoesnoturnas" || message==="saudações noturnas"){
+    if(message.match(/saudaç[õo]es ?noturnas?!?/gui)){
         saudacoesnoturnas.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
     if(message==="roubeinessapartida" || message==="roubei nessa"){
         roubeinessapartida.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }//t[aá] ro(u)?bando
-    if(message.match(/(ocarataroubando|t[aá] ro(u)?bando)/gui)){
+    }
+    if(message.match(/(o ?cara ?)?t[aá] ?ro(u)?bando/gui)){
         ocarataroubando.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message==="claramenteroubando" || message==="claramente roubando" || message==="cheating"){
+    if(message.match(/claramente ?roubando|cheating/gui)){
         claramenteroubando.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
@@ -308,51 +306,27 @@ const soundmsg = (message)=> {
         hahaha.play();
         return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/narussia.gif"> &nbsp' + message
     }
-    if(message.match(/(naomagoarpessoas|jogar? ([kc]aro)( ){0,}[kc]a[n]{1,}|jogar? francesa)/gui)){
+    if(message.match(/n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa/gui)){
         naomagoarpessoas.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message==="caracag4" || message==="caraca g4"){
+    if(message.match(/caraca ?g4/gui)){
         caracag4.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="mjc"){
-        mjc.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="msca"){
-        msca.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
     if(message==="grobianoraiz" || message==="grobiano raiz" || message==="g4 grobiano"){
         grobianoraiz.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="jogamaisrapido" || message==="joga mais rapido"){
-        jogamaisrapido.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="acelerameufilho" || message==="acelera meu filho"){
-        acelerameufilho.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="queroquecefacalance" || message==="quero que ce faça lance"){
-        queroquecefacalance.play();
-        return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message==="andameufilho" || message==="anda meu filho"){
-        andameufilho.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }//lance - frases randomicas
     if(message.match(/lance!/gui)){
         playRandomSound([jogamaisrapido.src,acelerameufilho.src,queroquecefacalance.src,andameufilho.src])
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message==="premovealoprado" || message==="premove aloprado"){
+    if(message.match(/premove ?aloprado/gui)){
         quepremovealoprado.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message==="6klances" || message==="seismillances" || message==="seis mil lances" || message==="6000 mil lances"){
+    if(message.match(/(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?/gui)){
         seisklances.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
@@ -360,7 +334,7 @@ const soundmsg = (message)=> {
         playRandomSound([pinduramds.src,pinduradesgraca.src,pinduramaldito.src])
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message.match(/((sadness)( ){0,}and( ){0,}sorrow|(final)( ){0,}triste|o que foi que eu fiz)/gui)){
+    if(message.match(/((sadness)( ){0,}and( ){0,}sorrow|(final)( ){0,}triste|perdemo!?)/gui)){
         sadnessandsorrow.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }

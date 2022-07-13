@@ -1,35 +1,31 @@
 TwitchPlayAudio app (script) para usar com tampermonkey.
 Palavras ou frases para ouvir audio na Twitch.
 ===================================
-hahaha|palmas|para bens|:clap:|Clap
+hahaha
+palmas|Clap
 KEKW
-perdemo|final triste|sadness and sorrow|sadnessandsorrow|ninja
+perdemo|final triste|sadness and sorrow|sadnessandsorrow
 francesa|caro-kann|naomagoarpessoas
 caraca g4|caracag4
 mjc
 msca
+mds
 grobiano raiz|grobianoraiz
-joga mais rapido|jogamaisrapido
-acelera meufilho|acelerameufilho
 premove aloprado|premovealoprado
 seismillances|6000 lances|seis mil lances|6klances
-quero que ce faça lance|queroquecefacalance
-andameufilho|anda meu filho
-to ficando tenso|toficandotenso
+lance!
 pindura mds|pinduramds
-ashamed
 bamos
 mate logo|damatelogo
 florida
 londres
 ohcmon
-que peito|quepeito
-topior|ficou pior|to pior
+topior|to pior
 tomelhor|to melhor
 nota zero|notazero
-processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor
+eu vou processar o Krikor|ovoprocessarokrikor|vouprocessarokrikor
 tchau daminha|tchaudaminha
 saudacoesnoturnas|saudações noturnas
-roubeinessapartida|roubei nessa
-ocarataroubando|ta roubando
+roubeinessapartida|roubei nessa partida
+ocarataroubando|o cara ta roubando
 claramenteroubando|claramente roubando
