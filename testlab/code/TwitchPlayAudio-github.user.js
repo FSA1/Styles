@@ -285,8 +285,8 @@ const soundmsg = (message)=> {
         const img4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor4.png"';
         const img5 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor5.png"';
 
-        return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4,img5])+'"> ' + message
-        //return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"> &nbsp' + message
+        return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4,img5])+'"> &nbsp' + message
+
     }
     if(message==="tchaudaminha" || message==="tchau daminha"){
         tchaudaminha.play();
