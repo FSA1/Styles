@@ -217,7 +217,13 @@ const soundmsg = (message)=> {
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
     }
     if(message.match(/Magnus( Carlsen)?/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen.png"> ' + message
+        
+        const img1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen.png"';
+        const img2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen2.png"';
+        const img3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen3.png"';
+        const img4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen4.png"';
+
+        return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4])+'"> ' + message
     }
     if(message.match(/(Hikaru )?Naka(mura)?/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Nakamura.png"> ' + message
@@ -271,8 +277,16 @@ const soundmsg = (message)=> {
         vouprocessarokrikor.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    if(message.match(/([KG]ri[kg]or?[A-z]{0,}|Pringles)/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"> &nbsp' + message
+    if(message.match(/([KG]ri[kg]or?[A-z]{0,}|Pringles)/gui)){        
+        
+        const img1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"';
+        const img2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor2.png"';
+        const img3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor3.png"';
+        const img4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor4.png"';
+        const img5 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor5.png"';
+
+        return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4,img5])+'"> ' + message
+        //return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"> &nbsp' + message
     }
     if(message==="tchaudaminha" || message==="tchau daminha"){
         tchaudaminha.play();
