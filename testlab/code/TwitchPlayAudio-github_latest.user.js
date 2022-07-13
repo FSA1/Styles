@@ -32,7 +32,7 @@ var choosenvol = 0.3;
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(bo[ma] (dia|tarde|noite))|mds|mjc|msca|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa|caraca ?g4|g4 ?grobiano|grobiano ?raiz|premove ?aloprado|(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?|p[ei]ndura[A-z]{0,}|da ?mate ?logo|florida|londres|oh ?c'?mon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota( ?zero)?|[KG]ri[kg]or?[A-z]{0,}|tchau ?daminha|roubei ?nessa ?(partida)?|(o ?cara ?)?t[aá] ?ro(u)?bando|claramente ?roubando|cheating)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|saudaç[õo]es ?noturnas?!?|\bbamos\b!?|\bperdemo\b!?|lance!|(eu )?[voôu]{2,3} ?processar ?[oa]?/g, 'gui')
+var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|a?cab([o]){2,}([hu ]){0,}([éeh ]{1,}t[eé]{1,}tr[a]{1,})?|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){3,}t[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(bo[ma] (dia|tarde|noite))|^(mds|mjc|msca)$|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa|caraca ?g4|g4 ?grobiano|grobiano ?raiz|premove ?aloprado|(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?|p[ei]ndura[A-z]{0,}|da ?mate ?logo|florida|londres|oh ?c'?mon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota( ?zero)?|[KG]ri[kg]or?[A-z]{0,}|tchau ?daminha|roubei ?nessa ?(partida)?|(o ?cara ?)?t[aá] ?ro(u)?bando|claramente ?roubando|cheating)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|saudaç[õo]es ?noturnas?!?|\bbamos\b!?|\bperdemo\b!?|lance!|(eu )?[voôu]{2,3} ?processar ?[oa]?/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -179,7 +179,7 @@ const soundmsg = (message)=> {
         //sem audio por enquanto
         return '<a class="funny-sound">🔊</a> <img alt="SabaPing" class="chat-image chat-line__message--emote" src="https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/1.0 1x,https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/2.0 2x,https://static-cdn.jtvnw.net/emoticons/v2/160402/default/dark/3.0 4x"> ' + message
     }
-    if(message.match(/mds|mjc|msca/gui)){
+    if(message.match(/^(mds|mjc|msca)$/gui)){
         playRandomSound([mjc.src,msca.src])
         return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 50%" src="https://c.tenor.com/AbXV2FwLRNgAAAAd/goodstory-legendary.gif"> ' + message
     }
@@ -285,8 +285,7 @@ const soundmsg = (message)=> {
         const img4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor4.png"';
         const img5 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor5.png"';
 
-        return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4,img5])+'"> &nbsp' + message
-
+        return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4,img5])+'"> &nbsp' + message        
     }
     if(message==="tchaudaminha" || message==="tchau daminha"){
         tchaudaminha.play();
@@ -352,7 +351,7 @@ const soundmsg = (message)=> {
         sadnessandsorrow.play();
         return '<a class="funny-sound">🔊</a> '+ message
     }
-    //console.log(message);
+
 }
 
 addObserverIfDesiredNodeAvailable();
@@ -368,6 +367,6 @@ function checkSettings(){
       selectedRegEx = null;
     }
 }
-//myAudio.Stop();
+
 var forceStyle = document.querySelector('head');
 forceStyle.insertAdjacentHTML('afterend', '<style>.funny-sound { position: relative; display: inline-block; }</style>');
