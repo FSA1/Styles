@@ -26,7 +26,7 @@
   ===========================================================================================================*/
 
 //set volume globally (1=100% 0.5=50%)
-var choosenvol = 0.3;
+var choosenvol = 0.4;
 
 // Get the Twitch chat HTML element
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
@@ -216,7 +216,7 @@ const soundmsg = (message)=> {
     }//Salve!
     if(message.match(/Salve.{0,2}/gui)){
         //som em breve
-        return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/P-DA6xO99H0AAAAj/unis-flyers.gif"> ' + message
+        return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/P-DA6xO99H0AAAAj/unis-flyers.gif"> '
     }//barrilda
     if(message.match(/barrilda/gui)){
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'emotes/barrilda.gif"> ' + message
