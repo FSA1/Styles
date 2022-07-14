@@ -222,13 +222,13 @@ const soundmsg = (message)=> {
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'emotes/barrilda.gif"> ' + message
     }//Rafael Leitão, RafPig, Raffa Pig
     if(message.match(/Raff?a?(el)? ?Pig|Raff?ael Leitão/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/RafPig.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/RafPig.png"> ' + message
     }//Raffael Chess
     if(message.match(/Raff?a?(el)? ?Chess/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/RaffaelChess.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/RaffaelChess.png"> ' + message
     }//Ian Nepomniachi
     if(message.match(/((Ian )?Nepo([A-z]{0,}))/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
     }//Magnus Carlsen
     if(message.match(/Magnus( Carlsen)?/gui)){
         
@@ -240,10 +240,10 @@ const soundmsg = (message)=> {
         return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4])+'"> ' + message
     }//Hikaru Nakamura
     if(message.match(/(Hikaru )?Naka(mura)?/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/Nakamura.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Nakamura.png"> ' + message
     }//Ding Liren
     if(message.match(/Ding( Liren)?/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'personalities/chess-personalities/ding.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/ding.png"> ' + message
     }//Acabou!, é tetra!
     if(message.match(/\ba?cab([o]){2,}([hu ]){0,}\b!?|[eéh ]{0,}\bt[eé]{1,}tr[a]{1,}\b!?/gui)){
         tetra.play();
