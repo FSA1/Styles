@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.16-dev
+// @version        0.0.17-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
@@ -167,10 +167,10 @@ const soundmsg = (message)=> {
         return '<a class="funny-sound">🔊</a> <img src="https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/1x" srcset="https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/2x 2x, https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/3x 4x" alt="KEKW" class="chat-line__message--emote bttv-emote-image">  &nbsp' + message
     }//MLADY, emote de cumprimento
     if(message.match(/mlady/gui)){
-        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady.gif"';
-        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady2.gif"';
-        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady3.gif"';
-        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady4.gif"';
+        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady.gif"';
+        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady2.gif"';
+        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady3.gif"';
+        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady4.gif"';
 
         return '<a class="funny-sound"></a> '+randomLink([gif1,gif2,gif3,gif4])+'"> ' + message
     }//teste de video
@@ -207,10 +207,10 @@ const soundmsg = (message)=> {
     }//Boa noite, Krikor 'Saudações noturnas' (Krikor propôs que se saudasse como no emote MLADY)
     if(message.match(/\b(boa noite|saudaç[õo]es ?noturnas?)\b!?/gui)){
         saudacoesnoturnas.play();
-        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady.gif"';
-        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady2.gif"';
-        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady3.gif"';
-        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/mlady4.gif"';
+        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady.gif"';
+        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady2.gif"';
+        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady3.gif"';
+        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/mlady4.gif"';
 
         return '<a class="funny-sound"></a> '+randomLink([gif1,gif2,gif3,gif4])+'"> ' + message
     }//Salve!
@@ -222,36 +222,36 @@ const soundmsg = (message)=> {
         return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 20%" src="'+ selectedServer + 'emotes/barrilda.gif"> ' + message
     }//Rafael Leitão, RafPig, Raffa Pig
     if(message.match(/Raff?a?(el)? ?Pig|Raff?ael Leitão/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/RafPig.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/RafPig.png"> ' + message
     }//Raffael Chess
     if(message.match(/Raff?a?(el)? ?Chess/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/RaffaelChess.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/RaffaelChess.png"> ' + message
     }//Ian Nepomniachi
     if(message.match(/((Ian )?Nepo([A-z]{0,}))/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/nepomniachi.png"> ' + message
     }//Magnus Carlsen
     if(message.match(/Magnus( Carlsen)?/gui)){
         
-        const img1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen.png"';
-        const img2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen2.png"';
-        const img3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen3.png"';
-        const img4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen4.png"';
+        const img1 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen.png"';
+        const img2 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen2.png"';
+        const img3 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen3.png"';
+        const img4 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Carlsen4.png"';
 
         return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4])+'"> ' + message
     }//Hikaru Nakamura
     if(message.match(/(Hikaru )?Naka(mura)?/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Nakamura.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Nakamura.png"> ' + message
     }//Ding Liren
     if(message.match(/Ding( Liren)?/gui)){
-        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/ding.png"> ' + message
+        return '<a class="funny-sound"></a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/ding.png"> ' + message
     }//Acabou!, é tetra!
     if(message.match(/\ba?cab([o]){2,}([hu ]){0,}\b!?|[eéh ]{0,}\bt[eé]{1,}tr[a]{1,}\b!?/gui)){
         tetra.play();
-        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="https://c.tenor.com/YAuoFbHA7SAAAAAd/tetra-futebol.gif';
-        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="https://thumbs.gfycat.com/SolidEasygoingAlaskajingle-size_restricted.gif';
-        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 20%" src="https://c.tenor.com/1J-n2oBWMa8AAAAi/peepo-brazil.gif';
-        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="https://c.tenor.com/53mmUaqb1b0AAAAC/copa-torcedor.gif';
-        const gif5 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="https://pa1.narvii.com/7243/fe3792bdc48b91754f8678c7fc78f11502e804e9r1-480-270_hq.gif';
+        const gif1 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/YAuoFbHA7SAAAAAd/tetra-futebol.gif';
+        const gif2 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="https://thumbs.gfycat.com/SolidEasygoingAlaskajingle-size_restricted.gif';
+        const gif3 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/1J-n2oBWMa8AAAAi/peepo-brazil.gif';
+        const gif4 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="https://c.tenor.com/53mmUaqb1b0AAAAC/copa-torcedor.gif';
+        const gif5 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="https://pa1.narvii.com/7243/fe3792bdc48b91754f8678c7fc78f11502e804e9r1-480-270_hq.gif';
 
         return '<a class="funny-sound"></a> '+randomLink([gif1,gif2,gif3,gif4,gif5])+'"> 🔊&nbsp' + message
     }//Musica da vitória
@@ -293,11 +293,11 @@ const soundmsg = (message)=> {
     }//Krikor, Grikor, Grigor, Pringles
     if(message.match(/([KG]ri[kg]or?[A-z]{0,}|Pringles)/gui)){        
         
-        const img1 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"';
-        const img2 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor2.png"';
-        const img3 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor3.png"';
-        const img4 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor4.png"';
-        const img5 = '<img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor5.png"';
+        const img1 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor.png"';
+        const img2 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor2.png"';
+        const img3 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor3.png"';
+        const img4 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor4.png"';
+        const img5 = '<img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'personalities/chess-personalities/Krikor5.png"';
 
         return '<a class="funny-sound"></a> '+randomLink([img1,img2,img3,img4,img5])+'"> &nbsp' + message        
     }//RafPig 'tchau daminha!'
@@ -324,7 +324,7 @@ const soundmsg = (message)=> {
     if(message.match(/n[ao] russia [A-zÀ-ú ,.]{0,} cadeia/gui)){
         hahaha.volume = choosenvol;
         hahaha.play();
-        return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 40%" src="'+ selectedServer + 'emotes/narussia.gif"> &nbsp' + message
+        return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/narussia.gif"> &nbsp' + message
     }
     if(message.match(/n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa/gui)){
         naomagoarpessoas.play();
