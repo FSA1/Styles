@@ -5,7 +5,7 @@
 // @description    `play audio in Twitch chat`
 // @author          agiota_do_artenio
 // @homepage        https://www.chess.com/blog/Agiota_do_Artenio
-// @version        0.0.17-dev
+// @version        0.0.18-dev
 // @grant    none
 // @match           *://www.twitch.tv/*
 // @run-at          document-end
@@ -25,14 +25,15 @@
   *Se os audios não estiverem funcionando em algum momento, tente recarregar a página, isto deve bastar.
   ===========================================================================================================*/
 
-//set volume globally (1=100% 0.5=50%)
-var choosenvol = 0.4;
+//Eng: set laughter volume (1=100% 0.5=50%) ( will not work with laudness equalization)
+//pt_BR: volume de risadas, não funciona se voce ativar a equalização de intensidade nas configuralções de som do sistema.
+var setVolume = 0.4;
 
 // Get the Twitch chat HTML element
 const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
 
 // Regular expression for English piece names and common terms
-var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){2,}t[?]{0,}|o? ?qu(e){3,}[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(mds|mjc|msca)$|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa|caraca ?g4|g4 ?grobiano|grobiano ?raiz|premove ?aloprado|(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?|p[ei]ndura[A-z]{0,}|da ?mate ?logo|oh ?c'?mon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota ?zero|[KG]ri[kg]or?[A-z]{0,}|tchau ?daminha|roubei ?nessa ?(partida)?|(o ?cara ?)?t[aá] ?ro(u)?bando|claramente ?roubando|cheating)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|\b(oh?)? ?cacilda\b!?|\bbamos\b!?|\bperdemo\b!?|\bSafado\b!?|lance!|(eu )?[voôu]{2,3} ?processar ?[oa]?|\ba?cab([o]){2,}([hu ]){0,}\b!?|[eéh ]{0,}\bt[eé]{1,}tr[a]{1,}\b!?|(a[ií])? ?é fl[oó]rida|\blondres\b!|^(bo[ma] (dia|tarde|noite))!?|\bsaudaç[õo]es ?noturnas?\b!?/g, 'gui')
+var regexTerms = new RegExp(/\b((KEKW([ ]{0,1})){1,}|k{3,}|([khae ]){6,}|((ja)( ){0,1}){3,}|MLADY|palmas|app?laus[eo]s|[A-z]{0,}(Clap( {0,})){1,}|testevideo|modCheck|(isso)? ?n[ao] russia [A-zÀ-ú ,.]{0,} cadeia|fot(o){0,1}(inh[oa]){0,1} de anime|Raff?a?(el)? ?Pig|Raff?ael Leitão|Salve.{0,2}|senna|Ding( Liren)?|Magnus( Carlsen)?|(Hikaru )?Naka(mura)?|(Ian )?Nepo([A-z]{0,})|Pringles|Raff?a?(el)? ?Chess|wh([a]){2,}t[?]{0,}|o? ?qu(e){3,}[?]{0,}|en[gja]{1,2}ine|stockfish|(stock){0,1}peixe|barrilda|^(mds|mjc|msca)$|(final)( ){0,}triste|(sadness)( ){0,}and( ){0,}sorrow|n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa|caraca ?g4|g4 ?grobiano|grobiano ?raiz|premove ?aloprado|(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?|p[ei]ndura[A-z]{0,}|da ?mate ?logo|oh ?c'?mon|(eu ?)?to ?pior( ?j[aá])?|to ?melhor( ?j[aá])?|nota ?zero|[KG]ri[kg]or?[A-z]{0,}|tchau ?daminha|roubei ?nessa ?(partida)?|(o ?cara ?)?t[aá] ?ro(u)?bando|claramente ?roubando|cheating)\b|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,}|\b(oh?)? ?cacilda\b!?|\bbamos\b!?|\bperdemo\b!?|\bSafado\b!?|lance!|(eu )?[voôu]{2,3} ?processar ?[oa]?|\ba?cab([o]){2,}([hu ]){0,}\b!?|[eéh ]{0,}\bt[eé]{1,}tr[a]{1,}\b!?|(a[ií])? ?é fl[oó]rida|\blondres\b!|^(bo[ma] (dia|tarde|noite))!?|\bsaudaç[õo]es ?noturnas?\b!?/g, 'gui')
 
 // Enable the mutation observer to observe the child elements of the Twitch chat, the chat messages
 var mutationConfig = {childList: true};
@@ -103,7 +104,6 @@ function randomLink(links){
 
     const rLink = links[Math.floor(Math.random()*links.length)];
     return rLink;
-    //alert(rLink, rLink.src);
 }
 
 // Recursive function to check if the Twitch chat contains messages
@@ -142,27 +142,27 @@ const observer = new MutationObserver(callback);
 const soundmsg = (message)=> {
     //maiúsculo usa o emote estático, padrão
     if(message.match(/(KEKW([ ]{0,1})){1,}/gu)){
-        kekw.volume = choosenvol;
+        kekw.volume = setVolume;
         kekw.play();
         return '<a class="funny-sound">🔊</a> <img src="https://cdn.betterttv.net/emote/5e9c6c187e090362f8b0b9e8/1x" srcset="https://cdn.betterttv.net/emote/5e9c6c187e090362f8b0b9e8/2x 2x, https://cdn.betterttv.net/emote/5e9c6c187e090362f8b0b9e8/3x 4x" alt="KEKW" class="chat-line__message--emote bttv-emote-image">  &nbsp'
     }//minúsculo usa emote alternativo, animado
     if(message.match(/(kekw([ ]{0,1})){1,}/gu)){
-        kekw.volume = choosenvol;
+        kekw.volume = setVolume;
         kekw.play();
         return '<a class="funny-sound">🔊</a> <img src="https://cdn.betterttv.net/emote/62b2898c65092c1291b963e1/1x" srcset="https://cdn.betterttv.net/emote/62b2898c65092c1291b963e1/2x 2x, https://cdn.betterttv.net/emote/62b2898c65092c1291b963e1/3x 4x" alt="KEKW" class="chat-line__message--emote bttv-emote-image">  &nbsp'
     }//palmas PT e En
     if(message.match(/(palmas|[A-z]{0,}(Clap( {0,})){1,}|aplausos|applauses)/gui)){
-        aplausos.volume = choosenvol;
+        aplausos.volume = setVolume;
         aplausos.play();
         return '<a class="funny-sound">🔊</a> '+ message        
     }//kkkk, hahaha, hehehe, jajaja, LOL, lul (LUL maiúsculo não é capturado, infelizmente)
-    if(message.match(/(k{3,}|([hk][khae ]{0,5}){2,}|((ja)( ){0,1}){3,}|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,})/gui)){
-        hahaha.volume = choosenvol;
+    if(message.match(/(k{3,}|([khae ]){6,}|((ja) ?){3,}|\b(omega)?[l][ou]{1,}[l]{1,}\b[!]{0,})/gui)){
+        hahaha.volume = setVolume;
         hahaha.play();
         return '<a class="funny-sound">🔊</a><span class="bttv-message-container">  <img alt="LUL" class="chat-image chat-line__message--emote" src="https://static-cdn.jtvnw.net/emoticons/v2/425618/default/dark/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v2/425618/default/dark/1.0 1x,https://static-cdn.jtvnw.net/emoticons/v2/425618/default/dark/2.0 2x,https://static-cdn.jtvnw.net/emoticons/v2/425618/default/dark/3.0 4x"> </span> '
     }//fotinho de anime
     if(message.match(/fot(o){0,1}(inh[oa]){0,1} de anime/gui)){
-        kekw.volume = choosenvol;
+        kekw.volume = setVolume;
         kekw.play();
         return '<a class="funny-sound">🔊</a> <img src="https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/1x" srcset="https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/2x 2x, https://cdn.betterttv.net/emote/618664d51f8ff7628e6cad93/3x 4x" alt="KEKW" class="chat-line__message--emote bttv-emote-image">  &nbsp' + message
     }//MLADY, emote de cumprimento
@@ -312,48 +312,48 @@ const soundmsg = (message)=> {
     if(message.match(/to ?melhor( ?j[aá])?/gui)){
         tomelhor.play();
         return '<a class="funny-sound">🔊</a><img alt="krikNotBad" class="chat-image chat-line__message--emote" src="https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/1.0" srcset="https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/1.0 1x,https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/2.0 2x,https://static-cdn.jtvnw.net/emoticons/v2/2116179/default/dark/3.0 4x">&nbsp' +message
-    }
+    }//Krikor 'Roubei nessa partida'
     if(message.match(/roubei ?nessa ?partida/gui)){
         roubeinessapartida.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'O cara ta roubando', 'Claramente roubando', 'Cheating'
     if(message.match(/(o ?cara ?)?t[aá] ?ro(u)?bando|claramente ?roubando|cheating/gui)){
         playRandomSound([ocarataroubando.src,claramenteroubando.src,engine.src])
         return '<a class="funny-sound">🔊</a> '+ message
-    }
-    if(message.match(/n[ao] russia [A-zÀ-ú ,.]{0,} cadeia/gui)){
-        hahaha.volume = choosenvol;
+    }//Na rússia isso dá cadeia
+    if(message.match(/(isso)? ?n[ao] russia [A-zÀ-ú ,.]{0,} cadeia/gui)){
+        hahaha.volume = setVolume;
         hahaha.play();
         return '<a class="funny-sound">🔊</a> <img style="display: block; user-select: none; margin: left;  width: 30%" src="'+ selectedServer + 'emotes/narussia.gif"> &nbsp' + message
-    }
+    }//Krikor sobre defesa francesa e Caro-Kann 'Não magoar as pessoas', 'jogar francesa', 'jogar Caro-Kann'
     if(message.match(/n[aã]o ?magoar( as)? ?pessoas|jogar? [kc]aro[ -]?[kc]ann?|jogar? francesa/gui)){
         naomagoarpessoas.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'Caraca G4'
     if(message.match(/caraca ?g4/gui)){
         caracag4.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'G4 grobiano', 'Grobiano raiz'
     if(message.match(/grobiano ?raiz|g4 ?grobiano/gui)){
         grobianoraiz.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'Lance!'
     if(message.match(/lance!/gui)){
         playRandomSound([jogamaisrapido.src,acelerameufilho.src,queroquecefacalance.src,andameufilho.src])
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'premove aloprado'
     if(message.match(/premove ?aloprado/gui)){
         quepremovealoprado.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'seis mil lances'
     if(message.match(/(seis|[0-9]{1,})( ?k?| ?mil)? ?lances?/gui)){
         seisklances.play();
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Krikor 'pindura meu Deus', 'pindura desgraça', 'pindura maldito'
     if(message.match(/p[ei]ndura[A-z]{0,}/gui)){
         playRandomSound([pinduramds.src,pinduradesgraca.src,pinduramaldito.src])
         return '<a class="funny-sound">🔊</a> '+ message
-    }
+    }//Musica triste: 'Sadness and Sorrow', 'final triste', 'perdemo'
     if(message.match(/((sadness)( ){0,}and( ){0,}sorrow|(final)( ){0,}triste|perdemo!?)/gui)){
         sadnessandsorrow.play();
         return '<a class="funny-sound">🔊</a> '+ message

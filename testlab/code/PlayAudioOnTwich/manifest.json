@@ -1,0 +1,23 @@
+{
+    "action": {
+       "default_popup": "options/options.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "https://www.twitch.tv/*" ],
+            "css": ["funny-sound.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "description": "Play audio from Twitch chat",
+    "icons": {
+       "128": "icons/icon128.png",
+       "16": "icons/icon16.png",
+       "48": "icons/icon48.png"
+    },
+    "manifest_version": 3,
+    "name": "PlayAudioOnTwitch",
+    "permissions": [ "storage" ],
+    "update_url": "https://github.com/FSA1/Styles/tree/main/testlab/code",
+    "version": "0.1"
+}

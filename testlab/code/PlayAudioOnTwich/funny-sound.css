@@ -1,0 +1,24 @@
+.funny-sound {
+    position: relative;
+    display: inline-block;
+  }
+  
+.funny-sound .chess-spoiler-text {
+    visibility: hidden;
+    width: 60px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 100%;
+    margin-left: -60px;
+  }
+.funny-sound:hover .chess-spoiler-text {
+    visibility: visible;
+  }

@@ -1,0 +1,37 @@
+.increment label,
+.checkboxes label {
+    display: block;
+    padding-right: 10px;
+    padding-left: 22px;
+    text-indent: -22px;
+  }
+.checkboxes input {
+    vertical-align: middle;
+  }
+.checkboxes label span {
+    vertical-align: middle;
+  }
+
+body{
+    width: 200px;
+    text-align: center;
+    border:                 3px double black;
+    border-radius:          1ex;                
+}
+
+h3{
+    margin-bottom: 0px;
+}
+
+h4{
+  margin-bottom: 0px;
+  margin-top: 2px;
+}
+
+.button{
+    margin-top: 5px;
+    text-align: center;
+}
+#volume {
+  width: 4em;
+}
