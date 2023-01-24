@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        3.0.0
+@version        3.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -85,8 +85,8 @@
         miniBoard=server + '/edfuria/boards/mini/ChessBrah_clean.jpg'
         darkSqTex=server + '/edfuria/boards/mini/ChessBrah_evalB.jpg'
         lightSqTex=server + '/edfuria/boards/mini/ChessBrah_evalW.jpg'
-        darksq=#a87249
-        lightsq=#e6c59f
+        darksq=#956444
+        lightsq=#e2c2a5
         hlcol=#ffd92e
         selcol=#d2b061
         /*lichess*/
@@ -99,8 +99,8 @@
         miniBoard=server + '/edfuria/boards/mini/ChessBrah_clean.jpg'
         darkSqTex=server + '/edfuria/boards/mini/ChessBrah_evalB.jpg'
         lightSqTex=server + '/edfuria/boards/mini/ChessBrah_evalW.jpg'
-        darksq=#a87249
-        lightsq=#e6c59f
+        darksq=#956444
+        lightsq=#e2c2a5
         hlcol=#ffd92e
         selcol=#d2b061
         /*lichess*/
