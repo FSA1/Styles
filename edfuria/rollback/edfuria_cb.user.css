@@ -4,14 +4,15 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        2.0.0
+@version        2.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Logo 1": "op1",
-            "Logo 2": "op2",
+            "Logo 2A": "op2",
             "Logo 2B*": "op3",
             "Logo 2C": "op4",
+            "Logo 2D": "op5",
             "Desativado": "op0",
         }
 @var    checkbox    setHighlight   "Habilitar Destaque Personalizado" 1
@@ -21,13 +22,15 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com"), domain("lichess.org"), domain("chessclub.com") {
     /*set variables values*/
+    server='https://github.com/FSA1/Styles/raw/main'
     if myBoard=="op1" {
-        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_clouds1.jpg'
+        boardlink=server + '/edfuria/boards/efcb_clouds1.jpg'
     }
     if myBoard=="op2" {
-        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_clouds2.jpg'
+        boardlink=server + '/edfuria/boards/efcb_clouds2.jpg'
     }
     if myBoard=="op1" || myBoard=="op2" {
+        miniBoard=server + '/edfuria/boards/mini/efcb_clouds_clean.jpg'
         darksq=#668BA4
         lightsq=#C8D5DD
         hlcol=#39bceb
@@ -38,7 +41,8 @@
         destoc=#7face7
     }
     if myBoard=="op3"{
-        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_wood2-gray.jpg'
+        boardlink=server + '/edfuria/boards/efcb_wood2-gray.jpg'
+        miniBoard=server + '/edfuria/boards/mini/efcb_wood2-gray_clean.jpg'
         darksq=#647478
         lightsq=#E1E2C9
         hlcol=#71dbff
@@ -49,7 +53,8 @@
         destoc=#4c5056c4
     }
     if myBoard=="op4" {
-        boardlink='https://github.com/FSA1/Styles/raw/main/edfuria/boards/efcb_poster-blue.jpg'
+        boardlink=server + '/edfuria/boards/efcb_poster-blue.jpg'
+        miniBoard=server + '/edfuria/boards/mini/efcb_poster-blue_clean.jpg'
         darksq=#547692
         lightsq=#D1D6DA
         hlcol=#39bceb
@@ -58,6 +63,20 @@
         dotcol=#48505d70
         hovercol=#6787b1c4
         destoc=#7face7
+    }
+    if myBoard=="op5" {
+        boardlink=server + '/edfuria/boards/efdarkwoodcb.jpg'
+        miniBoard=server + '/edfuria/boards/mini/efdarkwoodcb_clean.jpg'
+        darkSqTex=server + '/edfuria/boards/mini/efdarkwoodcb_evalB.jpg'
+        lightSqTex=server + '/edfuria/boards/mini/efdarkwoodcb_evalW.jpg'
+        darksq=#AC6D4A
+        lightsq=#EFCCA4
+        hlcol=#ffd92e
+        selcol=#d2b061
+        /*lichess*/
+        dotcol=#5d584870
+        hovercol=#dbb031b0
+        destoc=#a88f55
     }
     if myBoard!="op0" {
         /*lichess.org*/
@@ -97,13 +116,18 @@
         /*Evaluation bar*/
         if setEvaluationBar {
             .evaluation-bar-black {
+                background: url(darkSqTex) 0% 0% / 100% 100% no-repeat !important;
                 background-color: darksq !important;
-            }
+                }
             .evaluation-bar-white {
+                background: url(lightSqTex) 0% 0% / 100% 100% no-repeat !important;
                 background-color: lightsq !important;
-            }
+                }
         }
-    }
+        /*Small board for game preview*/
+        div[class^="game-preview"] {
+            background: url(miniBoard) 0% 0% / 100% 100% no-repeat !important;
+        }
         /*------Coordinates------*/
         .orientation-white .files coord:nth-child(2n),
         .orientation-white .ranks coord:nth-child(2n + 1),
@@ -125,6 +149,7 @@
             color: lightsq !important;
             fill: @color;
         }
+
         
         /*Highlight*/
         if setHighlight {
@@ -167,7 +192,11 @@
             .move-square,
             .highlight {
                 filter: hue-rotate(highlightHueRotation) !important;
+                -webkit-filter: @filter;
+                -moz-filter: @filter;
+                -o--filter: @filter;
             }
         }
+    }
     /*End of the code*/
 }

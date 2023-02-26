@@ -4,15 +4,17 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        2.0.2
+@version        3.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "Logo 1": "op1",
             "Logo 2A": "op2",
-            "Logo 2B*": "op3",
+            "Logo 2B": "op3",
             "Logo 2C": "op4",
             "Logo 2D": "op5",
+            "Chessbrah*": "op6",
+            "Chessbrah II": "op7",
             "Desativado": "op0",
         }
 @var    checkbox    setHighlight   "Habilitar Destaque Personalizado" 1
@@ -71,6 +73,34 @@
         lightSqTex=server + '/edfuria/boards/mini/efdarkwoodcb_evalW.jpg'
         darksq=#AC6D4A
         lightsq=#EFCCA4
+        hlcol=#ffd92e
+        selcol=#d2b061
+        /*lichess*/
+        dotcol=#5d584870
+        hovercol=#dbb031b0
+        destoc=#a88f55
+    }
+    if myBoard=="op6" {
+        boardlink=server + '/edfuria/boards/ChessBrah.jpg'
+        miniBoard=server + '/edfuria/boards/mini/ChessBrah_clean.jpg'
+        darkSqTex=server + '/edfuria/boards/mini/ChessBrah_evalB.jpg'
+        lightSqTex=server + '/edfuria/boards/mini/ChessBrah_evalW.jpg'
+        darksq=#956444
+        lightsq=#e2c2a5
+        hlcol=#ffd92e
+        selcol=#d2b061
+        /*lichess*/
+        dotcol=#5d584870
+        hovercol=#dbb031b0
+        destoc=#a88f55
+    }
+    if myBoard=="op7" {
+        boardlink=server + '/edfuria/boards/ChessBrah2.jpg'
+        miniBoard=server + '/edfuria/boards/mini/ChessBrah_clean.jpg'
+        darkSqTex=server + '/edfuria/boards/mini/ChessBrah_evalB.jpg'
+        lightSqTex=server + '/edfuria/boards/mini/ChessBrah_evalW.jpg'
+        darksq=#956444
+        lightsq=#e2c2a5
         hlcol=#ffd92e
         selcol=#d2b061
         /*lichess*/
