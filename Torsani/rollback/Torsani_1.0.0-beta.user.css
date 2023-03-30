@@ -962,7 +962,8 @@
         div [style*="40.png"][class="game-preview-component"],
         div [style*="40.jpg"][class="game-preview-component"] {
             /*clean board preview, no logo*/
-            background-image: url(svgBoard), url(board3) !important;            
+            background-image: url(svgBoard), url(board3) !important;
+            background-blend-mode: svgBoardBlend, normal;
             background-color: solidBoardBGColor;
             background-position:0 0, bgPosX bgPosY;
             background-size:100%, bgSize;
