@@ -170,6 +170,7 @@
             "🔗logo5": "logoLink5",
             "⚽Futebol": "football",
             "⚽Futebol2": "fieldmarks2",
+            "⚽Futebol3": "fieldmarks3",
             "Corinthians": "logoCorinthians",
             "Corinth S Jorge*": "logoCorinthiansSJ",
             "Corinth. Águia": "logoCorinthEagle",
@@ -190,6 +191,7 @@
             "🔗logo5": "logoLink5",
             "⚽Futebol": "football",
             "⚽Futebol2": "fieldmarks2",
+            "⚽Futebol3": "fieldmarks3",
             "⚽NeoTorsa Especial": "logoNeoTorsaSp",
             "🔗Texto*": "cornerLogoTextOnly",
         }
@@ -341,7 +343,84 @@
 }/*Themes below*/
 @-moz-document domain("chess.com") {
     /*Themes*/
-    if myBoard=="torsaniWood" {
+    if myBoard=="football" {
+        svgBoardBlend=overlay;
+        svgLightSqColor=#b1c39e;
+        svgLightSqOpacity=1;
+        enableGlobalColor=0;
+        svgDarkSqColor=#58822d;
+        svgDarkSqOpacity=0.6;
+        boardBGOpt=server+'Torsani/texture/grass/grass_09.jpg';
+        boardBGColor=rgba(224,221,202,0);
+        bgSize=60%;
+        bgPosX=0%;
+        bgPosY=0%;
+        frameRadius=4px;
+        frameRadiusInOut=0;
+        ajustBoardSize=0.9;
+        enableBoardFrame=1;
+        frameOpt=boardBGOpt;
+        frameColor=#838f5e;
+        frameSize=60%;
+        framePosX=0%;
+        framePosY=0%;
+        enableInnerBorder=1;
+        innerBorderOpt=rgba(255,254,242,0.78);
+        innerBorderColor=rgba(255,254,242,0.78);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        setHighlight=op1;
+        hlColor=#ff0;
+        highlightOpacity=0.6;
+        enableCenterLogo=1;
+        enableCornerLogo=1;
+        enableCornerLogo2=0
+        enableCustomCoord=1;
+        enableOutsideCoords=1;
+        outCoordFontSize=0.25rem;
+        outCoordFontName="Segoe UI";
+        outCoordFontWeight=600;
+        outCoordColorOpt=rgba(255,255,255,0.922);
+        outCoordCol=rgba(255,255,255,0.922);
+        lCoordCol=rgba(255,254,242,0.831);
+        dCoordCol=rgba(255,254,242,0.831);
+        centerLogoOpt=fieldmarks3;
+        centerLogoBlend=normal;
+        centerLogoCol=#886d54;
+        centerLogoSize=100%;
+        centerLogoOpacity=0.12;
+        centerLogoPosX=50%;
+        centerLogoPosY=20%;
+        cornerLogoOpt=logoNeoTorsaSp;
+        cornerLogoBlend=overlay;
+        cornerLogoCol=rgba(255,255,255,0.6);
+        cornerLogoSize=34%;
+        cornerLogoOpacity=0.85;
+        cornerLogoPosX=94%;
+        cornerLogoPosY=70%;
+        cornerLogoFontSize=14px;
+        cornerLogoFontName='Montserrat';
+        cornerLogoFontWeight=700;
+        cornerLogoText='Arena';
+        cornerLogo2Text='NeoTorsa';
+        cornerLogo2Blend=normal;
+        cornerLogo2Size=15%;
+        cornerLogo2PosX=117%;
+        cornerLogo2PosY=60%;
+        cornerLogo2FontSize=10px;
+        cornerLogo2Col=rgba(255,255,255,0.62);
+        cornerLogo2FontName='Montserrat';
+        cornerLogo2FontWeight=700;
+        useWallpaper='https://www.lance.com.br/galerias/wp-content/uploads/2020/05/9-Corinthians-2-x-1-Flamengo-Semifinal-da-Copa-do-Brasil-de-2018-4.jpg';
+        enableLightTheme=0;
+        dEvalCol=#403d39;
+        lEvalCol=#e0e0e0;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+    }
+    else if myBoard=="torsaniWood" {
         svgBoardBlend=normal;
         svgLightSqColor=#e5dfcf;
         svgLightSqOpacity=0.6;
@@ -569,83 +648,6 @@
         lEvalCol=#e0e0e0;
         evalBarOpacity=0.9;
         hueRotationArrow=20deg;
-        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
-        frameShadowInset=0;
-    }
-    else if myBoard=="football" {
-        svgBoardBlend=overlay;
-        svgLightSqColor=#b1c39e;
-        svgLightSqOpacity=1;
-        enableGlobalColor=0;
-        svgDarkSqColor=#58822d;
-        svgDarkSqOpacity=0.6;
-        boardBGOpt=server+'Torsani/texture/grass/grass_09.jpg';
-        boardBGColor=rgba(224,221,202,0);
-        bgSize=60%;
-        bgPosX=0%;
-        bgPosY=0%;
-        frameRadius=4px;
-        frameRadiusInOut=0;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
-        frameOpt=boardBGOpt;
-        frameColor=#838f5e;
-        frameSize=60%;
-        framePosX=0%;
-        framePosY=0%;
-        enableInnerBorder=1;
-        innerBorderOpt=rgba(255,254,242,0.78);
-        innerBorderColor=rgba(255,254,242,0.78);
-        enableBoardShadowInset=0;
-        enableBoardShadow=0;
-        enableFrameShadowInset=0;
-        enableFrameShadow=1;
-        setHighlight=op1;
-        hlColor=#ff0;
-        highlightOpacity=0.6;
-        enableCenterLogo=1;
-        enableCornerLogo=1;
-        enableCornerLogo2=0
-        enableCustomCoord=1;
-        enableOutsideCoords=1;
-        outCoordFontSize=0.25rem;
-        outCoordFontName="Segoe UI";
-        outCoordFontWeight=600;
-        outCoordColorOpt=rgba(255,255,255,0.922);
-        outCoordCol=rgba(255,255,255,0.922);
-        lCoordCol=rgba(255,254,242,0.831);
-        dCoordCol=rgba(255,254,242,0.831);
-        centerLogoOpt=fieldmarks2;
-        centerLogoBlend=normal;
-        centerLogoCol=#886d54;
-        centerLogoSize=100%;
-        centerLogoOpacity=0.12;
-        centerLogoPosX=50%;
-        centerLogoPosY=20%;
-        cornerLogoOpt=logoNeoTorsaSp;
-        cornerLogoBlend=overlay;
-        cornerLogoCol=rgba(255,255,255,0.6);
-        cornerLogoSize=34%;
-        cornerLogoOpacity=0.85;
-        cornerLogoPosX=94%;
-        cornerLogoPosY=70%;
-        cornerLogoFontSize=14px;
-        cornerLogoFontName='Montserrat';
-        cornerLogoFontWeight=700;
-        cornerLogoText='Arena';
-        cornerLogo2Text='NeoTorsa';
-        cornerLogo2Blend=normal;
-        cornerLogo2Size=15%;
-        cornerLogo2PosX=117%;
-        cornerLogo2PosY=60%;
-        cornerLogo2FontSize=10px;
-        cornerLogo2Col=rgba(255,255,255,0.62);
-        cornerLogo2FontName='Montserrat';
-        cornerLogo2FontWeight=700;
-        useWallpaper='https://www.lance.com.br/galerias/wp-content/uploads/2020/05/9-Corinthians-2-x-1-Flamengo-Semifinal-da-Copa-do-Brasil-de-2018-4.jpg';
-        enableLightTheme=0;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
@@ -887,6 +889,7 @@
     football="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' version='1.1' viewBox='0 0 317.5 317.5' xmlns='http://www.w3.org/2000/svg'%3e%3cpath transform='scale(.26458)' d='m599.39 472.01c-69.087 0.32822-125.21 55.454-127.32 123.99h-472.07v8h472.07c2.1181 68.907 58.77 124.12 128.14 124.01 69.061-0.10949 125.34-55.499 127.71-124.01h472.09v-8h-472.08c-2.2956-68.946-59.137-124.32-128.53-123.99zm0.0391 8c65.187-0.30993 118.21 51.268 120.48 115.99h-107.95a12.62 12.62 0 0 0-12.031-8.6211 12.62 12.62 0 0 0-11.908 8.6211h-107.96c2.1016-64.331 54.465-115.68 119.37-115.99zm-119.37 123.99h107.97a12.62 12.62 0 0 0 11.988 8.6211 12.62 12.62 0 0 0 11.949-8.6211h107.94c-2.3222 64.327-54.835 115.9-119.72 116-65.176 0.10317-118.03-51.304-120.12-116z' fill='" + unquote(innColHash) + "' fill-opacity='1' stop-color='%23000000'/%3e%3c/svg%3e ";
     fieldmarks="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' version='1.1' viewBox='0 0 317.5 317.5' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='%23fff' shape-rendering='auto'%3e%3cpath d='m79.375 277.81v1.0583l-3e-6 87.548h2.1151l2e-6 -86.489h154.52v86.489h2.1172v-88.606z' color='%23000000' color-rendering='auto' dominant-baseline='auto' image-rendering='auto' solid-color='%23000000' stop-color='%23000000' style='font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;font-variation-settings:normal;inline-size:0;isolation:auto;mix-blend-mode:normal;shape-margin:0;shape-padding:0;text-decoration-color:%23000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal'/%3e%3cpath transform='scale(.26458)' d='m1253.1 150v300h52.443v-8.002h-44.449v-284h44.449v-8.002h-44.449zm0 600v300h52.443v-8.002h-44.449v-284h44.449v-8.002h-44.449z' color='%23000000' color-rendering='auto' dominant-baseline='auto' image-rendering='auto' solid-color='%23000000' stop-color='%23000000' style='font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;font-variation-settings:normal;inline-size:0;isolation:auto;mix-blend-mode:normal;shape-margin:0;shape-padding:0;text-decoration-color:%23000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal'/%3e%3cpath d='m79.375 39.688v-1.0583l-2e-6 -87.548h2.1151l2e-6 86.489h154.52v-86.489h2.1172v88.606z' color='%23000000' color-rendering='auto' dominant-baseline='auto' image-rendering='auto' solid-color='%23000000' stop-color='%23000000' style='font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;font-variation-settings:normal;inline-size:0;isolation:auto;mix-blend-mode:normal;shape-margin:0;shape-padding:0;text-decoration-color:%23000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal'/%3e%3c/g%3e%3c/svg%3e ";
     fieldmarks2="data:image/svg+xml;charset=UTF-8,%3csvg width='1200' height='1200' viewBox='0 0 317.5 317.5' xmlns='http://www.w3.org/2000/svg'%3e%3cpath transform='scale(.26458)' d='M28.369 0c.004.15.013.3.014.451.049 15.47-12.395 28.015-27.865 28.088-.174 0-.345-.008-.518-.012v3.998c.18 0 .358.012.54.012v.002C18.17 32.455 32.44 18.065 32.384.435c0-.146-.01-.29-.012-.435H28.37zm271.63 0v150l600.01-.002v-150h-8.002v142h-584.01v-142h-7.994zm867.63 0c-.004.146-.011.29-.012.436-.056 17.63 14.216 32.02 31.846 32.104v-.002c.18 0 .36-.01.54-.012v-3.998c-.174.004-.345.012-.518.012-15.47-.074-27.914-12.618-27.865-28.088.004-.152.01-.3.013-.452h-4.004zm-568.24 472c-69.086.328-125.21 55.453-127.32 123.99H-.001v8h472.07c2.118 68.906 58.769 124.12 128.14 124.01 69.06-.11 125.34-55.5 127.71-124.01h472.09v-8h-472.08c-2.296-68.945-59.137-124.32-128.53-123.99h-.01zm.04 8h.001c65.186-.309 118.21 51.268 120.48 115.99H611.96a12.62 12.62 0 0 0-12.029-8.621 12.62 12.62 0 0 0-11.908 8.621h-107.96c2.102-64.33 54.464-115.68 119.37-115.99zm-119.36 123.99h107.96a12.62 12.62 0 0 0 11.987 8.621 12.62 12.62 0 0 0 11.95-8.621h107.94c-2.323 64.326-54.835 115.9-119.72 116-65.177.103-118.03-51.303-120.12-116zm-180.06 446V1200h7.993v-142.01h584.01V1200h8.002v-150.01l-600.01-.002zM.548 1167.46v.002c-.182 0-.36.01-.54.012v3.998c.173-.004.344-.013.518-.012 15.47.073 27.914 12.618 27.865 28.088 0 .151-.011.3-.014.451h4.004c.002-.145.011-.29.012-.435.055-17.63-14.216-32.02-31.846-32.104zm1198.9 0c-17.63.084-31.903 14.474-31.847 32.104 0 .146.008.29.012.435h4.004c-.003-.15-.012-.3-.016-.45-.049-15.47 12.395-28.015 27.865-28.089.173 0 .345.008.518.012v-3.998c-.18-.002-.359-.012-.54-.012l.002-.002z' fill='" + unquote(innColHash) + "'/%3e%3c/svg%3e ";
+    fieldmarks3="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' version='1.1' viewBox='0 0 317.5 317.5' xmlns='http://www.w3.org/2000/svg'%3e%3cpath transform='scale(.26458)' d='m300-0.0019531-0.00391 0.0019531v146 4h186.1c21.202 41.571 64.375 70.067 114.19 69.988 49.513-0.0786 92.378-28.614 113.59-69.99h186.12v-150h-8.002v142h-174.35-8.6113-218.1-8.5781-174.36v-142h-7.9922zm-271.63 0.0019531c0.0038 0.15073 0.013292 0.29961 0.013671 0.45117 0.0491 15.47-12.395 28.015-27.865 28.088-0.17363 0-0.34485-0.007898-0.51758-0.011718v3.998c0.18002 0 0.3584 0.011718 0.53906 0.011718v0.001953c17.63-0.083898 31.902-14.474 31.846-32.104 0-0.146-0.009499-0.29004-0.011719-0.43555h-4.0039zm1139.2 0c0 0.14563-0.0126 0.28966-0.0136 0.43555-0.056 17.63 14.216 32.02 31.846 32.104v-0.001953c0.1807 0 0.3591-0.009498 0.539-0.011718v-3.998c-0.1728 0.0038-0.3441 0.012508-0.5175 0.011718-15.47-0.073469-27.912-12.618-27.863-28.088 0-0.15148 0.0106-0.30037 0.0136-0.45117h-4.0039zm-462.64 150c-20.419 36.885-59.549 61.911-104.71 61.98-45.447 0.07196-84.877-24.917-105.3-61.979l210.01-0.00196zm-105.6 322c-69.085 0.32807-125.21 55.452-127.32 123.99h-472.06v8h472.06c2.1181 68.905 58.769 124.12 128.14 124.01 69.059-0.1096 125.34-55.499 127.71-124.01h472.08v-8h-472.07c-2.2956-68.944-59.137-124.32-128.53-123.99h-0.00976zm0.03906 8h0.00196 0.00195 0.00195c65.183-0.30679 118.2 51.268 120.47 115.99h-107.95a12.62 12.62 0 0 0-12.029-8.6211 12.62 12.62 0 0 0-11.908 8.6211h-107.96c2.1015-64.327 54.461-115.68 119.36-115.99zm-119.36 123.99h0.00391 107.96a12.62 12.62 0 0 0 11.986 8.6211 12.62 12.62 0 0 0 11.949-8.6211h107.94c-2.3222 64.325-54.834 115.9-119.72 116-65.175 0.10318-118.03-51.302-120.12-116zm119.39 375.99c-49.534 0.2353-92.326 28.682-113.39 70.008h-186.05v4 146.01h7.9941v-142.01h584v142.01h8.002v-150.01h-186.07c-21.309-41.667-64.608-70.245-114.48-70.008h-0.00977zm0.03907 8h0.00195 0.00195 0.00195c45.488-0.21401 85.027 24.853 105.55 62.008h-210.09c20.301-36.831 59.361-61.79 104.53-62.008zm-598.94 179.47 0.0019531 0.0019c-0.1808 0-0.35897 0.0097-0.53906 0.0117v3.9981c0.1728 0 0.34398-0.0127 0.51758-0.0117 15.47 0.073 27.912 12.618 27.863 28.088-3.76e-4 0.1515-0.010772 0.3004-0.013672 0.4512h4.0039c0.0023-0.1456 0.011219-0.2897 0.011719-0.4355 0.055799-17.63-14.216-32.02-31.846-32.104zm1198.9 0.0019c-17.63 0.084-31.902 14.474-31.846 32.104 5e-4 0.1458 0.0097 0.29 0.0117 0.4356h4.0039c0-0.1508-0.0116-0.2997-0.0156-0.4512-0.049-15.47 12.394-28.014 27.863-28.088 0.1734-8e-4 0.3447 0.0097 0.5176 0.0117v-3.998c-0.1799 0-0.3583-0.0117-0.5391-0.0117l0.0039-2e-3z' fill='" + unquote(innColHash) + "' /%3e%3c/svg%3e";
     if enableCenterLogo{
         centerLogo=centerLogoOpt;
     }else{
