@@ -90,7 +90,8 @@
             "Madeira clara": "txLightWood",
             "Madeira escura": "txDarkWood",
             "Madeira escura2": "txDarkWood2",
-            "Futebol": "football",
+            "Grama 1": "txGrass32",
+            "Grama 2": "txGrass09",
             "🔗Link1": "boardFrame1",
             "🔗Link2": "boardFrame2",
             "🔗Link3": "boardFrame3",
@@ -113,6 +114,8 @@
             "Madeira clara": "txLightWood",
             "Madeira escura": "txDarkWood",
             "Madeira escura2": "txDarkWood2",
+            "Grama 1": "txGrass32",
+            "Grama 2": "txGrass09",
             "🔗Link1": "boardFrame1",
             "🔗Link2": "boardFrame2",
             "🔗Link3": "boardFrame3",
@@ -320,9 +323,11 @@
     }
     solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
     /*Textures*/
-    txLightWood='https://i.pinimg.com/originals/9c/50/86/9c5086f4402e61b7bc348da6278ee49e.jpg';
-    txDarkWood='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACHM_fawo9aJahGAabc7kMNl6FhUMLo2nqQ&usqp=CAU';
-    txDarkWood2='https://i.pinimg.com/originals/03/c8/6c/03c86c689e45b79ee0eb1ddad3a1be2e.jpg';
+    txLightWood=server+'super-board/textures/wood/light-wood.jpg';
+    txDarkWood=server+'super-board/textures/wood/dark-wood.jpg';
+    txDarkWood2=server+'super-board/textures/wood/frames/frame-dark-wood1.jpg';
+    txGrass09=server+'Torsani/texture/grass/grass_09.jpg';
+    txGrass32=server+'Torsani/texture/grass/grass_32.jpg';
     logoHeight=logoWidth;
     /*selector with exceptions to avoid override analysis highlights*/
     notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
@@ -345,10 +350,10 @@
     /*Themes*/
     if myBoard=="football" {
         svgBoardBlend=overlay;
-        svgLightSqColor=#b1c39e;
+        svgLightSqColor=#b9cca4;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
-        svgDarkSqColor=#58822d;
+        svgDarkSqColor=#639233;
         svgDarkSqOpacity=0.6;
         boardBGOpt=server+'Torsani/texture/grass/grass_09.jpg';
         boardBGColor=rgba(224,221,202,0);
