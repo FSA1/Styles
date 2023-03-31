@@ -418,7 +418,7 @@
         cornerLogo2Col=rgba(255,255,255,0.62);
         cornerLogo2FontName='Montserrat';
         cornerLogo2FontWeight=700;
-        useWallpaper='https://www.lance.com.br/galerias/wp-content/uploads/2020/05/9-Corinthians-2-x-1-Flamengo-Semifinal-da-Copa-do-Brasil-de-2018-4.jpg';
+        themeWallpaper=server+'Torsani/wallpaper/wallpaper2';
         enableLightTheme=0;
         dEvalCol=#403d39;
         lEvalCol=#e0e0e0;
@@ -569,7 +569,7 @@
         setWallpaper=cover;
         percentSize=100%;
         backgroundColp= #554e48;
-        themeWall='https://c4.wallpaperflare.com/wallpaper/1010/384/980/corinthians-soccer-wallpaper-preview.jpg';
+        themeWallpaper=server+'Torsani/wallpaper/wallpaper1';
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
