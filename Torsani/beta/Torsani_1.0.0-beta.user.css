@@ -350,10 +350,10 @@
     /*Themes*/
     if myBoard=="football" {
         svgBoardBlend=overlay;
-        svgLightSqColor=#b1c39e;
+        svgLightSqColor=#b9cca4;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
-        svgDarkSqColor=#58822d;
+        svgDarkSqColor=#639233;
         svgDarkSqOpacity=0.6;
         boardBGOpt=server+'Torsani/texture/grass/grass_09.jpg';
         boardBGColor=rgba(224,221,202,0);
