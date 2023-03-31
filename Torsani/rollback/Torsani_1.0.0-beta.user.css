@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.0-beta
+@version        1.0.1-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -952,7 +952,6 @@
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
         div[id*="chess_com_emailboard_"] {
-            background-image: url(specialEffect), url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important;
             background-blend-mode: normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal;
             background-position: 0 0, cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY;
             background-size: specialEffectSize, auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize;
@@ -962,6 +961,7 @@
             }else{
                 background-repeat:repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
             }
+            background-image: url(specialEffect), url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important;
         } 
         /*Small board for game preview*/
         .game-board-preview,
@@ -1287,7 +1287,6 @@
             chess-board[id^="board-blank"]:before,
             chess-board[id^="board-vs-personalities"]:before,
             div[id*="chess_com_emailboard_"]:before {
-                background-image: url(specialEffect), url(frameOpt) !important;
 				background-position: 0 0, framePosX framePosY !important;
                 background-color: frameColor !important;                
                 if frameSize=="cover" {
@@ -1297,6 +1296,7 @@
                     background-repeat:repeat, repeat!important;
                     background-size: specialEffectSize, 'calc(%s - 16%)!important' %frameSize;
                 }
+                background-image: url(specialEffect), url(frameOpt) !important;
                 transform: translateZ(-1px);
                 content: ""!important;
                 display:block;

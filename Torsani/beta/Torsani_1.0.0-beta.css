@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.1-beta
+@version        1.0.3-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -632,17 +632,17 @@
         cornerLogoPosX=107%;
         cornerLogoPosY=55%;
         cornerLogoFontSize=14px;
-        cornerLogoFontName='Comfortaa';
+        cornerLogoFontName='Helvetica';
         cornerLogoFontWeight=700;
         cornerLogoText='arena';
         cornerLogo2Text='MF Torsani';
         cornerLogo2Blend=darken;
-        cornerLogo2Size=18%;
-        cornerLogo2PosX=142%;
+        cornerLogo2Size=17%;
+        cornerLogo2PosX=130%;
         cornerLogo2PosY=60%;
         cornerLogo2FontSize=10px;
         cornerLogo2Col= #5b4e3c59;
-        cornerLogo2FontName='Bauhaus';
+        cornerLogo2FontName='Helvetica';
         cornerLogo2FontWeight=700;
         enableLightTheme=0;
         setWallpaper=cover;
@@ -965,6 +965,7 @@
         } 
         /*Small board for game preview*/
         .game-board-preview,
+        .game-preview-component.open-games-item-preview,
         .game-preview-component.current-games-grid-preview,
         .game-preview-component.promo-preview,
         div [style*="40.png"][class="game-preview-component"],
