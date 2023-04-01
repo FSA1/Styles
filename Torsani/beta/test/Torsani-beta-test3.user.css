@@ -1293,7 +1293,6 @@
                     background-repeat:no-repeat, no-repeat!important;
                 }else{
                     background-repeat:repeat, repeat!important;
-                    //background-size: specialEffectSize, 'calc(%s - 10%)!important' %frameSize;
                 }
                 background-image: url(specialEffect), url(frameOpt) !important;
                 transform: translateZ(-1px);
