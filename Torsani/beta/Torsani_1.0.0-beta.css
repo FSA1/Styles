@@ -311,11 +311,11 @@
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-    /*primary server (GitLab)*/    
+    /*primary server (GitHub)*/    
     gitHub='https://github.com/FSA1/Styles/raw/main/'    
     /*alternative server (GitLab)*/
     gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
-        /*there is no error below*/
+    /*there is no error below*/
     if setServer {
         server = gitLab
     }else{
@@ -418,7 +418,7 @@
         cornerLogo2Col=rgba(255,255,255,0.62);
         cornerLogo2FontName='Montserrat';
         cornerLogo2FontWeight=700;
-        themeWallpaper=server+'Torsani/wallpaper/wallpaper2';
+        themeWallpaper=server+'Torsani/wallpaper/wallpaper2.jpg';
         enableLightTheme=0;
         dEvalCol=#403d39;
         lEvalCol=#e0e0e0;
@@ -569,7 +569,7 @@
         setWallpaper=cover;
         percentSize=100%;
         backgroundColp= #554e48;
-        themeWallpaper=server+'Torsani/wallpaper/wallpaper1';
+        themeWallpaper=server+'Torsani/wallpaper/wallpaper1.jpg';
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
