@@ -363,7 +363,7 @@
         svgDarkSqOpacity=0.6;
         boardBGOpt=server+'Torsani/texture/grass/grass_09.jpg';
         boardBGColor=rgba(224,221,202,0);
-        bgSize=60%;
+        bgSize=50%;
         bgPosX=0%;
         bgPosY=0%;
         frameRadius=4px;
