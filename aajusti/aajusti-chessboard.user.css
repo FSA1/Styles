@@ -1,0 +1,1205 @@
+/* ==UserStyle==
+@name           ❕AAJusti: chessboard
+@author         ChessSkins
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/ChessSkins
+@description    `highly customizable chess set for chess.com.`
+@version        1.0.4-beta
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
+@var    select      myBoard    "🟢🏁Tabuleiro" {
+            "Animado": "aajusti-anim",
+            "Estático": "aajusti-static",
+            "Personalizado": "custom",
+            "Desativado": "disabled",
+        }
+@var    color    svgLightSqColor  "Casas claras"   #B1D2ED
+@var    color    svgDarkSqColor  "Casas escuras"   #026FC6
+@var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
+@var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
+@var    range    svgLightSqOpacity  "Opacidade claras" [1.00, 0.01, 1.00, 0.01, ""]
+
+@var    range    frameRadius  "🔵Canto arredondado" [6, 0, 34, 1, "px"]
+@var    checkbox    frameRadiusInOut  "↪🔹Conjunto <--> Externo" 1
+
+@var    range    ajustBoardSize  "Tam. do tabuleiro" [0.9, 0.82, 0.92, 0.01, ""]
+
+@var    select      setHighlight    "🟡Destaque de movimento" {
+            "Personalizado*": "op1",
+            "Padrão": "disabled",
+        }
+@var    select      hlImgOpt    "🟡Destaque animado" {
+            "HUD*": "hlImg",
+            "Desativado": "op0",
+        }
+@var    color    hlColor  "↪Cor do destaque"   #00d0ff
+
+@var    range    highlightOpacity  "↪Opacidade Destaque" [0.4, 0.3, 1, 0.1, ""]
+
+@var    checkbox    enableArrowSettings   "🟩Setas modificadas" 0 
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
+@var    checkbox    enableCenterLogo   "🟩Logo central" 0
+@var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
+@var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
+@var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
+
+@var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
+@var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
+@var    select  coordsBlend    "↪Mesclagem Coordenadas" ["normal*", "multiply", "screen", "darken", "lighten", "overlay"]
+@var    select   outCoordFontName   "↪🆎Nome da fonte"{
+        "Fonte 1": "userFont1",
+        "Fonte 2": "userFont2",
+        "Fonte 3": "userFont3",
+        "Times New Roman": "Times New Roman",
+        "Helvetica": "Helvetica",
+        "Segoe UI*": "Segoe UI",
+        "Tahoma": "Tahoma",
+        "Verdana": "Verdana",
+        "serif": "serif",
+        "sans-serif": "sans-serif",
+    }
+@var    range    outCoordFontSize  "↪Tam. da fonte" [0.24, 0.1, 0.3, 0.01, "rem"]
+@var select   outCoordFontWeight   "↪Tipo"    ["400*", "600", "700", "800"]
+
+@var    select      outCoordFontCase    "↪Maiúsculas ou minúsculas"{
+            "Maiúsculas*": "uppercase",
+            "Minúsculas": "lowercase",
+        }
+@var    select      outCoordColorOpt    "↪🟢Origem da cor"{
+            "Casas Claras*": "svgLightSqColor",
+            "Personalizado": "outCoordCol",
+        }
+@var color    outCoordCol  "Coordenadas externas"   #ffffffb8
+@var color    lCoordCol  "Coord. de casas claras"   #8d8d8d
+@var color    dCoordCol  "Coord. de casas escuras"   #acacac  
+
+@var    select      boardBGOpt    "🟠Fundo do tabuleiro"{
+            "Madeira clara": "txLightWood",
+            "Madeira escura": "txDarkWood",
+            "Madeira escura2": "txDarkWood2",
+            "🔗Link1": "boardFrame1",
+            "🔗Link2": "boardFrame2",
+            "🔗Link3": "boardFrame3",
+            "🔗Link4": "boardFrame4",
+            "🔗Link5": "boardFrame5",
+            "Somente cor*": "colorOnly",
+        }
+@var    color    boardBGColor  "↪🔸Cor de fundo"   #0D2A5A
+@var    select      bgSize    "↪🔸Tam. do fundo"{
+            "Estender": "cover",
+            "Conter": "contain",
+            "Porcentagem*": "bPercentSize",
+        }
+@var    range    bPercentSize    "↪valor de porcentagem" [100, 1, 120, 1, "%"]
+
+@var    range    bgPosX  "↪🔸Ajuste horizontal" [50, 0, 100, 5, "%"]
+@var    range    bgPosY  "↪🔸Ajuste vertical" [50, 0, 100, 5, "%"]
+
+@var    select      frameOpt    "↪🟢Borda"{
+            "Madeira clara": "txLightWood",
+            "Madeira escura": "txDarkWood",
+            "Madeira escura2": "txDarkWood2",
+            "Madeira escura3": "txfrDarkWood2",
+            "🔗Link1": "boardFrame1",
+            "🔗Link2": "boardFrame2",
+            "🔗Link3": "boardFrame3",
+            "🔗Link4": "boardFrame4",
+            "🔗Link5": "boardFrame5",
+            "Igual ao fundo*": "boardBGOpt",
+            "Somente cor": "colorOnly",
+        }
+@var    color    frameColor  "↪🟢Cor da borda"   #0D2A5A
+
+@var    select      frameSize    "Tam. da borda"{
+            "Estender": "cover",
+            "Lado a lado": "contain",
+            "Igual ao fundo*": "bgSize",
+            "Porcentagem": "fPercentSize",
+        }
+@var    range    fPercentSize    "↪valor de porcentagem" [100, 1, 120, 1, "%"]
+
+
+@var    range    framePosX  "Ajuste horizontal" [50, 0, 100, 5, "%"]
+@var    range    framePosY  "Ajuste vertical" [50, 0, 100, 5, "%"]
+
+
+@var    select      innerBorderOpt    "↪🟢Borda interna"{
+            "cor casas claras": "svgLightSqColor",
+            "cor casas escuras": "svgDarkSqColor",
+            "cor personalizada*": "innerBorderColor",
+        }
+@var    color    innerBorderColor   "↪🟢Cor borda interna"   #2D55E5
+
+@var    checkbox    enableBoardShadowInset  "🟨Sombra interna do tabuleiro" 0
+@var    checkbox    enableBoardShadow  "🟨Sombra externa do tabuleiro" 0
+
+@var    checkbox    enableFrameShadowInset  "🟧Sombra interna da borda" 0
+@var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 34, 1, "px"]
+@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]
+@var    color    frameShadowInsetColor  "↪🔸Cor da sombra"   rgba(0, 0, 0, .4)
+
+@var    checkbox    enableFrameShadow  "🟧Sombra externa da borda" 1
+@var    range    frameShadowBlur    "↪🔸Desfocar" [8, 0, 34, 1, "px"]
+@var    range    frameShadowSpread   "↪🔸Dispersar" [4, 0, 34, 1, "px"]
+@var    color    frameShadowColor  "↪🔸Cor da sombra"    rgba(0, 0, 0, .5)
+
+@var    text     boardFrame1    "🔗Link textura 1"   "'entre aspas simples'"
+@var    text     boardFrame2    "🔗Link textura 2"   "'entre aspas simples'"
+@var    text     boardFrame3    "🔗Link textura 3"   "'entre aspas simples'"
+@var    text     boardFrame4    "🔗Link textura 4"   "'entre aspas simples'"
+@var    text     boardFrame5    "🔗Link textura 5"   "'entre aspas simples'"
+
+@var    select      centerLogoOpt    "👉☯️Selecionar logo central"{
+            "AAJusti": "logoAAJusti",
+            "🔗logo1": "logoLink1",
+            "🔗logo2": "logoLink2",
+            "🔗logo3": "logoLink3",
+            "🔗logo4": "logoLink4",
+            "🔗logo5": "logoLink5",
+        }
+@var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+
+@var color    centerLogoCol  "Cor do logo central"   #5e747c
+@var    range    centerLogoSize  "Tam. logo central" [50, 10, 120, 1, "%"]
+@var    range    centerLogoOpacity  "Opacidade do logo central" [0.4, 0.01, 1, 0.01, ""]
+@var    range    centerLogoPosX  "Ajuste horizontal" [50, -20, 120, 2, "%"]
+@var    range    centerLogoPosY  "Ajuste vertical" [50, -20, 120, 2, "%"]
+
+@var    select      cornerLogoOpt    "👉☯️Selecionar logo secundário"{
+            "🔗logo1": "logoLink1",
+            "🔗logo2": "logoLink2",
+            "🔗logo3": "logoLink3",
+            "🔗logo4": "logoLink4",
+            "🔗logo5": "logoLink5",
+            "🔗Texto*": "cornerLogoTextOnly",
+        }
+
+@var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    range    cornerLogoSize  "↪Tam. logo secundário" [15, 10, 120, 1, "%"]
+@var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
+@var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
+@var    range    cornerLogoPosY  "↪Ajuste vertical" [53, -40, 150, 1, "%"]
+@var color    cornerLogoCol  "↪Cor do logo secundário"   #6b7e8454
+@var    range    cornerLogoFontSize  "↪Tam. da fonte" [10, 8, 24, 2, "px"]
+@var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
+@var select   cornerLogoFontName   "↪🆎Nome da fonte"{
+        "Fonte 1": "userFont1",
+        "Fonte 2": "userFont2",
+        "Fonte 3": "userFont3",
+        "Times New Roman": "Times New Roman",
+        "Montserrat": "Montserrat",
+        "Arial Black": "Arial Black",
+        "Arial": "Arial",
+        "Courier": "Courier",
+        "Georgia": "Georgia",
+        "Helvetica": "Helvetica",
+        "Palatino": "Palatino",
+        "Segoe UI": "Segoe UI",
+        "Tahoma": "Tahoma",
+        "Verdana": "Verdana",
+        "serif": "serif",
+        "sans-serif*": "sans-serif",
+    }
+@var    text     cornerLogoText    "👉Texto 1"   "NM"
+@var    text     cornerLogo2Text    "👉Texto 2"   "AAJusti"
+@var select   cornerLogo2FontName   "↪🆎Nome da fonte"{
+        "Fonte 1": "userFont1",
+        "Fonte 2": "userFont2",
+        "Fonte 3": "userFont3",
+        "Times New Roman": "Times New Roman",
+        "Montserrat": "Montserrat",
+        "Arial Black": "Arial Black",
+        "Arial": "Arial",
+        "Courier": "Courier",
+        "Georgia": "Georgia",
+        "Helvetica": "Helvetica",
+        "Palatino": "Palatino",
+        "Segoe UI": "Segoe UI",
+        "Tahoma": "Tahoma",
+        "Verdana": "Verdana",
+        "serif": "serif",
+        "sans-serif*": "sans-serif",       
+    }
+@var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
+@var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [16, 8, 24, 2, "px"]
+@var color    cornerLogo2Col  "↪Cor texto 2"   #6b7e8454
+@var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    range    cornerLogo2Size  "↪Tam.  texto 2" [14, 10, 100, 1, "%"]
+@var    range    cornerLogo2PosX  "↪Ajuste horiz. texto 2" [109, -40, 150, 1, "%"]
+@var    range    cornerLogo2PosY  "↪Ajuste vert. texto 2" [60, -40, 150, 1, "%"]
+
+
+
+@var    text     logoLink1    "☯️link 1 (logo)"   "'url'"
+@var    text     logoLink2    "☯️link 2 (logo)"   "'url'"
+@var    text     logoLink3    "☯️link 3 (logo)"   "'url'"
+@var    text     logoLink4    "☯️link 4 (logo)"   "'url'"
+@var    text     logoLink5    "☯️link 5 (logo)"   "'url'"
+
+@var    select      useWallpaper    "🖼️Plano de fundo" {
+            "🔗link1": "userWall1",
+            "🔗link2": "userWall2",
+            "🔗link3": "userWall3",
+            "🔗link4": "userWall4",
+            "🔗link5": "userWall5",
+            "Do tema (se houver)*": "themeWallpaper",
+            "Degradê": "gradient",
+        }
+@var    checkbox    enableLightTheme   "🟩Tema escuro <-> claro" 0
+@var    select      setWallpaper    "Modo do Plano de fundo" {
+            "Estender*": "cover",
+            "Conter": "contain",
+            "Porcentagem": "percentSize",
+            "Manter": "initial",
+        }
+@var    range    percentSize    "↪valor de porcentagem" [100, 1, 100, 1, "%"]
+
+@var    text     userWall1   "🔗Imagem de fundo 1"   "'link entre aspas simples'"
+@var    text     userWall2    "🔗Imagem de fundo 2"   "'link entre aspas simples'"
+@var    text     userWall3    "🔗Imagem de fundo 3"   "'link entre aspas simples'"
+@var    text     userWall4    "🔗Imagem de fundo 4"   "'link entre aspas simples'"
+@var    text     userWall5    "🔗Imagem de fundo 5"   "'link entre aspas simples'"
+
+@var    color    backgroundColp  "Cor de fundo"   #0c2651
+
+@var    select      evalOpt    "Barra de Avaliação" {
+            "Cor automática*": "auto",
+            "Personalizada": "custom",	
+            "Padrão": "disabled",
+        }
+
+@var color    dEvalCol  "Avaliação Pretas"   #403D39
+@var color    lEvalCol  "Avaliação Brancas"   #E0E0E0
+@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.5, 1, 0.1, ""]
+
+@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
+@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+
+@var    text     userFont1    "🆎Importar fonte 1:"   "'Bauhaus'"
+
+@var    text     userFont2    "🆎Importar fonte 2:"   "'Comic Sans MS'"
+
+@var    text     userFont3    "🆎Importar fonte 3:"   "'MS Gothic'"
+
+@var    text     myTheme    "Nome do Tema"   "'myTheme'"
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*primary server (GitHub)*/    
+    gitHub='https://github.com/FSA1/Styles/raw/main/'    
+    /*alternative server (GitLab)*/
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
+    /*there is no error below*/
+    if setServer {
+        server = gitLab
+    }else{
+        server = gitHub
+    }
+    /*⚠️🔐Fallback size. Need to be globally visible, without this all other layer sizes of the board will fail as 'invalid propert'.*/
+    specialEffectSize=100% 100%;
+    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
+    /*Textures*/
+    txLightWood=server+'super-board/textures/wood/light-wood.jpg';
+    txDarkWood=server+'super-board/textures/wood/dark-wood.jpg';
+    txDarkWood2=server+'super-board/textures/wood/dark-wood2.jpg';
+    txfrDarkWood2=server+'super-board/textures/wood/frames/frame-dark-wood1.jpg';
+    /*selector with exceptions to avoid override analysis highlights*/
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+
+    if enableBoardShadow{
+        boardShadow= 0px 0px 8px 4px rgba(0, 0, 0, .4);
+    }
+    if enableBoardShadowInset{
+        boardShadowInset= inset 0px 1px 2px 1px rgba(0, 0, 0, .4);
+    }
+    if enableFrameShadow{
+        frameShadow= 0px 0px frameShadowBlur frameShadowSpread frameShadowColor;
+    }
+    if enableFrameShadowInset{
+        frameShadowInset= inset 0px -1px frameShadowInsetBlur frameShadowInsetSpread frameShadowInsetColor;
+    }
+    
+}/*Themes below*/
+@-moz-document domain("chess.com") {
+    /*Themes*/   
+    
+    if myBoard=="aajusti-anim" {
+        svgBoardBlend=normal;
+        svgLightSqColor=#badcf6;
+        svgLightSqOpacity=0.95;
+        enableGlobalColor=0;
+        svgDarkSqColor=#007cdb;
+        svgDarkSqOpacity=0.85;
+        boardBGOpt='https://i.pinimg.com/originals/3d/08/e0/3d08e03cb40252526fee2036a67f07f1.gif';
+        boardBGColor=rgba(224,221,202,0);
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        //frameRadius=6px;
+        frameRadiusInOut=1;
+        //ajustBoardSize=0.91;
+        //enableBoardFrame=1;
+        frameOpt=boardBGOpt;
+        frameColor=#334e7700;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        enableInnerBorder=1;
+        innerBorderOpt=#2d55e5;
+        innerBorderColor=#2d55e5;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        //enableFrameShadow=1;
+        boardFrame1='https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-blue-technology-electronic-circuit-background-sensehigh-tech-image_61146.jpg';
+        boardFrame2='https://imejunior.com.br/wp-content/uploads/2018/03/blue-tech-circuit-board-technology-animated-background-video-graphic-design-hd-1920x1080_ewva7rwie__F0000.png';
+        boardFrame3='https://i.pinimg.com/originals/3d/08/e0/3d08e03cb40252526fee2036a67f07f1.gif';
+        boardFrame4='https://i.pinimg.com/originals/e3/77/46/e377461761c8ab33fbb713ada400984a.gif';
+        setHighlight=op1;
+        hlColor=#00d0ff;
+        highlightOpacity=0.7;
+        //enableCenterLogo=1;
+        enableCornerLogo=0;
+        enableCornerLogo2=0;
+        //enableWallpaper=1;
+        coordsBlend='normal';
+        enableCustomCoord=1;
+        //enableOutsideCoords=1;
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=600;
+        outCoordColorOpt= #badcf6;
+        outCoordCol= rgba(255,255,255,0.722);
+        lCoordCol= #005bdb;
+        dCoordCol= #b7d8f1;
+        centerLogoOpt=logoAAJusti;
+        centerLogoBlend='hard light';
+        centerLogoCol=rgba(0,49,211,0.251);
+        centerLogoSize=50%;
+        centerLogoOpacity=1;
+        centerLogoPosX=50%;
+        centerLogoPosY=50%;
+        useWallpaper=gradient;
+        enableLightTheme=0;
+        setWallpaper=cover;
+        percentSize=100
+        backgroundColp=#0c2651;
+        evalOpt=auto;
+        dEvalCol=#006ec2;
+        lEvalCol=#b4d5ee;
+        frameShadow=0px 0px 34px 4px #008fff;
+        frameShadowInset=0;
+    }else if myBoard=="aajusti-static" {
+		svgBoardBlend=normal;
+		svgLightSqColor=#badcf6;
+		svgLightSqOpacity=0.95;
+		enableGlobalColor=0;
+		svgDarkSqColor=#007cdb;
+		svgDarkSqOpacity=0.85;
+		boardBGOpt='https://imejunior.com.br/wp-content/uploads/2018/03/blue-tech-circuit-board-technology-animated-background-video-graphic-design-hd-1920x1080_ewva7rwie__F0000.png';
+		boardBGColor=rgba(224,221,202,0);
+		bgSize=cover;
+		bgPosX=55%;
+		bgPosY=50%;
+		frameRadius=6px;
+		frameRadiusInOut=1;
+		ajustBoardSize=0.9;
+		enableBoardFrame=1;
+        frameOpt=boardBGOpt;
+		frameColor=rgba(51,78,119,0);
+		frameSize=cover;
+		framePosX=50%;
+		framePosY=50%;
+		enableInnerBorder=1;
+		innerBorderOpt=#2d55e5;
+		enableBoardShadowInset=0;
+		enableBoardShadow=0;
+		enableFrameShadowInset=0;
+		enableFrameShadow=1;
+		setHighlight='op1';
+        hlColor=#00d0ff;
+        highlightOpacity=0.7;
+        enableCornerLogo=0;
+        enableCornerLogo2=0;
+        coordsBlend='normal';
+		enableCustomCoord=1;
+		outCoordFontSize=0.24rem;
+		outCoordFontName='Segoe UI';
+		outCoordFontWeight=400;
+		outCoordColorOpt=#badcf6;
+		outCoordCol=#00c8ff;
+		lCoordCol=#005bdb;
+		dCoordCol=#b7d8f1;
+		centerLogoOpt=logoAAJusti;
+		centerLogoBlend=hard light;
+		centerLogoCol=rgba(0,49,211,0.251);
+		centerLogoSize=50%;
+		centerLogoOpacity=1;
+		centerLogoPosX=50%;
+		centerLogoPosY=50%;
+		useWallpaper=gradient;
+		enableLightTheme=0;
+		setWallpaper=cover;
+		percentSize=100%;
+		backgroundColp=#0c2651;
+		evalOpt=auto;
+		dEvalCol=#006ec2;
+		lEvalCol=#b4d5ee;
+		frameShadow=0px 0px 34px 4px #008fff;
+		frameShadowInset=0;
+	}
+    /*Highlight*/
+    hlImg="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin:auto;background: %23fff0;display:block;' width='215px' height='215px' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid'%3e%3cstyle type='text/css'%3e .ldio-ux3kipv1wl-st0%7bopacity:0.8;fill:none;stroke-width:0.4811;stroke-miterlimit:10;%7d .ldio-ux3kipv1wl-st2%7bopacity:0.8;%7d .ldio-ux3kipv1wl-st3%7bfill:none;stroke-width:0.5;stroke-miterlimit:10;%7d .ldio-ux3kipv1wl-st4%7bfill:none;stroke-width:0.4694;stroke-miterlimit:10;%7d %3c/style%3e%3cg style='opacity:0.5'%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='41.5 62 30 62 24.2 72 30 82 41.5 82 47.3 72'%3e%3c/polygon%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='58.8 72 47.3 72 41.5 82 47.3 92 58.8 92 64.6 82'%3e%3c/polygon%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='76.2 62 64.6 62 58.8 72 64.6 82 76.2 82 81.9 72'%3e%3c/polygon%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='41.5 42 30 42 24.2 52 30 62 41.5 62 47.3 52'%3e%3c/polygon%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='58.8 12 47.3 12 41.5 22 47.3 32 58.8 32 64.6 22'%3e%3c/polygon%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='58.8 32 47.3 32 41.5 42 47.3 52 58.8 52 64.6 42'%3e%3c/polygon%3e%3cpolygon stroke='rgba(NaN, NaN, NaN, 0)' class='ldio-ux3kipv1wl-st0' points='76.2 22 64.6 22 58.8 32 64.6 42 76.2 42 81.9 32'%3e%3c/polygon%3e%3c/g%3e%3cg%3e%3cpath fill='%2300ceff' d='M48.3 56.8l-4.4 1.5c-0.9-1.3-1.5-2.7-1.7-4.3l-1.9 0.3c0.5 2.6 1.7 5 3.6 6.9c1.9 1.9 4.3 3.1 6.9 3.6 l0.3-1.9c-1.6-0.3-3-0.9-4.3-1.7L48.3 56.8z'%3e%3c/path%3e%3cpath fill='%2300ceff' d='M57.8 47.2l4.4-1.5c0.9 1.3 1.5 2.7 1.7 4.3l1.9-0.3c-0.5-2.6-1.7-5-3.6-6.9c-1.9-1.9-4.3-3.1-6.9-3.6L55 41.1 c1.6 0.3 3 0.9 4.3 1.7L57.8 47.2z'%3e%3c/path%3e%3cpath fill='%2300ceff' d='M62.2 58.2l-4.4-1.5l1.5 4.4C58 62 56.5 62.6 55 62.9l0.3 1.9c2.6-0.5 5-1.7 6.9-3.6c1.9-1.9 3.1-4.3 3.6-6.9 L64 53.9C63.7 55.5 63.1 56.9 62.2 58.2z'%3e%3c/path%3e%3cpath fill='%2300ceff' d='M43.9 42.8c-1.9 1.9-3.1 4.3-3.6 6.9l1.9 0.3c0.3-1.6 0.9-3 1.7-4.3l4.4 1.5l-1.5-4.4c1.3-0.9 2.7-1.5 4.3-1.7 l-0.3-1.9C48.2 39.7 45.8 40.9 43.9 42.8z'%3e%3c/path%3e%3canimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='6.25s' keyTimes='0;1' values='0 53.064 52;360 53.064 52'%3e%3c/animateTransform%3e%3c/g%3e%3cg class='ldio-ux3kipv1wl-st2'%3e%3cpath fill='%2300ceff' d='M36 61.9c-1.7-3-2.7-6.4-2.7-9.9c0-10.9 8.8-19.7 19.7-19.7v1c-10.3 0-18.8 8.4-18.8 18.8 c0 3.3 0.9 6.5 2.5 9.4L36 61.9z'%3e%3c/path%3e%3canimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='3.125s' keyTimes='0;1' values='360 53.064 52;0 53.064 52'%3e%3c/animateTransform%3e%3c/g%3e%3cg class='ldio-ux3kipv1wl-st2'%3e%3cpath fill='%2300ceff' d='M57 75.3l-0.5-3c9.9-1.7 17.2-10.2 17.2-20.3c0-11.4-9.2-20.6-20.6-20.6S32.5 40.6 32.5 52 c0 1.6 0.2 3.2 0.5 4.7l-3 0.7c-0.4-1.8-0.6-3.6-0.6-5.4c0-13.1 10.6-23.7 23.7-23.7S76.7 38.9 76.7 52 C76.7 63.6 68.4 73.4 57 75.3z'%3e%3c/path%3e%3canimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='2.0812500000000003s' keyTimes='0;1' values='0 53.064 52;360 53.064 52'%3e%3c/animateTransform%3e%3c/g%3e%3cg%3e%3cpath fill='%2300ceff' d='M90.5 45.4c-1.5-8.8-6.2-16.8-13-22.5l0 0c-3.4-2.9-7.3-5.1-11.4-6.6s-8.5-2.3-13-2.3v2.4v1.4v2.4 c3.7 0 7.4 0.6 10.9 1.9l0.8-2.3c0 0 0 0 0 0c3.7 1.4 7.2 3.4 10.3 5.9l1.2-1.5L75 25.8c0 0 0 0 0 0l-1.5 1.8 c5.7 4.8 9.6 11.5 10.9 18.8l3.8-0.7c0 0 0 0 0 0L90.5 45.4z'%3e%3c/path%3e%3cpath fill='%2300ceff' d='M29.7 22l4.7 6.1c3.5-2.8 7.5-4.6 11.9-5.6l-1.7-7.5C39.2 16.2 34.2 18.5 29.7 22z'%3e%3c/path%3e%3canimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='3.125s' keyTimes='0;1' values='360 53.064 52;0 53.064 52'%3e%3c/animateTransform%3e%3c/g%3e%3cg class='ldio-ux3kipv1wl-st2'%3e%3cpath fill='%2300ceff' d='M53.1 92.4v-1c21.8 0 39.5-17.7 39.5-39.5c0-21.8-17.7-39.5-39.5-39.5c-15.8 0-30 9.4-36.2 23.8L15.9 36 c6.4-14.8 21-24.4 37.1-24.4c22.3 0 40.4 18.1 40.4 40.4C93.5 74.3 75.3 92.4 53.1 92.4z'%3e%3c/path%3e%3canimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='2.0812500000000003s' keyTimes='0;1' values='0 53.064 52;360 53.064 52'%3e%3c/animateTransform%3e%3c/g%3e%3cg%3e%3cpath fill='%2300ceff' d='M39.7 28.5l0.6 1c3.9-2.2 8.3-3.4 12.8-3.4V25C48.4 25 43.7 26.2 39.7 28.5z'%3e%3c/path%3e%3cpath fill='%2300ceff' d='M28.6 60.6l-1.1 0.4C31.3 71.8 41.6 79 53.1 79v-1.2C42.1 77.9 32.3 70.9 28.6 60.6z'%3e%3c/path%3e%3canimateTransform attributeName='transform' type='rotate' repeatCount='indefinite' dur='6.25s' keyTimes='0;1' values='360 53.064 52;0 53.064 52'%3e%3c/animateTransform%3e%3c/g%3e%3c/svg%3e";
+    if myBoard=="aajusti-anim" || myBoard=="aajusti-static" && hlImgOpt==hlImg{
+        hlColor=rgba(4,0,255,0.369);
+        highlightOpacity=1;
+    }
+    /*End themes*/
+
+    /*Special Effects*/
+    if allowSpEffects {
+        /*code here*/        
+    }/*End allowSpEffects*/
+
+    /*GLOBAL COLOR - Need to be placed after themes*/
+    if (enableGlobalColor==1 && myBoard=="custom") || global==1{    
+        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);       
+        frameColor=saturate(darken(svgDarkSqColor, 10%), -2%);
+        centerLogoOpacity=0.24;
+        centerLogoBlend=darken;
+        cornerLogoBlend=multiply;
+        centerLogoCol=saturate(lighten(svgDarkSqColor, -12%), 10%);
+        cornerLogoCol=cornerLogo2Col=saturate(lighten(svgDarkSqColor, 70%), 10%);
+        backgroundColp=saturate(shade(svgDarkSqColor,40%), -80%);
+        
+    }    
+    if frameSize=="contain"{
+        frameRepeat=repeat;
+    }else{
+        frameRepeat=no-repeat;
+    }    
+    if bgSize=="contain"{
+        bgRepeat=repeat;
+    }else{
+        bgRepeat=no-repeat;
+    }
+    if !enableBoardShadowInset{
+        boardShadowInset=0;
+    }
+    if !enableFrameShadow {
+        frameShadow=0;
+    }
+    if !enableFrameShadowInset{
+        frameShadowInset=0;
+    }
+    /*=============SHOWS THEME SETTINGS IN ABOUT SECTION ON PROFILE PAGE SO YOU CAN COPY IT USING 'ITEM INSPECTION' IN CONTEXT MENU FROM THE BROWSER=============*/
+    /*In the Stylus menu find 'My Theme' textbox, write '1', 'space' and the theme name in camel case. For example: '1 myTheme'. When on the inspection page click on
+    '.v5-section-content-wide' > '#collapseAbout' then on 'after' click on 'content' and choose 'copy value'. Now you can make some corrections and save your
+     settings and paste them as a new theme in this code. Be sure to add a new entry to the myBoard menu*/
+    getValue=''+ myTheme;
+    myTheme=unquote(slice(getValue,2))
+    showSettings=slice(getValue,0,1);
+   
+    if showSettings=="1"{
+        #collapseAbout{
+            visibility:hidden!important;
+        }/*probably missing variables or outdated - need to be checked*/
+        #collapseAbout:after{
+            background-color:#fff!important;
+            color:#000!important;
+            font-size: 1rem;
+            content:'"if myBoard==%s {svgBoardBlend=%s; svgLightSqColor=%s; svgLightSqOpacity=%s; enableGlobalColor=%s; svgDarkSqColor=%s; svgDarkSqOpacity=%s; boardBGOpt=%s; boardBGColor=%s; bgSize=%s; bgPosX=%s; bgPosY=%s; frameRadius=%s; frameRadiusInOut=%s; ajustBoardSize=%s; enableBoardFrame=%s; frameOpt=%s; frameColor=%s; frameSize=%s; framePosX=%s; framePosY=%s; enableInnerBorder=%s; innerBorderOpt=%s; innerBorderColor=%s; enableBoardShadowInset=%s; enableBoardShadow=%s; enableFrameShadowInset=%s; enableFrameShadow=%s; boardFrame1=%s; boardFrame2=%s; boardFrame3=%s; boardFrame4=%s; boardFrame5=%s; setHighlight=%s; hlColor=%s; highlightOpacity=%s; enableArrowSettings=%s; enableCenterLogo=%s; enableCornerLogo=%s; enableCornerLogo2=%s; enableWallpaper=%s; enableCustomCoord=%s; enableOutsideCoords=%s; outCoordFontSize=%s; outCoordFontName=%s; outCoordFontWeight=%s; outCoordColorOpt=%s; outCoordCol=%s; lCoordCol=%s; dCoordCol=%s; centerLogoOpt=%s; centerLogoBlend=%s; centerLogoCol=%s; centerLogoSize=%s; centerLogoOpacity=%s; centerLogoPosX=%s; centerLogoPosY=%s; cornerLogoOpt=%s; cornerLogoBlend=%s; cornerLogoCol=%s; cornerLogoSize=%s; cornerLogoOpacity=%s; cornerLogoPosX=%s; cornerLogoPosY=%s; cornerLogoFontSize=%s; cornerLogoFontName=%s; cornerLogoFontWeight=%s; cornerLogoText=%s; cornerLogo2Text=%s; cornerLogo2Blend=%s; cornerLogo2Size=%s; cornerLogo2PosX=%s; cornerLogo2PosY=%s; cornerLogo2FontSize=%s; cornerLogo2Col=%s; cornerLogo2FontName=%s; cornerLogo2FontWeight=%s; logoLink1=%s; logoLink2=%s; logoLink3=%s; logoLink4=%s; logoLink5=%s; useWallpaper=%s; enableLightTheme=%s; setWallpaper=%s; percentSize=%s; userWall1=%s; userWall2=%s; userWall3=%s; userWall4=%s; userWall5=%s; backgroundColp=%s; evalOpt=%s; dEvalCol=%s; lEvalCol=%s; evalBarOpacity=%s; hueRotationArrow=%s; arrowOpacity=%s; saturateArrow=%s; brightnessArrow=%s; frameShadow=%s; frameShadowInset=%s;}"' % ((myTheme) (svgBoardBlend) (svgLightSqColor) (svgLightSqOpacity) (enableGlobalColor) (svgDarkSqColor) (svgDarkSqOpacity) (boardBGOpt) (boardBGColor) (bgSize) (bgPosX) (bgPosY) (frameRadius) (frameRadiusInOut) (ajustBoardSize) (enableBoardFrame) (frameOpt) (frameColor) (frameSize) (framePosX) (framePosY) (enableInnerBorder) (innerBorderOpt) (innerBorderColor) (enableBoardShadowInset) (enableBoardShadow) (enableFrameShadowInset) (enableFrameShadow) (boardFrame1) (boardFrame2) (boardFrame3) (boardFrame4) (boardFrame5) (setHighlight) (hlColor) (highlightOpacity) (enableArrowSettings) (enableCenterLogo) (enableCornerLogo) (enableCornerLogo2) (enableWallpaper) (enableCustomCoord) (enableOutsideCoords) (outCoordFontSize) (outCoordFontName) (outCoordFontWeight) (outCoordColorOpt) (outCoordCol) (lCoordCol) (dCoordCol) (centerLogoOpt) (centerLogoBlend) (centerLogoCol) (centerLogoSize) (centerLogoOpacity) (centerLogoPosX) (centerLogoPosY) (cornerLogoOpt) (cornerLogoBlend) (cornerLogoCol) (cornerLogoSize) (cornerLogoOpacity) (cornerLogoPosX) (cornerLogoPosY) (cornerLogoFontSize) (cornerLogoFontName) (cornerLogoFontWeight) (cornerLogoText) (cornerLogo2Text) (cornerLogo2Blend) (cornerLogo2Size) (cornerLogo2PosX) (cornerLogo2PosY) (cornerLogo2FontSize) (cornerLogo2Col) (cornerLogo2FontName) (cornerLogo2FontWeight) (logoLink1) (logoLink2) (logoLink3) (logoLink4) (logoLink5) (useWallpaper) (enableLightTheme) (setWallpaper) (percentSize) (userWall1) (userWall2) (userWall3) (userWall4) (userWall5) (backgroundColp) (evalOpt) (dEvalCol) (lEvalCol) (evalBarOpacity) (hueRotationArrow) (arrowOpacity) (saturateArrow) (brightnessArrow)(frameShadow)(frameShadowInset)) !important;
+            visibility:visible!important;
+        }
+    }
+}
+@-moz-document domain("chess.com") {
+
+    /*Board*/
+   /*prevent user to get the board completely transparent with no visual references. It can be removed if you are an experienced user*/
+    if svgLightSqOpacity<"0.2" && svgDarkSqOpacity<"0.2" && boardBGOpt=="transparent"{
+        svgLightSqOpacity="0.2";
+        svgDarkSqOpacity="0.2";
+    }
+    /*svgs are implemented using uri format so it needs scaped text where '#' is represented by '%23'.*/
+    colorString="" + svgDarkSqColor;
+    firstChar=slice(colorString,0,3);
+    darkSqStringResult=""+firstChar;
+    
+    if darkSqStringResult!="rgb" && darkSqStringResult!="hsl" && darkSqStringResult!="hwb"{
+        lcString="" + svgDarkSqColor;
+        lcMinusHash=slice(lcString, 1);
+        svgDarkSqColorHash="%23" + lcMinusHash;
+    }else{
+        svgDarkSqColorHash=""+svgDarkSqColor;
+    }
+    
+    colorString2="" + svgLightSqColor;
+    firstChar2=slice(colorString2,0,3);
+    lightSqStringResult=""+firstChar2;
+    
+    if lightSqStringResult!="rgb" && lightSqStringResult!="hsl" && lightSqStringResult!="hwb"{
+        lcString2="" + svgLightSqColor;
+        lcMinusHash2=slice(lcString2, 1);
+        svgLightSqColorHash="%23" + lcMinusHash2;
+    }else {
+        svgLightSqColorHash=""+svgLightSqColor;
+    }
+    
+    coordString="" + outCoordColorOpt;
+    firstChar3=slice(coordString,0,3);
+    coordStringResult=""+firstChar3;
+    
+    if coordStringResult!="rgb" && coordStringResult!="hsl" && coordStringResult!="hwb"{
+        lcString3="" + outCoordColorOpt;
+        lcMinusHash3=slice(lcString3, 1);
+        outCoordColorOptHash="%23" + lcMinusHash3;
+    }else{
+        outCoordColorOptHash="" + outCoordColorOpt;
+    }
+    /*--------------------------------*/
+
+    centerLogoString="" + centerLogoCol;
+    firstChar4=slice(centerLogoString,0,3);
+    centerLogoResult=""+firstChar4;
+    
+    if centerLogoResult!="rgb" && centerLogoResult!="hsl" && centerLogoResult!="hwb"{
+        lcString4="" + centerLogoCol;
+        lcMinusHash4=slice(lcString4, 1);
+       centerLogoColHash="%23" + lcMinusHash4;
+    }else{
+        centerLogoColHash="" + centerLogoCol;
+    }
+    cornerLString="" + cornerLogoCol;
+    firstChar5=slice(cornerLString,0,3);
+    cornerLStringResult=""+firstChar5;
+    
+    if cornerLStringResult!="rgb" && cornerLStringResult!="hsl" && cornerLStringResult!="hwb"{
+        lcString5="" + cornerLogoCol;
+        lcMinusHash5=slice(lcString5, 1);
+        cornerLogoColHash="%23" + lcMinusHash5;
+    }else{
+        cornerLogoColHash="" + cornerLogoCol;
+    }
+    cornerLString2="" + cornerLogo2Col;
+    firstChar52=slice(cornerLString2,0,3);
+    cornerLStringResult2=""+firstChar52;
+    
+    if cornerLStringResult2!="rgb" && cornerLStringResult2!="hsl" && cornerL2tringResult2!="hwb"{
+        lcString52="" + cornerLogo2Col;
+        lcMinusHash52=slice(lcString52, 1);
+        cornerLogo2ColHash="%23" + lcMinusHash52;
+    }else{
+        cornerLogo2ColHash="" + cornerLogo2Col;
+    }
+    
+    innStr="" + innerBorderOpt;
+    innFirstChar=slice(innStr,0,3);
+    innStringResult=""+innFirstChar;
+    
+    if innStringResult!="rgb" && innStringResult!="hsl" && innStringResult!="hwb"{
+        innMinusHash=slice(innStr, 1);
+        innColHash="%23" + innMinusHash;
+    }else{
+        innColHash="" + innerBorderOpt;
+    }
+    /*SVG IMAGES HERE 🔐 - need to be here because '#' symbol need to be replaced first for '%23' in the variables*/
+    /*main svg board*/
+    svgBoard="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='" + unquote(svgDarkSqColorHash) + "' fill-opacity='" + svgDarkSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='" + unquote(svgLightSqColorHash) + "' fill-opacity='" + svgLightSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3c/svg%3e";
+    cornerLogoTextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + unquote(cornerLogoColHash) + "' font-family='sans-serif' font-size='"+cornerLogoFontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + unquote(cornerLogoColHash) + "' font-family='"+cornerLogoFontName+"' font-size='"+cornerLogoFontSize+"'  font-weight='"+cornerLogoFontWeight+"' stroke-width='.26459'%3e"+cornerLogoText+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
+    cornerLogo2TextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + unquote(cornerLogo2ColHash) + "' font-family='sans-serif' font-size='"+cornerLogo2FontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + unquote(cornerLogo2ColHash) + "' font-family='"+cornerLogo2FontName+"' font-size='"+cornerLogo2FontSize+"'  font-weight='"+cornerLogo2FontWeight+"' stroke-width='.26459'%3e"+cornerLogo2Text+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
+    logoAAJusti="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1100' height='1100' version='1.1' viewBox='0 0 1100 1100' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m518.72 1034.8c-15.767-9.5636-31.367-19.065-34.667-21.114-3.3-2.0487-19.5-11.708-36-21.465-16.5-9.757-35.4-21.043-42-25.079-6.6-4.0367-19.8-11.968-29.333-17.626s-28.733-17.183-42.667-25.613c-29.169-17.647-25.089-11.885-34.687-48.991-3.3194-12.833-6.5618-24.578-7.2053-26.099-0.74951-1.7714-14.519-10.092-38.306-23.148-20.424-11.21-37.87-20.976-38.767-21.702-1.1186-0.90447-1.7476-7.4234-2-20.728l-0.36821-19.408-14-5.7817c-7.7-3.1799-14.961-5.7857-16.136-5.7906-1.718-7e-3 -2.3032 2.1423-2.992 10.991-0.47097 6.05-0.8599 13.815-0.86429 17.255-4e-3 3.4401-0.57061 6.6024-1.2582 7.0274-0.68765 0.42499-9.5376-2.776-19.667-7.1133l-18.416-7.886 0.24662-47.808c0.23903-46.336 2.1982-131.93 3.9111-170.88l0.83894-19.076 12.835-9.6737c14.242-10.734 24.916-18.174 26.075-18.174 0.41787 0 0.75977 9 0.75977 20 0 15.397 0.39415 20 1.7126 20 2.0652 0 33.27-20.949 34.455-23.13 0.45883-0.84489 1.2613-11.436 1.7833-23.536 0.52197-12.1 1.57-22.75 2.329-23.667 2.2285-2.6915 4.9956-1.94 8.5914 2.3333 3.9958 4.7488 8.0016 5.1548 9.8639 1 0.73955-1.65 3.3423-10.8 5.7838-20.333 2.4416-9.5333 9.6693-36.833 16.062-60.667 6.3924-23.833 15.227-56.833 19.633-73.333 4.4056-16.5 8.7099-30.71 9.565-31.578 0.85515-0.86798 12.655-6.0638 26.221-11.546 13.567-5.4825 30.067-12.186 36.667-14.896s19.8-8.0915 29.333-11.958c19.639-7.9655 52.01-21.162 76.667-31.253 78.392-32.084 86.77-35.187 91.118-33.747 3.6406 1.2055 31.126 12.383 88.215 35.875 18.803 7.7376 98.209 40.037 135.28 55.029l28.617 11.572 2.4078 7.9184c1.3243 4.3551 12.654 46.618 25.178 93.918s23.386 86.75 24.138 87.667c2.1906 2.6686 4.1471 1.9072 7.7083-3 1.8333-2.5263 4.3099-4.6098 5.5034-4.63 4.6593-0.0788 5.6468 3.7544 6.6302 25.736 0.5305 11.858 1.3433 22.461 1.8062 23.561 0.95055 2.2588 29.114 23.099 32.115 23.764 1.6396 0.36343 1.945-2.8289 1.945-20.333 0-11.42 0.34189-20.764 0.75976-20.764 1.1588 0 11.832 7.4389 26.065 18.166l12.825 9.666 0.84499 18.417c1.3255 28.89 3.8101 142.6 4.0001 183.07l0.1721 36.654-16.667 6.8763c-25.046 10.333-22.187 11.212-23.258-7.1468-1.06-18.17-1.5233-20.372-4.2858-20.372-1.1171 0-7.6132 2.4578-14.436 5.4617-14.588 6.4228-14.02 5.2153-14.02 29.827v16.289l-31 17.084c-17.05 9.3963-34.456 18.941-38.681 21.211-6.3118 3.3914-7.8999 4.9585-8.9111 8.7935-0.67677 2.5667-4.088 15.767-7.5805 29.333-5.5663 21.622-6.8526 25.145-10.422 28.543-4.8335 4.6015-234.86 142.36-238.74 142.98-1.5977 0.253-14.158-6.5482-31.333-16.966zm71.214-45.618c14.732-9.0184 58.81-35.568 97.95-59 39.14-23.432 71.95-43.803 72.91-45.27 0.96024-1.4667 6.624-20.967 12.586-43.333 5.9621-22.367 12.302-45.498 14.09-51.402 3.6245-11.974 3.883-13.931 1.8402-13.931-1.1842 0-26.692 50.738-41.895 83.333-2.3943 5.1333-6.3802 11.183-8.8576 13.445-2.4774 2.2612-15.604 12.106-29.171 21.878-13.567 9.7715-33.667 24.304-44.667 32.295-11 7.9908-33.88 24.546-50.844 36.789-16.964 12.243-36.014 25.995-42.333 30.561-10.706 7.7341-13.678 11.033-9.9422 11.033 0.8512 0 13.601-7.3786 28.333-16.397zm-55.214 13.95c0-1.1298-12.519-10.674-36.667-27.952-37.741-27.006-69.7-50.064-82.752-59.705-8.0197-5.9238-21.781-15.959-30.581-22.302-31.441-22.659-27.965-18.845-40.947-44.928-6.3878-12.833-16.888-34.272-23.333-47.642s-12.469-24.32-13.386-24.333c-2.1707-0.0325-2.1052 2.3968 0.24418 9.0556 1.051 2.9788 7.0762 25.104 13.389 49.168 6.3132 24.063 12.06 45.552 12.77 47.752 1.1285 3.4956 10.977 9.8004 78.106 50 42.248 25.3 86.192 51.815 97.653 58.922 19.203 11.908 25.505 14.864 25.505 11.965zm63.308-221.59c38.184-9.7498 43.724-11.532 62.269-20.033 11.196-5.132 20.931-9.9061 21.634-10.609 3.2905-3.2905-2.0466-2.7463-18.902 1.9275-18.915 5.245-28.217 6.5303-62.309 8.6095-11 0.67089-26.819 1.9822-35.154 2.9141-12.964 1.4495-19.225 1.3714-43.333-0.541-33.726-2.6753-45.747-3.5628-55.513-4.0986-9.6046-0.5269-20.404-2.7895-36.148-7.5736-13.812-4.1971-17.186-4.6842-17.186-2.4816 0 1.6268 31.748 16.959 42.667 20.605 18.803 6.2791 83.73 21.765 91.698 21.871 6.3472 0.0844 18.472-2.4696 50.277-10.591zm-377.15-44.965c-2.693-32.434-3.4641-51.624-3.4746-86.471-7e-3 -21.342 0.37971-42.549 0.85809-47.126l0.8698-8.3218 7.7969-3.3814c9.012-3.9084 8.7005-2.631 5.8039-23.801-2.5765-18.83-3.0205-20.565-5.2627-20.565-1.7389 0-11.269 5.6-41.411 24.334l-12 7.4582-1.1654-16.563c-0.65116-9.2545-1.7477-16.563-2.4851-16.563-2.4638 0-11.555 5.7444-12.344 7.7995-1.1511 2.9997-5.2329 164.08-4.1844 165.13 1.9495 1.9495 3.739-2.4178 5.5338-13.505 5.0206-31.015 18.172-66.103 32.139-85.747 4.4934-6.32 4.5064-6.3268 4.5338-2.3425 0.064 9.3066 2.6993 44.777 4.0117 53.996 2.4807 17.425 8.1084 44.15 12.19 57.89 4.3981 14.805 5.8563 18.11 7.9896 18.11 1.0042 0 1.1913-3.2189 0.6006-10.333zm659.65 6.6667c2.3734-4.6599 7.943-24.13 11.347-39.667 5.0155-22.891 7.1502-38.798 8.6648-64.567l1.5223-25.9 5.7648 8.5671c12.667 18.824 21.937 42.939 28.833 75.005 2.6046 12.111 4.7356 22.367 4.7356 22.791 0 0.42406 0.6 0.771 1.3333 0.771 0.82922 0 1.3284-7.4358 1.3204-19.667-0.0151-22.924-2.1743-105.05-3.4336-130.59l-0.86722-17.593-5.1479-3.4067c-8.9586-5.9285-9.205-5.5734-9.205 13.26 0 9.1667-0.26764 16.667-0.59476 16.667-0.53235 0-8.0085-4.5882-43.783-26.87-9.1174-5.6787-12.956-7.4708-12.956-6.049 0 0.228-1.2 9.0415-2.6667 19.585s-2.6667 19.908-2.6667 20.81c0 0.90145 3.5844 3.0289 7.9653 4.7276 7.7624 3.0099 7.9911 3.2419 8.981 9.1088 0.55868 3.3112 0.95768 27.32 0.88665 53.354-0.11387 41.762-1.2047 65.373-4.019 87-0.94204 7.2391 0.99578 8.5358 3.9851 2.6667zm-449.11-121.64c34.327-2.9571 39.312-3.6331 39.312-5.3306 0-0.65068 1.2-1.5639 2.6667-2.0294s2.6667-1.9195 2.6667-3.2311c0-1.8791-3.6045-3.5484-17-7.8731-33.488-10.812-127.44-40.119-132-41.177-5.4313-1.26-3.4059 3.638 5.3333 12.897 4.5833 4.8562 14.033 15.253 21 23.105 6.9667 7.8516 13.199 14.276 13.851 14.277 1.0688 1e-3 0.34797-13.707-1.2901-24.535-0.34961-2.3109 3.8963 4.8255 9.6406 16.204l10.265 20.333h7.4546c4.1 0 21.245-1.188 38.1-2.64zm288.95-18.607c4.9917-11.319 9.4472-20.919 9.901-21.333 0.45385-0.41407 0.43716 1.9471-0.0371 5.2471-2.0312 14.133-2.5221 24-1.1942 24 0.75015 0 4.8691-4.05 9.1533-9 4.2842-4.95 13.357-15.07 20.163-22.489 10.844-11.822 14.709-17.88 11.373-17.829-1.4096 0.0217-112.67 34.686-146.67 45.695-5.636 1.8251-5.4704 3.8156 0.66667 8.0129 4.6319 3.168 7.2083 3.611 35 6.0185 16.5 1.4293 35.077 2.5221 41.282 2.4283l11.282-0.17048 9.0758-20.58zm-442.25-112.19c1.1683-2.2593 4.0979-8.7093 6.5102-14.333s11.152-25.526 19.422-44.226 18.54-42.035 22.822-51.856c4.2823-9.8207 8.7933-18.969 10.025-20.33 2.092-2.3117 9.2108-6.9803 50.849-33.348 8.9926-5.6946 15.787-9.3292 15.099-8.0768-0.68795 1.2524-6.9955 10.652-14.017 20.887-11.646 16.978-14.818 23.39-11.569 23.39 0.65807 0 4.7081-1.7419 9-3.8709 4.2919-2.129 18.303-8.6538 31.137-14.5 81.68-37.206 116.1-52.994 121.62-55.784 3.4589-1.7481 7.764-3.1784 9.5668-3.1784 1.8028 0 13.373 4.5762 25.711 10.169 12.338 5.5932 32.633 14.793 45.1 20.443 12.467 5.6507 40.71 18.474 62.762 28.497 22.053 10.023 40.867 18.223 41.809 18.223 2.5088 0 1.2148-2.4817-8.8519-16.976-4.9792-7.1693-11.369-16.572-14.199-20.895l-5.1456-7.8598 5.1456 3.0993c4.7289 2.8483 32.95 20.66 53.812 33.963l8.6667 5.5265 29.215 65.904c16.068 36.247 29.718 66.474 30.333 67.171 3.458 3.9165 0.26176-9.0382-17.583-71.267-2.839-9.9-8.1498-28.8-11.802-42-14.599-52.765-16.684-59.674-18.716-62.031-1.1624-1.3477-13.214-7.064-26.78-12.703-13.567-5.6389-30.067-12.511-36.667-15.272s-24.6-10.262-40-16.669c-15.4-6.407-47.8-20.046-72-30.308s-45.5-18.912-47.333-19.221c-2.1064-0.3547-11.431 2.8314-25.333 8.6557-83.156 34.839-178.71 74.752-189.55 79.177-14.873 6.0704-13.3 3.7118-21.143 31.705-2.9793 10.633-7.7702 27.433-10.646 37.333s-10.325 36-16.553 58c-6.2277 22-12.25 42.625-13.382 45.834-3.6198 10.258-1.6869 15.138 2.6637 6.7245zm697.47 172.44c-1.6065-26.256-1.1607-36.912 1.6814-40.189 1.5367-1.7718 2.8661-5.9413 3.3597-10.537 1.9759-18.396 4.7419-66.44 4.7525-82.547 0.012-17.416-0.0345-17.685-4.2202-24.667-2.3275-3.8823-10.031-17.559-17.119-30.392-7.0879-12.833-16.956-30.533-21.929-39.333-15.175-26.851-29.081-51.668-32.657-58.277-6.6321-12.258-29.267-52.769-43.891-78.555-11.811-20.826-14.841-27.22-14.85-31.333-7e-3 -2.8426-0.38995-8.3184-0.85239-12.168-1.0156-8.4548-2.8308-8.9053-9.4027-2.3333-2.5667 2.5667-5.4169 4.6667-6.3338 4.6667-1.5756 0-33.805-12.917-81.4-32.624-11.733-4.8582-32.433-13.372-46-18.919-20.049-8.1976-74.028-30.423-147.59-60.77l-9.5945-3.9579-16.406 6.9982c-9.023 3.849-24.206 10.162-33.739 14.028-9.5333 3.8665-24.533 10.002-33.333 13.635-29.601 12.22-69.681 28.682-116 47.644-9.5333 3.9028-31.983 13.141-49.887 20.53-17.905 7.3889-33.537 13.434-34.738 13.434s-4.22-2.1-6.7076-4.6667c-2.4877-2.5667-5.6054-4.6667-6.9282-4.6667-2.1265 0-2.4051 1.2938-2.4051 11.17 0 13.091-0.6868 14.998-13.106 36.377-5.0437 8.6823-18.034 31.686-28.868 51.119-10.834 19.433-23.218 41.446-27.521 48.917-4.3029 7.4713-10.728 18.871-14.278 25.333-3.5499 6.462-15.662 28.249-26.916 48.416-11.254 20.167-21.634 38.954-23.067 41.751-2.5613 4.9985-2.5682 5.7828-0.40676 46.667 3.1382 59.361 3.4176 62.208 6.3507 64.719 2.2578 1.9332 2.4794 4.4201 2.4794 27.827 0 29.434 0.41052 28.659-11.884 22.429-7.8741-3.9901-7.3887-1.5855-10.105-50.059-1.0889-19.433-2.9469-51.233-4.1291-70.667-1.1821-19.433-1.8861-38.633-1.5645-42.667 0.48074-6.0285 4.3232-15.281 21.595-52 11.555-24.567 30.903-65.967 42.994-92 12.091-26.033 23.686-50.933 25.766-55.333 2.0799-4.4 8.1008-17.6 13.38-29.333 5.2789-11.733 11.98-26.133 14.892-32 2.9115-5.8667 7.3953-15.716 9.964-21.887 8.9008-21.384 2.1728-16.708 82.68-57.468 39.46-19.978 85.545-43.369 102.41-51.978 54.135-27.634 123.81-63.043 130.33-66.235 3.4797-1.7038 7.6797-3.0816 9.3333-3.0619 2.9703 0.03547 31.304 13.906 91.007 44.552 16.867 8.6579 53.467 27.289 81.333 41.404 27.867 14.114 71.067 35.997 96 48.63 24.933 12.632 46.055 23.66 46.937 24.507 0.88221 0.84624 5.5872 10.539 10.456 21.539 4.8684 11 14.431 32 21.25 46.667 6.8191 14.667 22.417 48.267 34.662 74.667s23.936 51.6 25.979 56c11.783 25.375 32.737 69.735 38.005 80.457 9.7828 19.912 9.6516 18.552 6.286 65.18-1.6288 22.567-3.5375 53.63-4.2417 69.03-1.5313 33.49-2.5305 46.313-3.7558 48.198-1.1478 1.7662-5.5864 4.1191-12.117 6.4232l-5.0714 1.7893zm15.662-27.331c0.45662-3.85 2.021-20.2 3.4763-36.333 1.4554-16.133 3.6137-39.301 4.7963-51.483 1.1826-12.182 1.8914-27.482 1.5751-34l-0.575-11.85-18.079-37.333c-9.9434-20.533-26.792-55.633-37.442-78-10.65-22.367-27.702-58.067-37.894-79.333-10.192-21.267-24.479-51.117-31.749-66.333-11.071-23.173-13.678-27.667-16.051-27.667-1.5583 0-3.9192 1.2-5.2465 2.6667-3.5587 3.9323-5.0322 3.241-2.7009-1.2671 4.7115-9.111 6.2084-7.9704-44.299-33.756-25.483-13.01-70.333-35.997-99.667-51.081-29.333-15.085-71.633-36.765-94-48.178-22.367-11.413-45.621-23.369-51.677-26.568-6.0556-3.1992-11.525-5.8167-12.154-5.8167-1.1056 0-32.317 15.967-211.5 108.2-46.2 23.781-85.65 43.951-87.667 44.823-2.8658 1.2393-3.6667 2.4846-3.6667 5.7018 0 2.2639 0.64861 5.3282 1.4414 6.8095 2.1112 3.9447 0.34968 4.693-3.1992 1.359-5.9416-5.5818-6.9871-4.4471-19.139 20.773-6.2722 13.017-15.896 32.967-21.386 44.333-5.4902 11.367-12.098 25.167-14.683 30.667-2.5857 5.5-13.696 28.9-24.689 52-10.993 23.1-27.755 58.435-37.249 78.522s-20.316 42.587-24.05 50l-6.7893 13.478 2.167 25.333c6.1182 71.526 9.3517 102.89 10.753 104.29 2.2656 2.2656 2.4706-3.0702 1.0226-26.62-0.86797-14.117-1.933-41.567-2.3666-61.001l-0.7885-35.333 8.3055-17.333c4.568-9.5333 11.455-24.233 15.305-32.667s23.638-50.733 43.974-94c20.336-43.267 41.156-87.667 46.267-98.667 18.463-39.739 20.23-43.333 21.312-43.333 0.60399 0 4.5545 2.3992 8.7789 5.3316s8.4307 5.3324 9.3474 5.3333c2.21 3e-3 2.0845-4.5258-0.34776-12.543-3.353-11.053-3.0729-11.681 7.0188-15.737 116.61-46.874 281.19-111.72 283.55-111.72 1.7148 0 6.3913 1.4477 10.392 3.2172 6.8346 3.0226 76.574 31.134 217.06 87.495 33.367 13.386 61.164 24.78 61.771 25.318 0.60759 0.5386-0.14241 5.1668-1.6667 10.285-1.5242 5.1182-2.7714 10.291-2.7714 11.495 0 3.5391 3.7303 2.5491 11.846-3.1437 4.1817-2.9333 8.0662-5.3333 8.632-5.3333 0.56587 0 3.1605 4.65 5.7658 10.333 8.4709 18.478 48.155 103.76 72.745 156.33 13.206 28.233 31.221 66.933 40.033 86l16.022 34.667-1.5499 50c-1.8362 59.235-1.9138 78.667-0.31412 78.667 0.64882 0 1.5533-3.15 2.0099-7z' fill='" + unquote(centerLogoColHash) + "' opacity='"+ centerLogoOpacity + "' stroke-width='1.3333'/%3e%3c/svg%3e";
+    if enableCenterLogo{
+        centerLogo=centerLogoOpt;
+    }else{
+        centerLogo=null;
+    }
+    if enableCornerLogo{
+        cornerLogo=cornerLogoOpt;
+    }else{
+        cornerLogo=null;
+    }
+    if enableCornerLogo2==0{
+        cornerLogo2TextOnly='';
+    }
+    board3=boardBGOpt;
+    if boardBGOpt!="colorOnly"{
+       boardBGColor=#0000;
+    }
+    if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
+        board3=null;
+        framePosX=bgPosX;
+        framePosY=bgPosY;
+        
+    }
+    /*Board selector*/
+    if myBoard!="disabled"{
+        .board-layout-chessboard .board,
+        .fade-in-overlay/*chesskids*/
+        ,
+        #boarddefault_boardarea/*chesskids*/
+        ,
+        #divChessBoard_boardarea/*chesskids*/
+        ,
+        #vsComputerDiv_boardarea/*chesskids*/
+        ,
+        div[id^="board-"][class*="chess-board__board"]/*chesskids*/
+        ,
+        div[class^="board v-board disabled rounded"],
+        div[class^="daily-puzzle-board"],
+        div[class^="board chessboard-component"],
+        div[class^="board v-board chessboard-component"],
+        div[class^="board rounded"],
+        div[class^="board rounded fippled"],
+        div[class^="board fippled rounded"],
+        div[class^="board v-board rounded"],
+        div[class^="board v-board fippled rounded"],
+        div[class^="board disabled rounded"],
+        div[id$="_ChessBoard_boardarea"],
+        div[id^="chess_com_openingboard_1"],
+        div[id^="board_training"],
+        div[id^="divBoard_boardarea"],
+        div[id^="chess_com_tactics_board"],
+        div[id^="chessboard_"],
+        div[id*="chessboard_"],
+        div[id^="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentor_board_1_boardarea"],
+        div[id^="chess_com_emailboard_"],
+        div[id^="board-blank"],
+        chess-board[class^="board"],
+        chess-board[class^="board flipped"],
+        chess-board[id^="board-blank"],
+        chess-board[id^="board-vs-personalities"],
+        div[id*="chess_com_emailboard_"] {
+            if bgSize=="cover"{
+                background-repeat:no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+            }else{
+                background-repeat:repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
+            }
+            background-size: specialEffectSize, auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize;
+            background-blend-mode: normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal;
+            background-position: 0 0, cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY;
+            background-color: boardBGColor; 
+            background-image: url(specialEffect), url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
+        } 
+        /*Small board for game preview*/
+        .game-board-preview,
+        .game-preview-component.open-games-item-preview,
+        .game-preview-component.current-games-grid-preview,
+        .game-preview-component.promo-preview,
+        div [style*="40.png"][class="game-preview-component"],
+        div [style*="40.jpg"][class="game-preview-component"] {
+            /*clean board preview, no logo*/
+            background-image: url(svgBoard), url(board3) !important;
+            background-blend-mode: svgBoardBlend, normal;
+            background-color: solidBoardBGColor;
+            background-position:0 0, bgPosX bgPosY;
+            background-size:100%, bgSize;
+            if bgSize=="cover"{
+                background-repeat: no-repeat, no-repeat !important;
+            }else{
+                background-repeat: no-repeat, repeat !important;
+            }
+        }
+        .board-popover-component, .board-popover-component:before{
+            background-image: url(frameOpt) !important;
+            background-position:framePosX framePosY;
+            background-size:frameSize;           
+            background-color: solidBoardBGColor;
+            if bgSize=="cover"{
+                background-repeat: no-repeat !important;
+            }else{
+                background-repeat: repeat !important;
+            }
+            border-color:solidBoardBGColor!important;
+            border-image:url(frameOpt) 25 stretch!important;
+        }
+
+        /*========== Coordinates ==========*/
+
+        /*coords light*/
+        .coords-light,
+        .coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light,
+        text.coordinate-light {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: lCoordCol!important;
+                fill: @color;
+            }else {
+                color: transparentify(svgDarkSqColor, #000, 1) !important;
+                fill: @color;
+                if svgDarkSqOpacity>='0.7'{
+                    opacity:svgDarkSqOpacity;
+                }
+            }
+        }
+
+        /*coords dark*/
+        .coords-dark,
+        .coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark,
+        text.coordinate-dark {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: dCoordCol !important;
+                fill: @color;
+            }else {
+                color: transparentify(svgLightSqColor, #000, 1) !important;
+                fill: @color;
+                if svgLightSqOpacity>='0.7'{
+                    opacity:svgLightSqOpacity;
+                }
+            }
+        }/*======End coords ======*/
+
+        /*====== Evaluation Bar ======*/
+        if evalOpt!="disabled" {
+            .evaluation-bar-white,
+            .score-bar__fill[data-v-b0ff6725] {
+                if evalOpt == "auto" {
+                    background-color: svgLightSqColor !important;
+                }else if evalOpt == "custom" {
+                    background-color: lEvalCol !important;
+                }
+            }
+            .evaluation-bar-black {
+                if evalOpt == "auto" {
+                    background-color: saturate(svgDarkSqColor, 10%) !important;
+                }else if evalOpt == "custom" {
+                    background-color: dEvalCol !important;
+                }
+            }
+            /*evaluation bar width for chesskid*/
+            div [class="score-bar"] {
+                width: 3rem;
+                left: 1.4rem;
+            }
+            .score-bar__text[data-v-b0ff6725] {
+            font-size: 9px!important;
+            }
+            .evaluation-bar-bar {
+                opacity: evalBarOpacity!important;
+                box-shadow: 1px 1px 8px 2px #0000002e;
+                z-index:1;
+            }
+            /*====== End Evaluation Bar ======*/
+        }
+    }/*end board*/
+        
+    /*Highlight*/    
+    if setHighlight=="op1" {
+        #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
+        #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
+        .move-square,
+        .highlight:not({notThisColors}):not([class="stream highlight"]) {
+            background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        }
+    }
+    /*=== Highlight opacity===*/
+    .move-square,
+    .highlight:not({notThisColors}) {
+        opacity: highlightOpacity!important;
+    }/*====== End highlight ======*/
+            
+    /*====== change arrows colors ======*/
+    if enableArrowSettings {
+        .arrow {
+            filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
+            opacity: arrowOpacity !important;
+        }
+    }/*====== End arrows colors ======*/
+    /*------end section------*/
+
+    /*======== Wallpaper =======*/
+    if enableWallpaper=="1" {
+            if enableLightTheme {
+                .dark-mode.mce-content-body, .dark-mode .post-tinymce-editor{
+                    border-radius: 3px!important;
+                    background-color:#c8c8c8ab!important;
+                }
+                .post-category-link-category:hover,
+                #tinymce:not(.light-mode),
+                #tinymce:not(.light-mode) ol,
+                #tinymce:not(.light-mode) p,
+                #tinymce:not(.light-mode) ul {
+                    color: #000!important;
+                }
+                .dark-mode .tinymce-component .tox-tinymce .tox-edit-area label,
+                .dark-mode .tinymce-component .tox-tinymce .tox-statusbar label {
+                    color:#312e2e!important;
+                }
+            }else{
+                .dark-mode.mce-content-body, .dark-mode .post-tinymce-editor{
+                    border-radius: 3px!important;
+                    background-color:#00000075!important;
+                }
+            }
+            .theme-bg,
+            body:after {
+                content: '';
+                background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
+                if setWallpaper=="cover" || setWallpaper=="contain" || setWallpaper==percentSize{
+                    background-size: setWallpaper !important;
+                    -webkit-background-size: @background-size;
+                    -moz-background-size: @background-size;
+                    -o-background-size: @background-size;
+                }
+                if setWallpaper=="cover"{
+                    background-repeat:no-repeat!important;
+                }else{
+                    background-repeat:repeat!important;
+                }
+                background-position: center center;                    
+                position: fixed;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1000;
+            }
+        
+        /*clear background of text message box*/
+        .mce-content-body, .mce-content-body:after{
+            content: ''!important;
+            background: #79797900!important;
+        }
+        .board-layout-icon:hover, .board-layout-icon.icon-font-chess:hover {
+            color:#fff!important;
+            opacity:1!important;
+        }
+    }/*=== End wallpaper ===*/
+
+    /*====== Panels ======*/
+    /*chesskid gold membership page*/
+    .tabs-horiz,
+    .lobby__box__content,
+    .lobby__app__content,
+    .logo-wrapper{
+        background-color:#0006;
+    }
+    .logo-wrapper{
+        background-color:#0006;
+        border-radius: 18px !important;
+    }
+    /*fix margin top*/
+    .board-wrapper {
+        margin-top: 1rem;
+    }
+    /*end chesskid gold membership page*/
+    
+
+}
+
+@-moz-document domain("chess.com") {
+    /*Border*/
+
+    testColor="" + boardBGColor;
+    resultColor=slice(testColor,0,-6);
+    
+    innBorderSize=0.4rem;
+    if innBorderSize > 0 {
+        inn=innBorderSize/2;
+    }else{inn=0}
+    
+
+    @media (min-width: 1200px){
+        if enableBoardFrame{ 
+            /*board*/
+
+            .board-layout-chessboard .board,
+            .fade-in-overlay,
+            #boarddefault_boardarea,
+            #divChessBoard_boardarea,
+            #vsComputerDiv_boardarea,
+            div[id^="board-"][class*="chess-board__board"],
+            div[class^="board v-board disabled rounded"],
+            div[class^="daily-puzzle-board"],
+            div[class^="board chessboard-component"],
+            div[class^="board v-board chessboard-component"],
+            div[class^="board rounded"],
+            div[class^="board rounded fippled"],
+            div[class^="board fippled rounded"],
+            div[class^="board v-board rounded"],
+            div[class^="board v-board fippled rounded"],
+            div[class^="board disabled rounded"],
+            div[id$="_ChessBoard_boardarea"],
+            div[id^="chess_com_openingboard_1"],
+            div[id^="board_training"],
+            div[id^="divBoard_boardarea"],
+            div[id^="chess_com_tactics_board"],
+            div[id^="chessboard_"],
+            div[id*="chessboard_"],
+            div[id^="chess_com_chessmentorboard_"],
+            div[id*="chess_com_chessmentorboard_"],
+            div[id*="chess_com_chessmentor_board_1_boardarea"],
+            div[id^="chess_com_emailboard_"],
+            div[id^="board-blank"],
+            chess-board[class^="board"]:not(.round-games-list-item-component chess-board),
+            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board),
+            chess-board[id^="board-blank"],
+            chess-board[id^="board-vs-personalities"],
+            div[id*="chess_com_emailboard_"] {
+                transform-style: preserve-3d;
+                width:'calc(var(--boardWidth) * %s)!important;' % ajustBoardSize;
+                height:'calc(var(--boardHeight) * %s)!important;' % ajustBoardSize;
+                if ajustBoardSize=="0.9"{
+                multiplierL=0.54;
+                multiplierT=0.5; 
+                }else{
+                multiplierL=0.53;
+                multiplierT=0.5; 
+                }              
+                boardRatioL='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierL));
+                boardRatioT='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierT));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatioL) (inn));
+                margin-top:'calc(var(--boardHeight) * %s + %s)!important;' % ((boardRatioT) (inn));
+                if frameRadiusInOut{
+                    border-radius:0!important;                    
+                }else{
+                    border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+                }
+                box-shadow: boardShadow;
+                box-shadow: boardShadowInset;                    
+                if enableBoardShadow && enableBoardShadowInset {
+                    box-shadow: boardShadow, boardShadowInset !important;
+                }
+                if enableInnerBorder {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+                }
+            }
+            /*board*/
+            .board-layout-chessboard .board:before,
+            .fade-in-overlay:before,
+            #boarddefault_boardarea:before,
+            #divChessBoard_boardarea:before,
+            #vsComputerDiv_boardarea:before,
+            div[id^="board-"][class*="chess-board__board"]:before,            
+            div[class^="board v-board disabled rounded"]:before,
+            div[class^="daily-puzzle-board"]:before,
+            div[class^="board chessboard-component"]:before,
+            div[class^="board v-board chessboard-component"]:before,
+            div[class^="board rounded"]:before,
+            div[class^="board rounded fippled"]:before,
+            div[class^="board fippled rounded"]:before,
+            div[class^="board v-board rounded"]:before,
+            div[class^="board v-board fippled rounded"]:before,
+            div[class^="board disabled rounded"]:before,
+            div[id$="_ChessBoard_boardarea"]:before,
+            div[id^="chess_com_openingboard_1"]:before,
+            div[id^="board_training"]:before,
+            div[id^="divBoard_boardarea"]:before,
+            div[id^="chess_com_tactics_board"]:before,
+            div[id^="chessboard_"]:before,
+            div[id*="chessboard_"]:before,
+            div[id^="chess_com_chessmentorboard_"]:before,
+            div[id*="chess_com_chessmentorboard_"]:before,
+            div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
+            div[id^="chess_com_emailboard_"]:before,
+            div[id^="board-blank"]:before,
+            chess-board[class^="board"]:not(.round-games-list-item-component chess-board):before,
+            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board):before,
+            chess-board[id^="board-blank"]:before,
+            chess-board[id^="board-vs-personalities"]:before,
+            div[id*="chess_com_emailboard_"]:before {
+				background-position: 0 0, framePosX framePosY !important;
+                background-color: frameColor !important;
+                background-size:100% 100%, frameSize!important;
+                if frameSize=="cover" {
+                    background-repeat:no-repeat, no-repeat!important;
+                }else{
+                    background-repeat:repeat, repeat!important;
+                }
+                background-image: url(specialEffect), url(frameOpt) !important;
+                transform: translateZ(-1px);
+                content: ""!important;
+                display:block;
+                grid-column: board;                
+                width:var(--boardWidth)!important;
+                height: var(--boardHeight)!important;
+                padding-bottom: 0;
+                if ajustBoardSize=="0.9"{
+                    multiplier=-0.54;
+                }else{
+                    multiplier=-0.526;
+                }
+                boardRatio='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplier));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+                margin-top:@margin-left;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+                border-radius: frameRadius!important;
+                box-shadow: frameShadow;
+                box-shadow: frameShadowInset;
+                if enableFrameShadow && enableFrameShadowInset {
+                    box-shadow: frameShadow, frameShadowInset !important;
+                }
+            }
+            /*
+            if enableInnerBorder {
+                zzz.board .arrows:not(.round-games-list-item-component svg):not(.event-list-tab-events-component svg),
+                zzz.board.pseudo3d .arrows:not(.round-games-list-item-component svg):not(.event-list-tab-events-component svg) {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+                    if frameRadiusInOut{
+                        border-radius:0!important;                    
+                    }else{
+                        border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+                    }
+                }
+            }*/
+            
+            /*outside coords settings*/
+            /*Disable outsize coords if frame size is too small*/
+            if ajustBoardSize>=0.92{
+                enableOutsideCoords=0;
+                outCoordFontCase=lowercase;
+                outCoordFontWeight=600;
+                outCoordFontName='Segoe UI';
+                
+            }
+            .coordinate-grey, .coordinate-dark, .coordinate-light {
+                text-transform: outCoordFontCase !important;
+                fill:outCoordColorOpt!important;
+                font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
+                font-weight: outCoordFontWeight!important;   
+                font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+            }
+            .outside:not(.round-games-list-item-games .coordinates) {
+                transform: translate(-5.5%,4.5%)!important;
+            }
+            body.outside-coords:not(.with-pieces,.real-3d):not(.round-games-list-item-games .coordinates) {
+                --coordinatesGutter: 1rem!important;
+            }
+            
+            if enableOutsideCoords {
+                .coordinates:not(.round-games-list-item-games .coordinates){
+                    transform: translate(-4.5%,4.8%)!important;
+                }                
+                .coords-dark:not(.round-games-list-item-games .coords-dark),
+                .coordinate-dark:not(.round-games-list-item-games .coordinate-dark),
+                div.number.coords-dark:not(.round-games-list-item-games div.number.coords-dark),
+                div.letter.coords-dark:not(.round-games-list-item-games div.letter.coords-dark),
+                text.coordinate-dark:not(.round-games-list-item-games text.coordinate-dark),
+                .coords-light:not(.round-games-list-item-games .coords-light),
+                .coordinate-light:not(.round-games-list-item-games .coordinate-light),
+                div.number.coords-light:not(.round-games-list-item-games div.number.coords-light),
+                div.letter.coords-light:not(.round-games-list-item-games div.letter.coords-light),
+                text.coordinate-light:not(.round-games-list-item-games text.coordinate-light) {
+                    color: outCoordColorOpt !important;
+                    fill: @color;
+                    opacity: 1!important;
+                }
+            }
+        }
+    }/*end board border*/
+    
+}
+@-moz-document url-prefix("https://www.chess.com/events"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"){
+    /*Events*/
+    /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
+    @media (min-width: 1200px){
+    /*Main border rules*/
+    testColor="" + boardBGColor;
+    resultColor=slice(testColor,0,-6);
+    innBorderSize=0.4rem;
+    if innBorderSize > 0 {
+        inn=innBorderSize/2;
+    }else{inn=0}
+    
+    if boardBGOpt==frameOpt && enableBoardFrame {
+        board3=null;
+        framePosX=bgPosX;
+        framePosY=bgPosY;        
+    }
+
+
+    if enableBoardFrame{
+        /*board*/
+        .main-tab-game-component chess-board {
+            transform-style: preserve-3d;
+            width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
+            height: @width;
+            boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
+            margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+            margin-top:@margin-left;
+            if frameRadiusInOut{
+                border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+            }else{
+                border-radius:0!important;
+            }
+            box-shadow: boardShadow;
+            box-shadow: boardShadowInset;                    
+            if enableBoardShadow && enableBoardShadowInset {
+                box-shadow: boardShadow, boardShadowInset !important;
+            }
+            if enableInnerBorder {
+                box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+            }
+        }
+        /*board*/
+        .main-tab-game-component chess-board:before {
+            if myBoard!="disabled"{                    
+            background:frameColor url(frameOpt) framePosX framePosY!important; 
+            }                
+            transform: translateZ(-1px);
+            content: ""!important;
+            display:block;
+            grid-column: board;                
+            width:var(--mainBoardWidth)!important;
+            height: @width;
+            padding-bottom: 0;
+            boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
+            margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+            margin-top:@margin-left;
+            background-size: frameSize!important;
+            -webkit-background-size: @background-size;
+            -moz-background-size: @background-size;
+            -o-background-size: @background-size;
+            background-repeat: frameRepeat!important;
+            border-radius: frameRadius!important;
+            box-shadow: frameShadow;
+            box-shadow: frameShadowInset;                
+            if enableFrameShadow && enableFrameShadowInset {
+                box-shadow: frameShadow, frameShadowInset !important;
+            }
+        }
+    }/*end board border*/
+    
+
+        if enable lightTheme{
+            .dark-mode .game-item-component,
+            .dark-mode .ui_v5-select-component:not(.ui_v5-select-light),
+            .ui_v5-select-component.ui_v5-select-dark,
+            .dropdown-component,
+            .sidebar-tab-games-label,
+            .dark-mode .player-tagline-component:not(.light-mode) .player-tagline-name,
+            .player-tagline-component.dark-mode .player-tagline-name
+            .player-info-vertical-rating,
+            .dark-mode .player-info-vertical-name{
+                color:panelFontColor!important;
+            }
+        }
+        .player-tagline-rating {
+            color: #cddc39!important;
+            text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+        }
+        .player-card-component {
+            background-color: #272424cf!important;
+        }
+        .player-card-bio:after {
+            background: linear-gradient(180deg,hsla(0,0%,100%,0),#252222 70%)!important;
+        }
+        .main-tab-game-sidebar {
+            margin-left: 2rem!important;
+        }
+    }
+    
+}/*End Events*/
