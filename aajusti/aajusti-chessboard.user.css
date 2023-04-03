@@ -355,10 +355,6 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         //enableFrameShadow=1;
-        boardFrame1='https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-blue-technology-electronic-circuit-background-sensehigh-tech-image_61146.jpg';
-        boardFrame2='https://imejunior.com.br/wp-content/uploads/2018/03/blue-tech-circuit-board-technology-animated-background-video-graphic-design-hd-1920x1080_ewva7rwie__F0000.png';
-        boardFrame3='https://i.pinimg.com/originals/3d/08/e0/3d08e03cb40252526fee2036a67f07f1.gif';
-        boardFrame4='https://i.pinimg.com/originals/e3/77/46/e377461761c8ab33fbb713ada400984a.gif';
         setHighlight=op1;
         hlColor=#00d0ff;
         highlightOpacity=0.7;
@@ -421,11 +417,11 @@
 		enableFrameShadowInset=0;
 		enableFrameShadow=1;
 		setHighlight='op1';
-        hlColor=#00d0ff;
-        highlightOpacity=0.7;
-        enableCornerLogo=0;
-        enableCornerLogo2=0;
-        coordsBlend='normal';
+		hlColor=#00d0ff;
+		highlightOpacity=0.7;
+		enableCornerLogo=0;
+		enableCornerLogo2=0;
+		coordsBlend='normal';
 		enableCustomCoord=1;
 		outCoordFontSize=0.24rem;
 		outCoordFontName='Segoe UI';
