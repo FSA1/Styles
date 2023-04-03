@@ -87,7 +87,7 @@
             "🔗Link5": "boardFrame5",
             "Somente cor*": "colorOnly",
         }
-@var    color    boardBGColor  "↪🔸Cor de fundo"   #0D2A5A
+@var    color    boardBGColor  "↪🔸Cor de fundo"   #0d2a5a
 @var    select      bgSize    "↪🔸Tam. do fundo"{
             "Estender": "cover",
             "Conter": "contain",
@@ -111,7 +111,7 @@
             "Igual ao fundo*": "boardBGOpt",
             "Somente cor": "colorOnly",
         }
-@var    color    frameColor  "↪🟢Cor da borda"   #0D2A5A
+@var    color    frameColor  "↪🟢Cor da borda"   #0d2a5a
 
 @var    select      frameSize    "Tam. da borda"{
             "Estender": "cover",
@@ -162,7 +162,7 @@
         }
 @var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 
-@var color    centerLogoCol  "Cor do logo central"   #5e747c
+@var color    centerLogoCol  "Cor do logo central"   #0031d340
 @var    range    centerLogoSize  "Tam. logo central" [50, 10, 120, 1, "%"]
 @var    range    centerLogoOpacity  "Opacidade do logo central" [0.4, 0.01, 1, 0.01, ""]
 @var    range    centerLogoPosX  "Ajuste horizontal" [50, -20, 120, 2, "%"]
@@ -182,7 +182,7 @@
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
 @var    range    cornerLogoPosY  "↪Ajuste vertical" [53, -40, 150, 1, "%"]
-@var color    cornerLogoCol  "↪Cor do logo secundário"   #6b7e8454
+@var color    cornerLogoCol  "↪Cor do logo secundário"   #0031d340
 @var    range    cornerLogoFontSize  "↪Tam. da fonte" [10, 8, 24, 2, "px"]
 @var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
 @var select   cornerLogoFontName   "↪🆎Nome da fonte"{
@@ -225,7 +225,7 @@
     }
 @var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
 @var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [16, 8, 24, 2, "px"]
-@var color    cornerLogo2Col  "↪Cor texto 2"   #6b7e8454
+@var color    cornerLogo2Col  "↪Cor texto 2"   #0031d340
 @var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogo2Size  "↪Tam.  texto 2" [14, 10, 100, 1, "%"]
 @var    range    cornerLogo2PosX  "↪Ajuste horiz. texto 2" [109, -40, 150, 1, "%"]
