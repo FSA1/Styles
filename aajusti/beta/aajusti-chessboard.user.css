@@ -325,7 +325,7 @@
     
 }/*Themes below*/
 @-moz-document domain("chess.com") {
-    /*Themes*/   
+    /*Themes*/
     
     if myBoard=="aajusti-anim" {
         svgBoardBlend=normal;
@@ -334,7 +334,7 @@
         enableGlobalColor=0;
         svgDarkSqColor=#007cdb;
         svgDarkSqOpacity=0.85;
-        boardBGOpt='https://i.pinimg.com/originals/3d/08/e0/3d08e03cb40252526fee2036a67f07f1.gif';
+        boardBGOpt=server +'aajusti/gfx/anim-blue-max.gif';
         boardBGColor=rgba(224,221,202,0);
         bgSize=cover;
         bgPosX=50%;
@@ -396,7 +396,7 @@
 		enableGlobalColor=0;
 		svgDarkSqColor=#007cdb;
 		svgDarkSqOpacity=0.85;
-		boardBGOpt='https://imejunior.com.br/wp-content/uploads/2018/03/blue-tech-circuit-board-technology-animated-background-video-graphic-design-hd-1920x1080_ewva7rwie__F0000.png';
+		boardBGOpt=server +'aajusti/gfx/bg-blue.jpg';
 		boardBGColor=rgba(224,221,202,0);
 		bgSize=cover;
 		bgPosX=55%;
