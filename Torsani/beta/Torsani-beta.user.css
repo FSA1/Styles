@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.4-beta
+@version        1.0.5-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -157,12 +157,12 @@
 
 @var    checkbox    enableFrameShadowInset  "🟧Sombra interna da borda" 0
 @var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 34, 1, "px"]
-@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]#00000080
+@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]
 @var    color    frameShadowInsetColor  "↪🔸Cor da sombra"   rgba(0, 0, 0, .4)
 
 @var    checkbox    enableFrameShadow  "🟧Sombra externa da borda" 1
 @var    range    frameShadowBlur    "↪🔸Desfocar" [8, 0, 34, 1, "px"]
-@var    range    frameShadowSpread   "↪🔸Dispersar" [4, 0, 34, 1, "px"]#00000080
+@var    range    frameShadowSpread   "↪🔸Dispersar" [4, 0, 34, 1, "px"]
 @var    color    frameShadowColor  "↪🔸Cor da sombra"    rgba(0, 0, 0, .5)
 
 @var    text     boardFrame1    "🔗Link textura 1"   "'entre aspas simples'"

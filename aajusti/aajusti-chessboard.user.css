@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.4-beta
+@version        1.0.0-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -41,7 +41,7 @@
 @var    checkbox    enableArrowSettings   "🟩Setas modificadas" 0 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
-@var    checkbox    enableCenterLogo   "🟩Logo central" 0
+@var    checkbox    enableCenterLogo   "🟩Logo central" 1
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
 @var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
 @var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
@@ -87,7 +87,7 @@
             "🔗Link5": "boardFrame5",
             "Somente cor*": "colorOnly",
         }
-@var    color    boardBGColor  "↪🔸Cor de fundo"   #0D2A5A
+@var    color    boardBGColor  "↪🔸Cor de fundo"   #0d2a5a
 @var    select      bgSize    "↪🔸Tam. do fundo"{
             "Estender": "cover",
             "Conter": "contain",
@@ -111,7 +111,7 @@
             "Igual ao fundo*": "boardBGOpt",
             "Somente cor": "colorOnly",
         }
-@var    color    frameColor  "↪🟢Cor da borda"   #0D2A5A
+@var    color    frameColor  "↪🟢Cor da borda"   #0d2a5a
 
 @var    select      frameSize    "Tam. da borda"{
             "Estender": "cover",
@@ -162,7 +162,7 @@
         }
 @var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 
-@var color    centerLogoCol  "Cor do logo central"   #5e747c
+@var color    centerLogoCol  "Cor do logo central"   #0031d340
 @var    range    centerLogoSize  "Tam. logo central" [50, 10, 120, 1, "%"]
 @var    range    centerLogoOpacity  "Opacidade do logo central" [0.4, 0.01, 1, 0.01, ""]
 @var    range    centerLogoPosX  "Ajuste horizontal" [50, -20, 120, 2, "%"]
@@ -182,7 +182,7 @@
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
 @var    range    cornerLogoPosY  "↪Ajuste vertical" [53, -40, 150, 1, "%"]
-@var color    cornerLogoCol  "↪Cor do logo secundário"   #6b7e8454
+@var color    cornerLogoCol  "↪Cor do logo secundário"   #0031d340
 @var    range    cornerLogoFontSize  "↪Tam. da fonte" [10, 8, 24, 2, "px"]
 @var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
 @var select   cornerLogoFontName   "↪🆎Nome da fonte"{
@@ -225,7 +225,7 @@
     }
 @var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
 @var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [16, 8, 24, 2, "px"]
-@var color    cornerLogo2Col  "↪Cor texto 2"   #6b7e8454
+@var color    cornerLogo2Col  "↪Cor texto 2"   #0031d340
 @var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogo2Size  "↪Tam.  texto 2" [14, 10, 100, 1, "%"]
 @var    range    cornerLogo2PosX  "↪Ajuste horiz. texto 2" [109, -40, 150, 1, "%"]
@@ -355,10 +355,6 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         //enableFrameShadow=1;
-        boardFrame1='https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-blue-technology-electronic-circuit-background-sensehigh-tech-image_61146.jpg';
-        boardFrame2='https://imejunior.com.br/wp-content/uploads/2018/03/blue-tech-circuit-board-technology-animated-background-video-graphic-design-hd-1920x1080_ewva7rwie__F0000.png';
-        boardFrame3='https://i.pinimg.com/originals/3d/08/e0/3d08e03cb40252526fee2036a67f07f1.gif';
-        boardFrame4='https://i.pinimg.com/originals/e3/77/46/e377461761c8ab33fbb713ada400984a.gif';
         setHighlight=op1;
         hlColor=#00d0ff;
         highlightOpacity=0.7;
@@ -421,11 +417,11 @@
 		enableFrameShadowInset=0;
 		enableFrameShadow=1;
 		setHighlight='op1';
-        hlColor=#00d0ff;
-        highlightOpacity=0.7;
-        enableCornerLogo=0;
-        enableCornerLogo2=0;
-        coordsBlend='normal';
+		hlColor=#00d0ff;
+		highlightOpacity=0.7;
+		enableCornerLogo=0;
+		enableCornerLogo2=0;
+		coordsBlend='normal';
 		enableCustomCoord=1;
 		outCoordFontSize=0.24rem;
 		outCoordFontName='Segoe UI';
