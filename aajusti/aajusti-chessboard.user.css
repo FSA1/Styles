@@ -959,24 +959,6 @@
     }/*====== End arrows colors ======*/
     /*------end section------*/
 
-    /*====== Panels ======*/
-    /*chesskid gold membership page*/
-    .tabs-horiz,
-    .lobby__box__content,
-    .lobby__app__content,
-    .logo-wrapper{
-        background-color:#0006;
-    }
-    .logo-wrapper{
-        background-color:#0006;
-        border-radius: 18px !important;
-    }
-    /*fix margin top*/
-    .board-wrapper {
-        margin-top: 1rem;
-    }
-    /*end chesskid gold membership page*/
-
     /*change highlight made by the user*/
     [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
         background-color:hlSqColor1!important;
