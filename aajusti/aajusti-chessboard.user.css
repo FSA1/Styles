@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.2-beta
+@version        1.0.3-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -959,65 +959,6 @@
     }/*====== End arrows colors ======*/
     /*------end section------*/
 
-    /*======== Wallpaper =======*/
-    if enableWallpaper=="1" {
-            if enableLightTheme {
-                .dark-mode.mce-content-body, .dark-mode .post-tinymce-editor{
-                    border-radius: 3px!important;
-                    background-color:#c8c8c8ab!important;
-                }
-                .post-category-link-category:hover,
-                #tinymce:not(.light-mode),
-                #tinymce:not(.light-mode) ol,
-                #tinymce:not(.light-mode) p,
-                #tinymce:not(.light-mode) ul {
-                    color: #000!important;
-                }
-                .dark-mode .tinymce-component .tox-tinymce .tox-edit-area label,
-                .dark-mode .tinymce-component .tox-tinymce .tox-statusbar label {
-                    color:#312e2e!important;
-                }
-            }else{
-                .dark-mode.mce-content-body, .dark-mode .post-tinymce-editor{
-                    border-radius: 3px!important;
-                    background-color:#00000075!important;
-                }
-            }
-            .theme-bg,
-            body:after {
-                content: '';
-                background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
-                if setWallpaper=="cover" || setWallpaper=="contain" || setWallpaper==percentSize{
-                    background-size: setWallpaper !important;
-                    -webkit-background-size: @background-size;
-                    -moz-background-size: @background-size;
-                    -o-background-size: @background-size;
-                }
-                if setWallpaper=="cover"{
-                    background-repeat:no-repeat!important;
-                }else{
-                    background-repeat:repeat!important;
-                }
-                background-position: center center;                    
-                position: fixed;
-                height: 100vh;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: -1000;
-            }
-        
-        /*clear background of text message box*/
-        .mce-content-body, .mce-content-body:after{
-            content: ''!important;
-            background: #79797900!important;
-        }
-        .board-layout-icon:hover, .board-layout-icon.icon-font-chess:hover {
-            color:#fff!important;
-            opacity:1!important;
-        }
-    }/*=== End wallpaper ===*/
-
     /*====== Panels ======*/
     /*chesskid gold membership page*/
     .tabs-horiz,
@@ -1050,6 +991,35 @@
         background-color: hlSqColor4!important;
     }
 
+}
+@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer") {
+
+    /*======== Wallpaper =======*/
+    if enableWallpaper=="1" {
+            .theme-bg,
+            body:after {
+                content: '';
+                background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
+                if setWallpaper=="cover" || setWallpaper=="contain" || setWallpaper==percentSize{
+                    background-size: setWallpaper !important;
+                    -webkit-background-size: @background-size;
+                    -moz-background-size: @background-size;
+                    -o-background-size: @background-size;
+                }
+                if setWallpaper=="cover"{
+                    background-repeat:no-repeat!important;
+                }else{
+                    background-repeat:repeat!important;
+                }
+                background-position: center center;                    
+                position: fixed;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1000;
+            }
+    }/*=== End wallpaper ===*/
 }
 
 @-moz-document domain("chess.com") {
