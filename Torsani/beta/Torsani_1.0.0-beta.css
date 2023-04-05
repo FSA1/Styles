@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.4-beta
+@version        1.0.6-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -36,7 +36,7 @@
 @var    color    svgLightSqColor  "Casas claras"   #e9e4d4
 @var    color    svgDarkSqColor  "Casas escuras"   #6b7e84
 @var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
-@var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
 @var    range    svgLightSqOpacity  "Opacidade claras" [1.00, 0.01, 1.00, 0.01, ""]
 
@@ -52,6 +52,11 @@
 @var    color    hlColor  "↪Cor do destaque"   #ffff00
 
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.4, 0.3, 1, 0.1, ""]
+@var    color    hlSqColor1  "🔵Destaque de casa 1"   #52b0dc
+@var    color    hlSqColor2  "🟢Destaque de casa 2"   #acce59
+@var    color    hlSqColor3  "🟠Destaque de casa 3"   #fa0
+@var    color    hlSqColor4  "🔴Destaque de casa 4"   #eb6150
+
 
 @var    checkbox    enableArrowSettings   "🟩Setas modificadas" 0 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
@@ -134,7 +139,7 @@
 
 @var    select      frameSize    "Tam. da borda"{
             "Estender": "cover",
-            "Lado a lado": "contain",
+            "Conter": "contain",
             "Igual ao fundo*": "bgSize",
             "Porcentagem": "fPercentSize",
         }
@@ -157,12 +162,12 @@
 
 @var    checkbox    enableFrameShadowInset  "🟧Sombra interna da borda" 0
 @var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 34, 1, "px"]
-@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]#00000080
+@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]
 @var    color    frameShadowInsetColor  "↪🔸Cor da sombra"   rgba(0, 0, 0, .4)
 
 @var    checkbox    enableFrameShadow  "🟧Sombra externa da borda" 1
 @var    range    frameShadowBlur    "↪🔸Desfocar" [8, 0, 34, 1, "px"]
-@var    range    frameShadowSpread   "↪🔸Dispersar" [4, 0, 34, 1, "px"]#00000080
+@var    range    frameShadowSpread   "↪🔸Dispersar" [4, 0, 34, 1, "px"]
 @var    color    frameShadowColor  "↪🔸Cor da sombra"    rgba(0, 0, 0, .5)
 
 @var    text     boardFrame1    "🔗Link textura 1"   "'entre aspas simples'"
@@ -183,7 +188,7 @@
             "Corinth S Jorge": "logoCorinthiansSJ",
             "Corinth. Águia": "logoCorinthEagle",
         }
-@var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 
 @var color    centerLogoCol  "Cor do logo central"   #5e747c
 @var    range    centerLogoSize  "Tam. logo central" [50, 10, 120, 1, "%"]
@@ -203,7 +208,7 @@
             "🔗Texto*": "cornerLogoTextOnly",
         }
 
-@var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogoSize  "↪Tam. logo secundário" [15, 10, 120, 1, "%"]
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
@@ -252,7 +257,7 @@
 @var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
 @var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [16, 8, 24, 2, "px"]
 @var color    cornerLogo2Col  "↪Cor texto 2"   #6b7e8454
-@var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogo2Size  "↪Tam.  texto 2" [14, 10, 100, 1, "%"]
 @var    range    cornerLogo2PosX  "↪Ajuste horiz. texto 2" [109, -40, 150, 1, "%"]
 @var    range    cornerLogo2PosY  "↪Ajuste vert. texto 2" [60, -40, 150, 1, "%"]
@@ -910,6 +915,12 @@
     if boardBGOpt!="colorOnly"{
        boardBGColor=#0000;
     }
+    if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
+        board3=null;
+        framePosX=bgPosX;
+        framePosY=bgPosY;
+        
+    }
     /*Board selector*/
     if myBoard!="disabled"{
         .board-layout-chessboard .board,
@@ -955,7 +966,7 @@
             }else{
                 background-repeat:repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
             }
-            background-size: specialEffectSize, auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize;
+            background-size: specialEffectSize, auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize !important;
             background-blend-mode: normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal;
             background-position: 0 0, cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY;
             background-color: boardBGColor; 
@@ -1092,30 +1103,26 @@
     }/*====== End arrows colors ======*/
     /*------end section------*/
 
+    /*change highlight made by the user*/
+    [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
+        background-color:hlSqColor1!important;
+    }
+    [class*="highlight"][style*="172\, 206\, 89"],[class*="highlight"][style*="#acce59"]{
+        background-color: hlSqColor2!important;
+    }
+    [class*="highlight"][style*="255\, 170\, 0"],[class*="highlight"][style*="#fa0"]{
+        background-color: hlSqColor3!important;
+    }
+    [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
+        background-color: hlSqColor4!important;
+    }
+    
+
+}
+@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer") {
+
     /*======== Wallpaper =======*/
     if enableWallpaper=="1" {
-            if enableLightTheme {
-                .dark-mode.mce-content-body, .dark-mode .post-tinymce-editor{
-                    border-radius: 3px!important;
-                    background-color:#c8c8c8ab!important;
-                }
-                .post-category-link-category:hover,
-                #tinymce:not(.light-mode),
-                #tinymce:not(.light-mode) ol,
-                #tinymce:not(.light-mode) p,
-                #tinymce:not(.light-mode) ul {
-                    color: #000!important;
-                }
-                .dark-mode .tinymce-component .tox-tinymce .tox-edit-area label,
-                .dark-mode .tinymce-component .tox-tinymce .tox-statusbar label {
-                    color:#312e2e!important;
-                }
-            }else{
-                .dark-mode.mce-content-body, .dark-mode .post-tinymce-editor{
-                    border-radius: 3px!important;
-                    background-color:#00000075!important;
-                }
-            }
             .theme-bg,
             body:after {
                 content: '';
@@ -1139,37 +1146,7 @@
                 right: 0;
                 z-index: -1000;
             }
-        
-        /*clear background of text message box*/
-        .mce-content-body, .mce-content-body:after{
-            content: ''!important;
-            background: #79797900!important;
-        }
-        .board-layout-icon:hover, .board-layout-icon.icon-font-chess:hover {
-            color:#fff!important;
-            opacity:1!important;
-        }
     }/*=== End wallpaper ===*/
-
-    /*====== Panels ======*/
-    /*chesskid gold membership page*/
-    .tabs-horiz,
-    .lobby__box__content,
-    .lobby__app__content,
-    .logo-wrapper{
-        background-color:#0006;
-    }
-    .logo-wrapper{
-        background-color:#0006;
-        border-radius: 18px !important;
-    }
-    /*fix margin top*/
-    .board-wrapper {
-        margin-top: 1rem;
-    }
-    /*end chesskid gold membership page*/
-    
-
 }
 
 @-moz-document domain("chess.com") {
@@ -1182,15 +1159,8 @@
     if innBorderSize > 0 {
         inn=innBorderSize/2;
     }else{inn=0}
-    
-    if boardBGOpt==frameOpt && enableBoardFrame && svgBoardBlend=="normal"{
-        board3=null;
-        framePosX=bgPosX;
-        framePosY=bgPosY;
-        
-    }
-
-    @media (min-width: 1200px){
+	
+    @media (min-width: 960px){
         if enableBoardFrame{ 
             /*board*/
 
@@ -1250,6 +1220,9 @@
                 box-shadow: boardShadowInset;                    
                 if enableBoardShadow && enableBoardShadowInset {
                     box-shadow: boardShadow, boardShadowInset !important;
+                }
+                if enableInnerBorder {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
                 }
             }
             /*board*/
@@ -1320,17 +1293,6 @@
                     box-shadow: frameShadow, frameShadowInset !important;
                 }
             }
-            if enableInnerBorder {
-                .board .arrows:not(.round-games-list-item-component svg):not(.event-list-tab-events-component svg),
-                .board.pseudo3d .arrows:not(.round-games-list-item-component svg):not(.event-list-tab-events-component svg) {
-                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
-                    if frameRadiusInOut{
-                        border-radius:0!important;                    
-                    }else{
-                        border-radius:'calc(%s * 0.40)!important;' % frameRadius;
-                    }
-                }
-            }
             /*outside coords settings*/
             /*Disable outsize coords if frame size is too small*/
             if ajustBoardSize>=0.92{
@@ -1380,7 +1342,7 @@
 @-moz-document url-prefix("https://www.chess.com/events"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"){
     /*Events*/
     /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
-    @media (min-width: 1200px){
+    @media (min-width: 960px){
     /*Main border rules*/
     testColor="" + boardBGColor;
     resultColor=slice(testColor,0,-6);
@@ -1414,6 +1376,9 @@
             box-shadow: boardShadowInset;                    
             if enableBoardShadow && enableBoardShadowInset {
                 box-shadow: boardShadow, boardShadowInset !important;
+            }
+            if enableInnerBorder {
+                box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
             }
         }
         /*board*/
@@ -1471,6 +1436,17 @@
         }
         .main-tab-game-sidebar {
             margin-left: 2rem!important;
+        }
+    }
+    .board-layout-main {
+        margin-right: -1rem!important;
+    }
+    @media (min-width: 60em){
+        body.events-layout .board-layout-player {
+            margin-left:-1rem;
+        }
+        .player-name {
+            white-space: normal!important;
         }
     }
     
