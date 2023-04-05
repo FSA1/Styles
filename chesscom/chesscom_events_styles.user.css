@@ -1,0 +1,25 @@
+/* ==UserStyle==
+@name           ❕Events Page - chess.com
+@author         ChessSkins
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/ChessSkins
+@description    `Change styles of the player name in chess.com Events page`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+
+@var    range    playerFontSize  "Tam. da fonte" [1.4, 1, 3, 0.01, "rem"]
+@var select   playerFontWeight   "Peso"    ["600*", "400", "700", "800"]
+@var color    playerFontCol  "Cor do texto"   #ffc000b8
+
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.chess.com/events/"), url-prefix("https://www.chess.com/events/pt"), url-prefix("https://www.chess.com/events/es") {
+
+        .player-name {
+            color: playerFontCol!important;
+            white-space: normal!important;
+            font-size: playerFontSize!important;
+            font-weight: playerFontWeight!important;
+        }
+    }
