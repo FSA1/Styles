@@ -967,8 +967,8 @@
                 background-repeat:repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
             }
             background-size: specialEffectSize, auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize !important;
-            background-blend-mode: normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal;
-            background-position: 0 0, cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY;
+            background-blend-mode: normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
+            background-position: 0 0, cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY !important;
             background-color: boardBGColor; 
             background-image: url(specialEffect), url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
