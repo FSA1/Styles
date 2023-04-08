@@ -15,7 +15,7 @@
             "Personalizado*": "custom",
             "Desativado": "disabled",
         }
-@var    color    svgLightSqColor  "Casas claras"   #e9def2
+@var    color    svgLightSqColor  "Casas claras"   #ddd0e7
 @var    color    svgDarkSqColor  "Casas escuras"   #a06bbb
 @var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
 @var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
@@ -35,9 +35,9 @@
             "Brilho": "hlImg",
             "Desativado*": "op0",
         }
-@var    color    hlColor  "↪Cor do destaque"   #00d0ff
+@var    color    hlColor  "↪Cor do destaque"   #e52af7c9
 
-@var    range    highlightOpacity  "↪Opacidade Destaque" [0.6, 0.3, 1, 0.1, ""]
+@var    range    highlightOpacity  "↪Opacidade Destaque" [0.5, 0.3, 1, 0.1, ""]
 
 @var    color    hlSqColor4  "🔴Click Direito"   #eb6150
 @var    color    hlSqColor3  "🟠Click+CTRL"   #fa0
@@ -501,7 +501,7 @@
         cornerLogoFontName='Parisienne';
         cornerLogoFontFamily=sans-serif;
         cornerLogoFontWeight=400;
-        cornerLogoText=BabiChess;
+        cornerLogoText='BabiChess';
         cornerLogo2Text='WNM';
         cornerLogo2Blend=multiply;
         cornerLogo2Size=16%;
@@ -537,7 +537,7 @@
         svgDarkSqOpacity=0.7;
         boardBGOpt='https://cdn11.bigcommerce.com/s-ve9pmdnvtz/images/stencil/original/products/7817/11747/6859013__24153.1632076438.jpg?c=2&imbypass=on&imbypass=on';
         boardBGColor=#8352a2;
-        bgSize=50%;
+        bgSize=30%;
         bgPosX=50%;
         bgPosY=50%;
         frameOpt='https://cdn11.bigcommerce.com/s-ve9pmdnvtz/images/stencil/original/products/7817/11747/6859013__24153.1632076438.jpg?c=2&imbypass=on&imbypass=on';
@@ -568,15 +568,15 @@
         cornerLogoFontSize=8px;
         cornerLogoFontName=Montserrat;
         cornerLogoFontWeight=700;
-        cornerLogoText=WNM;
-        cornerLogo2Text=BabiChess;
+        cornerLogoText='WNM';
+        cornerLogo2Text='BabiChess';
         cornerLogo2Blend=multiply;
         cornerLogo2Size=17%;
         cornerLogo2PosX=118%;
         cornerLogo2PosY=104%;
         cornerLogo2FontSize=16px;
         cornerLogo2Col=rgba(17,5,17,0.388);
-        cornerLogo2FontName=Parisienne;
+        cornerLogo2FontName='Parisienne';
         cornerLogo2FontWeight=400;
         useWallpaper=gradient;
         backgroundColp=#421f44;
