@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.4-beta
+@version        1.0.5-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -844,12 +844,13 @@
                 background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
             }
             background-size: auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize!important;
-            background-blend-mode: cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal;
+            background-blend-mode: cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             background-position:cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY!important;
             background-color: boardBGColor; 
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .game-preview-component.sidebar-tab-games-new-preview,
         .game-preview-component.player-card-new-preview,
         .diagram-board-component  chess-board,
         .game-board-preview,
@@ -959,7 +960,7 @@
         }
     }/*end board*/
         
-    /*Highlight*/ 
+    /*Highlight*/
     if setHighlight=="op1" {
         #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
         #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
@@ -1038,8 +1039,7 @@
     if innBorderSize > 0 {
         inn=innBorderSize/2;
     }else{inn=0}
-    
-
+	
     @media (min-width: 960px){
         if enableBoardFrame{ 
             /*board*/
@@ -1233,59 +1233,57 @@
             framePosY=bgPosY;        
         }
 
-        if enableBoardFrame{
-            /*board*/
-            .main-tab-game-component chess-board {
-                transform-style: preserve-3d;
-                width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
-                height: @width;
-                boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
-                margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
-                margin-top:@margin-left;
-                if frameRadiusInOut{
-                    border-radius:'calc(%s * 0.40)!important;' % frameRadius;
-                }else{
-                    border-radius:0!important;
-                }
-                box-shadow: boardShadow;
-                box-shadow: boardShadowInset;                    
-                if enableBoardShadow && enableBoardShadowInset {
-                    box-shadow: boardShadow, boardShadowInset !important;
-                }
-                if enableInnerBorder {
-                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
-                }
-            }
-            /*board*/
-            .main-tab-game-component chess-board:before {
-                if myBoard!="disabled"{                    
-                background:frameColor url(frameOpt) framePosX framePosY!important; 
-                }                
-                transform: translateZ(-1px);
-                content: ""!important;
-                display:block;
-                grid-column: board;                
-                width:var(--mainBoardWidth)!important;
-                height: @width;
-                padding-bottom: 0;
-                boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
-                margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
-                margin-top:@margin-left;
-                background-size: frameSize!important;
-                -webkit-background-size: @background-size;
-                -moz-background-size: @background-size;
-                -o-background-size: @background-size;
-                background-repeat: frameRepeat!important;
-                border-radius: frameRadius!important;
-                box-shadow: frameShadow;
-                box-shadow: frameShadowInset;                
-                if enableFrameShadow && enableFrameShadowInset {
-                    box-shadow: frameShadow, frameShadowInset !important;
-                }
-            }
-        }/*end board border*/    
-
-
+		if enableBoardFrame{
+			/*board*/
+			.main-tab-game-component chess-board {
+				transform-style: preserve-3d;
+				width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
+				height: @width;
+				boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				if frameRadiusInOut{
+					border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+				}else{
+					border-radius:0!important;
+				}
+				box-shadow: boardShadow;
+				box-shadow: boardShadowInset;                    
+				if enableBoardShadow && enableBoardShadowInset {
+					box-shadow: boardShadow, boardShadowInset !important;
+				}
+				if enableInnerBorder {
+					box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+				}
+			}
+			/*board*/
+			.main-tab-game-component chess-board:before {
+				if myBoard!="disabled"{                    
+				background:frameColor url(frameOpt) framePosX framePosY!important; 
+				}                
+				transform: translateZ(-1px);
+				content: ""!important;
+				display:block;
+				grid-column: board;                
+				width:var(--mainBoardWidth)!important;
+				height: @width;
+				padding-bottom: 0;
+				boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				background-size: frameSize!important;
+				-webkit-background-size: @background-size;
+				-moz-background-size: @background-size;
+				-o-background-size: @background-size;
+				background-repeat: frameRepeat!important;
+				border-radius: frameRadius!important;
+				box-shadow: frameShadow;
+				box-shadow: frameShadowInset;                
+				if enableFrameShadow && enableFrameShadowInset {
+					box-shadow: frameShadow, frameShadowInset !important;
+				}
+			}
+		}/*end board border*/
         .player-tagline-rating {
             color: #dfd73bd6!important;
             text-shadow: rgb(0, 0, 0) 1px 1px 1px;
