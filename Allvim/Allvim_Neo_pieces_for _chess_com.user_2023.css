@@ -1,0 +1,1236 @@
+/* ==UserStyle==
+@name           Pieces Neo: Multi-color [Allvim Edition]
+@author         agiota_do_artenio
+@namespace      USO Archive
+@description    `peças Allvim Neo: Multi-cores.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myPiecesB    "Peças pretas" {
+            "Preto": "op000",
+            "Cinza": "op001",
+            "Mostarda": "op1",
+            "Vermelho": "op2",
+            "Verde": "op3",
+            "Azul": "op4",
+            "Rosa": "op5",
+            "Laranja": "op6",
+            "Abóbora": "op7",
+            "Roxo": "op8",
+            "Amarelo": "op9",
+            "Esquilo": "wSquirrel",
+            "Esquilo Preto*": "bSquirrel",
+            "Desativado": "op0"
+        }
+@var    select      myPiecesW    "Peças brancas" {
+            "Branco": "op000",
+            "Cinza": "op001",
+            "Mostarda": "op1",
+            "Vermelho": "op2",
+            "Verde": "op3",
+            "Azul": "op4",
+            "Rosa": "op5",
+            "Laranja": "op6",
+            "Abóbora": "op7",
+            "Roxo": "op8",
+            "Amarelo": "op9",
+            "Esquilo*": "wSquirrel",
+            "Desativado": "op0"
+        }
+@var    checkbox    enableCapivaras "Capivaras como Cavalos" 0
+@var    range    hueRotationB  "Variar cor Pretas" [0, 0, 355, 5, "deg"]
+@var    range    hueRotationW  "Variar cor Brancas" [0, 0, 355, 5, "deg"]
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*Pieces black*/
+    if myPiecesB=="op000" {
+        /*Pieces*/
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-k.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-q.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-b.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-n.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        if enableCapivaras {
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-black-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-r.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-p.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+    }
+    if myPiecesB=="op001" {
+        if myPiecesW!="op001" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-grey-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op1" {
+        if myPiecesW!="op1" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-mostarda-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op2" {
+        if myPiecesW!="op2" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op3" {
+        if myPiecesW!="op3" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-green-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op4" {
+        if myPiecesW!="op4" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-blue-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op5" {
+        if myPiecesW!="op5" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-pink-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op6" {
+        if myPiecesW!="op6" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-orange-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op7" {
+        if myPiecesW!="op7" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-out-orange-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op8" {
+        if myPiecesW!="op8" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-purple-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="op9" {
+        if myPiecesW!="op9" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-n.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            if enableCapivaras {
+                .piece.bn,
+                .promotion-piece.bn,
+                div [style*="bn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-yellow-n.svg")!important;
+                    filter: hue-rotate(hueRotationB)!important;
+                }
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+    if myPiecesB=="wSquirrel" {
+        if myPiecesW!="wSquirrel" {
+            /*Pieces*/
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-k.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-q.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-b.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Allvim/squirrel-wn.png")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-r.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-p.svg")!important;
+                filter: hue-rotate(hueRotationB)!important;
+            }
+        }
+    }
+
+    if myPiecesB=="bSquirrel" {
+        /*Pieces*/
+        .piece.bk,
+        .promotion-piece.bk,
+        div [style*="bk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-k.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bq,
+        .promotion-piece.bq,
+        div [style*="bq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-q.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bb,
+        .promotion-piece.bb,
+        div [style*="bb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-b.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bn,
+        .promotion-piece.bn,
+        div [style*="bn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Allvim/squirrel_bn.png")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.br,
+        .promotion-piece.br,
+        div [style*="br.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-r.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        .piece.bp,
+        .promotion-piece.bp,
+        div [style*="bp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-p.svg")!important;
+            filter: hue-rotate(hueRotationB)!important;
+        }
+        div.game-preview-component > img:nth-child(2),
+        div.game-preview-component > img:nth-child(7) {
+            content: url("https://github.com/FSA1/Styles/raw/main/Allvim/squirrel_bn.png")!important;
+        }
+    }
+    /*Pieces white*/
+    if myPiecesW=="op000" {
+        .piece.wk,
+        .promotion-piece.wk,
+        div [style*="wk.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-k.svg")!important;
+            filter: hue-rotate(hueRotationW)!important;
+        }
+        .piece.wq,
+        .promotion-piece.wq,
+        div [style*="wq.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-q.svg")!important;
+            filter: hue-rotate(hueRotationW)!important;
+        }
+        .piece.wb,
+        .promotion-piece.wb,
+        div [style*="wb.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-b.svg")!important;
+            filter: hue-rotate(hueRotationW)!important;
+        }
+        .piece.wn,
+        .promotion-piece.wn,
+        div [style*="wn.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-n.svg")!important;
+            filter: hue-rotate(hueRotationW)!important;
+        }
+        if enableCapivaras {
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-white-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+        .piece.wr,
+        .promotion-piece.wr,
+        div [style*="wr.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-r.svg")!important;
+            filter: hue-rotate(hueRotationW)!important;
+        }
+        .piece.wp,
+        .promotion-piece.wp,
+        div [style*="wp.png"] {
+            background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-p.svg")!important;
+            filter: hue-rotate(hueRotationW)!important;
+        }
+    }
+    if myPiecesW=="op001" {
+        if myPiecesB!="op001" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-grey-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op1" {
+        if myPiecesB!="op1" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-mostarda-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op2" {
+        if myPiecesB!="op2" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op3" {
+        if myPiecesB!="op3" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-green-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op4" {
+        if myPiecesB!="op4" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-blue-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op5" {
+        if myPiecesB!="op5" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-pink-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op6" {
+        if myPiecesB!="op6" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-orange-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op7" {
+        if myPiecesB!="op7" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-out-orange-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op8" {
+        if myPiecesB!="op8" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-purple-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="op9" {
+        if myPiecesB!="op9" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-n.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            if enableCapivaras {
+                .piece.wn,
+                .promotion-piece.wn,
+                div [style*="wn.png"] {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-yellow-n.svg")!important;
+                    filter: hue-rotate(hueRotationW)!important;
+                }
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    if myPiecesW=="wSquirrel" {
+        if myPiecesB!="wSquirrel" {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-k.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-q.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-b.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Allvim/squirrel_wn.png")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-r.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/neo/squirrel-p.svg")!important;
+                filter: hue-rotate(hueRotationW)!important;
+            }
+        }
+    }
+    /*end section*/
+}
