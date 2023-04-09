@@ -609,7 +609,7 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        //enableCenterLogo=0;
+        enableCenterLogo=0;
         enableCustomCoord=1;
         //enableOutsideCoords=0;
         svgBoardBlend=normal;
@@ -654,7 +654,7 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        //enableCenterLogo=0;
+        enableCenterLogo=0;
         enableCustomCoord=1;
         //enableOutsideCoords=0;
         svgBoardBlend=normal;
