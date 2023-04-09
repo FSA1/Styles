@@ -8,7 +8,6 @@
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
-@var    checkbox    enableWideFrameForEvents "Borda maior em Eventos (se for madeira)" 1
 @var    select      myBoard    "🟢🏁Tabuleiro" {
             "Azul Animado": "aajusti-anim",
             "Azul Estático": "aajusti-static",
@@ -1217,14 +1216,6 @@
     /*Events*/
     /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
     @media (min-width: 960px){
-        
-        /*Special Board settings*/
-        if enableWideFrameForEvents{
-            if myBoard=="light-wood" ||  myBoard=="dark-wood"{
-                enableBoardFrame=1;
-                ajustBoardSize=0.85;
-            }
-        }
         
         /*Main border rules*/
         testColor="" + boardBGColor;
