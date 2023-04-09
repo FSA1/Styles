@@ -44,10 +44,10 @@
 
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.6, 0.3, 1, 0.1, ""]
 
-@var    color    hlSqColor1  "🔵Destaque de casa 1"   #52b0dc
-@var    color    hlSqColor2  "🟢Destaque de casa 2"   #acce59
-@var    color    hlSqColor3  "🟠Destaque de casa 3"   #fa0
-@var    color    hlSqColor4  "🔴Destaque de casa 4"   #eb6150
+@var    color    hlSqColor4  "🔴Click Direito"   #eb6150
+@var    color    hlSqColor3  "🟠Click+CTRL"   #fa0
+@var    color    hlSqColor2  "🟢Click+SHIFT"   #acce59
+@var    color    hlSqColor1  "🔵Click+ALT"   #52b0dc
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
@@ -959,7 +959,7 @@
         }
     }/*end board*/
         
-    /*Highlight*/    
+    /*Highlight*/ 
     if setHighlight=="op1" {
         #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
         #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
