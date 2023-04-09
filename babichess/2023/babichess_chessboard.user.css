@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.0-beta
+@version        1.0.1-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -645,94 +645,18 @@
         svgLightSqOpacity="0.2";
         svgDarkSqOpacity="0.2";
     }
-    /*svgs are implemented using uri format so it needs scaped text where '#' is represented by '%23'.*/
-    colorString="" + svgDarkSqColor;
-    firstChar=slice(colorString,0,3);
-    darkSqStringResult=""+firstChar;
-    
-    if darkSqStringResult!="rgb" && darkSqStringResult!="hsl" && darkSqStringResult!="hwb"{
-        lcString="" + svgDarkSqColor;
-        lcMinusHash=slice(lcString, 1);
-        svgDarkSqColorHash="%23" + lcMinusHash;
-    }else{
-        svgDarkSqColorHash=""+svgDarkSqColor;
-    }
-    
-    colorString2="" + svgLightSqColor;
-    firstChar2=slice(colorString2,0,3);
-    lightSqStringResult=""+firstChar2;
-    
-    if lightSqStringResult!="rgb" && lightSqStringResult!="hsl" && lightSqStringResult!="hwb"{
-        lcString2="" + svgLightSqColor;
-        lcMinusHash2=slice(lcString2, 1);
-        svgLightSqColorHash="%23" + lcMinusHash2;
-    }else {
-        svgLightSqColorHash=""+svgLightSqColor;
-    }
-    
-    coordString="" + outCoordColorOpt;
-    firstChar3=slice(coordString,0,3);
-    coordStringResult=""+firstChar3;
-    
-    if coordStringResult!="rgb" && coordStringResult!="hsl" && coordStringResult!="hwb"{
-        lcString3="" + outCoordColorOpt;
-        lcMinusHash3=slice(lcString3, 1);
-        outCoordColorOptHash="%23" + lcMinusHash3;
-    }else{
-        outCoordColorOptHash="" + outCoordColorOpt;
-    }
-    /*--------------------------------*/
-
-    centerLogoString="" + centerLogoCol;
-    firstChar4=slice(centerLogoString,0,3);
-    centerLogoResult=""+firstChar4;
-    
-    if centerLogoResult!="rgb" && centerLogoResult!="hsl" && centerLogoResult!="hwb"{
-        lcString4="" + centerLogoCol;
-        lcMinusHash4=slice(lcString4, 1);
-       centerLogoColHash="%23" + lcMinusHash4;
-    }else{
-        centerLogoColHash="" + centerLogoCol;
-    }
-    cornerLString="" + cornerLogoCol;
-    firstChar5=slice(cornerLString,0,3);
-    cornerLStringResult=""+firstChar5;
-    
-    if cornerLStringResult!="rgb" && cornerLStringResult!="hsl" && cornerLStringResult!="hwb"{
-        lcString5="" + cornerLogoCol;
-        lcMinusHash5=slice(lcString5, 1);
-        cornerLogoColHash="%23" + lcMinusHash5;
-    }else{
-        cornerLogoColHash="" + cornerLogoCol;
-    }
-    cornerLString2="" + cornerLogo2Col;
-    firstChar52=slice(cornerLString2,0,3);
-    cornerLStringResult2=""+firstChar52;
-    
-    if cornerLStringResult2!="rgb" && cornerLStringResult2!="hsl" && cornerL2tringResult2!="hwb"{
-        lcString52="" + cornerLogo2Col;
-        lcMinusHash52=slice(lcString52, 1);
-        cornerLogo2ColHash="%23" + lcMinusHash52;
-    }else{
-        cornerLogo2ColHash="" + cornerLogo2Col;
-    }
-    
-    innStr="" + innerBorderOpt;
-    innFirstChar=slice(innStr,0,3);
-    innStringResult=""+innFirstChar;
-    
-    if innStringResult!="rgb" && innStringResult!="hsl" && innStringResult!="hwb"{
-        innMinusHash=slice(innStr, 1);
-        innColHash="%23" + innMinusHash;
-    }else{
-        innColHash="" + innerBorderOpt;
-    }
+    svgDarkSqColor=hsla(svgDarkSqColor);
+    svgLightSqColor=hsla(svgLightSqColor);
     centerLogoCol=hsla(centerLogoCol);
+    cornerLogoCol=hsla(cornerLogoCol);
+    cornerLogo2Col=hsla(cornerLogo2Col);
+    innerBorderOpt=hsla(innerBorderOpt);
+    outCoordColorOpt=hsla(outCoordColorOpt);
     /*SVG IMAGES HERE 🔐 - need to be here because '#' symbol need to be replaced first for '%23' in the variables*/
     /*main svg board*/
-    svgBoard="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='" + unquote(svgDarkSqColorHash) + "' fill-opacity='" + svgDarkSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='" + unquote(svgLightSqColorHash) + "' fill-opacity='" + svgLightSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3c/svg%3e";
-    cornerLogoTextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + unquote(cornerLogoColHash) + "' font-family='sans-serif' font-size='"+cornerLogoFontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + unquote(cornerLogoColHash) + "' font-family='"+cornerLogoFontName+"' font-size='"+cornerLogoFontSize+"'  font-weight='"+cornerLogoFontWeight+"' stroke-width='.26459'%3e"+cornerLogoText+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
-    cornerLogo2TextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + unquote(cornerLogo2ColHash) + "' font-family='sans-serif' font-size='"+cornerLogo2FontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + unquote(cornerLogo2ColHash) + "' font-family='"+cornerLogo2FontName+"' font-size='"+cornerLogo2FontSize+"'  font-weight='"+cornerLogo2FontWeight+"' stroke-width='.26459'%3e"+cornerLogo2Text+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
+    svgBoard="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='" + svgDarkSqColor + "' fill-opacity='" + svgDarkSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='" + svgLightSqColor + "' fill-opacity='" + svgLightSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3c/svg%3e";
+    cornerLogoTextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + cornerLogoCol + "' font-family='sans-serif' font-size='"+cornerLogoFontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + cornerLogoCol + "' font-family='"+cornerLogoFontName+"' font-size='"+cornerLogoFontSize+"'  font-weight='"+cornerLogoFontWeight+"' stroke-width='.26459'%3e"+cornerLogoText+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
+    cornerLogo2TextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + cornerLogo2Col + "' font-family='sans-serif' font-size='"+cornerLogo2FontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + cornerLogo2Col + "' font-family='"+cornerLogo2FontName+"' font-size='"+cornerLogo2FontSize+"'  font-weight='"+cornerLogo2FontWeight+"' stroke-width='.26459'%3e"+cornerLogo2Text+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
     
     if enableCenterLogo{
         centerLogo=centerLogoOpt;
@@ -748,18 +672,19 @@
         cornerLogo2TextOnly='';
     }
     board3=boardBGOpt;
+    miniBoard3=board3;
     if boardBGOpt!="colorOnly"{
        boardBGColor=#0000;
     }
     if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
         board3=null;
+        miniBoard3=frameOpt;
         framePosX=bgPosX;
         framePosY=bgPosY;
-        
     }
     /*Board selector*/
     if myBoard!="disabled"{
-        .board-layout-chessboard .board,
+        //.board-layout-chessboard .board,
         .fade-in-overlay/*chesskids*/
         ,
         #boarddefault_boardarea/*chesskids*/
@@ -809,18 +734,21 @@
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .game-preview-component.player-card-new-preview,
+        .diagram-board-component  chess-board,
         .game-board-preview,
+        .game-preview-legacy-component,
         .game-preview-component.open-games-item-preview,
         .game-preview-component.current-games-grid-preview,
         .game-preview-component.promo-preview,
         div [style*="40.png"][class="game-preview-component"],
         div [style*="40.jpg"][class="game-preview-component"] {
             /*clean board preview, no logo*/
-            background-image: url(svgBoard), url(board3) !important;
-            background-blend-mode: svgBoardBlend, normal;
-            background-color: solidBoardBGColor;
-            background-position:0 0, bgPosX bgPosY;
-            background-size:100%, bgSize;
+            background-image: url(svgBoard), url(miniBoard3) !important;
+            background-blend-mode: svgBoardBlend, normal!important;
+            background-color: solidBoardBGColor!important;
+            background-position:0 0, bgPosX bgPosY!important;
+            background-size:100%, bgSize!important;
             if bgSize=="cover"{
                 background-repeat: no-repeat, no-repeat !important;
             }else{
@@ -955,7 +883,7 @@
     }
 
 }
-@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer") {
+@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
 
     /*======== Wallpaper =======*/
     if enableWallpaper=="1" {
@@ -997,11 +925,11 @@
     }else{inn=0}
     
 
-    @media (min-width: 1200px){
+    @media (min-width: 960px){
         if enableBoardFrame{ 
             /*board*/
 
-            .board-layout-chessboard .board,
+            //.board-layout-chessboard .board,
             .fade-in-overlay,
             #boarddefault_boardarea,
             #divChessBoard_boardarea,
@@ -1029,8 +957,8 @@
             div[id*="chess_com_chessmentor_board_1_boardarea"],
             div[id^="chess_com_emailboard_"],
             div[id^="board-blank"],
-            chess-board[class^="board"]:not(.round-games-list-item-component chess-board),
-            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board),
+            chess-board[class^="board"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board),
+            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board),
             chess-board[id^="board-blank"],
             chess-board[id^="board-vs-personalities"],
             div[id*="chess_com_emailboard_"] {
@@ -1063,7 +991,7 @@
                 }
             }
             /*board*/
-            .board-layout-chessboard .board:before,
+            //.board-layout-chessboard .board:before,
             .fade-in-overlay:before,
             #boarddefault_boardarea:before,
             #divChessBoard_boardarea:before,
@@ -1091,8 +1019,8 @@
             div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
             div[id^="chess_com_emailboard_"]:before,
             div[id^="board-blank"]:before,
-            chess-board[class^="board"]:not(.round-games-list-item-component chess-board):before,
-            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board):before,
+            chess-board[class^="board"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):before,
+            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):before,
             chess-board[id^="board-blank"]:before,
             chess-board[id^="board-vs-personalities"]:before,
             div[id*="chess_com_emailboard_"]:before {
@@ -1132,45 +1060,39 @@
             }
             
             /*outside coords settings*/
-            /*Disable outsize coords if frame size is too small*/
-            if ajustBoardSize>=0.92{
-                enableOutsideCoords=0;
-                outCoordFontCase=lowercase;
-                outCoordFontWeight=600;
-                outCoordFontName='Segoe UI';
-                
-            }
-            .coordinate-grey, .coordinate-dark, .coordinate-light {
-                text-transform: outCoordFontCase !important;
-                fill:outCoordColorOpt!important;
-                font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
-                font-weight: outCoordFontWeight!important;   
-                font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
-            }
-            .outside:not(.round-games-list-item-games .coordinates) {
-                transform: translate(-5.5%,4.5%)!important;
-            }
-            body.outside-coords:not(.with-pieces,.real-3d):not(.round-games-list-item-games .coordinates) {
-                --coordinatesGutter: 1rem!important;
-            }
-            
-            if enableOutsideCoords {
-                .coordinates:not(.round-games-list-item-games .coordinates){
-                    transform: translate(-4.5%,4.8%)!important;
-                }                
-                .coords-dark:not(.round-games-list-item-games .coords-dark),
-                .coordinate-dark:not(.round-games-list-item-games .coordinate-dark),
-                div.number.coords-dark:not(.round-games-list-item-games div.number.coords-dark),
-                div.letter.coords-dark:not(.round-games-list-item-games div.letter.coords-dark),
-                text.coordinate-dark:not(.round-games-list-item-games text.coordinate-dark),
-                .coords-light:not(.round-games-list-item-games .coords-light),
-                .coordinate-light:not(.round-games-list-item-games .coordinate-light),
-                div.number.coords-light:not(.round-games-list-item-games div.number.coords-light),
-                div.letter.coords-light:not(.round-games-list-item-games div.letter.coords-light),
-                text.coordinate-light:not(.round-games-list-item-games text.coordinate-light) {
-                    color: outCoordColorOpt !important;
-                    fill: @color;
-                    opacity: 1!important;
+            if ajustBoardSize<0.92 && enableOutsideCoords{
+                .coordinate-grey, .coordinate-dark:not(.diagram-board-component .coordinate-dark), .coordinate-light:not(.diagram-board-component .coordinate-light) {
+                    text-transform: outCoordFontCase !important;
+                    fill:outCoordColorOpt!important;
+                    font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
+                    font-weight: outCoordFontWeight!important;   
+                    font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+                }
+                .outside:not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates) {
+                    transform: translate(-5.5%,4.5%)!important;
+                }
+                body.outside-coords:not(.with-pieces,.real-3d):not(.round-games-list-item-games .outside-coords) {
+                    --coordinatesGutter: 1rem!important;
+                }
+
+                if enableOutsideCoords {
+                    .coordinates:not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates) {
+                        transform: translate(-4.5%,4.8%)!important;
+                    }                
+                    .coords-dark:not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark) ,
+                    .coordinate-dark:not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark),
+                    div.number.coords-dark:not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark),
+                    div.letter.coords-dark:not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark),
+                    text.coordinate-dark:not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark),
+                    .coords-light:not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light),
+                    .coordinate-light:not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light),
+                    div.number.coords-light:not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light),
+                    div.letter.coords-light:not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light),
+                    text.coordinate-light:not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light), {
+                        color: outCoordColorOpt !important;
+                        fill: @color;
+                        opacity: 1!important;
+                    }
                 }
             }
         }
@@ -1180,72 +1102,72 @@
 @-moz-document url-prefix("https://www.chess.com/events"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"){
     /*Events*/
     /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
-    @media (min-width: 1200px){
-    /*Main border rules*/
-    testColor="" + boardBGColor;
-    resultColor=slice(testColor,0,-6);
-    innBorderSize=0.4rem;
-    if innBorderSize > 0 {
-        inn=innBorderSize/2;
-    }else{inn=0}
-    
-    if boardBGOpt==frameOpt && enableBoardFrame {
-        board3=null;
-        framePosX=bgPosX;
-        framePosY=bgPosY;        
-    }
+    @media (min-width: 960px){
+        
+        /*Main border rules*/
+        testColor="" + boardBGColor;
+        resultColor=slice(testColor,0,-6);
+        innBorderSize=0.4rem;
+        if innBorderSize > 0 {
+            inn=innBorderSize/2;
+        }else{inn=0}
 
+        if boardBGOpt==frameOpt && enableBoardFrame {
+            board3=null;
+            framePosX=bgPosX;
+            framePosY=bgPosY;        
+        }
 
-    if enableBoardFrame{
-        /*board*/
-        .main-tab-game-component chess-board {
-            transform-style: preserve-3d;
-            width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
-            height: @width;
-            boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
-            margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
-            margin-top:@margin-left;
-            if frameRadiusInOut{
-                border-radius:'calc(%s * 0.40)!important;' % frameRadius;
-            }else{
-                border-radius:0!important;
+        if enableBoardFrame{
+            /*board*/
+            .main-tab-game-component chess-board {
+                transform-style: preserve-3d;
+                width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
+                height: @width;
+                boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
+                margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+                margin-top:@margin-left;
+                if frameRadiusInOut{
+                    border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+                }else{
+                    border-radius:0!important;
+                }
+                box-shadow: boardShadow;
+                box-shadow: boardShadowInset;                    
+                if enableBoardShadow && enableBoardShadowInset {
+                    box-shadow: boardShadow, boardShadowInset !important;
+                }
+                if enableInnerBorder {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+                }
             }
-            box-shadow: boardShadow;
-            box-shadow: boardShadowInset;                    
-            if enableBoardShadow && enableBoardShadowInset {
-                box-shadow: boardShadow, boardShadowInset !important;
+            /*board*/
+            .main-tab-game-component chess-board:before {
+                if myBoard!="disabled"{                    
+                background:frameColor url(frameOpt) framePosX framePosY!important; 
+                }                
+                transform: translateZ(-1px);
+                content: ""!important;
+                display:block;
+                grid-column: board;                
+                width:var(--mainBoardWidth)!important;
+                height: @width;
+                padding-bottom: 0;
+                boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
+                margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+                margin-top:@margin-left;
+                background-size: frameSize!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+                background-repeat: frameRepeat!important;
+                border-radius: frameRadius!important;
+                box-shadow: frameShadow;
+                box-shadow: frameShadowInset;                
+                if enableFrameShadow && enableFrameShadowInset {
+                    box-shadow: frameShadow, frameShadowInset !important;
+                }
             }
-            if enableInnerBorder {
-                box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
-            }
-        }
-        /*board*/
-        .main-tab-game-component chess-board:before {
-            if myBoard!="disabled"{                    
-            background:frameColor url(frameOpt) framePosX framePosY!important; 
-            }                
-            transform: translateZ(-1px);
-            content: ""!important;
-            display:block;
-            grid-column: board;                
-            width:var(--mainBoardWidth)!important;
-            height: @width;
-            padding-bottom: 0;
-            boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
-            margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
-            margin-top:@margin-left;
-            background-size: frameSize!important;
-            -webkit-background-size: @background-size;
-            -moz-background-size: @background-size;
-            -o-background-size: @background-size;
-            background-repeat: frameRepeat!important;
-            border-radius: frameRadius!important;
-            box-shadow: frameShadow;
-            box-shadow: frameShadowInset;                
-            if enableFrameShadow && enableFrameShadowInset {
-                box-shadow: frameShadow, frameShadowInset !important;
-            }
-        }
     }/*end board border*/
     
 
