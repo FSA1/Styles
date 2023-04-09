@@ -639,6 +639,7 @@
         setHighlight=op1;
         hlColor=#ffae00;
         highlightOpacity=0.4;
+		hlImgOpt="op0";
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
         outCoordFontWeight=400;
@@ -684,6 +685,7 @@
         setHighlight=op1;
         hlColor=#ffae00;
         highlightOpacity=0.4;
+		hlImgOpt="op0";
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
         outCoordFontWeight=400;
