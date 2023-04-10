@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.1-beta
+@version        1.0.0-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -460,7 +460,7 @@
         svgLightSqColor=#fff0d1;
         svgLightSqOpacity=0.65;
         svgDarkSqColor=#e89a78;
-        svgDarkSqOpacity=0.2;
+        svgDarkSqOpacity=0.3;
         boardBGOpt=server+'super-board/textures/wood/mahogany.jpg';
         boardBGColor=rgba(141,133,123,0.69);
         bgSize=cover;
@@ -483,9 +483,8 @@
         frameShadowInset= inset 0px -1px 6px 8px #00000075;
         setHighlight='op1';
         hlImgOpt=disabled;
-        hlColor=#f90;
-        highlightOpacity=0.3;
-        selectionOpacity=0.6;
+        hlColor=#ffcb2d;
+        highlightOpacity=0.4;
         panelFontColor=rgba(255,255,255,0.6);
         setFontColorSrc=rgba(218,185,172,0.749);
         mainColumnColor=0;
