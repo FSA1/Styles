@@ -364,7 +364,7 @@
         //ajustBoardSize=0.882;
         frameShadow= 0 0 8px 4px rgba(0, 0, 0, .5);
         frameShadowInset= inset 0 -1px 8px 4px rgba(0, 0, 0, .4);
-        frameOpt=server+'super-board/textures/wood/frames/frame-cherry-wood.jpg';
+        frameOpt=server+'super-board/textures/wood/frames/frame-wood.jpg';
         frameColor=#622f0f;
         frameSize=cover;
         framePosX=0%;
