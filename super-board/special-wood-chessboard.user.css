@@ -386,9 +386,6 @@
         evalOpt=custom;
         dEvalCol= lCoordCol;
         lEvalCol= dCoordCol;
-        themeWallpaper='https://img.freepik.com/free-photo/gray-woven-fabric_53876-89527.jpg';
-        setWallpaper=20%;
-        percentSize=20%;
         backgroundColp=#4b4844; 
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
@@ -433,9 +430,6 @@
         hlColor=#f80;
         highlightOpacity=0.3;
         outCoordColorOpt=rgba(255,228,191,0.722);
-        themeWallpaper='https://img.freepik.com/free-photo/gray-woven-fabric_53876-89527.jpg';
-        setWallpaper=20%;
-        percentSize=20%;
         backgroundColp=#4b4844;
         coordsBlend=multiply;
         lCoordCol= #7f4b30;
@@ -497,9 +491,6 @@
         mainColumnColor=0;
         panelColor=rgba(94,33,17,0.561);
         mainColBlur=1;
-        useWallpaper='https://img.freepik.com/free-photo/gray-woven-fabric_53876-89527.jpg';
-        setWallpaper=20%;
-        percentSize=20%;
         evalOpt=custom;
         dEvalCol=#7d3110;
         lEvalCol=#e6ceb3;
