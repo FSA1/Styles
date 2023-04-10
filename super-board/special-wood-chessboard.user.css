@@ -427,8 +427,8 @@
         frameShadowInset= inset 0px -1px 6px 8px #00000075;
         setHighlight='op1';
         hlImgOpt='disabled';
-        hlColor=#f80;
-        highlightOpacity=0.3;
+        hlColor=#ffcb2d;
+        highlightOpacity=0.4;
         outCoordColorOpt=rgba(255,228,191,0.722);
         backgroundColp=#4b4844;
         coordsBlend=multiply;
