@@ -701,7 +701,7 @@
     }
     /*Board selector*/
     if myBoard!="disabled"{
-        //.board-layout-chessboard .board,
+        .board-layout-chessboard .board,
         .fade-in-overlay/*chesskids*/
         ,
         #boarddefault_boardarea/*chesskids*/
@@ -945,7 +945,7 @@
         if enableBoardFrame{ 
             /*board*/
 
-            //.board-layout-chessboard .board,
+            .board-layout-chessboard .board,
             .fade-in-overlay,
             #boarddefault_boardarea,
             #divChessBoard_boardarea,
@@ -1007,7 +1007,7 @@
                 }
             }
             /*board*/
-            //.board-layout-chessboard .board:before,
+            .board-layout-chessboard .board:before,
             .fade-in-overlay:before,
             #boarddefault_boardarea:before,
             #divChessBoard_boardarea:before,
@@ -1212,3 +1212,16 @@
     }
     
 }/*End Events*/
+
+@-moz-document url("https://www.chess.com/play"){
+        .board-layout-chessboard .board:before,
+        div#board.board,div#board.board:before{
+            background-image:url('')!important;
+            width: 0!important;
+            height:@width;
+            border:0!important;
+            box-shadow:0 0 0 0!important;
+            margin:0!important;
+           
+		}
+}
