@@ -68,7 +68,7 @@
 
 @var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
-@var    select  coordsBlend    "↪Mesclagem Coordenadas" ["normal", "multiply*", "screen", "darken", "lighten", "overlay"]
+@var    select  coordsBlend    "↪Mesclagem Coordenadas" ["normal*", "multiply", "screen", "darken", "lighten", "overlay"]
 @var    select   outCoordFontName   "↪🆎Nome da fonte"{
         "Fonte 1": "userFont1",
         "Fonte 2": "userFont2",
