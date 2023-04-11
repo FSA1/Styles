@@ -452,9 +452,6 @@
         enableBoardShadowInset=0;
         enableFrameShadow=1;
         enableFrameShadowInset=1;
-        enableCustomPanelFontColor=0;
-        enablePanelColor=0;
-        enablePanelBlur=0;
         enableCustomCoord=1;
         //enableOutsideCoords=1;
         svgLightSqColor=#fff0d1;
@@ -517,13 +514,13 @@
         svgBoardBlend=normal;
         svgLightSqOpacity=0.01;
         svgDarkSqOpacity=0.01;
-        svgLightSqColor= #d9b993;
-        svgDarkSqColor= #915d41;
+        svgLightSqColor=#d9b993;
+        svgDarkSqColor=#915d41;
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
-        coordsBlend=multiply;
+        coordsBlend=normal;
         boardBGOpt=server+'latvian/boards/faded-wood.jpg';
         boardBGColor=#8b7253;
         bgSize=cover;
@@ -571,7 +568,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
-        coordsBlend=multiply;
+        coordsBlend=normal;
         boardBGOpt=server+'latvian/boards/dark-wood.jpg';
         boardBGColor=#8b7253;
         bgSize=cover;
@@ -751,9 +748,10 @@
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .openings-view-chessboard chess-board,
         .game-preview-component.sidebar-tab-games-new-preview,
         .game-preview-component.player-card-new-preview,
-        .diagram-board-component  chess-board,
+        .diagram-board-component chess-board,
         .game-board-preview,
         .game-preview-legacy-component,
         .game-preview-component.open-games-item-preview,

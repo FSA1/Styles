@@ -435,6 +435,7 @@
         lEvalCol=#e0e0e0;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
+        coordsBlend=normal;
     }
     else if myBoard=="torsaniWood" {
         svgBoardBlend=normal;
@@ -510,6 +511,7 @@
         backgroundColp=#554e48;
         dEvalCol=#403d39;
         lEvalCol=#e0e0e0;
+        coordsBlend=normal;
     }
     else if myBoard=="torsaniBeige" {
         svgBoardBlend=normal;
@@ -583,6 +585,7 @@
         themeWallpaper=server+'Torsani/wallpaper/wallpaper1.jpg';
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
+        coordsBlend=normal;
     }
     else if myBoard=="torsaniGray" {
         svgBoardBlend=normal;
@@ -666,6 +669,7 @@
         hueRotationArrow=20deg;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
+        coordsBlend=normal;
     }
 
     
@@ -900,6 +904,7 @@
             background-image: url(specialEffect), url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .openings-view-chessboard chess-board,
         .game-preview-component.sidebar-tab-games-new-preview,
         .game-preview-component.player-card-new-preview,
         .diagram-board-component  chess-board,

@@ -734,8 +734,10 @@
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .openings-view-chessboard chess-board,
+        .game-preview-component.sidebar-tab-games-new-preview,
         .game-preview-component.player-card-new-preview,
-        .diagram-board-component  chess-board,
+        .diagram-board-component chess-board,
         .game-board-preview,
         .game-preview-legacy-component,
         .game-preview-component.open-games-item-preview,

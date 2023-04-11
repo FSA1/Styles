@@ -447,7 +447,7 @@
         enableCornerLogo=1;
         enableCornerLogo2=1;
         enableWallpaper=1;
-        enableCustomCoord=0;
+        enableCustomCoord=1;
         enableOutsideCoords=1;
         svgBoardBlend=normal;
         svgLightSqColor=#d4dfee;
@@ -475,8 +475,10 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#d4dfee;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol=#8d8d8d;
-        dCoordCol=#acacac;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
         centerLogoOpt=mfGMlogo;
         centerLogoBlend=darken;
         centerLogoCol=rgba(84,0,185,0.102);
@@ -509,8 +511,6 @@
         useWallpaper=degrade;
         backgroundColp=#564e7f;
         evalOpt=auto;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
@@ -525,6 +525,8 @@
         enableCornerLogo=1;
         enableCornerLogo2=1;
         enableLightTheme=0;
+        enableCustomCoord=1;
+        //enableOutsideCoords=1;
         svgBoardBlend=overlay;
         svgLightSqColor=#fff;
         svgLightSqOpacity=1;
@@ -554,6 +556,8 @@
         outCoordCol=rgba(255,255,255,0.722);
         lCoordCol=#9b2e8f;
         dCoordCol=#ea8fcc;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
         cornerLogoOpt=cornerLogoTextOnly;
         cornerLogoBlend=multiply;
         cornerLogoCol=rgba(106,31,106,0.388);
@@ -577,8 +581,6 @@
         useWallpaper=gradient;
         backgroundColp=#421f44;
         evalOpt='custom';
-        dEvalCol=lCoordCol;
-        lEvalCol=dCoordCol;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=inset 0px -1px 0px 34px rgba(202,20,199,0.28);
     }
@@ -734,9 +736,10 @@
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .openings-view-chessboard chess-board,
         .game-preview-component.sidebar-tab-games-new-preview,
         .game-preview-component.player-card-new-preview,
-        .diagram-board-component  chess-board,
+        .diagram-board-component chess-board,
         .game-board-preview,
         .game-preview-legacy-component,
         .game-preview-component.open-games-item-preview,
