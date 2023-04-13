@@ -1,0 +1,1271 @@
+/* ==UserStyle==
+@name           Especial Madeira: chessboard
+@author         ChessSkins
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/ChessSkins
+@description    `highly customizable chess set for chess.com.`
+@version        1.0.4-beta
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
+@var    select      myBoard    "🟢🏁Tabuleiro" {
+            "Mógno": "mahogany",
+            "Nogueira": "walnut",
+            "Nogueira Especial": "walnutSpecial",
+            "Nog. arredondado": "walnutRound",
+            "Madeira clara": "light-wood",
+            "Madeira escura": "dark-wood",
+            "Personalizado": "custom",
+            "Desativado": "disabled",
+        }
+@var    color    svgLightSqColor  "Casas claras"   #ddcfae
+@var    color    svgDarkSqColor  "Casas escuras"   #88654e
+@var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
+@var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
+@var    range    svgLightSqOpacity  "Opacidade claras" [1.00, 0.01, 1.00, 0.01, ""]
+
+@var    range    frameRadius  "🔵Canto arredondado" [6, 0, 34, 1, "px"]
+@var    checkbox    frameRadiusInOut  "↪🔹Conjunto <--> Externo" 1
+
+@var    range    ajustBoardSize  "Tam. do tabuleiro" [0.86, 0.82, 0.92, 0.01, ""]
+
+@var    select      setHighlight    "🟡Destaque de movimento" {
+            "Personalizado*": "op1",
+            "Padrão": "disabled",
+        }
+
+@var    color    hlColor  "↪Cor do destaque"   #fc0
+
+@var    range    highlightOpacity  "↪Opacidade Destaque" [0.5, 0.3, 1, 0.1, ""]
+
+@var    color    hlSqColor4  "🔴Click Direito"   #eb6150
+@var    color    hlSqColor3  "🟠Click+CTRL"   #fa0
+@var    color    hlSqColor2  "🟢Click+SHIFT"   #acce59
+@var    color    hlSqColor1  "🔵Click+ALT"   #52b0dc
+
+@var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
+@var    checkbox    enableCenterLogo   "🟩Logo central" 1
+@var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
+@var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
+@var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
+
+@var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
+@var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
+@var    select  coordsBlend    "↪Mesclagem Coordenadas" ["normal*", "multiply", "screen", "darken", "lighten", "overlay"]
+@var    select   outCoordFontName   "↪🆎Nome da fonte"{
+        "Fonte 1": "userFont1",
+        "Fonte 2": "userFont2",
+        "Fonte 3": "userFont3",
+        "Times New Roman": "Times New Roman",
+        "Helvetica": "Helvetica",
+        "Segoe UI*": "Segoe UI",
+        "Tahoma": "Tahoma",
+        "Verdana": "Verdana",
+        "serif": "serif",
+        "sans-serif": "sans-serif",
+    }
+@var    range    outCoordFontSize  "↪Tam. da fonte" [0.24, 0.1, 0.3, 0.01, "rem"]
+@var select   outCoordFontWeight   "↪Tipo"    ["400*", "600", "700", "800"]
+
+@var    select      outCoordFontCase    "↪Maiúsculas ou minúsculas"{
+            "Maiúsculas": "uppercase",
+            "Minúsculas*": "lowercase",
+        }
+@var    select      outCoordColorOpt    "↪🟢Origem da cor"{
+            "Casas Claras*": "svgLightSqColor",
+            "Personalizado": "outCoordCol",
+        }
+@var color    outCoordCol  "Coordenadas externas"   #ffffffb8
+@var color    lCoordCol  "Coord. de casas claras"   #8d8d8d
+@var color    dCoordCol  "Coord. de casas escuras"   #acacac  
+
+@var    select      boardBGOpt    "🟠Fundo do tabuleiro"{
+            "Madeira clara": "txLightWood",
+            "Madeira escura": "txDarkWood",
+            "Madeira escura2": "txDarkWood2",
+            "🔗Link1": "boardFrame1",
+            "🔗Link2": "boardFrame2",
+            "🔗Link3": "boardFrame3",
+            "🔗Link4": "boardFrame4",
+            "🔗Link5": "boardFrame5",
+            "Somente cor*": "colorOnly",
+        }
+@var    color    boardBGColor  "↪🔸Cor de fundo"   #c8b08d
+@var    select      bgSize    "↪🔸Tam. do fundo"{
+            "Estender": "cover",
+            "Conter": "contain",
+            "Porcentagem*": "bPercentSize",
+        }
+@var    range    bPercentSize    "↪valor de porcentagem" [100, 1, 120, 1, "%"]
+
+@var    range    bgPosX  "↪🔸Ajuste horizontal" [50, 0, 100, 5, "%"]
+@var    range    bgPosY  "↪🔸Ajuste vertical" [50, 0, 100, 5, "%"]
+
+@var    select      frameOpt    "↪🟢Borda"{
+            "Madeira clara": "txLightWood",
+            "Madeira escura": "txDarkWood",
+            "Madeira escura2": "txDarkWood2",
+            "Madeira escura3": "txfrDarkWood2",
+            "🔗Link1": "boardFrame1",
+            "🔗Link2": "boardFrame2",
+            "🔗Link3": "boardFrame3",
+            "🔗Link4": "boardFrame4",
+            "🔗Link5": "boardFrame5",
+            "Igual ao fundo*": "boardBGOpt",
+            "Somente cor": "colorOnly",
+        }
+@var    color    frameColor  "↪🟢Cor da borda"   #5a4233
+
+@var    select      frameSize    "Tam. da borda"{
+            "Estender": "cover",
+            "Conter": "contain",
+            "Igual ao fundo*": "bgSize",
+            "Porcentagem": "fPercentSize",
+        }
+@var    range    fPercentSize    "↪valor de porcentagem" [100, 1, 120, 1, "%"]
+
+
+@var    range    framePosX  "Ajuste horizontal" [50, 0, 100, 5, "%"]
+@var    range    framePosY  "Ajuste vertical" [50, 0, 100, 5, "%"]
+
+
+@var    select      innerBorderOpt    "↪🟢Borda interna"{
+            "cor casas claras": "svgLightSqColor",
+            "cor casas escuras": "svgDarkSqColor",
+            "cor personalizada*": "innerBorderColor",
+        }
+@var    color    innerBorderColor   "↪🟢Cor borda interna"   #c6b295
+
+@var    checkbox    enableBoardShadowInset  "🟨Sombra interna do tabuleiro" 0
+@var    checkbox    enableBoardShadow  "🟨Sombra externa do tabuleiro" 0
+
+@var    checkbox    enableFrameShadowInset  "🟧Sombra interna da borda" 0
+@var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 34, 1, "px"]
+@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]
+@var    color    frameShadowInsetColor  "↪🔸Cor da sombra"   rgba(0, 0, 0, .4)
+
+@var    checkbox    enableFrameShadow  "🟧Sombra externa da borda" 1
+@var    range    frameShadowBlur    "↪🔸Desfocar" [8, 0, 34, 1, "px"]
+@var    range    frameShadowSpread   "↪🔸Dispersar" [4, 0, 34, 1, "px"]
+@var    color    frameShadowColor  "↪🔸Cor da sombra"    rgba(0, 0, 0, .5)
+
+@var    text     boardFrame1    "🔗Link textura 1"   "'entre aspas simples'"
+@var    text     boardFrame2    "🔗Link textura 2"   "'entre aspas simples'"
+@var    text     boardFrame3    "🔗Link textura 3"   "'entre aspas simples'"
+@var    text     boardFrame4    "🔗Link textura 4"   "'entre aspas simples'"
+@var    text     boardFrame5    "🔗Link textura 5"   "'entre aspas simples'"
+
+@var    select      centerLogoOpt    "👉☯️Selecionar logo central"{
+            "🔗logo1": "logoLink1",
+            "🔗logo2": "logoLink2",
+            "🔗logo3": "logoLink3",
+            "🔗logo4": "logoLink4",
+            "🔗logo5": "logoLink5",
+        }
+@var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+
+@var color    centerLogoCol  "Cor do logo central"   #8d766640
+@var    range    centerLogoSize  "Tam. logo central" [50, 10, 120, 1, "%"]
+@var    range    centerLogoOpacity  "Opacidade do logo central" [0.4, 0.01, 1, 0.01, ""]
+@var    range    centerLogoPosX  "Ajuste horizontal" [50, -20, 120, 2, "%"]
+@var    range    centerLogoPosY  "Ajuste vertical" [50, -20, 120, 2, "%"]
+
+@var    select      cornerLogoOpt    "👉☯️Selecionar logo secundário"{
+            "🔗logo1": "logoLink1",
+            "🔗logo2": "logoLink2",
+            "🔗logo3": "logoLink3",
+            "🔗logo4": "logoLink4",
+            "🔗logo5": "logoLink5",
+            "🔗Texto*": "cornerLogoTextOnly",
+        }
+
+@var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    range    cornerLogoSize  "↪Tam. logo secundário" [15, 10, 120, 1, "%"]
+@var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
+@var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
+@var    range    cornerLogoPosY  "↪Ajuste vertical" [53, -40, 150, 1, "%"]
+@var color    cornerLogoCol  "↪Cor do logo secundário"   #8d766640
+@var    range    cornerLogoFontSize  "↪Tam. da fonte" [10, 8, 24, 2, "px"]
+@var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
+@var select   cornerLogoFontName   "↪🆎Nome da fonte"{
+        "Fonte 1": "userFont1",
+        "Fonte 2": "userFont2",
+        "Fonte 3": "userFont3",
+        "Times New Roman": "Times New Roman",
+        "Montserrat": "Montserrat",
+        "Arial Black": "Arial Black",
+        "Arial": "Arial",
+        "Courier": "Courier",
+        "Georgia": "Georgia",
+        "Helvetica": "Helvetica",
+        "Palatino": "Palatino",
+        "Segoe UI": "Segoe UI",
+        "Tahoma": "Tahoma",
+        "Verdana": "Verdana",
+        "serif": "serif",
+        "sans-serif*": "sans-serif",
+    }
+@var    text     cornerLogoText    "👉Texto 1"   "DGT"
+@var    text     cornerLogo2Text    "👉Texto 2"   "Chessboard"
+@var select   cornerLogo2FontName   "↪🆎Nome da fonte"{
+        "Fonte 1": "userFont1",
+        "Fonte 2": "userFont2",
+        "Fonte 3": "userFont3",
+        "Times New Roman": "Times New Roman",
+        "Montserrat": "Montserrat",
+        "Arial Black": "Arial Black",
+        "Arial": "Arial",
+        "Courier": "Courier",
+        "Georgia": "Georgia",
+        "Helvetica": "Helvetica",
+        "Palatino": "Palatino",
+        "Segoe UI": "Segoe UI",
+        "Tahoma": "Tahoma",
+        "Verdana": "Verdana",
+        "serif": "serif",
+        "sans-serif*": "sans-serif",       
+    }
+@var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
+@var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [16, 8, 24, 2, "px"]
+@var color    cornerLogo2Col  "↪Cor texto 2"   #8d766640
+@var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    range    cornerLogo2Size  "↪Tam.  texto 2" [14, 10, 100, 1, "%"]
+@var    range    cornerLogo2PosX  "↪Ajuste horiz. texto 2" [109, -40, 150, 1, "%"]
+@var    range    cornerLogo2PosY  "↪Ajuste vert. texto 2" [60, -40, 150, 1, "%"]
+
+
+
+@var    text     logoLink1    "☯️link 1 (logo)"   "'url'"
+@var    text     logoLink2    "☯️link 2 (logo)"   "'url'"
+@var    text     logoLink3    "☯️link 3 (logo)"   "'url'"
+@var    text     logoLink4    "☯️link 4 (logo)"   "'url'"
+@var    text     logoLink5    "☯️link 5 (logo)"   "'url'"
+
+@var    select      useWallpaper    "🖼️Plano de fundo" {
+            "🔗link1": "userWall1",
+            "🔗link2": "userWall2",
+            "🔗link3": "userWall3",
+            "🔗link4": "userWall4",
+            "🔗link5": "userWall5",
+            "Do tema (se houver)*": "themeWallpaper",
+            "Degradê": "gradient",
+        }
+@var    checkbox    enableLightTheme   "🟩Tema escuro <-> claro" 0
+@var    select      setWallpaper    "Modo do Plano de fundo" {
+            "Estender*": "cover",
+            "Conter": "contain",
+            "Porcentagem": "percentSize",
+            "Manter": "initial",
+        }
+@var    range    percentSize    "↪valor de porcentagem" [100, 1, 100, 1, "%"]
+
+@var    text     userWall1   "🔗Imagem de fundo 1"   "'link entre aspas simples'"
+@var    text     userWall2    "🔗Imagem de fundo 2"   "'link entre aspas simples'"
+@var    text     userWall3    "🔗Imagem de fundo 3"   "'link entre aspas simples'"
+@var    text     userWall4    "🔗Imagem de fundo 4"   "'link entre aspas simples'"
+@var    text     userWall5    "🔗Imagem de fundo 5"   "'link entre aspas simples'"
+
+@var    color    backgroundColp  "Cor de fundo"   #4a382e
+
+@var    select      evalOpt    "Barra de Avaliação" {
+            "Cor automática*": "auto",
+            "Personalizada": "custom",	
+            "Padrão": "disabled",
+        }
+
+@var color    dEvalCol  "Avaliação Pretas"   #403D39
+@var color    lEvalCol  "Avaliação Brancas"   #E0E0E0
+@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.5, 1, 0.1, ""]
+
+@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
+@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
+@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+
+@var    text     userFont1    "🆎Importar fonte 1:"   "'Bauhaus'"
+
+@var    text     userFont2    "🆎Importar fonte 2:"   "'Comic Sans MS'"
+
+@var    text     userFont3    "🆎Importar fonte 3:"   "'MS Gothic'"
+
+@var    text     myTheme    "Nome do Tema"   "'myTheme'"
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+    /*primary server (GitHub)*/    
+    gitHub='https://github.com/FSA1/Styles/raw/main/'    
+    /*alternative server (GitLab)*/
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
+    /*there is no error below*/
+    if setServer {
+        server = gitLab
+    }else{
+        server = gitHub
+    }
+    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
+    /*Textures*/
+    txLightWood=server+'super-board/textures/wood/light-wood.jpg';
+    txDarkWood=server+'super-board/textures/wood/dark-wood.jpg';
+    txDarkWood2=server+'super-board/textures/wood/dark-wood2.jpg';
+    txfrDarkWood2=server+'super-board/textures/wood/frames/frame-dark-wood1.jpg';
+    /*selector with exceptions to avoid override analysis highlights*/
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+
+    if enableBoardShadow{
+        boardShadow= 0px 0px 8px 4px rgba(0, 0, 0, .4);
+    }
+    if enableBoardShadowInset{
+        boardShadowInset= inset 0px 1px 2px 1px rgba(0, 0, 0, .4);
+    }
+    if enableFrameShadow{
+        frameShadow= 0px 0px frameShadowBlur frameShadowSpread frameShadowColor;
+    }
+    if enableFrameShadowInset{
+        frameShadowInset= inset 0px -1px frameShadowInsetBlur frameShadowInsetSpread frameShadowInsetColor;
+    }
+    
+}/*Themes below*/
+@-moz-document domain("chess.com") {
+    /*Themes*/
+    
+    if myBoard=="walnut"{
+        enableGlobalColor=0;
+        enableInnerBorder=1;
+        enableLightTheme=0;
+        enableBoardFrame=1;
+        enablePanelTexture=0;
+        enableBoardShadow=0;
+        enableBoardShadowInset=0;
+        enableFrameShadow=1;
+        enableFrameShadowInset=0;
+        enableCustomPanelFontColor=0;
+        enablePanelColor=0;
+        enablePanelBlur=0;
+        //enableOutsideCoords=1;
+        enableCustomCoord=1;
+        svgLightSqColor=#fff0d1;
+        svgLightSqOpacity=0.65;
+        svgDarkSqColor=#e8b778;
+        svgDarkSqOpacity=0.2;
+        boardBGOpt=server+'super-board/textures/wood/walnut.jpg';
+        boardBGColor=rgba(213,198,180,0.69);
+        bgSize=cover;
+        bgPosX=0%;
+        bgPosY=0%;
+        frameRadius=0px;
+        //ajustBoardSize=0.882;
+        frameShadow= 0 0 8px 4px rgba(0, 0, 0, .5);
+        frameShadowInset= inset 0 -1px 8px 4px rgba(0, 0, 0, .4);
+        frameOpt=server+'super-board/textures/wood/frames/frame-wood.jpg';
+        frameColor=#622f0f;
+        frameSize=cover;
+        framePosX=0%;
+        framePosY=0%;
+        innerBorderOpt=#c1a890;
+        innerBorderColor=#fff0d1;
+        panelBGOpt=boardBGOpt
+        setHighlight='op1';
+        hlImgOpt='disabled';
+        hlColor=#ffcb2d;
+        highlightOpacity=0.4;
+        panelFontColor=rgba(255,255,255,0.6);
+        setFontColorSrc=rgba(255,228,191,0.722);
+        mainColumnColor=0;
+        panelColor=rgba(67,74,85,0.522);
+        mainColBlur=1;
+        lCoordCol=#794f34;
+        dCoordCol=#d0bca4;
+        dEvalCol= lCoordCol;
+        lEvalCol= dCoordCol;
+        evalOpt=custom;
+        coordsBlend=normal;
+        backgroundColp=#4b4844; 
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=dCoordCol;
+    }
+    else if myBoard=="walnutRound"{ 
+        enableGlobalColor=0;
+        enableLightTheme=0;
+        enableBoardFrame=1;
+        enableInnerBorder=1;
+        enableBoardShadow=0;
+        enableBoardShadowInset=0; 
+        enableFrameShadow=1;
+        enableFrameShadowInset=1;
+        //enableOutsideCoords=1;
+        enableCustomCoord=1;       
+        svgLightSqColor=#fff0d1;
+        svgLightSqOpacity=0.65;
+        svgDarkSqColor=#e8b778;
+        svgDarkSqOpacity=0.2;
+        boardBGOpt=server+'super-board/textures/wood/walnut.jpg';
+        boardBGColor=rgba(213,198,180,0.69);
+        bgSize=cover;
+        bgPosX=0%;
+        bgPosY=0%;
+        /*🔐important: frame radius need to be locked for this board*/
+        frameRadius=35px;
+        /*🔐important: board size need to be locked for this board*/
+        ajustBoardSize=0.861;
+        frameOpt=server+'super-board/textures/wood/frames/frame-walnut-round-wood.jpg';
+        frameColor=#622f0f;
+        frameSize=cover;
+        framePosX=0%;
+        framePosY=0%;
+        innerBorderOpt=#c1ad90;
+        /*🚩Special shadow for this board*/
+        frameShadow= 0px 0px 8px 4px #00000080;
+        frameShadowInset= inset 0px -1px 6px 8px #00000075;
+        setHighlight='op1';
+        hlImgOpt='disabled';
+        hlColor=#ffcb2d;
+        highlightOpacity=0.4;
+        outCoordColorOpt=rgba(255,228,191,0.722);
+        backgroundColp=#4b4844;
+        coordsBlend=multiply;
+        lCoordCol= #7f4b30;
+        dCoordCol= #d5b79d;
+        dEvalCol= lCoordCol;
+        lEvalCol= dCoordCol;
+        evalOpt=custom;
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=dCoordCol;
+    }
+    else if myBoard=="walnutSpecial" {
+        svgBoardBlend=normal;
+        svgLightSqOpacity=0.55;
+        enableGlobalColor=0;
+        //svgLightSqColor=#e3c6a0;
+        //svgDarkSqColor=#c28f64;
+        svgLightSqColor=#f2d4a7;
+        svgDarkSqColor=#ce9769;
+        svgDarkSqOpacity=0.35;
+        boardBGOpt=server+'super-board/textures/wood/real/walnut-board.jpg';
+        boardBGColor=#c4ac93;
+        bgSize=100%;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=6px;
+        frameRadiusInOut=1;
+        enableBoardFrame=1;
+        frameOpt=server+'super-board/textures/wood/frames/frame-wood-light1.jpg';
+        frameColor=#9b6d4b;
+        frameSize=100%;
+        framePosX=50%;
+        framePosY=50%;
+        enableInnerBorder=1;
+        innerBorderOpt=rgba(59,36,22,0.82);
+        innerBorderColor=rgba(59,36,22,0.82);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        setHighlight=op1;
+        hlColor=#ffa825;
+        highlightOpacity=0.5;
+        enableCustomCoord=1;
+        //enableOutsideCoords=1;
+        outCoordFontSize=0.24rem;
+        outCoordFontName=Segoe UI;
+        outCoordFontWeight=400;
+        outCoordColorOpt=rgba(238,211,176,0.969);
+        outCoordCol=rgba(238,211,176,0.969);
+        lCoordCol=#8b542c;
+        dCoordCol=rgba(227,197,159,0.941);
+        coordsBlend=normal;
+        dEvalCol=dCoordCol;
+        lEvalCol=lCoordCol;
+        evalOpt=auto;
+        themeWallpaper=gradient;
+        backgroundColp=#4a382e;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+    }
+    else if myBoard=="mahogany" {
+        enableGlobalColor=0;
+        enableLightTheme=0;
+        enableBoardFrame=1;
+        enableInnerBorder=1;
+        enablePanelTexture=0;
+        enableBoardShadow=0;
+        enableBoardShadowInset=0;
+        enableFrameShadow=1;
+        enableFrameShadowInset=1;
+        //enableOutsideCoords=1;
+        enableCustomCoord=1;
+        svgLightSqColor=#fff0d1;
+        svgLightSqOpacity=0.65;
+        svgDarkSqColor=#e89a78;
+        svgDarkSqOpacity=0.3;
+        boardBGOpt=server+'super-board/textures/wood/mahogany.jpg';
+        boardBGColor=rgba(141,133,123,0.69);
+        bgSize=cover;
+        bgPosX=0%;
+        bgPosY=0%;
+        /*🔐important: frame radius need to be locked for this board*/
+        frameRadiusInOut=1;
+        frameRadius=35px;
+        /*🔐important: board size need to be locked for this board*/
+        ajustBoardSize=0.861;
+        frameOpt=server+'super-board/textures/wood/frames/frame-mahogany-round-wood.jpg';
+        frameColor=#683611;
+        frameSize=cover;
+        framePosX=0%;
+        framePosY=0%;
+        innerBorderOpt=#c6a992;
+        panelBGOpt=boardBGOpt;
+        /*🚩Special shadow for this board*/
+        frameShadow= 0 0 8px 4px rgba(0, 0, 0, .5);
+        frameShadowInset= inset 0px -1px 6px 8px #00000075;
+        setHighlight='op1';
+        hlImgOpt=disabled;
+        hlColor=#ffcb2d;
+        highlightOpacity=0.4;
+        panelFontColor=rgba(255,255,255,0.6);
+        setFontColorSrc=rgba(218,185,172,0.749);
+        mainColumnColor=0;
+        panelColor=rgba(94,33,17,0.561);
+        mainColBlur=1;
+        lCoordCol=#79341d;
+        dCoordCol=#d0ac8f;
+        coordsBlend=normal;
+        dEvalCol=#7d3110;
+        lEvalCol=#e6ceb3;
+        evalOpt=custom;
+        outCoordCol=rgba(218,185,172,0.749);
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=dCoordCol;
+        evalBarOpacity=0.9;
+        backgroundColp=#7c746d;
+    }
+    else if myBoard=="light-wood" {
+        enableGlobalColor=0;
+        enableInnerBorder=1;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        enableCenterLogo=0;
+        //enableOutsideCoords=1;
+        enableCustomCoord=1;      
+        //ajustBoardSize=0.86;
+        svgBoardBlend=normal;
+        svgLightSqOpacity=0.01;
+        svgDarkSqOpacity=0.01;
+        svgLightSqColor=#d9b993;
+        svgDarkSqColor=#915d41;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        coordsBlend=normal;
+        boardBGOpt=server+'latvian/boards/faded-wood.jpg';
+        boardBGColor=#8b7253;
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=2px;
+        frameRadiusInOut=1;
+        frameOpt=server+'super-board/textures/wood/frames/frame-cherry-wood-dark.jpg';
+        frameColor=#432c0c;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        innerBorderOpt= rgba(227, 200, 167, .87);
+        innerBorderColor= rgba(230,193,157,0.949);
+        setHighlight=op1;
+        hlColor=#ffae00;
+        highlightOpacity=0.4;
+        hlImgOpt="op0";
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=dCoordCol;
+        outCoordCol=rgba(255,255,255,0.722);
+        backgroundColp=#413426;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+    }
+    else if myBoard=="dark-wood" {
+        enableGlobalColor=0;
+        enableInnerBorder=1;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        enableCenterLogo=0;
+        //ajustBoardSize=0.86;
+        //enableOutsideCoords=1;
+        enableCustomCoord=1;
+        svgBoardBlend=normal;
+        svgLightSqColor=#D2B390;
+        svgLightSqOpacity=0.01;
+        svgDarkSqColor=#634222;
+        svgDarkSqOpacity=0.01;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        coordsBlend=normal;
+        boardBGOpt=server+'latvian/boards/dark-wood.jpg';
+        boardBGColor=#8b7253;
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=2px;
+        frameRadiusInOut=1;
+        frameOpt=server+'super-board/textures/wood/frames/frame-dark-wood1.jpg';
+        frameColor=#432c0c;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        innerBorderOpt=rgba(236, 208, 166, .84);
+        innerBorderColor=rgba(230,193,157,0.949);
+        setHighlight=op1;
+        hlColor=#ffae00;
+        highlightOpacity=0.4;
+        hlImgOpt="op0";
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=dCoordCol;
+        outCoordCol=rgba(255,255,255,0.722);
+        backgroundColp=#413426;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+    }
+
+    /*End themes*/
+
+    /*GLOBAL COLOR - Need to be placed after themes*/
+    if (enableGlobalColor==1 && myBoard=="custom") || global==1{    
+        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);       
+        frameColor=saturate(darken(svgDarkSqColor, 10%), -2%);
+        centerLogoOpacity=0.24;
+        centerLogoBlend=darken;
+        cornerLogoBlend=multiply;
+        centerLogoCol=saturate(lighten(svgDarkSqColor, -12%), 10%);
+        cornerLogoCol=cornerLogo2Col=saturate(lighten(svgDarkSqColor, 70%), 10%);
+        backgroundColp=saturate(shade(svgDarkSqColor,40%), -80%);
+        
+    }    
+    if frameSize=="contain"{
+        frameRepeat=repeat;
+    }else{
+        frameRepeat=no-repeat;
+    }    
+    if bgSize=="contain"{
+        bgRepeat=repeat;
+    }else{
+        bgRepeat=no-repeat;
+    }
+    if !enableBoardShadowInset{
+        boardShadowInset=0;
+    }
+    if !enableFrameShadow {
+        frameShadow=0;
+    }
+    if !enableFrameShadowInset{
+        frameShadowInset=0;
+    }
+    /*=============SHOWS THEME SETTINGS IN ABOUT SECTION ON PROFILE PAGE SO YOU CAN COPY IT USING 'ITEM INSPECTION' IN CONTEXT MENU FROM THE BROWSER=============*/
+    /*In the Stylus menu find 'My Theme' textbox, write '1', 'space' and the theme name in camel case. For example: '1 myTheme'. When on the inspection page click on
+    '.v5-section-content-wide' > '#collapseAbout' then on 'after' click on 'content' and choose 'copy value'. Now you can make some corrections and save your
+     settings and paste them as a new theme in this code. Be sure to add a new entry to the myBoard menu*/
+    getValue=''+ myTheme;
+    myTheme=unquote(slice(getValue,2))
+    showSettings=slice(getValue,0,1);
+   
+    if showSettings=="1"{
+        #collapseAbout{
+            visibility:hidden!important;
+        }/*probably missing variables or outdated - need to be checked*/
+        #collapseAbout:after{
+            background-color:#fff!important;
+            color:#000!important;
+            font-size: 1rem;
+            content:'"if myBoard==%s {svgBoardBlend=%s; svgLightSqColor=%s; svgLightSqOpacity=%s; enableGlobalColor=%s; svgDarkSqColor=%s; svgDarkSqOpacity=%s; boardBGOpt=%s; boardBGColor=%s; bgSize=%s; bgPosX=%s; bgPosY=%s; frameRadius=%s; frameRadiusInOut=%s; ajustBoardSize=%s; enableBoardFrame=%s; frameOpt=%s; frameColor=%s; frameSize=%s; framePosX=%s; framePosY=%s; enableInnerBorder=%s; innerBorderOpt=%s; innerBorderColor=%s; enableBoardShadowInset=%s; enableBoardShadow=%s; enableFrameShadowInset=%s; enableFrameShadow=%s; boardFrame1=%s; boardFrame2=%s; boardFrame3=%s; boardFrame4=%s; boardFrame5=%s; setHighlight=%s; hlColor=%s; highlightOpacity=%s; enableArrowSettings=%s; enableCenterLogo=%s; enableCornerLogo=%s; enableCornerLogo2=%s; enableWallpaper=%s; enableCustomCoord=%s; enableOutsideCoords=%s; outCoordFontSize=%s; outCoordFontName=%s; outCoordFontWeight=%s; outCoordColorOpt=%s; outCoordCol=%s; lCoordCol=%s; dCoordCol=%s; centerLogoOpt=%s; centerLogoBlend=%s; centerLogoCol=%s; centerLogoSize=%s; centerLogoOpacity=%s; centerLogoPosX=%s; centerLogoPosY=%s; cornerLogoOpt=%s; cornerLogoBlend=%s; cornerLogoCol=%s; cornerLogoSize=%s; cornerLogoOpacity=%s; cornerLogoPosX=%s; cornerLogoPosY=%s; cornerLogoFontSize=%s; cornerLogoFontName=%s; cornerLogoFontWeight=%s; cornerLogoText=%s; cornerLogo2Text=%s; cornerLogo2Blend=%s; cornerLogo2Size=%s; cornerLogo2PosX=%s; cornerLogo2PosY=%s; cornerLogo2FontSize=%s; cornerLogo2Col=%s; cornerLogo2FontName=%s; cornerLogo2FontWeight=%s; logoLink1=%s; logoLink2=%s; logoLink3=%s; logoLink4=%s; logoLink5=%s; useWallpaper=%s; enableLightTheme=%s; setWallpaper=%s; percentSize=%s; userWall1=%s; userWall2=%s; userWall3=%s; userWall4=%s; userWall5=%s; backgroundColp=%s; evalOpt=%s; dEvalCol=%s; lEvalCol=%s; evalBarOpacity=%s; hueRotationArrow=%s; arrowOpacity=%s; saturateArrow=%s; brightnessArrow=%s; frameShadow=%s; frameShadowInset=%s;}"' % ((myTheme) (svgBoardBlend) (svgLightSqColor) (svgLightSqOpacity) (enableGlobalColor) (svgDarkSqColor) (svgDarkSqOpacity) (boardBGOpt) (boardBGColor) (bgSize) (bgPosX) (bgPosY) (frameRadius) (frameRadiusInOut) (ajustBoardSize) (enableBoardFrame) (frameOpt) (frameColor) (frameSize) (framePosX) (framePosY) (enableInnerBorder) (innerBorderOpt) (innerBorderColor) (enableBoardShadowInset) (enableBoardShadow) (enableFrameShadowInset) (enableFrameShadow) (boardFrame1) (boardFrame2) (boardFrame3) (boardFrame4) (boardFrame5) (setHighlight) (hlColor) (highlightOpacity) (enableArrowSettings) (enableCenterLogo) (enableCornerLogo) (enableCornerLogo2) (enableWallpaper) (enableCustomCoord) (enableOutsideCoords) (outCoordFontSize) (outCoordFontName) (outCoordFontWeight) (outCoordColorOpt) (outCoordCol) (lCoordCol) (dCoordCol) (centerLogoOpt) (centerLogoBlend) (centerLogoCol) (centerLogoSize) (centerLogoOpacity) (centerLogoPosX) (centerLogoPosY) (cornerLogoOpt) (cornerLogoBlend) (cornerLogoCol) (cornerLogoSize) (cornerLogoOpacity) (cornerLogoPosX) (cornerLogoPosY) (cornerLogoFontSize) (cornerLogoFontName) (cornerLogoFontWeight) (cornerLogoText) (cornerLogo2Text) (cornerLogo2Blend) (cornerLogo2Size) (cornerLogo2PosX) (cornerLogo2PosY) (cornerLogo2FontSize) (cornerLogo2Col) (cornerLogo2FontName) (cornerLogo2FontWeight) (logoLink1) (logoLink2) (logoLink3) (logoLink4) (logoLink5) (useWallpaper) (enableLightTheme) (setWallpaper) (percentSize) (userWall1) (userWall2) (userWall3) (userWall4) (userWall5) (backgroundColp) (evalOpt) (dEvalCol) (lEvalCol) (evalBarOpacity) (hueRotationArrow) (arrowOpacity) (saturateArrow) (brightnessArrow)(frameShadow)(frameShadowInset)) !important;
+            visibility:visible!important;
+        }
+    }
+}
+@-moz-document domain("chess.com") {
+
+    /*Board*/
+   /*prevent user to get the board completely transparent with no visual references. It can be removed if you are an experienced user*/
+    if svgLightSqOpacity<"0.2" && svgDarkSqOpacity<"0.2" && boardBGOpt=="transparent"{
+        svgLightSqOpacity="0.2";
+        svgDarkSqOpacity="0.2";
+    }
+    svgDarkSqColor=hsla(svgDarkSqColor);
+    svgLightSqColor=hsla(svgLightSqColor);
+    centerLogoCol=hsla(centerLogoCol);
+    cornerLogoCol=hsla(cornerLogoCol);
+    cornerLogo2Col=hsla(cornerLogo2Col);
+    innerBorderOpt=hsla(innerBorderOpt);
+    outCoordColorOpt=hsla(outCoordColorOpt);
+    /*SVG IMAGES HERE 🔐 - need to be here because '#' symbol need to be replaced first for '%23' in the variables*/
+    /*main svg board*/
+    svgBoard="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='" + svgDarkSqColor + "' fill-opacity='" + svgDarkSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='" + svgLightSqColor + "' fill-opacity='" + svgLightSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3c/svg%3e";
+    cornerLogoTextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + cornerLogoCol + "' font-family='sans-serif' font-size='"+cornerLogoFontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + cornerLogoCol + "' font-family='"+cornerLogoFontName+"' font-size='"+cornerLogoFontSize+"'  font-weight='"+cornerLogoFontWeight+"' stroke-width='.26459'%3e"+cornerLogoText+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
+    cornerLogo2TextOnly="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='400' height='120' version='1.1' viewBox='0 0 105.83 31.75' xmlns='http://www.w3.org/2000/svg'%3e%3ctext x='23.73254' y='21.361437' fill='" + cornerLogo2Col + "' font-family='sans-serif' font-size='"+cornerLogo2FontSize+"' stroke-width='.26459' style='line-height:1.25' xml:space='preserve'%3e%3ctspan x='23.73254' y='21.361437' fill='" + cornerLogo2Col + "' font-family='"+cornerLogo2FontName+"' font-size='"+cornerLogo2FontSize+"'  font-weight='"+cornerLogo2FontWeight+"' stroke-width='.26459'%3e"+cornerLogo2Text+"%3c/tspan%3e%3c/text%3e%3c/svg%3e";
+
+    if enableCenterLogo{
+        centerLogo=centerLogoOpt;
+    }else{
+        centerLogo=null;
+    }
+    if enableCornerLogo{
+        cornerLogo=cornerLogoOpt;
+    }else{
+        cornerLogo=null;
+    }
+    if enableCornerLogo2==0{
+        cornerLogo2TextOnly='';
+    }
+    board3=boardBGOpt;
+    miniBoard3=board3;
+    if boardBGOpt!="colorOnly"{
+       boardBGColor=#0000;
+    }
+    if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
+        board3=null;
+        miniBoard3=frameOpt;
+        framePosX=bgPosX;
+        framePosY=bgPosY;
+    }
+    /*Board selector*/
+    if myBoard!="disabled"{
+        .board-layout-chessboard .board,
+        .fade-in-overlay/*chesskids*/
+        ,
+        #boarddefault_boardarea/*chesskids*/
+        ,
+        #divChessBoard_boardarea/*chesskids*/
+        ,
+        #vsComputerDiv_boardarea/*chesskids*/
+        ,
+        div[id^="board-"][class*="chess-board__board"]/*chesskids*/
+        ,
+        div[class^="board v-board disabled rounded"],
+        div[class^="daily-puzzle-board"],
+        div[class^="board chessboard-component"],
+        div[class^="board v-board chessboard-component"],
+        div[class^="board rounded"],
+        div[class^="board rounded fippled"],
+        div[class^="board fippled rounded"],
+        div[class^="board v-board rounded"],
+        div[class^="board v-board fippled rounded"],
+        div[class^="board disabled rounded"],
+        div[id$="_ChessBoard_boardarea"],
+        div[id^="chess_com_openingboard_1"],
+        div[id^="board_training"],
+        div[id^="divBoard_boardarea"],
+        div[id^="chess_com_tactics_board"],
+        div[id^="chessboard_"],
+        div[id*="chessboard_"],
+        div[id^="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentor_board_1_boardarea"],
+        div[id^="chess_com_emailboard_"],
+        div[id^="board-blank"],
+        chess-board[class^="board"],
+        chess-board[class^="board flipped"],
+        chess-board[id^="board-blank"],
+        chess-board[id^="board-vs-personalities"],
+        div[id*="chess_com_emailboard_"] {
+            if bgSize=="cover"{
+                background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+            }else{
+                background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
+            }
+            background-size: auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize!important;
+            background-blend-mode: cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
+            background-position:cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY!important;
+            background-color: boardBGColor; 
+            background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
+        } 
+        /*Small board for game preview*/
+        .openings-view-chessboard chess-board,
+        .game-preview-component.sidebar-tab-games-new-preview,
+        .game-preview-component.player-card-new-preview,
+        .diagram-board-component chess-board,
+        .game-board-preview,
+        .game-preview-legacy-component,
+        .game-preview-component.open-games-item-preview,
+        .game-preview-component.current-games-grid-preview,
+        .game-preview-component.promo-preview,
+        div [style*="40.png"][class="game-preview-component"],
+        div [style*="40.jpg"][class="game-preview-component"] {
+            /*clean board preview, no logo*/
+            background-image: url(svgBoard), url(miniBoard3) !important;
+            background-blend-mode: svgBoardBlend, normal!important;
+            background-color: solidBoardBGColor!important;
+            background-position:0 0, bgPosX bgPosY!important;
+            background-size:100%, bgSize!important;
+            if bgSize=="cover"{
+                background-repeat: no-repeat, no-repeat !important;
+            }else{
+                background-repeat: no-repeat, repeat !important;
+            }
+        }
+        .board-popover-component, .board-popover-component:before{
+            background-image: url(frameOpt) !important;
+            background-position:framePosX framePosY;
+            background-size:frameSize;           
+            background-color: solidBoardBGColor;
+            if bgSize=="cover"{
+                background-repeat: no-repeat !important;
+            }else{
+                background-repeat: repeat !important;
+            }
+            border-color:solidBoardBGColor!important;
+            border-image:url(frameOpt) 25 stretch!important;
+        }
+
+        /*========== Coordinates ==========*/
+
+        /*coords light*/
+        .coords-light,
+        .coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light,
+        text.coordinate-light {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: lCoordCol!important;
+                fill: @color;
+            }else {
+                color: transparentify(svgDarkSqColor, #000, 1) !important;
+                fill: @color;
+                if svgDarkSqOpacity>='0.7'{
+                    opacity:svgDarkSqOpacity;
+                }
+            }
+        }
+
+        /*coords dark*/
+        .coords-dark,
+        .coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark,
+        text.coordinate-dark {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: dCoordCol !important;
+                fill: @color;
+            }else {
+                color: transparentify(svgLightSqColor, #000, 1) !important;
+                fill: @color;
+                if svgLightSqOpacity>='0.7'{
+                    opacity:svgLightSqOpacity;
+                }
+            }
+        }/*======End coords ======*/
+
+        /*====== Evaluation Bar ======*/
+        if evalOpt!="disabled" {
+            .evaluation-bar-white,
+            .score-bar__fill[data-v-b0ff6725] {
+                if evalOpt == "auto" {
+                    background-color: svgLightSqColor !important;
+                }else if evalOpt == "custom" {
+                    background-color: lEvalCol !important;
+                }
+            }
+            .evaluation-bar-black {
+                if evalOpt == "auto" {
+                    background-color: saturate(svgDarkSqColor, 10%) !important;
+                }else if evalOpt == "custom" {
+                    background-color: dEvalCol !important;
+                }
+            }
+            /*evaluation bar width for chesskid*/
+            div [class="score-bar"] {
+                width: 3rem;
+                left: 1.4rem;
+            }
+            .score-bar__text[data-v-b0ff6725] {
+            font-size: 9px!important;
+            }
+            .evaluation-bar-bar {
+                opacity: evalBarOpacity!important;
+                box-shadow: 1px 1px 8px 2px #0000002e;
+                z-index:1;
+            }
+            /*====== End Evaluation Bar ======*/
+        }
+    }/*end board*/
+        
+    /*Highlight*/
+    if setHighlight=="op1" {
+        #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
+        #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
+        .move-square,
+        .highlight:not({notThisColors}):not([class="stream highlight"]) {
+            background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        }
+    }
+    /*=== Highlight opacity===*/
+    .move-square,
+    .highlight:not({notThisColors}) {
+        opacity: highlightOpacity!important;
+    }/*====== End highlight ======*/
+            
+    /*====== change arrows colors ======*/
+    if enableArrowSettings {
+        .arrow {
+            filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
+            opacity: arrowOpacity !important;
+        }
+    }/*====== End arrows colors ======*/
+    /*------end section------*/
+
+    /*change highlight made by the user*/
+    [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
+        background-color:hlSqColor1!important;
+    }
+    [class*="highlight"][style*="172\, 206\, 89"],[class*="highlight"][style*="#acce59"]{
+        background-color: hlSqColor2!important;
+    }
+    [class*="highlight"][style*="255\, 170\, 0"],[class*="highlight"][style*="#fa0"]{
+        background-color: hlSqColor3!important;
+    }
+    [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
+        background-color: hlSqColor4!important;
+    }
+
+}
+@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
+
+    /*======== Wallpaper =======*/
+    if enableWallpaper=="1" {
+            .theme-bg,
+            body:after {
+                content: '';
+                background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
+                if setWallpaper=="cover" || setWallpaper=="contain" || setWallpaper==percentSize{
+                    background-size: setWallpaper !important;
+                    -webkit-background-size: @background-size;
+                    -moz-background-size: @background-size;
+                    -o-background-size: @background-size;
+                }
+                if setWallpaper=="cover"{
+                    background-repeat:no-repeat!important;
+                }else{
+                    background-repeat:repeat!important;
+                }
+                background-position: center center;                    
+                position: fixed;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1000;
+            }
+    }/*=== End wallpaper ===*/
+}
+
+@-moz-document domain("chess.com") {
+    /*Border*/
+
+    testColor="" + boardBGColor;
+    resultColor=slice(testColor,0,-6);
+    
+    innBorderSize=0.4rem;
+    if innBorderSize > 0 {
+        inn=innBorderSize/2;
+    }else{inn=0}
+	
+    @media (min-width: 960px){
+        if enableBoardFrame{ 
+            /*board*/
+
+            .board-layout-chessboard .board,
+            .fade-in-overlay,
+            #boarddefault_boardarea,
+            #divChessBoard_boardarea,
+            #vsComputerDiv_boardarea,
+            div[id^="board-"][class*="chess-board__board"],
+            div[class^="board v-board disabled rounded"],
+            div[class^="daily-puzzle-board"],
+            div[class^="board chessboard-component"],
+            div[class^="board v-board chessboard-component"],
+            div[class^="board rounded"],
+            div[class^="board rounded fippled"],
+            div[class^="board fippled rounded"],
+            div[class^="board v-board rounded"],
+            div[class^="board v-board fippled rounded"],
+            div[class^="board disabled rounded"],
+            div[id$="_ChessBoard_boardarea"],
+            div[id^="chess_com_openingboard_1"],
+            div[id^="board_training"],
+            div[id^="divBoard_boardarea"],
+            div[id^="chess_com_tactics_board"],
+            div[id^="chessboard_"],
+            div[id*="chessboard_"],
+            div[id^="chess_com_chessmentorboard_"],
+            div[id*="chess_com_chessmentorboard_"],
+            div[id*="chess_com_chessmentor_board_1_boardarea"],
+            div[id^="chess_com_emailboard_"],
+            div[id^="board-blank"],
+            chess-board[class^="board"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[id^="board-blank"],
+            chess-board[id^="board-vs-personalities"],
+            div[id*="chess_com_emailboard_"] {
+                transform-style: preserve-3d;
+                width:'calc(var(--boardWidth) * %s)!important;' % ajustBoardSize;
+                height:'calc(var(--boardHeight) * %s)!important;' % ajustBoardSize;
+                if ajustBoardSize=="0.9"{
+                multiplierL=0.54;
+                multiplierT=0.5; 
+                }else{
+                multiplierL=0.53;
+                multiplierT=0.5; 
+                }              
+                boardRatioL='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierL));
+                boardRatioT='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierT));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatioL) (inn));
+                margin-top:'calc(var(--boardHeight) * %s + %s)!important;' % ((boardRatioT) (inn));
+                if frameRadiusInOut{
+                    border-radius:0!important;                    
+                }else{
+                    border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+                }
+                box-shadow: boardShadow;
+                box-shadow: boardShadowInset;                    
+                if enableBoardShadow && enableBoardShadowInset {
+                    box-shadow: boardShadow, boardShadowInset !important;
+                }
+                if enableInnerBorder {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+                }
+            }
+            /*board*/
+            .board-layout-chessboard .board:before,
+            .fade-in-overlay:before,
+            #boarddefault_boardarea:before,
+            #divChessBoard_boardarea:before,
+            #vsComputerDiv_boardarea:before,
+            div[id^="board-"][class*="chess-board__board"]:before,            
+            div[class^="board v-board disabled rounded"]:before,
+            div[class^="daily-puzzle-board"]:before,
+            div[class^="board chessboard-component"]:before,
+            div[class^="board v-board chessboard-component"]:before,
+            div[class^="board rounded"]:before,
+            div[class^="board rounded fippled"]:before,
+            div[class^="board fippled rounded"]:before,
+            div[class^="board v-board rounded"]:before,
+            div[class^="board v-board fippled rounded"]:before,
+            div[class^="board disabled rounded"]:before,
+            div[id$="_ChessBoard_boardarea"]:before,
+            div[id^="chess_com_openingboard_1"]:before,
+            div[id^="board_training"]:before,
+            div[id^="divBoard_boardarea"]:before,
+            div[id^="chess_com_tactics_board"]:before,
+            div[id^="chessboard_"]:before,
+            div[id*="chessboard_"]:before,
+            div[id^="chess_com_chessmentorboard_"]:before,
+            div[id*="chess_com_chessmentorboard_"]:before,
+            div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
+            div[id^="chess_com_emailboard_"]:before,
+            div[id^="board-blank"]:before,
+            chess-board[class^="board"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board flipped"]:not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[id^="board-blank"]:before,
+            chess-board[id^="board-vs-personalities"]:before,
+            div[id*="chess_com_emailboard_"]:before {
+				background-position: framePosX framePosY !important;
+                background-color: frameColor !important;
+                background-size: frameSize!important;
+                if frameSize=="cover" {
+                    background-repeat: no-repeat!important;
+                }else{
+                    background-repeat: repeat!important;
+                }
+                background-image: url(frameOpt) !important;
+                transform: translateZ(-1px);
+                content: ""!important;
+                display:block;
+                grid-column: board;                
+                width:var(--boardWidth)!important;
+                height: var(--boardHeight)!important;
+                padding-bottom: 0;
+                if ajustBoardSize=="0.9"{
+                    multiplier=-0.54;
+                }else{
+                    multiplier=-0.526;
+                }
+                boardRatio='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplier));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+                margin-top:@margin-left;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+                border-radius: frameRadius!important;
+                box-shadow: frameShadow;
+                box-shadow: frameShadowInset;
+                if enableFrameShadow && enableFrameShadowInset {
+                    box-shadow: frameShadow, frameShadowInset !important;
+                }
+            }
+            
+            /*outside coords settings*/
+            if ajustBoardSize<0.92 && enableOutsideCoords{
+                .coordinate-grey, .coordinate-dark:not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark), .coordinate-light:not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
+                    text-transform: outCoordFontCase !important;
+                    fill:outCoordColorOpt!important;
+                    font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
+                    font-weight: outCoordFontWeight!important;   
+                    font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+                }
+                .outside:not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                    transform: translate(-5.5%,4.5%)!important;
+                }
+                body.outside-coords:not(.with-pieces,.real-3d):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
+                    --coordinatesGutter: 1rem!important;
+                }
+
+                if enableOutsideCoords {
+                    .coordinates:not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                        transform: translate(-4.5%,4.8%)!important;
+                    }                
+                    .coords-dark:not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
+                    .coordinate-dark:not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark) ,
+                    div.number.coords-dark:not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
+                    div.letter.coords-dark:not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
+                    text.coordinate-dark:not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
+                    .coords-light:not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
+                    .coordinate-light:not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light),
+                    div.number.coords-light:not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
+                    div.letter.coords-light:not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
+                    text.coordinate-light:not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
+                        color: outCoordColorOpt !important;
+                        fill: @color;
+                        opacity: 1!important;
+                    }
+                }
+            }
+        }
+    }/*end board border*/
+    
+}
+@-moz-document url-prefix("https://www.chess.com/events"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"){
+    /*Events*/
+    /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
+    @media (min-width: 960px){
+        
+        /*Main border rules*/
+        testColor="" + boardBGColor;
+        resultColor=slice(testColor,0,-6);
+        innBorderSize=0.4rem;
+        if innBorderSize > 0 {
+            inn=innBorderSize/2;
+        }else{inn=0}
+
+        if boardBGOpt==frameOpt && enableBoardFrame {
+            board3=null;
+            framePosX=bgPosX;
+            framePosY=bgPosY;        
+        }
+
+		if enableBoardFrame{
+			/*board*/
+			.main-tab-game-component chess-board {
+				transform-style: preserve-3d;
+				width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
+				height: @width;
+				boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				if frameRadiusInOut{
+					border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+				}else{
+					border-radius:0!important;
+				}
+				box-shadow: boardShadow;
+				box-shadow: boardShadowInset;                    
+				if enableBoardShadow && enableBoardShadowInset {
+					box-shadow: boardShadow, boardShadowInset !important;
+				}
+				if enableInnerBorder {
+					box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+				}
+			}
+			/*board*/
+			.main-tab-game-component chess-board:before {
+				if myBoard!="disabled"{                    
+				background:frameColor url(frameOpt) framePosX framePosY!important; 
+				}                
+				transform: translateZ(-1px);
+				content: ""!important;
+				display:block;
+				grid-column: board;                
+				width:var(--mainBoardWidth)!important;
+				height: @width;
+				padding-bottom: 0;
+				boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				background-size: frameSize!important;
+				-webkit-background-size: @background-size;
+				-moz-background-size: @background-size;
+				-o-background-size: @background-size;
+				background-repeat: frameRepeat!important;
+				border-radius: frameRadius!important;
+				box-shadow: frameShadow;
+				box-shadow: frameShadowInset;                
+				if enableFrameShadow && enableFrameShadowInset {
+					box-shadow: frameShadow, frameShadowInset !important;
+				}
+			}
+		}/*end board border*/
+        .player-tagline-rating {
+            color: #dfd73bd6!important;
+            text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+        }
+        .player-card-component {
+            background-color: #272424cf!important;
+        }
+        .player-card-bio:after {
+            background: linear-gradient(180deg,hsla(0,0%,100%,0),#252222 70%)!important;
+        }
+        .main-tab-game-sidebar {
+            margin-left: 2rem!important;
+        }
+    }
+    .board-layout-main {
+        margin-right: -1rem!important;
+    }
+    @media (min-width: 60em){
+        body.events-layout .board-layout-player {
+            margin-left:-1rem;
+        }
+        .player-name {
+            white-space: normal!important;
+        }
+    }
+    
+}/*End Events*/
+
+@-moz-document url("https://www.chess.com/play"){
+        .board-layout-chessboard .board:before,
+        div#board.board,div#board.board:before{
+            background-image:url('')!important;
+            width: 0!important;
+            height:@width;
+            border:0!important;
+            box-shadow:0 0 0 0!important;
+            margin:0!important;
+           
+		}
+}
