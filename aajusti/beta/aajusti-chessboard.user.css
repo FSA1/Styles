@@ -45,9 +45,9 @@
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.6, 0.3, 1, 0.1, ""]
 
 @var    color    hlSqColor4  "🔴Click Direito"   #eb6150
-@var    color    hlSqColor3  "🟠Click+CTRL"   #fa0
-@var    color    hlSqColor2  "🟢Click+SHIFT"   #acce59
-@var    color    hlSqColor1  "🔵Click+ALT"   #52b0dc
+@var    color    hlSqColor3  "🟠CTRL+Click"   #fa0
+@var    color    hlSqColor2  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqColor1  "🔵ALT+Click"   #52b0dc
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
@@ -76,8 +76,8 @@
 @var select   outCoordFontWeight   "↪Tipo"    ["400*", "600", "700", "800"]
 
 @var    select      outCoordFontCase    "↪Maiúsculas ou minúsculas"{
-            "Maiúsculas*": "uppercase",
-            "Minúsculas": "lowercase",
+            "Maiúsculas": "uppercase",
+            "Minúsculas*": "lowercase",
         }
 @var    select      outCoordColorOpt    "↪🟢Origem da cor"{
             "Casas Claras*": "svgLightSqColor",
@@ -621,7 +621,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
-        coordsBlend=multiply;
+        coordsBlend=normal;
         boardBGOpt=server+'latvian/boards/faded-wood.jpg';
         boardBGColor=#8b7253;
         bgSize=cover;
@@ -667,7 +667,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
-        coordsBlend=multiply;
+        coordsBlend=normal;
         boardBGOpt=server+'latvian/boards/dark-wood.jpg';
         boardBGColor=#8b7253;
         bgSize=cover;
@@ -850,9 +850,10 @@
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
         } 
         /*Small board for game preview*/
+        .openings-view-chessboard chess-board,
         .game-preview-component.sidebar-tab-games-new-preview,
         .game-preview-component.player-card-new-preview,
-        .diagram-board-component  chess-board,
+        .diagram-board-component chess-board,
         .game-board-preview,
         .game-preview-legacy-component,
         .game-preview-component.open-games-item-preview,
