@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.3-beta
+@version        1.0.4-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -40,9 +40,9 @@
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.5, 0.3, 1, 0.1, ""]
 
 @var    color    hlSqColor4  "🔴Click Direito"   #eb6150
-@var    color    hlSqColor3  "🟠Click+CTRL"   #fa0
-@var    color    hlSqColor2  "🟢Click+SHIFT"   #acce59
-@var    color    hlSqColor1  "🔵Click+ALT"   #52b0dc
+@var    color    hlSqColor3  "🟠CTRL+Click"   #fa0
+@var    color    hlSqColor2  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqColor1  "🔵ALT+Click"   #52b0dc
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
