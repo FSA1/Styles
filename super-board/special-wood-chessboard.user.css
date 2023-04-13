@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.4-beta
+@version        1.0.5-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -441,8 +441,6 @@
         svgBoardBlend=normal;
         svgLightSqOpacity=0.55;
         enableGlobalColor=0;
-        //svgLightSqColor=#e3c6a0;
-        //svgDarkSqColor=#c28f64;
         svgLightSqColor=#f4dba8;
         svgDarkSqColor=#ce9769;
         svgDarkSqOpacity=0.35;
@@ -477,11 +475,11 @@
         outCoordColorOpt=rgba(238,211,176,0.969);
         outCoordCol=rgba(238,211,176,0.969);
         lCoordCol=#8b542c;
-        dCoordCol=rgba(227,197,159,0.941);
+        dCoordCol=#e3c59ff0;
         coordsBlend=normal;
-        dEvalCol=dCoordCol;
-        lEvalCol=lCoordCol;
-        evalOpt=auto;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        evalOpt=custom;
         themeWallpaper=gradient;
         backgroundColp=#4a382e;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
@@ -566,6 +564,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
+        evalOpt=custom;
         coordsBlend=normal;
         boardBGOpt=server+'latvian/boards/faded-wood.jpg';
         boardBGColor=#8b7253;
@@ -614,6 +613,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
+        evalOpt=custom;
         coordsBlend=normal;
         boardBGOpt=server+'latvian/boards/dark-wood.jpg';
         boardBGColor=#8b7253;
