@@ -443,7 +443,7 @@
         enableGlobalColor=0;
         //svgLightSqColor=#e3c6a0;
         //svgDarkSqColor=#c28f64;
-        svgLightSqColor=#f2d4a7;
+        svgLightSqColor=#f4dba8;
         svgDarkSqColor=#ce9769;
         svgDarkSqOpacity=0.35;
         boardBGOpt=server+'super-board/textures/wood/real/walnut-board.jpg';
@@ -555,7 +555,7 @@
         enableFrameShadow=1;
         enableCenterLogo=0;
         //enableOutsideCoords=1;
-        enableCustomCoord=1;      
+        enableCustomCoord=1;
         //ajustBoardSize=0.86;
         svgBoardBlend=normal;
         svgLightSqOpacity=0.01;
