@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.7-beta
+@version        1.0.8-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -789,7 +789,7 @@
     }
     board3=boardBGOpt;
     miniBoard3=board3;
-    if boardBGOpt!="colorOnly"{
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" boardBGOpt!=null{
        boardBGColor=#0000;
     }
     if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
