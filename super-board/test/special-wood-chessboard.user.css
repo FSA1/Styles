@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.5-beta
+@version        1.0.8-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -652,7 +652,7 @@
         enableGlobalColor=0;
         svgDarkSqColor=#bb5e00;
         svgDarkSqOpacity=0.35;
-        boardBGOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/red-amboyna-birds-eye-maple-luxury-chessboard.png';
+        boardBGOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/red-amboyna-birds-eye-maple-luxury-chessboard.jpg';
         boardBGColor=#f4caa6;
         bgSize=cover;
         bgPosX=50%;
@@ -661,7 +661,7 @@
         frameRadiusInOut=1;
         //ajustBoardSize=0.88;
         //enableBoardFrame=1;
-        frameOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/zebra-wood-frame-3.png';
+        frameOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/zebra-wood-frame-3.jpg';
         frameColor=#3c210f;
         frameSize=cover;
         framePosX=50%;
@@ -717,7 +717,7 @@
         frameRadiusInOut=1;
         //ajustBoardSize=0.86;
         //enableBoardFrame=1;
-        frameOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/amboyna.png';
+        frameOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/amboyna2.jpg';
         frameColor=#3c210f;
         frameSize=cover;
         framePosX=50%;
@@ -751,7 +751,7 @@
         coordsBlend=normal;
         themeWallpaper='https://cdn.shopify.com/s/files/1/0075/5305/6868/products/LF1498_015-Chocolate_Omega_1600x@2x.jpg?v=1565680051';
         enableLightTheme=0;
-        percentSize=50%;
+        percentSize=100%;
         setWallpaper=percentSize;
         backgroundColp=#807065;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
@@ -763,7 +763,7 @@
         enableGlobalColor=0;
         svgDarkSqColor= #964a16;
         svgDarkSqOpacity=0.3;
-        boardBGOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/amboyna-birds-eye-alternative.png';
+        boardBGOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/amboyna-birds-eye-alternative2.jpg';
         boardBGColor=#f4caa6;
         bgSize=cover;
         bgPosX=50%;
@@ -772,7 +772,7 @@
         frameRadiusInOut=1;
         //ajustBoardSize=0.86;
         //enableBoardFrame=1;
-        frameOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/red-amboyna-dark.png';
+        frameOpt='https://github.com/FSA1/Styles/raw/main/super-board/textures/wood/real/amboyna/red-amboyna-dark2.jpg';
         frameColor=#3c210f;
         frameSize=cover;
         framePosX=50%;
@@ -806,7 +806,7 @@
         coordsBlend=normal;
         themeWallpaper='https://cdn.shopify.com/s/files/1/0075/5305/6868/products/LF1498_015-Chocolate_Omega_1600x@2x.jpg?v=1565680051';
         enableLightTheme=0;
-        percentSize=50%;
+        percentSize=100%;
         setWallpaper=percentSize;
         backgroundColp=#807065;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);

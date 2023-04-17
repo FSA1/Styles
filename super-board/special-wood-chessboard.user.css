@@ -4,11 +4,13 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.7-beta
+@version        1.0.8-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
 @var    select      myBoard    "🟢🏁Tabuleiro" {
+            "Amboyna": "amboyna-birdsEyes",
+            "Amboyna II": "amboyna-birdsEyes2",
             "Mógno": "mahogany",
             "Nogueira": "walnut",
             "Nogueira Especial": "walnutSpecial",
@@ -642,6 +644,117 @@
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
+    else if myBoard=="amboyna-birdsEyes" {
+        svgBoardBlend=normal;
+        svgLightSqColor=#f6c7a1;
+        svgLightSqOpacity=0.1;
+        enableGlobalColor=0;
+        svgDarkSqColor=#bc5917;
+        svgDarkSqOpacity=0.2;
+        boardBGOpt=server+'super-board/textures/wood/real/amboyna/Amboyna-birdsEye-chessboard.jpg';
+        boardBGColor=#f4caa6;
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=3px;
+        frameRadiusInOut=1;
+        //ajustBoardSize=0.88;
+        //enableBoardFrame=1;
+        frameOpt=server+'super-board/textures/wood/real/amboyna/zebra-wood-frame.jpg';
+        frameColor=#3c210f;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        enableInnerBorder=1;
+        innerBorderOpt=#35190a;
+        innerBorderColor=#35190a;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=1;
+        enableFrameShadow=1;
+        setHighlight=op1;
+        hlColor=#fc0;
+        highlightOpacity=0.5;
+        //enableCenterLogo=0;
+        //enableCornerLogo=0;
+        //enableCornerLogo2=0;
+        //enableWallpaper=1;
+        enableCustomCoord=1;
+        enableOutsideCoords=0;
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=#f6c7a1;
+        outCoordCol=rgba(255,255,255,0.722);
+        lCoordCol=#b34f09;
+        dCoordCol=#ffd3a1;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        evalOpt=custom;
+        coordsBlend=normal;
+        themeWallpaper=server+'super-board/bg/brown-fabric.jpg';
+        enableLightTheme=0;
+        percentSize=10%;
+        setWallpaper=percentSize;
+        backgroundColp=#807065;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=inset 0px -1px 0px 4px #1a120c;
+    }
+    else if myBoard=="amboyna-birdsEyes2" {
+        svgBoardBlend=normal;
+        svgLightSqColor=#f6c7a1;
+        svgLightSqOpacity=0.0;
+        enableGlobalColor=0;
+        svgDarkSqColor=#ba6b20;
+        svgDarkSqOpacity=0.0;
+        boardBGOpt=server+'super-board/textures/wood/real/amboyna/Amboyna-birdsEye-chessboard2.jpg';
+        boardBGColor=#f4caa6;
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=3px;
+        frameRadiusInOut=1;
+        //ajustBoardSize=0.88;
+        //enableBoardFrame=1;
+        frameOpt=server+'super-board/textures/wood/real/amboyna/light-wood-frame.jpg';
+        frameColor=#3c210f;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        //enableInnerBorder=1;
+        innerBorderOpt=#1d100d;
+        innerBorderColor=#1d100d;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        setHighlight='op1';
+        hlColor=#fc0;
+        highlightOpacity=0.5;
+        //enableCenterLogo=0;
+        //enableCornerLogo=0;
+        //enableCornerLogo2=0;
+        //enableWallpaper=1;
+        enableCustomCoord=1;
+        enableOutsideCoords=0;
+        outCoordFontSize=0.24rem;
+        outCoordFontName='Segoe UI';
+        outCoordFontWeight=400;
+        outCoordColorOpt=#f6c7a1;
+        outCoordCol=rgba(255,255,255,0.722);
+        lCoordCol=#9e4608;
+        dCoordCol=#e3c7ad;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        evalOpt=custom;
+        coordsBlend=normal;
+        themeWallpaper=server+'super-board/bg/Chocolate-Omega.jpg';
+        enableLightTheme=0;
+        percentSize=50%;
+        setWallpaper=percentSize;
+        backgroundColp=#807065;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+    }
 
     /*End themes*/
 
@@ -692,7 +805,7 @@
             background-color:#fff!important;
             color:#000!important;
             font-size: 1rem;
-            content:'"if myBoard==%s {svgBoardBlend=%s; svgLightSqColor=%s; svgLightSqOpacity=%s; enableGlobalColor=%s; svgDarkSqColor=%s; svgDarkSqOpacity=%s; boardBGOpt=%s; boardBGColor=%s; bgSize=%s; bgPosX=%s; bgPosY=%s; frameRadius=%s; frameRadiusInOut=%s; ajustBoardSize=%s; enableBoardFrame=%s; frameOpt=%s; frameColor=%s; frameSize=%s; framePosX=%s; framePosY=%s; enableInnerBorder=%s; innerBorderOpt=%s; innerBorderColor=%s; enableBoardShadowInset=%s; enableBoardShadow=%s; enableFrameShadowInset=%s; enableFrameShadow=%s; boardFrame1=%s; boardFrame2=%s; boardFrame3=%s; boardFrame4=%s; boardFrame5=%s; setHighlight=%s; hlColor=%s; highlightOpacity=%s; enableArrowSettings=%s; enableCenterLogo=%s; enableCornerLogo=%s; enableCornerLogo2=%s; enableWallpaper=%s; enableCustomCoord=%s; enableOutsideCoords=%s; outCoordFontSize=%s; outCoordFontName=%s; outCoordFontWeight=%s; outCoordColorOpt=%s; outCoordCol=%s; lCoordCol=%s; dCoordCol=%s; coordsBlend=%s; centerLogoOpt=%s; centerLogoBlend=%s; centerLogoCol=%s; centerLogoSize=%s; centerLogoOpacity=%s; centerLogoPosX=%s; centerLogoPosY=%s; cornerLogoOpt=%s; cornerLogoBlend=%s; cornerLogoCol=%s; cornerLogoSize=%s; cornerLogoOpacity=%s; cornerLogoPosX=%s; cornerLogoPosY=%s; cornerLogoFontSize=%s; cornerLogoFontName=%s; cornerLogoFontWeight=%s; cornerLogoText=%s; cornerLogo2Text=%s; cornerLogo2Blend=%s; cornerLogo2Size=%s; cornerLogo2PosX=%s; cornerLogo2PosY=%s; cornerLogo2FontSize=%s; cornerLogo2Col=%s; cornerLogo2FontName=%s; cornerLogo2FontWeight=%s; logoLink1=%s; logoLink2=%s; logoLink3=%s; logoLink4=%s; logoLink5=%s; themeWallpaper=%s; enableLightTheme=%s; setWallpaper=%s; percentSize=%s; userWall1=%s; userWall2=%s; userWall3=%s; userWall4=%s; userWall5=%s; backgroundColp=%s; evalOpt=%s; dEvalCol=%s; lEvalCol=%s; evalBarOpacity=%s; hueRotationArrow=%s; arrowOpacity=%s; saturateArrow=%s; brightnessArrow=%s; frameShadow=%s; frameShadowInset=%s;}"' % ((myTheme) (svgBoardBlend) (svgLightSqColor) (svgLightSqOpacity) (enableGlobalColor) (svgDarkSqColor) (svgDarkSqOpacity) (boardBGOpt) (boardBGColor) (bgSize) (bgPosX) (bgPosY) (frameRadius) (frameRadiusInOut) (ajustBoardSize) (enableBoardFrame) (frameOpt) (frameColor) (frameSize) (framePosX) (framePosY) (enableInnerBorder) (innerBorderOpt) (innerBorderColor) (enableBoardShadowInset) (enableBoardShadow) (enableFrameShadowInset) (enableFrameShadow) (boardFrame1) (boardFrame2) (boardFrame3) (boardFrame4) (boardFrame5) (setHighlight) (hlColor) (highlightOpacity) (enableArrowSettings) (enableCenterLogo) (enableCornerLogo) (enableCornerLogo2) (enableWallpaper) (enableCustomCoord) (enableOutsideCoords) (outCoordFontSize) (outCoordFontName) (outCoordFontWeight) (outCoordColorOpt) (outCoordCol) (lCoordCol) (dCoordCol) (coordsBlend) (centerLogoOpt) (centerLogoBlend) (centerLogoCol) (centerLogoSize) (centerLogoOpacity) (centerLogoPosX) (centerLogoPosY) (cornerLogoOpt) (cornerLogoBlend) (cornerLogoCol) (cornerLogoSize) (cornerLogoOpacity) (cornerLogoPosX) (cornerLogoPosY) (cornerLogoFontSize) (cornerLogoFontName) (cornerLogoFontWeight) (cornerLogoText) (cornerLogo2Text) (cornerLogo2Blend) (cornerLogo2Size) (cornerLogo2PosX) (cornerLogo2PosY) (cornerLogo2FontSize) (cornerLogo2Col) (cornerLogo2FontName) (cornerLogo2FontWeight) (logoLink1) (logoLink2) (logoLink3) (logoLink4) (logoLink5) (useWallpaper) (enableLightTheme) (setWallpaper) (percentSize) (userWall1) (userWall2) (userWall3) (userWall4) (userWall5) (backgroundColp) (evalOpt) (dEvalCol) (lEvalCol) (evalBarOpacity) (hueRotationArrow) (arrowOpacity) (saturateArrow) (brightnessArrow)(frameShadow)(frameShadowInset)) !important;
+            content:'"if myBoard==%s {svgBoardBlend=%s; svgLightSqColor=%s; svgLightSqOpacity=%s; enableGlobalColor=%s; svgDarkSqColor=%s; svgDarkSqOpacity=%s; boardBGOpt=%s; boardBGColor=%s; bgSize=%s; bgPosX=%s; bgPosY=%s; frameRadius=%s; frameRadiusInOut=%s; ajustBoardSize=%s; enableBoardFrame=%s; frameOpt=%s; frameColor=%s; frameSize=%s; framePosX=%s; framePosY=%s; enableInnerBorder=%s; innerBorderOpt=%s; innerBorderColor=%s; enableBoardShadowInset=%s; enableBoardShadow=%s; enableFrameShadowInset=%s; enableFrameShadow=%s; boardFrame1=%s; boardFrame2=%s; boardFrame3=%s; boardFrame4=%s; boardFrame5=%s; setHighlight=%s; hlColor=%s; highlightOpacity=%s; enableArrowSettings=%s; enableCenterLogo=%s; enableCornerLogo=%s; enableCornerLogo2=%s; enableWallpaper=%s; enableCustomCoord=%s; enableOutsideCoords=%s; outCoordFontSize=%s; outCoordFontName=%s; outCoordFontWeight=%s; outCoordColorOpt=%s; outCoordCol=%s; lCoordCol=%s; dCoordCol=%s; coordsBlend=%s; centerLogoOpt=%s; centerLogoBlend=%s; centerLogoCol=%s; centerLogoSize=%s; centerLogoOpacity=%s; centerLogoPosX=%s; centerLogoPosY=%s; cornerLogoOpt=%s; cornerLogoBlend=%s; cornerLogoCol=%s; cornerLogoSize=%s; cornerLogoOpacity=%s; cornerLogoPosX=%s; cornerLogoPosY=%s; cornerLogoFontSize=%s; cornerLogoFontName=%s; cornerLogoFontWeight=%s; cornerLogoText=%s; cornerLogo2Text=%s; cornerLogo2Blend=%s; cornerLogo2Size=%s; cornerLogo2PosX=%s; cornerLogo2PosY=%s; cornerLogo2FontSize=%s; cornerLogo2Col=%s; cornerLogo2FontName=%s; cornerLogo2FontWeight=%s; logoLink1=%s; logoLink2=%s; logoLink3=%s; logoLink4=%s; logoLink5=%s; useWallpaper=%s; enableLightTheme=%s; setWallpaper=%s; percentSize=%s; userWall1=%s; userWall2=%s; userWall3=%s; userWall4=%s; userWall5=%s; backgroundColp=%s; evalOpt=%s; dEvalCol=%s; lEvalCol=%s; evalBarOpacity=%s; hueRotationArrow=%s; arrowOpacity=%s; saturateArrow=%s; brightnessArrow=%s; frameShadow=%s; frameShadowInset=%s;}"' % ((myTheme) (svgBoardBlend) (svgLightSqColor) (svgLightSqOpacity) (enableGlobalColor) (svgDarkSqColor) (svgDarkSqOpacity) (boardBGOpt) (boardBGColor) (bgSize) (bgPosX) (bgPosY) (frameRadius) (frameRadiusInOut) (ajustBoardSize) (enableBoardFrame) (frameOpt) (frameColor) (frameSize) (framePosX) (framePosY) (enableInnerBorder) (innerBorderOpt) (innerBorderColor) (enableBoardShadowInset) (enableBoardShadow) (enableFrameShadowInset) (enableFrameShadow) (boardFrame1) (boardFrame2) (boardFrame3) (boardFrame4) (boardFrame5) (setHighlight) (hlColor) (highlightOpacity) (enableArrowSettings) (enableCenterLogo) (enableCornerLogo) (enableCornerLogo2) (enableWallpaper) (enableCustomCoord) (enableOutsideCoords) (outCoordFontSize) (outCoordFontName) (outCoordFontWeight) (outCoordColorOpt) (outCoordCol) (lCoordCol) (dCoordCol) (coordsBlend) (centerLogoOpt) (centerLogoBlend) (centerLogoCol) (centerLogoSize) (centerLogoOpacity) (centerLogoPosX) (centerLogoPosY) (cornerLogoOpt) (cornerLogoBlend) (cornerLogoCol) (cornerLogoSize) (cornerLogoOpacity) (cornerLogoPosX) (cornerLogoPosY) (cornerLogoFontSize) (cornerLogoFontName) (cornerLogoFontWeight) (cornerLogoText) (cornerLogo2Text) (cornerLogo2Blend) (cornerLogo2Size) (cornerLogo2PosX) (cornerLogo2PosY) (cornerLogo2FontSize) (cornerLogo2Col) (cornerLogo2FontName) (cornerLogo2FontWeight) (logoLink1) (logoLink2) (logoLink3) (logoLink4) (logoLink5) (useWallpaper) (enableLightTheme) (setWallpaper) (percentSize) (userWall1) (userWall2) (userWall3) (userWall4) (userWall5) (backgroundColp) (evalOpt) (dEvalCol) (lEvalCol) (evalBarOpacity) (hueRotationArrow) (arrowOpacity) (saturateArrow) (brightnessArrow)(frameShadow)(frameShadowInset)) !important;
             visibility:visible!important;
         }
     }
