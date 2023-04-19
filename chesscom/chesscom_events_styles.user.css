@@ -4,22 +4,53 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Change styles of the player name in chess.com Events page`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
-@var    range    playerFontSize  "Tam. da fonte" [1.4, 1, 3, 0.01, "rem"]
+@var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
+@var    range    playerFontSize  "Fonte do nome" [1.4, 1, 3, 0.01, "rem"]
 @var select   playerFontWeight   "Peso"    ["600*", "400", "700", "800"]
-@var color    playerFontCol  "Cor do texto"   #ffc000b8
+@var color    playerFontCol  "Cor do texto"   #ffffffb8
+@var    range    ratingFontSize  "Fonte do rating" [1.4, 1, 3, 0.01, "rem"]
+@var select   ratingFontWeight   "Peso"    ["600*", "400", "700", "800"]
+@var color    ratingFontCol  "Cor do texto"   #ffffff99
 
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.chess.com/events/"), url-prefix("https://www.chess.com/events/pt"), url-prefix("https://www.chess.com/events/es") {
 
-        .player-name {
-            color: playerFontCol!important;
-            white-space: normal!important;
-            font-size: playerFontSize!important;
-            font-weight: playerFontWeight!important;
-        }
+    /*primary server (GitHub)*/    
+    gitHub='https://github.com/FSA1/Styles/raw/main/';
+    /*alternative server (GitLab)*/
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
+    
+    bigFlags='https://github.com/FSA1/Styles/raw/main/chesscom/ai-upscalling-flags.png';
+    .player-details .player-name {
+        color: playerFontCol!important;
+        white-space: normal!important;
+        font-size: playerFontSize!important;
+        font-weight: playerFontWeight!important;
     }
+    .player-details .player-rating{
+        color: ratingFontCol!important;
+        font-size: ratingFontSize!important;
+        font-weight: ratingFontWeight!important;
+    }
+    .country-flag-small, .country-flags-component {
+        align-items: center;
+        background-image: url(bigFlags);
+        background-size: 55.6rem 57.2rem;
+        display: inline-flex;
+        flex-shrink: 0;
+        height: 3.4rem;
+        justify-content: center;
+        width: @height;
+    }
+    .player-title{
+        margin-top:1.7rem;
+    }
+    .player-component{
+        --avatarSize: 10rem;
+    }
+}
