@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Change styles of the player name in chess.com Events page`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -25,7 +25,13 @@
     /*alternative server (GitLab)*/
     gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
     
-    bigFlags='https://github.com/FSA1/Styles/raw/main/chesscom/ai-upscalling-flags.png';
+    if setServer {
+        server = gitLab
+    }else{
+        server = gitHub
+    }
+    
+    bigFlags=server+'chesscom/ai-upscalling-flags.png';
     .player-details .player-name {
         color: playerFontCol!important;
         white-space: normal!important;
@@ -37,7 +43,7 @@
         font-size: ratingFontSize!important;
         font-weight: ratingFontWeight!important;
     }
-    .country-flag-small, .country-flags-component {
+    .player-details .country-flag-small, .player-details .country-flags-component {
         align-items: center;
         background-image: url(bigFlags);
         background-size: 55.6rem 57.2rem;
