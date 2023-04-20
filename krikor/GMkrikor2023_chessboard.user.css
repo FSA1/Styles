@@ -867,7 +867,7 @@
         backgroundColp=#7c746d;
     }
     else if myBoard=="csi" {
-		svgBoardBlend=normal;
+        svgBoardBlend=normal;
         svgLightSqColor=#e5f0f4;
         svgLightSqOpacity=0.98;
         enableGlobalColor=0;
