@@ -1532,7 +1532,7 @@
             
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
-                .coordinate-grey, .coordinate-dark:not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark), .coordinate-light:not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
+                .coordinate-grey, .coordinate-dark:not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark), .coordinate-light:not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
                     text-transform: outCoordFontCase !important;
                     fill:outCoordColorOpt!important;
                     font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
