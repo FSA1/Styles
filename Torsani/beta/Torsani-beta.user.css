@@ -1196,6 +1196,9 @@
 				background-position: 0 0, framePosX framePosY !important;
                 background-color: frameColor !important;
                 background-size:100% 100%, frameSize!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
                 if frameSize=="cover" {
                     background-repeat:no-repeat, no-repeat!important;
                 }else{
@@ -1217,9 +1220,6 @@
                 boardRatio='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplier));
                 margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
                 margin-top:@margin-left;
-                -webkit-background-size: @background-size;
-                -moz-background-size: @background-size;
-                -o-background-size: @background-size;
                 border-radius: frameRadius!important;
                 box-shadow: frameShadow;
                 box-shadow: frameShadowInset;
