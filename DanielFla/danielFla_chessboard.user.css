@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.0-beta
+@version        1.0.1-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -366,7 +366,7 @@
         svgDarkSqOpacity=0.6;
         boardBGOpt=server+'DanielFla/texture/grass_32.jpg';
         boardBGColor=rgba(224,221,202,0);
-        bgSize=20%;
+        bgSize=15%;
         bgPosX=0%;
         bgPosY=0%;
         frameRadius=4px;
