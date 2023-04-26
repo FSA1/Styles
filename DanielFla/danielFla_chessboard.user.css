@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.1-beta
+@version        1.0.2-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -453,17 +453,17 @@
         frameRadiusInOut=0;
         ajustBoardSize=0.9;
         //enableBoardFrame=1;
-        frameOpt='https://live.staticflickr.com/7914/32823983378_c86b99e0c6_b.jpg';
+        frameOpt=server+'DanielFla/texture/icysea-background.jpg';
         frameColor=rgba(66,100,124,0.902);
         frameSize=cover;
-        framePosX=60%;
+        framePosX=0%;
         framePosY=0%;
         enableInnerBorder=1;
         innerBorderOpt=#5d849d;
         innerBorderColor=#5d849d;
         enableBoardShadowInset=0;
         enableBoardShadow=1;
-        enableFrameShadowInset=1;
+        enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=disabled;
         hlColor=#ff0;
@@ -534,7 +534,7 @@
         frameRadiusInOut=0;
         ajustBoardSize=0.9;
         //enableBoardFrame=1;
-        frameOpt='https://i.pinimg.com/564x/1c/d5/2f/1cd52f4afdc5368ffa410a5a5b0612a1--striped-background-background-images.jpg';
+        frameOpt=server+'DanielFla/texture/striped-background.svg';
         frameColor=rgba(66,100,124,0.902);
         frameSize=cover;
         framePosX=50%;
@@ -544,7 +544,7 @@
         innerBorderColor=#5d849d;
         enableBoardShadowInset=0;
         enableBoardShadow=1;
-        enableFrameShadowInset=1;
+        enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=disabled;
         hlColor=#ff0;
