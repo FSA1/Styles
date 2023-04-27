@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.3-beta
+@version        1.0.4-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -466,9 +466,9 @@
         enableBoardShadow=1;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        setHighlight=disabled;
-        hlColor=#ff0;
-        highlightOpacity=0.4;
+        setHighlight=op1;
+        hlColor=#5ed7f1;
+        highlightOpacity=0.5;
         enableArrowSettings=0;
         enableCenterLogo=0;
         enableCornerLogo=1;
@@ -547,9 +547,9 @@
         enableBoardShadow=1;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        setHighlight=disabled;
-        hlColor=#ff0;
-        highlightOpacity=0.4;
+        setHighlight=op1;
+        hlColor=#5ed7f1;
+        highlightOpacity=0.5;
         enableCenterLogo=1;
         //enableCornerLogo=1;
         //enableCornerLogo2=1;
