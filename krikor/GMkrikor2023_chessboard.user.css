@@ -584,7 +584,7 @@
         outCoordFontWeight=400;
         lCoordCol= #8d8d8d;
         dCoordCol= #acacac;
-        themeWallpaper= 'https://images7.alphacoders.com/516/thumb-1920-516124.png';
+        themeWallpaper= server+'krikor/wallpaper/thumb-1920-516124.png';
         setWallpaper=cover;
         bEvalColor=svgDarkSqColor;
         wEvalColor=svgLightSqColor;
@@ -882,7 +882,7 @@
         frameRadiusInOut=1;
         ajustBoardSize=0.9;
         enableBoardFrame=1;
-        frameOpt='https://thumbs.gfycat.com/JoyfulJauntyBanteng-max-1mb.gif';
+        frameOpt=server+'krikor/texture/police-lights.gif';
         frameColor=#1d538c;
         frameSize=100%;
         framePosX=50%;
@@ -894,9 +894,6 @@
         enableBoardShadow=0;
         enableFrameShadowInset=1;
         enableFrameShadow=1;
-        boardFrame1='https://i.makeagif.com/media/10-18-2017/Ykn-Ik.gif';
-        boardFrame2='https://thumbs.gfycat.com/JoyfulJauntyBanteng-max-1mb.gif';
-        boardFrame3='https://media.tenor.com/WuaheB6-ICIAAAAM/police-car-flashers.gif';
         setHighlight=op1;
         hlColor=#ff0;
         highlightOpacity=0.4;
@@ -942,8 +939,7 @@
         cornerLogo2FontName='Mukta';
         cornerLogo2FontWeight=600;
         logoLink1=csiLogo;
-        //themeWallpaper='https://mcdn.wallpapersafari.com/medium/83/48/qURxjD.jpg';
-        themeWallpaper='https://images.unsplash.com/photo-1617906855223-a69f14c9841d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
+        themeWallpaper=server+'krikor/unsplash/photo-1617906855223-a69f14c9841d.avif';
         enableLightTheme=0;
         setWallpaper=cover;
         percentSize=100%;
@@ -975,7 +971,7 @@
         frameRadiusInOut=1;
         ajustBoardSize=0.9;
         enableBoardFrame=1;
-        frameOpt='https://st.depositphotos.com/2010295/3534/v/450/depositphotos_35342729-stock-illustration-police-background.jpg';
+        frameOpt=server+'krikor/texture/warning.png';
         frameColor=#26282c;
         frameSize=100%;
         framePosX=50%;
@@ -987,11 +983,6 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        boardFrame1='https://i.makeagif.com/media/10-18-2017/Ykn-Ik.gif';
-        boardFrame2='https://thumbs.gfycat.com/JoyfulJauntyBanteng-max-1mb.gif';
-        boardFrame3='https://media.tenor.com/WuaheB6-ICIAAAAM/police-car-flashers.gif';
-        boardFrame4='https://st.depositphotos.com/1383245/3150/v/450/depositphotos_31505787-stock-illustration-barricade-tape.jpg';
-        boardFrame5='https://st.depositphotos.com/2010295/3534/v/450/depositphotos_35342729-stock-illustration-police-background.jpg';
         setHighlight=op1;
         hlColor=#ff0;
         highlightOpacity=0.4;
@@ -1037,7 +1028,7 @@
         cornerLogo2FontName=Mukta;
         cornerLogo2FontWeight=600;
         logoLink1=csiLogo;
-        themeWallpaper='https://www.nbc4i.com/wp-content/uploads/sites/18/2019/09/police-reports-handcuffs-folders.jpg?w=960&h=540&crop=1';
+        themeWallpaper=server+'krikor/wallpaper/nbc4i/police-reports-handcuffs-folders.webp';
         enableLightTheme=0;
         setWallpaper=cover;      
         backgroundColp=#333637;
@@ -1144,7 +1135,7 @@
     }
     board3=boardBGOpt;
     miniBoard3=board3;
-    if boardBGOpt!="colorOnly" && boardBGOpt!="" boardBGOpt!=null{
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" && boardBGOpt!=null{
        boardBGColor=#0000;
     }
     if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
