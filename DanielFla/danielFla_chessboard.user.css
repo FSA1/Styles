@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.2-beta
+@version        1.0.3-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -429,8 +429,9 @@
         cornerLogo2FontName='Montserrat';
         cornerLogo2FontWeight=700;
         enableLightTheme=0;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
+        dEvalCol=#316F14;
+        lEvalCol=#65aa46;
+        evalOpt=custom;
         themeWallpaper=gradient;
         backgroundColp=#00152f;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
@@ -512,9 +513,9 @@
         logoLink1=logoFlamengo;
         themeWallpaper=gradient;
         backgroundColp=#00152f;
-        evalOpt=auto;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
+        evalOpt=custom;
+        dEvalCol=#5D839B;
+        lEvalCol=#c5d5dc;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=inset 0px -1px 0px 310px rgba(27,66,94,0.902);
     }
@@ -592,9 +593,9 @@
         logoLink1=logoFlamengo;
         themeWallpaper=gradient;
         backgroundColp=#00152f;
-        evalOpt=auto;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
+        evalOpt=custom;
+        dEvalCol=#5D839B;
+        lEvalCol=#c5d5dc;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=inset 0px -1px 0px 310px rgba(27,66,94,0.902);
     }
