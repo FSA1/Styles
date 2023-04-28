@@ -767,7 +767,7 @@
     }
     board3=boardBGOpt;
     miniBoard3=board3;
-    if boardBGOpt!="colorOnly" && boardBGOpt!="" boardBGOpt!=null{
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" && boardBGOpt!=null{
        boardBGColor=#0000;
     }
     if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{

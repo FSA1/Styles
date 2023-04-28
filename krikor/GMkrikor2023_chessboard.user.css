@@ -1278,14 +1278,14 @@
             .evaluation-bar-white,
             .score-bar__fill[data-v-b0ff6725] {
                 if evalOpt == "auto" {
-                    background-color: svgLightSqColor !important;
+                    background-color: transparentify(svgLightSqColor, #fff, 1) !important;
                 }else if evalOpt == "custom" {
                     background-color: lEvalCol !important;
                 }
             }
             .evaluation-bar-black {
                 if evalOpt == "auto" {
-                    background-color: saturate(svgDarkSqColor, 10%) !important;
+                    background-color: transparentify(saturate(svgDarkSqColor, 10%), #fff, 1) !important;
                 }else if evalOpt == "custom" {
                     background-color: dEvalCol !important;
                 }
