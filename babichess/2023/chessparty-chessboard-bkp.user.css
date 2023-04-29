@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.1-beta
+@version        1.0.0-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -32,9 +32,8 @@
             "Padrão": "disabled",
         }
 @var    select      hlImgOpt    "🟡Destaque animado" {
-            "Confete*": "hlImg",
-            "Brilho": "hlImg2",
-            "Desativado": "op0",
+            "Brilho": "hlImg",
+            "Desativado*": "op0",
         }
 @var    color    hlColor  "↪Cor do destaque"   #e52af7c9
 
@@ -366,8 +365,8 @@
 @-moz-document domain("chess.com") {
     /*Themes*/
     /*Highlight image*/
-    hlImg=server+'babichess/chessparty/confetti.gif';
-    hlImg2=server+'babichess/highlight/hl1.gif';
+    hlImg='https://github.com/FSA1/Styles/raw/main/babichess/highlight/hl1.gif';
+    
     if myBoard==chessparty {
         svgBoardBlend=normal;
         svgLightSqColor=#FFFFFF;
@@ -397,8 +396,8 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
-        hlColor= #e52af77d;
-        highlightOpacity=1;
+        hlColor= rgba(240, 80, 255, .788);
+        highlightOpacity=0.5;
         enableCenterLogo=1;
         enableCornerLogo=0;
         enableCornerLogo2=0;
@@ -420,7 +419,26 @@
         centerLogoOpacity=0.4;
         centerLogoPosX=50%;
         centerLogoPosY=50%;
+        cornerLogoOpt=server+'babichess/chessparty/symbols-anton.png';
         cornerLogoBlend=normal;
+        cornerLogoCol=rgba(130,0,211,0.251);
+        cornerLogoSize=100%;
+        cornerLogoOpacity=1;
+        cornerLogoPosX=50%;
+        cornerLogoPosY=50%;
+        cornerLogoFontSize=10px;
+        cornerLogoFontName=sans-serif;
+        cornerLogoFontWeight=800;
+        cornerLogoText=WNM;
+        cornerLogo2Text=BabiChess;
+        cornerLogo2Blend=normal;
+        cornerLogo2Size=14%;
+        cornerLogo2PosX=109%;
+        cornerLogo2PosY=60%;
+        cornerLogo2FontSize=16px;
+        cornerLogo2Col=rgba(130,0,211,0.251);
+        cornerLogo2FontName=Parisienne;
+        cornerLogo2FontWeight=700;
         themeWallpaper=gradient;
         enableLightTheme=0;
         backgroundColp=#806f93;
@@ -435,6 +453,7 @@
         svgLightSqColor=#f3eff6;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
+        //svgDarkSqColor=#664cad;
         svgDarkSqColor=#6050a0;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
@@ -445,6 +464,7 @@
         frameRadius=6px;
         frameRadiusInOut=1;
         ajustBoardSize=0.85;
+        //enableBoardFrame=1;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
         frameColor=#eae7c5;
         frameSize=cover;
@@ -458,8 +478,9 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
-        hlColor= #e52af77d;
-        highlightOpacity=1;
+        hlColor=rgba(229,42,247,0.788);
+        highlightOpacity=0.5;
+        enableArrowSettings=0;
         enableCenterLogo=1;
         enableCornerLogo=0;
         enableCornerLogo2=0;
@@ -481,7 +502,26 @@
         centerLogoOpacity=0.4;
         centerLogoPosX=50%;
         centerLogoPosY=50%;
+        cornerLogoOpt=server+'babichess/chessparty/symbols2.png';
         cornerLogoBlend=normal;
+        cornerLogoCol=rgba(130,0,211,0.251);
+        cornerLogoSize=100%;
+        cornerLogoOpacity=1;
+        cornerLogoPosX=50%;
+        cornerLogoPosY=50%;
+        cornerLogoFontSize=10px;
+        cornerLogoFontName=sans-serif;
+        cornerLogoFontWeight=800;
+        cornerLogoText=WNM;
+        cornerLogo2Text=BabiChess;
+        cornerLogo2Blend=normal;
+        cornerLogo2Size=14%;
+        cornerLogo2PosX=109%;
+        cornerLogo2PosY=60%;
+        cornerLogo2FontSize=16px;
+        cornerLogo2Col=rgba(130,0,211,0.251);
+        cornerLogo2FontName=Parisienne;
+        cornerLogo2FontWeight=700;
         themeWallpaper=gradient;
         enableLightTheme=0;
         setWallpaper=cover;
@@ -498,6 +538,7 @@
         svgLightSqColor=#f3eff6;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
+        //svgDarkSqColor=#6050a0;
         svgDarkSqColor=#6958ad;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
@@ -508,6 +549,7 @@
         frameRadius=6px;
         frameRadiusInOut=1;
         ajustBoardSize=0.85;
+        //enableBoardFrame=1;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
         frameColor=#eae7c5;
         frameSize=cover;
@@ -521,8 +563,9 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
-        hlColor= #e52af77d;
-        highlightOpacity=1;
+        hlColor=rgba(229,42,247,0.788);
+        highlightOpacity=0.5;
+        enableArrowSettings=0;
         enableCenterLogo=1;
         enableCornerLogo=0;
         enableCornerLogo2=0;
@@ -544,7 +587,26 @@
         centerLogoOpacity=0.4;
         centerLogoPosX=50%;
         centerLogoPosY=50%;
+        cornerLogoOpt=server+'babichess/chessparty/symbols2.png';
         cornerLogoBlend=normal;
+        cornerLogoCol=rgba(130,0,211,0.251);
+        cornerLogoSize=100%;
+        cornerLogoOpacity=1;
+        cornerLogoPosX=50%;
+        cornerLogoPosY=50%;
+        cornerLogoFontSize=10px;
+        cornerLogoFontName=sans-serif;
+        cornerLogoFontWeight=800;
+        cornerLogoText=WNM;
+        cornerLogo2Text=BabiChess;
+        cornerLogo2Blend=normal;
+        cornerLogo2Size=14%;
+        cornerLogo2PosX=109%;
+        cornerLogo2PosY=60%;
+        cornerLogo2FontSize=16px;
+        cornerLogo2Col=rgba(130,0,211,0.251);
+        cornerLogo2FontName=Parisienne;
+        cornerLogo2FontWeight=700;
         themeWallpaper=gradient;
         enableLightTheme=0;
         backgroundColp=#4a3b6b;
