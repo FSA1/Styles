@@ -1661,7 +1661,7 @@
     
 }/*End Events*/
 
-@-moz-document url("https://www.chess.com/play"){
+@-moz-document url("https://www.chess.com/playZZZ"){
         .board-layout-chessboard .board:before,
         div#board.board,div#board.board:before{
             background-image:url('')!important;

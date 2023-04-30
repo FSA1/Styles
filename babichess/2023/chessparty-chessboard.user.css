@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.1-beta
+@version        1.0.2-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -1186,7 +1186,7 @@
     
 }/*End Events*/
 
-@-moz-document url("https://www.chess.com/play"){
+@-moz-document url("https://www.chess.com/playZZZ"){
         .board-layout-chessboard .board:before,
         div#board.board,div#board.board:before{
             background-image:url('')!important;
