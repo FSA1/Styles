@@ -386,7 +386,7 @@
         ajustBoardSize=0.85;
         //enableBoardFrame=1;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
-        frameColor=#D7D7BD;
+        frameColor=#eae7c5;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
@@ -449,7 +449,7 @@
         frameRadiusInOut=1;
         ajustBoardSize=0.85;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
-        frameColor=#D7D7BD;
+        frameColor=#eae7c5;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
@@ -514,7 +514,7 @@
         frameRadiusInOut=1;
         ajustBoardSize=0.85;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
-        frameColor=#D7D7BD;
+        frameColor=#eae7c5;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
@@ -563,7 +563,7 @@
     }
     else if myBoard=="chessPartyBonus" {
         svgBoardBlend=normal;
-        svgLightSqColor=#ddd0e7;
+        svgLightSqColor=#e2d4ec;
         svgLightSqOpacity=0.95;
         enableGlobalColor=0;
         svgDarkSqColor=#5e4c9e;
@@ -578,12 +578,12 @@
         ajustBoardSize=0.86;
         //enableBoardFrame=1;
         frameOpt=server+'babichess/chessparty/confetti_PNG87080.png';
-        frameColor=#5e4c9e;
+        frameColor=#584699;
         frameSize=110%;
         framePosX=50%;
         framePosY=50%;
         enableInnerBorder=1;
-        innerBorderOpt=rgba(221,208,231,0.95);
+        innerBorderOpt=rgba(226, 212, 236,0.95);
         innerBorderColor=rgba(221,208,231,0.95);
         enableBoardShadowInset=0;
         enableBoardShadow=0;
@@ -623,23 +623,23 @@
         cornerLogoPosX=50%;
         cornerLogoPosY=50%;
         cornerLogoFontSize=10px;
-        cornerLogoFontName=sans-serif;
+        cornerLogoFontName='sans-serif';
         cornerLogoFontWeight=800;
-        cornerLogoText=WNM;
-        cornerLogo2Text=BabiChess;
+        cornerLogoText='WNM';
+        cornerLogo2Text='BabiChess';
         cornerLogo2Blend=multiply;
         cornerLogo2Size=14%;
         cornerLogo2PosX=109%;
         cornerLogo2PosY=60%;
         cornerLogo2FontSize=16px;
         cornerLogo2Col=rgba(130,0,211,0.251);
-        cornerLogo2FontName=Parisienne;
+        cornerLogo2FontName='Parisienne';
         cornerLogo2FontWeight=700;
         themeWallpaper=gradient;
         enableLightTheme=0;
         backgroundColp=#4b3367;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
-        frameShadowInset=inset 0px -1px 2px 50px rgba(88,71,148,0.639);
+        frameShadowInset=inset 0px -1px 2px 60px rgba(94, 76, 158, .6);
         
     }
 
