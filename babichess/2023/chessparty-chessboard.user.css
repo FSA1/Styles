@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.2-beta
+@version        1.0.3-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -12,6 +12,7 @@
             "ChessParty": "chessparty",
             "ChessParty Alt": "chesspartyAlt",
             "ChessParty Alt2": "chesspartyAlt2",
+            "ChessParty Bonus": "chessPartyBonus",
             "Personalizado": "custom",
             "Desativado": "disabled",
         }
@@ -81,7 +82,10 @@
         }
 @var color    outCoordCol  "Coordenadas externas"   #ffffffb8
 @var color    lCoordCol  "Coord. de casas claras"   #8d8d8d
-@var color    dCoordCol  "Coord. de casas escuras"   #acacac  
+@var color    dCoordCol  "Coord. de casas escuras"   #acacac
+
+@var    range    outCoordX  "↪Ajuste horiz. coord." [-4.5, -6, -4.5, 0.1, "%"]
+@var    range    outCoordY  "↪Ajuste vert. coord" [4.8, 4.8, 6, 0.1, "%"]
 
 @var    select      boardBGOpt    "🟠Fundo do tabuleiro"{
             "Madeira clara": "txLightWood",
@@ -144,8 +148,8 @@
 @var    checkbox    enableBoardShadow  "🟨Sombra externa do tabuleiro" 0
 
 @var    checkbox    enableFrameShadowInset  "🟧Sombra interna da borda" 0
-@var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 34, 1, "px"]
-@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]
+@var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 310, 1, "px"]
+@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 310, 1, "px"]
 @var    color    frameShadowInsetColor  "↪🔸Cor da sombra"   rgba(0, 0, 0, .4)
 
 @var    checkbox    enableFrameShadow  "🟧Sombra externa da borda" 1
@@ -164,10 +168,7 @@
             "Madeira clara": "txLightWood",
             "Madeira escura": "txDarkWood",
             "Madeira escura2": "txDarkWood2",
-            "Mógno": "txMahogany",           
-            "Vermelho brilhoso": "txRedGlossy",
-            "Mármore amarelo": "txYellowMarble",
-            "Mármore preto": "txBlackMarble",
+            "Madeira escura3": "txfrDarkWood2",
             "🔗Link1": "boardFrame1",
             "🔗Link2": "boardFrame2",
             "🔗Link3": "boardFrame3",
@@ -331,9 +332,9 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*primary server (GitHub)*/    
-    gitHub='https://github.com/FSA1/Styles/raw/main/'    
+    gitHub='https://github.com/FSA1/Styles/raw/main/';    
     /*alternative server (GitLab)*/
-    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
     /*there is no error below*/
     if setServer {
         server = gitLab
@@ -397,7 +398,7 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
-        hlColor= #e52af77d;
+        hlColor=#e52af77d;
         highlightOpacity=1;
         enableCenterLogo=1;
         enableCornerLogo=0;
@@ -413,6 +414,8 @@
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
+        outCoordX=-4.5%;
+        outCoordY=4.8%;
         centerLogoOpt=server+'babichess/chessparty/symbols-anton.png';
         centerLogoBlend=normal;
         centerLogoCol=rgba(130,0,211,0.251);
@@ -474,6 +477,8 @@
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
+        outCoordX=-4.5%;
+        outCoordY=4.8%;
         centerLogoOpt=server+'babichess/chessparty/symbols2.png';
         centerLogoBlend=normal;
         centerLogoCol=rgba(130,0,211,0.251);
@@ -537,6 +542,8 @@
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
+        outCoordX=-4.5%;
+        outCoordY=4.8%;
         centerLogoOpt=server+'babichess/chessparty/symbols2.png';
         centerLogoBlend=normal;
         centerLogoCol=rgba(130,0,211,0.251);
@@ -553,6 +560,87 @@
         lEvalCol=svgLightSqColor;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
+    }
+    else if myBoard=="chessPartyBonus" {
+        svgBoardBlend=normal;
+        svgLightSqColor=#ddd0e7;
+        svgLightSqOpacity=0.95;
+        enableGlobalColor=0;
+        svgDarkSqColor=#5e4c9e;
+        svgDarkSqOpacity=1;
+        boardBGOpt=server+'babichess/chessparty/confetti_PNG87080.png';
+        boardBGColor=#8352a2;
+        bgSize=110%;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=12px;
+        frameRadiusInOut=1;
+        ajustBoardSize=0.86;
+        //enableBoardFrame=1;
+        frameOpt=server+'babichess/chessparty/confetti_PNG87080.png';
+        frameColor=#5e4c9e;
+        frameSize=110%;
+        framePosX=50%;
+        framePosY=50%;
+        enableInnerBorder=1;
+        innerBorderOpt=rgba(221,208,231,0.95);
+        innerBorderColor=rgba(221,208,231,0.95);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=1;
+        enableFrameShadow=1;
+        setHighlight=op1;
+        hlColor=rgba(189,42,247,0.502);
+        highlightOpacity=1;
+        enableCenterLogo=0;
+        enableCornerLogo=1;
+        enableCornerLogo2=0;
+        enableCustomCoord=0;
+        outCoordFontSize=0.3rem;
+        outCoordFontName='Anton';
+        outCoordFontWeight=400;
+        outCoordColorOpt=#ecceff;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        dEvalCol=svgDarkSqColor;
+        lEvalCol=svgLightSqColor;
+        coordsBlend=normal;
+        evalOpt=auto;
+        outCoordX=-5.5%;
+        outCoordY=6%;
+        centerLogoOpt=server+'babichess/chessparty/symbols3.png';
+        centerLogoBlend=normal;
+        centerLogoCol=rgba(130,0,211,0.251);
+        centerLogoSize=50%;
+        centerLogoOpacity=0.4;
+        centerLogoPosX=50%;
+        centerLogoPosY=50%;
+        cornerLogoOpt=server+'babichess/chessparty/symbols3.png';
+        cornerLogoBlend=normal;
+        cornerLogoCol=rgba(130,0,211,0.251);
+        cornerLogoSize=100%;
+        cornerLogoOpacity=1;
+        cornerLogoPosX=50%;
+        cornerLogoPosY=50%;
+        cornerLogoFontSize=10px;
+        cornerLogoFontName=sans-serif;
+        cornerLogoFontWeight=800;
+        cornerLogoText=WNM;
+        cornerLogo2Text=BabiChess;
+        cornerLogo2Blend=multiply;
+        cornerLogo2Size=14%;
+        cornerLogo2PosX=109%;
+        cornerLogo2PosY=60%;
+        cornerLogo2FontSize=16px;
+        cornerLogo2Col=rgba(130,0,211,0.251);
+        cornerLogo2FontName=Parisienne;
+        cornerLogo2FontWeight=700;
+        themeWallpaper=gradient;
+        enableLightTheme=0;
+        backgroundColp=#4b3367;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=inset 0px -1px 2px 50px rgba(88,71,148,0.639);
+        
     }
 
     /*End themes*/
@@ -1051,7 +1139,12 @@
 
                 if enableOutsideCoords {
                     .coordinates:not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
-                        transform: translate(-4.5%,4.8%)!important;
+                    if ajustBoardSize>=0.89 && ajustBoardSize<=0.91 && outCoordY>5.5{
+                        outCoordX=-4.8%;
+                        outCoordY=5.2%;                        
+                    }
+                        transform: translate(outCoordX,outCoordY)!important;
+                        //transform: translate(-4.5%,4.8%)!important;
                     }
                     .coords-dark:not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
                     .coordinate-dark:not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark) ,
