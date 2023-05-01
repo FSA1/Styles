@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.3-beta
+@version        1.0.4-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -377,7 +377,7 @@
         svgDarkSqColor=#4E3286;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
-        boardBGColor=#f9f2ff;
+        boardBGColor=svgDarkSqColor;
         bgSize=cover;
         bgPosX=50%;
         bgPosY=50%;
@@ -441,7 +441,7 @@
         svgDarkSqColor=#6050a0;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
-        boardBGColor=#f9f2ff;
+        boardBGColor=svgDarkSqColor;
         bgSize=cover;
         bgPosX=50%;
         bgPosY=50%;
@@ -506,7 +506,7 @@
         svgDarkSqColor=#6958ad;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
-        boardBGColor=#f9f2ff;
+        boardBGColor=svgDarkSqColor;
         bgSize=cover;
         bgPosX=50%;
         bgPosY=50%;
