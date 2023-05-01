@@ -331,7 +331,7 @@
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-    /*primary server (GitHub)*/    
+    /*primary server (GitHub)*/
     gitHub='https://github.com/FSA1/Styles/raw/main/';    
     /*alternative server (GitLab)*/
     gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
