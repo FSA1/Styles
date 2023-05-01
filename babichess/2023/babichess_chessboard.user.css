@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.8-beta
+@version        1.0.9-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -163,10 +163,7 @@
             "Madeira clara": "txLightWood",
             "Madeira escura": "txDarkWood",
             "Madeira escura2": "txDarkWood2",
-            "Mógno": "txMahogany",           
-            "Vermelho brilhoso": "txRedGlossy",
-            "Mármore amarelo": "txYellowMarble",
-            "Mármore preto": "txBlackMarble",
+            "Madeira escura3": "txfrDarkWood2",
             "🔗Link1": "boardFrame1",
             "🔗Link2": "boardFrame2",
             "🔗Link3": "boardFrame3",
