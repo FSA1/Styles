@@ -371,10 +371,10 @@
     hlImg2=server+'babichess/highlight/hl1.gif';
     if myBoard==chessparty {
         svgBoardBlend=normal;
-        svgLightSqColor=#FFFFFF;
+        svgLightSqColor=#f4f4f4;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
-        svgDarkSqColor=#4E3286;
+        svgDarkSqColor=#50348a;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
         boardBGColor=svgDarkSqColor;
