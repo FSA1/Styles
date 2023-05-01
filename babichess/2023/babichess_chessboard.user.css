@@ -80,7 +80,10 @@
         }
 @var color    outCoordCol  "Coordenadas externas"   #ffffffb8
 @var color    lCoordCol  "Coord. de casas claras"   #8d8d8d
-@var color    dCoordCol  "Coord. de casas escuras"   #acacac  
+@var color    dCoordCol  "Coord. de casas escuras"   #acacac
+
+@var    range    outCoordX  "↪Ajuste horiz. coord." [-4.5, -6, -4.5, 0.1, "%"]
+@var    range    outCoordY  "↪Ajuste vert. coord" [4.8, 4.8, 6, 0.1, "%"]
 
 @var    select      boardBGOpt    "🟠Fundo do tabuleiro"{
             "Madeira clara": "txLightWood",
@@ -143,8 +146,8 @@
 @var    checkbox    enableBoardShadow  "🟨Sombra externa do tabuleiro" 0
 
 @var    checkbox    enableFrameShadowInset  "🟧Sombra interna da borda" 0
-@var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 34, 1, "px"]
-@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 34, 1, "px"]
+@var    range    frameShadowInsetBlur    "↪🔸Desfocar" [2, 0, 310, 1, "px"]
+@var    range    frameShadowInsetSpread   "↪🔸Dispersar" [1, 0, 310, 1, "px"]
 @var    color    frameShadowInsetColor  "↪🔸Cor da sombra"   rgba(0, 0, 0, .4)
 
 @var    checkbox    enableFrameShadow  "🟧Sombra externa da borda" 1
@@ -326,10 +329,10 @@
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-    /*primary server (GitHub)*/    
-    gitHub='https://github.com/FSA1/Styles/raw/main/'    
+    /*primary server (GitHub)*/
+    gitHub='https://github.com/FSA1/Styles/raw/main/';    
     /*alternative server (GitLab)*/
-    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
     /*there is no error below*/
     if setServer {
         server = gitLab
@@ -432,6 +435,8 @@
         themeWallpaper='';
         dEvalCol=svgDarkSqColor;
         lEvalCol=svgLightSqColor;
+        outCoordX=-4.5%;
+        outCoordY=4.8%;
         backgroundColp=#5a3162;
     }
     else if myBoard=="purpleB"{
@@ -508,6 +513,8 @@
         useWallpaper=degrade;
         backgroundColp=#564e7f;
         evalOpt=auto;
+        outCoordX=-4.5%;
+        outCoordY=4.8%;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
@@ -575,9 +582,11 @@
         cornerLogo2Col=rgba(17,5,17,0.388);
         cornerLogo2FontName='Parisienne';
         cornerLogo2FontWeight=400;
-        useWallpaper=gradient;
+        themeWallpaper=gradient;
         backgroundColp=#421f44;
         evalOpt='custom';
+        outCoordX=-4.5%;
+        outCoordY=4.8%;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=inset 0px -1px 0px 34px rgba(202,20,199,0.28);
     }
@@ -1078,7 +1087,12 @@
 
                 if enableOutsideCoords {
                     .coordinates:not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
-                        transform: translate(-4.5%,4.8%)!important;
+                    if ajustBoardSize>=0.89 && ajustBoardSize<=0.91 && outCoordY>5.5{
+                        outCoordX=-4.8%;
+                        outCoordY=5.2%;                        
+                    }
+                        transform: translate(outCoordX,outCoordY)!important;
+                        //transform: translate(-4.5%,4.8%)!important;
                     }
                     .coords-dark:not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
                     .coordinate-dark:not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark) ,
