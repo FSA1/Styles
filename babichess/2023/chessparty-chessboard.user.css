@@ -386,7 +386,7 @@
         ajustBoardSize=0.85;
         //enableBoardFrame=1;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
-        frameColor=#eae7c5;
+        frameColor=#D7D7BD;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
@@ -449,7 +449,7 @@
         frameRadiusInOut=1;
         ajustBoardSize=0.85;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
-        frameColor=#eae7c5;
+        frameColor=#D7D7BD;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
@@ -514,7 +514,7 @@
         frameRadiusInOut=1;
         ajustBoardSize=0.85;
         frameOpt=server+'babichess/chessparty/343542054_2140836912794163_858001955581368545_n.png';
-        frameColor=#eae7c5;
+        frameColor=#D7D7BD;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
