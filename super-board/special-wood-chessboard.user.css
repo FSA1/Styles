@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.11-beta
+@version        1.0.12-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -17,6 +17,7 @@
             "Nog. arredondado": "walnutRound",
             "Madeira clara": "light-wood",
             "Madeira escura": "dark-wood",
+            "CXC": "cxc",
             "Personalizado": "custom",
             "Desativado": "disabled",
         }
@@ -754,6 +755,58 @@
         setWallpaper=percentSize;
         backgroundColp=#807065;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+    }
+    else if myBoard=="cxc" {
+        /*🔐important: board size need to be locked for this board*/
+        ajustBoardSize=0.86;
+        svgBoardBlend=normal;
+        svgLightSqColor=#fff2d1;
+        svgLightSqOpacity=0.7;
+        enableGlobalColor=0;
+        svgDarkSqColor= #b3996b;
+        svgDarkSqOpacity=0.1;
+        boardBGOpt=server+'Fier/Dark-Wood-OA-145.jpg';
+        boardBGColor=#c8b08d;
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=2px;
+        frameRadiusInOut=1;
+        frameOpt=server+'Fier/base-cxc.jpg';
+        frameColor=#5a4233;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        enableInnerBorder=1;
+        innerBorderOpt= #d3c3a0;
+        innerBorderColor=#c9bc95;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        setHighlight=op1;
+        hlColor=#fe0;
+        highlightOpacity=0.5;
+        //enableCenterLogo=1;
+        //enableCornerLogo=0;
+        //enableCornerLogo2=0;
+        enableCustomCoord=1;
+        //enableOutsideCoords=0;
+        //outCoordFontSize=0.24rem;
+        //outCoordFontName=Segoe UI;
+        //outCoordFontWeight=400;
+        outCoordColorOpt= #d9c9a5;
+        lCoordCol= #6E563B;
+        dCoordCol= #d3c3a0;
+        coordsBlend=normal;
+        themeWallpaper=gradient;
+        enableLightTheme=0;
+        backgroundColp=#4a382e;
+        evalOpt=custom;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
     }
 
     /*End themes*/
