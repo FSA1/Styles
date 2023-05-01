@@ -73,8 +73,8 @@
 @var select   outCoordFontWeight   "↪Tipo"    ["400*", "600", "700", "800"]
 
 @var    select      outCoordFontCase    "↪Maiúsculas ou minúsculas"{
-            "Maiúsculas*": "uppercase",
-            "Minúsculas": "lowercase",
+            "Maiúsculas": "uppercase",
+            "Minúsculas*": "lowercase",
         }
 @var    select      outCoordColorOpt    "↪🟢Origem da cor"{
             "Casas Claras*": "svgLightSqColor",
