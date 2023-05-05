@@ -736,7 +736,8 @@
                 svgLightSqColor=#facb00;
                 frameColor=svgDarkSqColor=#c8b11c;
                 specialEffectSize=50%;
-                hlColor=#ffe02e;
+                hlColor=#fffc2e;
+                highlightOpacity=0.6;
                 boardShadow= 0px 0px 32px 0px #c8b11c94;
                 frameShadowInset= inset 0px 1px 34px 0px #c8b11c85;
                 enableBoardShadow=1;
