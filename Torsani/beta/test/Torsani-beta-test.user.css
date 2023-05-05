@@ -59,10 +59,10 @@
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0
 @var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.7, 1, 0.1, ""]
-@var    color    arrowOrange  "🟠Click Direito"   #ffaa00
-@var    color    arrowRed  "🔴CTRL+Click"   #f8553f
-@var    color    arrowGreen  "🟢SHIFT+Click"   #9fcf3f
-@var    color    arrowBlue  "🔵ALT+Click"   #48c1f9
+@var    color    arrowOrange  "🟠Click Direito"   #ff8000
+@var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
+@var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
+@var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
