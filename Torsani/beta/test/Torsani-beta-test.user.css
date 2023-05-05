@@ -321,9 +321,9 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*primary server (GitHub)*/    
-    gitHub='https://github.com/FSA1/Styles/raw/main/'    
+    gitHub='https://github.com/FSA1/Styles/raw/main/';
     /*alternative server (GitLab)*/
-    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
     /*there is no error below*/
     if setServer {
         server = gitLab
@@ -341,7 +341,7 @@
     txGrass09=server+'Torsani/texture/grass/grass_09.jpg';
     txGrass32=server+'Torsani/texture/grass/grass_32.jpg';
     /*selector with exceptions to avoid override analysis highlights*/
-    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]';
 
     if enableBoardShadow{
         boardShadow= 0px 0px 8px 4px rgba(0, 0, 0, .4);
@@ -660,10 +660,7 @@
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
         coordsBlend=normal;
-    }
-
-    
-    /*End themes*/
+    }/*End themes*/
 
     /*Special Effects*/
     if myBoard=="football"{
@@ -725,7 +722,6 @@
                 enableBoardShadow=1;
                 //boardShadow= 0px 0px 8px 8px rgba(255, 255, 255, .7);
                 boardShadowInset= inset 0px 1px 10px 6px rgba(255, 255, 255, .4);
-
             }else if weather =="5"{
                 /*confetti*/
                 specialEffectSize=50%;
@@ -744,7 +740,6 @@
                 bgSize=32%;
             }
         }
-        
     }/*End allowSpEffects*/
 
     /*GLOBAL COLOR - Need to be placed after themes*/
@@ -783,7 +778,7 @@
     '.v5-section-content-wide' > '#collapseAbout' then on 'after' click on 'content' and choose 'copy value'. Now you can make some corrections and save your
      settings and paste them as a new theme in this code. Be sure to add a new entry to the myBoard menu*/
     getValue=''+ myTheme;
-    myTheme=unquote(slice(getValue,2))
+    myTheme=unquote(slice(getValue,2));
     showSettings=slice(getValue,0,1);
    
     if showSettings=="1"{
