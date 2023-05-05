@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.17-beta
+@version        2.0.0-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -524,7 +524,6 @@
         bgPosY=0%;
         frameRadius=6px;
         frameRadiusInOut=1;
-        enableBoardFrame=1;
         frameOpt=colorOnly;
         frameColor=svgDarkSqColor;
         frameSize=100%;

@@ -1,0 +1,7 @@
+Update v1.0.17
+
+- Melhores cores da barra de avaliação nos
+tabuleiros "Futebol" e "Madeira". Cores acompanham a função clima agora (Tabuleiro Futebol).
+
+- Largura da borda destravada.
+

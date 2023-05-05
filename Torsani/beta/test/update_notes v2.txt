@@ -1,0 +1,15 @@
+Update v2.0.0
+
+- Melhores cores da barra de avaliação nos
+tabuleiros "Futebol" e "Madeira". Cores acompanham a função clima agora (Tabuleiro Futebol).
+
+- Redimencionamento da textura do tabuleiro
+"Futebol". menos granulado, mais nítido.
+
+- Nova forma de mudar cores das setas. Você escolhe
+cores específicas como nos destaques de casas.
+
+- Largura da borda destravada.
+
+- Nomenclatura de variaveis referentes aos destaques de casas foram mudadas, cores personalisadas pelo usuário em versões anteriores serão perdidas.
+

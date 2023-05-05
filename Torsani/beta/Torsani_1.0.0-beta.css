@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.16-beta
+@version        1.0.17
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -373,8 +373,6 @@
         bgPosY=0%;
         frameRadius=4px;
         frameRadiusInOut=0;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
         frameOpt=boardBGOpt;
         frameColor=#838f5e;
         frameSize=bgSize;
@@ -431,11 +429,12 @@
         cornerLogo2FontWeight=700;
         themeWallpaper=server+'Torsani/wallpaper/wallpaper2.jpg';
         enableLightTheme=0;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
         coordsBlend=normal;
+        dEvalCol=#3c7214;
+        lEvalCol=#7daf48;
+        evalOpt=custom;
     }
     else if myBoard=="torsaniWood" {
         svgBoardBlend=normal;
@@ -451,8 +450,6 @@
         bgPosY=0%;
         frameRadius=6px;
         frameRadiusInOut=1;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
         frameOpt=server+'super-board/textures/wood/frames/frame-dark-wood1.jpg';
         frameColor=#3e2b1f;
         frameSize=cover;
@@ -468,7 +465,6 @@
         setHighlight=op1;
         hlColor=#ffc02e;
         highlightOpacity=0.5;
-        enableArrowSettings=0;
         enableCenterLogo=1;
         enableCornerLogo=0
         enableCornerLogo2=1;
@@ -481,6 +477,10 @@
         outCoordCol=#d4bf9f;
         lCoordCol=#b3865b;
         dCoordCol=#dcc3a6;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        evalOpt=custom;
+        coordsBlend=normal;
         centerLogoOpt=logoCorinthians;
         centerLogoBlend=darken;
         centerLogoCol=#a07448;
@@ -509,9 +509,6 @@
         cornerLogo2FontWeight=800;
         enableLightTheme=0;
         backgroundColp=#554e48;
-        dEvalCol=#403d39;
-        lEvalCol=#e0e0e0;
-        coordsBlend=normal;
     }
     else if myBoard=="torsaniBeige" {
         svgBoardBlend=normal;
@@ -527,8 +524,6 @@
         bgPosY=0%;
         frameRadius=6px;
         frameRadiusInOut=1;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
         frameOpt=colorOnly;
         frameColor=svgDarkSqColor;
         frameSize=100%;
@@ -601,8 +596,6 @@
         bgPosY=0%;
         frameRadius=6px;
         frameRadiusInOut=1;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
         frameOpt=colorOnly;
         frameColor= #716a62;
         frameSize=100%;
@@ -618,7 +611,6 @@
         setHighlight=op1;
         hlColor=#ff0;
         highlightOpacity=0.4;
-        enableArrowSettings=0;
         enableCenterLogo=1;
         enableCornerLogo=0;
         enableCornerLogo2=1;
@@ -665,8 +657,6 @@
         evalOpt=auto;
         dEvalCol=#403d39;
         lEvalCol=#e0e0e0;
-        evalBarOpacity=0.9;
-        hueRotationArrow=20deg;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
         coordsBlend=normal;
@@ -699,18 +689,24 @@
                 specialEffectSize=52%;
                 svgLightSqColor=#9ec3b2;
                 svgDarkSqColor=#2d8253;
+                dEvalCol=#2e5d28;
+                lEvalCol=#5f9c43;
                 specialEffect=server+"Torsani/weather/rain_light_r.gif";
             }else if weather =="2"{
                 /*heavy rain*/
                 specialEffectSize=51%;
                 svgLightSqColor=#80a292;
                 svgDarkSqColor=#246641;
+                dEvalCol=#245322;
+                lEvalCol=#4b8335;
                 specialEffect=server+"Torsani/weather/rain_heavy_r.gif";
             }else if weather =="3"{            
                 /*falling leaves*/
                 specialEffectSize=51%;
                 svgLightSqColor=#ccba97;
                 svgDarkSqColor=#a57d39;
+                dEvalCol=#5e6316;
+                lEvalCol=#7f9132;
                 specialEffect=server+"Torsani/weather/leaf_fall_rs.gif";
             }else if weather =="4"{
                 /*snow*/
@@ -723,6 +719,8 @@
                 specialEffect=server+"Torsani/weather/snow_03_rs.gif";
                 enableOutsideCoords=0;
                 dCoordCol=lCoordCol=#fff;
+                dEvalCol=#5d6c52;
+                lEvalCol=#d6d9d2;
                 enableBoardShadowInset=1;
                 enableBoardShadow=1;
                 //boardShadow= 0px 0px 8px 8px rgba(255, 255, 255, .7);
@@ -737,7 +735,8 @@
                 svgLightSqColor=#facb00;
                 frameColor=svgDarkSqColor=#c8b11c;
                 specialEffectSize=50%;
-                hlColor=#ffe02e;
+                hlColor=#fffc2e;
+                highlightOpacity=0.6;
                 boardShadow= 0px 0px 32px 0px #c8b11c94;
                 frameShadowInset= inset 0px 1px 34px 0px #c8b11c85;
                 enableBoardShadow=1;
