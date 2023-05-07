@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.5-beta
+@version        1.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -17,7 +17,7 @@
             "Folhas": "3",
             "Neve": "4",
             "Confete": "5",
-            "ensolarado": "6",
+            "Ensolarado": "6",
         }
 @var    select      fieldmarksOpt    "⚽Marcas de campo"{
             "😃Completo!": "op1",
@@ -49,15 +49,19 @@
             "Padrão": "disabled",
         }
 @var    color    hlColor  "↪Cor do destaque"   #ffff00
-
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.4, 0.3, 1, 0.1, ""]
+@var    color    hlSqRed  "🔴Click Direito"   #eb6150
+@var    color    hlSqOrange  "🟠CTRL+Click"   #fa0
+@var    color    hlSqGreen  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqBlue  "🔵ALT+Click"   #52b0dc
 
-@var    color    hlSqColor4  "🔴Click Direito"   #eb6150
-@var    color    hlSqColor3  "🟠CTRL+Click"   #fa0
-@var    color    hlSqColor2  "🟢SHIFT+Click"   #acce59
-@var    color    hlSqColor1  "🔵ALT+Click"   #52b0dc
+@var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.7, 1, 0.1, ""]
+@var    color    arrowOrange  "🟠Click Direito"   #ff8000
+@var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
+@var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
+@var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
 
-@var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 0
@@ -302,12 +306,7 @@
 
 @var color    dEvalCol  "Avaliação Pretas"   #403D39
 @var color    lEvalCol  "Avaliação Brancas"   #E0E0E0
-@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.5, 1, 0.1, ""]
-
-@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
-@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
-@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
-@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
+@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.8, 1, 0.1, ""]
 
 @var    text     userFont1    "🆎Importar fonte 1:"   "'Bauhaus'"
 
@@ -318,10 +317,10 @@
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
-    /*primary server (GitHub)*/    
-    gitHub='https://github.com/FSA1/Styles/raw/main/'    
+    /*primary server (GitHub)*/
+    gitHub='https://github.com/FSA1/Styles/raw/main/';
     /*alternative server (GitLab)*/
-    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/'
+    gitLab='https://gitlab.com/FSA11/Styles/-/raw/main/';
     /*there is no error below*/
     if setServer {
         server = gitLab
@@ -339,7 +338,7 @@
     txGrass09=server+'DanielFla/texture/grass/grass_09.jpg';
     txGrass32=server+'DanielFla/texture/grass/grass_32.jpg';
     /*selector with exceptions to avoid override analysis highlights*/
-    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]'
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]';
 
     if enableBoardShadow{
         boardShadow= 0px 0px 8px 4px rgba(0, 0, 0, .4);
@@ -621,26 +620,32 @@
                 return floor(math(0, 'random')*(max - min + 1) + min)
             }
             randomize=random(1,10);
-            weather = weatherOpt;
-            if weather =="1"{
+            weather=weatherOpt;
+            if weather=="1"{
                 /*rain*/
                 specialEffectSize=52%;
                 svgLightSqColor=#9ec3b2;
                 svgDarkSqColor=#2d8253;
+                dEvalCol=#2e5d28;
+                lEvalCol=#5f9c43;
                 specialEffect=server+"weather/rain_light_r.gif";
-            }else if weather =="2"{
+            }else if weather=="2"{
                 /*heavy rain*/
                 specialEffectSize=51%;
                 svgLightSqColor=#80a292;
                 svgDarkSqColor=#246641;
+                dEvalCol=#245322;
+                lEvalCol=#4b8335;
                 specialEffect=server+"weather/rain_heavy_r.gif";
-            }else if weather =="3"{            
+            }else if weather=="3"{            
                 /*falling leaves*/
                 specialEffectSize=51%;
                 svgLightSqColor=#ccba97;
                 svgDarkSqColor=#a57d39;
+                dEvalCol=#5e6316;
+                lEvalCol=#7f9132;
                 specialEffect=server+"weather/leaf_fall_rs.gif";
-            }else if weather =="4"{
+            }else if weather=="4"{
                 /*snow*/
                 specialEffectSize=50%;
                 svgLightSqColor=#c8d2d3;
@@ -651,29 +656,31 @@
                 specialEffect=server+"weather/snow_03_rs.gif";
                 enableOutsideCoords=0;
                 dCoordCol=lCoordCol=#fff;
+                dEvalCol=#5d6c52;
+                lEvalCol=#d6d9d2;
                 enableBoardShadowInset=1;
                 enableBoardShadow=1;
                 //boardShadow= 0px 0px 8px 8px rgba(255, 255, 255, .7);
                 boardShadowInset= inset 0px 1px 10px 6px rgba(255, 255, 255, .4);
-
-            }else if weather =="5"{
+            }else if weather=="5"{
                 /*confetti*/
                 specialEffectSize=50%;
                 specialEffect=server+"weather/confetti.gif";
-            }else if weather =="6"{
+            }else if weather=="6"{
                 /*ensolarado*/
                 svgLightSqColor=#facb00;
                 frameColor=svgDarkSqColor=#c8b11c;
                 specialEffectSize=50%;
-                hlColor=#ffe02e;
+                hlColor=#fffc2e;
+                highlightOpacity=0.6;
                 boardShadow= 0px 0px 32px 0px #c8b11c94;
                 frameShadowInset= inset 0px 1px 34px 0px #c8b11c85;
                 enableBoardShadow=1;
                 enableFrameShadowInset=1;
-                bgSize=32%;
+                dEvalCol=#50751c;
+                lEvalCol=#94af3a;
             }
         }
-        
     }/*End allowSpEffects*/
 
     /*GLOBAL COLOR - Need to be placed after themes*/
@@ -712,7 +719,7 @@
     '.v5-section-content-wide' > '#collapseAbout' then on 'after' click on 'content' and choose 'copy value'. Now you can make some corrections and save your
      settings and paste them as a new theme in this code. Be sure to add a new entry to the myBoard menu*/
     getValue=''+ myTheme;
-    myTheme=unquote(slice(getValue,2))
+    myTheme=unquote(slice(getValue,2));
     showSettings=slice(getValue,0,1);
    
     if showSettings=="1"{
@@ -768,7 +775,7 @@
     }
     board3=boardBGOpt;
     miniBoard3=board3;
-    if boardBGOpt!="colorOnly" && boardBGOpt!="" boardBGOpt!=null{
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" && boardBGOpt!=null{
        boardBGColor=#0000;
     }
     if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
@@ -958,24 +965,39 @@
     /*====== change arrows colors ======*/
     if enableArrowSettings {
         .arrow {
-            filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
             opacity: arrowOpacity !important;
+        }
+        /*red*/
+        [class*="arrow"][style*="248\, 85\, 63"],[class*="arrow"][style*="#f8553fcc"]{
+            fill: arrowRed!important;
+        }
+        /*orange*/
+        [class*="arrow"][style*="255\, 170\, 0"],[class*="arrow"][style*="#fa0c"]{
+            fill: arrowOrange!important;
+        }
+        /*green*/
+        [class*="arrow"][style*="159\, 207\, 63"],[class*="arrow"][style*="#9fcf3fcc"]{
+            fill: arrowGreen!important;
+        }
+        /*blue*/
+        [class*="arrow"][style*="72\, 193\, 249"],[class*="arrow"][style*="#48c1f9cc"]{
+            fill: arrowBlue!important;
         }
     }/*====== End arrows colors ======*/
     /*------end section------*/
 
     /*change highlight made by the user*/
     [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
-        background-color:hlSqColor1!important;
+        background-color:hlSqBlue!important;
     }
     [class*="highlight"][style*="172\, 206\, 89"],[class*="highlight"][style*="#acce59"]{
-        background-color: hlSqColor2!important;
+        background-color: hlSqGreen!important;
     }
     [class*="highlight"][style*="255\, 170\, 0"],[class*="highlight"][style*="#fa0"]{
-        background-color: hlSqColor3!important;
+        background-color: hlSqOrange!important;
     }
     [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
-        background-color: hlSqColor4!important;
+        background-color: hlSqRed!important;
     }
 
 }
@@ -1052,8 +1074,8 @@
             div[id*="chess_com_chessmentor_board_1_boardarea"],
             div[id^="chess_com_emailboard_"],
             div[id^="board-blank"],
-            chess-board[class^="board"]:not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
-            chess-board[class^="board flipped"]:not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
             chess-board[id^="board-blank"],
             chess-board[id^="board-vs-personalities"],
             div[id*="chess_com_emailboard_"] {
@@ -1114,8 +1136,8 @@
             div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
             div[id^="chess_com_emailboard_"]:before,
             div[id^="board-blank"]:before,
-            chess-board[class^="board"]:not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
-            chess-board[class^="board flipped"]:not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
             chess-board[id^="board-blank"]:before,
             chess-board[id^="board-vs-personalities"]:before,
             div[id*="chess_com_emailboard_"]:before {
@@ -1156,35 +1178,35 @@
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
                 .coordinate-grey,
-                .coordinate-dark:not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
-                .coordinate-light:not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
+                .coordinate-dark:not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
+                .coordinate-light:not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
                     text-transform: outCoordFontCase !important;
                     fill:outCoordColorOpt!important;
                     font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
                     font-weight: outCoordFontWeight!important;   
                     font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
                 }
-                .outside:not(.event-header-new-games .outside):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                .outside:not(.game-details-board .outside):not(.event-header-new-games .outside):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
                     transform: translate(-5.5%,4.5%)!important;
                 }
-                body.outside-coords:not(.with-pieces,.real-3d):not(.event-header-new-games .outside-coords):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
+                body.outside-coords:not(.game-details-board body.outside-coords):not(.with-pieces,.real-3d):not(.event-header-new-games .outside-coords):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
                     --coordinatesGutter: 1rem!important;
                 }
 
                 if enableOutsideCoords {
-                    .coordinates:not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                    .coordinates:not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
                         transform: translate(-4.5%,4.8%)!important;
                     }
-                    .coords-dark:not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
-                    .coordinate-dark:not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark) ,
-                    div.number.coords-dark:not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
-                    div.letter.coords-dark:not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
-                    text.coordinate-dark:not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
-                    .coords-light:not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
-                    .coordinate-light:not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light),
-                    div.number.coords-light:not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
-                    div.letter.coords-light:not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
-                    text.coordinate-light:not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
+                    .coords-dark:not(.game-details-board .coords-dark):not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
+                    .coordinate-dark:not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
+                    div.number.coords-dark:not(.game-details-board div.number.coords-dark):not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
+                    div.letter.coords-dark:not(.game-details-board div.letter.coords-dark):not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
+                    text.coordinate-dark:not(.game-details-board text.coordinate-dark):not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
+                    .coords-light:not(.game-details-board .coords-light):not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
+                    .coordinate-light:not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light),
+                    div.number.coords-light:not(.game-details-board div.number.coords-light):not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
+                    div.letter.coords-light:not(.game-details-board div.letter.coords-light):not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
+                    text.coordinate-light:not(.game-details-board text.coordinate-light):not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
                         color: outCoordColorOpt !important;
                         fill: @color;
                         opacity: 1!important;
@@ -1292,16 +1314,3 @@
     }
     
 }/*End Events*/
-
-@-moz-document url("https://www.chess.com/playZZZ"){
-        .board-layout-chessboard .board:before,
-        div#board.board,div#board.board:before{
-            background-image:url('')!important;
-            width: 0!important;
-            height:@width;
-            border:0!important;
-            box-shadow:0 0 0 0!important;
-            margin:0!important;
-           
-		}
-}
