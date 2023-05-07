@@ -41,8 +41,8 @@
 @var    color    hlSVGColor  "↪Cor da imagem"   #007bee
 
 @var    color    hlColor  "↪Cor do destaque"   #00d0ff
-
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.6, 0.3, 1, 0.1, ""]
+
 @var    color    hlSqRed  "🔴Click Direito"   #eb6150
 @var    color    hlSqOrange  "🟠CTRL+Click"   #fa0
 @var    color    hlSqGreen  "🟢SHIFT+Click"   #acce59

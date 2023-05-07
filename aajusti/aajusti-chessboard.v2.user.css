@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.1
+@version        2.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -41,15 +41,19 @@
 @var    color    hlSVGColor  "↪Cor da imagem"   #007bee
 
 @var    color    hlColor  "↪Cor do destaque"   #00d0ff
-
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.6, 0.3, 1, 0.1, ""]
 
-@var    color    hlSqColor4  "🔴Click Direito"   #eb6150
-@var    color    hlSqColor3  "🟠CTRL+Click"   #fa0
-@var    color    hlSqColor2  "🟢SHIFT+Click"   #acce59
-@var    color    hlSqColor1  "🔵ALT+Click"   #52b0dc
+@var    color    hlSqRed  "🔴Click Direito"   #eb6150
+@var    color    hlSqOrange  "🟠CTRL+Click"   #fa0
+@var    color    hlSqGreen  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqBlue  "🔵ALT+Click"   #52b0dc
 
-@var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
+@var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0
+@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.7, 1, 0.1, ""]
+@var    color    arrowOrange  "🟠Click Direito"   #ff8000
+@var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
+@var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
+@var    color    arrowBlue  "🔵ALT+Click"   #28b8fa 
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
@@ -294,11 +298,6 @@
 @var color    dEvalCol  "Avaliação Pretas"   #403D39
 @var color    lEvalCol  "Avaliação Brancas"   #E0E0E0
 @var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.5, 1, 0.1, ""]
-
-@var    range    hueRotationArrow  "Tonalidade das setas" [20, 0, 355, 5, "deg"]
-@var    range    arrowOpacity  "Opacidade das setas" [0.9, 0.3, 1, 0.1, ""]
-@var    range    saturateArrow  "Saturação (setas)" [200, 0, 300, 5, "%"]
-@var    range    brightnessArrow    "Brilho (setas)" [120, 5, 300, 5, "%"]
 
 @var    text     userFont1    "🆎Importar fonte 1:"   "'Bauhaus'"
 
@@ -798,24 +797,39 @@
     /*====== change arrows colors ======*/
     if enableArrowSettings {
         .arrow {
-            filter: hue-rotate(hueRotationArrow) brightness(brightnessArrow) saturate(saturateArrow)!important;
             opacity: arrowOpacity !important;
+        }
+        /*red*/
+        [class*="arrow"][style*="248\, 85\, 63"],[class*="arrow"][style*="#f8553fcc"]{
+            fill: arrowRed!important;
+        }
+        /*orange*/
+        [class*="arrow"][style*="255\, 170\, 0"],[class*="arrow"][style*="#fa0c"]{
+            fill: arrowOrange!important;
+        }
+        /*green*/
+        [class*="arrow"][style*="159\, 207\, 63"],[class*="arrow"][style*="#9fcf3fcc"]{
+            fill: arrowGreen!important;
+        }
+        /*blue*/
+        [class*="arrow"][style*="72\, 193\, 249"],[class*="arrow"][style*="#48c1f9cc"]{
+            fill: arrowBlue!important;
         }
     }/*====== End arrows colors ======*/
     /*------end section------*/
 
     /*change highlight made by the user*/
     [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
-        background-color:hlSqColor1!important;
+        background-color:hlSqBlue!important;
     }
     [class*="highlight"][style*="172\, 206\, 89"],[class*="highlight"][style*="#acce59"]{
-        background-color: hlSqColor2!important;
+        background-color: hlSqGreen!important;
     }
     [class*="highlight"][style*="255\, 170\, 0"],[class*="highlight"][style*="#fa0"]{
-        background-color: hlSqColor3!important;
+        background-color: hlSqOrange!important;
     }
     [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
-        background-color: hlSqColor4!important;
+        background-color: hlSqRed!important;
     }
 
 }
