@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.18
+@version        1.0.19
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -576,7 +576,7 @@
         enableLightTheme=0;
         setWallpaper=cover;
         percentSize=100%;
-        backgroundColp= #554e48;
+        backgroundColp=#554e48;
         themeWallpaper=server+'Torsani/wallpaper/wallpaper1.jpg';
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
@@ -584,10 +584,10 @@
     }
     else if myBoard=="torsaniGray" {
         svgBoardBlend=normal;
-        svgLightSqColor= #e2ded2;
+        svgLightSqColor=#e2ded2;
         svgLightSqOpacity=1;
         enableGlobalColor=1;
-        svgDarkSqColor= #847b73;
+        svgDarkSqColor=#847b73;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
         boardBGColor=rgba(224,221,202,0);
@@ -597,7 +597,7 @@
         frameRadius=6px;
         frameRadiusInOut=1;
         frameOpt=colorOnly;
-        frameColor= #716a62;
+        frameColor=#716a62;
         frameSize=100%;
         framePosX=0%;
         framePosY=0%;
@@ -621,8 +621,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#e9e4d4;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol= #8d8d8d;
-        dCoordCol= #acacac;
+        lCoordCol=#8d8d8d;
+        dCoordCol=#acacac;
         centerLogoOpt=logoCorinthiansSJ;
         centerLogoBlend=darken;
         centerLogoCol=#847669;
@@ -632,7 +632,7 @@
         centerLogoPosY=50%;
         cornerLogoOpt=cornerLogoTextOnly;
         cornerLogoBlend=darken;
-        cornerLogoCol= #5a4d3b59;
+        cornerLogoCol=#5a4d3b59;
         cornerLogoSize=12%;
         cornerLogoOpacity=0.85;
         cornerLogoPosX=107%;
@@ -647,7 +647,7 @@
         cornerLogo2PosX=130%;
         cornerLogo2PosY=60%;
         cornerLogo2FontSize=10px;
-        cornerLogo2Col= #5b4e3c59;
+        cornerLogo2Col=#5b4e3c59;
         cornerLogo2FontName='Helvetica';
         cornerLogo2FontWeight=700;
         enableLightTheme=0;
@@ -660,10 +660,7 @@
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
         coordsBlend=normal;
-    }
-
-    
-    /*End themes*/
+    }/*End themes*/
 
     /*Special Effects*/
     if myBoard=="football"{
@@ -683,8 +680,8 @@
                 return floor(math(0, 'random')*(max - min + 1) + min)
             }
             randomize=random(1,10);
-            weather = weatherOpt;
-            if weather =="1"{
+            weather=weatherOpt;
+            if weather=="1"{
                 /*rain*/
                 specialEffectSize=52%;
                 svgLightSqColor=#9ec3b2;
@@ -692,7 +689,7 @@
                 dEvalCol=#2e5d28;
                 lEvalCol=#5f9c43;
                 specialEffect=server+"Torsani/weather/rain_light_r.gif";
-            }else if weather =="2"{
+            }else if weather=="2"{
                 /*heavy rain*/
                 specialEffectSize=51%;
                 svgLightSqColor=#80a292;
@@ -700,7 +697,7 @@
                 dEvalCol=#245322;
                 lEvalCol=#4b8335;
                 specialEffect=server+"Torsani/weather/rain_heavy_r.gif";
-            }else if weather =="3"{            
+            }else if weather=="3"{            
                 /*falling leaves*/
                 specialEffectSize=51%;
                 svgLightSqColor=#ccba97;
@@ -708,7 +705,7 @@
                 dEvalCol=#5e6316;
                 lEvalCol=#7f9132;
                 specialEffect=server+"Torsani/weather/leaf_fall_rs.gif";
-            }else if weather =="4"{
+            }else if weather=="4"{
                 /*snow*/
                 specialEffectSize=50%;
                 svgLightSqColor=#c8d2d3;
@@ -725,11 +722,11 @@
                 enableBoardShadow=1;
                 //boardShadow= 0px 0px 8px 8px rgba(255, 255, 255, .7);
                 boardShadowInset= inset 0px 1px 10px 6px rgba(255, 255, 255, .4);
-            }else if weather =="5"{
+            }else if weather=="5"{
                 /*confetti*/
                 specialEffectSize=50%;
                 specialEffect=server+"Torsani/weather/confetti.gif";
-            }else if weather =="6"{
+            }else if weather=="6"{
                 /*ensolarado*/
                 svgLightSqColor=#facb00;
                 frameColor=svgDarkSqColor=#c8b11c;
@@ -741,9 +738,10 @@
                 enableBoardShadow=1;
                 enableFrameShadowInset=1;
                 bgSize=32%;
+                dEvalCol=#5d751c;
+                lEvalCol=#a5af3a;
             }
         }
-        
     }/*End allowSpEffects*/
 
     /*GLOBAL COLOR - Need to be placed after themes*/
@@ -840,7 +838,7 @@
     }
     board3=boardBGOpt;
     miniBoard3=board3;
-    if boardBGOpt!="colorOnly" && boardBGOpt!="" boardBGOpt!=null{
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" && boardBGOpt!=null{
        boardBGColor=#0000;
     }
     if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
@@ -1186,8 +1184,8 @@
             div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
             div[id^="chess_com_emailboard_"]:before,
             div[id^="board-blank"]:before,
-            chess-board[class^="board"]:not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
-            chess-board[class^="board flipped"]:not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
             chess-board[id^="board-blank"]:before,
             chess-board[id^="board-vs-personalities"]:before,
             div[id*="chess_com_emailboard_"]:before {
@@ -1228,35 +1226,35 @@
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
                 .coordinate-grey,
-                .coordinate-dark:not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
-                .coordinate-light:not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
+                .coordinate-dark:not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
+                .coordinate-light:not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
                     text-transform: outCoordFontCase !important;
                     fill:outCoordColorOpt!important;
                     font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
                     font-weight: outCoordFontWeight!important;   
                     font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
                 }
-                .outside:not(.event-header-new-games .outside):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                .outside:not(.game-details-board .outside):not(.event-header-new-games .outside):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
                     transform: translate(-5.5%,4.5%)!important;
                 }
-                body.outside-coords:not(.with-pieces,.real-3d):not(.event-header-new-games .outside-coords):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
+                body.outside-coords:not(.game-details-board body.outside-coords):not(.with-pieces,.real-3d):not(.event-header-new-games .outside-coords):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
                     --coordinatesGutter: 1rem!important;
                 }
 
                 if enableOutsideCoords {
-                    .coordinates:not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                    .coordinates:not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
                         transform: translate(-4.5%,4.8%)!important;
                     }
-                    .coords-dark:not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
-                    .coordinate-dark:not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark) ,
-                    div.number.coords-dark:not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
-                    div.letter.coords-dark:not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
-                    text.coordinate-dark:not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
-                    .coords-light:not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
-                    .coordinate-light:not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light),
-                    div.number.coords-light:not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
-                    div.letter.coords-light:not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
-                    text.coordinate-light:not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
+                    .coords-dark:not(.game-details-board .coords-dark):not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
+                    .coordinate-dark:not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
+                    div.number.coords-dark:not(.game-details-board div.number.coords-dark):not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
+                    div.letter.coords-dark:not(.game-details-board div.letter.coords-dark):not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
+                    text.coordinate-dark:not(.game-details-board text.coordinate-dark):not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
+                    .coords-light:not(.game-details-board .coords-light):not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
+                    .coordinate-light:not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light),
+                    div.number.coords-light:not(.game-details-board div.number.coords-light):not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
+                    div.letter.coords-light:not(.game-details-board div.letter.coords-light):not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
+                    text.coordinate-light:not(.game-details-board text.coordinate-light):not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
                         color: outCoordColorOpt !important;
                         fill: @color;
                         opacity: 1!important;
@@ -1364,16 +1362,3 @@
     }
     
 }/*End Events*/
-
-@-moz-document url("https://www.chess.com/playZZZ"){
-        .board-layout-chessboard .board:before,
-        div#board.board,div#board.board:before{
-            background-image:url('')!important;
-            width: 0!important;
-            height:@width;
-            border:0!important;
-            box-shadow:0 0 0 0!important;
-            margin:0!important;
-           
-		}
-}
