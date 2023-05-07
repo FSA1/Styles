@@ -53,7 +53,7 @@
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.4, 0.3, 1, 0.1, ""]
 @var    color    hlSqRed  "🔴Click Direito"   #eb6150
 @var    color    hlSqOrange  "🟠CTRL+Click"   #fa0
-@var    color    hlSqGreen  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqGreen  "🟢SHIFT+Click"   #59cea1
 @var    color    hlSqBlue  "🔵ALT+Click"   #52b0dc
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0
