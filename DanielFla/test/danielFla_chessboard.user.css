@@ -677,9 +677,8 @@
                 frameShadowInset= inset 0px 1px 34px 0px #c8b11c85;
                 enableBoardShadow=1;
                 enableFrameShadowInset=1;
-                bgSize=32%;
-                dEvalCol=#5d751c;
-                lEvalCol=#a5af3a;
+                dEvalCol=#50751c;
+                lEvalCol=#94af3a;
             }
         }
     }/*End allowSpEffects*/
