@@ -316,7 +316,7 @@
 
 @var color    dEvalCol  "Avaliação Pretas"   #403D39
 @var color    lEvalCol  "Avaliação Brancas"   #E0E0E0
-@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.95, 0.5, 1, 0.05, ""]
+@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.5, 1, 0.1, ""]
 
 @var    text     userFont1    "🆎Importar fonte 1:"   "'Bauhaus'"
 
@@ -374,10 +374,6 @@
 @-moz-document domain("chess.com") {
     /*Themes*/
     if myBoard=="gmKrikor-green" {
-        svgDarkSqColor=#137f6b;
-        svgDarkSqOpacity=1;
-        svgLightSqColor=#e0ddca;
-        svgLightSqOpacity=1;
         ajustBoardSize=0.9;
         backgroundColp= #204348;
         bgPosX=0%;
@@ -412,6 +408,7 @@
         cornerLogoPosY=60%;
         cornerLogoSize=17%;
         cornerLogoText='GM';
+        dCoordCol=#acacac;
         enableBoardShadow=0;
         enableBoardShadowInset=0;
         enableCenterLogo=1;
@@ -435,21 +432,19 @@
         setHighlight='op1';
         hlImgOpt=disabled;
         innerBorderOpt= #d4d8c0;
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
+        lCoordCol=#8d8d8d;
         outCoordColorOpt=#e0ddca;
         outCoordFontName='Segoe UI';
         outCoordFontSize=0.24rem;
         outCoordFontWeight=400;
         panelBGOpt=colorOnly;
         percentSize=100%;
-        evalOpt=auto;
-    }
-    else if myBoard=="gmKrikor-blue" {
-        svgDarkSqColor= #147588;
+        svgDarkSqColor=#137f6b;
         svgDarkSqOpacity=1;
         svgLightSqColor=#e0ddca;
         svgLightSqOpacity=1;
+    }
+    else if myBoard=="gmKrikor-blue" {
         ajustBoardSize=0.9;
         backgroundColp=#203848;
         bgPosX=0%;
@@ -506,9 +501,10 @@
         outCoordFontName='Segoe UI';
         outCoordFontSize=0.24rem;
         outCoordFontWeight=400;
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
-        evalOpt=auto;
+        svgDarkSqColor= #147588;
+        svgDarkSqOpacity=1;
+        svgLightSqColor=#e0ddca;
+        svgLightSqOpacity=1;
     }
     else if myBoard=="gmKrikor-grey" {
         ajustBoardSize=0.9;
@@ -553,9 +549,6 @@
         cornerLogo2FontWeight=600;
         backgroundColp=#203848;
         outCoordColorOpt=svgLightSqColor;
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
-        evalOpt=auto;
     }
     else if myBoard=="moveBlue" {
         svgBoardBlend=normal;
@@ -598,8 +591,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#dae5e9;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
+        lCoordCol=#8d8d8d;
+        dCoordCol=#acacac;
         coordsBlend=normal;
         centerLogoOpt=timeOverLogo;
         centerLogoBlend=multiply;
@@ -669,8 +662,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#dae5e9;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
+        lCoordCol=#8d8d8d;
+        dCoordCol=#acacac;
         coordsBlend=normal;
         centerLogoOpt=timeOverLogo;
         centerLogoBlend=multiply;
@@ -735,8 +728,8 @@
         outCoordFontName='Segoe UI';
         outCoordFontSize=0.24rem;
         outCoordFontWeight=400;
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
+        lCoordCol= #8d8d8d;
+        dCoordCol= #acacac;
         themeWallpaper= server+'krikor/wallpaper/alphacoders/thumb-1920-516124.png';
         setWallpaper=cover;
         bEvalColor=svgDarkSqColor;
@@ -754,7 +747,6 @@
         cornerLogoPosX= 98%;
         cornerLogoPosY= 60%;
         cornerLogoFontSize= 8px;
-        evalOpt=auto;
     }
     else if myBoard=="pro_chess_league"{
         enableLightTheme= 0;
@@ -769,9 +761,9 @@
         enableCustomCoord= 0;
         enableOutsideCoords= 1;
         enableInnerBorder=0;
-        svgLightSqColor=#d5dde0;
+        svgLightSqColor= #cfd7da;
         svgLightSqOpacity= 1;
-        svgDarkSqColor=#50869c;
+        svgDarkSqColor= #4c7d91;
         svgDarkSqOpacity= 1;
         boardBGColor= #1c4e63;
         boardBGOpt= 'colorOnly';
@@ -779,17 +771,17 @@
         panelBGOpt= 'colorOnly';
         frameShadow= 0px 0px 8px 4px #00000080;
         ajustBoardSize= 0.9;
-        frameColor=#1f566d;
+        frameColor=#1c4e63;
         frameRadius= 9px;
         setHighlight= 'op1';
         hlColor= #0df;
         highlightOpacity= 0.4;
-        outCoordColorOpt=#d2d3d3;
+        outCoordColorOpt= #cdcdcd;
         outCoordFontName='Segoe UI';
         outCoordFontSize=0.24rem;
         outCoordFontWeight=400;
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
+        lCoordCol= #8d8d8d;
+        dCoordCol= #acacac;
         cornerLogoOpt= svgProChessLogo;
         cornerLogoCol= #264e5a42;
         cornerLogoSize= 42%;
@@ -804,8 +796,7 @@
         themeWallpaper=server+'pro-chess-league/backgrounds/background.svg';
         setWallpaper=cover;
         backgroundColp=#092d3b;
-        innerBorderOpt=#07465d;
-        evalOpt=auto;
+        innerBorderOpt=#87abb8;
     }
     else if myBoard=="walnut"{
         enableGlobalColor=0;
@@ -852,10 +843,10 @@
         mainColumnColor=0;
         panelColor=rgba(67,74,85,0.522);
         mainColBlur=1;
-        lCoordCol=#794a34;
-        dCoordCol=#d1b69d;
-        dEvalCol=lCoordCol;
-        lEvalCol=dCoordCol;
+        lCoordCol=#794f34;
+        dCoordCol=#d0bca4;
+        dEvalCol= lCoordCol;
+        lEvalCol= dCoordCol;
         evalOpt=custom;
         coordsBlend=normal;
         backgroundColp=#4b4844; 
@@ -870,11 +861,13 @@
     else if myBoard=="walnutRound"{ 
         enableGlobalColor=0;
         enableLightTheme=0;
+        //enableBoardFrame=1;
         enableInnerBorder=1;
         enableBoardShadow=0;
         enableBoardShadowInset=0; 
         enableFrameShadow=1;
         enableFrameShadowInset=1;
+        //enableOutsideCoords=1;
         enableCustomCoord=1;       
         svgLightSqColor=#fff0d1;
         svgLightSqOpacity=0.7;
@@ -904,8 +897,8 @@
         highlightOpacity=0.4;
         outCoordColorOpt=rgba(255,228,191,0.722);
         backgroundColp=#4b4844;
-        lCoordCol= #87553a;
-        dCoordCol= #d5baa0;
+        lCoordCol= #7f4b30;
+        dCoordCol= #d5b79d;
         dEvalCol= lCoordCol;
         lEvalCol= dCoordCol;
         evalOpt=custom;
@@ -923,7 +916,7 @@
         svgBoardBlend=normal;
         svgLightSqOpacity=0.50;
         enableGlobalColor=0;
-        svgLightSqColor=#f1d8a6;
+        svgLightSqColor=#f4dba8;
         svgDarkSqColor=#ce9769;
         svgDarkSqOpacity=0.30;
         boardBGOpt=server+'super-board/textures/wood/real/walnut-board.jpg';
@@ -956,8 +949,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=rgba(238,211,176,0.969);
         outCoordCol=rgba(238,211,176,0.969);
-        lCoordCol=#995e3c;
-        dCoordCol=#e5c197;
+        lCoordCol=#8b542c;
+        dCoordCol=#e3c59ff0;
         coordsBlend=normal;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
@@ -1011,11 +1004,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#e5f0f4;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
-        dEvalCol=lCoordCol;
-        lEvalCol=dCoordCol;
-        evalOpt=auto;
+        lCoordCol=#8d8d8d;
+        dCoordCol=#acacac;
         centerLogoOpt=csiLogo;
         centerLogoBlend=multiply;
         centerLogoCol=rgba(229,225,214,0.42);
@@ -1049,6 +1039,14 @@
         setWallpaper=cover;
         percentSize=100%;
         backgroundColp=#0e3844;
+        evalOpt=auto;
+        dEvalCol=#403d39;
+        lEvalCol=#e0e0e0;
+        evalBarOpacity=0.9;
+        hueRotationArrow=20deg;
+        arrowOpacity=0.9;
+        saturateArrow=200%;
+        brightnessArrow=120%;
         frameShadow=0px 0px 4px 4px rgba(255,27,34,0.22);
         frameShadowInset=inset 0px -1px 18px 34px rgba(23,84,132,0.89);
     }
@@ -1094,11 +1092,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#f8f5e3;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
-        dEvalCol=lCoordCol;
-        lEvalCol=dCoordCol;
-        evalOpt=auto;
+        lCoordCol=#8d8d8d;
+        dCoordCol=#acacac;
         centerLogoOpt=csiLogo;
         centerLogoBlend=multiply;
         centerLogoCol=rgba(229,225,214,0.42);
@@ -1131,6 +1126,9 @@
         enableLightTheme=0;
         setWallpaper=cover;      
         backgroundColp=#333637;
+        evalOpt=auto;
+        dEvalCol=#403d39;
+        lEvalCol=#e0e0e0;
         //frameShadow=0px 0px 4px 2px rgba(255,187,27,0.22);
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
