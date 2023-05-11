@@ -31,7 +31,6 @@
             "Brasil": "brazil",
             "CSI": "csi",
             "CSI2": "csi2",
-            "Mógno": "mahogany",
             "Nogueira": "walnut",
             "Nogueira Especial": "walnutSpecial",
             "Nog. arredondado": "walnutRound",
@@ -585,7 +584,6 @@
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=0;
-        enableWallpaper=1;
         enableCustomCoord=0;
         enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
@@ -657,7 +655,6 @@
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=0;
-        enableWallpaper=1;
         enableCustomCoord=0;
         enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
@@ -708,9 +705,9 @@
         enableCustomCoord= 0;
         enableCenterLogo= 0;
         enableCornerLogo2= 0;
-        svgLightSqColor= #e7ecf4;
+        svgLightSqColor=#f5f7c3;
         svgLightSqOpacity= 1;
-        svgDarkSqColor= #469977;
+        svgDarkSqColor= #4a9b61;
         svgDarkSqOpacity= 1;
         boardBGColor= #fff;
         boardBGOpt= 'colorOnly';
@@ -917,11 +914,11 @@
     else if myBoard=="walnutSpecial" {
         ajustBoardSize= 0.88;
         svgBoardBlend=normal;
-        svgLightSqOpacity=0.55;
+        svgLightSqOpacity=0.50;
         enableGlobalColor=0;
         svgLightSqColor=#f4dba8;
         svgDarkSqColor=#ce9769;
-        svgDarkSqOpacity=0.35;
+        svgDarkSqOpacity=0.30;
         boardBGOpt=server+'super-board/textures/wood/real/walnut-board.jpg';
         boardBGColor=#c4ac93;
         bgSize=100%;
@@ -965,68 +962,6 @@
         enableCornerLogo2=0;
         enableCornerLogo=0;
     }
-    else if myBoard=="mahogany" {
-        enableGlobalColor=0;
-        enableLightTheme=0;
-        enableBoardFrame=1;
-        enableInnerBorder=1;
-        enablePanelTexture=0;
-        enableBoardShadow=0;
-        enableBoardShadowInset=0;
-        enableFrameShadow=1;
-        enableFrameShadowInset=1;
-        //enableOutsideCoords=1;
-        enableCustomCoord=1;
-        svgLightSqColor=#fff0d1;
-        svgLightSqOpacity=0.65;
-        svgDarkSqColor=#e89a78;
-        svgDarkSqOpacity=0.3;
-        boardBGOpt=server+'super-board/textures/wood/mahogany.jpg';
-        boardBGColor=rgba(141,133,123,0.69);
-        bgSize=cover;
-        bgPosX=0%;
-        bgPosY=0%;
-        /*🔐important: frame radius need to be locked for this board*/
-        frameRadiusInOut=1;
-        frameRadius=35px;
-        /*🔐important: board size need to be locked for this board*/
-        ajustBoardSize=0.861;
-        frameOpt=server+'super-board/textures/wood/frames/frame-mahogany-round-wood.jpg';
-        frameColor=#683611;
-        frameSize=cover;
-        framePosX=0%;
-        framePosY=0%;
-        innerBorderOpt=#c6a992;
-        panelBGOpt=boardBGOpt;
-        /*🚩Special shadow for this board*/
-        frameShadow= 0 0 8px 4px rgba(0, 0, 0, .5);
-        frameShadowInset= inset 0px -1px 6px 8px #00000075;
-        setHighlight='op1';
-        hlImgOpt=disabled;
-        hlColor=#ffcb2d;
-        highlightOpacity=0.4;
-        panelFontColor=rgba(255,255,255,0.6);
-        setFontColorSrc=rgba(218,185,172,0.749);
-        mainColumnColor=0;
-        panelColor=rgba(94,33,17,0.561);
-        mainColBlur=1;
-        lCoordCol=#79341d;
-        dCoordCol=#d0ac8f;
-        coordsBlend=normal;
-        dEvalCol=#7d3110;
-        lEvalCol=#e6ceb3;
-        evalOpt=custom;
-        outCoordCol=rgba(218,185,172,0.749);
-        outCoordFontSize=0.24rem;
-        outCoordFontName='Segoe UI';
-        outCoordFontWeight=400;
-        outCoordColorOpt=dCoordCol;
-        evalBarOpacity=0.9;
-        backgroundColp=#7c746d;
-        enableCenterLogo=0;
-        enableCornerLogo2=0;
-        enableCornerLogo=0;
-    }
     else if myBoard=="csi" {
         svgBoardBlend=normal;
         svgLightSqColor=#e5f0f4;
@@ -1062,7 +997,6 @@
         enableCenterLogo=1;
         enableCornerLogo=0;
         enableCornerLogo2=0;
-        enableWallpaper=1;
         enableCustomCoord=0;
         enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
@@ -1151,7 +1085,6 @@
         enableCenterLogo=1;
         enableCornerLogo=0;
         enableCornerLogo2=0;
-        enableWallpaper=1;
         enableCustomCoord=0;
         enableOutsideCoords=0;
         outCoordFontSize=0.24rem;
