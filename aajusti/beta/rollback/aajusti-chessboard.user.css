@@ -320,7 +320,6 @@
     }
     /*⚠️🔐Fallback size. Need to be globally visible, without this all other layer sizes of the board will fail as 'invalid propert'.*/
     specialEffectSize=100% 100%;
-    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
     /*Textures*/
     txTechBlue=server +'aajusti/gfx/bg-blue.jpg';
     txTechBlueAnim=server +'aajusti/gfx/anim-blue-max.gif';    
@@ -761,6 +760,7 @@
         svgLightSqOpacity="0.2";
         svgDarkSqOpacity="0.2";
     }
+    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
     svgDarkSqColor=hsla(svgDarkSqColor);
     svgLightSqColor=hsla(svgLightSqColor);
     centerLogoCol=hsla(centerLogoCol);

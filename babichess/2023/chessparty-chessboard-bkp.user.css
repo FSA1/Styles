@@ -339,7 +339,6 @@
     }else{
         server = gitHub
     }
-    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
     /*Textures*/
     txLightWood=server+'super-board/textures/wood/light-wood.jpg';
     txDarkWood=server+'super-board/textures/wood/dark-wood.jpg';
@@ -679,6 +678,7 @@
         svgLightSqOpacity="0.2";
         svgDarkSqOpacity="0.2";
     }
+    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
     svgDarkSqColor=hsla(svgDarkSqColor);
     svgLightSqColor=hsla(svgLightSqColor);
     centerLogoCol=hsla(centerLogoCol);
