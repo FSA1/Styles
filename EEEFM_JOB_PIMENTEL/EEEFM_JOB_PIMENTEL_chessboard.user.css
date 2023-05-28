@@ -138,7 +138,7 @@
             "cor casas escuras": "svgDarkSqColor",
             "cor personalizada*": "innerBorderColor",
         }
-@var    color    innerBorderColor   "↪🟢Cor borda interna"   #ffb303
+@var    color    innerBorderColor   "↪🟢Cor borda interna"   #feca00
 
 @var    checkbox    enableBoardShadowInset  "🟨Sombra interna do tabuleiro" 0
 @var    checkbox    enableBoardShadow  "🟨Sombra externa do tabuleiro" 0
@@ -343,7 +343,7 @@
         framePosX=50%;
         framePosY=50%;
         enableInnerBorder=1;
-        innerBorderOpt=#ffb303;
+        innerBorderOpt=#feca00;
         innerBorderColor=#0460a5;
         enableBoardShadowInset=0;
         enableBoardShadow=0;
@@ -358,7 +358,7 @@
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=600;
-        outCoordColorOpt=#ffb303;
+        outCoordColorOpt=#ffc403;
         outCoordCol=rgba(255,255,255,0.722);
         lCoordCol=#8d8d8d;
         dCoordCol=#acacac;
@@ -416,7 +416,7 @@
         framePosX=50%;
         framePosY=50%;
         enableInnerBorder=1;
-        innerBorderOpt=#ffb303;
+        innerBorderOpt=#feca00;
         innerBorderColor=#0460a5;
         enableBoardShadowInset=0;
         enableBoardShadow=0;
@@ -430,7 +430,7 @@
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=600;
-        outCoordColorOpt=#ffb303;
+        outCoordColorOpt=#ffc403;
         outCoordCol=#ffffffb8;
         lCoordCol=#8d8d8d;
         dCoordCol=#acacac;
