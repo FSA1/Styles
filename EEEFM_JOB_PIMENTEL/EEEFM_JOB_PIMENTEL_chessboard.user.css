@@ -10,6 +10,7 @@
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
 @var    select      myBoard    "🟢🏁Tabuleiro" {
             "Azul": "blueJP",
+            "Azul II": "blueJPII",
             "Personalizado": "custom",
             "Desativado": "disabled",
         }
@@ -48,9 +49,9 @@
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
-@var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
-@var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
-@var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
+@var    checkbox    enableCornerLogo   "🟩Logo secundário" 1
+@var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 1
+@var    checkbox    enableWallpaper   "🟩Plano de fundo" 1
 
 @var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
@@ -357,8 +358,6 @@
         highlightOpacity=0.7;
         enableArrowSettings=0;
         enableCenterLogo=1;
-        enableCornerLogo=1;
-        enableCornerLogo2=1;
         enableWallpaper=1;
         enableCustomCoord=0;
         enableOutsideCoords=1;
@@ -403,21 +402,100 @@
         lEvalCol=#e0e0e0;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
+    }    
+    else if myBoard=="blueJPII" {
+        
+        global=1;
+        svgBoardBlend=normal;
+        svgLightSqColor=#e9e9e3;
+        svgLightSqOpacity=1;
+        svgDarkSqColor=#4d7caf;
+        svgDarkSqOpacity=1;
+        boardBGOpt=colorOnly;
+        boardBGColor=#0460a5;
+        bgSize=cover;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadius=6px;
+        frameRadiusInOut=1;
+        ajustBoardSize=0.9;
+        enableBoardFrame=1;
+        frameOpt=colorOnly;
+        frameColor=#0460a5;
+        frameSize=cover;
+        framePosX=50%;
+        framePosY=50%;
+        enableInnerBorder=1;
+        innerBorderOpt=#ffb303;
+        innerBorderColor=#0460a5;
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;        
+        setHighlight=op1;
+        hlColor=#66b0ff;
+        highlightOpacity=0.7;
+        enableArrowSettings=0;
+        enableCenterLogo=1;
+        enableWallpaper=1;
+        enableCustomCoord=0;
+        enableOutsideCoords=1;
+        outCoordFontSize=0.24rem;
+        outCoordFontName=Segoe UI;
+        outCoordFontWeight=600;
+        outCoordColorOpt=#ffb303;
+        outCoordCol=#ffffffb8;
+        lCoordCol=#8d8d8d;
+        dCoordCol=#acacac;
+        centerLogoOpt=logoEscola;
+        centerLogoBlend=multiply;
+        centerLogoCol=#3ca4e659;
+        centerLogoSize=35%;
+        centerLogoOpacity=0.4;
+        centerLogoPosX=50%;
+        centerLogoPosY=54%;
+        cornerLogoOpt=cornerLogoTextOnly;
+        cornerLogoBlend=normal;
+        cornerLogoCol=#60b7ee5e;
+        cornerLogoSize=18%;
+        cornerLogoOpacity=1;
+        cornerLogoPosX=150%;
+        cornerLogoPosY=68%;
+        cornerLogoFontSize=8px;
+        cornerLogoFontName=Trueno;
+        cornerLogoFontWeight=700;
+        cornerLogoText="EEEFM";
+        cornerLogo2Text="JOB PIMENTEL";
+        cornerLogo2Blend=cornerLogoBlend;
+        cornerLogo2Size=14%;
+        cornerLogo2PosX=102%;
+        cornerLogo2PosY=74%;
+        cornerLogo2FontSize=10px;
+        cornerLogo2Col=cornerLogoCol;
+        cornerLogo2FontName=Trueno;
+        cornerLogo2FontWeight=700;
+        themeWallpaper=degrade;
+        backgroundColp=#23517f;
+        evalOpt=auto;
+        dEvalCol=#403d39;
+        lEvalCol=#e0e0e0;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
     }
 
     /*End themes*/
 
     /*GLOBAL COLOR - Need to be placed after themes*/
     if (enableGlobalColor==1 && myBoard=="custom") || global==1{    
-        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);       
+        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);
         frameColor=saturate(darken(svgDarkSqColor, 10%), -2%);
         centerLogoOpacity=0.24;
-        centerLogoBlend=darken;
-        cornerLogoBlend=multiply;
-        centerLogoCol=saturate(lighten(svgDarkSqColor, -12%), 10%);
+        centerLogoBlend=multiply;
+        cornerLogoBlend=cornerLogo2Blend=multiply;
+        centerLogoCol=transparentify(saturate(lighten(svgDarkSqColor, 80%), -5%), 0.3);
         cornerLogoCol=cornerLogo2Col=saturate(lighten(svgDarkSqColor, 70%), 10%);
         backgroundColp=saturate(shade(svgDarkSqColor,40%), -80%);
-        
+        outCoordColorOpt=svgLightSqColor
     }    
     if frameSize=="contain"{
         frameRepeat=repeat;
