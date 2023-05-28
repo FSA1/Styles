@@ -337,10 +337,6 @@
         bgSize=cover;
         bgPosX=50%;
         bgPosY=50%;
-        frameRadius=6px;
-        frameRadiusInOut=1;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
         frameOpt=colorOnly;
         frameColor=#0460a5;
         frameSize=cover;
@@ -358,9 +354,7 @@
         highlightOpacity=0.7;
         enableArrowSettings=0;
         enableCenterLogo=1;
-        enableWallpaper=1;
         enableCustomCoord=0;
-        enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=600;
@@ -416,10 +410,6 @@
         bgSize=cover;
         bgPosX=50%;
         bgPosY=50%;
-        frameRadius=6px;
-        frameRadiusInOut=1;
-        ajustBoardSize=0.9;
-        enableBoardFrame=1;
         frameOpt=colorOnly;
         frameColor=#0460a5;
         frameSize=cover;
@@ -435,11 +425,8 @@
         setHighlight=op1;
         hlColor=#66b0ff;
         highlightOpacity=0.7;
-        enableArrowSettings=0;
         enableCenterLogo=1;
-        enableWallpaper=1;
         enableCustomCoord=0;
-        enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=600;
