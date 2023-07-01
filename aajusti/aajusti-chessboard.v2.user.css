@@ -4,10 +4,11 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.3
+@version        2.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
+@var    checkbox    smallJusti  "Logo Justi menor (madeira)" 0
 @var    select      myBoard    "🟢🏁Tabuleiro" {
             "Azul Animado": "aajusti-anim",
             "Azul Estático": "aajusti-static",
@@ -504,10 +505,14 @@
         outCoordCol=rgba(255,255,255,0.722);
         backgroundColp=#413426;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
-        centerLogoSize=25%;
-        centerLogoOpacity=1;
-        centerLogoPosX=90%;
-        centerLogoPosY=67%;
+        centerLogoSize=44%;
+        centerLogoPosY=57%;
+        if smallJusti{
+            centerLogoSize=25%;
+            centerLogoOpacity=1;
+            centerLogoPosX=90%;
+            centerLogoPosY=67%;
+        }
     }
     /*Highlight*/
     hlSVGColor=hsla(hlSVGColor);
