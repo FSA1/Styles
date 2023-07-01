@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para o canal Jastyes.`
-@version        1.0.3
+@version        1.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -53,6 +53,7 @@
 domain("lichess.org") {
     /*------Chessboard------*/
     .is2d cg-board,
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],

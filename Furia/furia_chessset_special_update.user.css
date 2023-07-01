@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/pantera-da-furia-no-lugar-do-cavalo-sim-tabuleiro-e-pecas-da-furia
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.21
+@version        2.2.22
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -105,6 +105,7 @@
     chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
     
     /*Chessboard*/
+	.board-layout-chessboard .board,
     div[class^="board v-board disabled rounded"],
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

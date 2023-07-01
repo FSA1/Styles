@@ -4,7 +4,7 @@
 @namespace      USO Archive
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.13
+@version        1.0.14
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -131,7 +131,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
-    .board,
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],

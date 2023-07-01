@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Configurações de cores e sombras para peças e tabuleiros.`
-@version        1.0.0
+@version        1.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -36,6 +36,7 @@ domain("lichess.org") {
     /*====== Board options =======*/
     .is2d cg-board/*lichess*/
     ,
+    .board-layout-chessboard .board,
     div[class^="board v-board disabled rounded"],
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

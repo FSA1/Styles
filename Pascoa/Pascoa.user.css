@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiro de Páscoa`
-@version        1.0.3
+@version        1.0.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -30,6 +30,7 @@ domain("chessclub.com") {
     if myBoard!="op0" {
         /*Chessboard.board,*/
         .board-brown .cg-wrap,
+		.board-layout-chessboard .board,
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
         div[class^="board v-board chessboard-component"],

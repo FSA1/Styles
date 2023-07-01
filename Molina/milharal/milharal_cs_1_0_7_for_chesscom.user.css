@@ -120,7 +120,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
-    .board,
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],

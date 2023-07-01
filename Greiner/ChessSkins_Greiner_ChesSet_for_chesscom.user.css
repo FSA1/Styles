@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `Chess Set inspired on a picture from "KingsBishop's Blog".`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Board options" {
@@ -18,7 +18,7 @@
 @-moz-document domain("chess.com") {
 
     /*Chessboard*/
-    .board,
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],

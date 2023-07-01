@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the XV American Continental Chess Championship 2022`
-@version        1.0.6
+@version        1.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -25,6 +25,7 @@
     if myBoard!="op0" {
         /*Chessboard.board,*/
         .board-brown .cg-wrap,
+		.board-layout-chessboard .board,
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
         div[class^="board v-board chessboard-component"],

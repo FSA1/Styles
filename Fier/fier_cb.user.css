@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Board for the Picanha  Blitz Championship 2022`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -23,6 +23,7 @@ domain("lichess.org") {
         /*Chessboard.board,*/
         cg-board,
         .board-brown .cg-wrap,
+		.board-layout-chessboard .board,
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
         div[class^="board v-board chessboard-component"],

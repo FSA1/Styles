@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        3.0.1
+@version        3.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -114,6 +114,7 @@
         /*ICC*/
         .board-brown .cg-wrap,
         /*chess.com*/
+		.board-layout-chessboard .board,
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
         div[class^="board v-board chessboard-component"],

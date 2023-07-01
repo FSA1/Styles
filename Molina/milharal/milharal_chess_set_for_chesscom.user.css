@@ -3,7 +3,7 @@
 @author         agiota_do_artenio
 @namespace      USO Archive
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.2
+@version        1.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -75,7 +75,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
-    .board,
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],

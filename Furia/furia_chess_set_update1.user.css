@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.2.3
+@version        2.2.4
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -78,6 +78,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
+	.board-layout-chessboard .board,
     div[class^="board v-board disabled rounded"],
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez Capivarinhas.`
-@version        4.0.0
+@version        4.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -184,6 +184,7 @@
     
     /*board section*/
     if myBoard!="op0" {
+		.board-layout-chessboard .board,
         [id="board-single-sibling"],
         //div[class="fade-in-overlay"],
         div[class*="open-games-item-preview"],

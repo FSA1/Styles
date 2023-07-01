@@ -3,12 +3,13 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Birman-Gray (FIDE Arena Complete Chess Set).`
-@version        20200831.22.26
+@version        20200831.22.27
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],

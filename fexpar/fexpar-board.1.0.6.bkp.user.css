@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para FEXPAR.`
-@version        1.0.6
+@version        1.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -52,6 +52,7 @@
         --lightwood-color: #D4BA9D;
     }
     /*Chessboard*/
+    .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
     div[class^="board v-board chessboard-component"],
