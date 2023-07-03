@@ -362,7 +362,7 @@
         enableGlobalColor=0;
         svgDarkSqColor=#639233;
         svgDarkSqOpacity=0.6;
-        boardBGOpt=server+'Torsani/texture/grass/grass_09.jpg';
+        boardBGOpt=txGrass09;
         boardBGColor=rgba(224,221,202,0);
         bgSize=30%;
         bgPosX=0%;
