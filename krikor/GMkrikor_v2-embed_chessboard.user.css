@@ -65,7 +65,7 @@
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
 @var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
-@var    checkbox    enableWallpaper   "🟩Plano de fundo" 1
+@var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
 
 @var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
