@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.0
+@version        2.0.1
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -55,6 +55,12 @@
         }
 		
 @var    color    hlColor  "↪Cor do destaque"   #ffff00
+@var    select      hlImgOpt    "🟡Destaque animado" {
+            "timer1": "hlImg1",
+            "timer2": "hlImg2",
+            "timer3": "hlImg3",
+            "Desativado*": "disabled",
+        }
 
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.4, 0.3, 1, 0.1, ""]
 @var    color    hlSqRed  "🔴Click Direito"   #eb6150
@@ -355,6 +361,11 @@
     txDarkWood=server+'super-board/textures/wood/dark-wood.jpg';
     txDarkWood2=server+'super-board/textures/wood/dark-wood2.jpg';
     txfrDarkWood2=server+'super-board/textures/wood/frames/frame-dark-wood1.jpg';
+    /*highlight image*/
+    hlImg1=server+'krikor/texture/hl1b.gif';
+    hlImg1g=server+'krikor/texture/hl1deg.gif';
+    hlImg2=server+'krikor/texture/hl2c.gif';
+    hlImg3=server+'krikor/texture/hl2d.gif';
     /*selector with exceptions to avoid override analysis highlights*/
     notThisColors='[style*="179\, 52\, 48"]):not([style*="179 52 48"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="158 186 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="230 145 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="201 52 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="27 172 166"]):not([style*="92\, 139\, 176"]):not([style*="92 139 176"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 188\, 75"]):not([style*="150 188 75"]):not([style*="150\, 175\, 139"]):not([style*="150 175 139"]):not([style*="168\, 136\, 101"]):not([style*="168 136 101"]):not([style*="240\, 193\, 92"]):not([style*="240 193 92"]):not([style*="229\, 143\, 42"]):not([style*="229 143 42"]):not([style*="202\, 52\, 49"]):not([style*="202 52 49"]):not([style*="219\, 172\, 22"]):not([style*="219 172 22"]):not([style*="172\, 206\, 89"]):not([style*="172 206 89"]):not([style*="235\, 97\, 80"]):not([style*="235 97 80"]):not([style*="82\, 176\, 220"]):not([style*="82 176 220"]):not([style*="255\, 170\, 0"]):not([style*="255 170 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]';
 
@@ -502,6 +513,7 @@
         hlColor=#64eaff;
         highlightOpacity=0.4;
         setHighlight='op1';
+        hlImgOpt=disabled;
         innerBorderOpt=rgba(143,177,181,0.961);
         outCoordColorOpt=#d4d8c0;
         outCoordFontName='Segoe UI';
@@ -522,6 +534,7 @@
         hlColor=#7db1d0;
         highlightOpacity=0.5;
         setHighlight='op1';
+        hlImgOpt=disabled;
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=1;
@@ -560,10 +573,10 @@
     }
     else if myBoard=="moveBlue" {
         svgBoardBlend=normal;
-        svgLightSqColor=#d2dce0;
+        svgLightSqColor=#d1e8f2;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
-        svgDarkSqColor=#2c849f;
+        svgDarkSqColor=#2f87a4;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
         boardBGColor=rgba(19,104,121,0);
@@ -587,8 +600,10 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
-        hlColor=#ff0;
-        highlightOpacity=0.4;
+        //hlImgOpt=disabled;
+        //hlColor=#ff0;
+        hlColor=#00c3ff;
+        highlightOpacity=0.5;
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=0;
@@ -604,14 +619,14 @@
         coordsBlend=normal;
         centerLogoOpt=timeOverLogo;
         centerLogoBlend=multiply;
-        centerLogoCol=rgba(83,167,198,0.2);
+        centerLogoCol=rgba(90, 165, 192, .15);
         centerLogoSize=45%;
         centerLogoOpacity=0.12;
         centerLogoPosX=30%;
         centerLogoPosY=52%;
         cornerLogoOpt=moveLogo;
         cornerLogoBlend=multiply;
-        cornerLogoCol=rgba(83,167,198,0.2);
+        cornerLogoCol=centerLogoCol;
         cornerLogoSize=25%;
         cornerLogoOpacity=0.12;
         cornerLogoPosX=83%;
@@ -658,8 +673,12 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
-        hlColor=#ff0;
-        highlightOpacity=0.4;
+        //hlImgOpt=disabled;
+        /*special highlight setting*/
+        hlImg1=hlImg1g;
+        hlImg2=hlImg2g;
+        hlColor=#7bfdba;
+        highlightOpacity=0.6;
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=0;
@@ -675,14 +694,14 @@
         coordsBlend=normal;
         centerLogoOpt=timeOverLogo;
         centerLogoBlend=multiply;
-        centerLogoCol=#53c6a233;
+        centerLogoCol=rgba(83, 198, 162, .2);
         centerLogoSize=45%;
         centerLogoOpacity=0.12;
         centerLogoPosX=30%;
         centerLogoPosY=52%;
         cornerLogoOpt=moveLogo;
         cornerLogoBlend=multiply;
-        cornerLogoCol=#53c6a233;
+        cornerLogoCol=centerLogoCol;
         cornerLogoSize=25%;
         cornerLogoOpacity=0.12;
         cornerLogoPosX=83%;
@@ -783,6 +802,7 @@
         frameColor=#1f566d;
         frameRadius= 9px;
         setHighlight= 'op1';
+        hlImgOpt=disabled;
         hlColor= #0df;
         highlightOpacity= 0.4;
         outCoordColorOpt=#d2d3d3;
@@ -832,7 +852,7 @@
         bgSize=cover;
         bgPosX=0%;
         bgPosY=0%;
-        frameRadius=0px;
+        frameRadius=1px;
         //ajustBoardSize=0.882;
         frameShadow= 0 0 8px 4px rgba(0, 0, 0, .5);
         frameShadowInset= inset 0 -1px 8px 4px rgba(0, 0, 0, .4);
@@ -895,7 +915,7 @@
         frameSize=cover;
         framePosX=0%;
         framePosY=0%;
-        innerBorderOpt=#c1ad90;
+        innerBorderOpt=#ccb498;
         /*🚩Special shadow for this board*/
         frameShadow= 0px 0px 8px 4px #00000080;
         frameShadowInset= inset 0px -1px 6px 8px #00000075;
@@ -948,6 +968,7 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
+        hlImgOpt=disabled;
         hlColor=#ffa825;
         highlightOpacity=0.5;
         enableCustomCoord=1;
@@ -999,6 +1020,7 @@
         enableFrameShadowInset=1;
         enableFrameShadow=1;
         setHighlight=op1;
+        hlImgOpt=disabled;
         hlColor=#ff0;
         highlightOpacity=0.4;
         enableArrowSettings=0;
@@ -1082,6 +1104,7 @@
         enableFrameShadowInset=0;
         enableFrameShadow=1;
         setHighlight=op1;
+        hlImgOpt=disabled;
         hlColor=#ff0;
         highlightOpacity=0.4;
         enableArrowSettings=0;
@@ -1413,7 +1436,7 @@
         #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
         .move-square,
         .highlight:not({notThisColors}):not([class="stream highlight"]) {
-            background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+            background: hlColor url(hlImgOpt) 0 0 / cover no-repeat !important;
         }
     }
     /*=== Highlight opacity===*/
