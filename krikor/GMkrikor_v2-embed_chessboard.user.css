@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.1
+@version        2.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -21,6 +21,7 @@
             "Verde": "gmKrikor-green",
             "Azul": "gmKrikor-blue",
             "Cinza": "gmKrikor-grey",
+            "Rosa": "gmKrikor-rose",
             "Lance! (azul)": "moveBlue",
             "Lance! (verde)": "moveGreen",
             "CSI": "csi",
@@ -152,7 +153,7 @@
 @var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 
 @var color    centerLogoCol  "Cor do logo central"   #e5e1d66b
-@var    range    centerLogoSize  "Tam. logo central" [45, 10, 100, 1, "%"]
+@var    range    centerLogoSize  "Tam. logo central" [40, 10, 100, 1, "%"]
 @var    range    centerLogoOpacity  "Opacidade do logo central" [0.12, 0.01, 1, 0.01, ""]
 @var    range    centerLogoPosX  "Ajuste horizontal" [50, -20, 120, 1, "%"]
 @var    range    centerLogoPosY  "Ajuste vertical" [50, -20, 120, 1, "%"]
@@ -168,10 +169,10 @@
 @var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogoSize  "↪Tam. logo secundário" [17, 10, 100, 1, "%"]
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [0.12, 0.01, 1, 0.01, ""]
-@var    range    cornerLogoPosX  "↪Ajuste horizontal" [136, -40, 150, 1, "%"]
+@var    range    cornerLogoPosX  "↪Ajuste horizontal" [144, -40, 200, 1, "%"]
 @var    range    cornerLogoPosY  "↪Ajuste vertical" [60, -40, 150, 1, "%"]
 @var color    cornerLogoCol  "↪Cor do logo secundário"   #c2dde485
-@var    range    cornerLogoFontSize  "↪Tam. da fonte" [22, 8, 24, 2, "px"]
+@var    range    cornerLogoFontSize  "↪Tam. da fonte" [16, 8, 24, 1, "px"]
 @var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700*", "800"]
 @var select   cornerLogoFontName   "↪🆎Nome da fonte"{
         "Fonte 1": "userFont1",
@@ -321,13 +322,13 @@
         cornerLogoBlend=multiply;
         cornerLogoCol=rgba(136,200,173,0.302);
         cornerLogoFontName='Mukta';
-        cornerLogoFontSize=24px;
+        cornerLogoFontSize=14px;
         cornerLogoFontWeight=800;
         cornerLogoOpacity=1;
         cornerLogoOpt=cornerLogoTextOnly;
-        cornerLogoPosX=136%;
+        cornerLogoPosX=179.5%;
         cornerLogoPosY=60%;
-        cornerLogoSize=17%;
+        cornerLogoSize=20%;
         cornerLogoText='GM';
         enableBoardShadow=0;
         enableBoardShadowInset=0;
@@ -354,6 +355,7 @@
         innerBorderOpt= #d4d8c0;
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
         outCoordColorOpt=#e0ddca;
         outCoordFontName='Segoe UI';
         outCoordFontSize=0.24rem;
@@ -363,7 +365,7 @@
         evalOpt=auto;
     }
     else if myBoard=="gmKrikor-blue" {
-        svgDarkSqColor= #147588;
+        svgDarkSqColor=#147588;
         svgDarkSqOpacity=1;
         svgLightSqColor=#e0ddca;
         svgLightSqOpacity=1;
@@ -375,13 +377,14 @@
         boardBGColor=#136879;
         boardBGOpt=colorOnly;
         centerLogoBlend=multiply;
-        cornerLogoCol=cornerLogo2Col=centerLogoCol= rgba(148, 186, 202, .31);
+        centerLogoCol=rgba(148,186,202,0.31);
         centerLogoOpacity=1;
         centerLogoOpt=svgKrikorLogo;
         centerLogoPosX=50%;
         centerLogoPosY=50%;
         centerLogoSize=40%;
         cornerLogo2Blend=multiply;
+        cornerLogo2Col=rgba(148,186,202,0.31);
         cornerLogo2FontName='Mukta';
         cornerLogo2FontSize=14px;
         cornerLogo2FontWeight=600;
@@ -390,14 +393,15 @@
         cornerLogo2Size=19%;
         cornerLogo2Text='KRIKOR';
         cornerLogoBlend=multiply;
+        cornerLogoCol=rgba(148, 186, 202,0.31);
         cornerLogoFontName='Mukta';
-        cornerLogoFontSize=24px;
+        cornerLogoFontSize=14px;
         cornerLogoFontWeight=800;
         cornerLogoOpacity=1;
         cornerLogoOpt=cornerLogoTextOnly;
-        cornerLogoPosX=136%;
+        cornerLogoPosX=179.5%;
         cornerLogoPosY=60%;
-        cornerLogoSize=17%;
+        cornerLogoSize=20%;
         cornerLogoText='GM';
         enableBoardShadow=0;
         enableBoardShadowInset=0;
@@ -408,6 +412,8 @@
         enableFrameShadow=1;
         enableFrameShadowInset=0;
         enableInnerBorder=1;
+        enableLightTheme=0;
+        enableOutsideCoords=1;
         frameColor=#136879;
         frameOpt=colorOnly;
         framePosX=0%;
@@ -420,12 +426,15 @@
         setHighlight='op1';
         hlImgOpt=disabled;
         innerBorderOpt=rgba(143,177,181,0.961);
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
         outCoordColorOpt=#d4d8c0;
         outCoordFontName='Segoe UI';
         outCoordFontSize=0.24rem;
         outCoordFontWeight=400;
-        lCoordCol=svgDarkSqColor;
-        dCoordCol=svgLightSqColor;
+        panelBGOpt=colorOnly;
+        percentSize=100%;
         evalOpt=auto;
     }
     else if myBoard=="gmKrikor-grey" {
@@ -443,6 +452,8 @@
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=1;
+        frameRadius=6px;
+        frameRadiusInOut=1;
         centerLogoOpt=svgKrikorLogo;
         centerLogoBlend=multiply;
         centerLogoCol=rgba(100,175,187,0.2);
@@ -455,10 +466,11 @@
         cornerLogoCol=#88bdc84d;
         cornerLogoSize=17%;
         cornerLogoOpacity=1;
-        cornerLogoPosX=136%;
+        cornerLogoPosX=179.5%;
         cornerLogoPosY=60%;
-        cornerLogoFontSize=24px;
+        cornerLogoSize=20%;
         cornerLogoFontName='Mukta';
+        cornerLogoFontSize=14px;
         cornerLogoFontWeight=800;
         cornerLogoText='GM';
         cornerLogo2Text='KRIKOR';
@@ -474,7 +486,84 @@
         outCoordColorOpt=svgLightSqColor;
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
         evalOpt=auto;
+    }
+    if myBoard=="gmKrikor-rose" {
+        svgDarkSqColor=#CF879B;
+        svgDarkSqOpacity=1;
+        svgLightSqColor=#ead9c7;
+        svgLightSqOpacity=1;
+        ajustBoardSize=0.9;
+        backgroundColp=#65595c;
+        bgPosX=0%;
+        bgPosY=0%;
+        bgSize=cover;
+        boardBGColor=#ead9c7;
+        boardBGOpt=colorOnly;
+        centerLogoBlend=multiply;
+        centerLogoCol=#c888aa2b;
+        centerLogoOpacity=1;
+        centerLogoOpt=svgKrikorLogo;
+        centerLogoPosX=50%;
+        centerLogoPosY=50%;
+        centerLogoSize=40%;
+        cornerLogo2Blend=multiply;
+        cornerLogo2Col=#c888aa30;
+        cornerLogo2FontName='Mukta';
+        cornerLogo2FontSize=14px;
+        cornerLogo2FontWeight=600;
+        cornerLogo2PosX=146%;
+        cornerLogo2PosY=70%;
+        cornerLogo2Size=19%;
+        cornerLogo2Text='KRIKOR';
+        cornerLogoBlend=multiply;
+        cornerLogoCol=#c888aa30;
+        cornerLogoFontName='Mukta';
+        cornerLogoFontSize=14px;
+        cornerLogoFontWeight=800;
+        cornerLogoOpacity=1;
+        cornerLogoOpt=cornerLogoTextOnly;
+        cornerLogoPosX=179.5%;
+        cornerLogoPosY=60%;
+        cornerLogoSize=20%;
+        cornerLogoText='GM';
+        enableBoardShadow=0;
+        enableBoardShadowInset=0;
+        enableCenterLogo=1;
+        enableCornerLogo2=1;
+        enableCornerLogo=1;
+        enableCustomCoord=0;
+        enableFrameShadow=1;
+        enableFrameShadowInset=0;
+        enableInnerBorder=1;
+        enableLightTheme=0;
+        enableOutsideCoords=1;
+        frameColor=#c47087;
+        frameOpt=colorOnly;
+        framePosX=0%;
+        framePosY=0%;
+        frameRadius=6px;
+        frameRadiusInOut=1;
+        frameSize=cover;
+        hlColor=#ffea00ab;
+        highlightOpacity=0.5;
+        setHighlight='op1';
+        hlImgOpt=disabled;
+        innerBorderOpt=svgLightSqColor;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
+        outCoordColorOpt=svgLightSqColor;
+        themeWallpaper=gradient;
+        outCoordFontName='Segoe UI';
+        outCoordFontSize=0.24rem;
+        outCoordFontWeight=400;
+        panelBGOpt=colorOnly;
+        percentSize=100%;
+        evalOpt=auto;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
     }
     else if myBoard=="moveBlue" {
         svgBoardBlend=normal;
@@ -669,6 +758,7 @@
         outCoordCol=rgba(255,255,255,0.722);
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
         evalOpt=auto;
@@ -753,6 +843,7 @@
         outCoordCol=rgba(255,255,255,0.722);
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
         evalOpt=auto;
@@ -788,7 +879,6 @@
         enableLightTheme=0;
         setWallpaper=cover;      
         backgroundColp=#333637;
-        //frameShadow=0px 0px 4px 2px rgba(255,187,27,0.22);
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
     }
