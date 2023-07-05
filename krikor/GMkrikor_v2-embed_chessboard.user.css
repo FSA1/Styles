@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.2
+@version        2.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -301,7 +301,7 @@
         bgPosX=0%;
         bgPosY=0%;
         bgSize=cover;
-        boardBGColor=#0c6c5a;
+        boardBGColor=#d4d8c0;
         boardBGOpt=colorOnly;
         centerLogoBlend=multiply;
         centerLogoCol=rgba(187,170,100,0.2);
@@ -374,7 +374,7 @@
         bgPosX=0%;
         bgPosY=0%;
         bgSize=cover;
-        boardBGColor=#136879;
+        boardBGColor=#8fb1b5f5;
         boardBGOpt=colorOnly;
         centerLogoBlend=multiply;
         centerLogoCol=rgba(148,186,202,0.31);
@@ -425,7 +425,7 @@
         highlightOpacity=0.4;
         setHighlight='op1';
         hlImgOpt=disabled;
-        innerBorderOpt=rgba(143,177,181,0.961);
+        innerBorderOpt=#8fb1b5f5;
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
@@ -488,6 +488,8 @@
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
         evalOpt=auto;
+        boardBGColor=saturate(lighten(svgDarkSqColor, 20%), -10%);
+        boardBGOpt=colorOnly;
     }
     if myBoard=="gmKrikor-rose" {
         svgDarkSqColor=#CF879B;
@@ -499,7 +501,7 @@
         bgPosX=0%;
         bgPosY=0%;
         bgSize=cover;
-        boardBGColor=#ead9c7;
+        boardBGColor=svgLightSqColor;
         boardBGOpt=colorOnly;
         centerLogoBlend=multiply;
         centerLogoCol=#c888aa2b;
@@ -573,7 +575,7 @@
         svgDarkSqColor=#2f87a4;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
-        boardBGColor=rgba(19,104,121,0);
+        boardBGColor=svgLightSqColor;
         bgSize=100%;
         bgPosX=50%;
         bgPosY=50%;
@@ -646,7 +648,7 @@
         svgDarkSqColor=#5b965e;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
-        boardBGColor=#2c9f6d00;
+        boardBGColor=svgLightSqColor;
         bgSize=100%;
         bgPosX=50%;
         bgPosY=50%;
