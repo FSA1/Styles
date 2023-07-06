@@ -1377,7 +1377,6 @@
         /*======2023-07-05 new rules for game preview======*/
         :root{
             --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
-            --theme-board-style-preview-image: url('https://images.chesscomfiles.com/chess-themes/boards/_previews_/square/green.png');
           
             if enableCustomCoord {
                 --theme-board-style-coordinate-color-light: lCoordCol;
