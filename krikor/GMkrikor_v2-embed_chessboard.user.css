@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.4
+@version        2.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -1574,114 +1574,114 @@
 
         vWK=myPath + "wk.png"
 
-        .piece.wk,
-        .promotion-piece.wk,
-        div [data-hand-piece="wk"],
-        div [style*="wk.png"] {
-            background-image: url(vWK)!important;
-        }
-        .piece.wq,
-        .promotion-piece.wq,
-        div [data-hand-piece="wq"],
-        div [style*="wq.png"] {
-            background-image: url(vWQ)!important;
-        }
-        .piece.wb,
-        .promotion-piece.wb,
-        div [data-hand-piece="wb"],
-        div [style*="wb.png"] {
-            background-image: url(vWB)!important;
-        }
-        .piece.wn,
-        .promotion-piece.wn,
-        div [data-hand-piece="wn"],
-        div [style*="wn.png"] {
-            background-image: url(vWN)!important;
-        }
-        .piece.wr,
-        .promotion-piece.wr,
-        div [data-hand-piece="wr"],
-        div [style*="wr.png"] {
-            background-image: url(vWR)!important;
-        }
-        .piece.wp,
-        .promotion-piece.wp,
-        div [data-hand-piece="wp"],
-        div [style*="wp.png"] {
-            background-image: url(vWP)!important;
-        }
-        .piece.bk,
-        .promotion-piece.bk,
-        div [data-hand-piece="bk"],
-        div [style*="bk.png"] {
-            background-image: url(vBK)!important;
-        }
-        .piece.bq,
-        .promotion-piece.bq,
-        div [data-hand-piece="bq"],
-        div [style*="bq.png"] {
-            background-image: url(vBQ)!important;
-        }
-        .piece.bb,
-        .promotion-piece.bb,
-        div [data-hand-piece="bb"],
-        div [style*="bb.png"] {
-            background-image: url(vBB)!important;
-        }
-
-        .piece.bn,
-        .promotion-piece.bn,
-        div [data-hand-piece="bn"],
-        div [style*="bn.png"] {
-            background-image: url(vBN)!important;
-        }
-        .piece.br,
-        .promotion-piece.br,
-        div [data-hand-piece="br"],
-        div [style*="br.png"] {
-            background-image: url(vBR)!important;
-        }
-        .piece.bp,
-        .promotion-piece.bp,
-        div [data-hand-piece="bp"],
-        div [style*="bp.png"] {
-            background-image: url(vBP)!important;
-                }
+		.piece.wk:not(.pseudo3d .piece.wk),
+		.promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
+		div [data-hand-piece="wk"],
+		div [style*="wk.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vWK)!important;
+		}
+		.piece.wq:not(.pseudo3d .piece.wq),
+		.promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
+		div [data-hand-piece="wq"],
+		div [style*="wq.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vWQ)!important;
+		}
+		.piece.wb:not(.pseudo3d .piece.wb),
+		.promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
+		div [data-hand-piece="wb"],
+		div [style*="wb.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vWB)!important;
+		}
+		.piece.wn:not(.pseudo3d .piece.wn),
+		.promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
+		div [data-hand-piece="wn"],
+		div [style*="wn.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vWN)!important;
+		}
+		.piece.wr:not(.pseudo3d .piece.wr),
+		.promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
+		div [data-hand-piece="wr"],
+		div [style*="wr.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vWR)!important;
+		}
+		.piece.wp:not(.pseudo3d .piece.wp),
+		.promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
+		div [data-hand-piece="wp"],
+		div [style*="wp.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vWP)!important;
+		}
+		.piece.bk:not(.pseudo3d .piece.bk),
+		.promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
+		div [data-hand-piece="bk"],
+		div [style*="bk.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vBK)!important;
+		}
+		.piece.bq:not(.pseudo3d .piece.bq),
+		.promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
+		div [data-hand-piece="bq"],
+		div [style*="bq.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vBQ)!important;
+		}
+		.piece.bb:not(.pseudo3d .piece.bb),
+		.promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
+		div [data-hand-piece="bb"],
+		div [style*="bb.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vBB)!important;
+		}
+		.piece.bn:not(.pseudo3d .piece.bn),
+		.promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
+		div [data-hand-piece="bn"],
+		div [style*="bn.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vBN)!important;
+		}
+		.piece.br:not(.pseudo3d .piece.br),
+		.promotion-piece.br:not(.pseudo3d .promotion-piece.br),
+		div [data-hand-piece="br"],
+		div [style*="br.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vBR)!important;
+		}
+		.piece.bp:not(.pseudo3d .piece.bp),
+		.promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
+		div [data-hand-piece="bp"],
+		div [style*="bp.png"]:not([class="game-preview-themed-component"]) {
+			background-image: url(vBP)!important;
+		}
+        
         /*pieces for mini-boards*/
-        img[src*="/bk.png"] {
+        img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vBK)!important;
         }
-        img[src*="/bq.png"] {
+        img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vBQ)!important;
         }
-        img[src*="/bb.png"] {
+        img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vBB)!important;
         }
-        img[src*="/bn.png"] {
+        img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vBN)!important;
         }
-        img[src*="/br.png"] {
+        img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vBR)!important;
         }
-        img[src*="/bp.png"] {
+        img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vBP)!important;
         }
-        img[src*="/wk.png"] {
+        img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vWK)!important;
         }
-        img[src*="/wq.png"] {
+        img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vWQ)!important;
         }
-        img[src*="/wb.png"] {
+        img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vWB)!important;
         }
-        img[src*="/wn.png"] {
+        img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vWN)!important;
         }
-        img[src*="/wr.png"] {
+        img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vWR)!important;
         }
-        img[src*="/wp.png"] {
+        img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(vWP)!important;
         }
         /*2023-07-05 new rules for game preview*/
@@ -1699,14 +1699,7 @@
             --theme-piece-set-br: url(vBR);
             --theme-piece-set-bq: url(vBQ);
             --theme-piece-set-bk: url(vBK);
-        }        
-        div.settings-themes-preview-wrapper > div.game-preview-themed-component{
-            background: url(vBN) 0% 0% / 12.5% no-repeat, url(vWN) 14.2857% 0% / 12.5% no-repeat, url(vBP) 0% 14.2857% / 12.5% no-repeat, url(vWP) 14.2857% 14.2857% / 12.5% no-repeat, var(--theme-board-style-image) 0% 0% / cover no-repeat !important;
-        }
-        
-        div.game-preview-themed-component{
-            background: url(vBR) 0% 0% / 12.5% no-repeat, url(vBN) 14.2857% 0% / 12.5% no-repeat, url(vBB) 28.5714% 0% / 12.5% no-repeat, url(vBQ) 42.8571% 0% / 12.5% no-repeat, url(vBK) 57.1429% 0% / 12.5% no-repeat, url(vBB) 71.4286% 0% / 12.5% no-repeat, url(vBN) 85.7143% 0% / 12.5% no-repeat, url(vBR) 100% 0% / 12.5% no-repeat, url(vBP) 0% 14.2857% / 12.5% no-repeat, url(vBP) 14.2857% 14.2857% / 12.5% no-repeat, url(vBP) 28.5714% 14.2857% / 12.5% no-repeat, url(vBP) 42.8571% 14.2857% / 12.5% no-repeat, url(vBP) 57.1429% 14.2857% / 12.5% no-repeat, url(vBP) 71.4286% 14.2857% / 12.5% no-repeat, url(vBP) 85.7143% 14.2857% / 12.5% no-repeat, url(vBP) 100% 14.2857% / 12.5% no-repeat, url(vBP) 0% 85.7143% / 12.5% no-repeat, url(vBP) 14.2857% 85.7143% / 12.5% no-repeat, url(vBP) 28.5714% 85.7143% / 12.5% no-repeat, url(vBP) 42.8571% 85.7143% / 12.5% no-repeat, url(vBP) 57.1429% 85.7143% / 12.5% no-repeat, url(vBP) 71.4286% 85.7143% / 12.5% no-repeat, url(vBP) 85.7143% 85.7143% / 12.5% no-repeat, url(vBP) 100% 85.7143% / 12.5% no-repeat, url(vBR) 0% 100% / 12.5% no-repeat, url(vBN) 14.2857% 100% / 12.5% no-repeat, url(vBB) 28.5714% 100% / 12.5% no-repeat, url(vBQ) 42.8571% 100% / 12.5% no-repeat, url(vBK) 57.1429% 100% / 12.5% no-repeat, url(vBB) 71.4286% 100% / 12.5% no-repeat, url(vBN) 85.7143% 100% / 12.5% no-repeat, url(vBR) 100% 100% / 12.5% no-repeat,  var(--theme-board-style-image) 0% 0% / cover no-repeat !important;
-        }
+        }     
     }/*End pieces section*/
     #board-single-sibling{
         background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='hsla(168.88888888888889,74%,29%,1)' fill-opacity='1' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='hsla(51.81818181818184,26%,84%,1)' fill-opacity='1' style='mix-blend-mode:multiply'/%3e%3c/svg%3e") 0% 0% / cover no-repeat, url('colorOnly')!important;
