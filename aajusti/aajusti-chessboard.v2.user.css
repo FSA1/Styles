@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.6
+@version        2.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -752,6 +752,20 @@
                 }
             }
         }/*======End coords ======*/
+            
+        /*======2023-07-05 new rules for game preview======*/
+        :root{
+            --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);          
+            if enableCustomCoord {
+                --theme-board-style-coordinate-color-light: lCoordCol;
+                --theme-board-style-coordinate-color-dark: dCoordCol;
+            }else {
+                --theme-board-style-coordinate-color-light: transparentify(svgDarkSqColor, #000, 1) !important;
+                --theme-board-style-coordinate-color-dark: transparentify(svgLightSqColor, #000, 1) !important;
+            }
+            --theme-board-style-highlight-color: hlColor;
+        }
+        /*======End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         if evalOpt!="disabled" {
