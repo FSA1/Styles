@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for BabiChess`
-@version        20200831.22.38
+@version        20200831.22.39
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -40,6 +40,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard.board,*/
+	#board-single-sibling,
     .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

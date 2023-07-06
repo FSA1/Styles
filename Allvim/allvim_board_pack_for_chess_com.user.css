@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `chess board for NM Allvim (The Squirrel)".`
-@version        2.0.2
+@version        2.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -26,6 +26,7 @@
 @-moz-document domain("chess.com") {
 
     /*Chessboard*/
+    #board-single-sibling,
     .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

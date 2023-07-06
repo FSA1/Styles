@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivarinhas.`
-@version        3.0.4
+@version        3.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -130,6 +130,7 @@ domain("lichess.org") {
     gitLab='https://gitlab.com/FSA11/Styles/-/raw/main'
     chesscom='https://images.chesscomfiles.com/chess-themes/pieces'
     /*Chessboard*/
+    #board-single-sibling,
     .is2d cg-board,
     .board-layout-chessboard .board,
     div[class^="board v-board disabled rounded"],

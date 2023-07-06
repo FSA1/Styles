@@ -3,12 +3,13 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Chess board for MI Roberto Molina`
-@version        20200831.22.28
+@version        20200831.22.29
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*Chessboard*/
+    #board-single-sibling,
 .board-layout-chessboard .board,
 div[class^="daily-puzzle-board"],
 div[class^="board chessboard-component"],

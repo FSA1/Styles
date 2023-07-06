@@ -3,7 +3,7 @@
 @namespace      ChessSkins
 @author         agiota_do_artenio
 @description    `Chess Set (Pack) inspired on "Nike x FURIA" 2021 collection release.`
-@version        2.0.1
+@version        2.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -30,6 +30,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
+    #board-single-sibling,
 	.board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

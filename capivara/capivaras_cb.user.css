@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Conjunto de xadrez - Capivaras.`
-@version        1.0.6
+@version        1.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 
@@ -41,6 +41,7 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*Chessboard*/
+    #board-single-sibling,
     .board-layout-chessboard .board,
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],

@@ -3,12 +3,13 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Birman-Gray (FIDE Arena Chess Board).`
-@version        20200831.22.29
+@version        20200831.22.30
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*Chessboard*/
+#board-single-sibling,
 .board-layout-chessboard .board,
 div[class^="board v-board disabled rounded"],
 div[class^="daily-puzzle-board"],

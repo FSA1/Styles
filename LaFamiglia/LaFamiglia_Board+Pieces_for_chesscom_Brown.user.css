@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `La Famiglia chess set for chess.com by agiota_do_artenio`
-@version        20200831.22.31
+@version        20200831.22.32
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 ==/UserStyle== */
@@ -12,6 +12,7 @@
 server='https://github.com/FSA1/Styles/raw/main/'
 
 /*Chessboard*/
+    #board-single-sibling,
 .board-layout-chessboard .board, 
 div[class^="board v-board disabled rounded"],
 div[class^="daily-puzzle-board"],
