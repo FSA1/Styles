@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.6
+@version        2.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -1020,9 +1020,7 @@
         div[id^="divBoard_boardarea"],
         div[id^="chess_com_tactics_board"],
         div[id^="chessboard_"],
-        div[id*="chessboard_"],
         div[id^="chess_com_chessmentorboard_"],
-        div[id*="chess_com_chessmentorboard_"],
         div[id*="chess_com_chessmentor_board_1_boardarea"],
         div[id^="chess_com_emailboard_"],
         div[id^="board-blank"],
@@ -1293,9 +1291,7 @@
             div[id^="divBoard_boardarea"],
             div[id^="chess_com_tactics_board"],
             div[id^="chessboard_"],
-            div[id*="chessboard_"],
             div[id^="chess_com_chessmentorboard_"],
-            div[id*="chess_com_chessmentorboard_"],
             div[id*="chess_com_chessmentor_board_1_boardarea"],
             div[id^="chess_com_emailboard_"],
             div[id^="board-blank"],
@@ -1355,9 +1351,7 @@
             div[id^="divBoard_boardarea"]:before,
             div[id^="chess_com_tactics_board"]:before,
             div[id^="chessboard_"]:before,
-            div[id*="chessboard_"]:before,
             div[id^="chess_com_chessmentorboard_"]:before,
-            div[id*="chess_com_chessmentorboard_"]:before,
             div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
             div[id^="chess_com_emailboard_"]:before,
             div[id^="board-blank"]:before,
@@ -1706,6 +1700,52 @@
     }/*End pieces section*/
     #board-single-sibling{
         background-image: url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='hsla(168.88888888888889,74%,29%,1)' fill-opacity='1' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='hsla(51.81818181818184,26%,84%,1)' fill-opacity='1' style='mix-blend-mode:multiply'/%3e%3c/svg%3e") 0% 0% / cover no-repeat, url('colorOnly')!important;
+    }
+    div#board.board{        
+        --theme-board-style-image: url(cornerLogo) cornerLogoPosX cornerLogoPosY / auto cornerLogoSize no-repeat,
+      url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
+      url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
+      url(svgBoard) 0 0 / 100% no-repeat,
+      url(board3) bgPosX bgPosY / bgSize repeat;
+      
+        background: var(--theme-piece-set-br) 0 0 / 12.5% no-repeat,
+      var(--theme-piece-set-bn) 14.29% 0 / 12.5% no-repeat,
+      var(--theme-piece-set-bb) 28.57% 0 / 12.5% no-repeat,
+      var(--theme-piece-set-bq) 42.86% 0 / 12.5% no-repeat,
+      var(--theme-piece-set-bk) 57.14% 0 / 12.5% no-repeat,
+      var(--theme-piece-set-bb) 71.43% 0 / 12.5% no-repeat,
+      var(--theme-piece-set-bn) 85.71% 0 / 12.5% no-repeat,
+      var(--theme-piece-set-br) 100% 0 / 12.5% no-repeat,
+
+      var(--theme-piece-set-bp) 0 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 14.29% 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 28.57% 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 42.86% 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 57.14% 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 71.43% 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 85.71% 14.29% / 12.5% no-repeat,
+      var(--theme-piece-set-bp) 100% 14.29% / 12.5% no-repeat,
+
+      var(--theme-piece-set-wr) 0 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wn) 14.29% 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wb) 28.57% 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wq) 42.86% 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wk) 57.14% 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wb) 71.43% 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wn) 85.71% 100% / 12.5% no-repeat,
+      var(--theme-piece-set-wr) 100% 100% / 12.5% no-repeat,
+
+      var(--theme-piece-set-wp) 0 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 14.29% 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 28.57% 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 42.86% 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 57.14% 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 71.43% 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 85.71% 85.71% / 12.5% no-repeat,
+      var(--theme-piece-set-wp) 100% 85.71% / 12.5% no-repeat,
+
+      var(--theme-board-style-image) !important;
+        background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
     }
     
 }
