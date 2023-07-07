@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.5
+@version        2.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -352,7 +352,7 @@
         highlightOpacity=0.4;
         setHighlight='op1';
         hlImgOpt=disabled;
-        innerBorderOpt= #d4d8c0;
+        innerBorderOpt=#d4d8c0;
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
@@ -374,7 +374,7 @@
         bgPosX=0%;
         bgPosY=0%;
         bgSize=cover;
-        boardBGColor=#8fb1b5f5;
+        boardBGColor=#88aaae;
         boardBGOpt=colorOnly;
         centerLogoBlend=multiply;
         centerLogoCol=rgba(148,186,202,0.31);
@@ -425,7 +425,7 @@
         highlightOpacity=0.4;
         setHighlight='op1';
         hlImgOpt=disabled;
-        innerBorderOpt=#8fb1b5f5;
+        innerBorderOpt=#88aaae;
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
@@ -1067,6 +1067,9 @@
             }
         }
         .board-popover-component, .board-popover-component:before{
+            if boardBGColor == innerBorderOpt{
+                solidBoardBGColor = transparentify(lCoordCol, #fff, 1);                
+            }
             background-image: url(frameOpt) !important;
             background-position:framePosX framePosY;
             background-size:frameSize;           
@@ -1120,7 +1123,7 @@
             }
         }/*======End coords ======*/
             
-        /*======2023-07-05 new rules for game preview======*/
+        /*======👉2023-07-05 new rules for game preview======*/
         :root{
             --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
           
@@ -1133,7 +1136,7 @@
             }
             --theme-board-style-highlight-color: hlColor;
         }
-        /*======End rules for game preview======*/
+        /*======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         if evalOpt!="disabled" {
