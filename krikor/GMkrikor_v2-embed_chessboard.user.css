@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.8
+@version        2.0.9
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -993,17 +993,7 @@
     /*Board selector*/
     if myBoard!="disabled"{
         #board-single-sibling,
-        .board-layout-chessboard .board,
-        .fade-in-overlay/*chesskids*/
-        ,
-        #boarddefault_boardarea/*chesskids*/
-        ,
-        #divChessBoard_boardarea/*chesskids*/
-        ,
-        #vsComputerDiv_boardarea/*chesskids*/
-        ,
-        div[id^="board-"][class*="chess-board__board"]/*chesskids*/
-        ,
+        .board-layout-chessboard .board:not([style*="--theme"]),
         div[class^="board v-board disabled rounded"],
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
@@ -1697,7 +1687,7 @@
             --theme-piece-set-bk: url(vBK);
         }     
     }/*End pieces section*/
-    div#board.board{        
+        div#board.board:not([style*="background-image: url"]){
         --theme-board-style-image: url(cornerLogo) cornerLogoPosX cornerLogoPosY / auto cornerLogoSize no-repeat,
       url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
       url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
