@@ -17,7 +17,7 @@
 @var    color    svgLightSqColor  "Casas claras"   #B1D2ED
 @var    color    svgDarkSqColor  "Casas escuras"   #0a67ad
 @var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
-@var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
 @var    range    svgLightSqOpacity  "Opacidade claras" [1.00, 0.01, 1.00, 0.01, ""]
 
@@ -167,7 +167,7 @@
             "🔗logo4": "logoLink4",
             "🔗logo5": "logoLink5",
         }
-@var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 
 @var color    centerLogoCol  "Cor do logo central"   #3ca4e659
 @var    range    centerLogoSize  "Tam. logo central" [35, 10, 120, 1, "%"]
@@ -184,7 +184,7 @@
             "🔗Texto*": "cornerLogoTextOnly",
         }
 
-@var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  cornerLogoBlend    "↪Mesclagem logo secundário" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogoSize  "↪Tam. logo secundário" [15, 10, 120, 1, "%"]
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [124, -40, 150, 1, "%"]
@@ -233,7 +233,7 @@
 @var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
 @var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [10, 8, 24, 2, "px"]
 @var color    cornerLogo2Col  "↪Cor texto 2"   #60b7ee5e
-@var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color dodge", "color burn", "hard-light", "soft light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
+@var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogo2Size  "↪Tam.  texto 2" [14, 10, 100, 1, "%"]
 @var    range    cornerLogo2PosX  "↪Ajuste horiz. texto 2" [103, -40, 150, 1, "%"]
 @var    range    cornerLogo2PosY  "↪Ajuste vert. texto 2" [68, -40, 150, 1, "%"]
