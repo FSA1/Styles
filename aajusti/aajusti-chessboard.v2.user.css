@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.12
+@version        2.0.14
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -206,7 +206,7 @@
 @var    range    cornerLogoSize  "↪Tam. logo secundário" [15, 10, 120, 1, "%"]
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
-@var    range    cornerLogoPosY  "↪Ajuste vertical" [53, -40, 150, 1, "%"]
+@var    range    cornerLogoPosY  "↪Ajuste vertical" [38, -40, 150, 1, "%"]
 @var color    cornerLogoCol  "↪Cor do logo secundário"   #0031d340
 @var    range    cornerLogoFontSize  "↪Tam. da fonte" [10, 8, 24, 2, "px"]
 @var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
@@ -524,16 +524,16 @@
 
     /*GLOBAL COLOR - Need to be placed after themes*/
     if (enableGlobalColor==1 && myBoard=="custom") || global==1{    
-        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);       
+        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);
         frameColor=saturate(darken(svgDarkSqColor, 10%), -2%);
         centerLogoOpacity=0.24;
-        centerLogoBlend=darken;
-        cornerLogoBlend=multiply;
-        centerLogoCol=saturate(lighten(svgDarkSqColor, -12%), 10%);
+        centerLogoBlend=multiply;
+        cornerLogoBlend=cornerLogo2Blend=multiply;
+        centerLogoCol=transparentify(saturate(lighten(svgDarkSqColor, 80%), -5%), 0.3);
         cornerLogoCol=cornerLogo2Col=saturate(lighten(svgDarkSqColor, 70%), 10%);
         backgroundColp=saturate(shade(svgDarkSqColor,40%), -80%);
-        
-    }    
+        outCoordColorOpt=svgLightSqColor
+    }
     if frameSize=="contain"{
         frameRepeat=repeat;
     }else{
@@ -933,7 +933,6 @@
     @media (min-width: 960px){
         if enableBoardFrame{ 
             /*board*/
-
             .board-layout-chessboard .board,
             .fade-in-overlay,
             #boarddefault_boardarea,
