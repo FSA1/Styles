@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.21
+@version        1.0.22
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -654,17 +654,8 @@
     /*Board selector*/
     if myBoard!="disabled"{
         #board-single-sibling,
-        .board-layout-chessboard .board:not([style*="var(--theme-board-style-image"]),
-        .fade-in-overlay/*chesskids*/
-        ,
-        #boarddefault_boardarea/*chesskids*/
-        ,
-        #divChessBoard_boardarea/*chesskids*/
-        ,
-        #vsComputerDiv_boardarea/*chesskids*/
-        ,
-        div[id^="board-"][class*="chess-board__board"]/*chesskids*/
-        ,
+        div#board.board:not([style*="background-image: url"]),
+        .board-layout-chessboard .board:not([style*="--theme"]),
         div[class^="board v-board disabled rounded"],
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
@@ -681,9 +672,7 @@
         div[id^="divBoard_boardarea"],
         div[id^="chess_com_tactics_board"],
         div[id^="chessboard_"],
-        div[id*="chessboard_"],
         div[id^="chess_com_chessmentorboard_"],
-        div[id*="chess_com_chessmentorboard_"],
         div[id*="chess_com_chessmentor_board_1_boardarea"],
         div[id^="chess_com_emailboard_"],
         div[id^="board-blank"],
@@ -727,6 +716,7 @@
                 background-repeat: no-repeat, repeat !important;
             }
         }
+        .engine-line-preview,
         .board-popover-component, .board-popover-component:before{
             background-image: url(frameOpt) !important;
             background-position:framePosX framePosY;
@@ -781,7 +771,7 @@
             }
         }/*======End coords ======*/
             
-        /*======2023-07-05 new rules for game preview======*/
+        /*======2023-07-05 new rules for game preview [WOOD COLLECTION]======*/
         :root{
             --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
           
@@ -794,7 +784,7 @@
             }
             --theme-board-style-highlight-color: hlColor;
         }
-        /*======End rules for game preview======*/
+        /*======End rules for game preview [WOOD COLLECTION]======*/
 
         /*====== Evaluation Bar ======*/
         if evalOpt!="disabled" {
@@ -928,7 +918,8 @@
     @media (min-width: 960px){
         if enableBoardFrame{ 
             /*board*/
-            .board-layout-chessboard .board,
+            div#board.board:not([style*="background-image: url"]),
+            .board-layout-chessboard .board:not([style*="--theme"]),
             .fade-in-overlay,
             #boarddefault_boardarea,
             #divChessBoard_boardarea,
@@ -950,9 +941,7 @@
             div[id^="divBoard_boardarea"],
             div[id^="chess_com_tactics_board"],
             div[id^="chessboard_"],
-            div[id*="chessboard_"],
             div[id^="chess_com_chessmentorboard_"],
-            div[id*="chess_com_chessmentorboard_"],
             div[id*="chess_com_chessmentor_board_1_boardarea"],
             div[id^="chess_com_emailboard_"],
             div[id^="board-blank"],
@@ -990,7 +979,8 @@
                 }
             }
             /*board*/
-            .board-layout-chessboard .board:before,
+            div#board.board:not([style*="background-image: url"]):before,
+            .board-layout-chessboard .board:not([style*="--theme"]):before,
             .fade-in-overlay:before,
             #boarddefault_boardarea:before,
             #divChessBoard_boardarea:before,
@@ -1012,9 +1002,7 @@
             div[id^="divBoard_boardarea"]:before,
             div[id^="chess_com_tactics_board"]:before,
             div[id^="chessboard_"]:before,
-            div[id*="chessboard_"]:before,
             div[id^="chess_com_chessmentorboard_"]:before,
-            div[id*="chess_com_chessmentorboard_"]:before,
             div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
             div[id^="chess_com_emailboard_"]:before,
             div[id^="board-blank"]:before,
@@ -1056,6 +1044,56 @@
                 if enableFrameShadow && enableFrameShadowInset {
                     box-shadow: frameShadow, frameShadowInset !important;
                 }
+            }
+			/*bizarre solution, don't ask me why*/
+            div#board.board:not([style*="background-image: url"]) > div{
+                display: none!important;
+                }
+            div#board.board:not([style*="background-image: url"]){
+                --theme-board-style-image: url(cornerLogo) cornerLogoPosX cornerLogoPosY / auto cornerLogoSize no-repeat,
+              url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
+              url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
+              url(svgBoard) 0 0 / 100% no-repeat,
+              url(board3) bgPosX bgPosY / bgSize repeat;
+
+                background: var(--theme-piece-set-br) 0 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bn) 14.29% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bb) 28.57% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bq) 42.86% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bk) 57.14% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bb) 71.43% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bn) 85.71% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-br) 100% 0 / 12.5% no-repeat,
+
+              var(--theme-piece-set-bp) 0 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 14.29% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 28.57% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 42.86% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 57.14% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 71.43% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 85.71% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 100% 14.29% / 12.5% no-repeat,
+
+              var(--theme-piece-set-wr) 0 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wn) 14.29% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wb) 28.57% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wq) 42.86% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wk) 57.14% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wb) 71.43% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wn) 85.71% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wr) 100% 100% / 12.5% no-repeat,
+
+              var(--theme-piece-set-wp) 0 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 14.29% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 28.57% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 42.86% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 57.14% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 71.43% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 85.71% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 100% 85.71% / 12.5% no-repeat,
+
+              var(--theme-board-style-image) !important;
+                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             }
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
