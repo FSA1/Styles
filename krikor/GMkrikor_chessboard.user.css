@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com (pt_BR)`
-@version        2.0.16
+@version        2.0.17
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -461,79 +461,79 @@
             }
         }
 
-        .piece.wk:not(.pseudo3d .piece.wk),
-        .promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
-        div [data-hand-piece="wk"],
-        div [style*="wk.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(wK)!important;
-        }
-        .piece.wq:not(.pseudo3d .piece.wq),
-        .promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
-        div [data-hand-piece="wq"],
-        div [style*="wq.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(wQ)!important;
-        }
-        .piece.wb:not(.pseudo3d .piece.wb),
-        .promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
-        div [data-hand-piece="wb"],
-        div [style*="wb.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(wB)!important;
-        }
-        .piece.wn:not(.pseudo3d .piece.wn),
-        .promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
-        div [data-hand-piece="wn"],
-        div [style*="wn.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(wN)!important;
-        }
-        .piece.wr:not(.pseudo3d .piece.wr),
-        .promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
-        div [data-hand-piece="wr"],
-        div [style*="wr.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(wR)!important;
-        }
-        .piece.wp:not(.pseudo3d .piece.wp),
-        .promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
-        div [data-hand-piece="wp"],
-        div [style*="wp.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(wP)!important;
-        }
-        .piece.bk:not(.pseudo3d .piece.bk),
-        .promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
-        div [data-hand-piece="bk"],
-        div [style*="bk.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(bK)!important;
-        }
-        .piece.bq:not(.pseudo3d .piece.bq),
-        .promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
-        div [data-hand-piece="bq"],
-        div [style*="bq.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(bQ)!important;
-        }
-        .piece.bb:not(.pseudo3d .piece.bb),
-        .promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
-        div [data-hand-piece="bb"],
-        div [style*="bb.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(bB)!important;
-        }
-        .piece.bn:not(.pseudo3d .piece.bn),
-        .promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
-        div [data-hand-piece="bn"],
-        div [style*="bn.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(bN)!important;
-        }
-        .piece.br:not(.pseudo3d .piece.br),
-        .promotion-piece.br:not(.pseudo3d .promotion-piece.br),
-        div [data-hand-piece="br"],
-        div [style*="br.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(bR)!important;
-        }
-        .piece.bp:not(.pseudo3d .piece.bp),
-        .promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
-        div [data-hand-piece="bp"],
-        div [style*="bp.png"]:not([id="board"][class="board"]):not([class="game-preview-themed-component"]) {
-            background-image: url(bP)!important;
-        }
-
+		.piece.wk:not(.pseudo3d .piece.wk),
+		.promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
+		div [data-hand-piece="wk"],
+		div [style*="wk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(wK)!important;
+		}
+		.piece.wq:not(.pseudo3d .piece.wq),
+		.promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
+		div [data-hand-piece="wq"],
+		div [style*="wq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(wQ)!important;
+		}
+		.piece.wb:not(.pseudo3d .piece.wb),
+		.promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
+		div [data-hand-piece="wb"],
+		div [style*="wb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(wB)!important;
+		}
+		.piece.wn:not(.pseudo3d .piece.wn),
+		.promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
+		div [data-hand-piece="wn"],
+		div [style*="wn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(wN)!important;
+		}
+		.piece.wr:not(.pseudo3d .piece.wr),
+		.promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
+		div [data-hand-piece="wr"],
+		div [style*="wr.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(wR)!important;
+		}
+		.piece.wp:not(.pseudo3d .piece.wp),
+		.promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
+		div [data-hand-piece="wp"],
+		div [style*="wp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(wP)!important;
+		}
+		.piece.bk:not(.pseudo3d .piece.bk),
+		.promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
+		div [data-hand-piece="bk"],
+		div [style*="bk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(bK)!important;
+		}
+		.piece.bq:not(.pseudo3d .piece.bq),
+		.promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
+		div [data-hand-piece="bq"],
+		div [style*="bq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(bQ)!important;
+		}
+		.piece.bb:not(.pseudo3d .piece.bb),
+		.promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
+		div [data-hand-piece="bb"],
+		div [style*="bb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(bB)!important;
+		}
+		.piece.bn:not(.pseudo3d .piece.bn),
+		.promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
+		div [data-hand-piece="bn"],
+		div [style*="bn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(bN)!important;
+		}
+		.piece.br:not(.pseudo3d .piece.br),
+		.promotion-piece.br:not(.pseudo3d .promotion-piece.br),
+		div [data-hand-piece="br"],
+		div [style*="br.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(bR)!important;
+		}
+		.piece.bp:not(.pseudo3d .piece.bp),
+		.promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
+		div [data-hand-piece="bp"],
+		div [style*="bp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+			background-image: url(bP)!important;
+		}
+        
         /*pieces for mini-boards*/
         img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(bK)!important;
@@ -571,7 +571,6 @@
         img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
             content: url(wP)!important;
         }
-            
         /*2023-07-05 new rules for game preview*/
         :root{
             --theme-piece-set-perspective:1;
