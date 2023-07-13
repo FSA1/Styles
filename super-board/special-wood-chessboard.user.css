@@ -1050,10 +1050,7 @@
                 display: none!important;
                 }
             div#board.board:not([style*="background-image: url"]){
-                --theme-board-style-image: url(cornerLogo) cornerLogoPosX cornerLogoPosY / auto cornerLogoSize no-repeat,
-              url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
-              url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
-              url(svgBoard) 0 0 / 100% no-repeat,
+                --theme-board-style-image: url(svgBoard) 0 0 / 100% no-repeat,
               url(board3) bgPosX bgPosY / bgSize repeat;
 
                 background: var(--theme-piece-set-br) 0 0 / 12.5% no-repeat,
@@ -1093,7 +1090,7 @@
               var(--theme-piece-set-wp) 100% 85.71% / 12.5% no-repeat,
 
               var(--theme-board-style-image) !important;
-                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
+                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
             }
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
