@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.15
+@version        2.0.16
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -509,9 +509,9 @@
         boardBGOpt=colorOnly;
     }
     if myBoard=="gmKrikor-rose" {
-        svgDarkSqColor=#CF879B;
+        svgDarkSqColor=#ca8397;
         svgDarkSqOpacity=1;
-        svgLightSqColor=#ead9c7;
+        svgLightSqColor=#e5d5c3;
         svgLightSqOpacity=1;
         ajustBoardSize=0.9;
         backgroundColp=#65595c;
@@ -586,7 +586,7 @@
     }
     else if myBoard=="moveBlue" {
         svgBoardBlend=normal;
-        svgLightSqColor=#d1e8f2;
+        svgLightSqColor=#c8dee8;
         svgLightSqOpacity=1;
         enableGlobalColor=0;
         svgDarkSqColor=#2f87a4;
@@ -1275,7 +1275,7 @@
     }else{inn=0}
 	
     @media (min-width: 960px){
-        if enableBoardFrame{ 
+        if myBoard!="disabled" && enableBoardFrame{ 
             /*board*/
             div#board.board:not([style*="background-image: url"]),
             .board-layout-chessboard .board:not([style*="--theme"]),
@@ -1516,7 +1516,7 @@
             framePosY=bgPosY;        
         }
 
-		if enableBoardFrame{
+		if  myBoard!="disabled" && enableBoardFrame{
 			/*board*/
 			.main-tab-game-component chess-board {
 				transform-style: preserve-3d;
