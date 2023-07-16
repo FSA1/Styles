@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.24
+@version        1.0.25
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -434,26 +434,26 @@
         /*🔐important: board size need to be locked for this board*/
         ajustBoardSize=0.861;
         svgBoardBlend=normal;
-        svgLightSqColor=#fff2d1;
+        svgLightSqColor=#e8d2b9;
         svgLightSqOpacity=0;
         enableGlobalColor=0;
-        svgDarkSqColor= #a26a51;
+        svgDarkSqColor= #a36b52;
         svgDarkSqOpacity=0;
         boardBGOpt=cbred-cxc;
-        boardBGColor=#ecd5b2fc;
+        boardBGColor=svgLightSqColor;
         bgSize=100%;
         bgPosX=50%;
         bgPosY=50%;
         frameRadius=2px;
         frameRadiusInOut=1;
         frameOpt=txbase-red-cxc;
-        frameColor=#5a4233;
+        frameColor=svgDarkSqColor;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
         enableInnerBorder=1;
-        innerBorderOpt= #ecd5b2fc;
-        innerBorderColor=#c9bc95;
+        innerBorderOpt= svgLightSqColor;
+        innerBorderColor=svgDarkSqColor;
         enableBoardShadowInset=0;
         enableBoardShadow=0;
         enableFrameShadowInset=0;
@@ -463,8 +463,8 @@
         highlightOpacity=0.5;
         enableCustomCoord=1;
         outCoordColorOpt=#eadec2;
-        lCoordCol=#9f6140;
-        dCoordCol=innerBorderOpt;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
         coordsBlend=normal;
         useWallpaper=gradient;
         backgroundColp=#4a382e;
@@ -497,7 +497,7 @@
         evalOpt=custom;
         coordsBlend=normal;
         boardBGOpt=txfaded-wood;
-        boardBGColor=#8b7253;
+        boardBGColor=svgLightSqColor;
         bgSize=cover;
         bgPosX=50%;
         bgPosY=50%;
