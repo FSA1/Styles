@@ -1034,23 +1034,6 @@
               var(--theme-board-style-image) !important;
                 background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             }
-            /*outside coords settings*/
-            if ajustBoardSize<0.92 && enableOutsideCoords{
-                .coordinate-grey,
-                .coordinate-dark:not(#board-single-sibling .coordinate-dark):not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
-                .coordinate-light:not(#board-single-sibling .coordinate-light):not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
-                    text-transform: outCoordFontCase !important;
-                    fill:outCoordColorOpt!important;
-                    font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
-                    font-weight: outCoordFontWeight!important;   
-                    font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
-                }
-                .outside:not(.game-details-board .outside):not(.event-header-new-games .outside):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
-                    transform: translate(-5.5%,4.5%)!important;
-                }
-                body.outside-coords:not(.game-details-board body.outside-coords):not(.with-pieces,.real-3d):not(.event-header-new-games .outside-coords):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
-                    --coordinatesGutter: 1rem!important;
-                }
             
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
@@ -1089,7 +1072,6 @@
                         opacity: 1!important;
                     }
                 }
-            }
             }
         }
     }/*end board border*/
