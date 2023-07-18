@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        3.0.2
+@version        3.0.3
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -111,10 +111,11 @@
     if myBoard!="op0" {
         /*lichess.org*/
         .is2d cg-board,
-        /*ICC*/
-        .board-brown .cg-wrap,
         /*chess.com*/
-		.board-layout-chessboard .board,
+        #board-single-sibling,
+        div#board.board:not([style*="background-image: url"]),
+        .board-layout-chessboard .board:not([style*="--theme"]),
+        div[class^="board v-board disabled rounded"],
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
         div[class^="board v-board chessboard-component"],
@@ -130,9 +131,7 @@
         div[id^="divBoard_boardarea"],
         div[id^="chess_com_tactics_board"],
         div[id^="chessboard_"],
-        div[id*="chessboard_"],
         div[id^="chess_com_chessmentorboard_"],
-        div[id*="chess_com_chessmentorboard_"],
         div[id*="chess_com_chessmentor_board_1_boardarea"],
         div[id^="chess_com_emailboard_"],
         div[id^="board-blank"],

@@ -1,10 +1,10 @@
 /* ==UserStyle==
-@name           ❕🐾💪🔥FURIA v2: chess set
+@name           ❕🐾💪🔥FURIA v3: chess set
 @author         ChessSkins
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.8
+@version        3.0.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -57,7 +57,7 @@
 @var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
 @var    range    svgLightSqOpacity  "Opacidade claras" [1.00, 0.01, 1.00, 0.01, ""]
 
-@var    range    frameRadius  "🔵Canto arredondado" [6, 0, 34, 1, "px"]
+@var    range    frameRadius  "🔵Canto arredondado" [3, 0, 34, 1, "px"]
 @var    checkbox    frameRadiusInOut  "↪🔹Conjunto <--> Externo" 1
 
 @var    range    ajustBoardSize  "Tam. do tabuleiro" [0.9, 0.82, 0.92, 0.01, ""]
@@ -420,8 +420,8 @@
         svgBoardBlend=normal;
         svgLightSqOpacity=0;
         svgLightSqColor=#d4dfe3;
-        svgDarkSqColor=#72909b;
-        svgDarkSqOpacity=0;
+        svgDarkSqColor=#5e86a2;
+        svgDarkSqOpacity=0.2;
         boardBGOpt=cbfuria_classic_clean;
         boardBGColor=#7c9eb4;
         bgSize=100%;
@@ -434,10 +434,11 @@
         centerLogoPosX=50%;
         centerLogoPosY=46%;
         centerLogoSize=64%;
-        //frameRadius=3px;
-        //frameRadiusInOut=1;
+        frameRadius=3px;
+        frameRadiusInOut=1;
         frameOpt=colorOnly;
-        frameColor=#517289;
+        //frameColor=#517289;
+        frameColor=#56778e;
         frameSize=100%;
         framePosX=50%;
         framePosY=50%;
@@ -445,8 +446,8 @@
         enableCornerLogo=0;
         enableCornerLogo2=0;
         enableInnerBorder=1;
-        innerBorderOpt=#476077;
-        innerBorderColor=#507d94d1;
+        innerBorderOpt=#d0dce7;
+        innerBorderColor=#476077;
         enableBoardShadowInset=0;
         enableBoardShadow=0;
         enableFrameShadowInset=0;
@@ -460,8 +461,8 @@
         outCoordFontWeight=400;
         outCoordColorOpt=#d6dfe7;
         outCoordCol=#D6DFE7;
-        lCoordCol= #60869b;
-        dCoordCol= #D6DFE7;
+        lCoordCol=#56778e;
+        dCoordCol=#D6DFE7;
         coordsBlend=normal;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
