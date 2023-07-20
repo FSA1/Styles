@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.15
+@version        1.0.16
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -328,7 +328,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
-        centerLogoOpt=mfGMlogo;
+        centerLogoOpt="";
         centerLogoBlend=darken;
         centerLogoCol=rgba(84,0,185,0.102);
         centerLogoSize=50%;
@@ -380,7 +380,7 @@
         svgBoardBlend=normal;
         svgLightSqColor=#e7e0f3;
         svgLightSqOpacity=0.3;
-        svgDarkSqColor=#704cac;
+        svgDarkSqColor=#6a48a2;
         svgDarkSqOpacity=0.7;
         boardBGOpt=txQueen;
         boardBGColor=#e1d9ef;
@@ -406,7 +406,7 @@
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
-        centerLogoOpt=mfGMlogo;
+        centerLogoOpt="";
         centerLogoBlend=darken;
         centerLogoCol=rgba(84,0,185,0.102);
         centerLogoSize=50%;
@@ -718,6 +718,8 @@
         .game-preview-component.open-games-item-preview,
         .game-preview-component.current-games-grid-preview,
         .game-preview-component.promo-preview,
+        //.game-preview-themed-component.promo-preview,
+        //.game-preview-themed-component.pending-game-grid-preview,
         div [style*="40.png"][class="game-preview-component"],
         div [style*="40.jpg"][class="game-preview-component"] {
             /*clean board preview, no logo*/
@@ -730,6 +732,13 @@
                 background-repeat: no-repeat, no-repeat !important;
             }else{
                 background-repeat: no-repeat, repeat !important;
+            }
+        }
+        
+        .game-preview-themed-component{
+            if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
+                background-color: solidBoardBGColor!important;            
+                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
             }
         }
         .board-popover-component, .board-popover-component:before{
@@ -788,16 +797,18 @@
             
         /*======👉2023-07-05 new rules for game preview======*/
         :root{
-            --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
+            if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
+                --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
           
-            if enableCustomCoord {
-                --theme-board-style-coordinate-color-light: lCoordCol;
-                --theme-board-style-coordinate-color-dark: dCoordCol;
-            }else {
-                --theme-board-style-coordinate-color-light: transparentify(svgDarkSqColor, #000, 1) !important;
-                --theme-board-style-coordinate-color-dark: transparentify(svgLightSqColor, #000, 1) !important;
+                if enableCustomCoord {
+                    --theme-board-style-coordinate-color-light: lCoordCol;
+                    --theme-board-style-coordinate-color-dark: dCoordCol;
+                }else {
+                    --theme-board-style-coordinate-color-light: transparentify(svgDarkSqColor, #000, 1) !important;
+                    --theme-board-style-coordinate-color-dark: transparentify(svgLightSqColor, #000, 1) !important;
+                }
+                --theme-board-style-highlight-color: hlColor;
             }
-            --theme-board-style-highlight-color: hlColor;
         }
         /*======👉End rules for game preview======*/
 
@@ -1064,10 +1075,10 @@
             }
             div#board.board:not([style*="background-image: url"]){
                 --theme-board-style-image: url(cornerLogo) cornerLogoPosX cornerLogoPosY / auto cornerLogoSize no-repeat,
-              url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
-              url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
-              url(svgBoard) 0 0 / 100% no-repeat,
-              url(board3) bgPosX bgPosY / bgSize repeat;
+                url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
+                url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
+                url(svgBoard) 0 0 / 100% no-repeat,
+                url(board3) bgPosX bgPosY / bgSize repeat;
 
                 background: var(--theme-piece-set-br) 0 0 / 12.5% no-repeat,
               var(--theme-piece-set-bn) 14.29% 0 / 12.5% no-repeat,
@@ -1106,6 +1117,7 @@
               var(--theme-piece-set-wp) 100% 85.71% / 12.5% no-repeat,
 
               var(--theme-board-style-image) !important;
+                background-color: boardBGColor!important;
                 background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             }
             
