@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.16
+@version        1.0.17
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -380,7 +380,7 @@
         svgBoardBlend=normal;
         svgLightSqColor=#e7e0f3;
         svgLightSqOpacity=0.3;
-        svgDarkSqColor=#6a48a2;
+        svgDarkSqColor=#5b3b8e;
         svgDarkSqOpacity=0.7;
         boardBGOpt=txQueen;
         boardBGColor=#e1d9ef;
@@ -388,7 +388,7 @@
         bgPosX=50%;
         bgPosY=50%;
         frameOpt=colorOnly;
-        frameColor=#72539a;
+        frameColor=#6a4c90;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
