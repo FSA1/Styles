@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.17
+@version        2.0.18
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -61,8 +61,8 @@
 @var    range    ajustBoardSize  "Tam. do tabuleiro" [0.9, 0.82, 0.92, 0.01, ""]
 
 @var    select      setHighlight    "🟡Destaque de movimento" {
-            "Personalizado*": "op1",
-            "Padrão": "disabled",
+            "Personalizado": "op1",
+            "Padrão*": "disabled",
         }
 		
 @var    color    hlColor  "↪Cor do destaque"   #ffff00
@@ -367,8 +367,8 @@
         frameRadiusInOut=1;
         frameSize=cover;
         hlColor=#ff0;
-        highlightOpacity=0.4;
-        setHighlight='op1';
+        //highlightOpacity=0.4;
+        //setHighlight='op1';
         hlImgOpt=disabled;
         innerBorderOpt=#d4d8c0;
         lCoordCol=svgDarkSqColor;
@@ -440,8 +440,8 @@
         frameRadiusInOut=1;
         frameSize=cover;
         hlColor=#64eaff;
-        highlightOpacity=0.4;
-        setHighlight='op1';
+        //highlightOpacity=0.4;
+        //setHighlight='op1';
         hlImgOpt=disabled;
         innerBorderOpt=#88aaae;
         lCoordCol=svgDarkSqColor;
@@ -464,8 +464,8 @@
         svgDarkSqColor= #737e88;
         svgDarkSqOpacity=1;
         hlColor=#7db1d0;
-        highlightOpacity=0.5;
-        setHighlight='op1';
+        //highlightOpacity=0.5;
+        //setHighlight='op1';
         hlImgOpt=disabled;
         enableCenterLogo=1;
         enableCornerLogo=1;
@@ -567,8 +567,8 @@
         frameRadiusInOut=1;
         frameSize=cover;
         hlColor=#ffea00ab;
-        highlightOpacity=0.5;
-        setHighlight='op1';
+        //highlightOpacity=0.5;
+        //setHighlight='op1';
         hlImgOpt=disabled;
         innerBorderOpt=svgLightSqColor;
         lCoordCol=svgDarkSqColor;
@@ -613,11 +613,11 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        setHighlight=op1;
+        //setHighlight=op1;
         //hlImgOpt=disabled;
         //hlColor=#ff0;
         hlColor=#00c3ff;
-        highlightOpacity=0.5;
+        //highlightOpacity=0.5;
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=0;
@@ -686,13 +686,13 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        setHighlight=op1;
+        //setHighlight=op1;
         //hlImgOpt=disabled;
         /*special highlight setting*/
         hlImg1=hlImg1g;
         hlImg2=hlImg2g;
         hlColor=#7bfdba;
-        highlightOpacity=0.6;
+        //highlightOpacity=0.6;
         enableCenterLogo=1;
         enableCornerLogo=1;
         enableCornerLogo2=0;
@@ -761,10 +761,10 @@
         enableBoardShadow=0;
         enableFrameShadowInset=1;
         enableFrameShadow=1;
-        setHighlight=op1;
+        //setHighlight=op1;
         hlImgOpt=disabled;
         hlColor=#ff0;
-        highlightOpacity=0.4;
+        //highlightOpacity=0.4;
         enableArrowSettings=0;
         enableCenterLogo=1;
         enableCornerLogo=0;
@@ -846,10 +846,10 @@
         enableBoardShadow=0;
         enableFrameShadowInset=0;
         enableFrameShadow=1;
-        setHighlight=op1;
+        //setHighlight=op1;
         hlImgOpt=disabled;
         hlColor=#ff0;
-        highlightOpacity=0.4;
+        //highlightOpacity=0.4;
         enableArrowSettings=0;
         enableCenterLogo=1;
         enableCornerLogo=0;
@@ -960,8 +960,8 @@
         frameRadiusInOut=1;
         frameSize=cover;
         hlColor=#ff0;
-        highlightOpacity=0.4;
-        setHighlight='op1';
+        //highlightOpacity=0.4;
+        //setHighlight='op1';
         hlImgOpt=disabled;
         innerBorderOpt=#d7e5b5;
         lCoordCol=svgDarkSqColor;
