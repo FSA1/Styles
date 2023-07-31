@@ -240,7 +240,7 @@
 
 @var color    dEvalCol  "Avaliação Pretas"   #403D39
 @var color    lEvalCol  "Avaliação Brancas"   #E0E0E0
-@var    range    evalBarOpacity  "Opacidade barra de avaliação" [0.9, 0.5, 1, 0.1, ""]
+@var    range    evalBarOpacity  "Opacidade barra de avaliação" [1, 0.5, 1, 0.1, ""]
 
 @var    text     userFont1    "🆎Importar fonte 1:"   "'Bauhaus'"
 
@@ -341,7 +341,7 @@
         outCoordFontWeight=400;
         outCoordColorOpt=rgba(213, 217, 199, .969);
         outCoordCol=rgba(227, 217, 204, .969);
-        lCoordCol=#348c51;
+        lCoordCol=#427a45;
         dCoordCol=#e3cd9ff0;
         coordsBlend=normal;
         dEvalCol=lCoordCol;
@@ -399,7 +399,7 @@
         outCoordFontWeight=400;
         outCoordColorOpt=rgba(213, 217, 199, .969);
         outCoordCol=rgba(227, 217, 204, .969);
-        lCoordCol=#3e767d;
+        lCoordCol=#296c88;
         dCoordCol=#e3cd9ff0;
         coordsBlend=normal;
         dEvalCol=lCoordCol;
@@ -457,7 +457,7 @@
         outCoordFontWeight=400;
         outCoordColorOpt=rgba(244, 220, 170, .969);
         outCoordCol=rgba(227, 217, 204, .969);
-        lCoordCol=#bb8150;
+        lCoordCol=#98673d;
         dCoordCol=#e3cd9f;
         coordsBlend=normal;
         dEvalCol=lCoordCol;
