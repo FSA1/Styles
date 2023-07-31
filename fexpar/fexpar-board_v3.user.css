@@ -15,8 +15,8 @@
             "Personalizado": "custom",
             "Desativado": "disabled",
         }
-@var    color    svgLightSqColor  "Casas claras"   #B1D2ED
-@var    color    svgDarkSqColor  "Casas escuras"   #026FC6
+@var    color    svgLightSqColor  "Casas claras"   #c5e7dc
+@var    color    svgDarkSqColor  "Casas escuras"   #34a458
 @var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
 @var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
@@ -49,10 +49,9 @@
 @var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
-@var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
+@var    checkbox    enableCornerLogo   "🟩Logo secundário" 1
 @var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
-@var    checkbox    enableWallpaper   "🟩Textura de fundo" 0
-@var    checkbox    enablePattern   "🟩padrão FEXPAR" 1
+@var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
 
 @var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
@@ -77,11 +76,11 @@
             "Minúsculas*": "lowercase",
         }
 @var    select      outCoordColorOpt    "↪🟢Origem da cor"{
-            "Casas claras*": "svgLightSqColor",
+            "Casas claras": "svgLightSqColor",
             "Borda interna": "innerBorderOpt",
-            "Personalizado": "outCoordCol",
+            "Personalizado*": "outCoordCol",
         }
-@var color    outCoordCol  "Coordenadas externas"   #ffffffb8
+@var color    outCoordCol  "Coordenadas externas"   #fcfffe
 @var color    lCoordCol  "Coord. de casas claras"   #8d8d8d
 @var color    dCoordCol  "Coord. de casas escuras"   #acacac  
 
@@ -89,7 +88,7 @@
             "madeira clara": "txmaple",
             "Somente cor*": "colorOnly",
         }
-@var    color    boardBGColor  "↪🔸Cor de fundo"   #0d2a5a
+@var    color    boardBGColor  "↪🔸Cor de fundo"   #c7ebdf
 @var    select      bgSize    "↪🔸Tam. do fundo"{
             "Estender": "cover",
             "Conter": "contain",
@@ -108,7 +107,7 @@
             "cerejeira": "txframe-cherry-wood-dark",
             "Somente cor": "colorOnly",
         }
-@var    color    frameColor  "↪🟢Cor da borda"   #0d2a5a
+@var    color    frameColor  "↪🟢Cor da borda"   #34a458
 
 @var    select      frameSize    "Tam. da borda"{
             "Estender": "cover",
@@ -128,7 +127,7 @@
             "cor casas escuras": "svgDarkSqColor",
             "cor personalizada*": "innerBorderColor",
         }
-@var    color    innerBorderColor   "↪🟢Cor borda interna"   #2D55E5
+@var    color    innerBorderColor   "↪🟢Cor borda interna"   #c7ebdf
 
 @var    checkbox    enableBoardShadowInset  "🟨Sombra interna do tabuleiro" 0
 @var    checkbox    enableBoardShadow  "🟨Sombra externa do tabuleiro" 0
@@ -149,7 +148,7 @@
         }
 @var    select  centerLogoBlend    "↪Mesclagem logo central" ["normal", "multiply", "screen", "darken*", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 
-@var color    centerLogoCol  "Cor do logo central"   #0031d340
+@var color    centerLogoCol  "Cor do logo central"   #91d2bc
 @var    range    centerLogoSize  "Tam. logo central" [50, 10, 120, 1, "%"]
 @var    range    centerLogoOpacity  "Opacidade do logo central" [0.4, 0.01, 1, 0.01, ""]
 @var    range    centerLogoPosX  "Ajuste horizontal" [50, -20, 120, 2, "%"]
@@ -165,7 +164,7 @@
 @var    range    cornerLogoOpacity  "↪Opacidade do logo secundário" [1, 0.01, 1, 0.01, ""]
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [161, -40, 200, 1, "%"]
 @var    range    cornerLogoPosY  "↪Ajuste vertical" [56, -40, 150, 1, "%"]
-@var color    cornerLogoCol  "↪Cor do logo secundário"   #0031d340
+@var color    cornerLogoCol  "↪Cor do logo secundário"   #91d2bc
 @var    range    cornerLogoFontSize  "↪Tam. da fonte" [12, 8, 24, 2, "px"]
 @var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
 @var select   cornerLogoFontName   "↪🆎Nome da fonte"{
@@ -210,7 +209,7 @@
     }
 @var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700", "800*"]
 @var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [6, 6, 24, 2, "px"]
-@var color    cornerLogo2Col  "↪Cor texto 2"   #0031d340
+@var color    cornerLogo2Col  "↪Cor texto 2"   #91d2bc
 @var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    cornerLogo2Size  "↪Tam.  texto 2" [10, 5, 100, 1, "%"]
 @var    range    cornerLogo2WordSpacing  "↪Espaçam. de palavras" [-0.8, -1, 2.0, 0.1, ""]
@@ -231,7 +230,7 @@
         }
 @var    range    percentSize    "↪valor de porcentagem" [100, 1, 100, 1, "%"]
 
-@var    color    backgroundColp  "Cor de fundo"   #0c2651
+@var    color    backgroundColp  "Cor de fundo"   #346252
 
 @var    select      evalOpt    "Barra de Avaliação" {
             "Cor automática*": "auto",
