@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.19
+@version        2.0.20
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -14,7 +14,7 @@
             "todo preto": "-alt",
             "novo*": "-alt2",
 }
-@var    checkbox    neoCapybara   "neo Krikvalo <-> Capivara" 0
+@var    checkbox    neoCapybara   "neo Krikvalo <-> Capivara" 1
 
 @var    color    bColor  "cor (Neo) pretas"   #4fb0ee
 @var    color    wColor  "cor (Neo) brancas"   #eacc7e
