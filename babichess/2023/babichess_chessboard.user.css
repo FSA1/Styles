@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.20
+@version        1.0.21
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -15,8 +15,8 @@
             "Páscoa": "easter",
             "Desativado": "disabled",
         }
-@var    color    svgLightSqColor  "Casas claras"   #ddd0e7
-@var    color    svgDarkSqColor  "Casas escuras"   #a06bbb
+@var    color    svgLightSqColor  "Casas claras"   #dbcee6
+@var    color    svgDarkSqColor  "Casas escuras"   #8a5ca2
 @var    checkbox    enableGlobalColor   "👉🟪Cor Global (modo fácil) Pretas" 0
 @var    select  svgBoardBlend    "↪Mesclagem tabuleiro" ["normal*", "multiply", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
 @var    range    svgDarkSqOpacity  "Opacidade escuras" [1.00, 0.01, 1.00, 0.01, ""]
@@ -28,14 +28,15 @@
 @var    range    ajustBoardSize  "Tam. do tabuleiro" [0.9, 0.82, 0.92, 0.01, ""]
 
 @var    select      setHighlight    "🟡Destaque de movimento" {
-            "Personalizado*": "op1",
+            "Tema do tabuleiro": "op1",
+            "Personalizado": "op2",
             "Padrão": "disabled",
         }
 @var    select      hlImgOpt    "🟡Destaque animado" {
             "Brilho": "hlImg",
             "Desativado*": "op0",
         }
-@var    color    hlColor  "↪Cor do destaque"   #e52af7c9
+@var    color    hlColor  "↪Cor do destaque"   #ffff33
 
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.5, 0.3, 1, 0.1, ""]
 
@@ -174,8 +175,8 @@
 @var    range    cornerLogoPosX  "↪Ajuste horizontal" [115, -40, 150, 1, "%"]
 @var    range    cornerLogoPosY  "↪Ajuste vertical" [53, -40, 150, 1, "%"]
 @var color    cornerLogoCol  "↪Cor do logo secundário"   #8200d340
-@var    range    cornerLogoFontSize  "↪Tam. da fonte" [10, 8, 24, 2, "px"]
-@var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600", "700", "800*"]
+@var    range    cornerLogoFontSize  "↪Tam. da fonte" [8, 8, 24, 2, "px"]
+@var select   cornerLogoFontWeight   "↪Tipo"    ["400", "600*", "700", "800"]
 @var select   cornerLogoFontName   "↪🆎Nome da fonte"{
         "Fonte 1": "userFont1",
         "Fonte 2": "userFont2",
@@ -219,7 +220,7 @@
         "serif": "serif",
         "sans-serif": "sans-serif",       
     }
-@var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600", "700*", "800"]
+@var select   cornerLogo2FontWeight   "↪Tipo txt 2"    ["400", "600*", "700", "800"]
 @var    range    cornerLogo2FontSize  "↪Tam. fonte texto 2" [16, 8, 24, 2, "px"]
 @var color    cornerLogo2Col  "↪Cor texto 2"    #8200d340
 @var    select  cornerLogo2Blend    "↪Mesclagem texto 2" ["normal", "multiply*", "screen", "darken", "lighten", "overlay", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity"]
@@ -296,13 +297,13 @@
         enableFrameShadow=1;
         enableCornerLogo=1;
         enableCornerLogo2=1;
-        enableWallpaper=1;
+        //enableWallpaper=1;
         enableCustomCoord=1;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         svgBoardBlend=normal;
         svgLightSqColor=#d4d7ee;
         svgLightSqOpacity=1;
-        svgDarkSqColor=#8d6ec6;
+        svgDarkSqColor=#7c60ad;
         svgDarkSqOpacity=1;
         boardBGOpt=colorOnly;
         boardBGColor=#5c538b;
@@ -316,9 +317,10 @@
         framePosY=50%;
         innerBorderOpt=#bdc0d5;
         innerBorderColor=#7638ce;
-        setHighlight=op1;
-        hlColor=#66b0ff;
-        highlightOpacity=0.7;
+        if setHighlight=='op1'{
+            hlColor=#66a8ff;
+            highlightOpacity=0.7;
+        }
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
         outCoordFontWeight=400;
@@ -374,13 +376,13 @@
         enableFrameShadow=1;
         enableCornerLogo=1;
         enableCornerLogo2=1;
-        enableWallpaper=1;
+        //enableWallpaper=1;
         enableCustomCoord=1;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         svgBoardBlend=normal;
         svgLightSqColor=#e7e0f3;
         svgLightSqOpacity=0.3;
-        svgDarkSqColor=#583889;
+        svgDarkSqColor=#51327f;
         svgDarkSqOpacity=0.7;
         boardBGOpt=txQueen;
         boardBGColor=#e1d9ef;
@@ -394,15 +396,16 @@
         framePosY=50%;
         innerBorderOpt=#d7cceb;
         innerBorderColor=#7638ce;
-        setHighlight=op1;
-        hlColor=#d75fff;
-        highlightOpacity=0.7;
+        if setHighlight=='op1'{
+            hlColor=#d75fff;
+            highlightOpacity=0.7;
+        }
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
         outCoordFontWeight=400;
         outCoordColorOpt=#d4dfee;
         outCoordCol=rgba(255,255,255,0.722);
-        lCoordCol=#8166ab;
+        lCoordCol=#7d62a7;
         dCoordCol=svgLightSqColor;
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
@@ -474,9 +477,10 @@
         framePosY=50%;
         innerBorderOpt=rgba(207, 140, 191, .812);
         innerBorderColor=rgba(197,140,207,0.812);
-        setHighlight=op1;
-        hlColor=#ee1fbb;
-        highlightOpacity=0.6;
+        if setHighlight=='op1'{
+            hlColor=#ee1fbb;
+            highlightOpacity=0.6;
+        }
         outCoordFontSize=0.24rem;
         outCoordFontName='Bauhaus 93', Bauhaus;
         outCoordFontWeight=400;
@@ -548,9 +552,10 @@
         innerBorderColor=#ec9c6c;
         innerBorderOpt=innerBorderColor;
         panelBGOpt=colorOnly;
-        setHighlight=op1;
-        hlColor=#ffe346;
-        highlightOpacity=0.7;
+        if setHighlight=='op1'{
+            hlColor=#ffe346;
+            highlightOpacity=0.7;
+        }
         panelFontColor=rgba(255,255,255,0.6);
         setFontColorSrc=rgba(255,255,255,0.722);
         panelColor=rgba(116,57,106,0.522);
@@ -863,18 +868,14 @@
         
     /*Highlight*/
     /*hlImgOpt not being used for this projet. It can be useful to set a background image as highlight, normaly a gif.*/
-    if setHighlight=="op1" {
+    if setHighlight!="op0" {
         #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
         #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
         .move-square,
         .highlight:not({notThisColors}):not([class="stream highlight"]) {
             background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+            opacity: highlightOpacity!important;
         }
-    }
-    /*=== Highlight opacity===*/
-    .move-square,
-    .highlight:not({notThisColors}) {
-        opacity: highlightOpacity!important;
     }/*====== End highlight ======*/
             
     /*====== change arrows colors ======*/
