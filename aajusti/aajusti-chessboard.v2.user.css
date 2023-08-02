@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.16
+@version        2.0.17
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -308,7 +308,7 @@
 
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
-@-moz-document domain("chess.com") {
+@-moz-document domain("chess.com"), domain("chessable.com") {
     /*primary server (GitHub)*/
     gitHub='https://github.com/FSA1/Styles/raw/main/';
     /*alternative server (GitLab)*/
@@ -350,7 +350,7 @@
     }
     
 }/*Themes below*/
-@-moz-document domain("chess.com") {
+@-moz-document domain("chess.com"), domain("chessable.com") {
     /*Themes*/
     if myBoard=="aajusti-anim" || myBoard=="aajusti-static" || myBoard=="aajusti-anim-green" || myBoard=="aajusti-static-green" || myBoard=="light-wood" || myBoard=="dark-wood" {
         svgBoardBlend=normal;
@@ -574,7 +574,7 @@
         }
     }
 }
-@-moz-document domain("chess.com") {
+@-moz-document domain("chess.com"), domain("chesskid.com"), domain("chessable.com") {
 
     /*Board*/
    /*prevent user to get the board completely transparent with no visual references. It can be removed if you are an experienced user*/
@@ -625,6 +625,16 @@
     }
     /*Board selector*/
     if myBoard!="disabled"{
+        .fade-in-overlay/*chesskids*/
+        ,
+        #boarddefault_boardarea/*chesskids*/
+        ,
+        #divChessBoard_boardarea/*chesskids*/
+        ,
+        #vsComputerDiv_boardarea/*chesskids*/
+        ,
+        div[id^="board-"][class*="chess-board__board"]/*chesskids*/
+        [class="board-b72b1"] > div,
         #board-single-sibling,
         div#board.board:not([style*="background-image: url"]),
         .board-layout-chessboard .board:not([style*="--theme"]),
@@ -706,6 +716,7 @@
         /*========== Coordinates ==========*/
 
         /*coords light*/
+        .notation-dark,
         .coords-light,
         .coordinate-light,
         div.number.coords-light,
@@ -725,6 +736,7 @@
         }
 
         /*coords dark*/
+        .notation-light,
         .coords-dark,
         .coordinate-dark,
         div.number.coords-dark,
@@ -759,6 +771,12 @@
         /*======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
+        /*evaluation bar - chesskid*/
+        div [class="score-bar"] {
+            width: 2rem!important;
+        }
+        /*end evaluation bar - chesskid*/
+
         if evalOpt!="disabled" {
             .evaluation-bar-white,
             .score-bar__fill[data-v-b0ff6725] {
