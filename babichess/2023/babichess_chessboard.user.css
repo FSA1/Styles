@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.21
+@version        1.0.22
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -1157,7 +1157,7 @@
 
                 if enableOutsideCoords {
                     .coordinates:not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
-                        transform: translate(-4.5%,4.8%)!important;
+                        transform: translate(outCoordX,outCoordY)!important;
                     }
                     .coords-dark:not(#board-single-sibling .coords-dark):not(.game-details-board .coords-dark):not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
                     .coordinate-dark:not(#board-single-sibling .coordinate-dark):not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
