@@ -157,51 +157,51 @@ domain("chesskid.com"), domain("chessable.com") {
 			background-image: url(bP)!important;
 		}
 		/*pieces for mini-boards*/
-        div [data-piece="bK"],
+        [data-piece="bK"],
 		img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bK)!important;
 		}
-        div [data-piece="bQ"],
+        [data-piece="bQ"],
 		img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bQ)!important;
 		}
-        div [data-piece="bB"],
+        [data-piece="bB"],
 		img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bB)!important;
 		}
-        div [data-piece="bN"],
+        [data-piece="bN"],
 		img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bN)!important;
 		}
-        div [data-piece="bR"],
+        [data-piece="bR"],
 		img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bR)!important;
 		}
-        div [data-piece="bP"],
+        [data-piece="bP"],
 		img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bP)!important;
 		}
-        div [data-piece="wK"],
+        [data-piece="wK"],
 		img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wK)!important;
 		}
-        div [data-piece="wQ"],
+        [data-piece="wQ"],
 		img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wQ)!important;
 		}
-        div [data-piece="wB"],
+        [data-piece="wB"],
 		img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wB)!important;
 		}
-        div [data-piece="wN"],
+        [data-piece="wN"],
 		img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wN)!important;
 		}
-        div [data-piece="wR"],
+        [data-piece="wR"],
 		img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wR)!important;
 		}
-        div [data-piece="wP"],
+        [data-piece="wP"],
 		img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wP)!important;
 		}
