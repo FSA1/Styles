@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.22
+@version        1.0.23
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -626,7 +626,7 @@
         frameShadowInset=0;
     }
 }
-@-moz-document domain("chess.com"), domain("chesskid.com") {
+@-moz-document domain("chess.com"), domain("chesskid.com"), domain("chessable.com") {
 
     /*Board*/
    /*prevent user to get the board completely transparent with no visual references. It can be removed if you are an experienced user*/
@@ -674,6 +674,12 @@
     }
     /*Board selector*/
     if myBoard!="disabled"{
+        
+		/*set Chessable board squares to transparent*/
+        html,html.dark-mode{            
+            --theme-background-chessboard-square-white: #f0d9b500;
+            --theme-background-chessboard-square-black: #b5886300;
+        }
         .fade-in-overlay/*chesskids*/
         ,
         #boarddefault_boardarea/*chesskids*/
@@ -684,6 +690,7 @@
         ,
         div[id^="board-"][class*="chess-board__board"]/*chesskids*/
         #board-single-sibling,
+        [class="board-b72b1"] > div,
         div#board.board:not([style*="background-image: url"]),
         .board-layout-chessboard .board:not([style*="--theme"]),
         div[class^="board v-board disabled rounded"],
@@ -867,6 +874,25 @@
     }/*end board*/
         
     /*Highlight*/
+    .highlight-b:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
+    .highlight-w.black-3c85d:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
+    .highlight-b.black-3c85d:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
+    .highlight-w:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
+    .highlight-w.white-1e1d7:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
+    .highlight-b.white-1e1d7:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
+
     /*hlImgOpt not being used for this projet. It can be useful to set a background image as highlight, normaly a gif.*/
     if setHighlight!="op0" {
         #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
