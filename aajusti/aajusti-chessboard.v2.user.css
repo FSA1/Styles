@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.19
+@version        2.0.21
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    smallJusti  "Logo Justi menor (madeira)" 0
@@ -258,7 +258,7 @@
 
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
-@-moz-document domain("chess.com"), domain("chessable.com") {
+@-moz-document domain("chess.com"), domain("chesskid.com"), domain("chessable.com") {
     /* Special settings */
 
     /*Fine tuning to board size*/
@@ -616,7 +616,7 @@
             }else{
                 background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat !important;
             }
-            background-size: auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, 100%, bgSize!important;
+            background-size: auto cornerLogoSize, auto cornerLogo2Size, auto centerLogoSize, cover, bgSize!important;
             background-blend-mode: cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             background-position:cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY!important;
             background-color: boardBGColor; 
@@ -759,7 +759,9 @@
     }/*end board*/
         
     /*Highlight*/
-
+    [style*="rgba(76\, 167\, 79\, 0.3)"]{
+        background:transparentify(hlColor,#d5d5d5, 0.4) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
     .highlight-b:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
         background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }

@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.28
+@version        1.0.29
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -726,12 +726,12 @@
     }
     /*Board selector*/
     if myBoard!="disabled"{
+        
+		/*set Chessable board squares to transparent*/
         html,html.dark-mode{
-            
             --theme-background-chessboard-square-white: #f0d9b500;
             --theme-background-chessboard-square-black: #b5886300;
         }
-            
         .fade-in-overlay/*chesskids*/
         ,
         #boarddefault_boardarea/*chesskids*/
@@ -917,7 +917,9 @@
     }/*end board*/
         
     /*Highlight*/
-
+    [style*="rgba(76\, 167\, 79\, 0.3)"]{
+        background:transparentify(hlColor,#d5d5d5, 0.4) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+    }
     .highlight-b:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
         background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
