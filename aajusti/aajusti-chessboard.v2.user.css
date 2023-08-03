@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.21
+@version        2.0.22
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    smallJusti  "Logo Justi menor (madeira)" 0
@@ -760,7 +760,7 @@
         
     /*Highlight*/
     [style*="rgba(76\, 167\, 79\, 0.3)"]{
-        background:transparentify(hlColor,#d5d5d5, 0.4) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a6a6a6, 0.35) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
         background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
