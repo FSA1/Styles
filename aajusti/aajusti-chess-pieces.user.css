@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Multicolor modified icySea pieces for chesskid.com and chess.com.`
-@version        1.0.7
+@version        1.0.8
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myPieces    "Peças♟️"{
@@ -86,122 +86,123 @@ domain("chesskid.com"), domain("chessable.com") {
         /*peças*/
 		.piece.wk:not(.pseudo3d .piece.wk),
 		.promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
-		div [data-hand-piece="wk"],
+		[data-hand-piece="wk"],
 		div [style*="wk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(wK)!important;
 		}
 		.piece.wq:not(.pseudo3d .piece.wq),
 		.promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
-		div [data-hand-piece="wq"],
+		[data-hand-piece="wq"],
 		div [style*="wq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(wQ)!important;
 		}
 		.piece.wb:not(.pseudo3d .piece.wb),
 		.promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
-		div [data-hand-piece="wb"],
+		[data-hand-piece="wb"],
 		div [style*="wb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(wB)!important;
 		}
 		.piece.wn:not(.pseudo3d .piece.wn),
 		.promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
-		div [data-hand-piece="wn"],
+		[data-hand-piece="wn"],
 		div [style*="wn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(wN)!important;
 		}
 		.piece.wr:not(.pseudo3d .piece.wr),
 		.promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
-		div [data-hand-piece="wr"],
+		[data-hand-piece="wr"],
 		div [style*="wr.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(wR)!important;
 		}
 		.piece.wp:not(.pseudo3d .piece.wp),
 		.promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
-		div [data-hand-piece="wp"],
+		[data-hand-piece="wp"],
 		div [style*="wp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(wP)!important;
 		}
 		.piece.bk:not(.pseudo3d .piece.bk),
 		.promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
-		div [data-hand-piece="bk"],
+		[data-hand-piece="bk"],
 		div [style*="bk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bK)!important;
 		}
 		.piece.bq:not(.pseudo3d .piece.bq),
 		.promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
-		div [data-hand-piece="bq"],
+		[data-hand-piece="bq"],
 		div [style*="bq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bQ)!important;
 		}
 		.piece.bb:not(.pseudo3d .piece.bb),
 		.promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
-		div [data-hand-piece="bb"],
+		[data-hand-piece="bb"],
 		div [style*="bb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bB)!important;
 		}
 		.piece.bn:not(.pseudo3d .piece.bn),
 		.promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
-		div [data-hand-piece="bn"],
+		[data-hand-piece="bn"],
 		div [style*="bn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bN)!important;
 		}
 		.piece.br:not(.pseudo3d .piece.br),
 		.promotion-piece.br:not(.pseudo3d .promotion-piece.br),
-		div [data-hand-piece="br"],
+		[data-hand-piece="br"],
 		div [style*="br.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bR)!important;
 		}
 		.piece.bp:not(.pseudo3d .piece.bp),
 		.promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
-		div [data-hand-piece="bp"],
+		[data-hand-piece="bp"],
 		div [style*="bp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bP)!important;
 		}
 		/*pieces for mini-boards*/
-        [data-piece="bK"],
+		[data-piece="bK"],
 		img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bK)!important;
 		}
-        [data-piece="bQ"],
+		[data-piece="bQ"],
 		img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bQ)!important;
 		}
-        [data-piece="bB"],
+		[data-piece="bB"],
 		img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bB)!important;
 		}
-        [data-piece="bN"],
+		[data-piece="bN"],
 		img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bN)!important;
 		}
-        [data-piece="bR"],
+		[data-piece="bR"],
 		img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bR)!important;
 		}
-        [data-piece="bP"],
+		[data-piece="bP"],
 		img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bP)!important;
 		}
-        [data-piece="wK"],
+		[data-piece="wK"],
 		img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wK)!important;
 		}
-        [data-piece="wQ"],
+		[data-piece="wQ"],
 		img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wQ)!important;
 		}
-        [data-piece="wB"],
+		[data-piece="wB"],
 		img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wB)!important;
 		}
-        [data-piece="wN"],
+		
+		[data-piece="wN"],
 		img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wN)!important;
 		}
-        [data-piece="wR"],
+		[data-piece="wR"],
 		img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wR)!important;
 		}
-        [data-piece="wP"],
+		[data-piece="wP"],
 		img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wP)!important;
 		}
