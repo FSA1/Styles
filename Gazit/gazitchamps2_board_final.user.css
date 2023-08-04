@@ -4,14 +4,12 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Gazit`
-@version        2.0.1
+@version        2.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
             "GazitChamps2": "op1",
-            "Gazit Alternativo": "op2",
-            "Final": "op3",
-            "Final Alt": "op4",
+            "Final": "op2",
             "Desativado": "op0",
         }
 @var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
@@ -24,8 +22,10 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     if myBoard!="op0" {
-        /*Chessboard.board,*/
-    .board-layout-chessboard .board,
+        #board-single-sibling,
+        div#board.board:not([style*="background-image: url"]):not([class="board board-webgl-3d"]),
+        .board-layout-chessboard .board:not([style*="--theme"]):not([class="board board-webgl-3d"]),
+        div[class^="board v-board disabled rounded"],
         div[class^="daily-puzzle-board"],
         div[class^="board chessboard-component"],
         div[class^="board v-board chessboard-component"],
@@ -41,13 +41,11 @@
         div[id^="divBoard_boardarea"],
         div[id^="chess_com_tactics_board"],
         div[id^="chessboard_"],
-        div[id*="chessboard_"],
         div[id^="chess_com_chessmentorboard_"],
-        div[id*="chess_com_chessmentorboard_"],
         div[id*="chess_com_chessmentor_board_1_boardarea"],
         div[id^="chess_com_emailboard_"],
         div[id^="board-blank"],
-        chess-board[class^="board"],
+        chess-board[class^="board"]:not([class="board board-webgl-3d"]),
         chess-board[class^="board flipped"],
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
@@ -56,16 +54,10 @@
                 filter: hue-rotate(hueRotationBoard);
             }
             if myBoard=="op1" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/Gazit/Gazit2ChessBoard2.png)!important;
+                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/php3EAwTo.png")!important;
             }
             if myBoard=="op2" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/Gazit/Gazit2Board2_Alt.png)!important;
-            }
-            if myBoard=="op3" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/Gazit/Gazit2Board_FINAL.png)!important;
-            }
-            if myBoard=="op4" {
-                background-image: url(https://github.com/FSA1/Styles/raw/main/Gazit/Gazit2Board_FINAL_Alt.png)!important;
+                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/php9v2oLX.png")!important;
             }
         }
         /*Coordinates*/
