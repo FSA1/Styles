@@ -1,12 +1,11 @@
 /* ==UserStyle==
-@name           1950 Latvian Chess Pieces 2D/3D
+@name           1950 Latvian Chess Pieces
 @author         agiota_do_artenio
 @namespace      ChessSkins
 @description    `pieces for chess.com.`
-@version        1.0.5
+@version        2.0.0
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
-@var    text     deprecated    "DESCONTINUADO - Visite ChessSkins para atualizar!"   "'https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/estilo-de-pecas-letonia-1950-2d-3d-tabuleiros'"
 @var    select      myBoard    "Escolher tabuleiro" {
             "Madeira": "w1",
             "Madeira escura*": "w2",
@@ -16,7 +15,6 @@
 
 @var    select      myPieces    "Escolher Peças"{
             "Letônia 1950": "latvia1950",
-            "3D(DESCONTINUADO)": "op2",
             "Desativado": "disabled",
         }
 
