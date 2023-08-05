@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para Capivara do Xadrez.`
-@version        1.0.5
+@version        1.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -24,7 +24,7 @@
             "Seu tabuleiro": "opUser",
             "Desativado": "op0",
         }
-@var    text     userBoard    "Seu Tabuleiro (entre aspas simples)"   "'https://github.com/FSA1/Styles/raw/main/cx/boards/capy-wood-blue2.jpg'"
+@var    text     userBoard    "Seu Tabuleiro (entre aspas simples)"   "'https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpbdo58u.jpg'"
 
 @var    range    CircleHL  "Realce dos círculos (lichess)" [150, 100, 200, 5, "%"]
 @var    select      setHighlight    "Destaque de movimento (somente ao vivo no chess.com)" {
@@ -86,6 +86,9 @@
 @-moz-document domain("chess.com"),
 domain("chesskid.com"),
 domain("lichess.org") {
+        
+    /*selector with exceptions to avoid override analysis highlights*/
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="244\, 42\, 50"]):not([style*="#f42a32"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]';
     /*====== Board options =======*/
     .board-b72b1/*chatplayschess*/
     ,
@@ -241,17 +244,13 @@ domain("lichess.org") {
     }
     /*=== set highlight border ===*/
     if setHLborder=="op1" || setHLborder=="op2" {
-        square.last-move,
-        .move-square {
+        square.last-move/*Lichess*/
+        ,
+        .move-square, 
+        .highlight:not({notThisColors}) {
             border-style: highlightBorder !important;
             border-color: hlBorderCol!important;
             border: 4px;
-        }
-        if forcedHighlight {
-            .highlight {
-                border-style: highlightBorder !important;
-                border: 4px;
-            }
         }
     }
     /*=== End set highlight border ===*/
@@ -259,15 +258,10 @@ domain("lichess.org") {
         if myBoard=="op1" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-purple1)!important;
                 border-color: var(--color-purple2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-purple1)!important;
-                    border-color: var(--color-purple2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -290,15 +284,10 @@ domain("lichess.org") {
         if myBoard=="op2" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-blue1)!important;
                 border-color: var(--color-blue2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-blue1)!important;
-                    border-color: var(--color-blue2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -321,15 +310,10 @@ domain("lichess.org") {
         if myBoard=="op3" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-green1)!important;
                 border-color: var(--color-green2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-green1)!important;
-                    border-color: var(--color-green2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -352,15 +336,10 @@ domain("lichess.org") {
         if myBoard=="op4" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-gray1)!important;
                 border-color: var(--color-gray2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-gray1)!important;
-                    border-color: var(--color-gray2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -383,15 +362,10 @@ domain("lichess.org") {
         if myBoard=="op5" || myBoard=="op6" || myBoard=="op11" || myBoard=="op12" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-yellow1)!important;
                 border-color: var(--color-yellow2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-yellow1)!important;
-                    border-color: var(--color-yellow2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -414,15 +388,10 @@ domain("lichess.org") {
         if myBoard=="op7" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-yellow4)!important;
                 border-color: var(--color-yellow5)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-yellow4)!important;
-                    border-color: var(--color-yellow5)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -445,15 +414,10 @@ domain("lichess.org") {
         if myBoard=="op8" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-yellow7)!important;
                 border-color: var(--color-yellow4)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-yellow7)!important;
-                    border-color: var(--color-yellow4)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -476,15 +440,10 @@ domain("lichess.org") {
         if myBoard=="op9" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-yellow4)!important;
                 border-color: var(--color-grape2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-yellow4)!important;
-                    border-color: var(--color-grape2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -507,15 +466,10 @@ domain("lichess.org") {
         if myBoard=="op10" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-gray1)!important;
                 border-color: var(--color-blue4)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-gray1)!important;
-                    border-color: var(--color-blue4)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -538,15 +492,10 @@ domain("lichess.org") {
         if myBoard=="op13" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-blue1)!important;
                 border-color: var(--color-blue2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-blue1)!important;
-                    border-color: var(--color-blue2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -569,15 +518,10 @@ domain("lichess.org") {
         if myBoard=="opUser" {
             square.last-move/*Lichess*/
             ,
-            .move-square {
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: var(--color-yellow4)!important;
                 border-color: var(--color-yellow2)!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: var(--color-yellow4)!important;
-                    border-color: var(--color-yellow2)!important;
-                }
             }
             square.move-dest/*Lichess (dot marks shows legal moves)*/
             {
@@ -602,14 +546,11 @@ domain("lichess.org") {
     if setHighlight=="op2" {
         /*======= Custom highlght choosen by the user =======*/
         if myHighlight {
-            square.last-move,
-            .move-square {
+            square.last-move/*Lichess*/
+            ,
+            .move-square, 
+            .highlight:not({notThisColors}) {
                 background-color: moveSqCol!important;
-            }
-            if forcedHighlight {
-                .highlight {
-                    background-color: moveSqCol!important;
-                }
             }
             square.move-dest {
                 background: radial-gradient(#0000003b 20%, #0000 20%);
@@ -629,9 +570,10 @@ domain("lichess.org") {
         }
     }
     /*=== Highlight opacity, hue rotation ===*/
-    square.last-move,
-    .move-square,
-    .highlight {
+        square.last-move/*Lichess*/
+        ,
+        .move-square, 
+        .highlight:not({notThisColors}) {
         filter: hue-rotate(highlightHueRotation)!important;
         opacity: highlightOpacity!important;
         /*custom border color choosen by the user, need stay after default border settings*/
