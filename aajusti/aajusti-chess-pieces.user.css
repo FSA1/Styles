@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Multicolor modified icySea pieces for chesskid.com and chess.com.`
-@version        1.0.8
+@version        1.0.9
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myPieces    "Peças♟️"{
@@ -83,7 +83,7 @@ domain("chesskid.com"), domain("chessable.com") {
             }
         }
         
-        /*peças*/
+        /*selectors*/
 		.piece.wk:not(.pseudo3d .piece.wk),
 		.promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
 		[data-hand-piece="wk"],
@@ -161,18 +161,22 @@ domain("chesskid.com"), domain("chessable.com") {
 		img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bK)!important;
 		}
+        img[src*="/bQ.png"],
 		[data-piece="bQ"],
 		img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bQ)!important;
 		}
+        img[src*="/bB.png"],
 		[data-piece="bB"],
 		img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bB)!important;
 		}
+        img[src*="/bN.png"],
 		[data-piece="bN"],
 		img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bN)!important;
 		}
+        img[src*="/bR.png"],
 		[data-piece="bR"],
 		img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(bR)!important;
@@ -185,24 +189,29 @@ domain("chesskid.com"), domain("chessable.com") {
 		img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wK)!important;
 		}
+        img[src*="/wQ.png"],
 		[data-piece="wQ"],
 		img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wQ)!important;
 		}
+        img[src*="/wB.png"],
 		[data-piece="wB"],
 		img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wB)!important;
-		}
-		
+		}		
+        img[src*="/wN.png"],
 		[data-piece="wN"],
 		img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wN)!important;
 		}
+        img[src*="/wR.png"],
 		[data-piece="wR"],
 		img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wR)!important;
 		}
-		[data-piece="wP"],
+        [id^="wP"],
+        [class^="square"]>[data-piece="wP"],
+        [data-piece="wP"]>[data-piece="wP"],
 		img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
 			content: url(wP)!important;
 		}
@@ -225,9 +234,30 @@ domain("chesskid.com"), domain("chessable.com") {
 	}/*End pieces section*/
 }
 @-moz-document domain("chessable.com") {
-	.alpha-d2270 {
+    /*Chessable*/
+	.notation-dark,.notationlight {
 		bottom: -3px;
 		right: 3px;
 	}
+    .setPromotion img, {
+        width: 80px!important;
+        height: auto!important;
+        display:inline-block;
+    }
+    #promoteQueen{
+        content: url(wQ)!important;
+    }
+    #promoteKnight{
+        content: url(wN)!important;   
+    }
+    #promoteBishop{
+        content: url(wB)!important;
+    }
+    #promoteRook{
+        content: url(wR)!important;
+    }
+    div[class^="spare-pieces"]>div{
+        display:inline-block!important;
+    }
     
 }
