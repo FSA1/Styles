@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.25
+@version        1.0.26
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -743,8 +743,6 @@
         .game-preview-component.open-games-item-preview,
         .game-preview-component.current-games-grid-preview,
         .game-preview-component.promo-preview,
-        //.game-preview-themed-component.promo-preview,
-        //.game-preview-themed-component.pending-game-grid-preview,
         div [style*="40.png"][class="game-preview-component"],
         div [style*="40.jpg"][class="game-preview-component"] {
             /*clean board preview, no logo*/
@@ -760,24 +758,25 @@
             }
         }
         
-        .game-preview-themed-component{
-            if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
-                background-color: solidBoardBGColor!important;            
-                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
+        if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
+            .game-preview-themed-component{
+                    background-color: solidBoardBGColor!important;            
+                    background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
+                }
+            .engine-line-preview,
+            .board-popover-component, .board-popover-component:before{
+                background-image: url(frameOpt) !important;
+                background-position:framePosX framePosY;
+                background-size:frameSize;           
+                background-color: solidBoardBGColor;
+                if bgSize=="cover"{
+                    background-repeat: no-repeat !important;
+                }else{
+                    background-repeat: repeat !important;
+                }
+                border-color:solidBoardBGColor!important;
+                border-image:url(frameOpt) 25 stretch!important;
             }
-        }
-        .board-popover-component, .board-popover-component:before{
-            background-image: url(frameOpt) !important;
-            background-position:framePosX framePosY;
-            background-size:frameSize;           
-            background-color: solidBoardBGColor;
-            if bgSize=="cover"{
-                background-repeat: no-repeat !important;
-            }else{
-                background-repeat: repeat !important;
-            }
-            border-color:solidBoardBGColor!important;
-            border-image:url(frameOpt) 25 stretch!important;
         }
 
         /*========== Coordinates ==========*/
@@ -822,7 +821,7 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview======*/
+        /*======👉2023-07-05 new rules for game preview [BABICHESS]======*/
         :root{
             if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
                 --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
@@ -837,15 +836,15 @@
                 --theme-board-style-highlight-color: hlColor;
             }
         }
-        /*======👉End rules for game preview======*/
+        /*======👉End rules for game preview [BABICHESS]======*/
 
         /*====== Evaluation Bar ======*/
-        /*evaluation bar - chesskid*/
+        /*evaluation bar 🔹Chesskid🔹*/
         div [class="score-bar"] {
             width: 2rem!important;
         }
-        /*end evaluation bar - chesskid*/
-
+        /*end evaluation bar 🔹Chesskid🔹*/
+		
         if evalOpt!="disabled" {
             .evaluation-bar-white,
             .score-bar__fill[data-v-b0ff6725] {
@@ -880,29 +879,32 @@
     }/*end board*/
         
     /*Highlight*/
+
+    /*Highlight Chessable*/
     [style*="rgba(76\, 167\, 79\, 0.3)"]{
         background:transparentify(hlColor,#a6a6a6, 0.35) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-w.black-3c85d:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b.black-3c85d:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-w:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-w.white-1e1d7:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b.white-1e1d7:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
+    /*End highlight Chessable*/
 
-    /*hlImgOpt not being used for this projet. It can be useful to set a background image as highlight, normaly a gif.*/
+    /*hlImgOpt can be useful to set a background image as highlight, normaly a gif.*/
     if setHighlight!="op0" {
         #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
         #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
@@ -935,7 +937,6 @@
             fill: arrowBlue!important;
         }
     }/*====== End arrows colors ======*/
-    /*------end section------*/
 
     /*change highlight made by the user*/
     [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
@@ -950,9 +951,32 @@
     [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
         background-color: hlSqRed!important;
     }
+    /*chessable fix*/
+    .setPromotion img, {
+        width: 80px!important;
+        height: auto!important;
+        display:inline-block;
+    }
+    div[class^="spare-pieces"]>div{
+        display:inline-block!important;
+    }
+    #promoteQueen{
+        content: url("/img/chesspieces/wikipedia/wQ.png")!important;
+    }
+    #promoteKnight{
+        content: url("/img/chesspieces/wikipedia/wN.png")!important;   
+    }
+    #promoteBishop{
+        content: url("/img/chesspieces/wikipedia/wB.png")!important;
+    }
+    #promoteRook{
+        content: url("/img/chesspieces/wikipedia/wR.png")!important;
+    }
+    /*End chessable fix*/
+    /*------end section------*/
 
 }
-@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play/"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
+@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
 
     /*======== Wallpaper =======*/
     if enableWallpaper=="1" {
@@ -991,7 +1015,7 @@
     }else{inn=0}
 	
     @media (min-width: 960px){
-        if myBoard!="disabled" && enableBoardFrame{ 
+		if myBoard!="disabled" && enableBoardFrame{
             /*board*/
             div#board.board:not([style*="background-image: url"]),
             .board-layout-chessboard .board:not([style*="--theme"]),
@@ -1171,7 +1195,7 @@
                 background-color: boardBGColor!important;
                 background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             }
-            
+
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
                 .coordinate-grey,
@@ -1231,7 +1255,7 @@
             framePosY=bgPosY;        
         }
 
-		if myBoard!="disabled" enableBoardFrame{
+		if myBoard!="disabled" && enableBoardFrame{
 			/*board*/
 			.main-tab-game-component chess-board {
 				transform-style: preserve-3d;
@@ -1324,19 +1348,6 @@
     }
     
 }/*End Events*/
-
-@-moz-document url("https://www.chess.com/playZZZ"){
-        .board-layout-chessboard .board:before,
-        div#board.board,div#board.board:before{
-            background-image:url('')!important;
-            width: 0!important;
-            height:@width;
-            border:0!important;
-            box-shadow:0 0 0 0!important;
-            margin:0!important;
-           
-		}
-}
 
 @-moz-document domain("chess.com") {
     /*Panel Colors*/

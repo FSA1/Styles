@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.29
+@version        1.0.30
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -57,7 +57,7 @@
 @var    select      outCoordFontCase    "↪Maiúsculas ou minúsculas"{
             "Maiúsculas": "uppercase",
             "Minúsculas*": "lowercase",
-        } 
+        }
 
 @var    select      evalOpt    "Barra de Avaliação" {
             "Cor automática*": "auto",
@@ -874,7 +874,7 @@
             }
         }/*======End coords ======*/
             
-        /*======2023-07-05 new rules for game preview [WOOD COLLECTION]======*/
+        /*======👉2023-07-05 new rules for game preview [WOOD COLLECTION]======*/
         :root{
             --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
           
@@ -887,14 +887,15 @@
             }
             --theme-board-style-highlight-color: hlColor;
         }
-        /*======End rules for game preview [WOOD COLLECTION]======*/
+        /*======👉End rules for game preview [WOOD COLLECTION]======*/
 
         /*====== Evaluation Bar ======*/
-        /*🔹Chesskid🔹 evaluation bar*/
+        /*evaluation bar 🔹Chesskid🔹*/
         div [class="score-bar"] {
             width: 2rem!important;
         }
-        /*end Chesskid evaluation bar*/
+        /*end evaluation bar 🔹Chesskid🔹*/
+		
         if evalOpt!="disabled" {
             .evaluation-bar-white,
             .score-bar__fill[data-v-b0ff6725] {
@@ -1058,9 +1059,6 @@
 
 @-moz-document domain("chess.com") {
     /*Border*/
-
-    testColor="" + boardBGColor;
-    resultColor=slice(testColor,0,-6);
     
     innBorderSize=0.4rem;
     if innBorderSize > 0 {
@@ -1068,7 +1066,7 @@
     }else{inn=0}
 	
     @media (min-width: 960px){
-		if myBoard!="disabled" && enableBoardFrame{ 
+		if myBoard!="disabled" && enableBoardFrame{
             /*board*/
             div#board.board:not([style*="background-image: url"]),
             .board-layout-chessboard .board:not([style*="--theme"]),
@@ -1200,7 +1198,7 @@
 			/*bizarre solution, don't ask me why*/
             div#board.board:not([style*="background-image: url"]) > div{
                 display: none!important;
-                }
+            }
             div#board.board:not([style*="background-image: url"]){
                 --theme-board-style-image: url(svgBoard) 0 0 / 100% no-repeat,
               url(board3) bgPosX bgPosY / bgSize repeat;
@@ -1244,6 +1242,7 @@
               var(--theme-board-style-image) !important;
                 background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
             }
+
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
                 .coordinate-grey,
@@ -1292,8 +1291,6 @@
     @media (min-width: 960px){
         
         /*Main border rules*/
-        testColor="" + boardBGColor;
-        resultColor=slice(testColor,0,-6);
         innBorderSize=0.4rem;
         if innBorderSize > 0 {
             inn=innBorderSize/2;
@@ -1304,6 +1301,7 @@
             framePosX=bgPosX;
             framePosY=bgPosY;        
         }
+
 		if myBoard!="disabled" && enableBoardFrame{
 			/*board*/
 			.main-tab-game-component chess-board {
