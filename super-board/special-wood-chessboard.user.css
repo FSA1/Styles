@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.30
+@version        1.0.31
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -874,7 +874,7 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview [WOOD COLLECTION]======*/
+        /*======👉2023-07-05 new rules for game preview======*/
         :root{
             --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
           
@@ -887,7 +887,7 @@
             }
             --theme-board-style-highlight-color: hlColor;
         }
-        /*======👉End rules for game preview [WOOD COLLECTION]======*/
+        /*======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         /*evaluation bar 🔹Chesskid🔹*/
@@ -895,7 +895,7 @@
             width: 2rem!important;
         }
         /*end evaluation bar 🔹Chesskid🔹*/
-		
+
         if evalOpt!="disabled" {
             .evaluation-bar-white,
             .score-bar__fill[data-v-b0ff6725] {
@@ -1003,7 +1003,7 @@
         background-color: hlSqRed!important;
     }
     /*chessable fix*/
-    .setPromotion img, {
+    .setPromotion img {
         width: 80px!important;
         height: auto!important;
         display:inline-block;
@@ -1242,7 +1242,6 @@
               var(--theme-board-style-image) !important;
                 background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
             }
-
             /*outside coords settings*/
             if ajustBoardSize<0.92 && enableOutsideCoords{
                 .coordinate-grey,
