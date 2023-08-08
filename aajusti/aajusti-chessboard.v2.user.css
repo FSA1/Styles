@@ -838,7 +838,7 @@
         background-color: hlSqRed!important;
     }
     /*chessable fix*/
-    .setPromotion img, {
+    .setPromotion img {
         width: 80px!important;
         height: auto!important;
         display:inline-block;
