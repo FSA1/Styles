@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.22
+@version        2.0.23
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    smallJusti  "Logo Justi menor (madeira)" 0
@@ -31,7 +31,8 @@
 @var    range    ajustBoardSize  "Tam. do tabuleiro" [0.9, 0.82, 0.92, 0.01, ""]
 
 @var    select      setHighlight    "🟡Destaque de movimento" {
-            "Personalizado*": "op1",
+            "Tema do tabuleiro": "op1",
+            "Personalizado": "op2",
             "Padrão": "disabled",
         }
 @var    select      hlImgOpt    "🟡Destaque animado" {
@@ -258,7 +259,7 @@
 
 @var    text     myTheme    "Nome do Tema"   "'myTheme'"
 ==/UserStyle== */
-@-moz-document domain("chess.com"), domain("chesskid.com"), domain("chessable.com") {
+@-moz-document domain("chess.com") {
     /* Special settings */
 
     /*Fine tuning to board size*/
@@ -291,7 +292,7 @@
     }
     
 }/*Themes below*/
-@-moz-document domain("chess.com"), domain("chessable.com") {
+@-moz-document domain("chess.com") {
     /*Themes*/
     if myBoard=="aajusti-anim" || myBoard=="aajusti-static" || myBoard=="aajusti-anim-green" || myBoard=="aajusti-static-green" || myBoard=="light-wood" || myBoard=="dark-wood" {
         svgBoardBlend=normal;
@@ -306,8 +307,7 @@
         enableBoardShadowInset=0;
         enableBoardShadow=0;
         enableFrameShadowInset=0;
-        setHighlight=op1;
-        highlightOpacity=0.7;
+        //setHighlight=op1;
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
         outCoordFontWeight=400;
@@ -337,7 +337,6 @@
             dCoordCol=#b7d8f1;
             dEvalCol=#006ec2;
             frameShadow=0px 0px 1px 1px #008af5;
-            hlColor=#00d0ff;
             innerBorderOpt=#2d55e5;
             lCoordCol=#005bdb;
             lEvalCol=#b4d5ee;
@@ -354,7 +353,6 @@
             dCoordCol=#b7d8f1;
             dEvalCol=#006ec2;
             frameShadow=0px 0px 1px 1px #008fff;
-            hlColor=#00d0ff;
             innerBorderOpt=#2d55e5;
             lCoordCol=#005bdb;
             lEvalCol=#b4d5ee;
@@ -367,7 +365,11 @@
         cornerLogo2Col=centerLogoCol=rgba(65, 118, 178, .2);
         enableGlobalColor=0;
         frameColor=#0d1828;
-        hlSVGColor=#007bee;
+        if setHighlight=='op1'{
+            hlSVGColor=#007bee;
+            hlColor=#00d0ff;
+            highlightOpacity=0.7;
+        }
         innerBorderColor=#2d55e5;
         svgDarkSqColor=#1b7bc5;
         svgLightSqColor=#badcf6;
@@ -398,9 +400,11 @@
         frameColor=#1a3107;
         innerBorderOpt=#48eca1;
         innerBorderColor=#48eca1;
-        hlSVGColor=#4cc100;
-        hlColor=#00ff6e;
-        highlightOpacity=0.5;
+        if setHighlight=='op1'{
+            hlSVGColor=#4cc100;
+            hlColor=#00ff6e;
+            highlightOpacity=0.5;
+        }
         outCoordColorOpt=#dae3c8;
         outCoordCol=#ffffffb8;
         lCoordCol=#39a661;
@@ -441,8 +445,10 @@
         frameRadius=2px;
         frameColor=#432c0c;
         innerBorderColor=rgba(230,193,157,0.949);
-        hlColor=#ffae00;
-        highlightOpacity=0.4;
+        if setHighlight=='op1'{
+            hlColor=#ffae00;
+            highlightOpacity=0.4;
+        }
         hlImgOpt="op0";
         outCoordColorOpt=dCoordCol;
         outCoordCol=rgba(255,255,255,0.722);
@@ -518,6 +524,7 @@
 @-moz-document domain("chess.com"), domain("chesskid.com"), domain("chessable.com") {
 
     /*Board*/
+
    /*prevent user to get the board completely transparent with no visual references. It can be removed if you are an experienced user*/
     if svgLightSqOpacity<"0.2" && svgDarkSqOpacity<"0.2" && boardBGOpt=="transparent"{
         svgLightSqOpacity="0.2";
@@ -759,41 +766,39 @@
     }/*end board*/
         
     /*Highlight*/
+    /*Highlight Chessable*/
     [style*="rgba(76\, 167\, 79\, 0.3)"]{
         background:transparentify(hlColor,#a6a6a6, 0.35) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-w.black-3c85d:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b.black-3c85d:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-w:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-w.white-1e1d7:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
     .highlight-b.white-1e1d7:not(.legal-square-dot-mt1,.legal-square-capture-mt1){
-        background:transparentify(hlColor,#a2a2a2, highlightOpacity) url(hlImgOpt) 0 0 / 100% no-repeat !important;
+        background:transparentify(hlColor,#a2a2a2, highlightOpacity - 0.1) url(hlImgOpt) 0 0 / 100% no-repeat !important;
     }
+    /*End highlight Chessable*/
 
-
-    if setHighlight=="op1" {
+    /*hlImgOpt can be useful to set a background image as highlight, normaly a gif.*/
+    if setHighlight!="op0" {
         #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
         #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
         .move-square,
         .highlight:not({notThisColors}):not([class="stream highlight"]) {
             background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+            opacity: highlightOpacity!important;
         }
-    }
-    /*=== Highlight opacity===*/
-    .move-square,
-    .highlight:not({notThisColors}) {
-        opacity: highlightOpacity!important;
     }/*====== End highlight ======*/
             
     /*====== change arrows colors ======*/
@@ -832,6 +837,28 @@
     [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
         background-color: hlSqRed!important;
     }
+    /*chessable fix*/
+    .setPromotion img, {
+        width: 80px!important;
+        height: auto!important;
+        display:inline-block;
+    }
+    div[class^="spare-pieces"]>div{
+        display:inline-block!important;
+    }
+    #promoteQueen{
+        content: url("/img/chesspieces/wikipedia/wQ.png")!important;
+    }
+    #promoteKnight{
+        content: url("/img/chesspieces/wikipedia/wN.png")!important;   
+    }
+    #promoteBishop{
+        content: url("/img/chesspieces/wikipedia/wB.png")!important;
+    }
+    #promoteRook{
+        content: url("/img/chesspieces/wikipedia/wR.png")!important;
+    }
+    /*End chessable fix*/
 
 }/*------end section------*/
 @-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
@@ -876,7 +903,7 @@
     }else{inn=0}
 	
     @media (min-width: 960px){
-        if enableBoardFrame{ 
+		if myBoard!="disabled" && enableBoardFrame{
             /*board*/
             div#board.board:not([style*="background-image: url"]),
             .board-layout-chessboard .board:not([style*="--theme"]),
@@ -1116,7 +1143,7 @@
             framePosY=bgPosY;        
         }
 
-		if enableBoardFrame{
+		if myBoard!="disabled" && enableBoardFrame{
 			/*board*/
 			.main-tab-game-component chess-board {
 				transform-style: preserve-3d;
