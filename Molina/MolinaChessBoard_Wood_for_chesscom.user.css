@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Chess board for MI Roberto Molina`
-@version        20200831.22.29
+@version        20200831.22.30
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -36,7 +36,7 @@ chess-board[class^="board"],
 chess-board[class^="board flipped"],
 chess-board[id^="board-blank"],
 chess-board[id^="board-vs-personalities"],
-div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png)!important;
+div[id*="chess_com_emailboard_"] {background-image: url(https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.jpg)!important;
 }
 /*Coordinates*/
 	div.number.coords-light, div.letter.coords-light {
