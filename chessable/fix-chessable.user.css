@@ -3,8 +3,9 @@
 @author         ChessSkins
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
-@version        1.0.1
+@version        1.0.2
 @description    Fix missing pieces in promotion and piece alignment
+@license        CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.chessable.com/mt1/chess-board-setup-editor/"), url-prefix("https://www.chessable.com/mt1/explore/fen") {
