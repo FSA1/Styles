@@ -2,91 +2,138 @@
 @name           Chess.com Chess Set Milharal
 @author         agiota_do_artenio
 @namespace      USO Archive
+@homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Molina invadindo o milharal! Conjunto de peças e tabuleiros.`
-@version        1.0.4
+@version        1.0.16
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
-            "Verde vibrante": "op1",
-            "Verde suave": "op2",
-            "Marrom claro": "op3",
-            "Marrom escuro*": "op4",
-            "Seu tabuleiro": "op5",	
-            "Seu tabuleiro 2": "op6",	
-            "Seu tabuleiro 3": "op7",			
+            "Cartoon verde vibrante": "op1",
+            "Cartoon verde suave": "op2",
+            "Cartoon Marrom claro": "op3",
+            "Cartoon Marrom escuro": "op4",
+            "Molina Madeira": "op5",
+            "Molina marrom": "op6",
+            "Molina verde": "op7",
+            "Molina azul": "op8",
+            "O corvo madeira*": "the_crow_wood",
+            "O corvo amarelo": "the_crow_yellow",
+            "O corvo vermelho suave": "the_crow_brick",
+            "O corvo azul": "the_crow_blue",
+            "O corvo azul claro": "the_crow_lightblue",
+            "O corvo rosa": "the_crow_rose",
+            "O corvo cinza": "the_crow_gray",
+            "Seu tabuleiro": "opUser",
             "Desativado": "op0",
         }
 @var    select      myPiecesB    "Peças pretas" {
             "Cartoon": "setCartoon",
             "Figuras 1 P&B*": "setFigures1",
+            "Figuras 1 P&B alt1": "setFigures1b",
+            "Figuras 1 P&B alt2": "setFigures1c",
+            "Figuras 1 P&B alt3": "setFigures1d",
             "Figuras 2 P&B": "setFigures2",
-            "Figuras 2 Preto": "setFigures2Preto",
+            "Figuras 2 P&B alt": "setFigures2b",
+            "Figuras 2 Preto": "setFigures2Black",
             "Figuras 2 Azul": "setFigures2Blue",
             "Figuras 2 Amarelo": "setFigures2Yellow",
-            "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
 @var    select      myPiecesW    "Peças brancas" {
             "Cartoon": "setCartoon",
             "Figuras 1 P&B*": "setFigures1",
+            "Figuras 1 P&B alt1": "setFigures1b",
+            "Figuras 1 P&B alt2": "setFigures1c",
+            "Figuras 1 P&B alt3": "setFigures1d",
             "Figuras 2 P&B": "setFigures2",
-            "Figuras 2 Branco": "setFigures2Branco",
+            "Figuras 2 P&B alt": "setFigures2b",
+            "Figuras 2 Branco": "setFigures2White",
             "Figuras 2 Laranja": "setFigures2Orange",
             "Figuras 2 Amarelo": "setFigures2Yellow",
-            "Suas imagens": "userPieces",
             "Desativado": "op0"
         }
-@var    select      myHighlight    "Opçoes de Destaque" {
-            "Padrão*": "op1",
-            "Personalizado": "op2"
+@var    checkbox    enableBPawns "Peões pretos temáticos (P&B)" 1
+@var    checkbox    enableWPawns "Peões brancos temáticos (P&B)" 1
+@var    checkbox    enableShadow    "Habilitar sombras" 0
+@var    checkbox    enableHighlight    "Habilitar Destaque" 1
+@var    checkbox    forcedHL    "Forçar destaque em todo o site (não recomendao)" 0
+@var    checkbox      myHighlight    "Mudar cor de Destaque (ao vivo)" 0
+@var    color    moveSqCol  "cor do movim.  (ao vivo)"   #ffb833eb
+@var    color    selSqCol  "cor da sel. (ao vivo)"   #ffea00ab
+@var    select      coloredBar    "Barra de Avaliação" {
+            "Tema do tabuleiro*": "op1",
+            "Personalizado": "op2",	
+            "Padrão": "op0",
         }
-@var color    moveSqCol  "Destaque do movimento"   #ff8b33a8
-@var color    selSqCol  "Destaque da seleção"   #ffea00ab
-@var checkbox enableShadow "Habilitar sombras" 0
-@var    range    brightnessB  "Brilho (pretas)" [100, 0, 300, 5, "%"]
-@var    range    brightnessW  "Brilho (brancas)" [100, 0, 300, 5, "%"]
-@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
-@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
-@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
-@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
-@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
-@var    range    opacityW  "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var color    lEvalCol  "Avaliação das Brancas"   #E0E0E0
+@var color    dEvalCol  "Avaliação das Pretas"   #403D39
+@var    checkbox    enableCustomCoor "Habilitar coord. personalizadas" 0
+@var color    lCoordCol  "Coordenadas claras"   #f7bc44
+@var color    dCoordCol  "Coordenadas escuras"   #f7bc44
+@var    select  enableBlendB    "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
+@var    range    brightnessB  "Brilho (pretas)" [100, 5, 300, 5, "%"]
 @var    range    contrastB  "Contraste (pretas)" [100, 5, 300, 5, "%"]
+@var    range    saturateB  "Saturação (pretas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationB  "Tonalidade (pretas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityB  "Opacidade (pretas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableInvertB   "Inverter cores (pretas)" 0
+@var    range    brightnessW    "Brilho (brancas)" [100, 5, 300, 5, "%"]
 @var    range    contrastW  "Contraste (brancas)" [100, 5, 300, 5, "%"]
-@var checkbox enableInvertB "Inverter cores (pretas)" 0
-@var checkbox enableInvertW "Inverter cores (brancas)" 0
-@var select enableBlendB "Mesclagem de cores pçs pretas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
-@var select enableBlendW "Mesclagem de cores pçs brancas" ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "luminosity"]
-@var text     wkImage    "Rei branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk-inv.png'"
-@var text     wqImage    "Rainha branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq-inv.png'"
-@var text     wbImage    "Bispo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb-inv.png'"
-@var text     wnImage    "Cavalo branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn-inv.png'"
-@var text     wrImage    "Torre branca"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2-inv.png'"
-@var text     wpImage    "Peão branco"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png'"
-@var text     bkImage    "Rei preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk.png'"
-@var text     bqImage    "Rainha preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq.png'"
-@var text     bbImage    "Bispo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb.png'"
-@var text     bnImage    "Cavalo preto"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png'"
-@var text     brImage    "Torre preta"   "'https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png'"
-@var text     bpImage    "Peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
-@var text     userBoard1    "Seu Tabuleiro 1"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Wood.png'"
-@var text     userBoard2    "Seu Tabuleiro 2"   "'https://github.com/FSA1/Styles/raw/main/Molina/RMcb_Blue.png'"
-@var text     userBoard3    "Seu Tabuleiro 3"   "'https://i.imgur.com/sUD4GYw.png'"
+@var    range    saturateW  "Saturação (brancas)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationW  "Tonalidade (brancas)" [0, 0, 355, 5, "deg"]
+@var    range    opacityW   "Opacidade (brancas)" [100, 50, 100, 5, "%"]
+@var    checkbox    enableInvertW   "Inverter cores (brancas)" 0
+@var    checkbox    enableBoardSettings "Avançado: Config. do tabuleiro" 0
+@var    range    brightnessBoard  "Brilho (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
+@var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
+@var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
+@var    checkbox    enableByPieceSwapB "Suas imagens para as pretas" 0
+@var    checkbox    enableByPieceSwapW "Suas imagens para as brancas" 0
+@var    text     wkImage    "Seu rei branco"   "'https://static.thenounproject.com/png/2631826-200.png'"
+@var    checkbox    enableCustomWK "Habilitar rei branco" 0
+@var    checkbox    enableInvertWK  "Inverter cor do rei branco" 0
+@var    text     wqImage    "Sua rainha branca"   "'https://static.thenounproject.com/png/2631871-200.png'"
+@var    checkbox    enableCustomWQ "Habilitar rainha branca" 0
+@var    checkbox    enableInvertWQ "Inverter cor do rainha branca" 0
+@var    text     wbImage    "Seu bispo branco" "'https://static.thenounproject.com/png/3460786-200.png'"
+@var    checkbox    enableCustomWB "Habilitar bispo branco" 0
+@var    checkbox    enableInvertWB "Inverter cor do bispo branco" 0
+@var    text     wnImage    "Seu cavalo branco"   "'https://static.thenounproject.com/png/3277775-200.png'"
+@var    checkbox    enableCustomWN "Habilitar cavalo branco" 0
+@var    checkbox    enableInvertWN "Inverter cor do cavalo branco" 0
+@var    text     wrImage    "Sua torre branca"   "'https://static.thenounproject.com/png/1911403-200.png'"
+@var    checkbox    enableCustomWR "Habilitar torre branca" 0
+@var    checkbox    enableInvertWR "Inverter cor do torre branca" 0
+@var    text     wpImage    "Seu peão branco"   "'https://static.thenounproject.com/png/97864-200.png'"
+@var    checkbox    enableCustomWP "Habilitar peão branco" 0
+@var    checkbox    enableInvertWP "Inverter cor do peão branco" 0
+@var    text     bkImage    "Seu rei preto"   "'https://static.thenounproject.com/png/2643357-200.png'"
+@var    checkbox    enableCustomBK "Habilitar rei preto" 0
+@var    checkbox    enableInvertBK "Inverter cor do rei preto" 0
+@var    text     bqImage    "Sua rainha preta"   "'https://static.thenounproject.com/png/2643393-200.png'"
+@var    checkbox    enableCustomBQ "Habilitar rainha preta" 0
+@var    checkbox    enableInvertBQ "Inverter cor da rainha preta" 0
+@var    text     bbImage    "Seu bispo preto"   "'https://static.thenounproject.com/png/3460698-200.png'"
+@var    checkbox    enableCustomBB "Habilitar bisbo preto" 0
+@var    checkbox    enableInvertBB "Inverter cor do bispo preto" 0
+@var    text     bnImage    "Seu cavalo preto"   "'https://static.thenounproject.com/png/200301-200.png'"
+@var    checkbox    enableCustomBN "Habilitar cavalo preto" 0
+@var    checkbox    enableInvertBN "Inverter cor do cavalo preto" 0
+@var    text     brImage    "Sua torre preta"   "'https://static.thenounproject.com/png/3046793-200.png'"
+@var    checkbox    enableCustomBR "Habilitar torre preta" 0
+@var    checkbox    enableInvertBR "Inverter cor da torre preta" 0
+@var    text     bpImage    "Seu peão preto"   "'https://cdn0.iconfinder.com/data/icons/farming-5/500/419-512.png'"
+@var    checkbox    enableCustomBP "Habilitar peão preto" 0
+@var    checkbox    enableInvertBP "Inverter cor do peão preto" 0
+@var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/jO1jPHN.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     /*------Chessboard------*/
+	.board-brown .cg-wrap,
 	#board-single-sibling,
-	.board-layout-chessboard .board,
-	.fade-in-overlay/*chesskids*/
-	,
-	#boarddefault_boardarea/*chesskids*/
-	,
-	#divChessBoard_boardarea/*chesskids*/
-	,
-	#vsComputerDiv_boardarea/*chesskids*/
-	,
-	div[id^="board-"][class*="chess-board__board"]/*chesskids*/
-	,
+	.board-layout-chessboard .board:not([style*="--theme"]),
 	div[class^="board v-board disabled rounded"],
 	div[class^="daily-puzzle-board"],
 	div[class^="board chessboard-component"],
@@ -103,9 +150,7 @@
 	div[id^="divBoard_boardarea"],
 	div[id^="chess_com_tactics_board"],
 	div[id^="chessboard_"],
-	div[id*="chessboard_"],
 	div[id^="chess_com_chessmentorboard_"],
-	div[id*="chess_com_chessmentorboard_"],
 	div[id*="chess_com_chessmentor_board_1_boardarea"],
 	div[id^="chess_com_emailboard_"],
 	div[id^="board-blank"],
@@ -114,6 +159,9 @@
 	chess-board[id^="board-blank"],
 	chess-board[id^="board-vs-personalities"],
 	div[id*="chess_com_emailboard_"] {
+        if enableBoardSettings {
+            filter: hue-rotate(hueRotationBoard) brightness(brightnessBoard) saturate(saturateBoard) contrast(contrastBoard);
+        }
         if myBoard=="op1" {
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board.png) 0% 0% / 100% 100% no-repeat !important;
         }
@@ -127,29 +175,56 @@
             background: url(https://github.com/FSA1/Styles/raw/main/Molina/board4.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op5" {
-            background: url(userBoard1) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/MolasWood2.jpg) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op6" {
-            background: url(userBoard2) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_brown.png) 0% 0% / 100% 100% no-repeat !important;
         }
         if myBoard=="op7" {
-            background: url(userBoard3) 0% 0% / 100% 100% no-repeat !important;
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_green.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="op8" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/Molas_blue.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_wood" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_wood.jpg) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_yellow" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_true_yellow.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_blue" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_true_blue.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_brick" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_true_brick.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_rose" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_true_rose.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_lightblue" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_true_lightblue.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="the_crow_gray" {
+            background: url(https://github.com/FSA1/Styles/raw/main/Molina/the_crow_gray.png) 0% 0% / 100% 100% no-repeat !important;
+        }
+        if myBoard=="opUser" {
+            background: url(userBoard) 0% 0% / 100% 100% no-repeat !important;
         }
         /*------Coordinates------*/
         if myBoard=="op1" || myBoard=="op2" {
             div.number.coords-light,
             div.letter.coords-light {
-                color: #447e1b!important;
+                color: #4f9721!important;
             }
             div.number.coords-dark,
             div.letter.coords-dark {
-                color: #4e6c39 !important;
+                color: #99d53d !important;
             }
             text.coordinate-light {
-                fill: #447e1b!important;
+                fill: #4f9721!important;
             }
             text.coordinate-dark {
-                fill: #4e6c39 !important;
+                fill: #99d53d !important;
             }
         }
         if myBoard=="op3" || myBoard=="op4" {
@@ -168,40 +243,392 @@
                 fill: #e2ba80 !important;
             }
         }
+        if myBoard=="op5" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #845b2c!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #d9c1a0 !important;
+            }
+            text.coordinate-light {
+                fill: #845b2c!important;
+            }
+            text.coordinate-dark {
+                fill: #d9c1a0 !important;
+            }
+        }
+        if myBoard=="op6" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #af5e2c!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e3ceb9 !important;
+            }
+            text.coordinate-light {
+                fill: #af5e2c!important;
+            }
+            text.coordinate-dark {
+                fill: #e3ceb9 !important;
+            }
+        }
+        if myBoard=="op7" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #75b900!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #d7dfca !important;
+            }
+            text.coordinate-light {
+                fill: #75b900!important;
+            }
+            text.coordinate-dark {
+                fill: #d7dfca !important;
+            }
+        }
+        if myBoard=="op8" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #3e7fc6!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #adcbda !important;
+            }
+            text.coordinate-light {
+                fill: #3e7fc6!important;
+            }
+            text.coordinate-dark {
+                fill: #adcbda !important;
+            }
+        }
+        if myBoard=="the_crow_wood" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #7d5737 !important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #f3d6a3 !important;
+            }
+            text.coordinate-light {
+                fill: #7d5737 !important;
+            }
+
+            text.coordinate-dark {
+                fill: #f3d6a3 !important;
+            }
+        }
+        if myBoard=="the_crow_blue" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #567f95!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #d8dbd3 !important;
+            }
+            text.coordinate-light {
+                fill: #567f95!important;
+            }
+            text.coordinate-dark {
+                fill: #d8dbd3 !important;
+            }
+        }
+        if myBoard=="the_crow_lightblue" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #479ABD!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #AEC4C7 !important;
+            }
+            text.coordinate-light {
+                fill: #479ABD!important;
+            }
+            text.coordinate-dark {
+                fill: #AEC4C7 !important;
+            }
+        }
+        if myBoard=="the_crow_brick" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #af5e2c!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e4c8c1 !important;
+            }
+            text.coordinate-light {
+                fill: #af5e2c!important;
+            }
+            text.coordinate-dark {
+                fill: #D8C5C0 !important;
+            }
+        }
+        if myBoard=="the_crow_rose" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #C35268!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #DEC8CC !important;
+            }
+            text.coordinate-light {
+                fill: #C35268!important;
+            }
+            text.coordinate-dark {
+                fill: #DEC8CC !important;
+            }
+        }
+        if myBoard=="the_crow_gray" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #5b5b5b!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #bababa !important;
+            }
+            text.coordinate-light {
+                fill: #5b5b5b!important;
+            }
+            text.coordinate-dark {
+                fill: #bababa !important;
+            }
+        }
+        if myBoard=="the_crow_yellow" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: #c99013d4!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: #e0d7ac !important;
+            }
+            text.coordinate-light {
+                fill: #c99013d4!important;
+            }
+            text.coordinate-dark {
+                fill: #e0d7ac !important;
+            }
+        }
+        if myBoard=="opUser" {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: rgb(194, 107, 56) !important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: rgb(239, 204, 161) !important;
+            }
+            text.coordinate-light {
+                fill: rgb(194, 107, 56)!important;
+            }
+
+            text.coordinate-dark {
+                fill: rgb(239, 204, 161) !important;
+            }
+        }
+        /*User choosen coordenates colors*/
+        if enableCustomCoor {
+            div.number.coords-light,
+            div.letter.coords-light {
+                color: lCoordCol!important;
+            }
+            div.number.coords-dark,
+            div.letter.coords-dark {
+                color: dCoordCol !important;
+            }
+            text.coordinate-light {
+                fill: lCoordCol!important;
+            }
+            text.coordinate-dark {
+                fill: dCoordCol !important;
+            }
+        }
+
+
         /*------Highlight------*/
-        if myHighlight=="op1" {
-            if myBoard=="op1" || myBoard=="op2" {
+        if enableHighlight {
+            if myHighlight==0 {
                 .move-square {
-                    background-color: #d0ff01bd!important;
+                    background-color: #f2ff0091!important;
                     opacity: 0.9!important;
                 }
                 .selection-square {
-                    background-color: #f2ff00de !important;
+                    background-color: #d0ff01a1 !important;
                     opacity: 0.9!important;
+                }
+                if myBoard=="op1" || myBoard=="op2" {
+                    .move-square {
+                        background-color: #d0ff01bd!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #f2ff00de !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="op3" || myBoard=="op4" {
+                    .move-square {
+                        background-color: #ffd500bf!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ffa200d4 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+
+                if myBoard=="op5" {
+                    .move-square {
+                        background-color: #f7c415bd!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #faa302d9 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+
+                if myBoard=="op6" {
+                    .move-square {
+                        background-color: rgba(252, 128, 56, .9)!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ff9d00bf !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="op7" {
+                    .move-square {
+                        background-color: #ebff33c7!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #84ff00c9 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="op8" {
+                    .move-square {
+                        background-color: #00ddffed!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #00e1ffcc !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_wood" {
+                    .move-square {
+                        background-color: #ffc124b8!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ec9026e0 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_blue" {
+                    .move-square {
+                        background-color: #00ddffed!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #592ef7c9 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_lightblue" {
+                    .move-square {
+                        background-color: #00bbffdb!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #2356ffb8 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_rose" {
+                    .move-square {
+                        background-color: #fbef119e!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: rgba(255, 41, 106, .89) !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_brick" {
+                    .move-square {
+                        background-color: #ffb300bf!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ff7200b5 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="the_crow_gray" {
+                    .move-square {
+                        background-color: #4a809bbf!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #3b4e58 !important;
+                        opacity: 0.9!important;
+                    }
+                }
+                if myBoard=="opUser" {
+                    .move-square {
+                        background-color: #ffd500c2!important;
+                        opacity: 0.9!important;
+                    }
+                    .selection-square {
+                        background-color: #ffea00cc !important;
+                        opacity: 0.9!important;
+                    }
                 }
             }
-            if myBoard=="op3" || myBoard=="op4" {
+            if myHighlight {
                 .move-square {
-                    background-color: #ffd500c2!important;
+                    background-color: moveSqCol!important;
                     opacity: 0.9!important;
                 }
                 .selection-square {
-                    background-color: #ffea00cc !important;
+                    background-color: selSqCol !important;
                     opacity: 0.9!important;
                 }
             }
         }
-        if myHighlight=="op2" {
-            .move-square {
+        /*Forced Highlight*/
+        if forcedHL {
+            .highlight {
                 background-color: moveSqCol!important;
                 opacity: 0.9!important;
             }
-            .selection-square {
-                background-color: selSqCol !important;
-                opacity: 0.9!important;
-            }
+        }
+        /*Highlight Correction*/
+        .v-board .square {
+            bottom: 0;
+            height: 12.5%!important;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            width: 12.51%!important;
         }
     }
+    /*-----------------Pieces--------------------*/
     /*------white pieces 'Cartoon'------*/
     if myPiecesW=="setCartoon" {
         .piece.wk,
@@ -269,7 +696,7 @@
         }
     }
     /*------white pieces 'Figuras 1 B&P'------*/
-    if myPiecesW=="setFigures1" {
+    if myPiecesW=="setFigures1" || myPiecesW=="setFigures1b" || myPiecesW=="setFigures1c" || myPiecesW=="setFigures1d" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -293,25 +720,38 @@
         .piece.wr,
         .promotion-piece.wr,
         div [style*="wr.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png")!important;
+            if myPiecesW=="setFigures1" || myPiecesW=="setFigures1c" {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-wr.png")!important;
+            }
+            if myPiecesW=="setFigures1b" || myPiecesW=="setFigures1d" {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wr.png")!important;
+            }
         }
         .piece.wp,
         .promotion-piece.wp,
         div [style*="wp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/expert/wp_cl.svg")!important;
+
+            if enableWPawns {
+                if myPiecesW=="setFigures1c" || myPiecesW=="setFigures1d" {
+                    background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-wp.png")!important;
+                }
+                else {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
+                }
+            }
         }
     }
     /*------black pieces 'Figuras 1 B&P'------*/
-    if myPiecesB=="setFigures1" {
+    if myPiecesB=="setFigures1" || myPiecesB=="setFigures1b" || myPiecesB=="setFigures1c" || myPiecesB=="setFigures1d" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bk.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bk-out1.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
         div [style*="bq.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bq.png")!important;
+            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bq-out1.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
@@ -326,16 +766,28 @@
         .piece.br,
         .promotion-piece.br,
         div [style*="br.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br-inv.png")!important;
+            if myPiecesB=="setFigures1" || myPiecesB=="setFigures1c" {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-br.png")!important;
+            }
+            if myPiecesB=="setFigures1b" || myPiecesB=="setFigures1d" {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br-inv.png")!important;
+            }
         }
         .piece.bp,
         .promotion-piece.bp,
         div [style*="bp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/expert/bp_cl.svg")!important;
+            if enableBPawns {
+                if myPiecesB=="setFigures1c" || myPiecesB=="setFigures1d" {
+                    background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-bp.png")!important;
+                }
+                else {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
+                }
+            }
         }
     }
     /*------black pieces 'Figuras 2 B&P'------*/
-    if myPiecesB=="setFigures2" {
+    if myPiecesB=="setFigures2" || myPiecesB=="setFigures2b" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -361,14 +813,21 @@
         div [style*="br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/br.png")!important;
         }
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
+        if enableBPawns {
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                if myPiecesB=="setFigures2b" {
+                    background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-bp.png")!important;
+                }
+                else {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
+                }
+            }
         }
     }
     /*------white pieces 'Figuras 2 B&P'------*/
-    if myPiecesW=="setFigures2" {
+    if myPiecesW=="setFigures2" || myPiecesW=="setFigures2b" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -394,14 +853,21 @@
         div [style*="wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wr.png")!important;
         }
-        .piece.wp,
-        .promotion-piece.wp,
-        div [style*="wp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
+        if enableWPawns {
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                if myPiecesW=="setFigures2b" {
+                    background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Molina/milharal/small-wp.png")!important;
+                }
+                else {
+                    background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
+                }
+            }
         }
     }
     /*------black pieces 'Figuras 2 Preto'------*/
-    if myPiecesB=="setFigures2Preto" {
+    if myPiecesB=="setFigures2Black" {
         .piece.bk,
         .promotion-piece.bk,
         div [style*="bk.png"] {
@@ -427,14 +893,16 @@
         div [style*="br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png")!important;
         }
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
+        if enableBPawns {
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
+            }
         }
     }
     /*------white pieces 'Figuras 2 Branco'------*/
-    if myPiecesW=="setFigures2Branco" {
+    if myPiecesW=="setFigures2White" {
         .piece.wk,
         .promotion-piece.wk,
         div [style*="wk.png"] {
@@ -460,10 +928,12 @@
         div [style*="wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2-inv.png")!important;
         }
-        .piece.wp,
-        .promotion-piece.wp,
-        div [style*="wp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
+        if enableWPawns {
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
+            }
         }
     }
     /*------black pieces 'Figuras 2 Azul'------*/
@@ -493,10 +963,12 @@
         div [style*="br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/br.png")!important;
         }
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"] {
-            background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
+        if enableBPawns {
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
+            }
         }
     }
     /*------white pieces 'Figuras 2 Laranja'------*/
@@ -598,72 +1070,97 @@
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
-    /*------black pieces 'Suas imagens'------*/
-    if myPiecesB=="userPieces" {
-        .piece.bk,
-        .promotion-piece.bk,
-        div [style*="bk.png"] {
-            background-image: url(bkImage)!important;
+    /*------Black pieces 'Suas imagens'------*/
+    if enableByPieceSwapB {
+        if enableCustomBK {
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                background-image: url(bkImage)!important;
+            }
         }
-        .piece.bq,
-        .promotion-piece.bq,
-        div [style*="bq.png"] {
-            background-image: url(bqImage)!important;
+        if enableCustomBQ {
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                background-image: url(bqImage)!important;
+            }
         }
-        .piece.bb,
-        .promotion-piece.bb,
-        div [style*="bb.png"] {
-            background-image: url(bbImage)!important;
+        if enableCustomBB {
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                background-image: url(bbImage)!important;
+            }
         }
-        .piece.bn,
-        .promotion-piece.bn,
-        div [style*="bn.png"] {
-            background-image: url(bnImage)!important;
+        if enableCustomBN {
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                background-image: url(bnImage)!important;
+            }
         }
-        .piece.br,
-        .promotion-piece.br,
-        div [style*="br.png"] {
-            background-image: url(brImage)!important;
+        if enableCustomBR {
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                background-image: url(brImage)!important;
+            }
         }
-        .piece.bp,
-        .promotion-piece.bp,
-        div [style*="bp.png"] {
-            background-image: url(bpImage)!important;
-        }
-    }
-    /*------white pieces 'Suas imagens'------*/
-    if myPiecesW=="userPieces" {
-        .piece.wk,
-        .promotion-piece.wk,
-        div [style*="wk.png"] {
-            background-image: url(wkImage)!important;
-        }
-        .piece.wq,
-        .promotion-piece.wq,
-        div [style*="wq.png"] {
-            background-image: url(wqImage)!important;
-        }
-        .piece.wb,
-        .promotion-piece.wb,
-        div [style*="wb.png"] {
-            background-image: url(wbImage)!important;        }
-        .piece.wn,
-        .promotion-piece.wn,
-        div [style*="wn.png"] {
-            background-image: url(wnImage)!important;
-        }
-        .piece.wr,
-        .promotion-piece.wr,
-        div [style*="wr.png"] {
-            background-image: url(wrImage)!important;
-        }
-        .piece.wp,
-        .promotion-piece.wp,
-        div [style*="wp.png"] {
-            background-image: url(wpImage)!important;
+        if enableCustomBP {
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                background-image: url(bpImage)!important;
+            }
         }
     }
-    /*------Drop-shadow for the pieces------*/
+    /*------White pieces 'Suas imagens'------*/
+    if enableByPieceSwapW {
+        if enableCustomWK {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                background-image: url(wkImage)!important;
+            }
+        }
+        if enableCustomWQ {
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                background-image: url(wqImage)!important;
+            }
+        }
+        if enableCustomWB {
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                background-image: url(wbImage)!important;
+            }
+        }
+        if enableCustomWN {
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                background-image: url(wnImage)!important;
+            }
+        }
+        if enableCustomWR {
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                background-image: url(wrImage)!important;
+            }
+        }
+        if enableCustomWP {
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                background-image: url(wpImage)!important;
+            }
+        }
+    }
+    /*------ Drop-shadow for the pieces------*/
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
@@ -706,9 +1203,8 @@
         }
     }
     /*------Invert colors------*/
-    if myPiecesB!="setCartoon" || myPiecesW!="setCartoon" {
-
-        /*------Invert black pieces color------*/
+    if myPiecesB!="setCartoon" {
+        /*------Invert all black pieces color------*/
         if enableInvertB {
             .piece.bk,
             .promotion-piece.bk,
@@ -732,7 +1228,7 @@
                 -webkit-filter: invert(1)!important;
             }
         }
-        /*------Invert white pieces color------*/
+        /*------Invert all white pieces color------*/
         if enableInvertW {
             .piece.wk,
             .promotion-piece.wk,
@@ -802,6 +1298,269 @@
             filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
             -webkit-filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
             opacity: opacityW!important;
+        }
+    }
+    /*single piece invert*/
+    if enableByPieceSwapW {
+        /*------Invert custom white king color------*/
+        if enableInvertWK {
+            .piece.wk,
+            .promotion-piece.wk,
+            div [style*="wk.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom white queen color------*/
+        if enableInvertWQ {
+            .piece.wq,
+            .promotion-piece.wq,
+            div [style*="wq.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom white bishop color------*/
+        if enableInvertWB {
+            .piece.wb,
+            .promotion-piece.wb,
+            div [style*="wb.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom white knight color------*/
+        if enableInvertWN {
+            .piece.wn,
+            .promotion-piece.wn,
+            div [style*="wn.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom white rook color------*/
+        if enableInvertWR {
+            .piece.wr,
+            .promotion-piece.wr,
+            div [style*="wr.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom white pawn color------*/
+        if enableInvertWP {
+            .piece.wp,
+            .promotion-piece.wp,
+            div [style*="wp.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+    }
+    if enableByPieceSwapB {
+        /*------Invert custom black king color------*/
+        if enableInvertBK {
+            .piece.bk,
+            .promotion-piece.bk,
+            div [style*="bk.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom black queen color------*/
+        if enableInvertBQ {
+            .piece.bq,
+            .promotion-piece.bq,
+            div [style*="bq.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom black bishop color------*/
+        if enableInvertBB {
+            .piece.bb,
+            .promotion-piece.bb,
+            div [style*="bb.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom black knight color------*/
+        if enableInvertBN {
+            .piece.bn,
+            .promotion-piece.bn,
+            div [style*="bn.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom black rook color------*/
+        if enableInvertBR {
+            .piece.br,
+            .promotion-piece.br,
+            div [style*="br.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+        /*------Invert custom black pawn color------*/
+        if enableInvertBP {
+            .piece.bp,
+            .promotion-piece.bp,
+            div [style*="bp.png"] {
+                filter: invert(1)!important;
+                -webkit-filter: invert(1)!important;
+            }
+        }
+    }
+
+
+    /*Evaluation Bar*/
+    if coloredBar=="op1" {
+        if myBoard=="op1" || myBoard=="op2" {
+            .evaluation-bar-white {
+                background-color: #90C63D !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #498b1e !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.7;
+            }
+        }
+        if myBoard=="op3" || myBoard=="op4" {
+            .evaluation-bar-white {
+                background-color: #C6A161 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #AB7B44 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.8;
+            }
+        }
+        if myBoard=="op5" {
+            .evaluation-bar-white {
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/MolasWood2Wbar.png)!important;
+                background-color: #d3b07b !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/MolasWood2Bbar.png);
+                background-color: #7D5B3D !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_gray" {
+            .evaluation-bar-white {
+                background-color: #BBC9CC !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #6A7878 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_rose" {
+            .evaluation-bar-white {
+                background-color: #DEC8CC !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #C35268 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_lightblue" {
+            .evaluation-bar-white {
+                background-color: #AEC4C7 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #479ABD !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_blue" {
+            .evaluation-bar-white {
+                background-color: #B6C3D1 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #2F64A8 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_brick" {
+            .evaluation-bar-white {
+                background-color: #D8C5C0 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #C66F59 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_yellow" {
+            .evaluation-bar-white {
+                background-color: #CAC6AB !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background-color: #CCA136 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+        if myBoard=="the_crow_wood" {
+            .evaluation-bar-white {
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/light-wood-bar.png)!important;
+                background-color: #E3BF88 !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-black {
+                background: url(https://github.com/FSA1/Styles/raw/main/Molina/milharal/dark-wood-bar.png);
+                background-color: #7D5B3D !important;
+                filter: hue-rotate(hueRotationBoard)!important;
+            }
+            .evaluation-bar-bar {
+                opacity: 0.9;
+            }
+        }
+    }
+    if coloredBar=="op2" {
+        .evaluation-bar-white {
+            background-color: lEvalCol !important;
+        }
+        .evaluation-bar-black {
+            background-color: dEvalCol !important;
+        }
+        .evaluation-bar-bar {
+            opacity: 0.9;
         }
     }
     /*------end section------*/
