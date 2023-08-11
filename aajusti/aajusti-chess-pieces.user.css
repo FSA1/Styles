@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Multicolor modified icySea pieces for chesskid.com and chess.com.`
-@version        1.0.9
+@version        1.0.10
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myPieces    "Peças♟️"{
@@ -82,159 +82,170 @@ domain("chesskid.com"), domain("chessable.com") {
                 bN="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='288' height='288' version='1.1' viewBox='0 0 288 288' xmlns='http://www.w3.org/2000/svg'%3e%3cg transform='matrix(.90765 0 0 .98289 8.872 4.3598)'%3e%3cpath d='m145.67 31c-11.751 0.05405-23.936 1.0496-33.581 3.0078-15.373 3.1211-43.326 4.0117-55.016 1.7949-1.9795-0.37539-3.8331-0.71702-5.2394-0.9668-0.70315-0.12489-1.2936-0.2265-1.7478-0.30078-0.22709-0.03714-0.4163-0.06661-0.59279-0.0918-0.1765-0.02518-0.0025-0.07031-0.84539-0.07031-1.4717 0-2.5314 0.73745-3.0597 1.252-0.52835 0.5145-0.74413 0.91458-0.91262 1.2422-0.33697 0.6552-0.43848 1.0965-0.53779 1.5488-0.19862 0.90469-0.26246 1.7944-0.2139 2.8105 0.18269 3.8223 1.9162 7.2804 4.1394 11.471 2.1729 4.0955 4.8405 8.2374 7.8652 11.238l2.7236 3.1367-5.5633 10.801c-3.7593 6.2371-6.1707 10.605-7.3213 15.213-1.1656 4.6683-0.82038 9.2014 0.2913 14.963l0.01022 0.0469 0.01022 0.0488c1.026 4.7301 1.1852 6.5465 0.0062 12.238-1.1792 5.6917-3.8775 14.871-8.5639 32.137-4.6157 16.812-7.1268 26.312-8.1749 32.521-0.52418 3.1055-0.71169 5.4372-0.42779 7.6035s1.2262 4.1093 2.2469 5.4531c1.634 2.1509 3.0702 2.6628 5.1172 3.7988s4.4896 2.318 6.9811 3.4199 5.0169 2.1151 7.2235 2.8809c2.2067 0.76578 3.6205 1.3954 5.9605 1.3965h0.0021c3.4236 9.5e-4 6.4777-1.2794 10.1-2.8574 3.6222-1.578 7.3054-3.5465 10.118-5.623 3.25-2.3998 5.5724-5.1858 6.7224-8.4141 1.15-3.2282 1.1512-6.512 0.9004-10.119-0.08482-1.2199-0.06227-1.9078-0.03259-2.2051-0.04977 0.13059 1.0303-0.64879 3.3062-2.4492 11.894-9.4092 20.45-15.942 27.768-27.547l0.0244-0.0371 0.0224-0.0391c3.6014-5.9929 6.0714-12.727 7.5536-19.193 0.41729 0.40514 0.89325 0.80295 1.263 1.209 2.1822 2.6391 3.0718 5.8336 3.0047 9.7988-0.0675 3.9924-1.2119 8.6325-2.9966 13.258-3.5694 9.2506-9.6308 18.397-13.19 23.17-20.386 27.142-30.568 43.474-30.842 61.943l-0.21186 14.336h180.63l0.9391-2.9668c11.912-37.728 8.9554-89.18-4.8687-118.97l-4.3451 0.86524-0.0509-0.0957 4.2922-0.98047-2.8947-5.418 9.7903-10.027-5.2292-8.9238c-5.9935-10.227-14.857-20.161-25.965-27.418-2.7579-1.8016-5.9179-3.7051-8.513-5.2207-0.66955-0.39102-1.1488-0.65816-1.7254-0.98828 1.187-2.8984 2.8433-6.8253 4.6283-10.348l1.5156-2.9883-6.3476-5.3828c-12.887-10.929-27.339-18.256-45.158-22.324-7.9153-1.8073-19.233-2.6947-30.984-2.6406z' color='%23000000' color-rendering='auto' dominant-baseline='auto' fill='"+bColor+"' image-rendering='auto' shape-rendering='auto' solid-color='%23000000' stop-color='%23000000'/%3e%3cg transform='translate(.087197)' fill='"+wColor+"'%3e%3cpath d='m120 57.951c125.25 0 137.36 118.53 121.62 185.7l-22.438 0.0775c17.806-67.482 2.7522-175.66-99.184-175.66z'/%3e%3cpath d='m78.815 96.22c-6.2849 6.7837-12.196 13.044-18.481 19.827 0.87909 0.41461 3.7587 1.6408 6.951 1.1709 3.102-0.45661 5.9255-2.5394 6.9835-3.7034 1.0581-1.1639 4.9202-6.7452 4.5461-17.295z' stroke-width='1.1971'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e";
             }
         }
-        
         /*selectors*/
-		.piece.wk:not(.pseudo3d .piece.wk),
-		.promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
-		[data-hand-piece="wk"],
-		div [style*="wk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(wK)!important;
-		}
-		.piece.wq:not(.pseudo3d .piece.wq),
-		.promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
-		[data-hand-piece="wq"],
-		div [style*="wq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(wQ)!important;
-		}
-		.piece.wb:not(.pseudo3d .piece.wb),
-		.promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
-		[data-hand-piece="wb"],
-		div [style*="wb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(wB)!important;
-		}
-		.piece.wn:not(.pseudo3d .piece.wn),
-		.promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
-		[data-hand-piece="wn"],
-		div [style*="wn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(wN)!important;
-		}
-		.piece.wr:not(.pseudo3d .piece.wr),
-		.promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
-		[data-hand-piece="wr"],
-		div [style*="wr.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(wR)!important;
-		}
-		.piece.wp:not(.pseudo3d .piece.wp),
-		.promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
-		[data-hand-piece="wp"],
-		div [style*="wp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(wP)!important;
-		}
-		.piece.bk:not(.pseudo3d .piece.bk),
-		.promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
-		[data-hand-piece="bk"],
-		div [style*="bk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(bK)!important;
-		}
-		.piece.bq:not(.pseudo3d .piece.bq),
-		.promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
-		[data-hand-piece="bq"],
-		div [style*="bq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(bQ)!important;
-		}
-		.piece.bb:not(.pseudo3d .piece.bb),
-		.promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
-		[data-hand-piece="bb"],
-		div [style*="bb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(bB)!important;
-		}
-		.piece.bn:not(.pseudo3d .piece.bn),
-		.promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
-		[data-hand-piece="bn"],
-		div [style*="bn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(bN)!important;
-		}
-		.piece.br:not(.pseudo3d .piece.br),
-		.promotion-piece.br:not(.pseudo3d .promotion-piece.br),
-		[data-hand-piece="br"],
-		div [style*="br.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(bR)!important;
-		}
-		.piece.bp:not(.pseudo3d .piece.bp),
-		.promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
-		[data-hand-piece="bp"],
-		div [style*="bp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
-			background-image: url(bP)!important;
-		}
-		/*pieces for mini-boards*/
-		[data-piece="bK"],
-		img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(bK)!important;
-		}
+        .piece.wk:not(.pseudo3d .piece.wk),
+        .promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
+        [data-hand-piece="wk"],
+        div [style*="wk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(wK)!important;
+        }
+        .piece.wq:not(.pseudo3d .piece.wq),
+        .promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
+        [data-hand-piece="wq"],
+        div [style*="wq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(wQ)!important;
+        }
+        .piece.wb:not(.pseudo3d .piece.wb),
+        .promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
+        [data-hand-piece="wb"],
+        div [style*="wb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(wB)!important;
+        }
+        .piece.wn:not(.pseudo3d .piece.wn),
+        .promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
+        [data-hand-piece="wn"],
+        div [style*="wn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(wN)!important;
+        }
+        .piece.wr:not(.pseudo3d .piece.wr),
+        .promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
+        [data-hand-piece="wr"],
+        div [style*="wr.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(wR)!important;
+        }
+        .piece.wp:not(.pseudo3d .piece.wp),
+        .promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
+        [data-hand-piece="wp"],
+        div [style*="wp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(wP)!important;
+        }
+        .piece.bk:not(.pseudo3d .piece.bk),
+        .promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
+        [data-hand-piece="bk"],
+        div [style*="bk.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(bK)!important;
+        }
+        .piece.bq:not(.pseudo3d .piece.bq),
+        .promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
+        [data-hand-piece="bq"],
+        div [style*="bq.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(bQ)!important;
+        }
+        .piece.bb:not(.pseudo3d .piece.bb),
+        .promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
+        [data-hand-piece="bb"],
+        div [style*="bb.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(bB)!important;
+        }
+        .piece.bn:not(.pseudo3d .piece.bn),
+        .promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
+        [data-hand-piece="bn"],
+        div [style*="bn.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(bN)!important;
+        }
+        .piece.br:not(.pseudo3d .piece.br),
+        .promotion-piece.br:not(.pseudo3d .promotion-piece.br),
+        [data-hand-piece="br"],
+        div [style*="br.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(bR)!important;
+        }
+        .piece.bp:not(.pseudo3d .piece.bp),
+        .promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
+        [data-hand-piece="bp"],
+        div [style*="bp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
+            background-image: url(bP)!important;
+        }
+        /*pieces for mini-boards*/
+        [data-piece="bK"],
+        img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(bK)!important;
+        }
         img[src*="/bQ.png"],
-		[data-piece="bQ"],
-		img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(bQ)!important;
-		}
+        [data-piece="bQ"],
+        img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(bQ)!important;
+        }
         img[src*="/bB.png"],
-		[data-piece="bB"],
-		img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(bB)!important;
-		}
+        [data-piece="bB"],
+        img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(bB)!important;
+        }
         img[src*="/bN.png"],
-		[data-piece="bN"],
-		img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(bN)!important;
-		}
+        [data-piece="bN"],
+        img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(bN)!important;
+        }
         img[src*="/bR.png"],
-		[data-piece="bR"],
-		img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(bR)!important;
-		}
-		[data-piece="bP"],
-		img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(bP)!important;
-		}
-		[data-piece="wK"],
-		img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(wK)!important;
-		}
+        [data-piece="bR"],
+        img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(bR)!important;
+        }
+        [data-piece="bP"],
+        img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(bP)!important;
+        }
+        [data-piece="wK"],
+        img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(wK)!important;
+        }
         img[src*="/wQ.png"],
-		[data-piece="wQ"],
-		img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(wQ)!important;
-		}
+        [data-piece="wQ"],
+        img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(wQ)!important;
+        }
         img[src*="/wB.png"],
-		[data-piece="wB"],
-		img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(wB)!important;
-		}		
+        [data-piece="wB"],
+        img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(wB)!important;
+        }
+
         img[src*="/wN.png"],
-		[data-piece="wN"],
-		img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(wN)!important;
-		}
+        [data-piece="wN"],
+        img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(wN)!important;
+        }
         img[src*="/wR.png"],
-		[data-piece="wR"],
-		img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(wR)!important;
-		}
-        [id^="wP"],
-        [class^="square"]>[data-piece="wP"],
-        [data-piece="wP"]>[data-piece="wP"],
-		img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
-			content: url(wP)!important;
-		}
-		/*2023-07-05 new rules for game preview*/
-		:root{
-			--theme-piece-set-perspective:1;
-			--theme-piece-set-wp: url(wP);
-			--theme-piece-set-wn: url(wN);
-			--theme-piece-set-wr: url(wR);
-			--theme-piece-set-wb: url(wB);
-			--theme-piece-set-wq: url(wQ);
-			--theme-piece-set-wk: url(wK);
-			--theme-piece-set-bp: url(bP);
-			--theme-piece-set-bn: url(bN);
-			--theme-piece-set-bb: url(bB);
-			--theme-piece-set-br: url(bR);
-			--theme-piece-set-bq: url(bQ);
-			--theme-piece-set-bk: url(bK);
-		}
-	}/*End pieces section*/
+        [data-piece="wR"],
+        img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(wR)!important;
+        }
+        /*chessable wp need separated treatment*/
+        img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
+            content: url(wP)!important;
+        }
+        /*2023-07-05 new rules for game preview*/
+        :root{
+            --theme-piece-set-perspective:1;
+            --theme-piece-set-wp: url(wP);
+            --theme-piece-set-wn: url(wN);
+            --theme-piece-set-wr: url(wR);
+            --theme-piece-set-wb: url(wB);
+            --theme-piece-set-wq: url(wQ);
+            --theme-piece-set-wk: url(wK);
+            --theme-piece-set-bp: url(bP);
+            --theme-piece-set-bn: url(bN);
+            --theme-piece-set-bb: url(bB);
+            --theme-piece-set-br: url(bR);
+            --theme-piece-set-bq: url(bQ);
+            --theme-piece-set-bk: url(bK);
+        }
+    }
 }
-@-moz-document domain("chessable.com") {
-    /*Chessable*/
+@-moz-document regexp("https://www\\.chessable\\.com/(?!mt1/chess-board-setup-editor).*") {
+    /*Chessable White Pawn*/
+    /*matchs chessable domain except iframe for "setup position" as it is buggy at the moment.*/
+    [data-piece="wP"]{
+        content: url(wP)!important;
+    }    
+}
+@-moz-document url-prefix("https://www.chessable.com/mt1/explore/fen"), url-prefix("https://www.chessable.com/mt1/chess-board-setup-editor/") {
+    /*Chessable setup position*/
+    [id^="wP"],
+    [class^="square"]>[data-piece="wP"],
+    [data-piece="wP"]>[data-piece="wP"] {
+        content: url(wP)!important;
+    }
+    /*Chessable Fix*/
 	.notation-dark,.notationlight {
 		bottom: -3px;
 		right: 3px;
@@ -259,5 +270,4 @@ domain("chesskid.com"), domain("chessable.com") {
     div[class^="spare-pieces"]>div{
         display:inline-block!important;
     }
-    
 }
