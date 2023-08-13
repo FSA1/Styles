@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.28
+@version        1.0.29
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -821,14 +821,14 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview [BABICHESS]======
+        /*======👉2023-07-05 new rules for game preview [BABICHESS]======*/
 
         if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
-            .dark-mode{
-                --globalBackgroundOpaque: url(""),;
-            } 
-            :root{
-                --globalBackgroundOpaque: url(""),;
+			#board-popover,
+			.game-preview-themed-component{
+				--globalBackgroundOpaque: url(""),;
+			} 
+			:root{
                 --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
 
                 if enableCustomCoord {
@@ -841,7 +841,7 @@
                 --theme-board-style-highlight-color: hlColor;
             }
         }
-        ======👉End rules for game preview [BABICHESS]======*/
+        /*======👉End rules for game preview [BABICHESS]======*/
 
         /*====== Evaluation Bar ======*/
         /*evaluation bar 🔹Chesskid🔹*/
