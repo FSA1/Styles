@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.20
+@version        2.0.21
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -1202,10 +1202,13 @@
                 }
             }
         }/*======End coords ======*/
-            
         /*======👉2023-07-05 new rules for game preview======*/
+        .dark-mode{
+            --globalBackgroundOpaque: url(""),;
+        } 
         :root{
-            --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
+            --globalBackgroundOpaque: url(""),;
+            --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat,  url(miniBoard3);
           
             if enableCustomCoord {
                 --theme-board-style-coordinate-color-light: lCoordCol;
@@ -1900,60 +1903,59 @@
 		div [style*="bp.png"]:not([class="game-preview-themed-component"]):not(div#board.board > div) {
 			background-image: url(bP)!important;
 		}
-        
-        /*pieces for mini-boards*/
-        img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(bK)!important;
-        }
-        img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(bQ)!important;
-        }
-        img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(bB)!important;
-        }
-        img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(bN)!important;
-        }
-        img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(bR)!important;
-        }
-        img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(bP)!important;
-        }
-        img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(wK)!important;
-        }
-        img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(wQ)!important;
-        }
-        img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(wB)!important;
-        }
-        img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(wN)!important;
-        }
-        img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(wR)!important;
-        }
-        img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
-            content: url(wP)!important;
-        }
-        /*2023-07-05 new rules for game preview*/
-        :root{
-            --theme-piece-set-perspective:1;
-            --theme-piece-set-wp: url(wP);
-            --theme-piece-set-wn: url(wN);
-            --theme-piece-set-wr: url(wR);
-            --theme-piece-set-wb: url(wB);
-            --theme-piece-set-wq: url(wQ);
-            --theme-piece-set-wk: url(wK);
-            --theme-piece-set-bp: url(bP);
-            --theme-piece-set-bn: url(bN);
-            --theme-piece-set-bb: url(bB);
-            --theme-piece-set-br: url(bR);
-            --theme-piece-set-bq: url(bQ);
-            --theme-piece-set-bk: url(bK);
-        }    
-   }/*End pieces section*/
+		/*pieces for mini-boards*/
+		img[src*="/bk.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(bK)!important;
+		}
+		img[src*="/bq.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(bQ)!important;
+		}
+		img[src*="/bb.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(bB)!important;
+		}
+		img[src*="/bn.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(bN)!important;
+		}
+		img[src*="/br.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(bR)!important;
+		}
+		img[src*="/bp.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(bP)!important;
+		}
+		img[src*="/wk.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(wK)!important;
+		}
+		img[src*="/wq.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(wQ)!important;
+		}
+		img[src*="/wb.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(wB)!important;
+		}
+		img[src*="/wn.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(wN)!important;
+		}
+		img[src*="/wr.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(wR)!important;
+		}
+		img[src*="/wp.png"]:not([class="settings-themes-preview-board-piece"]) {
+			content: url(wP)!important;
+		}
+		/*2023-07-05 new rules for game preview*/
+		:root{
+			--theme-piece-set-perspective:1;
+			--theme-piece-set-wp: url(wP);
+			--theme-piece-set-wn: url(wN);
+			--theme-piece-set-wr: url(wR);
+			--theme-piece-set-wb: url(wB);
+			--theme-piece-set-wq: url(wQ);
+			--theme-piece-set-wk: url(wK);
+			--theme-piece-set-bp: url(bP);
+			--theme-piece-set-bn: url(bN);
+			--theme-piece-set-bb: url(bB);
+			--theme-piece-set-br: url(bR);
+			--theme-piece-set-bq: url(bQ);
+			--theme-piece-set-bk: url(bK);
+		}
+	}/*End pieces section*/
     
 }
