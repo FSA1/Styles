@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/tabuleiro-e-pecas-com-o-cavalo-do-krikor
 @description    `Chess board for chess.com (pt_BR)`
-@version        2.0.21
+@version        2.0.22
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -236,6 +236,10 @@
         }
             
         /*======👉2023-07-05 new rules for game preview======*/
+        #board-popover,
+        .game-preview-themed-component{
+            --globalBackgroundOpaque: url(""),;
+        } 
         :root{
             --theme-board-style-image: url(boardlink);          
             --theme-board-style-coordinate-color-light: lightsq;
