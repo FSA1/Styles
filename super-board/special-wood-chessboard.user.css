@@ -880,7 +880,6 @@
             --globalBackgroundOpaque: url(""),;
         } 
         :root{
-            --globalBackgroundOpaque: url(""),;
             --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
           
             if enableCustomCoord {
