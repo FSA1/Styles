@@ -874,7 +874,7 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview======*/
+        /*======👉2023-07-05 new rules for game preview======
         .dark-mode{
             --globalBackgroundOpaque: url(""),;
         } 
@@ -891,7 +891,7 @@
             }
             --theme-board-style-highlight-color: hlColor;
         }
-        /*======👉End rules for game preview======*/
+        ======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         /*evaluation bar 🔹Chesskid🔹*/

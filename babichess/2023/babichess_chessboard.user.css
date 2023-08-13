@@ -821,7 +821,7 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview [BABICHESS]======*/
+        /*======👉2023-07-05 new rules for game preview [BABICHESS]======
 
         if svgBoardBlend == "normal" || svgBoardBlend == "multiply"{
             .dark-mode{
@@ -841,7 +841,7 @@
                 --theme-board-style-highlight-color: hlColor;
             }
         }
-        /*======👉End rules for game preview [BABICHESS]======*/
+        ======👉End rules for game preview [BABICHESS]======*/
 
         /*====== Evaluation Bar ======*/
         /*evaluation bar 🔹Chesskid🔹*/
