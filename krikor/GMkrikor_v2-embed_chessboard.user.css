@@ -1219,24 +1219,21 @@
             }
             --theme-board-style-highlight-color: hlColor;
         }
+
         /*======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         if evalOpt!="disabled" {
+            if evalOpt == "auto" {
+                lEvalCol = transparentify(svgLightSqColor, #fff, 1);
+                dEvalCol = transparentify(saturate(svgDarkSqColor, 10%), #fff, 1);
+            }
             .evaluation-bar-white,
             .score-bar__fill[data-v-b0ff6725] {
-                if evalOpt == "auto" {
-                    background-color: transparentify(svgLightSqColor, #fff, 1) !important;
-                }else if evalOpt == "custom" {
                     background-color: lEvalCol !important;
-                }
             }
             .evaluation-bar-black {
-                if evalOpt == "auto" {
-                    background-color: transparentify(saturate(svgDarkSqColor, 10%), #fff, 1) !important;
-                }else if evalOpt == "custom" {
                     background-color: dEvalCol !important;
-                }
             }
             /*evaluation bar width for chesskid*/
             div [class="score-bar"] {
@@ -1484,7 +1481,7 @@
 			/*bizarre solution, don't ask me why*/
             div#board.board:not([style*="background-image: url"]) > div{
                 display: none!important;
-                }
+            }
             div#board.board:not([style*="background-image: url"]){
                 --theme-board-style-image: url(cornerLogo) cornerLogoPosX cornerLogoPosY / auto cornerLogoSize no-repeat,
               url(cornerLogo2TextOnly) cornerLogo2PosX cornerLogo2PosY / auto cornerLogo2Size no-repeat,
