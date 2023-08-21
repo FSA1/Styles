@@ -45,7 +45,6 @@
 @var    range    contrastBoard  "Contraste (tabuleiro)" [100, 5, 300, 5, "%"]
 @var    range    saturateBoard  "Saturação (tabuleiro)" [100, 0, 300, 5, "%"]
 @var    range    hueRotationBoard  "Tonalidade (tabuleiro)" [0, 0, 355, 5, "deg"]
-@var    text     userBoard    "Seu Tabuleiro"   "'https://i.imgur.com/sUD4GYw.png'"
 ==/UserStyle== */
 @-moz-document domain("chess.com"),
 domain("lichess.org") {
