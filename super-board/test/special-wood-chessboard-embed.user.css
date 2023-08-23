@@ -1092,15 +1092,20 @@
     if enableWallpaper=="1" {
         
         *{
-            border-color: dEvalCol!important;
+            border-color: lEvalCol!important;
         }
         ._mxbdul,
         #root > div > div > div.flex.justify-center > div > div > div > div > div{
             background: darken(lEvalCol,10%)!important;
             color:dEvalCol;
         }
+        ._1kqrajby,
+        ._bswz18,
+        ._b1m1vgp,
+        .text-am-grey-350,
+        ._aq7vjq,
         .text-am-gray {
-            color: darken(lEvalCol,40%);
+            color: darken(lEvalCol,30%)!important;
         }
         .text-am-dark {
             color: lEvalCol!important;
@@ -1124,11 +1129,23 @@
         span.MuiSwitch-track {
             background-color: darken(lEvalCol,1%)!important;  
         }
-            
+        ._16remspd,            
         .css-1lnl2gx {
             background-color: lighten(lEvalCol,20%)!important;
             color:dEvalCol!important;
         }
+        
+        .css-gofjbs,
+        .css-vubbuv {
+            fill: lighten(dEvalCol,10%)!important;
+        }
+        ._bwjroz{
+            background-color: lighten(lEvalCol,20%)!important;
+        }
+        ._1c6obu17,
+        .css-1sjnbew,
+        .css-1f1chra,
+        .css-uujae1,
         #main-block > div > div > div > ul a,
         #main-block > div > div > div > div > div > div > div > div.pt-4.px-4.pb-2.flex.items-center.\!pt-0.\!px-0 > p._95natmy.\!text-black.dark\:\!text-am-brand-dark,
         #main-block > div > div > div > div > div > div > div._1y5xzhrh > div,
@@ -1150,7 +1167,7 @@
             background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
 
         }
-        
+        ._15vm4nf,
         :is(.dark .text-brand),
         #main-block > div > div > div > div a > div > span,        
         .text-am-grey-200 {
@@ -1166,6 +1183,22 @@
         .text-am-grey-250 {
             color: #a6a6a6;
         }
+        .text-gray-300{
+            background-color: saturation(lighten(dEvalCol,10%),10%)!important;
+            color:lEvalCol;
+        }
+        .text-gray-400{
+            background-color: saturation(lighten(lEvalCol,80%),30%)!important;
+            color:dEvalCol;
+        }
+        .text-gray-500{
+            background-color: saturation(lighten(lEvalCol,10%),10%)!important;
+            color:dEvalCol;
+        }
+        #main-block > div > div > div > div > div > div > div > div > div > div > div > div > div thead tr th {
+            background-color: saturation(lighten(lEvalCol,20%),50%)!important;
+            
+        }
         
         #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(3),
         #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(2),
@@ -1178,6 +1211,28 @@
         #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div:nth-child(4) > div p{
             color: lighten(dEvalCol,30%)!important;
         }
+        #main-block > div > div > div > div > div > div > div > div > div tr p:hover{
+            //color: lEvalCol!important;
+        }
+        #main-block > div > div > div > div > div > div > div > div > div tr:hover{
+            background-color: darken(lEvalCol,1%)!important;
+        }
+        ._gw71e96:hover {
+            color: saturation(lEvalCol, 200%)!important;
+            cursor: pointer !important;
+        }
+        
+        ._1n22usw {
+            box-shadow: saturation(lighten(lEvalCol,60%), 100%) 0px 0px 0px 3px !important;
+        }
+        .css-putrnr.Mui-disabled,
+        .css-1pvfj5s,
+        ._drlhb0f,
+        #main-block > div > div > div > div > div:nth-child(2) > div > div > div > section p,
+        #main-block > div > div > div > div:nth-child(5) > div > div > div > section.flex.flex-col > p
+        ._95natmy,
+        #main-block > div > div > div > div > div > div > div > div > div tr th,
+        #main-block > div > div > div > div > div > div > div > div > div button,
         .css-yop3gh,
         .MuiInputLabel-outlined.MuiInputLabel-shrink,
         .css-1kvhwxt,
@@ -1189,6 +1244,7 @@
         .css-lvbjx5,
         p.text-base {
             color: dEvalCol!important;
+            -webkit-text-fill-color:darken(dEvalCol,50%);
         }
         .css-lvbjx5{
             border: 1px solid dEvalCol;
@@ -1250,10 +1306,6 @@
     .board .square.white {
         fill: #e0ddcc00!important;
     }
-    .coordinates .coordinate {
-        fill: outCoordColorOpt!important;
-        font-size: 0.8rem!important;
-    }  
     /*left panel*/
     ._1y5xzhrh{
         margin-bottom: 0.5rem!important;
@@ -1270,7 +1322,7 @@
         fill: #e0ddcc00!important;
     }
     /*border*/
-        if enableBoardFrame {
+    if enableBoardFrame {
         .top-4 {
             top: 0.5rem!important;
         }
@@ -1286,7 +1338,7 @@
         div.flex.flex-col.items-center.flex-1.min-w-0 {
             padding: 0.6rem!important;
         }
-        
+
         div.flex.flex-col.items-center.flex-1.min-w-0 > div.rounded-lg.relative.w-full.overflow-hidden > div,
         {
             margin:'%srem!important;' % aimbsize;
@@ -1316,7 +1368,7 @@
             box-shadow: frameShadow;
             box-shadow: frameShadowInset;
             if enableFrameShadow && enableFrameShadowInset {
-                box-shadow: frameShadow, frameShadowInset !important;
+                    box-shadow: frameShadow, frameShadowInset !important;
             }
         }
     }else{
@@ -1334,6 +1386,59 @@
         ._2538iib {
             background: shade(dEvalCol, 5%) !important;
         }*/
+    }
+    .coordinates .coordinate {
+        text-transform: outCoordFontCase !important;
+        fill:outCoordColorOpt!important;
+        color:@fill;
+        font-weight: outCoordFontWeight!important;   
+        font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+        font-size: 0.8rem!important;
+    }
+    if enableBoardFrame=="0" {
+        enableOutsideCoords=1;
+        svg > g.coordinates{       
+            transform: translate(0.4%,-0.4%);
+        }       
+    }
+    if enableBoardFrame && enableOutsideCoords{
+        svg > g.coordinates{     
+            transform: translate(-0.4%,0.5%);
+        }
+    }
+    else if enableOutsideCoords=="0"{
+        
+        .coordinates .coordinate {
+            font-weight:600!important;
+        }
+        svg > g.coordinates{
+            transform: translate(4%,-4%)!important;
+        }
+        svg > g.coordinates > text:nth-child(1),
+        svg > g.coordinates > text:nth-child(3),
+        svg > g.coordinates > text:nth-child(5),
+        svg > g.coordinates > text:nth-child(7){
+            fill:dCoordCol!important;
+        }
+        svg > g.coordinates > text:nth-child(2),
+        svg > g.coordinates > text:nth-child(4),
+        svg > g.coordinates > text:nth-child(6),
+        svg > g.coordinates > text:nth-child(8){
+            fill:lCoordCol!important;        
+        }
+
+        svg > g.coordinates > text:nth-child(9),
+        svg > g.coordinates > text:nth-child(11),
+        svg > g.coordinates > text:nth-child(13),
+        svg > g.coordinates > text:nth-child(15){
+            fill:lCoordCol!important;
+        }
+        svg > g.coordinates > text:nth-child(10),
+        svg > g.coordinates > text:nth-child(12),
+        svg > g.coordinates > text:nth-child(14),
+        svg > g.coordinates > text:nth-child(16){
+            fill:dCoordCol!important;        
+        }
     }
 }
 @-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
