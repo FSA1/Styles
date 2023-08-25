@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.36
+@version        1.0.34-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -1086,7 +1086,7 @@
     /*------end section------*/
 
 }
-@-moz-document domain("aimchess.com") {
+@-moz-document regexp("https?://(www\\.)?aimchess\\.com/(?!settings).*") {
     
     /* AIMCHESS Theme color */    
     if enableWallpaper=="1" {
@@ -1099,6 +1099,7 @@
             background: darken(lEvalCol,10%)!important;
             color:dEvalCol;
         }
+        #main-block > div > div > div > div> div > div > div > button
         ._1kqrajby,
         ._bswz18,
         ._b1m1vgp,
@@ -1248,6 +1249,11 @@
         }
         .css-lvbjx5{
             border: 1px solid dEvalCol;
+        }        
+        .css-wskl8m.Mui-checked,
+        .css-q8lw68,
+        #mui-10{
+            color:dEvalCol!important;
         }
     
         /*Navibar*/
@@ -1259,6 +1265,24 @@
             if enableFrameShadow && enableFrameShadowInset {
                 box-shadow: frameShadow, frameShadowInset !important;
             }
+        }
+        #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1):before{
+            content:"Theme by ChessSkins";
+            font-style: italic;
+            font-family: Parisienne;
+            font-size: 0.8rem;
+            margin-left:10rem!important;
+            visibility:visible;
+        }
+        #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1):after{
+            content:"© 2023 Aimchess ";
+            margin-left:6.5rem!important;
+            visibility:visible;
+        }
+        #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1){
+            margin-left:-10rem!important;
+            line-height:1.2rem;
+            visibility:hidden;
         }
     }
 }
