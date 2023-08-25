@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.35
+@version        1.0.34-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -172,7 +172,7 @@
         bgPosY=0%;
         frameRadius=0px;
         frameOpt=txframe-wood;
-        frameColor=#622f0f;
+        frameColor=#6f4326;
         frameSize=cover;
         framePosX=0%;
         framePosY=0%;
@@ -218,7 +218,7 @@
         /*🔐important: board size need to be locked for this board*/
         ajustBoardSize=0.86;
         frameOpt=txframe-walnut-round-wood;
-        frameColor=#622f0f;
+        frameColor=#542A14;
         frameSize=cover;
         framePosX=0%;
         framePosY=0%;
@@ -259,7 +259,7 @@
         frameRadiusInOut=1;
         //enableBoardFrame=1;
         frameOpt=txframe-wood-light1;
-        frameColor=#9b6d4b;
+        frameColor=#865036;
         frameSize=100%;
         framePosX=50%;
         framePosY=50%;
@@ -366,7 +366,7 @@
         /*🔐important: board size need to be locked for this board*/
         ajustBoardSize=0.859;
         frameOpt=txframe-mahogany-round-wood;
-        frameColor=#683611;
+        frameColor=#642504;
         frameSize=cover;
         framePosX=0%;
         framePosY=0%;
@@ -385,11 +385,11 @@
         mainColumnColor=0;
         panelColor=rgba(94,33,17,0.561);
         mainColBlur=1;
-        lCoordCol=#79341d;
-        dCoordCol=#d0ac8f;
+        lCoordCol=#974A30;
+        dCoordCol=#D1B395;
         coordsBlend=normal;
-        dEvalCol=#7d3110;
-        lEvalCol=#e6ceb3;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
         evalOpt=custom;
         outCoordCol=rgba(218,185,172,0.749);
         outCoordFontSize=0.24rem;
@@ -419,7 +419,7 @@
         frameRadius=2px;
         frameRadiusInOut=1;
         frameOpt=txbase-cxc;
-        frameColor=#5a4233;
+        frameColor=#6E563B;
         frameSize=cover;
         framePosX=50%;
         framePosY=50%;
@@ -451,7 +451,7 @@
         /*🔐important: board size need to be locked for this board*/
         ajustBoardSize=0.861;
         svgBoardBlend=normal;
-        svgLightSqColor=#ffead1;
+        svgLightSqColor=#E5CFB7;
         svgLightSqOpacity=0;
         enableGlobalColor=0;
         svgDarkSqColor= #7f5841;
@@ -496,7 +496,7 @@
         /*🔐important: board size need to be locked for this board*/
         ajustBoardSize=0.861;
         svgBoardBlend=normal;
-        svgLightSqColor=#e8d2b9;
+        svgLightSqColor=#f9dcb9;
         svgLightSqOpacity=0;
         enableGlobalColor=0;
         svgDarkSqColor= #a36b52;
@@ -1086,9 +1086,209 @@
     /*------end section------*/
 
 }
-@-moz-document domain("aimchess.com") {    
-    /*AIMCHESS*/    
-	aimbsize = 1.2 - (ajustBoardSize - 0.82) * (1.2 - 0) / (0.92 - 0.82);
+@-moz-document regexp("https?://(www\\.)?aimchess\\.com/(?!settings).*") {
+    
+    /* AIMCHESS Theme color */    
+    if enableWallpaper=="1" {
+        
+        *{
+            border-color: lEvalCol!important;
+        }
+        ._mxbdul,
+        #root > div > div > div.flex.justify-center > div > div > div > div > div{
+            background: darken(lEvalCol,10%)!important;
+            color:dEvalCol;
+        }
+        #main-block > div > div > div > div> div > div > div > button
+        ._1kqrajby,
+        ._bswz18,
+        ._b1m1vgp,
+        .text-am-grey-350,
+        ._aq7vjq,
+        .text-am-gray {
+            color: darken(lEvalCol,30%)!important;
+        }
+        .text-am-dark {
+            color: lEvalCol!important;
+            opacity:0.5!important;
+        }
+        #main-block > div > div > div > div > div ._1qt8jbo,
+        #main-block > div > div > div > div > div ._186ggawj{
+            color:darken(lEvalCol,50%)!important;
+        }
+        ._1ud74u79 {
+            border: 1px solid darken(lEvalCol,1%) !important;
+        }
+        ._1ud74u79:hover {
+            box-shadow: darken(lEvalCol,20%) 0px 0px 5px 0px !important;
+        }
+        
+        /*switch bottom*/
+        span.MuiSwitch-thumb{
+            color: lighten(lEvalCol,40%)!important;         
+        }
+        span.MuiSwitch-track {
+            background-color: darken(lEvalCol,1%)!important;  
+        }
+        ._16remspd,            
+        .css-1lnl2gx {
+            background-color: lighten(lEvalCol,20%)!important;
+            color:dEvalCol!important;
+        }
+        
+        .css-gofjbs,
+        .css-vubbuv {
+            fill: lighten(dEvalCol,10%)!important;
+        }
+        ._bwjroz{
+            background-color: lighten(lEvalCol,20%)!important;
+        }
+        ._1c6obu17,
+        .css-1sjnbew,
+        .css-1f1chra,
+        .css-uujae1,
+        #main-block > div > div > div > ul a,
+        #main-block > div > div > div > div > div > div > div > div.pt-4.px-4.pb-2.flex.items-center.\!pt-0.\!px-0 > p._95natmy.\!text-black.dark\:\!text-am-brand-dark,
+        #main-block > div > div > div > div > div > div > div._1y5xzhrh > div,
+        #main-block > div > div > div > div._1ddq6va > div > div,
+        #main-block > div > div > div._1xl6f5n5,
+        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div.flex.flex-col.bg-am-base.dark\:bg-am-base-dark.p-6.rounded-2xl.\!p-0.mb-4 > div.p-6 > div > div.flex.justify-between.mt-5 > div.flex-center.w-10.h-10.rounded-full.shadow-ring.dark\:shadow-ringDark.text-brand.\!bg-transparent,
+        #main-block > div > div > div:nth-child(7),
+        ._18nu8f47,
+        ._1vd3pjwv,
+        ._7btq6wg,
+        ._1s0fnxf5,
+        ._1t8obekz,
+        .bg-am-base {
+            background-color: lighten(lEvalCol,40%)!important;
+            color:dEvalCol!important;
+        }
+        .bg-am-accent-light {
+            background-color: backgroundColp!important;
+            background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
+
+        }
+        ._15vm4nf,
+        :is(.dark .text-brand),
+        #main-block > div > div > div > div a > div > span,        
+        .text-am-grey-200 {
+            color: lighten(dEvalCol,40%)!important;
+        }
+        #main-block > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(3),
+        #main-block > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) {
+            background-color: lighten(dEvalCol,65%)!important;
+        }
+        .bg-am-grey-100 {
+            background-color: darken(lEvalCol,1%)!important;
+        }
+        .text-am-grey-250 {
+            color: #a6a6a6;
+        }
+        .text-gray-300{
+            background-color: saturation(lighten(dEvalCol,10%),10%)!important;
+            color:lEvalCol;
+        }
+        .text-gray-400{
+            background-color: saturation(lighten(lEvalCol,80%),30%)!important;
+            color:dEvalCol;
+        }
+        .text-gray-500{
+            background-color: saturation(lighten(lEvalCol,10%),10%)!important;
+            color:dEvalCol;
+        }
+        #main-block > div > div > div > div > div > div > div > div > div > div > div > div > div thead tr th {
+            background-color: saturation(lighten(lEvalCol,20%),50%)!important;
+            
+        }
+        
+        #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(3),
+        #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(2),
+        #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(1){
+            
+            background-color: darken(lEvalCol,5%)!important;
+        }
+  
+        
+        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div:nth-child(4) > div p{
+            color: lighten(dEvalCol,30%)!important;
+        }
+        #main-block > div > div > div > div > div > div > div > div > div tr p:hover{
+            //color: lEvalCol!important;
+        }
+        #main-block > div > div > div > div > div > div > div > div > div tr:hover{
+            background-color: darken(lEvalCol,1%)!important;
+        }
+        ._gw71e96:hover {
+            color: saturation(lEvalCol, 200%)!important;
+            cursor: pointer !important;
+        }
+        
+        ._1n22usw {
+            box-shadow: saturation(lighten(lEvalCol,60%), 100%) 0px 0px 0px 3px !important;
+        }
+        .css-putrnr.Mui-disabled,
+        .css-1pvfj5s,
+        ._drlhb0f,
+        #main-block > div > div > div > div > div:nth-child(2) > div > div > div > section p,
+        #main-block > div > div > div > div:nth-child(5) > div > div > div > section.flex.flex-col > p
+        ._95natmy,
+        #main-block > div > div > div > div > div > div > div > div > div tr th,
+        #main-block > div > div > div > div > div > div > div > div > div button,
+        .css-yop3gh,
+        .MuiInputLabel-outlined.MuiInputLabel-shrink,
+        .css-1kvhwxt,
+        #main-block > div > div > div > div > section > section > p,
+        #main-block > div > div > div > div > div.pt-4.px-4.pb-2.flex.items-center.undefined > p,
+        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div.flex.flex-col.bg-am-base.dark\:bg-am-base-dark.p-6.rounded-2xl.\!p-0.mb-4 > div.MuiTabs-root.css-1xyjpbr > div > div > button,
+        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div:nth-child(4) > div > div:nth-child(2) > p._s0ltis.cursor-pointer.text-brand.hover\:underline,
+        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] .material-symbols-rounded,
+        .css-lvbjx5,
+        p.text-base {
+            color: dEvalCol!important;
+            -webkit-text-fill-color:darken(dEvalCol,50%);
+        }
+        .css-lvbjx5{
+            border: 1px solid dEvalCol;
+        }        
+        .css-wskl8m.Mui-checked,
+        .css-q8lw68,
+        #mui-10{
+            color:dEvalCol!important;
+        }
+    
+        /*Navibar*/
+        #root > div > div > div.flex.justify-center {
+            background: saturation(darken(dEvalCol, 50%),20%)!important;
+            color: lEvalCol!important;
+            box-shadow: frameShadow;
+            box-shadow: frameShadowInset;
+            if enableFrameShadow && enableFrameShadowInset {
+                box-shadow: frameShadow, frameShadowInset !important;
+            }
+        }
+        #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1):before{
+            content:"Theme by ChessSkins";
+            font-style: italic;
+            font-family: Parisienne;
+            font-size: 0.8rem;
+            margin-left:10rem!important;
+            visibility:visible;
+        }
+        #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1):after{
+            content:"© 2023 Aimchess ";
+            margin-left:6.5rem!important;
+            visibility:visible;
+        }
+        #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1){
+            margin-left:-10rem!important;
+            line-height:1.2rem;
+            visibility:hidden;
+        }
+    }
+}
+@-moz-document regexp("https?://(www\\.)?aimchess\\.com/(?!settings).*") {    
+    /* AIMCHESS board */    
+	aimbsize = 1.2 - (ajustBoardSize - 0.85) * (1.2 - 0) / (0.92 - 0.82);
     /*board*/
     .rounded-lg > div > div {
         if bgSize=="cover"{
@@ -1101,7 +1301,7 @@
         background-position:50% 49.5%, 50% 49.5%!important;
         background-color: boardBGColor; 
         background-image: url(svgBoard), url(board3)!important;
-    }   
+    }
 
     /*hlImgOpt can be useful to set a background image as highlight, normaly a gif.*/
     if setHighlight!="op0" {
@@ -1119,165 +1319,149 @@
     ._2538iib {
         background: dEvalCol !important;
     }
+    /*Eval. width*/
     ._xdw6qq {
         width: 14px !important;
         margin: 8px 8px !important;
-        box-shadow: frameShadow;
-        box-shadow: frameShadowInset;
-        if enableFrameShadow && enableFrameShadowInset {
-            box-shadow: frameShadow, frameShadowInset !important;
-        }
     }
-
-    .cm-chessboard.verde.border-type-frame .board .border {
-        fill: #e0ddcc00;
-        stroke: none;
+    .board .square.black {
+        fill: #4c946a00!important;
     }
-    .cm-chessboard.verde.border-type-frame .board .border-inner {
-        fill: rgba(0, 0, 0, 0);
-        stroke: innerBorderOpt;
-        stroke-width: 0.7%;
+    .board .square.white {
+        fill: #e0ddcc00!important;
     }
-    .cm-chessboard.verde .board .square.black {
-        fill: #4c946a00;
-    }
-    .cm-chessboard.verde .board .square.white {
-        fill: #e0ddcc00;
-    }
-    .cm-chessboard.verde .coordinates .coordinate {
-        fill: outCoordColorOpt;
-        font-size: 7px;
-        cursor: default;
-    }
-    .cm-chessboard.verde.border-type-frame .board .border {
-        fill: rgba(224, 221, 204, 0);
-        stroke: none;
-    }
-    div.flex.flex-col.items-center.flex-1.min-w-0 > div.rounded-lg.relative.w-full.overflow-hidden > div,
-    {
-        margin:'%srem!important;' % aimbsize;
-    }
-    
-    .top-4 {
-        top: 0.5rem;
-    }
-    .right-4 {
-        right: 0;
-    }
-    .left-4 {
-        left: 0;
-    }
-    .bottom-4 {
-        bottom: 0;
-    }
-    div.flex.flex-col.items-center.flex-1.min-w-0{
-        padding: 0.6rem;
-    }
-    
+    /*left panel*/
     ._1y5xzhrh{
-        margin-bottom: 0.5rem;
-        margin-top: 0.5rem;
+        margin-bottom: 0.5rem!important;
+        margin-top: 0.5rem!important;
     }
     
-    #root > div > div > div.flex.justify-center {
-        background: transparentify(shade(dEvalCol,30%),10%)!important;
-        color: lEvalCol!important;
-        box-shadow: frameShadow;
-        box-shadow: frameShadowInset;
-        if enableFrameShadow && enableFrameShadowInset {
-            box-shadow: frameShadow, frameShadowInset !important;
-        }
+    .board .border-inner {
+        fill: rgba(0, 0, 0, 0)!important;
+        stroke: innerBorderOpt!important;
+        stroke-width: 0.7%!important;
     }
-    
-    /*border*/
-    div.rounded-lg.relative.w-full.overflow-hidden,
-     {
-        background-position: framePosX framePosY !important;
-        background-color: frameColor !important;
-        background-size: frameSize!important;
-        -webkit-background-size: @background-size;
-        -moz-background-size: @background-size;
-        -o-background-size: @background-size;
-        if frameSize=="cover" {
-            background-repeat: no-repeat!important;
-        }else{
-            background-repeat: repeat!important;
-        }
-        background-image: url(frameOpt) !important;
-        border-radius: frameRadius!important;
-        box-shadow: frameShadow;
-        box-shadow: frameShadowInset;
-        if enableFrameShadow && enableFrameShadowInset {
-            box-shadow: frameShadow, frameShadowInset !important;
-        }
-    }
-    /*Theme color*/    
-    if enableWallpaper=="1" {
-        .text-am-dark {
-            color: lEvalCol!important;
-            opacity:0.5!important;
-        }
-        .text-brand{
-            /*code here*/
-        }
-        ._x63nqdc{
-            color: lighten(lEvalCol,40%)!important;
-        }
-        div._1y5xzhrh > div._7btq6wg > div:nth-child(1) > div:nth-child(2)
-        div._1y5xzhrh > div._7btq6wg > div:nth-child(1) > div:nth-child(3) {
-            background-color: lighten(lEvalCol,50%)!important;
-        }
-        div._1y5xzhrh > div._7btq6wg > div:nth-child(1) > div:nth-child(1),
-        .css-cg68tb,
-        .css-1sf4nws,
-        .css-m6kxt3,
-        .css-ayb31t{
-            background-color: lighten(lEvalCol,50%)!important;
-        }
-        ._1vd3pjwv,
-        ._7btq6wg,
-        ._1s0fnxf5,
-        ._1t8obekz,
-        .bg-am-base {
-            background-color: lighten(lEvalCol,40%)!important;
-        }
-        /*switch bottom*/
-        span.MuiSwitch-thumb.jss14.css-19gndve{
-            color: lighten(lEvalCol,40%)!important;         
-        }
-        span.MuiSwitch-track.jss15.css-1ju1kxc {
-            background-color: darken(lEvalCol,1%)!important;  
-        }
-        ._1ovaw8q, ._hbsoih:not(#main-block > div > div > div > div > div:nth-child(2) > div > div > div ._hbsoih), .ml-7:not(.text-brand), ._1eiz2bz6, ._1vercdj {
-            //color: rgba(227,197,159,0.941) !important;
-        }
-        #main-block > div > div > div > div a > div > span,
-        .text-am-grey-200 {
-            color: lighten(dEvalCol,40%)!important;
-        }
-        .bg-am-grey-100 {
-            background-color: darken(lEvalCol,1%)!important;
-        }
-        .text-am-grey-250 {
-            color: #a6a6a6;
-        }
-        #main-block > div > div > div.p-6.pt-10.min-h-full.flex.flex-col.overflow-auto.bg-am-accent-light.dark\:bg-am-bg-dark.pt-10.fixed.left-0.top-0.bottom-0.w-\[260px\].overflow-auto > svg > path:not(path[d*="M16.2639"]) {
-            fill: #e7dfd1!important;
-        }
-        ._1ovaw8q,
-        //._hbsoih:not(#main-block > div > div > div > div > div:nth-child(2) > div > div > div ._hbsoih),
-        .ml-7:not(.text-brand),
-        ._1eiz2bz6,
-        ._1vercdj{
-            color: lEvalCol!important;
-        }
-        ._1eiz2bz6:hover {
-            color: hlColor!important;
-        }
-        .bg-am-accent-light {
-            background-color: backgroundColp!important;
-            background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
 
+    .board .border {
+        fill: #e0ddcc00!important;
+    }
+    /*border*/
+    if enableBoardFrame {
+        .top-4 {
+            top: 0.5rem!important;
+        }
+        .right-4 {
+            right: 0!important;
+        }
+        .left-4 {
+            left: 0!important;
+        }
+        .bottom-4 {
+            bottom: 0!important;
+        }
+        div.flex.flex-col.items-center.flex-1.min-w-0 {
+            padding: 0.6rem!important;
+        }
+
+        div.flex.flex-col.items-center.flex-1.min-w-0 > div.rounded-lg.relative.w-full.overflow-hidden > div,
+        {
+            margin:'%srem!important;' % aimbsize;
+        }
+        div.rounded-lg.relative.w-full.overflow-hidden {
+            background-position: framePosX framePosY !important;
+            background-color: frameColor !important;
+            background-size: frameSize!important;
+            -webkit-background-size: @background-size;
+            -moz-background-size: @background-size;
+            -o-background-size: @background-size;
+            if frameSize=="cover" {
+                background-repeat: no-repeat!important;
+            }else{
+                background-repeat: repeat!important;
+            }
+            background-image: url(frameOpt) !important;
+            border-radius: frameRadius!important;
+            box-shadow: frameShadow;
+            box-shadow: frameShadowInset;
+            if enableFrameShadow && enableFrameShadowInset {
+                box-shadow: frameShadow, frameShadowInset !important;
+            }
+        }           
+        /*Eval. shadow*/
+        ._xdw6qq {
+            box-shadow: frameShadow;
+            box-shadow: frameShadowInset;
+            if enableFrameShadow && enableFrameShadowInset {
+                    box-shadow: frameShadow, frameShadowInset !important;
+            }
+        }
+    }else{
+        
+        div.rounded-lg.relative.w-full.overflow-hidden {
+            background-color: frameColor !important;
+            border-radius: 6px!important;
+            //box-shadow: frameShadowInset;
+        }
+        
+        /*Evaluation bar
+        ._1rzdd2kb {
+            background: shade(lEvalCol, 5%) !important;
+        }
+        ._2538iib {
+            background: shade(dEvalCol, 5%) !important;
+        }*/
+    }
+    .coordinates .coordinate {
+        text-transform: outCoordFontCase !important;
+        fill:outCoordColorOpt!important;
+        color:@fill;
+        font-weight: outCoordFontWeight!important;   
+        font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+        font-size: 0.8rem!important;
+    }
+    if enableBoardFrame=="0" {
+        enableOutsideCoords=1;
+        svg > g.coordinates{       
+            transform: translate(0.4%,-0.4%);
+        }       
+    }
+    if enableBoardFrame && enableOutsideCoords{
+        svg > g.coordinates{     
+            transform: translate(-0.4%,0.5%);
+        }
+    }
+    else if enableOutsideCoords=="0"{
+        
+        .coordinates .coordinate {
+            font-weight:600!important;
+        }
+        svg > g.coordinates{
+            transform: translate(4%,-4%)!important;
+        }
+        svg > g.coordinates > text:nth-child(1),
+        svg > g.coordinates > text:nth-child(3),
+        svg > g.coordinates > text:nth-child(5),
+        svg > g.coordinates > text:nth-child(7){
+            fill:dCoordCol!important;
+        }
+        svg > g.coordinates > text:nth-child(2),
+        svg > g.coordinates > text:nth-child(4),
+        svg > g.coordinates > text:nth-child(6),
+        svg > g.coordinates > text:nth-child(8){
+            fill:lCoordCol!important;        
+        }
+
+        svg > g.coordinates > text:nth-child(9),
+        svg > g.coordinates > text:nth-child(11),
+        svg > g.coordinates > text:nth-child(13),
+        svg > g.coordinates > text:nth-child(15){
+            fill:lCoordCol!important;
+        }
+        svg > g.coordinates > text:nth-child(10),
+        svg > g.coordinates > text:nth-child(12),
+        svg > g.coordinates > text:nth-child(14),
+        svg > g.coordinates > text:nth-child(16){
+            fill:dCoordCol!important;        
         }
     }
 }
