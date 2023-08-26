@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        3.0.4
+@version        3.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -153,11 +153,35 @@
                 background: url(lightSqTex) 0% 0% / 100% 100% no-repeat !important;
                 background-color: lightsq !important;
                 }
-        }
+        } 
         /*Small board for game preview*/
-        div[class^="game-preview"] {
-            background: url(boardlink) 0% 0% / 100% 100% no-repeat !important;
+        .openings-view-chessboard chess-board,
+        .game-preview-component.sidebar-tab-games-new-preview,
+        .game-preview-component.player-card-new-preview,
+        .diagram-board-component chess-board,
+        .game-board-preview,
+        .game-preview-legacy-component,
+        .game-preview-component.open-games-item-preview,
+        .game-preview-component.current-games-grid-preview,
+        .game-preview-component.promo-preview,
+        div [style*="40.png"][class="game-preview-component"],
+        div [style*="40.jpg"][class="game-preview-component"] {
+            /*clean board preview, no logo*/
+            background-image: url(boardlink) !important;
         }
+            
+        /*======👉2023-07-05 new rules for game preview======*/
+        #board-popover,
+        .game-preview-themed-component{
+            --globalBackgroundOpaque: url(""),;
+        } 
+        :root{
+            --theme-board-style-image: url(boardlink);
+            --theme-board-style-coordinate-color-light: darksq !important;
+            --theme-board-style-coordinate-color-dark: lightsq !important;
+            --theme-board-style-highlight-color: hlColor;
+        }
+        /*======👉End rules for game preview======*/
         /*------Coordinates------*/
         .orientation-white .files coord:nth-child(2n),
         .orientation-white .ranks coord:nth-child(2n + 1),
