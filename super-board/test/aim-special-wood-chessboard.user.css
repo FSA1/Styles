@@ -1107,8 +1107,14 @@
             visibility:hidden;
         }
         
-        *{
-            border-color: lEvalCol!important;
+        svg.cm-chessboard.border-type-frame circle {
+            stroke: aimCircleColor;
+        }
+        svg.cm-chessboard.border-type-frame marker path{            
+            fill: aimArrowColor!important;
+        }
+        svg.cm-chessboard.border-type-frame line {
+            stroke: aimArrowColor!important;
         }
     }
 }
