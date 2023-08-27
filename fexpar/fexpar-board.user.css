@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Tabuleiros para FEXPAR.`
-@version        2.0.5
+@version        2.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher Tabuleiro" {
@@ -143,7 +143,7 @@ domain("lichess.org") {
         background-image: url(boardlink)!important;
     }
 
-    /*======👉2023-07-05 new rules for game preview======*/
+    /*======👉2023-07-05 new rules for game preview======
     :root {
         --theme-board-style-image: url(boardlink);
         --theme-board-style-coordinate-color-light: lightsq;

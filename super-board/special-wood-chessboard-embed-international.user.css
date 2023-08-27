@@ -878,7 +878,7 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview======*/
+        /*======👉2023-07-05 new rules for game preview======
         #board-popover,
         .game-preview-themed-component{
             --globalBackgroundOpaque: url(""),;

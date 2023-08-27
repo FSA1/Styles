@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para o canal Jastyes.`
-@version        1.0.12
+@version        1.0.14
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -289,7 +289,7 @@ domain("lichess.org") {
     .evaluation-bar-bar {
         opacity: 0.9;
     }
-    /*======👉2023-07-05 new rules for game preview======*/
+    /*======👉2023-07-05 new rules for game preview======
     :root{
         --theme-board-style-image: url(boardlink);          
         --theme-board-style-coordinate-color-light: lightsq;

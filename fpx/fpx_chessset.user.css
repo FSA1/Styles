@@ -5,7 +5,7 @@
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @supportURL		https://www.chess.com/pt-BR/blog/Agiota_do_Artenio/
 @description    `Chess pieces for chess.com (pt_BR)`
-@version        1.0.4
+@version        1.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {

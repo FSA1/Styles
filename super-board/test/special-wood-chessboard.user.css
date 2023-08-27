@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.34
+@version        1.0.35
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -928,7 +928,7 @@
             }
         }/*======End coords ======*/
             
-        /*======👉2023-07-05 new rules for game preview======*/
+        /*======👉2023-07-05 new rules for game preview======
         #board-popover,
         .game-preview-themed-component{
             --globalBackgroundOpaque: url(""),;

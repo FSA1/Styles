@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.4
+@version        2.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -1374,7 +1374,7 @@
             }
         }/*======End coords ======*/
             
-        /*======2023-07-05 new rules for game preview======*/
+        /*======2023-07-05 new rules for game preview======
         #board-popover,
         .game-preview-themed-component{
             --globalBackgroundOpaque: url(""),;

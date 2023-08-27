@@ -4,7 +4,7 @@
 @author         agiota_do_artenio
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `Chess board for Eduardo Furia`
-@version        3.0.5
+@version        3.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -170,7 +170,7 @@
             background-image: url(boardlink) !important;
         }
             
-        /*======👉2023-07-05 new rules for game preview======*/
+        /*======👉2023-07-05 new rules for game preview======
         #board-popover,
         .game-preview-themed-component{
             --globalBackgroundOpaque: url(""),;
