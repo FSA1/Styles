@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.34-beta
+@version        1.0.35-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -35,6 +35,10 @@
         }
 
 @var    color    hlColor  "↪Cor do destaque"   #fc0
+
+
+@var    color    aimCircleColor  "🔵Círculos (aim)"   #4580cc
+@var    color    aimArrowColor  "↘️Setas (aim)"   #335796
 
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.6, 0.3, 1, 0.1, ""]
 @var    color    hlSqRed  "🔴Click Direito"   #eb6150
@@ -153,6 +157,12 @@
 }/*Themes below*/
 @-moz-document domain("chess.com") {
     /*Themes*/
+
+    /*default wallpaper*/
+    useWallpaper=txchocolate-omega;
+    percentSize=50%;
+    setWallpaper=percentSize;
+    
     if myBoard=="walnut"{
         enableGlobalColor=0;
         enableInnerBorder=1;
@@ -287,7 +297,6 @@
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
         evalOpt=custom;
-        useWallpaper=gradient;
         backgroundColp=#4a382e;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
@@ -314,7 +323,7 @@
         framePosX=0%;
         framePosY=0%;
         enableInnerBorder=1;
-        innerBorderOpt=#f0dfca;
+        innerBorderOpt=#e3d3bd;
         innerBorderColor=rgba(59,36,22,0.82);
         enableBoardShadowInset=0;
         enableBoardShadow=0;
@@ -337,7 +346,6 @@
         dEvalCol=lCoordCol;
         lEvalCol=dCoordCol;
         evalOpt=custom;
-        useWallpaper=gradient;
         backgroundColp=#4a382e;
         frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
         frameShadowInset=0;
@@ -439,7 +447,6 @@
         lCoordCol=#6E563B;
         dCoordCol=#d0c0a0;
         coordsBlend=normal;
-        useWallpaper=gradient;
         backgroundColp=#4a382e;
         evalOpt=custom;
         dEvalCol=lCoordCol;
@@ -484,7 +491,6 @@
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
-        useWallpaper=gradient;
         backgroundColp=#4a382e;
         evalOpt=custom;
         dEvalCol=lCoordCol;
@@ -529,7 +535,6 @@
         lCoordCol=svgDarkSqColor;
         dCoordCol=svgLightSqColor;
         coordsBlend=normal;
-        useWallpaper=gradient;
         backgroundColp=#4a382e;
         evalOpt=custom;
         dEvalCol=lCoordCol;
@@ -928,25 +933,6 @@
                 }
             }
         }/*======End coords ======*/
-            
-        /*======👉2023-07-05 new rules for game preview======*/
-        #board-popover,
-        .game-preview-themed-component{
-            --globalBackgroundOpaque: url(""),;
-        } 
-        :root{
-            --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
-          
-            if enableCustomCoord {
-                --theme-board-style-coordinate-color-light: lCoordCol;
-                --theme-board-style-coordinate-color-dark: dCoordCol;
-            }else {
-                --theme-board-style-coordinate-color-light: transparentify(svgDarkSqColor, #000, 1) !important;
-                --theme-board-style-coordinate-color-dark: transparentify(svgLightSqColor, #000, 1) !important;
-            }
-            --theme-board-style-highlight-color: hlColor;
-        }
-        /*======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         /*evaluation bar 🔹Chesskid🔹*/
@@ -1090,181 +1076,17 @@
     
     /* AIMCHESS Theme color */    
     if enableWallpaper=="1" {
-        
-        *{
-            border-color: lEvalCol!important;
-        }
-        ._mxbdul,
-        #root > div > div > div.flex.justify-center > div > div > div > div > div{
-            background: darken(lEvalCol,10%)!important;
-            color:dEvalCol;
-        }
-        #main-block > div > div > div > div> div > div > div > button
-        ._1kqrajby,
-        ._bswz18,
-        ._b1m1vgp,
-        .text-am-grey-350,
-        ._aq7vjq,
-        .text-am-gray {
-            color: darken(lEvalCol,30%)!important;
-        }
-        .text-am-dark {
-            color: lEvalCol!important;
-            opacity:0.5!important;
-        }
-        #main-block > div > div > div > div > div ._1qt8jbo,
-        #main-block > div > div > div > div > div ._186ggawj{
-            color:darken(lEvalCol,50%)!important;
-        }
-        ._1ud74u79 {
-            border: 1px solid darken(lEvalCol,1%) !important;
-        }
-        ._1ud74u79:hover {
-            box-shadow: darken(lEvalCol,20%) 0px 0px 5px 0px !important;
-        }
-        
-        /*switch bottom*/
-        span.MuiSwitch-thumb{
-            color: lighten(lEvalCol,40%)!important;         
-        }
-        span.MuiSwitch-track {
-            background-color: darken(lEvalCol,1%)!important;  
-        }
-        ._16remspd,            
-        .css-1lnl2gx {
-            background-color: lighten(lEvalCol,20%)!important;
-            color:dEvalCol!important;
-        }
-        
-        .css-gofjbs,
-        .css-vubbuv {
-            fill: lighten(dEvalCol,10%)!important;
-        }
-        ._bwjroz{
-            background-color: lighten(lEvalCol,20%)!important;
-        }
-        ._1c6obu17,
-        .css-1sjnbew,
-        .css-1f1chra,
-        .css-uujae1,
-        #main-block > div > div > div > ul a,
-        #main-block > div > div > div > div > div > div > div > div.pt-4.px-4.pb-2.flex.items-center.\!pt-0.\!px-0 > p._95natmy.\!text-black.dark\:\!text-am-brand-dark,
-        #main-block > div > div > div > div > div > div > div._1y5xzhrh > div,
-        #main-block > div > div > div > div._1ddq6va > div > div,
-        #main-block > div > div > div._1xl6f5n5,
-        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div.flex.flex-col.bg-am-base.dark\:bg-am-base-dark.p-6.rounded-2xl.\!p-0.mb-4 > div.p-6 > div > div.flex.justify-between.mt-5 > div.flex-center.w-10.h-10.rounded-full.shadow-ring.dark\:shadow-ringDark.text-brand.\!bg-transparent,
-        #main-block > div > div > div:nth-child(7),
-        ._18nu8f47,
-        ._1vd3pjwv,
-        ._7btq6wg,
-        ._1s0fnxf5,
-        ._1t8obekz,
-        .bg-am-base {
-            background-color: lighten(lEvalCol,40%)!important;
-            color:dEvalCol!important;
-        }
-        .bg-am-accent-light {
-            background-color: backgroundColp!important;
-            background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
-
-        }
-        ._15vm4nf,
-        :is(.dark .text-brand),
-        #main-block > div > div > div > div a > div > span,        
-        .text-am-grey-200 {
-            color: lighten(dEvalCol,40%)!important;
-        }
-        #main-block > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(3),
-        #main-block > div > div > div > div > div > div > div > div > div:nth-child(1) > div:nth-child(2) {
-            background-color: lighten(dEvalCol,65%)!important;
-        }
-        .bg-am-grey-100 {
-            background-color: darken(lEvalCol,1%)!important;
-        }
-        .text-am-grey-250 {
-            color: #a6a6a6;
-        }
-        .text-gray-300{
-            background-color: saturation(lighten(dEvalCol,10%),10%)!important;
-            color:lEvalCol;
-        }
-        .text-gray-400{
-            background-color: saturation(lighten(lEvalCol,80%),30%)!important;
-            color:dEvalCol;
-        }
-        .text-gray-500{
-            background-color: saturation(lighten(lEvalCol,10%),10%)!important;
-            color:dEvalCol;
-        }
-        #main-block > div > div > div > div > div > div > div > div > div > div > div > div > div thead tr th {
-            background-color: saturation(lighten(lEvalCol,20%),50%)!important;
-            
-        }
-        
-        #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(3),
-        #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(2),
-        #main-block > div > div > div > div > div.undefined > div > div._1y5xzhrh > div._6se1pcg > div:nth-child(1) > div:nth-child(1){
-            
-            background-color: darken(lEvalCol,5%)!important;
-        }
-  
-        
-        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div:nth-child(4) > div p{
-            color: lighten(dEvalCol,30%)!important;
-        }
-        #main-block > div > div > div > div > div > div > div > div > div tr p:hover{
-            //color: lEvalCol!important;
-        }
-        #main-block > div > div > div > div > div > div > div > div > div tr:hover{
-            background-color: darken(lEvalCol,1%)!important;
-        }
-        ._gw71e96:hover {
-            color: saturation(lEvalCol, 200%)!important;
-            cursor: pointer !important;
-        }
-        
-        ._1n22usw {
-            box-shadow: saturation(lighten(lEvalCol,60%), 100%) 0px 0px 0px 3px !important;
-        }
-        .css-putrnr.Mui-disabled,
-        .css-1pvfj5s,
-        ._drlhb0f,
-        #main-block > div > div > div > div > div:nth-child(2) > div > div > div > section p,
-        #main-block > div > div > div > div:nth-child(5) > div > div > div > section.flex.flex-col > p
-        ._95natmy,
-        #main-block > div > div > div > div > div > div > div > div > div tr th,
-        #main-block > div > div > div > div > div > div > div > div > div button,
-        .css-yop3gh,
-        .MuiInputLabel-outlined.MuiInputLabel-shrink,
-        .css-1kvhwxt,
-        #main-block > div > div > div > div > section > section > p,
-        #main-block > div > div > div > div > div.pt-4.px-4.pb-2.flex.items-center.undefined > p,
-        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div.flex.flex-col.bg-am-base.dark\:bg-am-base-dark.p-6.rounded-2xl.\!p-0.mb-4 > div.MuiTabs-root.css-1xyjpbr > div > div > button,
-        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] > div:nth-child(4) > div > div:nth-child(2) > p._s0ltis.cursor-pointer.text-brand.hover\:underline,
-        #main-block > div > div > div.flex.flex-col.flex-1.pt-8.pb-4.px-\[260px\] .material-symbols-rounded,
-        .css-lvbjx5,
-        p.text-base {
-            color: dEvalCol!important;
-            -webkit-text-fill-color:darken(dEvalCol,50%);
-        }
-        .css-lvbjx5{
-            border: 1px solid dEvalCol;
-        }        
-        .css-wskl8m.Mui-checked,
-        .css-q8lw68,
-        #mui-10{
-            color:dEvalCol!important;
-        }
     
         /*Navibar*/
         #root > div > div > div.flex.justify-center {
             background: saturation(darken(dEvalCol, 50%),20%)!important;
             color: lEvalCol!important;
             box-shadow: frameShadow;
-            box-shadow: frameShadowInset;
-            if enableFrameShadow && enableFrameShadowInset {
-                box-shadow: frameShadow, frameShadowInset !important;
-            }
+        }
+        .bg-am-accent-light {
+            color: lEvalCol!important;
+            background-color: backgroundColp!important;
+            background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%)); 
         }
         #main-block > div > div > div > section.flex.flex-col.text-am-gray.text-xs.mt-10 > p:nth-child(1):before{
             content:"Theme by ChessSkins";
@@ -1284,11 +1106,17 @@
             line-height:1.2rem;
             visibility:hidden;
         }
+        
+        *{
+            border-color: lEvalCol!important;
+        }
     }
 }
 @-moz-document regexp("https?://(www\\.)?aimchess\\.com/(?!settings).*") {    
-    /* AIMCHESS board */    
-	aimbsize = 1.2 - (ajustBoardSize - 0.85) * (1.2 - 0) / (0.92 - 0.82);
+    /* AIMCHESS board */
+	aimbsize = 1.2 - (ajustBoardSize - 0.82) * (1.2 - 0) / (0.92 - 0.82);
+    aim=0.3;
+    aimbsize = aimbsize + aim;
     /*board*/
     .rounded-lg > div > div {
         if bgSize=="cover"{
@@ -1296,9 +1124,9 @@
         }else{
             background-repeat:no-repeat, no-repeat  !important;
         }
-        background-size: 92%, 92%!important;
+        background-size: 92%, 92% !important;
         background-blend-mode:  svgBoardBlend, normal !important;
-        background-position:50% 49.5%, 50% 49.5%!important;
+        background-position:50% 49.5%, 50% 49.5% !important;
         background-color: boardBGColor; 
         background-image: url(svgBoard), url(board3)!important;
     }
