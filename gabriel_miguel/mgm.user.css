@@ -39,7 +39,7 @@
 @var    color    hlSqColor4  "🔴Destaque de casa 4"   #eb6150
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0

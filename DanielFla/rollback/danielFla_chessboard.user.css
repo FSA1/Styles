@@ -62,7 +62,7 @@
 @var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
 @var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
 
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 0
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0

@@ -39,7 +39,7 @@
 @var    range    highlightOpacity  "↪Opacidade Destaque" [0.4, 0.3, 1, 0.1, ""]
 
 @var    checkbox    enableArrowSettings   "🟩Setas modificadas" 0 
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0

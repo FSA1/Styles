@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.9
+@version        2.0.10
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -63,7 +63,7 @@
 @var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
 @var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
 
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 0
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0

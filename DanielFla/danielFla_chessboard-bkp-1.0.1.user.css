@@ -58,7 +58,7 @@
 @var    color    hlSqColor1  "🔵ALT+Click"   #52b0dc
 
 @var    checkbox    enableArrowSettings   "🟩↘️Setas modificadas" 0 
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 0
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0

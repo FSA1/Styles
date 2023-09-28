@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.35-beta
+@version        1.0.36-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -52,7 +52,7 @@
 @var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
 @var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
 @var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
 @var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
 
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
