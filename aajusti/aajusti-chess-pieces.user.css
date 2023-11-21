@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Multicolor modified icySea pieces for chesskid.com and chess.com.`
-@version        1.0.10
+@version        1.0.11
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myPieces    "Peças♟️"{
@@ -231,7 +231,7 @@ domain("chesskid.com"), domain("chessable.com") {
         }
     }
 }
-@-moz-document regexp("https://www\\.chessable\\.com/(?!mt1/chess-board-setup-editor).*") {
+@-moz-document regexp("https://www\\.chessable\\.com/(?!mt1/chess-board-setup-editor)(?!mt1/explore/)(?!mt1/analysis/).*") {
     /*Chessable White Pawn*/
     /*matchs chessable domain except iframe for "setup position" as it is buggy at the moment.*/
     [data-piece="wP"]{
