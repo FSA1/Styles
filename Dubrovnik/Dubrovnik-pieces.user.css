@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         sadsnake1 (pieces), ChessSkins (Stylus theme)
 @description    `Bobby Fischer's favourite piece set style: Dubrovnik.`
-@version        1.0.4
+@version        1.0.5
 @license        CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
 @preprocessor   stylus
 
@@ -217,8 +217,21 @@ domain("chesskid.com"), domain("chessable.com") {
         --theme-piece-set-bk: url(bK);
     }
 }
-@-moz-document domain("chessable.com") {
-    /*Chessable*/
+@-moz-document regexp("https://www\\.chessable\\.com/(?!mt1/chess-board-setup-editor).*") {
+    /*Chessable White Pawn*/
+    /*matchs chessable domain except iframe for "setup position" as it is buggy at the moment.*/
+    [data-piece="wP"]{
+        content: url(wP)!important;
+    }    
+}
+@-moz-document url-prefix("https://www.chessable.com/mt1/explore/fen"), url-prefix("https://www.chessable.com/mt1/chess-board-setup-editor/") {
+    /*Chessable setup position*/
+    [id^="wP"],
+    [class^="square"]>[data-piece="wP"],
+    [data-piece="wP"]>[data-piece="wP"] {
+        content: url(wP)!important;
+    }
+    /*Chessable Fix*/
 	.notation-dark,.notationlight {
 		bottom: -3px;
 		right: 3px;
@@ -243,5 +256,4 @@ domain("chesskid.com"), domain("chessable.com") {
     div[class^="spare-pieces"]>div{
         display:inline-block!important;
     }
-    
 }
