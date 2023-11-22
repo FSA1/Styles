@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.36-beta
+@version        1.0.37-beta
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -52,7 +52,7 @@
 @var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
 @var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
 @var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
 
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
@@ -841,6 +841,7 @@
         chess-board[class^="board flipped"],
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
+        wc-chess-board,
         div[id*="chess_com_emailboard_"] {
             if bgSize=="cover"{
                 background-repeat: no-repeat, no-repeat !important;
@@ -852,44 +853,6 @@
             background-position: 0 0, bgPosX bgPosY!important;
             background-color: boardBGColor; 
             background-image: url(svgBoard), url(board3)!important; 
-        } 
-        /*Small board for game preview*/
-        .openings-view-chessboard chess-board,
-        .game-preview-component.sidebar-tab-games-new-preview,
-        .game-preview-component.player-card-new-preview,
-        .diagram-board-component chess-board,
-        .game-board-preview,
-        .game-preview-legacy-component,
-        .game-preview-component.open-games-item-preview,
-        .game-preview-component.current-games-grid-preview,
-        .game-preview-component.promo-preview,
-        div [style*="40.png"][class="game-preview-component"],
-        div [style*="40.jpg"][class="game-preview-component"] {
-            /*clean board preview, no logo*/
-            background-image: url(svgBoard), url(miniBoard3) !important;
-            background-blend-mode: svgBoardBlend, normal!important;
-            background-color: solidBoardBGColor!important;
-            background-position:0 0, bgPosX bgPosY!important;
-            background-size:100%, bgSize!important;
-            if bgSize=="cover"{
-                background-repeat: no-repeat, no-repeat !important;
-            }else{
-                background-repeat: no-repeat, repeat !important;
-            }
-        }
-        .engine-line-preview,
-        .board-popover-component, .board-popover-component:before{
-            background-image: url(frameOpt) !important;
-            background-position:framePosX framePosY;
-            background-size:frameSize;           
-            background-color: solidBoardBGColor;
-            if bgSize=="cover"{
-                background-repeat: no-repeat !important;
-            }else{
-                background-repeat: repeat !important;
-            }
-            border-color:solidBoardBGColor!important;
-            border-image:url(frameOpt) 25 stretch!important;
         }
 
         /*========== Coordinates ==========*/
