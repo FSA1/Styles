@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.27
+@version        2.0.28
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    smallJusti  "Logo Justi menor (madeira)" 0
@@ -55,7 +55,7 @@
 @var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
 @var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
 @var    color    arrowBlue  "🔵ALT+Click"   #28b8fa 
-@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 0
+@var    checkbox    enableBoardFrame  "👉🟩🔳Borda externa" 1
 @var    checkbox    enableInnerBorder  "🟩◽Borda interna" 1
 @var    checkbox    enableCenterLogo   "🟩Logo central" 1
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
@@ -617,6 +617,7 @@
         chess-board[class^="board flipped"],
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
+        wc-chess-board,
         div[id*="chess_com_emailboard_"] {
             if bgSize=="cover"{
                 background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
@@ -628,46 +629,7 @@
             background-position:cornerLogoPosX cornerLogoPosY, cornerLogo2PosX cornerLogo2PosY, centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY!important;
             background-color: boardBGColor; 
             background-image: url(cornerLogo), url(cornerLogo2TextOnly), url(centerLogo), url(svgBoard), url(board3)!important; 
-        } 
-        /*Small board for game preview*/
-        .openings-view-chessboard chess-board,
-        .game-preview-component.sidebar-tab-games-new-preview,
-        .game-preview-component.player-card-new-preview,
-        .diagram-board-component chess-board,
-        .game-board-preview,
-        .game-preview-legacy-component,
-        .game-preview-component.open-games-item-preview,
-        .game-preview-component.current-games-grid-preview,
-        .game-preview-component.promo-preview,
-        div [style*="40.png"][class="game-preview-component"],
-        div [style*="40.jpg"][class="game-preview-component"] {
-            /*clean board preview, no logo*/
-            background-image: url(svgBoard), url(miniBoard3) !important;
-            background-blend-mode: svgBoardBlend, normal!important;
-            background-color: solidBoardBGColor!important;
-            background-position:0 0, bgPosX bgPosY!important;
-            background-size:100%, bgSize!important;
-            if bgSize=="cover"{
-                background-repeat: no-repeat, no-repeat !important;
-            }else{
-                background-repeat: no-repeat, repeat !important;
-            }
         }
-        .engine-line-preview,
-        .board-popover-component, .board-popover-component:before{
-            background-image: url(frameOpt) !important;
-            background-position:framePosX framePosY;
-            background-size:frameSize;           
-            background-color: solidBoardBGColor;
-            if bgSize=="cover"{
-                background-repeat: no-repeat !important;
-            }else{
-                background-repeat: repeat !important;
-            }
-            border-color:solidBoardBGColor!important;
-            border-image:url(frameOpt) 25 stretch!important;
-        }
-
         /*========== Coordinates ==========*/
 
         /*coords light*/
@@ -709,25 +671,6 @@
                 }
             }
         }/*======End coords ======*/
-            
-        /*======👉2023-07-05 new rules for game preview======
-        #board-popover,
-        .game-preview-themed-component{
-            --globalBackgroundOpaque: url(""),;
-        } 
-        :root{
-            --theme-board-style-image: url(svgBoard) 0% 0% / cover no-repeat, url(miniBoard3);
-          
-            if enableCustomCoord {
-                --theme-board-style-coordinate-color-light: lCoordCol;
-                --theme-board-style-coordinate-color-dark: dCoordCol;
-            }else {
-                --theme-board-style-coordinate-color-light: transparentify(svgDarkSqColor, #000, 1) !important;
-                --theme-board-style-coordinate-color-dark: transparentify(svgLightSqColor, #000, 1) !important;
-            }
-            --theme-board-style-highlight-color: hlColor;
-        }
-        /*======👉End rules for game preview======*/
 
         /*====== Evaluation Bar ======*/
         /*evaluation bar - chesskid*/
