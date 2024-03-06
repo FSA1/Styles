@@ -4,7 +4,7 @@
 @author         ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Tabuleiro para o Desafio dos Streamers 2`
-@version        1.0.4
+@version        1.0.5
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -17,13 +17,49 @@
             "Verde2": "op6",
             "Desativado": "op0",
         }
-@var    checkbox    setHLopacity "Modificar opacidade do destaque" 0
-@var    range    highlightOpacity  "Opacidade do destaque" [0.4, 0.4, 1, 0.1, ""]
-@var    checkbox    setHLhueRotation "Modificar tonalidade do destaque" 0
-@var    range    highlightHueRotation  "Tonalidade do destaque" [0, 0, 355, 5, "deg"]
+@var    color    hlColor  "Cor do destaque"   #ffff33
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
     if myBoard!="op0" {
+        
+        baseURL="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/";
+        
+        if myBoard=="op1" {
+            setBoard=baseURL+"phpIsWnk7.png";
+            lightColor=#E2E5EA;
+            darkColor=#5D7CB4;
+        }
+        if myBoard=="op1b" {
+            setBoard=baseURL+"phpSw1wMl.png";
+            lightColor=#E3E8EC;
+            darkColor=#5097CB;
+        }
+        if myBoard=="op2" {
+            setBoard=baseURL+"php7z1M4G.png";
+            lightColor=#E8EAEE;
+            darkColor=#7891BB;
+        }
+        if myBoard=="op3" {
+            setBoard=baseURL+"phpd040Vj.png";
+            lightColor=#EAE8EE;
+            darkColor=#9076B9;
+        }
+        if myBoard=="op4" {
+            setBoard=baseURL+"php8qXVC5.png";
+            lightColor=#EEEAE8;
+            darkColor=#B99076;
+        }
+        if myBoard=="op5" {
+            setBoard=baseURL+"phpvOEiEr.png";
+            lightColor=#E9EDE7;
+            darkColor=#8FB875;
+        }
+        if myBoard=="op6" {
+            setBoard=baseURL+"phpNBsPsR.png";
+            lightColor=#E5EBE8;
+            darkColor=#74B78E;
+        }
+        
         #board-single-sibling,
         div#board.board:not([style*="background-image: url"]):not([class="board board-webgl-3d"]),
         .board-layout-chessboard .board:not([style*="--theme"]):not([class="board board-webgl-3d"]),
@@ -51,175 +87,37 @@
         chess-board[class^="board flipped"],
         chess-board[id^="board-blank"],
         chess-board[id^="board-vs-personalities"],
+        wc-chess-board,
         div[id*="chess_com_emailboard_"] {
-            if myBoard=="op1" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpIsWnk7.png")!important;
-            }
-            if myBoard=="op1b" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpSw1wMl.png")!important;
-            }
-            if myBoard=="op2" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/php7z1M4G.png")!important;
-            }
-            if myBoard=="op3" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpd040Vj.png")!important;
-            }
-            if myBoard=="op4" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/php8qXVC5.png")!important;
-            }
-            if myBoard=="op5" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpvOEiEr.png")!important;
-            }
-            if myBoard=="op6" {
-                background-image: url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpNBsPsR.png")!important;
-            }
+            background-image: url(setBoard)!important;
         }
         /*Coordinates*/
-        if myBoard=="op1" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #5D7CB4!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E2E5EA !important;
-                fill:@color;
-                background-color:@color;
-            }
+        .evaluation-bar-black,
+        text.coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light {
+            color: darkColor!important;
+            fill:@color;
+            background-color:@color;
         }
-        if myBoard=="op1b" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #5097CB!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E3E8EC !important;
-                fill:@color;
-                background-color:@color;
-            }
+
+        .evaluation-bar-white,
+        text.coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark {
+            color: lightColor !important;
+            fill:@color;
+            background-color:@color;
         }
-        if myBoard=="op2" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #7891BB!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E8EAEE !important;
-                fill:@color;
-                background-color:@color;
-            }
-        }
-        if myBoard=="op3" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #9076B9!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #EAE8EE !important;
-                fill:@color;
-                background-color:@color;
-            }
-        }
-        if myBoard=="op4" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #B99076!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #EEEAE8 !important;
-                fill:@color;
-                background-color:@color;
-            }
-        }
-        if myBoard=="op5" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #8FB875!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E9EDE7 !important;
-                fill:@color;
-                background-color:@color;
-            }
-        }
-        if myBoard=="op6" {
-            .evaluation-bar-black,
-            text.coordinate-light,
-            div.number.coords-light,
-            div.letter.coords-light {
-                color: #74B78E!important;
-                fill:@color;
-                background-color:@color;
-            }
-            
-            .evaluation-bar-white,
-            text.coordinate-dark,
-            div.number.coords-dark,
-            div.letter.coords-dark {
-                color: #E5EBE8 !important;
-                fill:@color;
-                background-color:@color;
-            }
-        }
-        /*Highlight*/
-        if setHLopacity {
-            .move-square,
-            .highlight {
-                opacity: highlightOpacity!important;
-            }
-        }
-        if setHLhueRotation {
-            .move-square,
-            .highlight {
-                filter: hue-rotate(highlightHueRotation) !important;
-            }
+        .highlight {
+            background-color: hlColor!important;
+        }        
+        
+        :root {
+            --theme-board-style-image: url(setBoard);
+            --theme-board-style-coordinate-color-light: lightColor;
+            --theme-board-style-coordinate-color-dark: darkColor;
+            --theme-board-style-highlight-color: hlColor;
         }
     }
     /*End of the code*/
