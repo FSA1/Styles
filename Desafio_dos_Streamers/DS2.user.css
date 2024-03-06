@@ -4,7 +4,7 @@
 @author         ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Tabuleiro para o Desafio dos Streamers 2`
-@version        1.0.6
+@version        1.0.7
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -18,7 +18,7 @@
         }
 @var    color    hlColor  "Cor do destaque"   #ffff33
 ==/UserStyle== */
-@-moz-document domain("chess.com") {
+@-moz-document domain("chess.com"), domain("chesskid.com") {
 
     baseURL="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/";
 
@@ -58,9 +58,19 @@
         darkColor=#69B084;
     }
 
+    .fade-in-overlay/*chesskids*/
+    ,
+    #boarddefault_boardarea/*chesskids*/
+    ,
+    #divChessBoard_boardarea/*chesskids*/
+    ,
+    #vsComputerDiv_boardarea/*chesskids*/
+    ,
+    div[id^="board-"][class*="chess-board__board"]/*chesskids*/
+    [class="board-b72b1"] > div,
     #board-single-sibling,
-    div#board.board:not([style*="background-image: url"]):not([class="board board-webgl-3d"]),
-    .board-layout-chessboard .board:not([style*="--theme"]):not([class="board board-webgl-3d"]),
+    div#board.board:not([style*="background-image: url"]),
+    .board-layout-chessboard .board:not([style*="--theme"]),
     div[class^="board v-board disabled rounded"],
     div[class^="daily-puzzle-board"],
     div[class^="board chessboard-component"],
@@ -81,34 +91,42 @@
     div[id*="chess_com_chessmentor_board_1_boardarea"],
     div[id^="chess_com_emailboard_"],
     div[id^="board-blank"],
-    chess-board[class^="board"]:not([class="board board-webgl-3d"]),
+    chess-board[class^="board"],
     chess-board[class^="board flipped"],
     chess-board[id^="board-blank"],
     chess-board[id^="board-vs-personalities"],
     wc-chess-board,
     div[id*="chess_com_emailboard_"] {
-        background-image: url(setBoard)!important;
+        background-image: url(setBoard) !important;
     }
     /*Coordinates*/
-    .evaluation-bar-black,
+    .notation-dark,
+    .coords-light,
+    .coordinate-light,
     text.coordinate-light,
     div.number.coords-light,
     div.letter.coords-light {
-        color: darkColor!important;
+        color: darkColor !important;
         fill:@color;
-        background-color:@color;
     }
 
-    .evaluation-bar-white,
-    text.coordinate-dark,
+    .notation-light,
+    .coords-dark,
+    .coordinate-dark,
     div.number.coords-dark,
     div.letter.coords-dark {
         color: lightColor !important;
         fill:@color;
-        background-color:@color;
+    }
+    
+    .evaluation-bar-black{
+        background-color:darkColor !important;        
+    }
+    .evaluation-bar-white{
+        background-color:lightColor !important;        
     }
     .highlight {
-        background-color: hlColor!important;
+        background-color: hlColor !important;
     }        
 
     :root {
