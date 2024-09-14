@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        2.0.26
+@version        2.0.27
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    checkbox    setServer   "Servidor: GitHub <--> GitLab" 0
@@ -85,6 +85,7 @@
 @var    checkbox    enableCornerLogo   "🟩Logo secundário" 0
 @var    checkbox    enableCornerLogo2   "🟩🆎Texto extra" 0
 @var    checkbox    enableWallpaper   "🟩Plano de fundo" 0
+@var    checkbox    enableThinEvalBar  "🟩Barrinha fina" 1
 
 @var    checkbox    enableCustomCoord "🟨🔠Coord. personalizadas" 0
 @var    checkbox    enableOutsideCoords "🟡Coord. Externas" 1
@@ -1188,8 +1189,15 @@
                 box-shadow: 1px 1px 8px 2px #0000002e;
                 z-index:1;
             }
-            /*====== End Evaluation Bar ======*/
-        }
+            /*evaluation bar width for chesscom*/
+            if enableThinEvalBar{
+                body.with-evaluation {
+                    --evalWidth: 2rem;
+                    --evalAndGutter: 3rem;
+                    --gutterLeftOfBoard: var(--gutterSmall);
+                }
+            }            
+        }/*====== End Evaluation Bar ======*/
     }/*end board*/
         
     /*Highlight*/
@@ -1464,12 +1472,11 @@
               var(--theme-board-style-image) !important;
                 background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, cornerLogoBlend, cornerLogo2Blend, centerLogoBlend, svgBoardBlend, normal !important;
             }
-			
             /*outside coords settings*/
-            if ajustBoardSize<0.92 && enableOutsideCoords{
+            if enableOutsideCoords{
                 .coordinate-grey,
-                .coordinate-dark:not(.game-board-medium .coordinate-dark):not(#board-single-sibling .coordinate-dark):not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
-                .coordinate-light:not(.game-board-medium .coordinate-light):not(#board-single-sibling .coordinate-light):not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
+                .coordinate-dark:not(.events-dashboard-board .coordinate-dark):not(.game-board-medium .coordinate-dark):not(#board-single-sibling .coordinate-dark):not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
+                .coordinate-light:not(.events-dashboard-board .coordinate-light):not(.game-board-medium .coordinate-light):not(#board-single-sibling .coordinate-light):not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
                     text-transform: outCoordFontCase !important;
                     fill:outCoordColorOpt!important;
                     font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
@@ -1483,31 +1490,39 @@
                     --coordinatesGutter: 1rem!important;
                 }
 
-                if enableOutsideCoords {
-                    .coordinates:not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
-                        transform: translate(-4.5%,4.8%)!important;
+                .coordinates:not(.events-dashboard-board .coordinates):not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                    transform: translate(-4.5%,4.8%)!important;
+                }
+                if ajustBoardSize>=0.92{
+                    .coordinates:not(.events-dashboard-board .coordinates):not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                        transform: translate(-3.8%,4.2%)!important;
                     }
-                    .coords-dark:not(#board-single-sibling .coords-dark):not(.game-details-board .coords-dark):not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
-                    .coordinate-dark:not(.game-board-medium .coordinate-dark):not(#board-single-sibling .coordinate-dark):not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
-                    div.number.coords-dark:not(.game-details-board div.number.coords-dark):not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
-                    div.letter.coords-dark:not(.game-details-board div.letter.coords-dark):not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
-                    text.coordinate-dark:not(.game-board-medium text.coordinate-dark):not(#board-single-sibling text.coordinate-dark):not(.game-details-board text.coordinate-dark):not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
-                    .coords-light:not(#board-single-sibling .coords-light):not(.game-details-board .coords-light):not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
-                    .coordinate-light:not(.game-board-medium .coordinate-light):not(#board-single-sibling .coordinate-light):not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light),
-                    div.number.coords-light:not(.game-details-board div.number.coords-light):not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
-                    div.letter.coords-light:not(.game-details-board div.letter.coords-light):not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
-                    text.coordinate-light:not(.game-board-medium text.coordinate-light):not(#board-single-sibling text.coordinate-light):not(.game-details-board text.coordinate-light):not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
-                        color: outCoordColorOpt !important;
-                        fill: @color;
-                        opacity: 1!important;
+                    if enableInnerBorder==0{
+                        
+                        .coordinates:not(.events-dashboard-board .coordinates):not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                            transform: translate(-3.8%,3.8%)!important;
+                        }
                     }
+                }
+                
+                .coords-dark:not(#board-single-sibling .coords-dark):not(.game-details-board .coords-dark):not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
+                div.number.coords-dark:not(.game-details-board div.number.coords-dark):not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
+                div.letter.coords-dark:not(.game-details-board div.letter.coords-dark):not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
+                text.coordinate-dark:not(.events-dashboard-board text.coordinate-dark):not(.game-board-medium text.coordinate-dark):not(#board-single-sibling text.coordinate-dark):not(.game-details-board text.coordinate-dark):not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
+                .coords-light:not(#board-single-sibling .coords-light):not(.game-details-board .coords-light):not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
+                div.number.coords-light:not(.game-details-board div.number.coords-light):not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
+                div.letter.coords-light:not(.game-details-board div.letter.coords-light):not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
+                text.coordinate-light:not(.events-dashboard-board text.coordinate-light):not(.game-board-medium text.coordinate-light):not(#board-single-sibling text.coordinate-light):not(.game-details-board text.coordinate-light):not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
+                    color: outCoordColorOpt !important;
+                    fill: @color;
+                    opacity: 1!important;
                 }
             }
         }
     }/*end board border*/
     
 }
-@-moz-document url-prefix("https://www.chess.com/events"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"){
+@-moz-document url-prefix("https://www.chess.com/events/"), url-prefix("https://www.chess.com/events/pt"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/es") {
     /*Events*/
     /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
     @media (min-width: 960px){
