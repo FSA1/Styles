@@ -1,0 +1,115 @@
+/* ==UserStyle==
+@name           ⚙️Eventos do chess.com (pt-BR)
+@author         ChessSkins
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/ChessSkins
+@description    `Altera tamanhos e cores nas informações dos jogadores`
+@version        1.0.7
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+
+
+@var    range    setscale  "Ajuste Zoom" [1, 0.8, 1, 0.05, ""]
+@var    range    avatarSize  "Tamanho da Foto" [10, 8, 10, 0.5, "rem"]
+@var    range    titleFontSize  "Fonte do título" [1.2, 1, 1.4, 0.01, "rem"]
+@var color    titleBackCol  "Cor de fundo"   #7d0d0d
+
+@var    range    playerFontSize  "Fonte do nome" [1.4, 1, 1.6, 0.01, "rem"]
+@var select   playerFontWeight   "Espessura"    ["400", "600*", "700", "800"]
+@var color    playerFontCol  "Cor do texto"   #ffbe26
+
+@var    range    ratingFontSize  "Fonte do rating" [1.4, 1, 1.6, 0.01, "rem"]
+@var select   ratingFontWeight   "Espessura"    ["400*", "600", "700", "800"]
+@var color    ratingFontCol  "Cor do texto"   #fffc
+
+==/UserStyle== */
+
+@-moz-document regexp("https?://(www\\.)?chess\\.com/([a-zA-Z]{2}/?)?events/?.*") {
+
+    :root { 
+      --mzoom: setscale;
+	  }
+	.board-layout-sidebar{
+		margin-left: calc(-40em * (1 - var(--mzoom)));
+	}
+    
+    bigFlags="https://www.chess.com/bundles/web/images/sprites/flags-32.1ee1691e.png";
+    @media (min-width: 75em){
+            .board-layout-sidebar,
+            .board-layout-main {
+                transform: scale(setscale);
+            }
+    }
+    @media (min-width: 75em){
+        .player-component {
+            --avatarSize: avatarSize;
+        }
+        .player-title{        
+            font-size: titleFontSize!important;
+        }
+        #board-layout-player-top .player-title{ 
+            top: calc(var(--avatarSize) - 0.8rem);
+        }
+        #board-layout-player-bottom .player-title{ 
+            top: calc(var(--avatarSize) - 1.8rem);
+        }
+        .user-chess-title-component{
+            background-color: titleBackCol;
+        }
+        .player-details .player-name-name,
+        .player-details .player-name {
+            color: playerFontCol!important;
+            white-space: normal!important;
+            font-size: playerFontSize!important;
+            font-weight: playerFontWeight!important;
+            //margin-top:0.2rem!important;
+        }
+        .player-details .player-rating{
+            color: ratingFontCol!important;
+            font-size: ratingFontSize!important;
+            font-weight: ratingFontWeight!important;
+        }
+        .player-details .country-flag-small, .player-details .country-flags-component {
+            align-items: center;
+            background-image: url(bigFlags);
+            background-size: 27rem 51.5rem;
+            display: inline-flex;
+            flex-shrink: 0;
+            height: 2rem;
+            justify-content: center;
+            width: @height;
+        }
+        .player-tagline-rating {
+            color: #dfd73bd6!important;
+            text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+        }
+        .player-card-component {
+            background-color: #272424cf!important;
+        }
+        .player-card-bio:after {
+            background: linear-gradient(180deg,hsla(0,0%,100%,0),#252222 70%)!important;
+        }
+        body.events-layout-v2:not(.events-player-names-above-and-below) #board-layout-player-top .player-player{
+            padding-top: 1rem!important;
+        }
+        body.events-layout-v2:not(.events-player-names-above-and-below) #board-layout-player-bottom .player-player{
+            padding-bottom: 1rem!important;
+        }
+        body.events-layout-v2:not(.events-player-names-above-and-below) .board-layout-player {
+            width:11rem;
+        }
+        body.events-layout-v2:not(.events-player-names-above-and-below) .board-layout-player {
+            margin-left:-1rem;
+        }
+        if setscale < 1{
+            body.events-layout-v2:not(.events-player-names-above-and-below) .board-layout-player {
+                margin-left:-2.4rem;
+            }
+        }
+    }
+    //selected move
+    .dark-mode .vertical-move-list .black.selected, .dark-mode .vertical-move-list .white.selected {
+        background-color: rgba(255, 225, 0, .25);
+        border-color: rgba(255, 204, 0, .37);
+    }
+}

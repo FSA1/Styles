@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `highly customizable chess set for chess.com.`
-@version        1.0.38
+@version        1.0.39
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "🟢🏁Tabuleiro" {
@@ -1373,30 +1373,6 @@
 				}
 			}
 		}/*end board border*/
-        .player-tagline-rating {
-            color: #dfd73bd6!important;
-            text-shadow: rgb(0, 0, 0) 1px 1px 1px;
-        }
-        .player-card-component {
-            background-color: #272424cf!important;
-        }
-        .player-card-bio:after {
-            background: linear-gradient(180deg,hsla(0,0%,100%,0),#252222 70%)!important;
-        }
-        .main-tab-game-sidebar {
-            margin-left: 2rem!important;
-        }
-    }
-    .board-layout-main {
-        margin-right: -1rem!important;
-    }
-    @media (min-width: 60em){
-        body.events-layout .board-layout-player {
-            margin-left:-1rem;
-        }
-        .player-name {
-            white-space: normal!important;
-        }
     }
     
 }/*End Events*/

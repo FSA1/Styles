@@ -1,0 +1,953 @@
+/* ==UserStyle==
+@name           Chessbase (Eng): chessboard
+@author         ChessSkins
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/ChessSkins
+@description    `highly customizable chess set for chess.com.`
+@version        1.0.11
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+@var    select      myBoard    "🟢🏁Board" {
+            "Wood*": "onlineWood",
+            "Fritz15 Wood": "f15Wood",
+            "Grey": "onlineClean",
+            "Blue": "onlineBlue",
+        }
+
+@var    range    frameRadius  "🔵Corner radius" [0, 0, 34, 1, "px"]
+
+@var    select      setHighlight    "🟨Highlight" {
+            "Board theme": "op1",
+            "Custom": "op2",
+            "Default": "disabled",
+        }
+
+@var    color    hlColor  "↪Highlight color"   #fc0
+
+@var    range    highlightOpacity  "↪Highlight opacity" [0.6, 0.3, 1, 0.1, ""]
+@var    color    hlSqRed  "🔴Right Click"   #eb6150
+@var    color    hlSqOrange  "🟠CTRL+Click"   #fa0
+@var    color    hlSqGreen  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqBlue  "🔵ALT+Click"   #52b0dc
+
+@var    checkbox    enableArrowSettings   "🟩↘️Custom arrows" 1
+@var    checkbox    enableArrowOverrideByTheme   "↪↘️✳️Theme can override colors" 1
+@var    range    arrowOpacity  "↘️Arrow opacity" [0.8, 0.7, 1, 0.1, ""]
+@var    color    arrowOrange  "↘️🟠Right Click"   #ff8000
+@var    color    arrowRed  "↘️🔴CTRL+Click"   #fa4d35
+@var    color    arrowGreen  "↘️🟢SHIFT+Click"   #abe439
+@var    color    arrowBlue  "↘️🔵ALT+Click"   #28b8fa
+
+@var    checkbox    enableThinEvalBar  "🟩Thin Eval. bar" 1
+@var    checkbox    enableBoardFrame  "🟩🔳Outer border" 1
+@var    checkbox    enableInnerBorder  "🟩Inner Border" 0
+@var    checkbox    enableWallpaper   "🟩Background" 1
+@var    checkbox    enablePanelColor   "🟩Colorize panels" 1
+
+@var    checkbox    enableOutsideCoords "🟡External Coord." 1
+@var    range    outCoordFontSize  "↪Font size" [0.24, 0.1, 0.3, 0.01, "rem"]
+@var select   outCoordFontWeight   "↪Weight"    ["400", "600", "700*", "800"]
+
+@var    select      outCoordFontCase    "↪Font case"{
+            "Uppercase": "uppercase",
+            "Lowercase": "lowercase",
+        }
+
+@var    select      evalOpt    "Evaluation bar colors" {
+            "Custom*": "custom",
+            "Default": "disabled",
+        }
+
+@var    range    evalBarOpacity  "Eval. bar Opacity" [0.9, 0.5, 1, 0.1, ""]
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+        
+    /*Default Settings*/
+    ajustBoardSize=0.92;
+    boardBGOpt=colorOnly;
+    boardBGColor=#d0c6b6;
+    svgLightSqColor=#ecd5b2fc;
+    svgDarkSqColor=#775844;
+    innerBorderColor=#c1a890;
+    innerBorderOpt=#c1a890;
+    outCoordColorOpt=#e7dfd1;
+    outCoordFontName="Segoe UI";
+    frameRadiusInOut=1;
+    frameOpt=colorOnly;
+    hlImgOpt=disabled;
+    svgBoardBlend=normal;
+    centerLogoCol=#8d766640;    
+    enableBoardShadowInset=0;
+    enableBoardShadow=0;
+    enableFrameShadowInset=0;
+    frameShadowInsetBlur=2;
+    frameShadowInsetSpread=1;
+    frameShadowInsetColor= rgba(0, 0, 0, .4);
+    enableFrameShadow=1
+    frameShadowBlur=8;
+    frameShadowSpread=4;
+    frameShadowColor= rgba(0, 0, 0, .5);
+    setWallpaper=cover;
+    percentSize=100%;
+    backgroundColp=#4a382e;
+    //ajustBoardSize=ajustBoardSize * 1.002;
+
+    
+   
+    /*Textures*/
+    cbchessbaseF15="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phpVWAQ2e.jpg";
+    cbchessbase="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phplJLNmp.jpg";
+    txchessbase-redwood="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/php6CELBQ.jpg";
+    bgWood="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Agiota_do_Artenio/phphAxcWF.jpg";
+    /*selector with exceptions to avoid override analysis highlights*/
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="244\, 42\, 50"]):not([style*="#f42a32"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]';
+
+    if enableBoardShadow{
+        boardShadow= 0px 0px 8px 4px rgba(0, 0, 0, .4);
+    }
+    if enableBoardShadowInset{
+        boardShadowInset= inset 0px 1px 2px 1px rgba(0, 0, 0, .4);
+    }
+    if enableFrameShadow{
+        frameShadow= 0px 0px frameShadowBlur frameShadowSpread frameShadowColor;
+    }
+    if enableFrameShadowInset{
+        frameShadowInset= inset 0px -1px frameShadowInsetBlur frameShadowInsetSpread frameShadowInsetColor;
+    }
+    
+}/*Themes below*/
+@-moz-document domain("chess.com") {
+    /*Themes*/
+
+    /*default wallpaper*/
+    useWallpaper="";
+    percentSize=100%;
+    setWallpaper=cover;
+    
+    if myBoard=="onlineClean" {
+        svgBoardBlend=normal;
+        enableGlobalColor=0;
+        svgLightSqOpacity=1;
+        svgLightSqColor=#697281;
+        svgDarkSqColor=#4f5661;
+        svgDarkSqOpacity=1;
+        if enableInnerBorder==0{
+            ajustBoardSize=0.94;
+        }
+        boardBGOpt=colorOnly;
+        boardBGColor=#697281;
+        bgSize=100%;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameOpt=colorOnly;
+        frameColor=#4f5661;
+        frameSize=106%;
+        framePosX=6%;
+        framePosY=0%;
+        innerBorderOpt=#181a1f;
+        innerBorderColor=rgba(24, 26, 31, .82);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        if setHighlight=='op1'{
+            hlColor=#aed5ee;
+            highlightOpacity=0.7;
+        }
+        enableCustomCoord=1;
+        outCoordFontName="HomepageBaukasten Bold", Arial;
+        outCoordColorOpt=#181a1f;
+        outCoordCol=#181a1f;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        backgroundColp=#1b262c;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+        if enableArrowOverrideByTheme{
+            arrowOrange=#a7b0be;
+        }
+        if enablePanelColor{
+            .board-layout-player {
+                background-color:#393e46;
+            }
+            .clock-component:not(.clock-theatre,.clock-sidebar) {
+                margin:2px;
+                max-height:3.6rem!important;
+            }
+            .dark-mode {
+                --color-bg-secondary: #393e46;
+            }            
+        }
+    }
+    else if myBoard=="onlineWood" {
+        svgBoardBlend=normal;
+        enableGlobalColor=0;
+        svgLightSqOpacity=0;
+        svgLightSqColor=#f4e4ca;
+        svgDarkSqColor=#d28456;
+        svgDarkSqOpacity=0;
+        if enableInnerBorder==0{
+            ajustBoardSize=0.94;
+        }
+        boardBGOpt=cbchessbase;
+        boardBGColor=#f5e0c3;
+        bgSize=100%;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameOpt=txchessbase-redwood;
+        frameColor=#8b3131;
+        frameSize=106%;
+        framePosX=6%;
+        framePosY=0%;
+        innerBorderOpt=#e3d3bd;
+        innerBorderColor=rgba(59,36,22,0.82);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        if setHighlight=='op1'{
+            hlColor=#ffc525;
+            highlightOpacity=0.5;
+        }
+        enableCustomCoord=1;
+        outCoordFontName="HomepageBaukasten Bold", Arial;
+        outCoordColorOpt=#f5e0c3;
+        outCoordCol=#f5e0c3;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        useWallpaper=bgWood;
+        percentSize=100vh;
+        setWallpaper=percentSize;
+        backgroundColp=#4a382e;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+        if enableArrowOverrideByTheme{
+            arrowOrange=#7a2e30;
+        }
+    }
+    else if myBoard=="f15Wood" {
+        svgBoardBlend=normal;
+        enableGlobalColor=0;
+        svgLightSqOpacity=0;
+        svgLightSqColor=#edcfab;
+        svgDarkSqColor=#c56c3a;
+        svgDarkSqOpacity=0;
+        if enableInnerBorder==0{
+            ajustBoardSize=0.94;
+        }
+        boardBGOpt=cbchessbaseF15;
+        boardBGColor=svgLightSqColor;
+        bgSize=100%;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameRadiusInOut=1;
+        frameOpt=txchessbase-redwood;
+        frameColor=#8b3131;
+        frameSize=106%;
+        framePosX=6%;
+        framePosY=0%;
+        innerBorderOpt=svgLightSqColor;
+        innerBorderColor=rgba(59,36,22,0.82);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        if setHighlight=='op1'{
+            hlColor=#ffc525;
+            highlightOpacity=0.5;
+        }
+        enableCustomCoord=1;
+        outCoordFontName="HomepageBaukasten Bold", Arial;
+        outCoordColorOpt=svgLightSqColor;
+        outCoordCol=svgLightSqColor;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        useWallpaper=bgWood;
+        percentSize=100vh;
+        setWallpaper=percentSize;
+        backgroundColp=#4a382e;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+        if enableArrowOverrideByTheme{
+            arrowOrange=#7a2e30;
+        }
+    }
+    else if myBoard=="onlineBlue" {
+        svgBoardBlend=normal;
+        enableGlobalColor=0;
+        svgLightSqOpacity=1;
+        svgLightSqColor=#5288ca;
+        svgDarkSqColor=#2a63aa;
+        svgDarkSqOpacity=1;
+        if enableInnerBorder==0{
+            ajustBoardSize=0.94;
+        }
+        boardBGOpt=colorOnly;
+        boardBGColor=#5288ca;
+        bgSize=100%;
+        bgPosX=50%;
+        bgPosY=50%;
+        frameOpt=colorOnly;
+        frameColor=#2a63aa;
+        frameSize=106%;
+        framePosX=6%;
+        framePosY=0%;
+        innerBorderOpt=#5288ca;
+        innerBorderColor=rgba(82, 136, 202, .82);
+        enableBoardShadowInset=0;
+        enableBoardShadow=0;
+        enableFrameShadowInset=0;
+        enableFrameShadow=1;
+        if setHighlight=='op1'{
+            hlColor=#a8fcff;
+            highlightOpacity=0.5;
+        }
+        enableCustomCoord=1;
+        outCoordFontName="HomepageBaukasten Bold", Arial;
+        outCoordColorOpt=#5288ca;
+        outCoordCol=#5288ca;
+        lCoordCol=svgDarkSqColor;
+        dCoordCol=svgLightSqColor;
+        coordsBlend=normal;
+        dEvalCol=lCoordCol;
+        lEvalCol=dCoordCol;
+        backgroundColp=#242a35;
+        frameShadow=0px 0px 8px 4px rgba(0,0,0,0.5);
+        frameShadowInset=0;
+        if enableArrowOverrideByTheme{
+            arrowOrange=#a8cfff;
+        }
+        if enablePanelColor{
+            .board-layout-player {
+                background-color:#343940;
+            }
+            .clock-component:not(.clock-theatre,.clock-sidebar) {
+                margin:2px;
+                max-height:3.6rem!important;
+            }
+            .dark-mode {
+                --color-bg-secondary: #343940;
+            }            
+        }
+    } 
+
+    /*End themes*/
+
+    /*GLOBAL COLOR - Need to be placed after themes*/
+    if (enableGlobalColor==1 && myBoard=="custom") || global==1{    
+        innerBorderOpt=saturate(lighten(svgDarkSqColor, 20%), -10%);       
+        frameColor=saturate(darken(svgDarkSqColor, 10%), -2%);
+        centerLogoOpacity=0.24;
+        centerLogoBlend=darken;
+        cornerLogoBlend=multiply;
+        centerLogoCol=saturate(lighten(svgDarkSqColor, -12%), 10%);
+        cornerLogoCol=cornerLogo2Col=saturate(lighten(svgDarkSqColor, 70%), 10%);
+        backgroundColp=saturate(shade(svgDarkSqColor,40%), -80%);
+        
+    }    
+    if frameSize=="contain"{
+        frameRepeat=repeat;
+    }else{
+        frameRepeat=no-repeat;
+    }    
+    if bgSize=="contain"{
+        bgRepeat=repeat;
+    }else{
+        bgRepeat=no-repeat;
+    }
+    if !enableBoardShadowInset{
+        boardShadowInset=0;
+    }
+    if !enableFrameShadow {
+        frameShadow=0;
+    }
+    if !enableFrameShadowInset{
+        frameShadowInset=0;
+    }
+}
+@-moz-document domain("chess.com") {
+
+    /*Board*/
+    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
+    svgDarkSqColor=hsla(svgDarkSqColor);
+    svgLightSqColor=hsla(svgLightSqColor);
+    innerBorderOpt=hsla(innerBorderOpt);
+    outCoordColorOpt=hsla(outCoordColorOpt);
+    /*SVG IMAGES HERE 🔐*/
+    /*main svg board*/
+    svgBoard="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8' standalone='no'?%3e%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:x='http://www.w3.org/1999/xlink' viewBox='0 0 8 8' shape-rendering='crispEdges'%3e%3cg id='a'%3e%3cg id='b'%3e%3cg id='c'%3e%3cg id='d'%3e%3crect width='1' height='1' fill='" + svgLightSqColor + "' fill-opacity='" + svgLightSqOpacity + "' style='mix-blend-mode:multiply' id='e'/%3e%3cuse x='1' y='1' href='%23e' x:href='%23e'/%3e%3crect y='1' width='1' height='1' fill='" + svgDarkSqColor + "' fill-opacity='" + svgDarkSqOpacity + "' style='mix-blend-mode:multiply' id='f'/%3e%3cuse x='1' y='-1' href='%23f' x:href='%23f'/%3e%3c/g%3e%3cuse x='2' href='%23d' x:href='%23d'/%3e%3c/g%3e%3cuse x='4' href='%23c' x:href='%23c'/%3e%3c/g%3e%3cuse y='2' href='%23b' x:href='%23b'/%3e%3c/g%3e%3cuse y='4' href='%23a' x:href='%23a'/%3e%3c/svg%3e";
+
+    board3=boardBGOpt;
+    miniBoard3=board3;
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" && boardBGOpt!=null{
+       boardBGColor=#0000;
+    }
+    if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
+        board3=null;
+        miniBoard3=frameOpt;
+        framePosX=bgPosX;
+        framePosY=bgPosY;
+    }
+    /*Board selector*/
+    if myBoard!="disabled"{
+        #board-single-sibling,
+        div#board.board:not([style*="background-image: url"]),
+        .board-layout-chessboard .board:not([style*="--theme"]),
+        div[class^="board v-board disabled rounded"],
+        div[class^="daily-puzzle-board"],
+        div[class^="board chessboard-component"],
+        div[class^="board v-board chessboard-component"],
+        div[class^="board rounded"],
+        div[class^="board rounded fippled"],
+        div[class^="board fippled rounded"],
+        div[class^="board v-board rounded"],
+        div[class^="board v-board fippled rounded"],
+        div[class^="board disabled rounded"],
+        div[id$="_ChessBoard_boardarea"],
+        div[id^="chess_com_openingboard_1"],
+        div[id^="board_training"],
+        div[id^="divBoard_boardarea"],
+        div[id^="chess_com_tactics_board"],
+        div[id^="chessboard_"],
+        div[id^="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentor_board_1_boardarea"],
+        div[id^="chess_com_emailboard_"],
+        div[id^="board-blank"],
+        chess-board[class^="board"],
+        chess-board[class^="board flipped"],
+        chess-board[id^="board-blank"],
+        chess-board[id^="board-vs-personalities"],
+        wc-chess-board,
+        div[id*="chess_com_emailboard_"] {
+            if bgSize=="cover"{
+                background-repeat: no-repeat, no-repeat !important;
+            }else{
+                background-repeat: no-repeat, repeat !important;
+            }
+            background-size: 100%, bgSize!important;
+            background-blend-mode: svgBoardBlend, normal !important;
+            background-position: 0 0, bgPosX bgPosY!important;
+            background-color: boardBGColor; 
+            background-image: url(svgBoard), url(board3)!important; 
+        } 
+        /*Small board for game preview*/
+        .engine-line-preview,
+        .board-popover-component, .board-popover-component:before{
+            background-image: url(frameOpt) !important;
+            background-position:framePosX framePosY;
+            background-size:frameSize;           
+            background-color: solidBoardBGColor;
+            if bgSize=="cover"{
+                background-repeat: no-repeat !important;
+            }else{
+                background-repeat: repeat !important;
+            }
+            border-color:solidBoardBGColor!important;
+            border-image:url(frameOpt) 25 stretch!important;
+        }
+        body{
+            --theme-board-style-highlight-color:hlColor;
+            --theme-board-style-image: url(svgBoard) !important;
+            if myBoard == onlineWood{
+            --theme-board-style-image: url(cbchessbase) !important;                
+            }else if myBoard == f15Wood{
+            --theme-board-style-image: url(cbchessbaseF15) !important;                
+            }
+        }
+
+        /*========== Coordinates ==========*/
+
+        /*coords light*/
+        .notation-dark,
+        .coords-light,
+        .coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light,
+        text.coordinate-light {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: lCoordCol!important;
+                fill: @color;
+            }else {
+                color: transparentify(svgDarkSqColor, #000, 1) !important;
+                fill: @color;
+                if svgDarkSqOpacity>='0.7'{
+                    opacity:svgDarkSqOpacity;
+                }
+            }
+        }
+
+        /*coords dark*/
+        .notation-light,
+        .coords-dark,
+        .coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark,
+        text.coordinate-dark {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: dCoordCol !important;
+                fill: @color;
+            }else {
+                color: transparentify(svgLightSqColor, #000, 1) !important;
+                fill: @color;
+                if svgLightSqOpacity>='0.7'{
+                    opacity:svgLightSqOpacity;
+                }
+            }
+        }/*======End coords ======*/
+
+        /*====== Evaluation Bar ======*/
+
+        /*evaluation bar width for chesscom*/
+        if enableThinEvalBar{
+            body.with-evaluation {
+                --evalWidth: 2rem;
+                --evalAndGutter: 3rem;
+                --gutterLeftOfBoard: var(--gutterSmall);
+            }
+        }
+
+        if evalOpt!="disabled" {
+            .evaluation-bar-white,
+            .score-bar__fill[data-v-b0ff6725] {
+                if evalOpt == "auto" {
+                    background-color: svgLightSqColor !important;
+                }else if evalOpt == "custom" {
+                    background-color: lEvalCol !important;
+                }
+            }
+            .evaluation-bar-black {
+                if evalOpt == "auto" {
+                    background-color: saturate(svgDarkSqColor, 10%) !important;
+                }else if evalOpt == "custom" {
+                    background-color: dEvalCol !important;
+                }
+            }
+            .score-bar__text[data-v-b0ff6725] {
+            font-size: 9px!important;
+            }
+            .evaluation-bar-bar {
+                opacity: evalBarOpacity!important;
+                box-shadow: 1px 1px 8px 2px #0000002e;
+                z-index:1;
+            }
+            /*====== End Evaluation Bar ======*/
+        }
+    }/*end board*/
+        
+    /*Highlight*/
+
+    /*hlImgOpt can be useful to set a background image as highlight, normaly a gif.*/
+    if setHighlight!="disabled" {
+        #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
+        #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
+        .move-square,
+        .highlight:not({notThisColors}):not([class="stream highlight"]) {
+            background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+            opacity: highlightOpacity!important;
+        }
+    }/*====== End highlight ======*/
+            
+    /*====== change arrows colors ======*/
+    if enableArrowSettings {
+        .arrow {
+            opacity: arrowOpacity !important;
+        }
+        /*red*/
+        [class*="arrow"][style*="248\, 85\, 63"],[class*="arrow"][style*="#f8553fcc"]{
+            fill: arrowRed!important;
+        }
+        /*orange*/
+        [class*="arrow"][style*="255\, 170\, 0"],[class*="arrow"][style*="#fa0c"]{
+            fill: arrowOrange!important;
+        }
+        /*green*/
+        [class*="arrow"][style*="159\, 207\, 63"],[class*="arrow"][style*="#9fcf3fcc"]{
+            fill: arrowGreen!important;
+        }
+        /*blue*/
+        [class*="arrow"][style*="72\, 193\, 249"],[class*="arrow"][style*="#48c1f9cc"]{
+            fill: arrowBlue!important;
+        }
+    }/*====== End arrows colors ======*/
+
+    /*change highlight made by the user*/
+    [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
+        background-color:hlSqBlue!important;
+    }
+    [class*="highlight"][style*="172\, 206\, 89"],[class*="highlight"][style*="#acce59"]{
+        background-color: hlSqGreen!important;
+    }
+    [class*="highlight"][style*="255\, 170\, 0"],[class*="highlight"][style*="#fa0"]{
+        background-color: hlSqOrange!important;
+    }
+    [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
+        background-color: hlSqRed!important;
+    }
+    /*------end section------*/
+
+}
+@-moz-document url-prefix("https://www.chess.com/game"), url-prefix("https://www.chess.com/play"), url-prefix("https://www.chess.com/analysis"), url-prefix("https://www.chess.com/classroom"), url-prefix("https://www.chess.com/practice"), url-prefix("https://www.chess.com/daily"), url-prefix("https://www.chess.com/puzzles/"), url-prefix("https://www.chess.com/endgames"), url-prefix("https://www.chess.com/explorer"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/"), url-prefix("https://www.chess.com/events/") {
+
+    /*======== Wallpaper =======*/
+    if enableWallpaper=="1" {
+        .theme-bg,
+        body:after {
+            content: '';
+            background: url(useWallpaper), linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%))!important;
+            if setWallpaper=="cover" || setWallpaper=="contain" || setWallpaper==percentSize{
+                background-size: setWallpaper !important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+            }
+            if setWallpaper=="cover" {
+                background-repeat: no-repeat!important;
+            }else{
+                background-repeat: repeat!important;
+            }
+            background-position: center center;                    
+            position: fixed;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1000;
+        }
+    }/*=== End wallpaper ===*/
+}
+
+@-moz-document domain("chess.com") {
+    /*Border*/
+    
+    innBorderSize=0.4rem;
+    if innBorderSize > 0 {
+        inn=innBorderSize/2;
+    }else{inn=0}
+	
+    @media (min-width: 960px){
+		if myBoard!="disabled" && enableBoardFrame{
+            /*board*/
+            div#board.board:not([style*="background-image: url"]),
+            .board-layout-chessboard .board:not([style*="--theme"]),
+            .fade-in-overlay,
+            #boarddefault_boardarea,
+            #divChessBoard_boardarea,
+            #vsComputerDiv_boardarea,
+            div[id^="board-"][class*="chess-board__board"],
+            div[class^="board v-board disabled rounded"],
+            div[class^="daily-puzzle-board"],
+            div[class^="board chessboard-component"],
+            div[class^="board v-board chessboard-component"],
+            div[class^="board rounded"],
+            div[class^="board rounded fippled"],
+            div[class^="board fippled rounded"],
+            div[class^="board v-board rounded"],
+            div[class^="board v-board fippled rounded"],
+            div[class^="board disabled rounded"],
+            div[id$="_ChessBoard_boardarea"],
+            div[id^="chess_com_openingboard_1"],
+            div[id^="board_training"],
+            div[id^="divBoard_boardarea"],
+            div[id^="chess_com_tactics_board"],
+            div[id^="chessboard_"],
+            div[id^="chess_com_chessmentorboard_"],
+            div[id*="chess_com_chessmentor_board_1_boardarea"],
+            div[id^="chess_com_emailboard_"],
+            div[id^="board-blank"],
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[id^="board-blank"],
+            chess-board[id^="board-vs-personalities"],
+            div[id*="chess_com_emailboard_"] {
+                transform-style: preserve-3d;
+                width:'calc(var(--boardWidth) * %s)!important;' % ajustBoardSize;
+                height:'calc(var(--boardHeight) * %s)!important;' % (ajustBoardSize*0.999);
+                if ajustBoardSize=="0.9"{
+                multiplierL=0.54;
+                multiplierT=0.5; 
+                }else{
+                multiplierL=0.53;
+                multiplierT=0.53; 
+                }              
+                boardRatioL='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierL));
+                boardRatioT='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierT));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatioL) (inn));
+                margin-top:'calc(var(--boardHeight) * %s + %s)!important;' % ((boardRatioT) (inn));
+                if frameRadiusInOut{
+                    border-radius:0!important;                    
+                }else{
+                    border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+                }
+                box-shadow: boardShadow;
+                box-shadow: boardShadowInset;                    
+                if enableBoardShadow && enableBoardShadowInset {
+                    box-shadow: boardShadow, boardShadowInset !important;
+                }
+                if enableInnerBorder {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+                }
+            }
+            /*board*/
+            div#board.board:not([style*="background-image: url"]):before,
+            .board-layout-chessboard .board:not([style*="--theme"]):before,
+            .fade-in-overlay:before,
+            #boarddefault_boardarea:before,
+            #divChessBoard_boardarea:before,
+            #vsComputerDiv_boardarea:before,
+            div[id^="board-"][class*="chess-board__board"]:before,            
+            div[class^="board v-board disabled rounded"]:before,
+            div[class^="daily-puzzle-board"]:before,
+            div[class^="board chessboard-component"]:before,
+            div[class^="board v-board chessboard-component"]:before,
+            div[class^="board rounded"]:before,
+            div[class^="board rounded fippled"]:before,
+            div[class^="board fippled rounded"]:before,
+            div[class^="board v-board rounded"]:before,
+            div[class^="board v-board fippled rounded"]:before,
+            div[class^="board disabled rounded"]:before,
+            div[id$="_ChessBoard_boardarea"]:before,
+            div[id^="chess_com_openingboard_1"]:before,
+            div[id^="board_training"]:before,
+            div[id^="divBoard_boardarea"]:before,
+            div[id^="chess_com_tactics_board"]:before,
+            div[id^="chessboard_"]:before,
+            div[id^="chess_com_chessmentorboard_"]:before,
+            div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
+            div[id^="chess_com_emailboard_"]:before,
+            div[id^="board-blank"]:before,
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[id^="board-blank"]:before,
+            chess-board[id^="board-vs-personalities"]:before,
+            div[id*="chess_com_emailboard_"]:before {
+				background-position: framePosX framePosY !important;
+                background-color: frameColor !important;
+                background-size: frameSize!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+                if frameSize=="cover" {
+                    background-repeat: no-repeat!important;
+                }else{
+                    background-repeat: repeat!important;
+                }
+                background-image: url(frameOpt) !important;
+                transform: translateZ(-1px);
+                content: ""!important;
+                display:block;
+                grid-column: board;                
+                width:var(--boardWidth)!important;
+                height: var(--boardHeight)!important;
+                padding-bottom: 0;
+                if ajustBoardSize>="0.92"{
+                    multiplier=-0.56;
+                }else if ajustBoardSize=="0.9"{
+                    multiplier=-0.54;
+                }else{
+                    multiplier=-0.526;
+                }
+                boardRatio='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplier));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+                margin-top:@margin-left;
+                border-radius: frameRadius!important;
+                box-shadow: frameShadow;
+                box-shadow: frameShadowInset;
+                if enableFrameShadow && enableFrameShadowInset {
+                    box-shadow: frameShadow, frameShadowInset !important;
+                }
+            }
+			/*bizarre solution, don't ask me why*/
+            div#board.board:not([style*="background-image: url"]) > div{
+                display: none!important;
+            }
+            div#board.board:not([style*="background-image: url"]){
+                --theme-board-style-image: url(svgBoard) 0 0 / 100% no-repeat,
+              url(board3) bgPosX bgPosY / bgSize repeat;
+
+                background: var(--theme-piece-set-br) 0 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bn) 14.29% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bb) 28.57% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bq) 42.86% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bk) 57.14% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bb) 71.43% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bn) 85.71% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-br) 100% 0 / 12.5% no-repeat,
+
+              var(--theme-piece-set-bp) 0 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 14.29% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 28.57% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 42.86% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 57.14% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 71.43% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 85.71% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 100% 14.29% / 12.5% no-repeat,
+
+              var(--theme-piece-set-wr) 0 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wn) 14.29% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wb) 28.57% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wq) 42.86% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wk) 57.14% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wb) 71.43% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wn) 85.71% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wr) 100% 100% / 12.5% no-repeat,
+
+              var(--theme-piece-set-wp) 0 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 14.29% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 28.57% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 42.86% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 57.14% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 71.43% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 85.71% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 100% 85.71% / 12.5% no-repeat,
+
+              var(--theme-board-style-image) !important;
+                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, svgBoardBlend, normal !important;
+            }
+            /*outside coords settings*/
+            if enableOutsideCoords{
+                .coordinate-grey,
+                .coordinate-dark:not(.events-dashboard-board .coordinate-dark):not(.game-board-medium .coordinate-dark):not(#board-single-sibling .coordinate-dark):not(.game-details-board .coordinate-dark):not(.event-header-new-games .coordinate-dark):not(.round-games-list-item-games .coordinate-dark):not(.diagram-board-component .coordinate-dark):not(.openings-view-chessboard .coordinate-dark),
+                .coordinate-light:not(.events-dashboard-board .coordinate-light):not(.game-board-medium .coordinate-light):not(#board-single-sibling .coordinate-light):not(.game-details-board .coordinate-light):not(.event-header-new-games .coordinate-light):not(.round-games-list-item-games .coordinate-light):not(.diagram-board-component .coordinate-light):not(.openings-view-chessboard .coordinate-light) {
+                    text-transform: outCoordFontCase !important;
+                    fill:outCoordColorOpt!important;
+                    font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
+                    font-weight: outCoordFontWeight!important;   
+                    font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+                }
+                .outside:not(.game-details-board .outside):not(.event-header-new-games .outside):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                    transform: translate(-5.5%,4.5%)!important;
+                }
+                body.outside-coords:not(.game-details-board body.outside-coords):not(.with-pieces,.real-3d):not(.event-header-new-games .outside-coords):not(.round-games-list-item-games .outside-coords):not(.openings-view-chessboard .outside-coords) {
+                    --coordinatesGutter: 1rem!important;
+                }
+
+                .coordinates:not(.events-dashboard-board .coordinates):not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                    transform: translate(-4.5%,4.8%)!important;
+                }
+                if ajustBoardSize>=0.92{
+                    .coordinates:not(.events-dashboard-board .coordinates):not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                        transform: translate(-3.8%,4.2%)!important;
+                    }
+                    if enableInnerBorder==0{
+                        
+                        .coordinates:not(.events-dashboard-board .coordinates):not(.game-board-medium .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not(.round-games-list-item-games .coordinates):not(.diagram-board-component .coordinates):not(.openings-view-chessboard .coordinates) {
+                            transform: translate(-3%,3.5%)!important;
+                        }
+                    }
+                }
+                
+                .coords-dark:not(#board-single-sibling .coords-dark):not(.game-details-board .coords-dark):not(.event-header-new-games .coords-dark):not(.round-games-list-item-games .coords-dark):not(.diagram-board-component .coords-dark):not(.openings-view-chessboard .coords-dark),
+                div.number.coords-dark:not(.game-details-board div.number.coords-dark):not(.event-header-new-games div.number.coords-dark):not(.round-games-list-item-games div.number.coords-dark):not(.diagram-board-component div.number.coords-dark):not(.openings-view-chessboard div.number.coords-dark),
+                div.letter.coords-dark:not(.game-details-board div.letter.coords-dark):not(.event-header-new-games div.letter.coords-dark):not(.round-games-list-item-games div.letter.coords-dark):not(.diagram-board-component div.letter.coords-dark):not(.openings-view-chessboard div.letter.coords-dark),
+                text.coordinate-dark:not(.events-dashboard-board text.coordinate-dark):not(.game-board-medium text.coordinate-dark):not(#board-single-sibling text.coordinate-dark):not(.game-details-board text.coordinate-dark):not(.event-header-new-games text.coordinate-dark):not(.round-games-list-item-games text.coordinate-dark):not(.diagram-board-component text.coordinate-dark):not(.openings-view-chessboard text.coordinate-dark),
+                .coords-light:not(#board-single-sibling .coords-light):not(.game-details-board .coords-light):not(.event-header-new-games .coords-light):not(.round-games-list-item-games .coords-light):not(.diagram-board-component .coords-light):not(.openings-view-chessboard .coords-light),
+                div.number.coords-light:not(.game-details-board div.number.coords-light):not(.event-header-new-games div.number.coords-light):not(.round-games-list-item-games div.number.coords-light):not(.diagram-board-component div.number.coords-light):not(.openings-view-chessboard div.number.coords-light),
+                div.letter.coords-light:not(.game-details-board div.letter.coords-light):not(.event-header-new-games div.letter.coords-light):not(.round-games-list-item-games div.letter.coords-light):not(.diagram-board-component div.letter.coords-light):not(.openings-view-chessboard div.letter.coords-light),
+                text.coordinate-light:not(.events-dashboard-board text.coordinate-light):not(.game-board-medium text.coordinate-light):not(#board-single-sibling text.coordinate-light):not(.game-details-board text.coordinate-light):not(.event-header-new-games text.coordinate-light):not(.round-games-list-item-games text.coordinate-light):not(.diagram-board-component text.coordinate-light):not(.openings-view-chessboard text.coordinate-light), {
+                    color: outCoordColorOpt !important;
+                    fill: @color;
+                    opacity: 1!important;
+                }
+            }
+        }
+    }/*end board border*/
+    
+}
+@-moz-document url-prefix("https://www.chess.com/events/"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/") {
+    /*Events*/
+    /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
+    @media (min-width: 960px){
+        if enablePanelColor{            
+            .player-details .player-name-name,
+            .player-details .player-name {
+                white-space: normal!important;
+            }
+            body.events-layout-v2:not(.events-player-names-above-and-below) #board-layout-player-top .player-player{
+                padding-top: 1rem!important;
+            }
+            body.events-layout-v2:not(.events-player-names-above-and-below) #board-layout-player-bottom .player-player{
+                padding-bottom: 1rem!important;
+            }
+            body.events-layout-v2:not(.events-player-names-above-and-below) .board-layout-player {
+            width:11rem;
+            margin-left:-1rem;
+            }
+        }
+        
+        /*Main border rules*/
+        innBorderSize=0.4rem;
+        if innBorderSize > 0 {
+            inn=innBorderSize/2;
+        }else{inn=0}
+
+        if boardBGOpt==frameOpt && enableBoardFrame {
+            board3=null;
+            framePosX=bgPosX;
+            framePosY=bgPosY;        
+        }
+
+		if myBoard!="disabled" && enableBoardFrame{
+			/*board*/
+			.main-tab-game-component chess-board {
+				transform-style: preserve-3d;
+				width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
+				height: @width;
+				boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				if frameRadiusInOut{
+					border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+				}else{
+					border-radius:0!important;
+				}
+				box-shadow: boardShadow;
+				box-shadow: boardShadowInset;                    
+				if enableBoardShadow && enableBoardShadowInset {
+					box-shadow: boardShadow, boardShadowInset !important;
+				}
+				if enableInnerBorder {
+					box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+				}
+			}
+			/*board*/
+			.main-tab-game-component chess-board:before {
+				if myBoard!="disabled"{                    
+				background:frameColor url(frameOpt) framePosX framePosY!important; 
+				}                
+				transform: translateZ(-1px);
+				content: ""!important;
+				display:block;
+				grid-column: board;                
+				width:var(--mainBoardWidth)!important;
+				height: @width;
+				padding-bottom: 0;
+				boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				background-size: frameSize!important;
+				-webkit-background-size: @background-size;
+				-moz-background-size: @background-size;
+				-o-background-size: @background-size;
+				background-repeat: frameRepeat!important;
+				border-radius: frameRadius!important;
+				box-shadow: frameShadow;
+				box-shadow: frameShadowInset;                
+				if enableFrameShadow && enableFrameShadowInset {
+					box-shadow: frameShadow, frameShadowInset !important;
+				}
+			}
+		}/*end board border*/
+    }
+    
+}/*End Events*/
