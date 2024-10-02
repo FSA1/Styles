@@ -358,7 +358,7 @@
         enableFrameShadowInset=0;
         enableInnerBorder=1;
         enableLightTheme=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         frameColor=#137966;
         frameOpt=colorOnly;
         framePosX=0%;
@@ -431,7 +431,7 @@
         enableFrameShadowInset=0;
         enableInnerBorder=1;
         enableLightTheme=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         frameColor=#146b7d;
         frameOpt=colorOnly;
         framePosX=0%;
@@ -558,7 +558,7 @@
         enableFrameShadowInset=0;
         enableInnerBorder=1;
         enableLightTheme=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         frameColor=#c47087;
         frameOpt=colorOnly;
         framePosX=0%;
@@ -622,7 +622,7 @@
         enableCornerLogo=1;
         enableCornerLogo2=0;
         enableCustomCoord=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=400;
@@ -697,7 +697,7 @@
         enableCornerLogo=1;
         enableCornerLogo2=0;
         enableCustomCoord=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=400;
@@ -770,7 +770,7 @@
         enableCornerLogo=0;
         enableCornerLogo2=0;
         enableCustomCoord=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         outCoordFontSize=0.24rem;
         outCoordFontName='Segoe UI';
         outCoordFontWeight=400;
@@ -855,7 +855,7 @@
         enableCornerLogo=0;
         enableCornerLogo2=0;
         enableCustomCoord=0;
-        enableOutsideCoords=0;
+        //enableOutsideCoords=0;
         outCoordFontSize=0.24rem;
         outCoordFontName=Segoe UI;
         outCoordFontWeight=400;
@@ -951,7 +951,7 @@
         enableFrameShadowInset=0;
         enableInnerBorder=1;
         enableLightTheme=0;
-        enableOutsideCoords=1;
+        //enableOutsideCoords=1;
         frameColor=svgDarkSqColor;
         frameOpt=colorOnly;
         framePosX=0%;
