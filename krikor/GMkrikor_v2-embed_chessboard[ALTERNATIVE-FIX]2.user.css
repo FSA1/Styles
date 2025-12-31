@@ -392,73 +392,73 @@
             .piece.wk:not(.pseudo3d .piece.wk),
             .promotion-piece.wk:not(.pseudo3d .promotion-piece.wk),
             div [data-hand-piece="wk"],
-            div [style*="wk.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/wk.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vWK)!important;
             }
             .piece.wq:not(.pseudo3d .piece.wq),
             .promotion-piece.wq:not(.pseudo3d .promotion-piece.wq),
             div [data-hand-piece="wq"],
-            div [style*="wq.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/wq.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vWQ)!important;
             }
             .piece.wb:not(.pseudo3d .piece.wb),
             .promotion-piece.wb:not(.pseudo3d .promotion-piece.wb),
             div [data-hand-piece="wb"],
-            div [style*="wb.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/wb.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vWB)!important;
             }
             .piece.wn:not(.pseudo3d .piece.wn),
             .promotion-piece.wn:not(.pseudo3d .promotion-piece.wn),
             div [data-hand-piece="wn"],
-            div [style*="wn.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/wn.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vWN)!important;
             }
             .piece.wr:not(.pseudo3d .piece.wr),
             .promotion-piece.wr:not(.pseudo3d .promotion-piece.wr),
             div [data-hand-piece="wr"],
-            div [style*="wr.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/wr.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vWR)!important;
             }
             .piece.wp:not(.pseudo3d .piece.wp),
             .promotion-piece.wp:not(.pseudo3d .promotion-piece.wp),
             div [data-hand-piece="wp"],
-            div [style*="wp.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/wp.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vWP)!important;
             }
             .piece.bk:not(.pseudo3d .piece.bk),
             .promotion-piece.bk:not(.pseudo3d .promotion-piece.bk),
             div [data-hand-piece="bk"],
-            div [style*="bk.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/bk.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vBK)!important;
             }
             .piece.bq:not(.pseudo3d .piece.bq),
             .promotion-piece.bq:not(.pseudo3d .promotion-piece.bq),
             div [data-hand-piece="bq"],
-            div [style*="bq.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/bq.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vBQ)!important;
             }
             .piece.bb:not(.pseudo3d .piece.bb),
             .promotion-piece.bb:not(.pseudo3d .promotion-piece.bb),
             div [data-hand-piece="bb"],
-            div [style*="bb.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/bb.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vBB)!important;
             }
             .piece.bn:not(.pseudo3d .piece.bn),
             .promotion-piece.bn:not(.pseudo3d .promotion-piece.bn),
             div [data-hand-piece="bn"],
-            div [style*="bn.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/bn.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vBN)!important;
             }
             .piece.br:not(.pseudo3d .piece.br),
             .promotion-piece.br:not(.pseudo3d .promotion-piece.br),
             div [data-hand-piece="br"],
-            div [style*="br.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/br.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vBR)!important;
             }
             .piece.bp:not(.pseudo3d .piece.bp),
             .promotion-piece.bp:not(.pseudo3d .promotion-piece.bp),
             div [data-hand-piece="bp"],
-            div [style*="bp.png"]:not([class="game-preview-themed-component"]) {
+            div [style*="/bp.png"]:not([class="game-preview-themed-component"]) {
                 background-image: url(vBP)!important;
             }
 
@@ -578,25 +578,25 @@
             .piece.wk,
             .promotion-piece.wk,
             div [data-hand-piece="wk"],
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url(nWK)!important;
             }
             .piece.wq,
             .promotion-piece.wq,
             div [data-hand-piece="wq"],
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url(nWQ)!important;
             }
             .piece.wb,
             .promotion-piece.wb,
             div [data-hand-piece="wb"],
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url(nWB)!important;
             }
             .piece.wn,
             .promotion-piece.wn,
             div [data-hand-piece="wn"],
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                     if enableKrikvalo {
                         if n2Left {
                                 background-image: url(nWNleft)!important;
@@ -611,37 +611,37 @@
             .piece.wr,
             .promotion-piece.wr,
             div [data-hand-piece="wr"],
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url(nWR)!important;
             }
             .piece.wp,
             .promotion-piece.wp,
             div [data-hand-piece="wp"],
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url(nWP)!important;
             }
             .piece.bk,
             .promotion-piece.bk,
             div [data-hand-piece="bk"],
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url(nBK)!important;
             }
             .piece.bq,
             .promotion-piece.bq,
             div [data-hand-piece="bq"],
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url(nBQ)!important;
             }
             .piece.bb,
             .promotion-piece.bb,
             div [data-hand-piece="bb"],
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url(nBB)!important;
             }
             .piece.bn,
             .promotion-piece.bn,
             div [data-hand-piece="bn"],
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                     if enableKrikvalo {
                         if n2Left {
                             background-image: url(nBNleft)!important;
@@ -656,13 +656,13 @@
             .piece.br,
             .promotion-piece.br,
             div [data-hand-piece="br"],
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url(nBR)!important;
             }
             .piece.bp,
             .promotion-piece.bp,
             div [data-hand-piece="bp"],
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url(nBP)!important;
                     }
 

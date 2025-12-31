@@ -41,18 +41,18 @@ chess-board[id^="board-vs-personalities"],
 div[id*="chess_com_emailboard_"] {background-image: url(server + "LaFamiglia/LaFamigliaCB-Bouquet.png")!important;
 }
 /*Pieces*/
-div [style*="bp.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bp.png")!important;}
-div [style*="br.png"] {background-image: url(server + "LaFamiglia/MafiaChar-br.png")!important;}
-div [style*="bn.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bn.png")!important;}
-div [style*="bb.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bb.png")!important;}
-div [style*="bq.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bq.png")!important;}
-div [style*="bk.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bk.png")!important;}
-div [style*="wp.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wp.png")!important;}
-div [style*="wr.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wr.png")!important;}
-div [style*="wn.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wn.png")!important;}
-div [style*="wb.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wb.png")!important;}
-div [style*="wq.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wq.png")!important;}
-div [style*="wk.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wk.png")!important;}
+div [style*="/bp.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bp.png")!important;}
+div [style*="/br.png"] {background-image: url(server + "LaFamiglia/MafiaChar-br.png")!important;}
+div [style*="/bn.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bn.png")!important;}
+div [style*="/bb.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bb.png")!important;}
+div [style*="/bq.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bq.png")!important;}
+div [style*="/bk.png"] {background-image: url(server + "LaFamiglia/MafiaChar-bk.png")!important;}
+div [style*="/wp.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wp.png")!important;}
+div [style*="/wr.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wr.png")!important;}
+div [style*="/wn.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wn.png")!important;}
+div [style*="/wb.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wb.png")!important;}
+div [style*="/wq.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wq.png")!important;}
+div [style*="/wk.png"] {background-image: url(server + "LaFamiglia/MafiaChar-wk.png")!important;}
  /*vs personality pieces*/   
 .piece.bp, .promotion-piece.bp {background-image: url(server + "LaFamiglia/MafiaChar-bp.png")!important;}
 .piece.br, .promotion-piece.br {background-image: url(server + "LaFamiglia/MafiaChar-br.png")!important;}

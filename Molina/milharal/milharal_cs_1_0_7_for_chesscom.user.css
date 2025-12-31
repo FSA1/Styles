@@ -561,32 +561,32 @@
     if myPiecesW=="setCartoon" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/wk.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/orange-q.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/scarecrow-wb.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/wn.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/windmill-orange_rook.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho_wp.png")!important;
         }
     }
@@ -594,32 +594,32 @@
     if myPiecesB=="setCartoon" {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/b----bk.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/b----bq.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/scarecrow-bb.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/bn.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/windmilbl-dark_rook.png")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milho2_bp.png")!important;
         }
     }
@@ -627,32 +627,32 @@
     if myPiecesW=="setFigures1" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wk.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wq.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wb.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wn.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-wr.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
         }
     }
@@ -660,32 +660,32 @@
     if myPiecesB=="setFigures1" {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bk-out1.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bq-out1.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bb-inv.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bn-inv.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wm-out-br.png")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
         }
     }
@@ -693,32 +693,32 @@
     if myPiecesB=="setFigures2" {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bk.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bq.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bb.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bn.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/br.png")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/bp.png")!important;
         }
     }
@@ -726,32 +726,32 @@
     if myPiecesW=="setFigures2" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wk.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wq.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wb.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wn.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wr.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/outlined/wp.png")!important;
         }
     }
@@ -759,32 +759,32 @@
     if myPiecesB=="setFigures2Black" {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2.png")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/bp.png")!important;
         }
     }
@@ -792,32 +792,32 @@
     if myPiecesW=="setFigures2White" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bk-inv.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/farmer-bq-inv.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/scarecrow-bb-inv.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/raven-bn-inv.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/br2-inv.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/bw/wp.png")!important;
         }
     }
@@ -825,32 +825,32 @@
     if myPiecesB=="setFigures2Blue" {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bk.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bq.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bb.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bn.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/br.png")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/darkblue/bp.png")!important;
         }
     }
@@ -858,32 +858,32 @@
     if myPiecesW=="setFigures2Orange" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wk.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wq.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wb.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wn.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wr.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/orange/wp.png")!important;
         }
     }
@@ -891,32 +891,32 @@
     if myPiecesB=="setFigures2Yellow" {
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wk.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wq.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wb.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wn.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wr.png")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
@@ -924,32 +924,32 @@
     if myPiecesW=="setFigures2Yellow" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wk.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wq.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wb.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wn.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wr.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Molina/milharal/farmer/yellow/wp.png")!important;
         }
     }
@@ -958,42 +958,42 @@
         if enableCustomBK {
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url(bkImage)!important;
             }
         }
         if enableCustomBQ {
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url(bqImage)!important;
             }
         }
         if enableCustomBB {
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url(bbImage)!important;
             }
         }
         if enableCustomBN {
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url(bnImage)!important;
             }
         }
         if enableCustomBR {
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url(brImage)!important;
             }
         }
         if enableCustomBP {
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url(bpImage)!important;
             }
         }
@@ -1003,42 +1003,42 @@
         if enableCustomWK {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url(wkImage)!important;
             }
         }
         if enableCustomWQ {
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url(wqImage)!important;
             }
         }
         if enableCustomWB {
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url(wbImage)!important;
             }
         }
         if enableCustomWN {
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url(wnImage)!important;
             }
         }
         if enableCustomWR {
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url(wrImage)!important;
             }
         }
         if enableCustomWP {
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url(wpImage)!important;
             }
         }
@@ -1047,40 +1047,40 @@
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"],
+        div [style*="/wk.png"],
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"],
+        div [style*="/wq.png"],
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"],
+        div [style*="/wb.png"],
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"],
+        div [style*="/wr.png"],
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"],
+        div [style*="/wp.png"],
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"],
+        div [style*="/bk.png"],
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"],
+        div [style*="/bq.png"],
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"],
+        div [style*="/bb.png"],
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"],
+        div [style*="/br.png"],
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             filter: drop-shadow(0 0 0.2rem #000)!important;
             -webkit-filter: drop-shadow(0 0 0.2rem #000)!important;
         }
@@ -1091,22 +1091,22 @@
         if enableInvertB {
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"],
+            div [style*="/bk.png"],
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"],
+            div [style*="/bq.png"],
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"],
+            div [style*="/bb.png"],
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"],
+            div [style*="/bn.png"],
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"],
+            div [style*="/br.png"],
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 filter: invert(1)!important;
                 -webkit-filter: invert(1)!important;
             }
@@ -1115,22 +1115,22 @@
         if enableInvertW {
                 .piece.wk,
                 .promotion-piece.wk,
-                div [style*="wk.png"],
+                div [style*="/wk.png"],
                 .piece.wq,
                 .promotion-piece.wq,
-                div [style*="wq.png"],
+                div [style*="/wq.png"],
                 .piece.wb,
                 .promotion-piece.wb,
-                div [style*="wb.png"],
+                div [style*="/wb.png"],
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"],
+                div [style*="/wn.png"],
                 .piece.wr,
                 .promotion-piece.wr,
-                div [style*="wr.png"],
+                div [style*="/wr.png"],
                 .piece.wp,
                 .promotion-piece.wp,
-                div [style*="wp.png"] {
+                div [style*="/wp.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1138,22 +1138,22 @@
         /*------Blend and hue variation------*/
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"],
+        div [style*="/bk.png"],
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"],
+        div [style*="/bq.png"],
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"],
+        div [style*="/bb.png"],
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"],
+        div [style*="/br.png"],
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             mix-blend-mode: enableBlendB;
             filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
             -webkit-filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
@@ -1161,22 +1161,22 @@
         }
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"],
+        div [style*="/wk.png"],
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"],
+        div [style*="/wq.png"],
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"],
+        div [style*="/wb.png"],
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"],
+        div [style*="/wr.png"],
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             mix-blend-mode: enableBlendW;
             filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
             -webkit-filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
@@ -1189,7 +1189,7 @@
             if enableInvertWK {
                 .piece.wk,
                 .promotion-piece.wk,
-                div [style*="wk.png"] {
+                div [style*="/wk.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1198,7 +1198,7 @@
             if enableInvertWQ {
                 .piece.wq,
                 .promotion-piece.wq,
-                div [style*="wq.png"] {
+                div [style*="/wq.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1207,7 +1207,7 @@
             if enableInvertWB {
                 .piece.wb,
                 .promotion-piece.wb,
-                div [style*="wb.png"] {
+                div [style*="/wb.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1216,7 +1216,7 @@
             if enableInvertWN {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1225,7 +1225,7 @@
             if enableInvertWR {
                 .piece.wr,
                 .promotion-piece.wr,
-                div [style*="wr.png"] {
+                div [style*="/wr.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1234,7 +1234,7 @@
             if enableInvertWP {
                 .piece.wp,
                 .promotion-piece.wp,
-                div [style*="wp.png"] {
+                div [style*="/wp.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1243,7 +1243,7 @@
             if enableInvertBK {
                 .piece.bk,
                 .promotion-piece.bk,
-                div [style*="bk.png"] {
+                div [style*="/bk.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1252,7 +1252,7 @@
             if enableInvertBQ {
                 .piece.bq,
                 .promotion-piece.bq,
-                div [style*="bq.png"] {
+                div [style*="/bq.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1261,7 +1261,7 @@
             if enableInvertBB {
                 .piece.wb,
                 .promotion-piece.wb,
-                div [style*="bb.png"] {
+                div [style*="/bb.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1270,7 +1270,7 @@
             if enableInvertBN {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1279,7 +1279,7 @@
             if enableInvertBR {
                 .piece.br,
                 .promotion-piece.br,
-                div [style*="br.png"] {
+                div [style*="/br.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -1288,7 +1288,7 @@
             if enableInvertBP {
                 .piece.bp,
                 .promotion-piece.bp,
-                div [style*="bp.png"] {
+                div [style*="/bp.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }

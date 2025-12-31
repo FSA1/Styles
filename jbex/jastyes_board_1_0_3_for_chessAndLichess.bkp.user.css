@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/Agiota_do_Artenio
 @description    `chessboard para Jastyes.`
-@version        1.0.5
+@version        1.0.6
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myBoard    "Escolher tabuleiro" {
@@ -317,42 +317,42 @@
         if enableCustomBK {
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url(bkImage)!important;
             }
         }
         if enableCustomBQ {
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url(bqImage)!important;
             }
         }
         if enableCustomBB {
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url(bbImage)!important;
             }
         }
         if enableCustomBN {
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url(bnImage)!important;
             }
         }
         if enableCustomBR {
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url(brImage)!important;
             }
         }
         if enableCustomBP {
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url(bpImage)!important;
             }
         }
@@ -362,42 +362,42 @@
         if enableCustomWK {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url(wkImage)!important;
             }
         }
         if enableCustomWQ {
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url(wqImage)!important;
             }
         }
         if enableCustomWB {
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url(wbImage)!important;
             }
         }
         if enableCustomWN {
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url(wnImage)!important;
             }
         }
         if enableCustomWR {
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url(wrImage)!important;
             }
         }
         if enableCustomWP {
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url(wpImage)!important;
             }
         }
@@ -406,40 +406,40 @@
     if enableShadow {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"],
+        div [style*="/wk.png"],
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"],
+        div [style*="/wq.png"],
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"],
+        div [style*="/wb.png"],
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"],
+        div [style*="/wr.png"],
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"],
+        div [style*="/wp.png"],
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"],
+        div [style*="/bk.png"],
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"],
+        div [style*="/bq.png"],
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"],
+        div [style*="/bb.png"],
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"],
+        div [style*="/br.png"],
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             filter: drop-shadow(0 0 0.2rem #000)!important;
             -webkit-filter: drop-shadow(0 0 0.2rem #000)!important;
         }
@@ -449,22 +449,22 @@
         if enableInvertB {
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"],
+            div [style*="/bk.png"],
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"],
+            div [style*="/bq.png"],
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"],
+            div [style*="/bb.png"],
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"],
+            div [style*="/bn.png"],
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"],
+            div [style*="/br.png"],
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 filter: invert(1)!important;
                 -webkit-filter: invert(1)!important;
             }
@@ -473,22 +473,22 @@
         if enableInvertW {
                 .piece.wk,
                 .promotion-piece.wk,
-                div [style*="wk.png"],
+                div [style*="/wk.png"],
                 .piece.wq,
                 .promotion-piece.wq,
-                div [style*="wq.png"],
+                div [style*="/wq.png"],
                 .piece.wb,
                 .promotion-piece.wb,
-                div [style*="wb.png"],
+                div [style*="/wb.png"],
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"],
+                div [style*="/wn.png"],
                 .piece.wr,
                 .promotion-piece.wr,
-                div [style*="wr.png"],
+                div [style*="/wr.png"],
                 .piece.wp,
                 .promotion-piece.wp,
-                div [style*="wp.png"] {
+                div [style*="/wp.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -496,22 +496,22 @@
         /*------Blend and hue variation------*/
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"],
+        div [style*="/bk.png"],
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"],
+        div [style*="/bq.png"],
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"],
+        div [style*="/bb.png"],
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"],
+        div [style*="/br.png"],
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             mix-blend-mode: enableBlendB;
             filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
             -webkit-filter: hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
@@ -519,22 +519,22 @@
         }
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"],
+        div [style*="/wk.png"],
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"],
+        div [style*="/wq.png"],
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"],
+        div [style*="/wb.png"],
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"],
+        div [style*="/wr.png"],
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             mix-blend-mode: enableBlendW;
             filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
             -webkit-filter: hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
@@ -546,7 +546,7 @@
             if enableInvertWK {
                 .piece.wk,
                 .promotion-piece.wk,
-                div [style*="wk.png"] {
+                div [style*="/wk.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -555,7 +555,7 @@
             if enableInvertWQ {
                 .piece.wq,
                 .promotion-piece.wq,
-                div [style*="wq.png"] {
+                div [style*="/wq.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -564,7 +564,7 @@
             if enableInvertWB {
                 .piece.wb,
                 .promotion-piece.wb,
-                div [style*="wb.png"] {
+                div [style*="/wb.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -573,7 +573,7 @@
             if enableInvertWN {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -582,7 +582,7 @@
             if enableInvertWR {
                 .piece.wr,
                 .promotion-piece.wr,
-                div [style*="wr.png"] {
+                div [style*="/wr.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -591,7 +591,7 @@
             if enableInvertWP {
                 .piece.wp,
                 .promotion-piece.wp,
-                div [style*="wp.png"] {
+                div [style*="/wp.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -600,7 +600,7 @@
             if enableInvertBK {
                 .piece.bk,
                 .promotion-piece.bk,
-                div [style*="bk.png"] {
+                div [style*="/bk.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -609,7 +609,7 @@
             if enableInvertBQ {
                 .piece.bq,
                 .promotion-piece.bq,
-                div [style*="bq.png"] {
+                div [style*="/bq.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -618,7 +618,7 @@
             if enableInvertBB {
                 .piece.wb,
                 .promotion-piece.wb,
-                div [style*="bb.png"] {
+                div [style*="/bb.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -627,7 +627,7 @@
             if enableInvertBN {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -636,7 +636,7 @@
             if enableInvertBR {
                 .piece.br,
                 .promotion-piece.br,
-                div [style*="br.png"] {
+                div [style*="/br.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }
@@ -645,7 +645,7 @@
             if enableInvertBP {
                 .piece.bp,
                 .promotion-piece.bp,
-                div [style*="bp.png"] {
+                div [style*="/bp.png"] {
                     filter: invert(1)!important;
                     -webkit-filter: invert(1)!important;
                 }

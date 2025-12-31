@@ -264,12 +264,12 @@
 
     /*Pieces*/
     if myPieces=="op1" {
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/bn.png")!important;
         }
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/wn.png")!important;
@@ -284,12 +284,12 @@
         }
     }
     if myPieces=="op2" {
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_bn.png")!important;
         }
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/Nike_X_FURIA_eSports/NxF_thin_wn.png")!important;
@@ -304,14 +304,14 @@
         }
     }
     if myPieces=="op3" {
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
             -webkit-filter: invert(1);
             filter: invert(1);
         }
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
@@ -330,14 +330,14 @@
         }
     }
     if myPieces=="op4" {
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
             -webkit-filter: invert(1);
             filter: invert(1);
         }
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaClassicRighRes-bn.png")!important;
@@ -359,62 +359,62 @@
         /*Pieces*/
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png")!important;
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/br.png")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/furiaNeo_High-Res-bn.png")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bb.png")!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bq.png")!important;
         }
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bk.png")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wp.png")!important;
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wr.png")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Furia/furiaNeoHigh-Res1-wn.png")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wb.png")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wq.png")!important;
         }
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://images.chesscomfiles.com/chess-themes/pieces/neo/150/wk.png")!important;
         }
         /*child 7 is black-knight*/

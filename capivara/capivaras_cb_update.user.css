@@ -407,7 +407,7 @@
 
     /*Pieces*/
     if myPiecesB=="mar" {
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivar-bn.png")!important;
@@ -417,7 +417,7 @@
         }
     }
     if myPiecesW=="mar" {
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/mg/capivar-wn.png")!important;
@@ -427,7 +427,7 @@
         }
     }
     if myPiecesB=="alp" {
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .piece.bn,
         .promotion-piece.bn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-bn.png")!important;
@@ -437,7 +437,7 @@
         }
     }
     if myPiecesW=="alp" {
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .piece.wn,
         .promotion-piece.wn {
             background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/alpha/capivara-wn.png")!important;
@@ -451,29 +451,29 @@
         /*Pieces*/
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-k.svg")!important;
             filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-q.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-b.svg")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-n.svg")!important;
         }
         if enableCapivaras {
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-black-n.svg")!important;
                 if enableHorizInvert {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-black-n.svg")!important;
@@ -482,12 +482,12 @@
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-r.svg")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/black-p.svg")!important;
         }
     }
@@ -495,29 +495,29 @@
         /*Pieces*/
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"] {
+        div [style*="/bk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-k.svg")!important;
             filter: hue-rotate(hueRotationB)!important;
         }
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"] {
+        div [style*="/bq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-q.svg")!important;
         }
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"] {
+        div [style*="/bb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-b.svg")!important;
         }
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"] {
+        div [style*="/bn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-n.svg")!important;
         }
         if enableCapivaras {
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-greyed-blue-n.svg")!important;
                 if enableHorizInvert {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-greyed-blue-n.svg")!important;
@@ -526,12 +526,12 @@
         }
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"] {
+        div [style*="/br.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-r.svg")!important;
         }
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/grayed-p.svg")!important;
         }
     }
@@ -540,28 +540,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-grey-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-grey-n.svg")!important;
@@ -570,12 +570,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-p.svg")!important;
             }
         }
@@ -585,28 +585,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-mostarda-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-mostarda-n.svg")!important;
@@ -615,12 +615,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-p.svg")!important;
             }
         }
@@ -630,28 +630,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-red-n.svg")!important;
@@ -660,12 +660,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-p.svg")!important;
             }
         }
@@ -675,28 +675,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red2-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-red2-n.svg")!important;
@@ -705,12 +705,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-p.svg")!important;
             }
         }
@@ -720,28 +720,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-green-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-green-n.svg")!important;
@@ -750,12 +750,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-p.svg")!important;
             }
         }
@@ -765,28 +765,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-blue-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-blue-n.svg")!important;
@@ -795,12 +795,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-p.svg")!important;
             }
         }
@@ -810,28 +810,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-pink-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-pink-n.svg")!important;
@@ -840,12 +840,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-p.svg")!important;
             }
         }
@@ -855,28 +855,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-orange-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-orange-n.svg")!important;
@@ -885,12 +885,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-p.svg")!important;
             }
         }
@@ -900,28 +900,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-out-orange-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-out-orange-n.svg")!important;
@@ -930,12 +930,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-p.svg")!important;
             }
         }
@@ -945,28 +945,28 @@
             /*Pieces*/
             .piece.bk,
             .promotion-piece.bk,
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-k.svg")!important;
             }
             .piece.bq,
             .promotion-piece.bq,
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-q.svg")!important;
             }
             .piece.bb,
             .promotion-piece.bb,
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-b.svg")!important;
             }
             .piece.bn,
             .promotion-piece.bn,
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.bn,
                 .promotion-piece.bn,
-                div [style*="bn.png"] {
+                div [style*="/bn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-purple-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-purple-n.svg")!important;
@@ -975,12 +975,12 @@
             }
             .piece.br,
             .promotion-piece.br,
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-r.svg")!important;
             }
             .piece.bp,
             .promotion-piece.bp,
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-p.svg")!important;
             }
         }
@@ -989,28 +989,28 @@
     if myPiecesW=="op000" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-k.svg")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-q.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-b.svg")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-n.svg")!important;
         }
         if enableCapivaras {
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-white-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-white-n.svg")!important;
@@ -1019,40 +1019,40 @@
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-r.svg")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/white-p.svg")!important;
         }
     }
     if myPiecesW=="op000b" {
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"] {
+        div [style*="/wk.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-k.svg")!important;
         }
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"] {
+        div [style*="/wq.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-q.svg")!important;
         }
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"] {
+        div [style*="/wb.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-b.svg")!important;
         }
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"] {
+        div [style*="/wn.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-n.svg")!important;
         }
         if enableCapivaras {
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-beige-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-beige-n.svg")!important;
@@ -1061,12 +1061,12 @@
         }
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"] {
+        div [style*="/wr.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-r.svg")!important;
         }
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"] {
+        div [style*="/wp.png"] {
             background-image: url("https://github.com/FSA1/Styles/raw/main/neo/beige-p.svg")!important;
         }
     }
@@ -1074,28 +1074,28 @@
         if myPiecesB!="op001" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-grey-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-grey-n.svg")!important;
@@ -1104,12 +1104,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/gray-p.svg")!important;
             }
         }
@@ -1118,28 +1118,28 @@
         if myPiecesB!="op1" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-mostarda-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-mostarda-n.svg")!important;
@@ -1148,12 +1148,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/mostarda-p.svg")!important;
             }
         }
@@ -1162,28 +1162,28 @@
         if myPiecesB!="op2" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-red-n.svg")!important;
@@ -1192,12 +1192,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red-p.svg")!important;
             }
         }
@@ -1206,28 +1206,28 @@
         if myPiecesB!="op2b" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-red2-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-red2-n.svg")!important;
@@ -1236,12 +1236,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/red2-p.svg")!important;
             }
         }
@@ -1250,28 +1250,28 @@
         if myPiecesB!="op3" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-green-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-green-n.svg")!important;
@@ -1280,12 +1280,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/green-p.svg")!important;
             }
         }
@@ -1294,28 +1294,28 @@
         if myPiecesB!="op4" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-blue-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-blue-n.svg")!important;
@@ -1324,12 +1324,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/blue-p.svg")!important;
             }
         }
@@ -1338,28 +1338,28 @@
         if myPiecesB!="op5" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-pink-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-pink-n.svg")!important;
@@ -1368,12 +1368,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/pink-p.svg")!important;
             }
         }
@@ -1382,28 +1382,28 @@
         if myPiecesB!="op6" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-orange-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-orange-n.svg")!important;
@@ -1412,12 +1412,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/orange-p.svg")!important;
             }
         }
@@ -1426,28 +1426,28 @@
         if myPiecesB!="op7" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-out-orange-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-out-orange-n.svg")!important;
@@ -1456,12 +1456,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/outOrange-p.svg")!important;
             }
         }
@@ -1470,28 +1470,28 @@
         if myPiecesB!="op8" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-purple-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-purple-n.svg")!important;
@@ -1500,12 +1500,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/roxo-p.svg")!important;
             }
         }
@@ -1514,28 +1514,28 @@
         if myPiecesB!="op9" {
             .piece.wk,
             .promotion-piece.wk,
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-k.svg")!important;
             }
             .piece.wq,
             .promotion-piece.wq,
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-q.svg")!important;
             }
             .piece.wb,
             .promotion-piece.wb,
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-b.svg")!important;
             }
             .piece.wn,
             .promotion-piece.wn,
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-n.svg")!important;
             }
             if enableCapivaras {
                 .piece.wn,
                 .promotion-piece.wn,
-                div [style*="wn.png"] {
+                div [style*="/wn.png"] {
                     background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/cap_neo-yellow-n.svg")!important;
                     if enableHorizInvert {
                         background-image: url("https://github.com/FSA1/Styles/raw/main/capivara/neo/svg/flip-cap_neo-yellow-n.svg")!important;
@@ -1544,12 +1544,12 @@
             }
             .piece.wr,
             .promotion-piece.wr,
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-r.svg")!important;
             }
             .piece.wp,
             .promotion-piece.wp,
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url("https://github.com/FSA1/Styles/raw/main/neo/yellow-p.svg")!important;
             }
         }
@@ -1638,51 +1638,51 @@
         .is2d .king.white,
         .piece.wk,
         .promotion-piece.wk,
-        div [style*="wk.png"],
+        div [style*="/wk.png"],
         .is2d .queen.white,
         .piece.wq,
         .promotion-piece.wq,
-        div [style*="wq.png"],
+        div [style*="/wq.png"],
         .is2d .bishop.white,
         .piece.wb,
         .promotion-piece.wb,
-        div [style*="wb.png"],
+        div [style*="/wb.png"],
         .is2d .knight.white,
         .piece.wn,
         .promotion-piece.wn,
-        div [style*="wn.png"],
+        div [style*="/wn.png"],
         .is2d .rook.white,
         .piece.wr,
         .promotion-piece.wr,
-        div [style*="wr.png"],
+        div [style*="/wr.png"],
         .is2d .pawn.white,
         .piece.wp,
         .promotion-piece.wp,
-        div [style*="wp.png"],
+        div [style*="/wp.png"],
         .is2d .king.black,
         .piece.bk,
         .promotion-piece.bk,
-        div [style*="bk.png"],
+        div [style*="/bk.png"],
         .is2d .queen.black,
         .piece.bq,
         .promotion-piece.bq,
-        div [style*="bq.png"],
+        div [style*="/bq.png"],
         .is2d .bishop.black,
         .piece.bb,
         .promotion-piece.bb,
-        div [style*="bb.png"],
+        div [style*="/bb.png"],
         .is2d .knight.black,
         .piece.bn,
         .promotion-piece.bn,
-        div [style*="bn.png"],
+        div [style*="/bn.png"],
         .is2d .rook.black,
         .piece.br,
         .promotion-piece.br,
-        div [style*="br.png"],
+        div [style*="/br.png"],
         .is2d .pawn.black,
         .piece.bp,
         .promotion-piece.bp,
-        div [style*="bp.png"] {
+        div [style*="/bp.png"] {
             filter: drop-shadow(0.1rem 0.2rem 0.1rem #000000ab)!important;
             -webkit-filter: drop-shadow(0.1rem 0.2rem 0.1rem #000000ab)!important;
         }
@@ -1691,27 +1691,27 @@
     .is2d .king.black,
     .piece.bk,
     .promotion-piece.bk,
-    div [style*="bk.png"],
+    div [style*="/bk.png"],
     .is2d .queen.black,
     .piece.bq,
     .promotion-piece.bq,
-    div [style*="bq.png"],
+    div [style*="/bq.png"],
     .is2d .bishop.black,
     .piece.bb,
     .promotion-piece.bb,
-    div [style*="bb.png"],
+    div [style*="/bb.png"],
     .is2d .knight.black,
     .piece.bn,
     .promotion-piece.bn,
-    div [style*="bn.png"],
+    div [style*="/bn.png"],
     .is2d .rook.black,
     .piece.br,
     .promotion-piece.br,
-    div [style*="br.png"],
+    div [style*="/br.png"],
     .is2d .pawn.black,
     .piece.bp,
     .promotion-piece.bp,
-    div [style*="bp.png"] {
+    div [style*="/bp.png"] {
         mix-blend-mode: enableBlendB;
         filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
         -webkit-filter: sepia(sepiaB) hue-rotate(hueRotationB) brightness(brightnessB) saturate(saturateB) contrast(contrastB);
@@ -1720,27 +1720,27 @@
     .is2d .king.white,
     .piece.wk,
     .promotion-piece.wk,
-    div [style*="wk.png"],
+    div [style*="/wk.png"],
     .is2d .queen.white,
     .piece.wq,
     .promotion-piece.wq,
-    div [style*="wq.png"],
+    div [style*="/wq.png"],
     .is2d .bishop.white,
     .piece.wb,
     .promotion-piece.wb,
-    div [style*="wb.png"],
+    div [style*="/wb.png"],
     .is2d .knight.white,
     .piece.wn,
     .promotion-piece.wn,
-    div [style*="wn.png"],
+    div [style*="/wn.png"],
     .is2d .rook.white,
     .piece.wr,
     .promotion-piece.wr,
-    div [style*="wr.png"],
+    div [style*="/wr.png"],
     .is2d .pawn.white,
     .piece.wp,
     .promotion-piece.wp,
-    div [style*="wp.png"] {
+    div [style*="/wp.png"] {
         mix-blend-mode: enableBlendW;
         filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);
         -webkit-filter: sepia(sepiaW) hue-rotate(hueRotationW) brightness(brightnessW) saturate(saturateW) contrast(contrastW);

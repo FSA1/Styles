@@ -3,24 +3,24 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Chess by Natallia Paslauskaya (https://dribbble.com/Paslauskaya)(preview images available on internet) . Image edition by agiota_do_artenio.`
-@version        20200831.22.25
+@version        20200831.22.26
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*Pieces*/
-div [style*="bp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bp.png")!important;}
-div [style*="br.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/br.png")!important;}
-div [style*="bn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bn.png")!important;}
-div [style*="bb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bb.png")!important;}
-div [style*="bq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bq.png")!important;}
-div [style*="bk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bk.png")!important;}
-div [style*="wp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wp.png")!important;}
-div [style*="wr.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wr.png")!important;}
-div [style*="wn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wn.png")!important;}
-div [style*="wb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wb.png")!important;}
-div [style*="wq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wq.png")!important;}
-div [style*="wk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wk.png")!important;}
+div [style*="/bp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bp.png")!important;}
+div [style*="/br.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/br.png")!important;}
+div [style*="/bn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bn.png")!important;}
+div [style*="/bb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bb.png")!important;}
+div [style*="/bq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bq.png")!important;}
+div [style*="/bk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bk.png")!important;}
+div [style*="/wp.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wp.png")!important;}
+div [style*="/wr.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wr.png")!important;}
+div [style*="/wn.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wn.png")!important;}
+div [style*="/wb.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wb.png")!important;}
+div [style*="/wq.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wq.png")!important;}
+div [style*="/wk.png"] {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/wk.png")!important;}
  /*vs personality pieces*/   
 .piece.bp, .promotion-piece.bp {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/bp.png")!important;}
 .piece.br, .promotion-piece.br {background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/Paslauskaya/br.png")!important;}

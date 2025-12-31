@@ -9,12 +9,12 @@
 ==/UserStyle== */
 @-moz-document domain("chess.com") {
 /*Pieces*/
-div [style*="wn.png"] {
+div [style*="/wn.png"] {
 	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
    -webkit-filter: invert(1);
    filter: invert(1);
 }
-div [style*="bn.png"] {
+div [style*="/bn.png"] {
 	background-image: url("https://github.com/FSA1/Styles/raw/main/Furia/FURIA_cutted256px.png")!important;
 	}
 .piece.bn, .promotion-piece.bn {

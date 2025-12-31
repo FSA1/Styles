@@ -4,7 +4,7 @@
 @namespace      ChessSkins
 @homepageURL    https://www.chess.com/blog/ChessSkins
 @description    `Multicolor icySea pieces for chesskid.com and chess.com.`
-@version        1.0.1
+@version        1.0.2
 @license        NO-REDISTRIBUTION
 @preprocessor   stylus
 @var    select      myPieces    "Peças♟️"{
@@ -110,25 +110,25 @@ domain("chesskid.com") {
             .piece.wk,
             .promotion-piece.wk,
             div [data-hand-piece="wk"],
-            div [style*="wk.png"] {
+            div [style*="/wk.png"] {
                 background-image: url(nWK)!important;  
             }
             .piece.wq,
             .promotion-piece.wq,
             div [data-hand-piece="wq"],
-            div [style*="wq.png"] {
+            div [style*="/wq.png"] {
                 background-image: url(nWQ)!important;
             }
             .piece.wb,
             .promotion-piece.wb,
             div [data-hand-piece="wb"],
-            div [style*="wb.png"] {
+            div [style*="/wb.png"] {
                 background-image: url(nWB)!important;
             }
             .piece.wn,
             .promotion-piece.wn,
             div [data-hand-piece="wn"],
-            div [style*="wn.png"] {
+            div [style*="/wn.png"] {
                 if myKnight=="op1" {
                     background-image: url(kWNleft)!important;
                 }
@@ -139,37 +139,37 @@ domain("chesskid.com") {
             .piece.wr,
             .promotion-piece.wr,
             div [data-hand-piece="wr"],
-            div [style*="wr.png"] {
+            div [style*="/wr.png"] {
                 background-image: url(nWR)!important;
             }
             .piece.wp,
             .promotion-piece.wp,
             div [data-hand-piece="wp"],
-            div [style*="wp.png"] {
+            div [style*="/wp.png"] {
                 background-image: url(nWP)!important;
             }
             .piece.bk,
             .promotion-piece.bk,
             div [data-hand-piece="bk"],
-            div [style*="bk.png"] {
+            div [style*="/bk.png"] {
                 background-image: url(nBK)!important;
             }
             .piece.bq,
             .promotion-piece.bq,
             div [data-hand-piece="bq"],
-            div [style*="bq.png"] {
+            div [style*="/bq.png"] {
                 background-image: url(nBQ)!important;
             }
             .piece.bb,
             .promotion-piece.bb,
             div [data-hand-piece="bb"],
-            div [style*="bb.png"] {
+            div [style*="/bb.png"] {
                 background-image: url(nBB)!important;
             }
             .piece.bn,
             .promotion-piece.bn,
             div [data-hand-piece="bn"],
-            div [style*="bn.png"] {
+            div [style*="/bn.png"] {
                 if myKnight=="op1" {
                     background-image: url(kBNleft)!important;
                 }
@@ -180,13 +180,13 @@ domain("chesskid.com") {
             .piece.br,
             .promotion-piece.br,
             div [data-hand-piece="br"],
-            div [style*="br.png"] {
+            div [style*="/br.png"] {
                 background-image: url(nBR)!important;
             }
             .piece.bp,
             .promotion-piece.bp,
             div [data-hand-piece="bp"],
-            div [style*="bp.png"] {
+            div [style*="/bp.png"] {
                 background-image: url(nBP)!important;
             }            
             /*pieces for mini-boards*/

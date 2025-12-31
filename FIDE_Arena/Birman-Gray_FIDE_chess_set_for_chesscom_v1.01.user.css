@@ -3,7 +3,7 @@
 @namespace      USO Archive
 @author         agiota_do_artenio
 @description    `Birman-Gray (FIDE Arena Complete Chess Set).`
-@version        20200831.22.31
+@version        20200831.22.32
 @license        NO-REDISTRIBUTION
 @preprocessor   uso
 ==/UserStyle== */
@@ -74,40 +74,40 @@
         opacity: 0.7;
     }
     /*Pieces*/
-    .piece.bk, .promotion-piece.bk, div [style*="bk.png"] {
+    .piece.bk, .promotion-piece.bk, div [style*="/bk.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/bK.svg")!important;
     }
-    .piece.bq, .promotion-piece.bq, div [style*="bq.png"] {
+    .piece.bq, .promotion-piece.bq, div [style*="/bq.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/bQ.svg")!important;
     }
-    .piece.bb, .promotion-piece.bb, div [style*="bb.png"] {
+    .piece.bb, .promotion-piece.bb, div [style*="/bb.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/bB.svg")!important;
     }
-    .piece.bn, .promotion-piece.bn, div [style*="bn.png"] {
+    .piece.bn, .promotion-piece.bn, div [style*="/bn.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/bN.svg")!important;
     }
-    .piece.br, .promotion-piece.br, div [style*="br.png"] {
+    .piece.br, .promotion-piece.br, div [style*="/br.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/bR.svg")!important;
     }
-    .piece.bp, .promotion-piece.bp, div [style*="bp.png"] {
+    .piece.bp, .promotion-piece.bp, div [style*="/bp.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/bP.svg")!important;
     }
-    .piece.wk, .promotion-piece.wk, div [style*="wk.png"] {
+    .piece.wk, .promotion-piece.wk, div [style*="/wk.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/wK.svg")!important;
     }
-    .piece.wq, .promotion-piece.wq, div [style*="wq.png"] {
+    .piece.wq, .promotion-piece.wq, div [style*="/wq.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/wQ.svg")!important;
     }
-    .piece.wb, .promotion-piece.wb, div [style*="wb.png"] {
+    .piece.wb, .promotion-piece.wb, div [style*="/wb.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/wB.svg")!important;
     }
-    .piece.wn, .promotion-piece.wn, div [style*="wn.png"] {
+    .piece.wn, .promotion-piece.wn, div [style*="/wn.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/wN.svg")!important;
     }
-    .piece.wr, .promotion-piece.wr, div [style*="wr.png"] {
+    .piece.wr, .promotion-piece.wr, div [style*="/wr.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/wR.svg")!important;
     }
-    .piece.wp, .promotion-piece.wp, div [style*="wp.png"] {
+    .piece.wp, .promotion-piece.wp, div [style*="/wp.png"] {
         background-image: url("https://raw.githubusercontent.com/FSA1/Styles/main/FIDE_Arena/wP.svg")!important;
     }
 }
