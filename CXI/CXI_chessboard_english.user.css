@@ -1,0 +1,748 @@
+/* ==UserStyle==
+@name           💎CXI (English): chessboard
+@author         ChessSkins
+@namespace      ChessSkins
+@homepageURL    https://www.chess.com/blog/ChessSkins
+@description    `Chessboard Comunidade de Xadrez Internacional.`
+@version        1.0.0
+@license        NO-REDISTRIBUTION
+@preprocessor   stylus
+
+@var    color    svgDarkSqColor  "Theme color"   #3d84be
+@var    checkbox    enableCenterLogo   "🟩Enable Logo" 1
+@var    range    centerLogoOpacity  "🟢lighten logo" [65, 40, 80, 5, "%"]
+@var    range    centerLogoSize  "🟢logo size" [35, 10, 60, 5, "%"]
+
+@var    range    centerLogoPosX  "🟢Logo X position" [50, 0, 100, 1, "%"]
+@var    range    centerLogoPosY  "🟢Logo Y position" [51, 0, 100, 1, "%"]
+@var    checkbox    enableBoardFrame  "🟩🔳Outer border" 1
+@var    checkbox    enableInnerBorder  "🟩Inner Border" 1
+@var    checkbox    enableWallpaper   "🟩Background" 1
+@var    checkbox    enableThinEvalBar  "🟩Thin Eval. bar" 1
+
+@var    range    frameRadius  "🔵Corner radius" [5, 0, 34, 1, "px"]
+@var    checkbox    frameRadiusInOut  "↪🔹all together <--> external" 1
+
+@var    range    ajustBoardSize  "Board size" [0.92, 0.82, 0.92, 0.01, ""]
+
+@var    select      setHighlight    "🟡Highlight" {
+            "Custom*": "op1",
+            "Default": "disabled",
+        }
+@var    color    hlColor  "↪Highlight color"   #ffff00
+@var    range    highlightOpacity  "↪highlight opacity" [0.5, 0.3, 1, 0.1, ""]
+
+@var    color    hlSqRed  "🔴Right click"   #eb6150
+@var    color    hlSqOrange  "🟠CTRL+Click"   #fa0
+@var    color    hlSqGreen  "🟢SHIFT+Click"   #acce59
+@var    color    hlSqBlue  "🔵ALT+Click"   #52b0dc
+
+@var    checkbox    enableArrowSettings   "🟩↘️Custom Arrows" 0
+@var    range    arrowOpacity  "Arrows opacity" [0.9, 0.7, 1, 0.1, ""]
+@var    color    arrowOrange  "🟠Right click"   #ff8000
+@var    color    arrowRed  "🔴CTRL+Click"   #fa4d35
+@var    color    arrowGreen  "🟢SHIFT+Click"   #abe439
+@var    color    arrowBlue  "🔵ALT+Click"   #28b8fa
+
+@var    checkbox    enableOutsideCoords "🔠Outside Coord" 1
+
+@var    range    outCoordFontSize  "↪Font size" [0.24, 0.1, 0.3, 0.01, "rem"]
+@var select   outCoordFontWeight   "↪Font weight"    ["400*", "600", "700", "800"]
+
+@var    select      outCoordFontCase    "↪Upper/Lower case"{
+            "Uppercase": "uppercase",
+            "Lowercase*": "lowercase",
+        }
+
+@var    select      useWallpaper    "🖼️Wallpaper" {
+            "Theme Wallpaper*": "themeWallpaper",
+            "Gradient (auto)": "gradient",
+            "Gradient (user)": "gradientUsr",
+            "Solid color": "backgroundColp",
+            
+        }
+
+@var    color    backgroundColp  "custom color"   #302D2B
+@var    range    globalColSaturation  "↪Saturation (auto)" [-30, -100, 200, 10, "%"]
+
+@var    select      evalOpt    "Evaluation bar" {
+            "Automatic color*": "auto",
+            "Default": "disabled",
+        }
+
+==/UserStyle== */
+@-moz-document domain("chess.com") {
+
+    /*Default Settings*/
+    enableGlobalColor=1;
+    svgLightSqColor=#E7E2DA;
+    svgBoardBlend=normal;
+    svgDarkSqOpacity=1;
+    svgLightSqOpacity=1;
+    boardBGOpt=colorOnly;
+    frameOpt=colorOnly;
+    hlImgOpt=disabled;
+    bgSize=cover;/*cover,contain,bPercentSize*/
+    boardBGColor=svgDarkSqColor;
+    bPercentSize=100%;
+    frameSize=bgSize;/*cover,contain,fPercentSize,bgSize*/
+    bgPosX=0;
+    bgPosY=0;
+    fPercentSize=100%;
+    framePosX=50%;
+    framePosY=50%;
+    outCoordFontName="Segoe UI";
+    outCoordColorOpt=svgLightSqColor;
+    outCoordCol=#ffffffc4;
+    coordsBlend=normal; 
+    innerBorderColor=#E7E2DA;
+    enableBoardShadowInset=0;
+    enableBoardShadow=0;
+    enableFrameShadowInset=0;
+    frameShadowInsetBlur=2px;
+    frameShadowInsetSpread=1px;
+    frameShadowInsetColor=rgba(0, 0, 0, .4);
+    enableFrameShadow=1;
+    frameShadowBlur=8px;
+    frameShadowSpread=4px;
+    frameShadowColor=rgba(0, 0, 0, .5); 
+    frameColor=#3d84be;
+    innerBorderOpt=svgLightSqColor;
+    enableCustomCoord=0;
+    lCoordCol=#8d8d8d;
+    dCoordCol=#acacac;
+    centerLogoOpt=brandLogo;
+    centerLogoBlend=normal;
+    centerLogoCol=#e5e1d66b;
+    //centerLogoSize=35%;
+    //centerLogoOpacity=65%;
+    //centerLogoPosX=50%;
+    //centerLogoPosY=51%;
+    enableCornerLogo2=0;
+    enableLightTheme=0;
+    dEvalCol=#403D39;
+    lEvalCol=#E0E0E0;
+    evalBarOpacity=0.95;
+    setWallpaper=cover;
+    //ajustBoardSize=ajustBoardSize * 1.002;
+
+    /*Textures*/    
+
+    /*selector with exceptions to avoid override analysis highlights*/
+    notThisColors='[style*="179\, 52\, 48"]):not([style*="244\, 42\, 50"]):not([style*="#f42a32"]):not([style*="#b33430"]):not([style*="#9eba5a"]):not([style*="158\, 186\, 90"]):not([style*="#e6912c"]):not([style*="230\, 145\, 44"]):not([style*="#c93430"]):not([style*="201\, 52\, 48"]):not([style*="#1baca6"]):not([style*="#5c8bb0"]):not([style*="#96bc4b"]):not([style*="#96af8b"]):not([style*="#a88865"]):not([style*="#f0c15c"]):not([style*="#e58f2a"]):not([style*="#ca3431"]):not([style*="#dbac16"]):not([style*="27\, 172\, 166"]):not([style*="92\, 139\, 176"]):not([style*="150\, 188\, 75"]):not([style*="150\, 188\, 75"]):not([style*="150\, 175\, 139"]):not([style*="168\, 136\, 101"]):not([style*="240\, 193\, 92"]):not([style*="229\, 143\, 42"]):not([style*="202\, 52\, 49"]):not([style*="219\, 172\, 22"]):not([style*="172\, 206\, 89"]):not([style*="235\, 97\, 80"]):not([style*="82\, 176\, 220"]):not([style*="255\, 170\, 0"]):not([style*="#52b0dc"]):not([style*="#ffaa00"]):not([style*="#acce59"]):not([style*="#eb6150"]';
+
+    if enableBoardShadow{
+        boardShadow= 0px 0px 8px 4px rgba(0, 0, 0, .4);
+    }
+    if enableBoardShadowInset{
+        boardShadowInset= inset 0px 1px 2px 1px rgba(0, 0, 0, .4);
+    }
+    if enableFrameShadow{
+        frameShadow= 0px 0px frameShadowBlur frameShadowSpread frameShadowColor;
+    }
+    if enableFrameShadowInset{
+        frameShadowInset= inset 0px -1px frameShadowInsetBlur frameShadowInsetSpread frameShadowInsetColor;
+    }
+    
+}/*Themes below*/
+@-moz-document domain("chess.com") {
+    /*Themes*/
+    myBoard="custom";
+    themeWallpaper=gridWall;
+    /*End themes*/
+
+    /*GLOBAL COLOR - Need to be placed after themes*/
+    globalColor=saturate(shade(svgDarkSqColor,60%), globalColSaturation);
+    if (enableGlobalColor==1 && myBoard=="custom") || global==1{ 
+        outCoordColorOpt=svgLightSqColor=saturate(lighten(svgDarkSqColor, 78%), -40%);
+        if enableInnerBorder=="1"{
+            innerBorderOpt=boardBGColor=saturate(lighten(svgDarkSqColor, 20%), -10%);
+        }
+        frameColor=svgDarkSqColor;
+        centerLogoBlend=multiply;
+    }
+    
+    if frameSize=="contain"{
+        frameRepeat=repeat;
+    }else{
+        frameRepeat=no-repeat;
+    }    
+    if bgSize=="contain"{
+        bgRepeat=repeat;
+    }else{
+        bgRepeat=no-repeat;
+    }
+    if !enableBoardShadowInset{
+        boardShadowInset=0;
+    }
+    if !enableFrameShadow {
+        frameShadow=0;
+    }
+    if !enableFrameShadowInset{
+        frameShadowInset=0;
+    }
+}
+@-moz-document domain("chess.com") {
+
+    /*Board*/
+   /*prevent user to get the board completely transparent with no visual references. It can be removed if you are an experienced user*/
+    if svgLightSqOpacity<"0.2" && svgDarkSqOpacity<"0.2" && boardBGOpt=="transparent"{
+        svgLightSqOpacity="0.2";
+        svgDarkSqOpacity="0.2";
+    }    
+    solidBoardBGColor=transparentify(boardBGColor, #fff, 1);
+    svgDarkSqColor=hsla(svgDarkSqColor);
+    svgLightSqColor=hsla(svgLightSqColor);
+    centerLogoCol=hsla(centerLogoCol);
+    innerBorderOpt=hsla(innerBorderOpt);
+    outCoordColorOpt=hsla(outCoordColorOpt);
+    /*Wallpaper square colors*/
+    wallLSqCol=transparentify(saturate(svgLightSqColor, -30%), #fff,0.1);
+    wallDSqCol=transparentify(saturate(svgDarkSqColor, -30%), #fff,0.2);
+    /*Center Logo*/
+    shapeMaster=transparentify(saturate(lighten(svgDarkSqColor, 45%), -10%), #fff,0.5);
+    shading=transparentify(saturate(lighten(svgDarkSqColor, centerLogoOpacity), -10%), #fff,0.43);
+    backGrid=transparentify(saturate(lighten(svgDarkSqColor, 1%), -40%), #fff,0.05);
+    gridWall="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1920' height='1080' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1920 1080' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'%3e%3cg transform='matrix(1.1349 .65522 -.65522 1.1349 737.06 -1853.5)'%3e%3cpath id='darkSqr' d='m219.99 1506.2 80.013 138.59-4.1e-4 -144.78-69.277-4e-4 -10.735 6.1979zm80.012-6.1975 150-3e-4 -5e-5 -126.6-150 86.603 2.6e-4 39.997zm150-3e-4 3.5e-4 150 150-4e-4 -3.4e-4 -150-150 4e-4zm150-4e-4 150-3e-4 -3.5e-4 -150-150 4e-4 3.5e-4 150zm-3.5e-4 -150 5e-4 -63.202-109.47 63.202 109.47-1e-4zm150-4e-4 150 1e-3 9.4e-4 -150-149.66-6e-4 -0.33947 0.196-7.1e-4 149.8zm150-150 150-3e-4 -3e-4 -150-39.855 3e-4 -110.15 63.593 7.7e-4 86.407zm150-150 150-4e-4v-109.61l-150 86.603 3e-4 23.01zm150-4e-4 3e-4 150 150 1e-3 -4e-4 -150-150-1e-3zm150 1e-3 150-4e-4 -3e-4 -150-150 3.5e-4 3e-4 150zm-3e-4 -150-2e-4 -46.215-80.047 46.215 80.047 3.7e-4zm150-3.5e-4 61.804 2.6e-4 -61.805-107.05 4e-4 107.05zm3e-4 150 4e-4 150 150-3e-4 -2e-4 -147.24-1.5941-2.7609-148.41 8e-4zm150 150-9e-4 150 150-3e-4 1e-4 -37.433-64.991-112.57-85.008 3e-4zm150 150 3e-4 150 79.013 4e-4 21.901-12.645-79.302-137.36-21.612 5e-4zm3e-4 150-150 4e-4 9e-4 132.22 150-86.602 2e-4 -45.618zm-150 4e-4 -3e-4 -150-150 4e-4 3e-4 150 150-3e-4zm-150 3e-4 -150 4e-4 -4e-4 150 150 9e-4 -3e-4 -150zm3e-4 150 4e-4 68.822 119.2-68.822-119.2 2e-4zm-150-9e-4 -150 3e-4 3e-4 150 150-3e-4 -3e-4 -150zm3e-4 150 5e-4 5.426 9.3979-5.4259-9.3984-1e-4zm-150 3e-4 -150 4e-4 -9e-4 150 49.59-4e-4 100.41-57.972 1e-3 -92.029zm-150 150-150 4e-4 8.3e-4 115.23 150-86.602 3e-4 -28.631zm-150 4e-4 9.5e-4 -150-150-9e-4 -9.5e-4 150 150 9e-4zm-150-9e-4 -150 3e-4 3.5e-4 150 150-3e-4 -3.5e-4 -150zm3.5e-4 150-2.7e-4 51.836 89.783-51.836-89.783-2e-4zm-150 3e-4 -37.18 1e-4 37.18 64.398 1.7e-4 -64.398zm-3.5e-4 -150 9.4e-4 -150-150 4e-4 -9e-4 104.59 26.217 45.41 123.78 1e-4zm-150-150-3.5e-4 -150-146.99-1e-4 86.603 150 60.386-1e-4zm150-4e-4 150-3e-4 -3.5e-4 -150-150 3e-4 3.5e-4 150zm150-150 150 9e-4 -3.5e-4 -150-150-9e-4 3.5e-4 150zm150-150 150-3e-4 -3e-4 -150-150 4e-4 3.5e-4 150zm150-150 150-3e-4 9e-4 -150-150 4e-4 -9e-4 150zm150-3e-4 3e-4 150 150 1e-3 -4e-4 -150-150-9e-4zm150 9e-4 150-3e-4 9e-4 -150-150 4e-4 -1e-3 150zm-150 150-150 4e-4 4e-4 150 150-4e-4 -4e-4 -150zm-150 150-150 3e-4 3.5e-4 150 150-3e-4 -3e-4 -150z' fill='"+wallDSqCol+"' style='mix-blend-mode:normal'/%3e%3cpath id='lightSqr' d='m230.72 1500 69.277 4e-4 -2.6e-4 -39.997zm69.277 4e-4 4.1e-4 144.78 3.0114 5.2159 146.99 1e-4 -3.5e-4 -150zm150-3e-4 150-4e-4 -3.5e-4 -150-109.47 1e-4 -40.531 23.4zm150-150 150-4e-4 7.1e-4 -149.8-150 86.603zm150-4e-4 3.5e-4 150 150 9e-4 -3.5e-4 -150zm150 1e-3 150-4e-4 9e-4 -150-150 3e-4zm9.4e-4 -150-7.7e-4 -86.407-149.66 86.406zm150-3e-4 150-4e-4 -3e-4 -150-150 4e-4zm-3e-4 -150-3e-4 -23.01-39.854 23.01zm150-4e-4 150 1e-3 -3e-4 -150-80.047-3.7e-4 -69.953 40.388zm150-150 150-3.5e-4 -4e-4 -107.05-11.158-19.326-138.84 80.16zm150-3.5e-4 3e-4 150 148.41-8e-4 -86.602-150zm3e-4 150-150 4e-4 4e-4 150 150-4e-4zm4e-4 150-9e-4 150 150-4e-4 9e-4 -150zm150-3e-4 85.008-3e-4 -85.008-147.24zm-9e-4 150 3e-4 150 150-4e-4 -3e-4 -150zm150-3e-4 21.612-5e-4 -21.612-37.433zm3e-4 150-2e-4 45.618 79.013-45.618zm-150 4e-4 -150 3e-4 3e-4 150 119.2-2e-4 30.796-17.78zm-150 150-150-9e-4 3e-4 150 9.3984 1e-4 140.6-81.177zm-150 150-150 3e-4 -1e-3 92.029 150-86.603zm-150 3e-4 -3e-4 -150-150 4e-4 3e-4 150zm-150 4e-4 -150 3e-4 -9.5e-4 150 150-4e-4zm-9e-4 150-3e-4 28.631 49.59-28.631zm-150 4e-4 -150-9e-4 3.5e-4 150 89.783 2e-4 60.218-34.767zm-150 150-150 3e-4 -1.7e-4 64.398 32.06 55.53 117.94-68.092zm-150 3e-4 -3.5e-4 -150-123.78-1e-4 86.603 150zm-3.5e-4 -150 150-3e-4 9.5e-4 -150-150 3e-4zm9.4e-4 -150-3.5e-4 -150-150 4e-4 3.5e-4 150zm-150 4e-4 -60.386 1e-4 60.385 104.59zm150-150 150-3e-4 -3.5e-4 -150-150 3e-4zm150-3e-4 3.5e-4 150 150 9e-4 -3.5e-4 -150zm150 9e-4 150-3e-4 -4e-4 -150-150 3e-4zm150-150 150-4e-4 -3e-4 -150-150 3e-4zm150-150 150 9e-4 1e-3 -150-150-1e-3zm150 9e-4 4e-4 150 150-4e-4 -3e-4 -150zm4e-4 150-150-1e-3 4e-4 150 150-3e-4z' fill='"+wallLSqCol+"' style='mix-blend-mode:normal'/%3e%3c/g%3e%3c/svg%3e ";
+    
+    /*SVG IMAGES HERE 🔐 - need to be here because '#' symbol need to be replaced first for '%23' in the variables*/
+    /*main svg board*/
+    svgBoard="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='1200' height='1200' shape-rendering='crispEdges' version='1.1' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m150 9.25e-6v150h150v-150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 150v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm0 150v150h150v-150zm0 150h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150z' fill='" + svgDarkSqColor + "' fill-opacity='" + svgDarkSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3cpath d='m1200 150h-150v150h150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm150 0v150h150v-150zm150 0h150v-150h-150zm-150 150h-150v150h150zm0 150v150h150v-150zm0 150h-150v150h150zm0 150v150h150v-150zm-150 0h-150v150h150zm-150 0v-150h-150v150zm0-150h150v-150h-150zm0-150v-150h-150v150z' fill='" + svgLightSqColor + "' fill-opacity='" + svgLightSqOpacity + "' style='mix-blend-mode:multiply'/%3e%3c/svg%3e";
+    brandLogo="data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8'?%3e%3csvg width='600' height='600' version='1.1' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m320.33 10.977c-10.625-0.76715-33.976-0.28888-44.298 0.90714-22.904 2.654-43.753 7.5465-64.519 15.141-24.188 8.846-45.212 19.909-65.798 34.621-15.871 11.343-28.974 22.918-42.723 37.74-14.323 15.442-27.58 33.604-38.759 53.099-6.6496 11.597-15.76 31.082-20.083 42.956-6.9921 19.202-11.167 34.41-14.206 51.757-3.2481 18.536-4.5133 31.388-4.8747 49.504-0.41654 20.882 0.97512 37.921 4.8919 59.886 3.7371 20.957 9.613 40.537 18.244 60.797 3.9332 9.2326 11.355 23.675 16.84 32.771 5.5968 9.2806 8.4826 13.614 15.117 22.701 19.078 26.129 43.744 49.465 72.04 68.155 13.341 8.812 29.008 17.399 42.465 23.274 8.0565 3.5173 21.303 8.6605 28.477 11.057 15.18 5.0711 32.456 9.1255 49.044 11.51 6.1857 0.8891 20.209 2.2121 25.992 2.4519 1.7403 0.072 54.016 0.1089 116.17 0.082 104.49-0.046 113.26-0.1073 116.38-0.8158 7.3201-1.6608 11.968-3.6278 18.327-7.7557 8.6169-5.5935 15.697-13.592 20.444-23.096 1.9243-3.853 3.2459-7.5708 4.4926-12.638 0.7259-2.95 0.7898-12.129 0.9403-135.61 0.1637-134.37 0.094-141.59-1.4971-156.17-2.5125-23.019-8.3918-46.005-18.037-70.516-3.1839-8.091-12.112-26.285-16.684-34-8.0531-13.589-17.042-26.743-24.646-36.064-9.7914-12.003-23.379-25.943-34.858-35.764-20.314-17.38-44.233-32.641-67.578-43.117-28.199-12.655-59.915-20.596-91.309-22.863zm-17.629 13.405c11.925 7e-3 16.127 0.1882 23.929 1.0349 5.2054 0.56491 12.475 1.5216 16.155 2.1255 25.704 4.2183 51.662 12.667 74.278 24.176 7.2997 3.7148 17.869 9.7227 23.279 13.232 12.514 8.1186 25.248 17.917 36.614 28.173 21.227 19.153 39.781 43.147 54.157 70.034 7.312 13.676 13.469 28.348 18.4 43.848 5.5989 17.598 9.4224 36.484 11.156 55.108 0.4689 5.0357 0.5894 33.935 0.5894 141.48 0 126.72-0.049 135.38-0.786 138.68-1.7943 8.0516-5.5294 14.956-11.193 20.692-6.9459 7.0344-14.026 10.826-22.681 12.146-2.347 0.358-32.314 0.5335-102.98 0.6032-54.819 0.054-106.28-0.03-114.36-0.1867-15.729-0.3053-22.778-0.7794-33.063-2.2229-17.982-2.5236-29.96-5.2255-46.267-10.437-18.766-5.9968-37.129-13.892-52.179-22.433-18.502-10.501-30.72-19.025-46.136-32.185-7.7464-6.6127-14.395-13.019-21.83-21.033-11.533-12.432-21.423-25.392-31.045-40.683-3.5072-5.5732-11.148-19.61-14.148-25.992-14.062-29.91-22.168-60.677-25.189-95.603-0.79876-9.2346-1.0663-29.618-0.50786-38.684 1.3319-21.622 4.9014-42.972 10.451-62.508 4.2298-14.89 9.359-29.039 15.343-42.325 3.2236-7.1575 9.8515-19.82 13.945-26.64 4.3546-7.2559 12.313-19.123 17.3-25.795 15.024-20.102 32.819-37.831 53.085-52.887 12.554-9.3263 23.619-16.137 39.023-24.019 9.5336-4.8784 21.035-9.7322 31.944-13.481 20.128-6.9171 37.42-10.709 61.25-13.432 5.3012-0.60564 10.526-0.79858 21.471-0.79258zm-27.453 64.673c-0.1828 3e-3 -0.30386 0.0791-0.39133 0.21718-0.21619 0.34131-0.39746 1.0277-0.40323 1.5249-0.0159 1.3958-2.9695 14.129-4.5357 19.554-0.77096 2.6704-2.2199 6.8898-3.22 9.3759-2.3752 5.9046-5.4104 12.43-5.7812 12.43-0.16127 0-0.56677-1.2333-0.90118-2.7406-0.37929-1.7098-0.50354-3.8576-0.33044-5.711l0.27745-2.971-2.4128 0.28405c-2.8276 0.33234-9.3268 2.1572-13.093 3.6762-3.6502 1.4722-9.188 4.8832-13.423 8.2688-5.8011 4.6376-12.084 12.573-14.913 18.835-0.67932 1.5036-1.7928 4.4632-2.4744 6.5764-1.0095 3.13-1.2965 5.0569-1.5474 10.396-0.2606 5.5459-0.47761 6.9366-1.411 9.0402-1.1152 2.5132-6.9058 13.777-15.803 30.738-2.6736 5.0965-6.7145 12.916-8.98 17.377-3.7378 7.3607-4.1184 8.3439-4.1093 10.623 0.0197 4.9812 2.8306 9.1082 9.7083 14.253 5.8726 4.3926 10.285 7.0986 13.755 8.4357 3.3292 1.2829 7.5984 1.3446 10.851 0.15693 3.962-1.4469 6.8851-4.6893 12.017-13.328 7.7367-13.024 8.9806-14.51 13.629-16.28 2.2944-0.87396 3.603-1.015 10.094-1.0853 8.1689-0.0883 9.3433-0.34499 13.873-3.0386 1.4047-0.8354 3.8506-2.7209 5.4355-4.1894 4.5302-4.1972 9.9255-12.227 12.101-18.01 0.44421-1.1809 0.98366-2.1473 1.1985-2.1473 0.21487 0 0.39007 2.0847 0.38668 4.633-6e-3 8.0114-1.2535 16.479-3.4796 23.619-1.294 4.1506-4.8453 11.432-7.4359 15.247-2.2185 3.2669-9.2753 10.684-12.579 13.222-1.3709 1.0529-6.2558 4.518-10.855 7.7007-10.689 7.3968-14.752 10.56-19.105 14.874-6.3882 6.3308-10.858 13.802-12.848 21.477-0.95447 3.6808-1.083 4.9608-0.86344 8.6171 0.14181 2.3618 0.57158 5.6166 0.95481 7.2326 0.38322 1.616 1.6447 4.8708 2.8035 7.2326 2.0345 4.1465 2.4734 4.6676 12.758 15.148 28.808 29.357 51.758 53.941 73.212 78.424 9.7249 11.098 11.797 13.632 11.797 14.428 0 0.26308-3.512 4.3954-7.804 9.1833s-9.4279 10.547-11.413 12.797c-8.331 9.4424-19.721 21.855-22.289 24.289-3.2026 3.0362-7.0159 4.9681-11.77 5.9632-1.83 0.38312-3.5082 0.80828-3.7292 0.94487-0.45056 0.27847-0.55369 6.0546-0.12778 7.1644 0.24515 0.63888 2.6947 0.71513 23.005 0.71513 20.31 0 22.759-0.0762 23.004-0.71513 0.1509-0.39326 0.27481-2.1146 0.27481-3.8258 0-3.5053-0.17185-3.7076-3.5888-4.2304-2.7319-0.41797-5.3195-1.952-5.8474-3.4663-0.334-0.95813-0.23626-1.6432 0.42577-2.979 1.3085-2.6402 28.755-34.648 29.38-34.262 0.70251 0.43421 24.713 32.149 25.55 33.748 0.6781 1.2958 0.82127 2.976 0.35688 4.1861-0.36133 0.94158-3.0932 2.3365-5.3898 2.7519-3.3402 0.60419-3.4199 0.72292-3.2736 4.8628l0.13113 3.704 26.866 0.11652c21.194 0.092 26.769 0.0284 26.769 0.0284 0.48772 6e-3 0.49149-0.0612 0.49291-0.51816 0 0 6e-3 -6.6761 2e-3 -7.1601-2e-3 -0.32425-2.0687-0.75662-4.182-1.4109-5.9236-1.834-8.5418-3.7856-13.884-10.349-3.5363-4.3449-36.289-47.902-36.289-48.261 0-0.3893 18.009-19.856 24.84-26.851 7.8701-8.0585 11.09-10.176 18.874-12.414l4.0052-1.1835c0.21251-0.0619 0.38139-0.21892 0.37487-0.48855l-9e-5 -3.6404-0.0126-3.6174c3e-3 -0.38192-0.33482-0.65471-0.74602-0.70309l-22.291-0.0341c-12.679-0.0275-23.426-0.0952-23.995 0.1163-0.98014 0.364-1.0777 1.0674-0.95338 4.5925 0.14849 4.21-0.22413 3.8494 5.0588 4.8932 4.6982 0.92826 5.9851 3.5048 3.5477 7.1028-0.68369 1.0093-4.3955 5.4485-8.249 9.8653s-7.516 8.6188-8.1384 9.3376l-1.1316 1.3064-6.3268-8.725c-3.4797-4.7991-7.2544-10.051-8.3887-11.67-1.1342-1.6191-3.389-4.7746-5.0104-7.0121-5.0883-7.0217-18.182-25.585-21.043-29.834-4.704-6.9846-4.882-7.4542-4.882-12.883 0-4.5268 0.0754-4.903 1.6342-8.1364 0.89891-1.8646 2.2878-4.2034 3.0862-5.1978 0.79848-0.99447 4.7602-5.3682 8.8039-9.7189 14.83-15.956 21.168-23.643 28.522-34.592 8.4087-12.518 14.883-26.909 18.107-40.248 2.676-11.071 3.9073-26.762 2.9412-37.488-1.0762-11.949-2.9235-20.405-7.0591-32.32-2.0924-6.0282-7.4483-16.778-10.966-22.01-4.3558-6.478-10.476-13.624-15.289-17.851-5.5719-4.8943-7.6078-6.4335-12.1-9.1475-2.6272-1.5872-3.5491-1.9785-3.8947-1.6163-0.0814 0.29313-0.17958 0.5582-0.26884 0.83893-8e-3 0.0274-0.0132 0.0382-0.0217 0.0669-0.18398 0.5728-0.37939 1.1203-0.58999 1.6415-0.0866 0.21894-0.15751 0.40252-0.2622 0.64227-0.0707 0.16123-0.14194 0.31224-0.21453 0.46814-0.32708 0.70368-0.72692 1.46-1.2236 2.2639-0.21704 0.35494-0.42001 0.6563-0.63631 0.97071-0.12218 0.1758-0.24812 0.34922-0.37942 0.5264-0.73459 1.0012-1.4405 1.8479-1.9712 2.3771l-1.0078 1.1521 7e-3 -0.24764c-5e-3 4e-3 -7e-3 5e-3 -7e-3 5e-3 3e-3 -0.0165 6e-3 -0.0332 8e-3 -0.0497 3e-5 -2.3e-4 -7e-5 -3.4e-4 0-6.8e-4l0.1675-6.1202c0.10398-3.7862-0.0399-7.5554-0.35159-9.2038-1.2888-6.8163-4.3962-13.971-8.6344-19.881-3.3007-4.6023-7.0453-8.2238-11.448-11.073-1.7649-1.142-2.6376-1.6129-3.1048-1.605zm36.252 18.505c-3.693-0.0644-6.839 0.0811-7.2326 0.47475-0.0149 0.0149-0.0288 0.0314-0.0424 0.049 1.0182 3.1181 1.5751 5.9714 1.7918 8.5661 0.1931 0.13742 0.4234 0.24872 0.70915 0.37213 5.5526 2.3983 7.8406 3.5813 10.956 5.664 5.2198 3.4889 11.554 8.6595 13.794 11.26 1.1795 1.3696 2.3356 2.279 2.8976 2.2791 0.51425 1.2e-4 1.9377-0.29196 3.1637-0.6489 4.367-1.2714 9.6627-1.7465 16.207-1.4534 3.4996 0.15672 7.3296 0.41561 8.5105 0.57473 1.3178 0.17757 2.1466 0.11539 2.1466-0.1609 0-0.74415-6.1308-7.3792-9.6209-10.412-1.7939-1.559-4.6852-3.8233-6.4254-5.031-7.0943-4.9232-17.735-9.2653-26.339-10.749-2.5833-0.44553-6.8231-0.72026-10.516-0.78464zm34.458 36.003c-3.0473 0.12497-5.1838 0.48068-5.3594 1.025-0.0802 0.24862 1.373 2.4866 3.2293 4.9727 3.6839 4.934 8.0576 12.653 9.9884 17.629 0.67535 1.7403 1.3886 3.3445 1.5845 3.565 0.19585 0.22048 2.6574 0.76077 5.47 1.2005 6.027 0.94222 14.447 2.9612 21.387 5.1283 4.3523 1.3591 7.0061 1.9274 7.0061 1.5011 0-0.0722-0.59755-1.9754-1.3283-4.2298-1.4916-4.6019-4.7231-12.011-7.167-16.432-2.608-4.7179-6.4643-10.406-7.4994-11.061-1.1353-0.71882-9.9104-2.2822-16.486-2.9373-3.8192-0.3805-7.7774-0.48649-10.825-0.36153zm-86.947 20.401c0.88049-0.0319 1.684 0.12155 2.8849 0.48336 2.8558 0.86033 4.4457 2.1221 5.7256 4.5436 1.0391 1.966 1.2496 5.249 0.50721 7.9172-0.61532 2.2113-2.9934 4.9347-5.1733 5.9248-2.2694 1.0308-5.2155 1.0752-9.323 0.14104-2.3899-0.54358-3.6004-0.60565-5.0614-0.25956-1.0561 0.25019-2.3779 0.59566-2.9372 0.76742-0.60023 0.1843-1.017 0.12082-1.017-0.15494 0-0.257 0.38004-1.3549 0.8449-2.4393 0.46482-1.0844 1.0798-3.0657 1.3666-4.4032 0.71255-3.3225 2.0191-6.1366 3.9351-8.4748 1.8578-2.2672 3.3004-3.1123 6.4764-3.7934 0.68681-0.1473 1.2429-0.23313 1.7712-0.25227zm101.25 17.465c-1.1368 0-1.1148 0.17064 1.1157 8.6244 1.6147 6.1198 3.028 14.982 3.028 18.988 0 1.1608 0.25471 2.3056 0.56548 2.544 0.31075 0.23843 1.7853 0.90799 3.2769 1.4878 3.2272 1.2544 16.538 7.3358 25.087 11.462 3.3563 1.6198 6.2811 2.9578 6.4996 2.973 0.78136 0.0543-0.60525-12.696-2.2546-20.73-1.0844-5.2827-3.3221-13.262-4.0192-14.332-0.61674-0.94694-6.0974-3.1598-16.022-6.4698-5.011-1.6713-15.937-4.5463-17.277-4.5463zm4.9627 41.865c-0.20165 0.12462-0.36682 1.9494-0.36682 4.055 0 4.5102-1.099 15.501-2.0176 20.175l-0.64691 3.2902 1.2197 1.072c0.67048 0.58962 8.1345 6.2174 16.587 12.506 8.4528 6.2885 15.573 11.384 15.821 11.324 1.0472-0.25331 3.5458-13.761 4.3139-23.32 0.26969-3.3563 0.42642-7.5 0.34828-9.2084l-0.14236-3.1061-11.3-5.813c-12.082-6.2144-23.217-11.346-23.817-10.975zm-5.4693 40.07c-0.22972 0.0766-1.0764 2.2678-1.8811 4.8694-1.9068 6.1641-3.3865 9.9519-6.2069 15.891l-2.3049 4.8548 3.759 4.6489c2.0675 2.5567 4.9008 5.9702 6.2963 7.5862 1.3954 1.616 3.3424 3.9554 4.3271 5.1985 3.3229 4.1946 10.313 12.646 11.683 14.125 0.74811 0.80798 1.4893 1.4693 1.6468 1.4693s1.53-2.1869 3.0505-4.8595c2.721-4.783 5.7143-10.902 7.9166-16.183 1.7042-4.0869 4.39-11.747 4.39-12.52 0-0.37767-0.55982-1.0522-1.2435-1.4998-0.6837-0.44753-6.1247-4.6023-12.091-9.2329-15.11-11.727-18.86-14.508-19.341-14.348zm-16.413 37.489c-0.33295 0.0125-1.4297 1.3047-2.4883 2.9412-4.6167 7.1371-10.818 15.453-16.785 22.508-1.682 1.9889-3.0584 3.9275-3.0584 4.3079 0 0.38034 2.4649 5.6688 5.4773 11.752 3.0124 6.0836 6.4392 13.095 7.6153 15.582 1.1762 2.4862 2.5985 5.4862 3.1611 6.6671 0.5625 1.1809 1.2741 2.1473 1.5812 2.1473 0.80828 0 13.372-13.163 21.788-22.827 3.7706-4.3299 8.7436-10.683 8.7436-11.17 0-0.39197-2.922-4.1067-14.682-18.664-8.205-10.156-10.713-13.088-11.323-13.242-9e-3 -3e-3 -0.019-4e-3 -0.0298-3e-3zm-139.51 73.875c-4.7739 3e-3 -9.4745 0.19406-11.872 0.57142-5.4938 0.8649-12.202 2.6399-16.725 4.4258-5.518 2.1786-12.221 5.9826-16.237 9.2131-7.0681 5.686-13.409 13.604-16.73 20.892-1.9052 4.1806-3.5604 9.5618-4.6178 15.014-0.55796 2.8771-0.78605 6.2518-0.77934 11.527 8e-3 6.0323 0.20587 8.3659 1.0356 12.205 1.3913 6.4369 2.3953 9.3015 5.3058 15.143 2.8996 5.8192 7.583 12.188 11.831 16.089 3.7944 3.4837 10.797 8.1283 15.599 10.346 6.7421 3.1135 15.149 5.4079 23.166 6.3228 4.8816 0.55711 18.096 0.21474 22.786-0.59063 8.6678-1.4883 15.002-3.5366 23.561-7.618l5.7063-2.7214 0.93162-5.0376c2.5195-13.622 3.3556-18.803 3.1293-19.392-0.13652-0.3558-1.7019-0.99905-3.4895-1.4335-1.7762-0.43174-3.2934-0.71729-3.3809-0.63698-0.0766 0.0834-1.1623 1.8808-2.4128 3.994-4.2424 7.1689-9.2129 12.246-15.018 15.34-6.7832 3.6154-16.605 5.5214-23.634 4.586-7.4519-0.99166-12.318-2.7037-17.53-6.1679-1.84-1.2228-4.677-3.5479-6.3042-5.166-6.0225-5.9887-9.9189-13.797-12.413-24.873-0.45177-2.0068-0.85665-6.3407-0.99586-10.66-0.17439-5.4105-0.0512-8.4378 0.48138-11.8 1.8058-11.401 7.1495-22.488 13.317-27.629 5.1198-4.2678 11.374-7.2846 17.557-8.4675 1.8689-0.35756 5.7955-0.64956 8.7251-0.64956 4.1791 0 6.2878 0.24189 9.7911 1.125 5.2941 1.3345 9.6512 3.4097 13.887 6.6142 5.0315 3.8064 8.8433 9.1962 11.616 16.425l1.2203 3.1829 2.8856 0.1311c4.9275 0.22392 4.6888 0.94609 4.5529-13.761-0.064-6.9232-0.23049-13.618-0.37014-14.878-0.29294-2.6418 0.56694-2.1366-9.6633-5.6759-6.8976-2.3864-15.416-4.4341-22.601-5.4329-2.6908-0.374-7.538-0.55867-12.312-0.55551zm215.47 2.831c-0.53667 3e-5 -0.68699 0.27301-0.69568 0.71725 0 0 0.0441 6.6261 0.0294 7.4373-0.0119 0.65877 1.2143 0.90223 3.1538 1.1217 4.4413 0.50249 7.3157 1.5548 8.9343 3.271 0.80523 0.85382 1.6912 2.3953 1.9685 3.4253 0.35417 1.3153 0.49639 13.854 0.4774 42.132-0.0302 45.211 0.0706 43.727-3.1842 46.831-1.8337 1.7484-4.302 2.2219-8.1305 3.0227-1.3889 0.29049-2.6076 0.58075-3.0902 0.69329-0.14524 0.0339-0.14895 0.22534-0.14889 0.42731l2e-3 7.2779c-7.8e-4 0.14303 0.0622 0.24046 0.23103 0.24231l27.43 0.0724 27.368-0.0664c0.12494-0.0152 0.15275-0.0619 0.14851-0.19259l4e-3 -3.7887-4e-3 -3.8793c6e-3 -0.0793-7e-3 -0.16643-0.10554-0.17619l-1.5857-0.23784c-3.4989-0.5248-7.5327-1.6454-8.9641-2.53-0.84106-0.51982-2.3328-1.7702-2.9285-2.9796-0.37141-0.54687-0.57413-1.2962-0.65106-2.1964v-41.586c0-44.713-0.062-43.491 2.3321-46.336 1.2525-1.4886 4.9754-2.8325 9.3071-3.3604l2.4199-0.31719c0.10098-0.0152 0.18343-0.10909 0.17979-0.24913l9e-5 -4.264-4e-3 -4.3219c-4e-3 -0.0947-0.0137-0.18434-0.1523-0.1919z' fill='" + shading + "' fill-opacity='1' stroke-width='.33902'/%3e%3c/svg%3e ";
+
+    if enableCenterLogo{
+        centerLogo=centerLogoOpt;
+    }else{
+        centerLogo=null;
+    }
+    board3=boardBGOpt;
+    miniBoard3=board3;
+    if boardBGOpt!="colorOnly" && boardBGOpt!="" && boardBGOpt!=null{
+       boardBGColor=#0000;
+    }
+    if frameOpt==boardBGOpt && enableBoardFrame && svgBoardBlend=="normal"{
+        board3=null;
+        miniBoard3=frameOpt;
+        framePosX=bgPosX;
+        framePosY=bgPosY;
+    }
+    /*Board selector*/
+    if myBoard!="disabled"{
+        #board-single-sibling,
+        div#board.board:not([style*="background-image: url"]),
+        .board-layout-chessboard .board:not([style*="--theme"]),
+        div[class^="board v-board disabled rounded"],
+        div[class^="daily-puzzle-board"],
+        div[class^="board chessboard-component"],
+        div[class^="board v-board chessboard-component"],
+        div[class^="board rounded"],
+        div[class^="board rounded fippled"],
+        div[class^="board fippled rounded"],
+        div[class^="board v-board rounded"],
+        div[class^="board v-board fippled rounded"],
+        div[class^="board disabled rounded"],
+        div[id$="_ChessBoard_boardarea"],
+        div[id^="chess_com_openingboard_1"],
+        div[id^="board_training"],
+        div[id^="divBoard_boardarea"],
+        div[id^="chess_com_tactics_board"],
+        div[id^="chessboard_"],
+        div[id^="chess_com_chessmentorboard_"],
+        div[id*="chess_com_chessmentor_board_1_boardarea"],
+        div[id^="chess_com_emailboard_"],
+        div[id^="board-blank"],
+        chess-board[class^="board"],
+        chess-board[class^="board flipped"],
+        chess-board[id^="board-blank"],
+        chess-board[id^="board-vs-personalities"],
+        wc-chess-board,
+        div[id*="chess_com_emailboard_"] {
+            if bgSize=="cover"{
+                background-repeat: no-repeat, no-repeat, no-repeat !important;
+            }else{
+                background-repeat: no-repeat, no-repeat, repeat !important;
+            }
+            background-size: auto centerLogoSize, 100%, bgSize!important;
+            background-blend-mode: centerLogoBlend, svgBoardBlend, normal !important;
+            background-position:centerLogoPosX centerLogoPosY, 0 0, bgPosX bgPosY!important;
+            background-color: boardBGColor; 
+            background-image: url(centerLogo), url(svgBoard), url(board3)!important; 
+        } 
+        /*Small board for game preview*/
+        .engine-line-preview,
+        .board-popover-component, .board-popover-component:before{
+            background-image: url(frameOpt) !important;
+            background-position:framePosX framePosY;
+            background-size:frameSize;           
+            background-color: solidBoardBGColor;
+            if bgSize=="cover"{
+                background-repeat: no-repeat !important;
+            }else{
+                background-repeat: repeat !important;
+            }
+            border-color:solidBoardBGColor!important;
+            border-image:url(frameOpt) 25 stretch!important;
+        }
+        body{
+            --theme-board-style-highlight-color:hlColor;
+            --theme-board-style-image: url(svgBoard) !important;
+        }
+        /*========== Coordinates ==========*/
+
+        /*coords light*/
+        .coords-light,
+        .coordinate-light,
+        div.number.coords-light,
+        div.letter.coords-light,
+        text.coordinate-light {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: lCoordCol!important;
+                fill: @color;
+            }else {
+                color: transparentify(svgDarkSqColor, #000, 1) !important;
+                fill: @color;
+                if svgDarkSqOpacity>='0.7'{
+                    opacity:svgDarkSqOpacity;
+                }
+            }
+        }
+
+        /*coords dark*/
+        .coords-dark,
+        .coordinate-dark,
+        div.number.coords-dark,
+        div.letter.coords-dark,
+        text.coordinate-dark {
+            mix-blend-mode: coordsBlend !important;
+            if enableCustomCoord {
+                color: dCoordCol !important;
+                fill: @color;
+            }else {
+                color: transparentify(svgLightSqColor, #000, 1) !important;
+                fill: @color;
+                if svgLightSqOpacity>='0.7'{
+                    opacity:svgLightSqOpacity;
+                }
+            }
+        }/*======End coords ======*/
+
+        /*====== Evaluation Bar ======*/
+
+        if evalOpt!="disabled" {
+            .evaluation-bar-white,
+            .score-bar__fill[data-v-b0ff6725] {
+                if evalOpt == "auto" {
+                    background-color: svgLightSqColor !important;
+                }else if evalOpt == "custom" {
+                    background-color: lEvalCol !important;
+                }
+            }
+            .evaluation-bar-black {
+                if evalOpt == "auto" {
+                    background-color: saturate(svgDarkSqColor, 10%) !important;
+                }else if evalOpt == "custom" {
+                    background-color: dEvalCol !important;
+                }
+            }
+            .score-bar__text[data-v-b0ff6725] {
+            font-size: 9px!important;
+            }
+            .evaluation-bar-bar {
+                opacity: evalBarOpacity!important;
+                box-shadow: 1px 1px 8px 2px #0000002e;
+                z-index:1;
+            }
+        }
+
+        /*evaluation bar width for chesscom*/
+        if enableThinEvalBar{
+            body.with-evaluation {
+                --evalWidth: 2rem;
+                --evalAndGutter: 3rem;
+                --gutterLeftOfBoard: var(--gutterSmall);
+            }
+        }/*====== End Evaluation Bar ======*/
+    }/*end board*/
+        
+    /*Highlight*/
+
+    /*hlImgOpt can be useful to set a background image as highlight, normaly a gif.*/
+    if setHighlight!="disabled" {
+        #divChessBoard_boardarea > div:nth-child(20):not({notThisColors}),
+        #divChessBoard_boardarea > div:nth-child(21):not({notThisColors}),
+        .move-square,
+        .highlight:not({notThisColors}):not([class="stream highlight"]) {
+            background: hlColor url(hlImgOpt) 0 0 / 100% no-repeat !important;
+            opacity: highlightOpacity!important;
+        }
+    }/*====== End highlight ======*/
+
+    /*====== change arrows colors ======*/
+    if enableArrowSettings {
+        .arrow {
+            opacity: arrowOpacity !important;
+        }
+        /*red*/
+        [class*="arrow"][style*="248\, 85\, 63"],[class*="arrow"][style*="#f8553fcc"]{
+            fill: arrowRed!important;
+        }
+        /*orange*/
+        [class*="arrow"][style*="255\, 170\, 0"],[class*="arrow"][style*="#fa0c"]{
+            fill: arrowOrange!important;
+        }
+        /*green*/
+        [class*="arrow"][style*="159\, 207\, 63"],[class*="arrow"][style*="#9fcf3fcc"]{
+            fill: arrowGreen!important;
+        }
+        /*blue*/
+        [class*="arrow"][style*="72\, 193\, 249"],[class*="arrow"][style*="#48c1f9cc"]{
+            fill: arrowBlue!important;
+        }
+    }/*====== End arrows colors ======*/
+
+    /*change highlight made by the user*/
+    [class*="highlight"][style*="82\, 176\, 220"],[class*="highlight"][style*="#52b0dc"]{
+        background-color:hlSqBlue!important;
+    }
+    [class*="highlight"][style*="172\, 206\, 89"],[class*="highlight"][style*="#acce59"]{
+        background-color: hlSqGreen!important;
+    }
+    [class*="highlight"][style*="255\, 170\, 0"],[class*="highlight"][style*="#fa0"]{
+        background-color: hlSqOrange!important;
+    }
+    [class*="highlight"][style*="235\, 97\, 80"],[class*="highlight"][style*="#eb6150"]{
+        background-color: hlSqRed!important;
+    }
+    /*------end section------*/
+
+}
+@-moz-document domain("chess.com") {
+
+    /*======== Wallpaper =======*/
+    if enableWallpaper=="1" {
+        .theme-bg,
+        body.theme-background {
+            if setWallpaper=="cover" || setWallpaper=="contain" || setWallpaper==percentSize{
+                background-size: setWallpaper !important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+            }
+            if setWallpaper=="cover"{
+                background-repeat:no-repeat!important;
+            }else{
+                background-repeat:repeat!important;
+            }
+        }
+        :root{
+            --theme-background-color: backgroundColp;
+            --theme-background-image: url(useWallpaper),linear-gradient(to top right, globalColor 50%, lighten(globalColor, 20%));
+            if useWallpaper=="gradientUsr"{
+                --theme-background-image: linear-gradient(to top right, backgroundColp 50%, lighten(backgroundColp, 20%));
+            }
+            if useWallpaper==backgroundColp{
+                --theme-background-image: '';
+            }
+        }
+    }/*=== End wallpaper ===*/
+}
+
+@-moz-document domain("chess.com") {
+    /*Border*/
+    
+    innBorderSize=0.4rem;
+    if innBorderSize > 0 {
+        inn=innBorderSize/2;
+    }else{inn=0}
+	
+    @media (min-width: 960px){
+		if myBoard!="disabled" && enableBoardFrame{
+            /*board*/
+            div#board.board:not([style*="background-image: url"]),
+            .board-layout-chessboard .board:not([style*="--theme"]),
+            .fade-in-overlay,
+            #boarddefault_boardarea,
+            #divChessBoard_boardarea,
+            #vsComputerDiv_boardarea,
+            div[id^="board-"][class*="chess-board__board"],
+            div[class^="board v-board disabled rounded"],
+            div[class^="daily-puzzle-board"],
+            div[class^="board chessboard-component"],
+            div[class^="board v-board chessboard-component"],
+            div[class^="board rounded"],
+            div[class^="board rounded fippled"],
+            div[class^="board fippled rounded"],
+            div[class^="board v-board rounded"],
+            div[class^="board v-board fippled rounded"],
+            div[class^="board disabled rounded"],
+            div[id$="_ChessBoard_boardarea"],
+            div[id^="chess_com_openingboard_1"],
+            div[id^="board_training"],
+            div[id^="divBoard_boardarea"],
+            div[id^="chess_com_tactics_board"],
+            div[id^="chessboard_"],
+            div[id^="chess_com_chessmentorboard_"],
+            div[id*="chess_com_chessmentor_board_1_boardarea"],
+            div[id^="chess_com_emailboard_"],
+            div[id^="board-blank"],
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board),
+            chess-board[id^="board-blank"],
+            chess-board[id^="board-vs-personalities"],
+            div[id*="chess_com_emailboard_"] {
+                transform-style: preserve-3d;
+                width:'calc(var(--boardWidth) * %s)!important;' % ajustBoardSize;
+                height:'calc(var(--boardHeight) * %s)!important;' % ajustBoardSize;
+                if ajustBoardSize=="0.9"{
+                multiplierL=0.54;
+                multiplierT=0.5; 
+                }else{
+                multiplierL=0.53;
+                multiplierT=0.5; 
+                }              
+                boardRatioL='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierL));
+                boardRatioT='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplierT));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatioL) (inn));
+                margin-top:'calc(var(--boardHeight) * %s + %s)!important;' % ((boardRatioT) (inn));
+                if frameRadiusInOut{
+                    border-radius:0!important;                    
+                }else{
+                    border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+                }
+                box-shadow: boardShadow;
+                box-shadow: boardShadowInset;                    
+                if enableBoardShadow && enableBoardShadowInset {
+                    box-shadow: boardShadow, boardShadowInset !important;
+                }
+                if enableInnerBorder {
+                    box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+                }
+            }
+            /*board*/
+            div#board.board:not([style*="background-image: url"]):before,
+            .board-layout-chessboard .board:not([style*="--theme"]):before,
+            .fade-in-overlay:before,
+            #boarddefault_boardarea:before,
+            #divChessBoard_boardarea:before,
+            #vsComputerDiv_boardarea:before,
+            div[id^="board-"][class*="chess-board__board"]:before,            
+            div[class^="board v-board disabled rounded"]:before,
+            div[class^="daily-puzzle-board"]:before,
+            div[class^="board chessboard-component"]:before,
+            div[class^="board v-board chessboard-component"]:before,
+            div[class^="board rounded"]:before,
+            div[class^="board rounded fippled"]:before,
+            div[class^="board fippled rounded"]:before,
+            div[class^="board v-board rounded"]:before,
+            div[class^="board v-board fippled rounded"]:before,
+            div[class^="board disabled rounded"]:before,
+            div[id$="_ChessBoard_boardarea"]:before,
+            div[id^="chess_com_openingboard_1"]:before,
+            div[id^="board_training"]:before,
+            div[id^="divBoard_boardarea"]:before,
+            div[id^="chess_com_tactics_board"]:before,
+            div[id^="chessboard_"]:before,
+            div[id^="chess_com_chessmentorboard_"]:before,
+            div[id*="chess_com_chessmentor_board_1_boardarea"]:before,
+            div[id^="chess_com_emailboard_"]:before,
+            div[id^="board-blank"]:before,
+            chess-board[class^="board"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[class^="board flipped"]:not(.game-details-board chess-board):not(.event-header-new-games chess-board):not(.round-games-list-item-component chess-board):not(.diagram-board-component  chess-board):not(.openings-view-chessboard .board):before,
+            chess-board[id^="board-blank"]:before,
+            chess-board[id^="board-vs-personalities"]:before,
+            div[id*="chess_com_emailboard_"]:before {
+				background-position: framePosX framePosY !important;
+                background-color: frameColor !important;
+                background-size: frameSize!important;
+                -webkit-background-size: @background-size;
+                -moz-background-size: @background-size;
+                -o-background-size: @background-size;
+                if frameSize=="cover" {
+                    background-repeat: no-repeat!important;
+                }else{
+                    background-repeat: repeat!important;
+                }
+                background-image: url(frameOpt) !important;
+                transform: translateZ(-1px);
+                content: ""!important;
+                display:block;
+                grid-column: board;                
+                width:var(--boardWidth)!important;
+                height: var(--boardHeight)!important;
+                padding-bottom: 0;
+                if ajustBoardSize=="0.9"{
+                    multiplier=-0.54;
+                }else{
+                    multiplier=-0.526;
+                }
+                boardRatio='calc((1 - %s) * %s)' % ((ajustBoardSize) (multiplier));
+                margin-left:'calc(var(--boardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+                margin-top:@margin-left;
+                border-radius: frameRadius!important;
+                box-shadow: frameShadow;
+                box-shadow: frameShadowInset;
+                if enableFrameShadow && enableFrameShadowInset {
+                    box-shadow: frameShadow, frameShadowInset !important;
+                }
+            }
+			/*bizarre solution, don't ask me why*/
+            div#board.board:not([style*="background-image: url"]) > div{
+                display: none!important;
+            }
+            div#board.board:not([style*="background-image: url"]){
+                --theme-board-style-image: url(centerLogo) centerLogoPosX centerLogoPosY / auto centerLogoSize no-repeat,
+              url(svgBoard) 0 0 / 100% no-repeat,
+              url(board3) bgPosX bgPosY / bgSize repeat;
+              
+
+                background: var(--theme-piece-set-br) 0 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bn) 14.29% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bb) 28.57% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bq) 42.86% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bk) 57.14% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bb) 71.43% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-bn) 85.71% 0 / 12.5% no-repeat,
+              var(--theme-piece-set-br) 100% 0 / 12.5% no-repeat,
+
+              var(--theme-piece-set-bp) 0 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 14.29% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 28.57% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 42.86% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 57.14% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 71.43% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 85.71% 14.29% / 12.5% no-repeat,
+              var(--theme-piece-set-bp) 100% 14.29% / 12.5% no-repeat,
+
+              var(--theme-piece-set-wr) 0 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wn) 14.29% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wb) 28.57% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wq) 42.86% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wk) 57.14% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wb) 71.43% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wn) 85.71% 100% / 12.5% no-repeat,
+              var(--theme-piece-set-wr) 100% 100% / 12.5% no-repeat,
+
+              var(--theme-piece-set-wp) 0 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 14.29% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 28.57% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 42.86% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 57.14% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 71.43% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 85.71% 85.71% / 12.5% no-repeat,
+              var(--theme-piece-set-wp) 100% 85.71% / 12.5% no-repeat,
+
+              var(--theme-board-style-image) !important;
+                background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, centerLogoBlend, svgBoardBlend, normal !important;
+            }
+            /*outside coords settings*/
+            if enableOutsideCoords{
+                [class^="coordinate"]:not([class*="dashboard"] [class^="coordinate"]):not([class^="game-board-"] .coordinates):not(#board-single-sibling [class^="coordinate"]):not(.game-details-board [class^="coordinate"]):not(.event-header-new-games [class^="coordinate"]):not([class^="round-"] [class^="coordinate"]):not([class*="diagram"] [class^="coordinate"]):not(.openings-view-chessboard [class^="coordinate"]) {
+                    text-transform: outCoordFontCase !important;
+                    fill:outCoordColorOpt!important;
+                    font-size:clamp(.1rem,outCoordFontSize,.3rem)!important;
+                    font-weight: outCoordFontWeight!important;   
+                    font-family:outCoordFontName,-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,Helvetica,Arial,Emoji,sans-serif!important;
+                }
+                .outside {
+                    transform: translate(-5.5%,4.5%)!important;
+                }
+                .outside-coords {
+                    --coordinatesGutter: 1rem!important;
+                }
+                .coordinates:not([class*="dashboard"] .coordinates):not([class^="game-board-"] .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not([class^="round-"] .coordinates):not([class*="diagram"] .coordinates):not(.openings-view-chessboard .coordinates) {
+                    transform: translate(-4.5%,4.8%)!important;
+                }
+                if ajustBoardSize>=0.92{
+                    .coordinates:not([class*="dashboard"] .coordinates):not([class^="game-board-"] .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not([class^="round-"] .coordinates):not([class*="diagram"] .coordinates):not(.openings-view-chessboard .coordinates) {
+                        transform: translate(-3.8%,4.2%)!important;
+                    }
+                    if enableInnerBorder==0{                        
+                        .coordinates:not([class*="dashboard"] .coordinates):not([class^="game-board-"] .coordinates):not(#board-single-sibling .coordinates):not(.game-details-board .coordinates):not(.event-header-new-games .coordinates):not([class^="round-"] .coordinates):not([class*="diagram"] .coordinates):not(.openings-view-chessboard .coordinates) {
+                            transform: translate(-3.8%,3.8%)!important;
+                        }
+                    }
+                }
+                
+                [class*="coords"],
+                [class*="coordinate"]:not([class*="dashboard"] [class*="coordinate"]):not([class^="game-board-"] [class*="coordinate"]):not(#board-single-sibling [class*="coordinate"]):not(.game-details-board [class*="coordinate"]):not(.event-header-new-games [class*="coordinate"]):not([class^="round-"] [class*="coordinate"]):not([class*="diagram"] [class*="coordinate"]):not(.openings-view-chessboard [class*="coordinate"]) {
+                    color: outCoordColorOpt !important;
+                    fill: @color;
+                    opacity: 1!important;
+                }
+            }
+        }
+    }/*end board border*/
+    
+}
+@-moz-document url-prefix("https://www.chess.com/events/"), url-prefix("https://www.chess.com/pt/events/"), url-prefix("https://www.chess.com/es/events/") {
+    /*Events*/
+    /*In Events page variable mainBoardWidth is used instead of boardWidth/boardHeight*/
+    @media (min-width: 960px){
+        
+        /*Main border rules*/
+        innBorderSize=0.4rem;
+        if innBorderSize > 0 {
+            inn=innBorderSize/2;
+        }else{inn=0}
+
+        if boardBGOpt==frameOpt && enableBoardFrame {
+            board3=null;
+            framePosX=bgPosX;
+            framePosY=bgPosY;        
+        }
+
+		if myBoard!="disabled" && enableBoardFrame{
+			/*board*/
+			.main-tab-game-component chess-board {
+				transform-style: preserve-3d;
+				width:'calc(var(--mainBoardWidth) * %s)!important;' % ajustBoardSize;
+				height: @width;
+				boardRatio='calc((1 - %s) * 0.5)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				if frameRadiusInOut{
+					border-radius:'calc(%s * 0.40)!important;' % frameRadius;
+				}else{
+					border-radius:0!important;
+				}
+				box-shadow: boardShadow;
+				box-shadow: boardShadowInset;                    
+				if enableBoardShadow && enableBoardShadowInset {
+					box-shadow: boardShadow, boardShadowInset !important;
+				}
+				if enableInnerBorder {
+					box-shadow: 0 0 0 innBorderSize innerBorderOpt!important;
+				}
+			}
+			/*board*/
+			.main-tab-game-component chess-board:before {
+				if myBoard!="disabled"{                    
+				background:frameColor url(frameOpt) framePosX framePosY!important; 
+				}                
+				transform: translateZ(-1px);
+				content: ""!important;
+				display:block;
+				grid-column: board;                
+				width:var(--mainBoardWidth)!important;
+				height: @width;
+				padding-bottom: 0;
+				boardRatio='calc((1 - %s) * -0.526)' % ajustBoardSize;
+				margin-left:'calc(var(--mainBoardWidth) * %s + %s)!important;' % ((boardRatio) (inn));
+				margin-top:@margin-left;
+				background-size: frameSize!important;
+				-webkit-background-size: @background-size;
+				-moz-background-size: @background-size;
+				-o-background-size: @background-size;
+				background-repeat: frameRepeat!important;
+				border-radius: frameRadius!important;
+				box-shadow: frameShadow;
+				box-shadow: frameShadowInset;                
+				if enableFrameShadow && enableFrameShadowInset {
+					box-shadow: frameShadow, frameShadowInset !important;
+				}
+			}
+		}/*end board border*/
+    }
+    
+}/*End Events*/
